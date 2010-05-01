@@ -7,12 +7,12 @@ fwrite($ftmp,'<?php
 $f = fopen("dynamic/menu_normal_user_$lang.html","w");
 fwrite($f,"');
 $style='';//' class=versionlink';
-fwrite($ftmp, addslashes("<div class=\"moduleentry\"><h1 class=\"moduleheader\">$l_documentation</h1><div class=\"modulecontent\"><ul>
+fwrite($ftmp, addslashes("<div class=\"moduleentry\"><div class=\"header\"><h3>$l_documentation</h3></div><div class=\"content\"><ul>
 ".create_intern_menu_item("versions.html", $l_versions, $style)."
 <li$style><a href=\"$stable_user_manual_url\">$l_user_manual</a></li>
 ".create_intern_menu_item("doc/technotes/index.html", $l_technotes, $style)."
 <li$style><a href=\"mediawiki/index.php/Main_Page\">$l_mediawiki</a></li>
-</ul></div></div>
+</ul></div><div class=\"footer\"></div></div>
 <div class=\"moduleentry\"><h1 class=\"moduleheader\">$l_development</h1><div class=\"modulecontent\"><ul>
 ".create_intern_menu_item("$lsv/changes.html", $l_changes, $style)."
 ".create_intern_menu_item("$lsv/branches_compiling.html", $l_cvs_branches_compiling, $style)."

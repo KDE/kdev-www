@@ -9,7 +9,7 @@ require('inc/functions.php');
 require('inc/apache_header.php');
 
 // The theme
-require('inc/theme3.php');
+require('inc/theme4.php');
 
 // Load the english translation this way if there is an
 // untranslated string it will get the english value by default
@@ -47,7 +47,7 @@ if (file_exists("lang/$lang/translations.inc")){
   echo '  <title>KDevelop - ' . get_title_variable($filename) . "</title>\n";
 
   // One default stylesheet and three optional ones
-  echo "  <link rel=\"stylesheet\"  media=\"screen\" type=\"text/css\" title=\"KDevelop3 green\" href=\"theme3.css\">\n";
+  echo "  <link rel=\"stylesheet\"  media=\"screen\" type=\"text/css\" title=\"KDevelop4 green\" href=\"theme4.css\">\n";
 
   if (strpos($filename, '3.4/ChangeLog.html') !== FALSE ){
     echo '  <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="3.4/ChangeLog.rss">
@@ -359,11 +359,14 @@ EXd.write("<img src=\"http://z1.extreme-dm.com",
   <div id="validator"><a href="http://validator.w3.org/check?uri=referer"><img src="graphics/valid-html401.png" alt="Valid HTML 4.01!" height="31" width="88"></a></div>
 </div>   <!-- end column 1 -->
 
+<div id="head"></div>
+
 <div id="logo">   <!-- begin KDevelop.org Banner -->
-  <a href="." title="<?php echo $l_back_kdevelop_home;?>">
-  <img height="100" width="450" src="graphics/theme3/KDevelopBanner.png" alt="KDevelop homepage logo"></a>
-  <a href="graphics/botjam.php"></a>
+    <a href="." title="<?php echo $l_back_kdevelop_home;?>">
+    <img height="100" width="450" src="graphics/theme3/KDevelopBanner.png" alt="KDevelop homepage logo"></a>
+    <a href="graphics/botjam.php"></a>
 </div>   <!-- end KDevelop.org Banner -->
+
 
 <div id="languageselector">   <!-- language selection flags -->
 <?php
@@ -379,19 +382,14 @@ foreach($activelanguages as $lang_i){
 </div>   <!-- end language selection flags -->
 
 <div id="sitesearch">   <!-- begin Google based SiteSearch -->
-  <table<?php if ($lang == 'ar') echo ' dir="rtl"'; ?>><tr><td>
-      <a href="http://www.google.com/"><img height="30" width="82" src="graphics/Logo_google.gif" alt="Powered by Google"></a>
-    </td><td>
-      <form method="get" action="http://www.google.com/search"><div>
-      <input type="text" name="q" size="25" maxlength="255" value=""> <input type="submit" name="btnG" value="<?php echo $l_search; ?>"></div>
-      <div id="searchdomain">
-      <input type="hidden" name="domains" value="www.kdevelop.org">
-      <input type="radio" name="sitesearch" value=""> www
-      <input type="radio" name="sitesearch" value="www.kdevelop.org" checked="checked"> www.kdevelop.org
-      </div>
-      </form>
-  </td></tr></table>
-</div>   <!-- end Google based SiteSearch  -->
+    <div id="searchbar-content">
+        <form id="searchform">
+        <input class="text" type="text" name="q" size="25" maxlength="255" value="">
+        <input class="button" type="submit" name="btnG" value="<?php echo $l_search; ?>"></div>
+        <input type="hidden" name="domains" value="www.kdevelop.org">
+        </form>
+    </div>
+</div> <!-- end Google based SiteSearch  -->
 
 <div id="menu">
  <ul>
