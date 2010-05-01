@@ -63,7 +63,13 @@ body { padding: 0; margin: 0; }
 pure style and beautification stuff, as less layout (position) as possible
 very general stuff
 */
-body { background :  white; font :  normal  normal  medium  sans-serif; font-size: small; }
+body {
+    background :  white;
+    font :  normal  normal  medium  sans-serif;
+    font-size: small;
+    background-image: url(graphics/theme4/page-l-solid.png);
+    background-repeat: repeat-y;
+}
 
 img { border: 0; }
 
