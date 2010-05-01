@@ -78,9 +78,7 @@ body { padding: 0; margin: 0; }
 /* elements at the bottom of the two/three columns */
 .outdatedtranslation { text-align: center; }
 #validator { text-align: center; }
-#pagemodtime { text-align: center; }
 #translator { text-align: center; }
-#webmaster { text-align: center; }
 #sitestats { text-align: center; }
 
 
@@ -262,6 +260,7 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
     background-repeat: repeat-x;
 }
 #footer .sitemap {
+    margin: 0;
     background-image: url(graphics/theme4/footerleft-l-solid.png);
     background-repeat: no-repeat;
     float: left;
@@ -298,6 +297,22 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
   color:#CCF873;
   text-shadow: none;
 }
+#footer #pagemodtime {
+    padding-top: 17px;
+    text-align: center;
+}
+#footer #webmaster {
+    margin-top: -17px;
+    text-align: right;
+    font-size: 0.8em;
+    font-style: normal;
+}
+#footer #webmaster a {
+    margin-left:0px;
+    padding-left:10px;
+    background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
+}
+
 /*
 #menu ul {
  display:inline;
