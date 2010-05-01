@@ -170,6 +170,15 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
 #sitenavigation div.cat-doc img.category-icon {
     background-image: url(graphics/theme4/cat-doc.png);
 }
+#sitenavigation div.cat-promotion img.category-icon {
+    background-image: url(graphics/theme4/cat-promotion.png);
+}
+#sitenavigation div.cat-community img.category-icon {
+    background-image: url(graphics/theme4/cat-community.png);
+}
+#sitenavigation div.cat-devel img.category-icon {
+    background-image: url(graphics/theme4/cat-devel.png);
+}
 
 
 th { border: 1px solid gray; }

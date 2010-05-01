@@ -14,24 +14,24 @@ fwrite($ftmp, addslashes("<div class=\"moduleentry cat-doc\"><div class=\"header
 ".create_intern_menu_item("doc/technotes/index.html", $l_technotes, $style)."
 <li$style><a href=\"mediawiki/index.php/Main_Page\">$l_mediawiki</a></li>
 </ul></div><div class=\"footer\"></div></div>
-<div class=\"moduleentry\"><div class=\"header\"><h3>$l_development</h3></div><div class=\"content\"><ul>
+<div class=\"moduleentry cat-devel\"><div class=\"header\"><img class=\"category-icon\"/><h3>$l_development</h3></div><div class=\"content\"><ul>
 ".create_intern_menu_item("$lsv/changes.html", $l_changes, $style)."
 ".create_intern_menu_item("$lsv/branches_compiling.html", $l_cvs_branches_compiling, $style)."
 ".create_intern_menu_item('join-the-team.html', $l_join_us, $style)."
 ".create_intern_menu_item('website_translation_status.html', $l_website_translation, $style)."
 </ul></div><div class=\"footer\"></div></div>
-<div class=\"moduleentry\"><div class=\"header\"><h3>$l_links</h3></div><div class=\"content\"><ul>
+<div class=\"moduleentry\"><div class=\"header\"><img class=\"category-icon\"/><h3>$l_links</h3></div><div class=\"content\"><ul>
 ".create_intern_menu_item("users.html", $l_user_progs, $style)."
 ".create_intern_menu_item("sponsors.html", $l_sponsors, $style)."
 ".create_intern_menu_item("links_tools.html", $l_development_tools, $style)."
 </ul></div><div class=\"footer\"></div></div>
-<div class=\"moduleentry\"><div class=\"header\"><h3>$l_presentations_graphics</h3></div><div class=\"content\"><ul>
+<div class=\"moduleentry cat-promotion\"><div class=\"header\"><img class=\"category-icon\"/><h3>$l_presentations_graphics</h3></div><div class=\"content\"><ul>
 ".create_intern_menu_item("in_the_press.html", $l_in_the_press, $style)."
 ".create_intern_menu_item("awards.html", $l_awards, $style)."
 ".create_intern_menu_item("logos_banners.html", $l_logos_banners, $style)."
 ".create_intern_menu_item("splashscreens.html", $l_splashscreens, $style)."
 </ul></div><div class=\"footer\"></div></div>
-<div class=\"moduleentry\"><div class=\"header\"><h3>$l_contacts</h3></div><div class=\"content\"><ul>
+<div class=\"moduleentry cat-community\"><div class=\"header\"><img class=\"category-icon\"/><h3>$l_contacts</h3></div><div class=\"content\"><ul>
 ".create_intern_menu_item("$lsv/kdevelop.html#Bugs", $l_bugs_wishes, $style)."
 <li$style><a href=\"chat/\">$l_on_line_chat</a></li>
 <li$style><a href=\"phorum5/index.php\">$l_forum</a></li>
