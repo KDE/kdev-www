@@ -24,7 +24,7 @@ function update_stats_pages($filename, $lang, $http_status_code) {
     if (file_exists("lang/$lang/$filename"))
       $last_updated = date('Y-m-d H:i:s',filemtime("lang/$lang/$filename"));
   }
-
+/*
   // determine if the page already exists in the table
   $result = mysql_query("SELECT nr_visited FROM stats_pages WHERE lang = '$lang' AND filename = '$filename'");
 
@@ -57,6 +57,7 @@ function update_stats_pages($filename, $lang, $http_status_code) {
     }
   }
   $result = mysql_query($sql);
+*/
 }
 
 
@@ -106,7 +107,7 @@ if (strpos($_SERVER['HTTP_HOST'], 'kdevelop.kde.org') !== FALSE ||
 }
 }
 // Use the bad behavior mediawiki extension to protect the website (without DB support)
-require_once('mediawiki/extensions/bad-behavior2/bad-behavior-generic.php');
+//require_once('mediawiki/extensions/bad-behavior2/bad-behavior-generic.php');
 
 // default HTTP STATUS code
 $http_status_code = 200;

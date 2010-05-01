@@ -1,7 +1,7 @@
 <?php
 
 function protect_against_bad_robots($http_status_code, $timeout_minutes, $bad_hits_treshold, $trapped_treshold) {
-
+/*
   // return if database connection failed
   if ($http_status_code == 503)
     return $http_status_code;
@@ -88,7 +88,7 @@ function protect_against_bad_robots($http_status_code, $timeout_minutes, $bad_hi
     }
     $result = mysql_query($sql);
   }
-
+*/
   return $http_status_code;
 }
 

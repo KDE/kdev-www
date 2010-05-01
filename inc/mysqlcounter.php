@@ -1,5 +1,5 @@
 <?php
-
+/*
 $IP=$_SERVER['REMOTE_ADDR'];
 
 $time= explode(  " ", microtime());
@@ -30,5 +30,5 @@ if($stats_userlog < 1)
 $ok= @mysql_query("insert INTO stats_counterlog (IP,DATE) VALUES('$IP','$usersec')");
 mysql_query("UPDATE stats_counter SET visitors = (visitors + 1);");
 }
-
+*/
 ?>
