@@ -237,7 +237,30 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
 }
 
 #footer {
-    background-image: url(/graphics/theme4/footer-bg-solid-1px.png);
+    margin-top: 120px;
+    background-image: url(graphics/theme4/footer-bg-solid-1px.png);
+    background-repeat: repeat-x;
+}
+#footer .sitemap {
+    background-image: url(graphics/theme4/footerleft-l-solid.png);
+    background-repeat: no-repeat;
+    float: left;
+    margin-top: -10px;
+}
+#footer .sitemap a {
+    display: block;
+    margin-left: 16px;
+    padding-right: 24px;
+    background-image: url(graphics/theme4/footerleft-r-solid.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+    font-weight: bold;
+    color: white;
+}
+#footer .sitemap a span {
+    display: block;
+    padding-top: 20px;
+    background-image: url(graphics/theme4/footerleft-m-solid-1px.png);
     background-repeat: repeat-x;
 }
 /*

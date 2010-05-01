@@ -243,6 +243,10 @@ echo "</div>\n";
 
 echo "<div id=\"footer\">\n";
 
+printf('  <p class="sitemap%s"><a href="index.html?filename=sitemap.html" title="%s"><span>%s</span></a></p>
+', ($filename=='sitemap.html')?' selected':'', $l_sitemap, $l_sitemap);
+
+
 if (!empty($last_updated_time)){
    echo "  <p class=\"footnote\" id=\"pagemodtime\">$l_last_updated".strftime(' %c',$last_updated_time)."</p>\n";
 }
@@ -412,8 +416,6 @@ printf('  <li%s><a href="index.html?filename=tutorials.html" title="%s"><span>%s
 ', ($filename=='tutorials.html')?' class="selected"':'', $l_pt_tutorials, $l_tutorials);
 printf('  <li%s><a href="index.html?filename=3.3/faq.html" title="%s"><span>%s</span></a></li>
 ', (strpos($filename,'faq') !== FALSE)?' class="selected"':'', $l_faq, $l_faq);
-printf('  <li%s><a href="index.html?filename=sitemap.html" title="%s"><span>%s</span></a></li>
-', ($filename=='sitemap.html')?' class="selected"':'', $l_sitemap, $l_sitemap);
 ?>
  </ul>
 </div>
