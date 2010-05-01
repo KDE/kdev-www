@@ -237,6 +237,12 @@ elseif (strpos($filename,'announce-kdevelop') !== FALSE || strpos($filename,'pre
   include('inc/other_bugs.php');
 echo "</div>\n";
 
+?>
+</div>   <!-- end column 2 -->
+<?php
+
+echo "<div id=\"footer\">\n";
+
 if (!empty($last_updated_time)){
    echo "  <p class=\"footnote\" id=\"pagemodtime\">$l_last_updated".strftime(' %c',$last_updated_time)."</p>\n";
 }
@@ -246,10 +252,10 @@ if ($lang != 'en'){
   echo "  <br>\n";
 }
 echo "  <address class=\"footnote\" id=\"webmaster\">$l_website_bugs<a href =\"mailto:webmaster@kdevelop.org?subject=KDevelop+website\">webmaster</a>.</address>\n";
-?>
-</div>   <!-- end column 2 -->
 
-<?php
+echo "</div>";
+
+
   if( $filename == 'main.html' ){
     echo "<div id=\"quickoverview\">   <!-- begin column 3 -->\n";
 
