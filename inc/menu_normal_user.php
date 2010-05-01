@@ -7,7 +7,8 @@ fwrite($ftmp,'<?php
 $f = fopen("dynamic/menu_normal_user_$lang.html","w");
 fwrite($f,"');
 $style='';//' class=versionlink';
-fwrite($ftmp, addslashes("<div class=\"moduleentry\"><div class=\"header\"><h3>$l_documentation</h3></div><div class=\"content\"><ul>
+fwrite($ftmp, addslashes("<div class=\"moduleentry cat-doc\"><div class=\"header\"><img class=\"category-icon\"/>
+<h3>$l_documentation</h3></div><div class=\"content\"><ul>
 ".create_intern_menu_item("versions.html", $l_versions, $style)."
 <li$style><a href=\"$stable_user_manual_url\">$l_user_manual</a></li>
 ".create_intern_menu_item("doc/technotes/index.html", $l_technotes, $style)."

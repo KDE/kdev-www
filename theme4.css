@@ -141,6 +141,9 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   color: white;
   text-transform: uppercase;
   text-shadow: 1.5px 1.4px 1px #698C25;
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
 }
 #sitenavigation div.moduleentry div.content {
   background: #daf3af url('graphics/theme4/box_green-mh-1px.png') top repeat-x;
@@ -156,7 +159,17 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   background: url('graphics/theme4/navbox-bi.gif') repeat-y;
   height: 14px;
 }
-
+#sitenavigation img.category-icon {
+    position: absolute;
+    background-repeat: no-repeat;
+    height:38px;
+    left:19px;
+    top:-5px;
+    width:38px;
+}
+#sitenavigation div.cat-doc img.category-icon {
+    background-image: url(graphics/theme4/cat-doc.png);
+}
 
 
 th { border: 1px solid gray; }
