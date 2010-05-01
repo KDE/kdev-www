@@ -263,6 +263,21 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
     background-image: url(graphics/theme4/footerleft-m-solid-1px.png);
     background-repeat: repeat-x;
 }
+#footer .sitemap a span:before {
+  content: url('graphics/theme4/bullet_bottomlink.gif');
+  position: relative;
+  bottom: 0.16em;
+  padding-right: 5px;
+}
+#footer .sitemap a:hover {
+  color:#fff;
+  text-shadow: #CCF873 0 0 4px;
+  text-decoration: none;
+}
+#footer .sitemap a:active {
+  color:#CCF873;
+  text-shadow: none;
+}
 /*
 #menu ul {
  display:inline;
