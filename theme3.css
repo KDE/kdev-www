@@ -1,0 +1,168 @@
+/*
+basic "holly-grail" layout (top box plus two/three columns touching)
+http://www.thenoodleincident.com/tutorials/box_lesson/content_placement/text.html
+http://www.thenoodleincident.com/tutorials/box_lesson/basic4_touch.html
+This is an attempt of pure layout (position only), no style.
+*/
+html { min-width: 780px; }
+body { padding: 0; margin: 0; }
+
+/* top box navigational elements (height = ) */
+#logo { position: absolute; top: 0px; left: 0px; padding: 0px; }
+#languageselector { position: absolute; top: 0px; right: 0px; text-align: right; padding: 5px; }
+#sitesearch { position: absolute; top: 30px; right: 0px; text-align: right; padding: 5px; }
+
+/* two/three columns touching each other */
+#sitenavigation { position: absolute; top: 120px; left: 0px; width: 10em; }                 /* left column */
+#news           { position: relative; top: 120px; margin-left: 10em; margin-right: 240px; } /* middle column (2 of 3) */
+#maincontent    { position: relative; top: 120px; margin-left: 10em; margin-right: 0px; }   /* middle column (2 of 2) */
+#quickoverview  { position: absolute; top: 120px; right: 0px; width: 240px; }               /* right column */
+
+/* elements at the bottom of the two/three columns */
+.outdatedtranslation { text-align: center; }
+#validator { text-align: center; }
+#pagemodtime { text-align: center; }
+#translator { text-align: center; }
+#webmaster { text-align: center; }
+#sitestats { text-align: center; }
+
+
+
+/*
+pure style and beautification stuff, as less layout (position) as possible
+very general stuff
+*/
+body { background :  white; font :  normal  normal  medium  sans-serif; }
+
+img { border: 0; }
+
+strong {
+    font-weight: bold;
+    color: #3eeb91;
+  }
+
+dd.code {
+    font-family: courier, monospace;
+    text-align: left;
+  }
+
+table {
+    border-collapse: collapse; /* nice looking table borders */
+    margin-left: auto;         /* center tables (margin-left==margin-right) */
+    margin-right: auto;
+  }
+
+th.header {
+    font-weight: bold;
+    background-color: #9CCC92;
+    text-align: center;
+  }
+
+/* for http links, do not change the order of these declarations */
+a:link { text-decoration: none; color: #136E2C; } /* unvisited links */
+a:visited { text-decoration: none; color: #67A670; } /* visited links */
+a:hover { text-decoration: underline; } /* user hovers */
+a:active { color: red; } /* active links */
+
+/* for each "module" element ( module_head() and module_tail() functions ) */
+div.moduleentry { background-color: #EFF7E3; text-align: justify; margin: 5px; }
+h1.moduleheader { background-color: #81A979; text-align: center; font : bold normal medium sans-serif; }
+div.modulecontent { padding: 0px 5px 2px 5px; }
+
+th { border: 1px solid gray; }
+td { border: 1px solid gray; }
+td.even { background-color: #AEE5A3; }
+td.odd { background-color: #DCEEC2; }
+
+.footnote,
+.footnote a {
+	font-size:12px;
+	line-height:1.3em;
+	color:#aaa;
+}
+
+.footnote em {
+	background-color:transparent;
+	font-style:italic;
+}
+
+.footnote code {
+	background-color:transparent;
+	font:11px/14px monospace;
+	color:#aaa;
+}
+
+
+/*
+Very specific formating/style stuff
+*/
+#searchdomain { font-size: small; }
+#sitesearch td { border: 0px; }
+#sitesearch table { margin-right: 0; }
+#quickdownloads { font-size: small; text-align: left; }
+
+/* website navigation (left column) */
+#sitenavigation h2{ text-align: center; font : bold normal medium sans-serif; margin: 0px; }
+#sitenavigation ul{ text-align: left; list-style-type:none; padding: 0px; margin: 0px;}
+#sitenavigation table{ border: 0; width: 9em; }
+#sitenavigation td { border: 0; }
+#sitenavigation th { border: 0; }
+td.versionlink { font-size: x-small; text-align: center; }
+
+#picturecorner { text-align: center; }
+#userprograms { text-align: center; }
+#latestchangelogs { font-size: x-small; }
+.detailedchangelog { font-size: small; text-align: right; }
+
+/* screenshots pages */
+div.screenshotthumb { float:left;margin: 0 25px 30px 0;vertical-align:top; }
+div.screenshotcaption { text-align:center;width:200px;height:5em; }
+
+#others ul{ list-style-type:none; }
+li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
+
+/* main horizontal navigational menu */
+#menu {
+ position: absolute; top: 100px;  right: 0em; width: 100%;
+ font-size:1.1em;
+ font-weight:bold;
+ line-height:normal;
+ text-align:right;
+ border-bottom:1px solid #BCBCBC;
+}
+
+#menu ul {
+ display:inline;
+ /*list-style-image:none;*/
+ /*list-style-position:outside;*/
+ list-style-type:none;
+ margin-right:0.6em;
+ padding:0pt;
+}
+
+#menu ul li {
+ display:inline;
+ /*margin:0pt;*/
+ max-height:1.6em;
+ padding:0pt;
+ text-align:center;
+ white-space:nowrap;
+}
+
+#menu ul li a {
+ background:#F0F0F0;
+ color:#5D5D5D;
+ text-decoration:none;
+}
+
+#menu ul li.selected a {
+ background:transparent;
+ border-bottom:1px solid white;
+ border-top:1px solid #BCBCBC;
+ border-left:1px solid #BCBCBC;
+ border-right:1px solid #BCBCBC;
+}
+
+#menu ul li span {
+ padding: 0em 0.7em;
+}

@@ -1,0 +1,32 @@
+Tue, 04 Mar 2008 22:42:26 +0100
+--22:42:26--  http://meta.wikimedia.org/w/index.php?title=Spam_blacklist&action=raw
+           => `wikimedia_blacklist'
+Resolving meta.wikimedia.org... 91.198.174.2
+Connecting to meta.wikimedia.org|91.198.174.2|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 111,952 (109K) [text/x-wiki]
+
+    0K .......... .......... .......... .......... .......... 45%   86.66 KB/s
+   50K .......... .......... .......... .......... .......... 91%  194.15 KB/s
+  100K .........                                             100%  625.45 KB/s
+
+22:42:27 (128.71 KB/s) - `wikimedia_blacklist' saved [111952/111952]
+
+--22:42:27--  http://blacklist.chongqed.org/
+           => `chongqed_blacklist_raw'
+Resolving blacklist.chongqed.org... 85.214.119.209
+Connecting to blacklist.chongqed.org|85.214.119.209|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 383,805 (375K) [text/plain]
+
+    0K .......... .......... .......... .......... .......... 13%  382.85 KB/s
+   50K .......... .......... .......... .......... .......... 26%  589.92 KB/s
+  100K .......... .......... .......... .......... .......... 40%  605.99 KB/s
+  150K .......... .......... .......... .......... .......... 53%  589.92 KB/s
+  200K .......... .......... .......... .......... .......... 66%  607.46 KB/s
+  250K .......... .......... .......... .......... .......... 80%  589.81 KB/s
+  300K .......... .......... .......... .......... .......... 93%  606.11 KB/s
+  350K .......... .......... ....                            100%  596.16 KB/s
+
+22:42:28 (556.25 KB/s) - `chongqed_blacklist_raw' saved [383805/383805]
+

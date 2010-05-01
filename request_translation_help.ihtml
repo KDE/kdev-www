@@ -1,0 +1,24 @@
+<?php
+$inactivelanguages = array('ar','id','hu','tr','uk');
+
+//if(($filename == 'main.html' && $lang == 'en') || in_array($lang, $inactivelanguages)){
+if(in_array($lang, $inactivelanguages)){
+  $nr_inactive_laguages = count($inactivelanguages);
+  if ($nr_inactive_laguages > 0){
+    module_head('KDevelop needs your help');
+    echo 'The KDevelop-Project is looking for volunteer ';
+    $i = 1;
+    foreach ($inactivelanguages as $langcode) {
+      if ($i != $nr_inactive_laguages)
+        echo "<a href=\"index.html?filename=website_translation_status.html&amp;set_lang=$langcode\"><b>".$languages[$langcode]."</b></a>, ";
+      else
+        echo " and <a href=\"index.html?filename=website_translation_status.html&amp;set_lang=$langcode\"><b>".$languages[$langcode]."</b></a> ";
+      $i += 1;
+    }
+    echo 'translators for this website.
+If you are willing to do it, visit the <a href="index.html?filename=website_translation_status.html">
+Website translation status page</a>. There you\'ll get all the info you need.<br>';
+    module_tail();
+  }
+}
+?>

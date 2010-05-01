@@ -1,0 +1,109 @@
+
+
+2006-01-19 15:59  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=500184&amp;view=rev">500184</A>]  coolo<br>
+
+configure.in.in: updating version<br><br>
+
+2006-01-17 19:40  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=499421&amp;view=rev">499421</A>]  mattr<br>
+
+debian: remove the debian directory by request of Jeremy Laine 1
+down, 2 to go CCMAIL: Jeremy Laine <jeremy.laine@m4x.org><br><br>
+
+2006-01-17 19:32  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=499419&amp;view=rev">499419</A>]  neundorf<br>
+
+buildtools/custommakefiles/customprojectpart.cpp: improved regexp
+for parsing makefile targets:
+http://lists.kde.org/?l=kdevelop-devel&m=113398882810606&w=2 Alex<br><br>
+
+2006-01-16 14:47  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=498881&amp;view=rev">498881</A>]  rdale<br>
+
+languages/ruby/rubysupport_part.cpp: * The ruby class parser
+wasn't recognising class/module methods of the form 'def
+self.mymethod()', only 'def MyClass.mymethod()'.<br><br>
+
+2006-01-16 14:09  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=498865&amp;view=rev">498865</A>]  rdale<br>
+
+languages/ruby/rubysupport_part.cpp: * If a ruby class had both an
+'attr_reader' and an 'attr_writer' with the same name, it caused
+the class parser to loop.<br><br>
+
+2006-01-13 20:11  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=497774&amp;view=rev">497774</A>]  rdale<br>
+
+parts/grepview/grepviewwidget.cpp: * Don't show any 'find in
+files' search results that are inside svn directories.<br><br>
+
+2006-01-10 08:55  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=496268&amp;view=rev">496268</A>]  mueller<br>
+
+configure.in.in, languages/ada/app_templates/adahello/Makefile.am,
+languages/bash/app_templates/bashhello/Makefile.am,
+languages/cpp/app_templates/chello/Makefile.am,
+languages/cpp/app_templates/chello_gba/Makefile.am,
+languages/cpp/app_templates/clanlib/Makefile.am,
+languages/cpp/app_templates/cmakelibc/Makefile.am,
+languages/cpp/app_templates/cmakelibcpp/Makefile.am,
+languages/cpp/app_templates/cmakesimple/Makefile.am,
+languages/cpp/app_templates/cmakesimplec/Makefile.am, ... : remove
+the usage of checking for gzip and using $(GZIP) for referring to
+it. there is a big problem with this attempt: $GZIP is used for
+default (site wide) flags to gzip, and contains stuff like "-9"
+(compress best by default). The configure check however does not
+overwrite environment variables if they're already set - therefore
+it tried to execute "-9", which fails. Just use gzip directly, we
+don't have a replacement anyway.<br><br>
+
+2006-01-02 14:23  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=493453&amp;view=rev">493453</A>]  scripty<br>
+
+languages/cpp/app_templates/win32gui/win32gui.png,
+languages/cpp/app_templates/win32hello/win32hello.png,
+pics/toolbar/hi22-action-dbgjumpto.png: Remove svn:executable from
+some typical non-executable files (goutte)<br><br>
+
+2005-12-27 23:58  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=491918&amp;view=rev">491918</A>]  mhunter<br>
+
+lib/widgets/propeditor/propertymachinefactory.cpp,
+parts/tipofday/tips: What's This? consistency fixes<br><br>
+
+2005-12-25 20:28  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=491362&amp;view=rev">491362</A>]  cramblitt<br>
+
+Doxyfile.am: Fix make uninstall<br><br>
+
+2005-12-22 03:38  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=490482&amp;view=rev">490482</A>]  mattr<br>
+
+doc/kdevelop/automake-manager.png,
+doc/kdevelop/project-management.docbook: finish fixing bug 111993.
+Thanks to annma for fixing. BUG: 111993<br><br>
+
+2005-12-19 21:36  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=489834&amp;view=rev">489834</A>]  mueller<br>
+
+parts/outputviews/directorystatusmessagefilter.cpp: fix strict
+aliasing warnings<br><br>
+
+2005-12-13 08:03  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=488094&amp;view=rev">488094</A>]  alanezust<br>
+
+parts/documentation/plugins/doxygen/docdoxygenplugin.cpp: Doxygen
+doc plugins should have editable titles too.<br><br>
+
+2005-12-13 08:02  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=488093&amp;view=rev">488093</A>]  alanezust<br>
+
+parts/documentation/plugins/qt/docqtplugin.cpp: Made qt
+documentation plugins have editable titles (so you can rename them
+to qt4 and qt3, for example).<br><br>
+
+2005-12-06 13:58  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=486007&amp;view=rev">486007</A>]  ivor<br>
+
+lib/catalog/catalog.cpp: Fix db-open return code equality typo
+from change [480504]<br><br>
+
+2005-12-04 21:03  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=485544&amp;view=rev">485544</A>]  neundorf<br>
+
+buildtools/custommakefiles/customprojectpart.cpp,
+buildtools/custommakefiles/customprojectpart.h: -fix parsing of
+makefiles containing variables -fix add/remove file from project
+Alex<br><br>
+
+2005-11-30 22:49  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=484476&amp;view=rev">484476</A>]  mpyne<br>
+
+lib/cppparser/lexer.h: Backport annma's fix for KDevelop bug 88181
+(Inaccurate listing of project TODOs) to KDE 3.5. BUG:88181<br><br>
+
+<br>

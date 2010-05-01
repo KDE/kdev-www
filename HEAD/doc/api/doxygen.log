@@ -1,0 +1,489 @@
+Error: Tag file `kresources.tag' does not exist or is not a file. Skipping it...
+/home/amilcar/kdevelop/kdevelop_trunk/kdeui.tag:47963 Duplicate anchor usage found
+
+Error: Tag file `ktexteditor' does not exist or is not a file. Skipping it...
+/home/amilcar/kdevelop/kdevelop_trunk/interfaces.tag:1149 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/language.tag:4356 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/outputview.tag:14 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/project.tag:490 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/shell.tag:1263 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/sublime.tag:1050 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/util.tag:246 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/vcs.tag:1360 Duplicate anchor desc found
+
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/tokens.h:24 Warning: the name `tokens.h' supplied as the second argument in the \file statement matches the following input files:
+   /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/debugger/mi/tokens.h
+   /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/tokens.h
+Please use a more specific name by including a (larger) part of the path!
+/home/amilcar/kdevelop/kdevelop_trunk/buildtools/managers/automake/automake_lex.cpp:530 Warning: the name `autotools.ll' supplied as the second argument in the \file statement is not an input file
+/home/amilcar/kdevelop/kdevelop_trunk/buildtools/managers/automake/automakeast.h:28 Warning: the name `autotools.h' supplied as the second argument in the \file statement is not an input file
+/home/amilcar/kdevelop/kdevelop_trunk/buildtools/managers/automake/automakedriver.h:30 Warning: the name `autotoolsdriver.h' supplied as the second argument in the \file statement is not an input file
+/home/amilcar/kdevelop/kdevelop_trunk/buildtools/managers/automake/automakeparser.cpp:143 Warning: the name `autotools.yy' supplied as the second argument in the \file statement is not an input file
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/Mainpage.dox:1 Warning: the name `Mainpage.dox' supplied as the second argument in the \file statement matches the following input files:
+   /home/amilcar/kdevelop/kdevelop_trunk/doc/api/Mainpage.dox
+   kdecore.tag:/usr/local/src/kde-4.x/kdelibs/kdecore/Mainpage.dox
+   kdeui.tag:/usr/local/src/kde-4.x/kdelibs/kdeui/Mainpage.dox
+   khtml.tag:/usr/local/src/kde-4.x/kdelibs/khtml/Mainpage.dox
+   kio.tag:/usr/local/src/kde-4.x/kdelibs/kio/Mainpage.dox
+   kjs.tag:/usr/local/src/kde-4.x/kdelibs/kjs/Mainpage.dox
+   kparts.tag:/usr/local/src/kde-4.x/kdelibs/kparts/Mainpage.dox
+   kutils.tag:/usr/local/src/kde-4.x/kdelibs/kutils/Mainpage.dox
+Please use a more specific name by including a (larger) part of the path!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::AggregateModel not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::Area not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::AreaIndex not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::RootAreaIndex not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::Container not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::Controller not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::Document not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::MainWindow not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::MainWindowOperator not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::Switcher not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::ToolFactory not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::SimpleToolWidgetFactory not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::ToolDocument not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::UrlDocument not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::View not found!
+<unknown>:1 Warning: Internal inconsistency: scope for class Sublime::ViewWidgetCreator not found!
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:376 Warning: Internal inconsistency: scope for class Utils::Set::Iterator::IteratorPrivate not found!
+<unknown>:1 Warning: documented function `class' was not declared or defined.
+/home/amilcar/kdevelop/kdevelop_trunk/src/kdev3Tokdev4/projectsession.cpp:166 Warning: no matching class member found for
+  void ProjectSession::recreateViews(KUrl &url, const QDomElement &docEl, bool activate)
+Possible candidates:
+  void ProjectSession::recreateViews(KUrl &url, QDomElement docEl, bool activate)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppcodecompletionmodel.cpp:395 Warning: no matching class member found for
+  void CppCodeCompletionModel::executeCompletionItem2(Document *document, const Range &word, const QModelIndex &index) const
+Possible candidates:
+  virtual void CppCodeCompletionModel::executeCompletionItem2(KTextEditor::Document *document, const KTextEditor::Range &word, const QModelIndex &index) const 
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cppeditorintegrator.cpp:65 Warning: no matching class member found for
+  SimpleRange CppEditorIntegrator::findRange(size_t start_token, size_t end_token)
+Possible candidates:
+  KDevelop::SimpleRange CppEditorIntegrator::findRange(AST *node, RangeEdge=OuterEdge)
+  KDevelop::SimpleRange CppEditorIntegrator::findRange(AST *from, AST *to)
+  KDevelop::SimpleRange CppEditorIntegrator::findRange(const Token &token)
+  KDevelop::SimpleRange CppEditorIntegrator::findRange(std::size_t token)
+  KDevelop::SimpleRange CppEditorIntegrator::findRange(std::size_t start_token, std::size_t end_token)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:200 Warning: no uniquely matching class member found for
+  void CppClassType::accept0(TypeVisitor *v) const
+Possible candidates:
+  virtual void CppClassType::accept0(KDevelop::TypeVisitor *v) const  at line 284 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:256 Warning: no uniquely matching class member found for
+  void CppTypeAliasType::setType(AbstractType::Ptr type)
+Possible candidates:
+  void CppTypeAliasType::setType(KDevelop::AbstractType::Ptr type) at line 312 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:283 Warning: no matching class member found for
+  CppClassType::CppClassType(Declaration::CVSpecs spec)
+Possible candidates:
+  CppClassType::CppClassType(KDevelop::Declaration::CVSpecs spec=KDevelop::Declaration::CVNone)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:287 Warning: no matching class member found for
+  CppConstantIntegralType::CppConstantIntegralType(CppIntegralType::IntegralTypes type, CppConstantIntegralType::TypeModifiers modifiers)
+Possible candidates:
+  CppConstantIntegralType::CppConstantIntegralType(IntegralTypes type, CppIntegralType::TypeModifiers modifiers=ModifierNone)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:416 Warning: no matching class member found for
+  CppCVType::CppCVType(Declaration::CVSpecs spec)
+Possible candidates:
+  CppCVType::CppCVType(KDevelop::Declaration::CVSpecs spec=KDevelop::Declaration::CVNone)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:431 Warning: no matching class member found for
+  CppPointerType::CppPointerType(Declaration::CVSpecs spec)
+Possible candidates:
+  CppPointerType::CppPointerType(KDevelop::Declaration::CVSpecs spec=KDevelop::Declaration::CVNone)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:441 Warning: no matching class member found for
+  CppReferenceType::CppReferenceType(Declaration::CVSpecs spec)
+Possible candidates:
+  CppReferenceType::CppReferenceType(KDevelop::Declaration::CVSpecs spec=KDevelop::Declaration::CVNone)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:507 Warning: no matching class member found for
+  void CppClassType::addElement(AbstractType::Ptr element)
+Possible candidates:
+  virtual void CppClassType::addElement(KDevelop::AbstractType::Ptr element)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cpptypes.cpp:546 Warning: no matching class member found for
+  CppEnumerationType::CppEnumerationType(Declaration::CVSpecs spec)
+Possible candidates:
+  CppEnumerationType::CppEnumerationType(KDevelop::Declaration::CVSpecs spec=KDevelop::Declaration::CVNone)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/declarationbuilder.cpp:582 Warning: no matching class member found for
+  void DeclarationBuilder::classTypeOpened(AbstractType::Ptr type)
+Possible candidates:
+  virtual void DeclarationBuilder::classTypeOpened(KDevelop::AbstractType::Ptr)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/declarationbuilder.cpp:800 Warning: no matching class member found for
+  QualifiedIdentifier DeclarationBuilder::resolveNamespaceIdentifier(const KDevelop::QualifiedIdentifier &identifier, const SimpleCursor &position)
+Possible candidates:
+  QualifiedIdentifier DeclarationBuilder::resolveNamespaceIdentifier(const QualifiedIdentifier &identifier, const KDevelop::SimpleCursor &position)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:33 Warning: no uniquely matching class member found for
+  void DumpTypes::dump(const AbstractType *type)
+Possible candidates:
+  void DumpTypes::dump(const KDevelop::AbstractType *type) at line 31 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:39 Warning: no matching class member found for
+  bool DumpTypes::preVisit(const AbstractType *type)
+Possible candidates:
+  virtual bool DumpTypes::preVisit(const KDevelop::AbstractType *type)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:46 Warning: no matching class member found for
+  void DumpTypes::postVisit(const AbstractType *)
+Possible candidates:
+  virtual void DumpTypes::postVisit(const KDevelop::AbstractType *)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:51 Warning: no uniquely matching class member found for
+  void DumpTypes::visit(const IntegralType *)
+Possible candidates:
+  virtual void DumpTypes::visit(const KDevelop::IntegralType *) at line 37 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::AbstractType *) at line 39 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::PointerType *type) at line 41 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ReferenceType *type) at line 44 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::FunctionType *type) at line 47 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::StructureType *type) at line 50 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ArrayType *type) at line 53 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:60 Warning: no uniquely matching class member found for
+  bool DumpTypes::visit(const PointerType *type)
+Possible candidates:
+  virtual void DumpTypes::visit(const KDevelop::IntegralType *) at line 37 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::AbstractType *) at line 39 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::PointerType *type) at line 41 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ReferenceType *type) at line 44 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::FunctionType *type) at line 47 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::StructureType *type) at line 50 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ArrayType *type) at line 53 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:65 Warning: no matching class member found for
+  void DumpTypes::endVisit(const PointerType *)
+Possible candidates:
+  virtual void DumpTypes::endVisit(const KDevelop::PointerType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ReferenceType *)
+  virtual void DumpTypes::endVisit(const KDevelop::FunctionType *)
+  virtual void DumpTypes::endVisit(const KDevelop::StructureType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ArrayType *)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:69 Warning: no uniquely matching class member found for
+  bool DumpTypes::visit(const ReferenceType *type)
+Possible candidates:
+  virtual void DumpTypes::visit(const KDevelop::IntegralType *) at line 37 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::AbstractType *) at line 39 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::PointerType *type) at line 41 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ReferenceType *type) at line 44 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::FunctionType *type) at line 47 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::StructureType *type) at line 50 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ArrayType *type) at line 53 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:74 Warning: no matching class member found for
+  void DumpTypes::endVisit(const ReferenceType *)
+Possible candidates:
+  virtual void DumpTypes::endVisit(const KDevelop::PointerType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ReferenceType *)
+  virtual void DumpTypes::endVisit(const KDevelop::FunctionType *)
+  virtual void DumpTypes::endVisit(const KDevelop::StructureType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ArrayType *)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:78 Warning: no uniquely matching class member found for
+  bool DumpTypes::visit(const FunctionType *type)
+Possible candidates:
+  virtual void DumpTypes::visit(const KDevelop::IntegralType *) at line 37 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::AbstractType *) at line 39 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::PointerType *type) at line 41 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ReferenceType *type) at line 44 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::FunctionType *type) at line 47 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::StructureType *type) at line 50 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ArrayType *type) at line 53 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:83 Warning: no matching class member found for
+  void DumpTypes::endVisit(const FunctionType *)
+Possible candidates:
+  virtual void DumpTypes::endVisit(const KDevelop::PointerType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ReferenceType *)
+  virtual void DumpTypes::endVisit(const KDevelop::FunctionType *)
+  virtual void DumpTypes::endVisit(const KDevelop::StructureType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ArrayType *)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:87 Warning: no uniquely matching class member found for
+  bool DumpTypes::visit(const StructureType *type)
+Possible candidates:
+  virtual void DumpTypes::visit(const KDevelop::IntegralType *) at line 37 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::AbstractType *) at line 39 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::PointerType *type) at line 41 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ReferenceType *type) at line 44 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::FunctionType *type) at line 47 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::StructureType *type) at line 50 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ArrayType *type) at line 53 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:92 Warning: no matching class member found for
+  void DumpTypes::endVisit(const StructureType *)
+Possible candidates:
+  virtual void DumpTypes::endVisit(const KDevelop::PointerType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ReferenceType *)
+  virtual void DumpTypes::endVisit(const KDevelop::FunctionType *)
+  virtual void DumpTypes::endVisit(const KDevelop::StructureType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ArrayType *)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:96 Warning: no uniquely matching class member found for
+  bool DumpTypes::visit(const ArrayType *type)
+Possible candidates:
+  virtual void DumpTypes::visit(const KDevelop::IntegralType *) at line 37 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::AbstractType *) at line 39 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::PointerType *type) at line 41 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ReferenceType *type) at line 44 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::FunctionType *type) at line 47 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::StructureType *type) at line 50 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+  virtual bool DumpTypes::visit(const KDevelop::ArrayType *type) at line 53 of file /home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.h
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:101 Warning: no matching class member found for
+  void DumpTypes::endVisit(const ArrayType *)
+Possible candidates:
+  virtual void DumpTypes::endVisit(const KDevelop::PointerType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ReferenceType *)
+  virtual void DumpTypes::endVisit(const KDevelop::FunctionType *)
+  virtual void DumpTypes::endVisit(const KDevelop::StructureType *)
+  virtual void DumpTypes::endVisit(const KDevelop::ArrayType *)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/dumptypes.cpp:106 Warning: no matching class member found for
+  bool DumpTypes::seen(const AbstractType *type)
+Possible candidates:
+  bool DumpTypes::seen(const KDevelop::AbstractType *type)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/name_visitor.cpp:42 Warning: no matching class member found for
+  NameASTVisitor::NameASTVisitor(ParseSession *session, Cpp::ExpressionVisitor *visitor, const KDevelop::DUContext *context, const QList &trace, const SimpleCursor &position, KDevelop::DUContext::SearchFlags localSearchFlags, bool debug)
+Possible candidates:
+  NameASTVisitor::NameASTVisitor(ParseSession *session, Cpp::ExpressionVisitor *visitor, const KDevelop::DUContext *context, const KDevelop::ImportTrace &trace, const KDevelop::SimpleCursor &position, KDevelop::DUContext::SearchFlags localSearchFlags=KDevelop::DUContext::NoSearchFlags, bool debug=false)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:411 Warning: documented function `Utils::Set::Iterator::Iterator' was not declared or defined.
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:414 Warning: documented function `Set::Iterator & Utils::Set::Iterator::operator=' was not declared or defined.
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:419 Warning: documented function `Utils::Set::Iterator::Iterator' was not declared or defined.
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:422 Warning: documented function `Utils::Set::Iterator::~Iterator' was not declared or defined.
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:425 Warning: documented function `Utils::Set::Iterator::operator bool' was not declared or defined.
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:429 Warning: no matching file member found for 
+Set::Iterator & Utils::Set::Iterator::operator++()
+Possible candidates:
+  KIconLoader::Group & operator++(KIconLoader::Group &group)
+  KIconLoader::Group operator++(KIconLoader::Group &group, int)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:451 Warning: documented function `BasicSetRepository::Index Utils::Set::Iterator::operator*' was not declared or defined.
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typebuilder.cpp:103 Warning: no matching class member found for
+  void TypeBuilder::openAbstractType(AbstractType::Ptr type, AST *node)
+Possible candidates:
+  void TypeBuilder::openAbstractType(KDevelop::AbstractType::Ptr type, AST *node)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typerepository.cpp:73 Warning: no matching class member found for
+  CppIntegralType::Ptr TypeRepository::integral(CppIntegralType::IntegralTypes type, CppIntegralType::TypeModifiers modifiers, Declaration::CVSpecs cv) const
+Possible candidates:
+  CppIntegralType::Ptr TypeRepository::integral(CppIntegralType::IntegralTypes type, CppIntegralType::TypeModifiers modifiers=CppIntegralType::ModifierNone, KDevelop::Declaration::CVSpecs cv=KDevelop::Declaration::CVNone) const 
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typerepository.cpp:174 Warning: no matching class member found for
+  AbstractType::Ptr TypeRepository::registerType(AbstractType::Ptr input)
+Possible candidates:
+  KDevelop::AbstractType::Ptr TypeRepository::registerType(KDevelop::AbstractType::Ptr input)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typerepository.cpp:273 Warning: no matching class member found for
+  AbstractType::Ptr TypeRepository::registerFunction(KSharedPtr< CppFunctionType > input)
+Possible candidates:
+  KDevelop::AbstractType::Ptr TypeRepository::registerFunction(CppFunctionType::Ptr input)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typerepository.cpp:335 Warning: no matching class member found for
+  AbstractType::Ptr TypeRepository::registerArray(ArrayType::Ptr input)
+Possible candidates:
+  KDevelop::AbstractType::Ptr TypeRepository::registerArray(KDevelop::ArrayType::Ptr input)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.cpp:821 Warning: no matching class member found for
+  QPair< QPair< QString, SimpleRange >, QString > CppLanguageSupport::cursorIdentifier(const KUrl &url, const SimpleCursor &position) const
+Possible candidates:
+  QPair< QPair< QString, KDevelop::SimpleRange >, QString > CppLanguageSupport::cursorIdentifier(const KUrl &url, const KDevelop::SimpleCursor &position) const 
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.cpp:845 Warning: no matching class member found for
+  QPair< SimpleRange, rpp::pp_macro > CppLanguageSupport::usedMacroForPosition(const KUrl &url, const SimpleCursor &position)
+Possible candidates:
+  QPair< KDevelop::SimpleRange, rpp::pp_macro > CppLanguageSupport::usedMacroForPosition(const KUrl &url, const KDevelop::SimpleCursor &position)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.cpp:893 Warning: no matching class member found for
+  SimpleRange CppLanguageSupport::specialLanguageObjectRange(const KUrl &url, const SimpleCursor &position)
+Possible candidates:
+  virtual KDevelop::SimpleRange CppLanguageSupport::specialLanguageObjectRange(const KUrl &url, const KDevelop::SimpleCursor &position)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.cpp:898 Warning: no matching class member found for
+  QPair< KUrl, KDevelop::SimpleCursor > CppLanguageSupport::specialLanguageObjectJumpCursor(const KUrl &url, const SimpleCursor &position)
+Possible candidates:
+  virtual QPair< KUrl, KDevelop::SimpleCursor > CppLanguageSupport::specialLanguageObjectJumpCursor(const KUrl &url, const KDevelop::SimpleCursor &position)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.cpp:907 Warning: no matching class member found for
+  QWidget * CppLanguageSupport::specialLanguageObjectNavigationWidget(const KUrl &url, const SimpleCursor &position)
+Possible candidates:
+  virtual QWidget * CppLanguageSupport::specialLanguageObjectNavigationWidget(const KUrl &url, const KDevelop::SimpleCursor &position)
+/home/amilcar/kdevelop/kdevelop_trunk/buildtools/managers/automake/automakedriver.cpp:56 Warning: no matching class member found for
+  int AutoMake::Driver::parseFile(const KUrl &fileName, ProjectAST **ast)
+Possible candidates:
+  static int AutoMake::Driver::parseFile(const char *fileName, ProjectAST **ast)
+  static int AutoMake::Driver::parseFile(const QString &fileName, ProjectAST **ast)
+  static int AutoMake::Driver::parseFile(KUrl fileName, ProjectAST **ast)
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/Mainpage.dox:5 Warning: unable to resolve reference to `architecture' for \ref command
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/lexer.h:164 Warning: unable to resolve reference to `token_stream' for \ref command
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/contextbuilder.h:68 Warning: The following parameters of removeContext(QList< LineContextPair > &lineContexts, TopDUContext *context) are not documented:
+  parameter lineContexts
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/contextbuilder.h:68 Warning: The following parameters of removeContext(QList< LineContextPair > &lineContexts, TopDUContext *context) are not documented:
+  parameter lineContexts
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:70 Warning: Found unknown command `\ExpressionStatement'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:71 Warning: Found unknown command `\BinaryExpression'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:72 Warning: Found unknown command `\PostfixExpression'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:73 Warning: Found unknown command `\PrimaryExpression'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:74 Warning: Found unknown command `\Name'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:75 Warning: Found unknown command `\UnqualifiedName'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:79 Warning: Found unknown command `\ClassMemberAccess'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:80 Warning: Found unknown command `\Name'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:81 Warning: Found unknown command `\UnqualifiedName'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:86 Warning: Found unknown command `\PrimaryExpression'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpphighlighting.h:44 Error: Unexpected character `9'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpphighlighting.h:44 Error: Unexpected character `5'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/quickopen.cpp:54 Warning: The following parameters of getInclusionPath(QSet< const DUContext * > &used, const DUContext *context, const DUContext *import) are not documented:
+  parameter context
+  parameter import
+/home/amilcar/kdevelop/kdevelop_trunk/src/shell.dox:12 Warning: unable to resolve reference to `ShellExtension' for \ref command
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/HowToAddApplicationTemplates.dox:75 Warning: included file khello/khello is not found. Check your EXAMPLE_PATH
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/HowToAddApplicationTemplates.dox:111 Warning: included file khello/src-Makefile.am is not found. Check your EXAMPLE_PATH
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/HowToAddApplicationTemplates.dox:118 Warning: included file khello/script is not found. Check your EXAMPLE_PATH
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/HowToAddApplicationTemplates.dox:177 Warning: included file khello/Makefile.am is not found. Check your EXAMPLE_PATH
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/HowToAddProgrammingLanguages.dox:21 Warning: unable to resolve reference to `EditorsSupportStatus' for \ref command
+/home/amilcar/kdevelop/kdevelop_trunk/doc/api/HowToDocument.dox:32 Warning: included file languages/cpp/app_templates/kdevpart/README.dox is not found. Check your EXAMPLE_PATH
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/contextbuilder.h:91 Warning: The following parameters of ContextBuilder::buildContexts(const Cpp::EnvironmentFilePointer &file, AST *node, IncludeFileList *includes=0, const TopDUContextPointer &updateContext=TopDUContextPointer(), bool removeOldImports=true) are not documented:
+  parameter file
+  parameter node
+  parameter updateContext
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/contextbuilder.h:100 Warning: The following parameters of ContextBuilder::buildSubContexts(const HashedString &url, AST *node, KDevelop::DUContext *parent=0) are not documented:
+  parameter node
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/contextbuilder.h:112 Warning: The following parameters of ContextBuilder::supportBuild(AST *node, KDevelop::DUContext *context=0) are not documented:
+  parameter node
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/contextbuilder.h:135 Warning: The following parameters of ContextBuilder::identifierForName(NameAST *id, TypeSpecifierAST **typeSpecifier=0) const are not documented:
+  parameter id
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/contextbuilder.h:158 Warning: The following parameters of ContextBuilder::openPrefixContext(ClassSpecifierAST *ast, const QualifiedIdentifier &id) are not documented:
+  parameter ast
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpphighlighting.h:116 Warning: The following parameters of CppHighlighting::typeForDeclaration(KDevelop::Declaration *dec, KDevelop::DUContext *context) const are not documented:
+  parameter dec
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.h:91 Warning: explicit link request to 'include_next' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.h:92 Warning: explicit link request to 'include_next' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.h:90 Warning: The following parameters of CppLanguageSupport::findInclude(const KUrl::List &includePaths, const KUrl &localPath, const QString &includeName, int includeType, const KUrl &skipPath, bool quiet=false) const are not documented:
+  parameter includePaths
+  parameter includeName
+  parameter includeType
+  parameter quiet
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.h:97 Warning: The following parameters of CppLanguageSupport::allFilesInIncludePath(const KUrl &source, bool local, const QString &addPath) const are not documented:
+  parameter source
+  parameter local
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cpplanguagesupport.h:103 Warning: The following parameters of CppLanguageSupport::findIncludePaths(const KUrl &source, QList< KDevelop::ProblemPointer > *problems) const are not documented:
+  parameter source
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppparsejob.h:53 Warning: The following parameters of CPPParseJob::CPPParseJob(const KUrl &url, CppLanguageSupport *parent, PreprocessJob *parentPreprocessor=0) are not documented:
+  parameter url
+  parameter parent
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/declarationbuilder.h:44 Warning: The following parameters of DeclarationBuilder::buildDeclarations(const Cpp::EnvironmentFilePointer &file, AST *node, IncludeFileList *includes=0, const TopDUContextPointer &updateContext=TopDUContextPointer(), bool removeOldImports=true) are not documented:
+  parameter file
+  parameter node
+  parameter updateContext
+  parameter removeOldImports
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/declarationbuilder.h:52 Warning: The following parameters of DeclarationBuilder::buildSubDeclarations(const HashedString &url, AST *node, KDevelop::DUContext *parent=0) are not documented:
+  parameter node
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/declarationbuilder.h:91 Warning: The following parameters of DeclarationBuilder::openDeclaration(NameAST *name, AST *range, bool isFunction=false, bool isForward=false, bool isDefinition=false, bool isNamespaceAlias=false, const Identifier &customName=Identifier()) are not documented:
+  parameter isFunction
+  parameter isForward
+  parameter isDefinition
+  parameter isNamespaceAlias
+  parameter customName
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:55 Warning: explicit link request to 'included' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/headergen/main.cpp:131 Warning: The following parameters of HeaderGenerator::sourceNeeded(QString &fileName, IncludeType type, int sourceLine, bool skipCurrentPath) are not documented:
+  parameter sourceLine
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/lexer.h:164 Warning: unable to resolve reference to `token_stream' for \ref command
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/lexer.h:155 Warning: argument `token_stream' of command @param is not found in the argument list of Lexer::Lexer(Control *control)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/lexer.h:155 Warning: argument `location_table' of command @param is not found in the argument list of Lexer::Lexer(Control *control)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/lexer.h:155 Warning: argument `line_table' of command @param is not found in the argument list of Lexer::Lexer(Control *control)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/lexer.h:155 Warning: The following parameters of Lexer::Lexer(Control *control) are not documented:
+  parameter control
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/lexer.h:164 Warning: unable to resolve reference to `token_stream' for \ref command
+/home/amilcar/kdevelop/kdevelop_trunk/buildtools/builders/makebuilder/makebuilder.h:76 Warning: Found unknown command `\TODO'
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/parser.h:67 Warning: The following parameters of Parser::parseTypeOrExpression(ParseSession *session, bool forceExpression=false) are not documented:
+  parameter session
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:55 Warning: explicit link request to 'included' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/preprocessjob.h:65 Warning: The following parameters of PreprocessJob::sourceNeeded(QString &fileName, IncludeType type, int sourceLine, bool skipCurrentPath) are not documented:
+  parameter sourceLine
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:64 Warning: explicit link request to 'include' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:64 Warning: explicit link request to 'define' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:64 Warning: explicit link request to 'ifdef' could not be resolved
+<unknown>:1 Warning: explicit link request to 'ifdef' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typebuilder.h:50 Warning: The following parameters of TypeBuilder::supportBuild(AST *node, KDevelop::DUContext *context=0) are not documented:
+  parameter node
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/usebuilder.h:36 Warning: argument `includes' of command @param is not found in the argument list of UseBuilder::buildUses(AST *node)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/usebuilder.h:36 Warning: The following parameters of UseBuilder::buildUses(AST *node) are not documented:
+  parameter node
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/usebuilder.h:44 Warning: The following parameters of UseBuilder::newUse(std::size_t start_token, std::size_t end_token, KDevelop::Declaration *decl) are not documented:
+  parameter start_token
+  parameter end_token
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cppduchain.h:51 Warning: The following parameters of Cpp::findDeclarationsSameLevel(KDevelop::DUContext *context, const KDevelop::QualifiedIdentifier &identifier, const KDevelop::SimpleCursor &position) are not documented:
+  parameter position
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/cppduchain.h:44 Warning: The following parameters of Cpp::findLocalDeclarations(KDevelop::DUContext *context, const KDevelop::QualifiedIdentifier &identifier, const KDevelop::TopDUContext *topContext) are not documented:
+  parameter context
+  parameter identifier
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/templatedeclaration.h:153 Warning: argument `templateArguments' of command @param is not found in the argument list of Cpp::instantiateDeclarationContext(KDevelop::DUContext *parentContext, const ImportTrace &inclusionTrace, KDevelop::DUContext *context, const QList< ExpressionEvaluationResult > &_templateArguments, Declaration *instantiatedDeclaration, Declaration *instantiatedFrom)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/templatedeclaration.h:153 Warning: The following parameters of Cpp::instantiateDeclarationContext(KDevelop::DUContext *parentContext, const ImportTrace &inclusionTrace, KDevelop::DUContext *context, const QList< ExpressionEvaluationResult > &_templateArguments, Declaration *instantiatedDeclaration, Declaration *instantiatedFrom) are not documented:
+  parameter _templateArguments
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/codecompletioncontext.h:80 Warning: argument `firstContext' of command @param is not found in the argument list of Cpp::CodeCompletionContext::CodeCompletionContext(KDevelop::DUContextPointer context, const QString &text, int depth=0, const QStringList &knownArgumentExpressions=QStringList(), int line=-1)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/codecompletioncontext.h:80 Warning: The following parameters of Cpp::CodeCompletionContext::CodeCompletionContext(KDevelop::DUContextPointer context, const QString &text, int depth=0, const QStringList &knownArgumentExpressions=QStringList(), int line=-1) are not documented:
+  parameter context
+  parameter depth
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionparser.h:90 Warning: argument `exp' of command @param is not found in the argument list of Cpp::ExpressionParser::evaluateType(const QByteArray &expression, DUContextPointer context, const KDevelop::ImportTrace &trace=KDevelop::ImportTrace(), bool forceExpression=false)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionparser.h:90 Warning: argument `debug' of command @param is not found in the argument list of Cpp::ExpressionParser::evaluateType(const QByteArray &expression, DUContextPointer context, const KDevelop::ImportTrace &trace=KDevelop::ImportTrace(), bool forceExpression=false)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionparser.h:90 Warning: The following parameters of Cpp::ExpressionParser::evaluateType(const QByteArray &expression, DUContextPointer context, const KDevelop::ImportTrace &trace=KDevelop::ImportTrace(), bool forceExpression=false) are not documented:
+  parameter expression
+  parameter trace
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionparser.h:114 Warning: argument `debug' of command @param is not found in the argument list of Cpp::ExpressionParser::evaluateType(AST *ast, ParseSession *session, const KDevelop::ImportTrace &trace=KDevelop::ImportTrace())
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionparser.h:114 Warning: The following parameters of Cpp::ExpressionParser::evaluateType(AST *ast, ParseSession *session, const KDevelop::ImportTrace &trace=KDevelop::ImportTrace()) are not documented:
+  parameter session
+  parameter trace
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.h:49 Warning: The following parameters of Cpp::ExpressionVisitor::ExpressionVisitor(ParseSession *session, const KDevelop::ImportTrace &inclusionTrace=KDevelop::ImportTrace(), bool strict=false) are not documented:
+  parameter session
+  parameter inclusionTrace
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.h:90 Warning: argument `decl' of command @param is not found in the argument list of Cpp::ExpressionVisitor::expressionType(AST *node, const AbstractType::Ptr &type, Instance instance)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.h:90 Warning: argument `decl' of command @param is not found in the argument list of Cpp::ExpressionVisitor::expressionType(AST *node, const AbstractType::Ptr &type, Instance instance)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:236 Warning: argument `type' of command @param is not found in the argument list of Cpp::ExpressionVisitor::findMember(AST *node, AbstractType::Ptr base, const QualifiedIdentifier &member, bool isConst=false, bool postProblem=true)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:236 Warning: argument `postError' of command @param is not found in the argument list of Cpp::ExpressionVisitor::findMember(AST *node, AbstractType::Ptr base, const QualifiedIdentifier &member, bool isConst=false, bool postProblem=true)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/expressionvisitor.cpp:236 Warning: The following parameters of Cpp::ExpressionVisitor::findMember(AST *node, AbstractType::Ptr base, const QualifiedIdentifier &member, bool isConst=false, bool postProblem=true) are not documented:
+  parameter base
+  parameter postProblem
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/navigationwidget.h:49 Warning: The following parameters of Cpp::NavigationWidget::NavigationWidget(KDevelop::DeclarationPointer declaration, KDevelop::TopDUContextPointer topContext, const QString &htmlPrefix=QString(), const QString &htmlSuffix=QString()) are not documented:
+  parameter declaration
+  parameter topContext
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/navigationwidget.h:56 Warning: The following parameters of Cpp::NavigationWidget::NavigationWidget(const IncludeItem &includeItem, KDevelop::TopDUContextPointer topContext, const QString &htmlPrefix=QString(), const QString &htmlSuffix=QString()) are not documented:
+  parameter includeItem
+  parameter topContext
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/navigationwidget.h:63 Warning: The following parameters of Cpp::NavigationWidget::NavigationWidget(const rpp::pp_macro &macro, const QString &preprocessedBody=QString(), const QString &htmlPrefix=QString(), const QString &htmlSuffix=QString()) are not documented:
+  parameter macro
+  parameter preprocessedBody
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/overloadresolution.h:85 Warning: argument `container' of command @param is not found in the argument list of Cpp::OverloadResolver::OverloadResolver(DUContextPointer context, TopDUContextPointer topContext)
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/overloadresolution.h:85 Warning: The following parameters of Cpp::OverloadResolver::OverloadResolver(DUContextPointer context, TopDUContextPointer topContext) are not documented:
+  parameter context
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/overloadresolution.h:109 Warning: The following parameters of Cpp::OverloadResolver::resolveConstructor(const ParameterList &params, bool implicit=false, bool noUserDefinedConversion=false) are not documented:
+  parameter params
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/overloadresolution.h:132 Warning: The following parameters of Cpp::OverloadResolver::resolveListOffsetted(const ParameterList &params, const QList< QPair< OverloadResolver::ParameterList, Declaration * > > &declarations, bool partial) are not documented:
+  parameter params
+  parameter declarations
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/overloadresolution.h:152 Warning: The following parameters of Cpp::OverloadResolver::matchParameterTypes(AbstractType *argumentType, AbstractType *parameterType, QMap< QString, AbstractType::Ptr > &instantiatedTypes) const are not documented:
+  parameter instantiatedTypes
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typeconversion.cpp:61 Warning: The following parameters of Cpp::TypeConversion::implicitConversion(AbstractType::Ptr from, AbstractType::Ptr to, bool fromLValue=true, bool noUserDefinedConversion=false) are not documented:
+  parameter noUserDefinedConversion
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typeconversion.h:106 Warning: The following parameters of Cpp::TypeConversion::userDefinedConversion(AbstractType::Ptr from, AbstractType::Ptr to, bool fromLValue, bool secondConversionIsIdentity=false) are not documented:
+  parameter from
+  parameter to
+  parameter fromLValue
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/viablefunctions.h:46 Warning: The following parameters of Cpp::ViableFunction::matchParameters(const OverloadResolver::ParameterList &params, bool partial=false) are not documented:
+  parameter params
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/includepathresolver.cpp:73 Warning: The following parameters of CppTools::FileModificationTimeWrapper::FileModificationTimeWrapper(const QStringList &files=QStringList(), const QString &workingDirectory=QString()) are not documented:
+  parameter workingDirectory
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/environmentmanager.h:113 Warning: explicit link request to 'ifndef' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/environmentmanager.h:114 Warning: explicit link request to 'define' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/environmentmanager.h:116 Warning: explicit link request to 'endif' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/environmentmanager.h:117 Warning: explicit link request to 'include' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/environmentmanager.h:121 Warning: explicit link request to 'include' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/environmentmanager.h:124 Warning: explicit link request to 'include' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/environmentmanager.h:125 Warning: explicit link request to 'include' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/pp-engine.h:186 Warning: The following parameters of rpp::pp::processFile(const QString &fileName, StringType stringType, const QByteArray &data=QByteArray()) are not documented:
+  parameter fileName
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/pp-location.h:47 Warning: The following parameters of rpp::LocationTable::splitByAnchors(const QByteArray &text, const KDevelop::SimpleCursor &textStartPosition, QList< QByteArray > &strings, QList< KDevelop::SimpleCursor > &anchors) const are not documented:
+  parameter strings
+  parameter anchors
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:55 Warning: explicit link request to 'included' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:46 Warning: The following parameters of rpp::Preprocessor::sourceNeeded(QString &fileName, IncludeType type, int sourceLine, bool skipCurrentPath) are not documented:
+  parameter sourceLine
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:64 Warning: explicit link request to 'include' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:64 Warning: explicit link request to 'define' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/parser/rpp/preprocessor.h:64 Warning: explicit link request to 'ifdef' could not be resolved
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typeutils.h:143 Warning: The following parameters of TypeUtils::getMemberFunctions(CppClassType *klass, const TopDUContext *topContext, QHash< CppFunctionType *, ClassFunctionDeclaration * > &functions, const QString &functionName, bool mustBeConstant=false) are not documented:
+  parameter topContext
+  parameter mustBeConstant
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typeutils.h:135 Warning: The following parameters of TypeUtils::isPublicBaseClass(const CppClassType *c, CppClassType *base, int *baseConversionLevels=0) are not documented:
+  parameter c
+  parameter base
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typeutils.h:39 Warning: The following parameters of TypeUtils::realType(AbstractType *type, const TopDUContext *topContext, bool *constant=0) are not documented:
+  parameter type
+  parameter topContext
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/typeutils.h:62 Warning: The following parameters of TypeUtils::targetType(AbstractType *type, const TopDUContext *topContext, bool *constant=0) are not documented:
+  parameter type
+  parameter topContext
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/stringhelpers.h:51 Warning: The following parameters of Utils::expressionAt(const QString &contents, int index) are not documented:
+  parameter contents
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/stringhelpers.h:45 Warning: The following parameters of Utils::skipFunctionArguments(QString str, QStringList &skippedArguments, int &argumentsStart) are not documented:
+  parameter str
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.cpp:221 Warning: The following parameters of Utils::SetNode::appendIndices(Ptr &root, int count) are not documented:
+  parameter count
+/home/amilcar/kdevelop/kdevelop_trunk/languages/cpp/cppduchain/setrepository.h:195 Warning: argument `set' of command @param is not found in the argument list of Utils::SetRepository< T, Hash >::getItem(const T &item, Index *repositoryIndex, T *repositoryItem=0)
+Executing external command `dot "graph_legend.dot" -Tpng -o "graph_legend.png"`

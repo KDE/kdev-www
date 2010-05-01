@@ -1,0 +1,137 @@
+BODY			{
+				font-family: Lucida, Helvetica, Arial;
+				font-style: normal;
+				font-weight: normal;
+				color: #222222;
+				}
+
+B				{
+				font-weight: bold;
+				}
+
+I				{
+				font-style: italic;
+				}
+
+strong			{
+				font-weight: bold;
+				color: #3e91eb;
+				}
+
+H4				{
+				font-weight:  bold;
+				margin-top: 0pt;
+				margin-bottom: 0pt;
+				}
+
+H3				{
+				font-size: 120%;
+				font-weight:  bold;
+				margin-top: 12pt;
+				margin-bottom: 6pt;
+				}
+
+H2				{
+				font-size: 180%;
+				font-weight:  bold;
+				margin-top: 18pt;
+				margin-bottom: 6pt;
+				}
+
+H1				{
+				font-size: 300%;
+				font-weight:  bold;
+				margin-top: 18pt;
+				margin-bottom: 6pt;
+				}
+
+TH,TD			{
+				font-family: Lucida, Helvetica, Arial;
+				font-style: normal;
+				font-weight: normal;
+				color: #222222;
+				}
+
+TH.header		{
+				font-weight: bold;
+				background-image: url(graphics/theme1/gridhead.gif);
+				}
+
+TD.oddheader	{
+				font-weight: bold;
+				background-image: url(graphics/theme1/gridhead.gif);
+				}
+
+TD.evenheader	{
+				font-weight: bold;
+				background-image: url(graphics/theme1/gridhead.gif);
+				}
+
+TD.odd			{
+				background-image: url(graphics/theme1/grid3.gif);
+				}
+
+TD.even			{
+				background-image: url(graphics/theme1/grid2.gif);
+				}
+
+TH.menuheader	{
+				font-weight: bold;
+				}
+
+TD.menuentry	{
+				}
+
+TH.moduleheader	{
+				font-weight: bold;
+				background-image: url(graphics/theme1/menutop.gif);
+				}
+
+TH.modheadleft	{
+				font-weight: bold;
+				background-image: url(graphics/theme1/menutopleft.gif);
+				}
+
+TH.modheadright	{
+				font-weight: bold;
+				background-image: url(graphics/theme1/menutopright.gif);
+				}
+
+TD.moduleentry	{
+				text-align: left;
+				vertical-align: middle;
+				background-image: url(graphics/theme1/grid.gif);
+				}
+
+TD.modentryleft	{
+				text-align: left;
+				vertical-align: middle;
+				background-image: url(graphics/theme1/menuleft.gif);
+				}
+
+TD.fill			{
+				font-size: 30%;
+				}
+
+A:link			{
+				text-decoration:  none;
+				color: #0066aa;
+				}
+
+A:active		{
+				text-decoration:  none;
+				color: #0066aa;
+				}
+
+A:visited		{
+				text-decoration:  none;
+				color: #173789;
+				}
+
+A:hover			{
+				text-decoration:  underline;
+				}
+
+IMG				{
+				border: 0;
+				}

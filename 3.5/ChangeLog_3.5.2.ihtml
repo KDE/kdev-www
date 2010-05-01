@@ -1,0 +1,116 @@
+2008-05-13 13:56 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=807257&amp;view=rev">807257</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+
+configure.in.in, kdevelop.lsm<br>
+KDevelop 3.5.2<br>
+<br>
+2008-05-11 14:05 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=806492&amp;view=rev">806492</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+parts/appwizard/licenses/NCSA (added),<br>
+parts/appwizard/appwizarddlg.cpp, parts/appwizard/licenses/MIT<br>
+(added), parts/appwizard/licenses/Makefile.am<br>
+Add MIT and NCSA license templates. Original patch by Maciej Pilichowski BUG<br>
+
+161954<br>
+<br>
+2008-05-08 20:35 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=805593&amp;view=rev">805593</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/astyle/astyle_part.cpp<br>
+Allow .hpp as file extension for astyle. Patch by Daniel Price BUG:149584<br>
+<br>
+2008-05-08 20:31 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=805592&amp;view=rev">805592</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+buildtools/script/scriptprojectpart.h,<br>
+buildtools/script/scriptprojectpart.cpp<br>
+Improve speed of loading script projects. Patch from Johannes Jowereit BUG:<br>
+113254<br>
+<br>
+2008-05-06 12:53 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=804566&amp;view=rev">804566</a>]  Dirk Mueller &lt;mueller kde.org&gt;<br>
+vcs/subversion/subversion_widget.cpp<br>
+reshuffle a bit to avoid a compiler warning<br>
+
+<br>
+2008-04-21 14:12 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=799424&amp;view=rev">799424</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+parts/doxygen/config.cpp<br>
+More updates<br>
+<br>
+2008-04-21 13:57 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=799409&amp;view=rev">799409</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+parts/doxygen/config.cpp<br>
+
+Some more fixes from doxygen HEAD<br>
+<br>
+2008-04-16 11:10 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=797551&amp;view=rev">797551</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+parts/doxygen/config.cpp<br>
+Minimize diff to doxygen svn HEAD<br>
+<br>
+2008-04-08 20:42 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=794907&amp;view=rev">794907</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+parts/outputviews/appoutputwidget.cpp,<br>
+lib/widgets/processwidget.cpp, parts/outputviews/makewidget.cpp<br>
+When the process has exited make sure we flush our buffers BUG: 160582<br>
+<br>
+2008-04-03 22:01 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=793405&amp;view=rev">793405</a>]  Jens Dagerbo &lt;jens.dagerbo swipnet.se&gt;<br>
+parts/filelist/filelist_widget.cpp<br>
+Attempt to maintain FileList scroll position when files are opened or closed.<br>
+BUG: 160341<br>
+
+<br>
+2008-03-31 03:52 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=792057&amp;view=rev">792057</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+parts/doxygen/config.cpp, parts/doxygen/version.cpp,<br>
+parts/doxygen/config.h, parts/doxygen/version.h<br>
+Update to Doxygen 1.5.5<br>
+<br>
+2008-03-28 18:48 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=791212&amp;view=rev">791212</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+languages/cpp/debugger/debuggerpart.cpp<br>
+Hmm, seems I forgot to commit this one, output stderr output of the<br>
+application when debugging.<br>
+<br>
+2008-03-19 15:03 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=787603&amp;view=rev">787603</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/subversion/integrator/svnintegratordlgbase.ui<br>
+Add a small help label to explain what kind of url the subversion support<br>
+expects.<br>
+
+<br>
+2008-03-09 15:22 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=783786&amp;view=rev">783786</a>]  Alexander Dymo &lt;adymo kdevelop.org&gt;<br>
+lib/util/kdeveditorutil.cpp, parts/abbrev/abbrevpart.cpp<br>
+One more change I did but never committed: - fix the current word locator so<br>
+it correctly extracts words when the cursor is not at the end of the line<br>
+example ("|" denotes the cursor position: &lt;a href="pn| "&gt;&lt;/a&gt; "pn"<br>
+
+is now correctly extracted as the current word - unbreak abbreviation part so<br>
+it doesn't make KDevelop crash when abbreviation expansion happens inside the<br>
+abbrev and there's no text before and after abbrev (for example, when<br>
+"cla|ssd" is at the beginning of the line and the cursor is after "a")<br>
+<br>
+2008-03-09 15:18 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=783783&amp;view=rev">783783</a>-<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=783785&amp;view=rev">783785</a>]  Alexander Dymo &lt;adymo kdevelop.org&gt;<br>
+languages/ruby/kdevrubysupport.rc<br>
+
+languages/ruby/rubytemplates<br>
+languages/ruby/rubysupport_part.cpp,<br>
+languages/ruby/rubysupport_part.h<br>
+Add "run current test function" action to the menu<br>
+Another uncommitted ruby support-related change: - add html tags to the list<br>
+of ruby templates abbreviations<br>
+Two features for Ruby/Rails support I had on my disk but never committed: -<br>
+action to run current test method at cursor (executes things like "ruby<br>
+test/unit/foo_test.rb -n test_foo") - parser improvement to recognize method<br>
+
+end position in the file - this makes function navigator show function at the<br>
+cursor for ruby as well<br>
+<br>
+2008-03-04 17:38 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=782252&amp;view=rev">782252</a>-<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=782253&amp;view=rev">782253</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/clearcase/clearcasemanipulator.cpp<br>
+vcs/clearcase/clearcasemanipulator.cpp<br>
+Need to remember to wait for the build to finish before comitting. Fix the<br>
+
+typo.<br>
+Also add Q_OS_FREEBSD as requested from Michael Nottebrock. CCBUG:140907<br>
+<br>
+2008-02-28 17:36 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=780290&amp;view=rev">780290</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/projectconfigurationdlg.cpp<br>
+Eeek, another stupid mistake. Fix the behaviour of the "Warnings" checkbox.<br>
+<br>
+2008-02-27 21:24 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=780036&amp;view=rev">780036</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+parts/outputviews/makewidget.cpp<br>
+I hate it when I do such stupid, stupid mistakes and can't fix them before<br>
+anybody notices... This fixes empty lines in the build outputview. BUG:158236<br>
+<br>

@@ -1,0 +1,85 @@
+php_flag short_open_tag off
+# The documents to serve in case of error
+ErrorDocument 404 /error404.html
+ErrorDocument 410 /error410.html
+# These are the permanent redirects for pages that where permanently moved
+Redirect permanent /3.1/announce-kdevelop-3.1.html http://www.kdevelop.org/index.html?filename=3.1/announce-kdevelop-3.1.html
+RedirectMatch permanent ^/lang/(.*)/3\.1/announce-kdevelop-3\.1\.html$ http://www.kdevelop.org/index.html?filename=3.1/announce-kdevelop-3.1.html\&set_lang=$1
+Redirect permanent /announce-kdevelop-3.0.html http://www.kdevelop.org/index.html?filename=3.0/announce-kdevelop-3.0.html
+Redirect permanent /3.0/announce-kdevelop-3.0.html http://www.kdevelop.org/index.html?filename=3.0/announce-kdevelop-3.0.html
+RedirectMatch permanent ^/lang/(.*)/3\.0/announce-kdevelop-3\.0\.html$ http://www.kdevelop.org/index.html?filename=3.0/announce-kdevelop-3.0.html\&set_lang=$1
+Redirect permanent /announce-kdevelop-2.0.html http://www.kdevelop.org/index.html?filename=2.1/announce-kdevelop-2.0.html
+Redirect permanent /2.1/announce-kdevelop-2.0.html http://www.kdevelop.org/index.html?filename=2.1/announce-kdevelop-2.0.html
+RedirectMatch permanent ^/lang/(.*)/2\.1/announce-kdevelop-2\.0\.html$ http://www.kdevelop.org/index.html?filename=2.1/announce-kdevelop-2.0.html\&set_lang=$1
+Redirect permanent /announce-kdevelop-1.3.html http://www.kdevelop.org/index.html?filename=1.3/announce-kdevelop-1.3.html
+Redirect permanent /1.3/announce-kdevelop-1.3.html http://www.kdevelop.org/index.html?filename=1.3/announce-kdevelop-1.3.html
+RedirectMatch permanent ^/lang/(.*)/1\.3/announce-kdevelop-1\.3\.html$ http://www.kdevelop.org/index.html?filename=1.3/announce-kdevelop-1.3.html\&set_lang=$1
+Redirect permanent /forum http://www.kdevelop.org/phorum5
+Redirect permanent /fforum http://www.kdevelop.org/phorum5
+Redirect permanent /doc/kde_libref http://www.kdevelop.org/1.3/doc/kde_libref
+Redirect permanent /doc/manual/3.0 http://docs.kde.org/development/en/kdevelop/kdevelop
+Redirect permanent /doc/manual http://docs.kde.org/development/en/kdevelop/kdevelop
+Redirect permanent /doc/programming http://www.kdevelop.org/1.3/doc/programming
+Redirect permanent /doc/tutorial http://www.kdevelop.org/1.3/doc/tutorial
+Redirect permanent /doc/welcome http://www.kdevelop.org/1.3/doc/index.html
+Redirect permanent /doc/tutorial_settings http://www.kdevelop.org/3.0/doc/tutorial_settings
+Redirect permanent /3.0/doc/programming_manual/html http://www.kdevelop.org/HEAD/doc/api/html
+Redirect permanent /3.0/doc/user_manual http://docs.kde.org/development/en/kdevelop/kdevelop
+Redirect permanent /doc/tutorial_qtopia http://www.kdevelop.org/3.0/doc/tutorial_qtopia
+Redirect permanent /doc/HowToInstallKdevelopOnSuSE.txt http://www.kdevelop.org/2.1/doc/HowToInstallKdevelopOnSuSE.txt
+Redirect permanent /doc/technotes/index.html http://www.kdevelop.org/index.html?filename=doc/technotes/index.html
+Redirect permanent /mrtg http://www.kdevelop.org/index.html?filename=stats.html
+Redirect permanent /bugarchive/maillist.html http://www.kdevelop.org/index.html?filename=bugs.html
+Redirect permanent /doc/libstdc++ http://gcc.gnu.org/onlinedocs/libstdc++/latest-doxygen
+Redirect permanent /doc/cref http://www-ccs.ucsd.edu/c
+Redirect permanent /HEAD/doc/api/html/KDev3Arch.html http://www.kdevelop.org/HEAD/doc/api/html/architecture.html
+Redirect permanent /graphics/pic_corner/kdevelop-2.0.gif http://www.kdevelop.org/graphics/pic_corner/kdevelop-2.1.gif
+Redirect permanent /graphics/pic_corner/3.0/full_ide.png http://www.kdevelop.org/graphics/screenshots/3.0/full_ide.png
+Redirect permanent /lang/de/doc/kde_libref http://www.kdevelop.org/lang/de/1.3/doc/kde_libref
+Redirect permanent /lang/de/doc/manual http://www.kdevelop.org/lang/de/1.3/doc/manual
+Redirect permanent /lang/de/doc/tutorial http://www.kdevelop.org/lang/de/1.3/doc/tutorial
+Redirect permanent /lang/de/doc/programming http://www.kdevelop.org/1.3/doc/programming
+# These are gone forever and have no replacement
+Redirect gone /doc/addendum
+Redirect gone /1.3/doc/addendum
+# These are simple redirects
+Redirect seeother /events/index.html http://www.kdevelop.org/index.html?filename=events.html
+Redirect seeother /HEAD/index.html http://www.kdevelop.org/index.html?filename=HEAD/kdevelop.html
+Redirect seeother /1.3/index.html http://www.kdevelop.org/index.html?filename=1.3/kdevelop.html
+Redirect seeother /2.1/index.html http://www.kdevelop.org/index.html?filename=2.1/kdevelop.html
+Redirect seeother /3.0/index.html http://www.kdevelop.org/index.html?filename=3.0/kdevelop.html
+Redirect seeother /3.1/index.html http://www.kdevelop.org/index.html?filename=3.1/kdevelop.html
+Redirect seeother /3.2/index.html http://www.kdevelop.org/index.html?filename=3.2/kdevelop.html
+Redirect seeother /3.3/index.html http://www.kdevelop.org/index.html?filename=3.3/kdevelop.html
+Redirect seeother /3.4/index.html http://www.kdevelop.org/index.html?filename=3.4/kdevelop.html
+Redirect seeother /3.5/index.html http://www.kdevelop.org/index.html?filename=3.5/kdevelop.html
+AddType application/rss+xml .rss
+AddType text/javascript .js
+
+<IfModule mod_expires.c>
+ExpiresActive On
+### expires after a week in the client's cache
+ExpiresByType image/gif A604800
+ExpiresByType image/png A604800
+ExpiresByType image/jpg A604800
+ExpiresByType image/x-icon A604800
+ExpiresByType application/pdf A604800
+ExpiresByType text/plain A604800
+### expires after 12 hours
+ExpiresByType text/css A43200
+ExpiresByType text/javascript A43200
+</IfModule>
+
+# Deny all CVS related files
+<Files .cvsignore>
+Deny from all
+</Files>
+<Files Entries>
+Deny from all
+</Files>
+<Files Root>
+Deny from all
+</Files>
+<Files Repository>
+Deny from all
+</Files>

@@ -1,0 +1,1954 @@
+2009-11-29 08:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055941&amp;view=rev">1055941</a>]  Hamish Rodda &lt;rodda kde.org&gt;<br>
+language/duchain/builders/abstractexpressionvisitor.h<br>
+Convenience types to set last type and instance Rearrange usingDeclaration to<br>
+put parameters which are often left default at the end<br>
+<br>
+2009-11-28 23:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055891&amp;view=rev">1055891</a>]  Alexander Dymo &lt;adymo kdevelop.org&gt;<br>
+sublime/container.cpp<br>
+Fix tab activation bug after closing another tabs without switching to them<br>
+(for example clicking on another tab's close button). We should remove the<br>
+widget from container's stack before removing it from the tabbar, tabbar<br>
+activates new widget by its index, and if the old one is still in stack, then<br>
+indices are off by one. For me this also fixes the crash in ctrl-tab document<br>
+switcher (which probably got activation signal of the view which was already<br>
+deleted). BUG:204383<br>
+<br>
+2009-11-28 11:51 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055628&amp;view=rev">1055628</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/interfaces/ivariablecontroller.h,<br>
+debugger/interfaces/ivariablecontroller.cpp<br>
+Update locals only once. (fixes crash)<br>
+<br>
+2009-11-28 01:19 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055430&amp;view=rev">1055430</a>]  Alexander Dymo &lt;adymo kdevelop.org&gt;<br>
+sublime/mainwindow_p.cpp, sublime/container.cpp<br>
+Do not leave empty toplevel widgets after closing all open files with "Close<br>
+All": - it was the left corner workingset indicator widget which was<br>
+reparented to 0 and stayed visible - the current fix is to hide it before<br>
+reparenting and show right after adding to the corner - this fix is of course<br>
+bad, but it's not worse than the code which manages this widget (in general,<br>
+workingsets do not properly integrate into the UI) BUG:198251<br>
+<br>
+2009-11-26 20:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054794&amp;view=rev">1054794</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/projectmanagerview/projectmanagerview.cpp<br>
+Revert "Qt doesn't update the selection state when the model removes rows, so"<br>
+Actually there is no bug in Qt (should've checked this before comitting).<br>
+<br>
+2009-11-26 20:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054789&amp;view=rev">1054789</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/projectmanagerview/projectmanagerview.cpp<br>
+Qt doesn't update the selection state when the model removes rows, so lets do<br>
+it ourselves.<br>
+<br>
+2009-11-26 15:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054720&amp;view=rev">1054720</a>]  Hamish Rodda &lt;rodda kde.org&gt;<br>
+language/duchain/builders/abstractexpressionvisitor.h<br>
+Allow setting of the last type in the abstract expression visitor<br>
+<br>
+2009-11-26 15:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054711&amp;view=rev">1054711</a>]  David Faure &lt;faure kde.org&gt;<br>
+plugins/patchreview/libdiff2/komparemodellist.cpp,<br>
+plugins/patchreview/libdiff2/kompareprocess.cpp,<br>
+plugins/contextbrowser/contextbrowser.cpp,<br>
+plugins/patchreview/patchreview.cpp,<br>
+shell/launchconfigurationdialog.cpp<br>
+Fix compilation with strict iterators.<br>
+<br>
+2009-11-26 14:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054693&amp;view=rev">1054693</a>]  David Faure &lt;faure kde.org&gt;<br>
+util/activetooltip.cpp<br>
+fix compilation with strict iterators<br>
+<br>
+2009-11-25 23:10 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054379&amp;view=rev">1054379</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054382&amp;view=rev">1054382</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/subversion/svnimportmetadatawidget.cpp,<br>
+plugins/subversion/ui/importmetadatawidget.ui<br>
+plugins/subversion/svnimportmetadatawidget.cpp,<br>
+plugins/subversion/ui/importmetadatawidget.ui<br>
+Oops, I mean to make this a KLineEdit, not KTextEdit.<br>
+Make the destination a plain lineedit, having a url-requester there causes too<br>
+much confusion.<br>
+<br>
+2009-11-25 20:34 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054289&amp;view=rev">1054289</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054291&amp;view=rev">1054291</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/CMakeLists.txt, interfaces/CMakeLists.txt,<br>
+shell/core.cpp, shell/CMakeLists.txt, shell/core.h,<br>
+language/codegen/documentchangeset.cpp, (...)<br>
+language/backgroundparser/backgroundparser.cpp<br>
+Disable the sourceformatter as its not possible to fix this up without major<br>
+time investment. I've looked a bit at the code today and all I can say is wow,<br>
+this is broken. It stores pointers to plugins, doesn't update them as needed<br>
+assumes everywhere that things will be alright (i.e. no empty-checks, no<br>
+null-pointer-checks). This is not possible to fix easily without changing<br>
+major parts of the code. At this point in the release such a major<br>
+restructuring is not going to happen, additionally this codebase is basically<br>
+unmaintained ever since it was imported into svn. So we'll have to live<br>
+without it for 4.0<br>
+These messages have no meaning to endusers and they can't do anything about<br>
+the warnings. Hence they should be debug messages.<br>
+<br>
+2009-11-25 14:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054107&amp;view=rev">1054107</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+Increase version number for beta7<br>
+<br>
+2009-11-25 03:32 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1053947&amp;view=rev">1053947</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+debugger/framestack/framestackwidget.cpp<br>
+When the debugging session was closed, the model was dereferenced and the<br>
+changed when the column changed signal was triggered. Added a conditional to<br>
+check if the session is still alive to ask for more frames. Just fixes a<br>
+crash.<br>
+<br>
+2009-11-24 18:58 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1053748&amp;view=rev">1053748</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/referencecounting.cpp<br>
+Significantly speed up the reference-counting for the case that there is only<br>
+one reference-counted memory range, which should be 99% of the cases.<br>
+<br>
+2009-11-22 23:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1053020&amp;view=rev">1053020</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/editor/modificationrevision.cpp,<br>
+language/duchain/topducontext.cpp,<br>
+language/editor/modificationrevision.h,<br>
+language/editor/modificationrevisionset.cpp<br>
+- Handle the ModificationRevisionSet "needsUpdate" cache more intelligently:<br>
+Don't clear the cache on every significant ModificationRevisionSet operation,<br>
+instead just remove dead entries in realtime, and use the ModificationRevision<br>
+timeout for the cache lifetime. - Increase the timeout to 30 seconds, so the<br>
+caching really shows an effect. This improves the speed of<br>
+preprocessing/parsing in C++, and especially the speed of checking whether all<br>
+top-contexts are still up to date.<br>
+<br>
+2009-11-22 23:00 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1052993&amp;view=rev">1052993</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1052999&amp;view=rev">1052999</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/appwizard/projectvcspage.cpp,<br>
+plugins/appwizard/projectvcspage.h<br>
+plugins/cvs/importmetadatawidget.cpp,<br>
+plugins/subversion/svnimportmetadatawidget.h,<br>
+vcs/dvcs/ui/importmetadatawidget.h,<br>
+plugins/cvs/importmetadatawidget.h,<br>
+vcs/widgets/vcsimportmetadatawidget.h,<br>
+plugins/subversion/svnimportmetadatawidget.cpp, (...)<br>
+plugins/cvs/importmetadatawidget.cpp,<br>
+vcs/widgets/vcsimportmetadatawidget.h,<br>
+plugins/subversion/svnimportmetadatawidget.cpp,<br>
+vcs/dvcs/ui/importmetadatawidget.cpp<br>
+language/backgroundparser/backgroundparser.cpp<br>
+plugins/appwizard/appwizardplugin.cpp<br>
+shell/assistantpopup.cpp<br>
+plugins/documentview/kdevdocumentview.cpp,<br>
+plugins/documentview/kdevdocumentview.h<br>
+Implement validation of vcs import data. BUG:202325<br>
+hasValidData() is needed to be able to do vcs-specific checks on the input<br>
+(like valid svn urls).<br>
+Add a changed() signal to notify users of the widget that the input changed.<br>
+Make this a debug message. Its not very useful for endusers and it pollutes<br>
+the output.<br>
+Fix indentation.<br>
+Make the labels do word-wrapping to avoid very long lines. BUG: 187612<br>
+Add Close-Others and Reload to the context menu. Additionally fixes a small<br>
+issue with highlighting selected document. Patch by Olivier.jg, thanks.<br>
+CCMAIL:olivier.jg@gmail.com BUG:182786<br>
+<br>
+2009-11-22 20:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1052937&amp;view=rev">1052937</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/ducontext.cpp,<br>
+language/duchain/parsingenvironment.h,<br>
+language/duchain/topducontext.cpp, language/duchain/ducontext.h,<br>
+language/duchain/repositories/itemrepository.cpp,<br>
+language/duchain/topducontext.h, (...)<br>
+- Partition the diffrent TopDUContext::Features flags a bit more logically,<br>
+and add some documentation - Add 2 processing-levels to<br>
+TopDUContext::Features: The "Empty" level which allows only collecting<br>
+meta-information about top-contexts, and the<br>
+"SimplifiedVisibleDeclarationsAndContexts" level which allows collecting<br>
+simplified declarations after preprocessing, but without type-lookup and all<br>
+the complex stuff. This will essentially allow to optionally reduce the global<br>
+processing to a ctags-like level. - Move some more information statically into<br>
+ParsingEnvironmentFile, and manage the 'features' that are satisfied by<br>
+top-contexts through global sets using the efficient SetRepository algorithms.<br>
+This allows efficiently checking whether all top-contexts imported recursively<br>
+into another one satisfy a specific set of TopDUContext::Features in<br>
+ParsingEnvironmentFile::featuresSatisfied, if the TopDUContext::Recursive flag<br>
+is set.<br>
+<br>
+2009-11-20 20:36 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1052130&amp;view=rev">1052130</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+shell/launchconfiguration.cpp<br>
+Fix changing launcher.<br>
+<br>
+2009-11-20 16:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1052045&amp;view=rev">1052045</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+Fix stupid error (by me): Set the libraries-variables before adding the<br>
+subdirs.<br>
+<br>
+2009-11-19 23:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1051664&amp;view=rev">1051664</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+language/editor/documentrangeobject.h<br>
+Remove unimplemented and unused API. CCMAIL:<br>
+david.nolden.kdevelop@art-master.de<br>
+<br>
+2009-11-18 22:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1051126&amp;view=rev">1051126</a>]  schmidt-domine &lt;schmidt-domine&gt;<br>
+language/duchain/builders/abstractusebuilder.h<br>
+Fixed newUse.<br>
+<br>
+2009-11-17 21:17 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050669&amp;view=rev">1050669</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/launchconfigurationdialog.ui<br>
+Trying to make clear how to use this dialog. Re-Arrange elements a bit and add<br>
+a short title to the treeview. Hopefully this makes it more obvious what the<br>
++/- buttons are used for and how the right-part relates to the left part.<br>
+<br>
+2009-11-17 18:55 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050623&amp;view=rev">1050623</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetplugin.cpp<br>
+set focus on editor when inserting a snippet via the snippet view BUG: 213061<br>
+<br>
+2009-11-17 18:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050616&amp;view=rev">1050616</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/editsnippet.ui<br>
+update inline-help on how to mark variables with the new format. imo we need<br>
+some more docu about the extended behavior, e.g. mirroring, navigation etc.<br>
+pp.<br>
+<br>
+2009-11-17 18:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050610&amp;view=rev">1050610</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetrepository.cpp<br>
+don't crash when removing a root snippet repo BUG: 214725<br>
+<br>
+2009-11-17 17:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050583&amp;view=rev">1050583</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/repositories/itemrepository.h<br>
+Fail gracefully if the repository could not be mapped. If the mapping fails,<br>
+load the data traditionally. Motivation: The recent Qt-4.6 snapshot available<br>
+for opensuse seems to be so broken that it cannot map any files.<br>
+<br>
+2009-11-17 17:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050578&amp;view=rev">1050578</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/repositories/itemrepository.h<br>
+Add some assertions<br>
+<br>
+2009-11-17 13:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050503&amp;view=rev">1050503</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/quickopen/quickopenplugin.cpp,<br>
+plugins/quickopen/quickopenplugin.h<br>
+deactivate a quickopen-line if its widget is destroyed. BUG: 201238<br>
+<br>
+2009-11-16 22:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050255&amp;view=rev">1050255</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/mainwindow_p.cpp<br>
+Disable Multi-Mainwindow support. Its not fully tested, has various<br>
+design-issues and won't be fixed up for the release.<br>
+<br>
+2009-11-16 22:37 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050243&amp;view=rev">1050243</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050248&amp;view=rev">1050248</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/subversion/kdevsvncpp/README.svncppversion<br>
+plugins/subversion/kdevsvncpp/info.cpp,<br>
+plugins/subversion/kdevsvncpp/info.hpp<br>
+plugins/subversion/kdevsvncpp/pool.cpp,<br>
+plugins/subversion/kdevsvncpp/client_ls.cpp,<br>
+plugins/subversion/kdevsvncpp/context.cpp,<br>
+plugins/subversion/kdevsvncpp/client_modify.cpp,<br>
+plugins/subversion/kdevsvncpp/status_selection.cpp,<br>
+plugins/subversion/kdevsvncpp/context.hpp, (...)<br>
+plugins/subversion/kdevsvncpp/pool.cpp,<br>
+plugins/subversion/kdevsvncpp/string_wrapper.hpp (added),<br>
+plugins/subversion/kdevsvncpp/client_ls.cpp,<br>
+plugins/subversion/kdevsvncpp/pool.hpp,<br>
+plugins/subversion/kdevsvncpp/context.cpp,<br>
+plugins/subversion/kdevsvncpp/client_modify.cpp, (...)<br>
+plugins/subversion/kdevsvncpp/status_selection.cpp,<br>
+plugins/subversion/kdevsvncpp/exception.cpp,<br>
+plugins/subversion/kdevsvncpp/client_status.cpp,<br>
+plugins/subversion/kdevsvncpp/entry.cpp,<br>
+plugins/subversion/kdevsvncpp/context.cpp,<br>
+plugins/subversion/kdevsvncpp/property.cpp, (...)<br>
+plugins/subversion/kdevsvncpp/README.svncppversion (added),<br>
+plugins/subversion/kdevsvncpp/README.DONTTOUCH (added)<br>
+Update the version number of svncpp.<br>
+Add some more functions to the info class (and implement some only-declared<br>
+functions)<br>
+Adjust include's to use kdevsvncpp instead of svncpp so it builds properly.<br>
+Import svncpp library from Rapidsvn 0.12.0<br>
+Revert all typo, crazy and other issues comitted to files in the copied code<br>
+from rapidsvn. This way I'll actually be able to move to a newer rapidsvn<br>
+version.<br>
+Add two readme's explaining where this code is coming from and why nobody<br>
+should touch this codebase.<br>
+<br>
+2009-11-16 20:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050197&amp;view=rev">1050197</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/breakpoint/breakpoint.cpp<br>
+Set expression _or_ url, never both<br>
+<br>
+2009-11-16 20:53 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050195&amp;view=rev">1050195</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+sublime/tooldocument.cpp,<br>
+plugins/projectmanagerview/projectmanagerviewplugin.h,<br>
+plugins/projectmanagerview/projectmanagerview.h,<br>
+sublime/ideal.cpp, sublime/view.h, sublime/tooldocument.h, (...)<br>
+Revert the progress-indicator-on-toolviews patch, it doesn't work correctly<br>
+and I won't have time to fix it up. So better leave this nice feature for 4.1.<br>
+BUG:214842<br>
+<br>
+2009-11-16 20:51 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050194&amp;view=rev">1050194</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/variable/variablecollection.h,<br>
+debugger/interfaces/ivariablecontroller.cpp,<br>
+debugger/variable/variablecollection.cpp<br>
+Remove all locals when DebugSession ended.<br>
+<br>
+2009-11-16 19:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050164&amp;view=rev">1050164</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+util/duchainify/CMakeLists.txt (added), util/duchainify/main.cpp<br>
+(added), util/CMakeLists.txt, util/duchainify/main.h (added)<br>
+Check in duchainify. Looks like there's a bug in the patch-review/svn<br>
+integration when it comes to checking in new files.<br>
+<br>
+2009-11-16 19:19 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050157&amp;view=rev">1050157</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+util/CMakeLists.txt<br>
+Ok, now I know what happened: duchainify is an empty dir, hence git-svn didn't<br>
+create it in the local checkout. So lets disable it until David checks in the<br>
+code. CCMAIL:david.nolden.kde@art-master.de<br>
+<br>
+2009-11-16 19:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050155&amp;view=rev">1050155</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+util/CMakeLists.txt<br>
+Revert "Dunno who added this, but the directory doesn't exist and its also<br>
+not" Sorry, seems this is just a local problem of my git-svn clone. This<br>
+reverts commit 45b27bb962aeb11c28b016241efb737d0af7b2b4.<br>
+<br>
+2009-11-16 19:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050151&amp;view=rev">1050151</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+util/CMakeLists.txt<br>
+Dunno who added this, but the directory doesn't exist and its also not needed.<br>
+<br>
+2009-11-16 19:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050149&amp;view=rev">1050149</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/vcspluginhelper.cpp<br>
+Oops, forgot the returns to really prevent the crash.<br>
+<br>
+2009-11-16 16:45 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1050109&amp;view=rev">1050109</a>]  Andrew Coles &lt;andrew_coles yahoo.co.uk&gt;<br>
+plugins/patchreview/kdevpatchreview.desktop<br>
+The patch review plugin now gets its pretty yellow hard hat icon next to its<br>
+name in the 'Configure Plugins' dialogue, not just on the toolbar &amp;c.<br>
+<br>
+2009-11-16 00:08 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049856&amp;view=rev">1049856</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/problemreporter/problemhighlighter.cpp<br>
+Restrict problem-ranges to the document. This fixes the problem that an<br>
+unresolved #include directive at the end of the document highlighted the whole<br>
+document with the error-underline if the directive was not terminated by a<br>
+newline.<br>
+<br>
+2009-11-15 23:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049838&amp;view=rev">1049838</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+util/duchainify (added), language/duchain/duchain.cpp,<br>
+util/CMakeLists.txt<br>
+Add a command-line utility called 'duchainify'. This utility allows specifying<br>
+a directory, and the duchain will be built for the complete recursive content<br>
+of that directory using the specific language supports. Thread-count,<br>
+duchain-features, verbosity and more can be specified through the<br>
+command-line. This utility can be used to profile and debug duchain building,<br>
+and as basis for possible other applications that might want to use the<br>
+duchain through command-line.<br>
+<br>
+2009-11-15 23:37 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049834&amp;view=rev">1049834</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049835&amp;view=rev">1049835</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/interfaces/iproblem.h<br>
+language/duchain/repositories/itemrepository.cpp<br>
+Initialize the problem severity, so problem-underlines have the correct color<br>
+Allow enforcing a clean duchain directory by setting the environment variable<br>
+CLEAR_DUCHAIN_DIR<br>
+<br>
+2009-11-15 23:27 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049826&amp;view=rev">1049826</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/vcspluginhelper.cpp<br>
+Don't crash for annotate either.<br>
+<br>
+2009-11-15 23:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049825&amp;view=rev">1049825</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/vcspluginhelper.cpp<br>
+Don't try to show a widget if no job could be created. BUG:212196<br>
+<br>
+2009-11-15 21:25 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049798&amp;view=rev">1049798</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+plugins/projectmanagerview/projectmanagerviewplugin.cpp<br>
+Fix icon naming. Use already created value.<br>
+<br>
+2009-11-15 20:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049777&amp;view=rev">1049777</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/execute/nativeappconfig.ui,<br>
+plugins/execute/nativeappconfig.cpp<br>
+Disable running in external terminal, it doesn't work and won't for 4.0, so<br>
+lets not confuse users with a broken option.<br>
+<br>
+2009-11-15 16:08 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049642&amp;view=rev">1049642</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+language/backgroundparser/backgroundparser.cpp<br>
+Change from annoying warning to plain debug if no language plugin was found.<br>
+<br>
+2009-11-15 15:42 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049629&amp;view=rev">1049629</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049633&amp;view=rev">1049633</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/sessioncontroller.cpp, shell/mainwindow_p.cpp,<br>
+shell/CMakeLists.txt, shell/mainwindow.cpp,<br>
+shell/mainwindow_actions.cpp, shell/sessioncontroller.h, (...)<br>
+plugins/openwith/openwithplugin.cpp<br>
+language/backgroundparser/backgroundparser.cpp<br>
+Make sessions more accessible. Move the configure-sessions to a new toplevel<br>
+menu and allow to switch the session via an action list.<br>
+--warning<br>
+Fix broken kdebug area. language should use its own debug area, not the one<br>
+from sublime.<br>
+<br>
+2009-11-15 13:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049563&amp;view=rev">1049563</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/CMakeLists.txt, plugins/mercurial (removed)<br>
+Move mercurial to playground. I don't know in which state this plugin is, nor<br>
+does anybody use it (AFAIK) currently. No other dev is interested in it and it<br>
+hasn't seen any attention since months. Also make it compile standalone and<br>
+remove the wrong linkage against shell.<br>
+<br>
+2009-11-15 12:40 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049550&amp;view=rev">1049550</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippet.cpp,<br>
+plugins/snippet/snippetrepository.cpp<br>
+add some debug output<br>
+<br>
+2009-11-14 22:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1049249&amp;view=rev">1049249</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/loadedpluginsdialog.cpp (added), shell/mainwindow_p.cpp,<br>
+shell/CMakeLists.txt, shell/mainwindow_actions.cpp,<br>
+shell/loadedpluginsdialog.h (added), shell/mainwindow_p.h<br>
+Add a "loaded plugins" dialog. This adds an action to the menu to show all<br>
+loaded plugins and their description for informational and debugging purposes.<br>
+BUG:213298<br>
+<br>
+2009-11-14 00:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1048834&amp;view=rev">1048834</a>]  Andrew Coles &lt;andrew_coles yahoo.co.uk&gt;<br>
+plugins/mercurial/icons (removed),<br>
+plugins/mercurial/CMakeLists.txt<br>
+Reverted earlier commit pending review.<br>
+<br>
+2009-11-13 21:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1048734&amp;view=rev">1048734</a>]  Andrew Coles &lt;andrew_coles yahoo.co.uk&gt;<br>
+plugins/mercurial/icons/CMakeLists.txt (added),<br>
+plugins/mercurial/icons (added),<br>
+plugins/mercurial/CMakeLists.txt,<br>
+plugins/mercurial/icons/hi22-action-mercurial.png (added),<br>
+plugins/mercurial/icons/hi32-action-mercurial.png (added),<br>
+plugins/mercurial/icons/hi16-action-mercurial.png (added), (...)<br>
+Added icon for mercurial kdevplatform plugin. Obtained from:<br>
+http://mercurial.selenic.com/ Authors: Cali Mastny and Matt Mackall Copyright:<br>
+2008 Licence: GPL v2.0.<br>
+<br>
+2009-11-13 21:06 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1048722&amp;view=rev">1048722</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+language/duchain/navigation/abstractdeclarationnavigationcontext.cpp<br>
+Don't show the "show documentation link" if there's no documentation actually.<br>
+<br>
+2009-11-13 12:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1048488&amp;view=rev">1048488</a>]  Andrew Coles &lt;andrew_coles yahoo.co.uk&gt;<br>
+plugins/quickopen/kdevquickopen.desktop,<br>
+plugins/contextbrowser/kdevcontextbrowser.desktop,<br>
+plugins/appwizard/kdevappwizard.desktop<br>
+Revised the icon updates following discussion: <br>
+* Context icon did exist,<br>
+called 'code-context', now using it for the context browser. <br>
+* Generic<br>
+quickopen icon did exist, called 'quickopen', using it for the quickopen<br>
+plugin. <br>
+* Using the 'new project' icon for the app wizard rather than<br>
+'new file'. The kate/snippets plugin doesn't have an icon defined yet, will<br>
+drop authors a mail to see if they've requested one. CCMAIL: apaku@gmx.de<br>
+<br>
+2009-11-13 12:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1048479&amp;view=rev">1048479</a>]  Andrew Coles &lt;andrew_coles yahoo.co.uk&gt;<br>
+plugins/openwith/kdevopenwith.desktop,<br>
+plugins/quickopen/kdevquickopen.desktop,<br>
+plugins/documentswitcher/kdevdocumentswitcher.desktop,<br>
+plugins/subversion/kdevsubversion.desktop,<br>
+plugins/konsole/kdevkonsoleview.desktop,<br>
+plugins/contextbrowser/kdevcontextbrowser.desktop, (...)<br>
+Fixing/assigning icons to plugins for when they appear in the 'Configure<br>
+Plugins' dialog. First, icon references that were broken: <br>
+* Konsole - the<br>
+konsole icon it was trying to use, which is actually called terminal <br>
+*<br>
+Find in files - was trying to use find, should be kfind Plugins that have<br>
+icons elsewhere: <br>
+* class browser - the icon it had elsewhere in kdevelop<br>
+(code-class) <br>
+* Quick open - the icon it had elsewhere in kdevelop (called<br>
+quickopen-class) Plugins for which the icon is IMO obvious: <br>
+* File<br>
+manager - the file manager icon (i.e. that of dolphin) <br>
+* CVS - the<br>
+cervisia icon <br>
+* execute - the system run (gear) icon Plugins for which I<br>
+think a reasonable icon choice is intuitive: <br>
+* The most recently used<br>
+document switcher - the 'open recent' icon <br>
+* Open with - the 'open<br>
+document' icon <br>
+* New app wizard - the 'new document' icon <br>
+* Problem<br>
+reporter - the red warning symbol (! in a circle) Then, icons which seem okay,<br>
+but I'm not totally sold on: <br>
+* document view - document (pre)view icon,<br>
+given that's more or less what it does <br>
+* Snippets - the 'Copy' icon<br>
+<br>
+* Context browser - the 'Class' icon <br>
+* Subversion - the 'svn_merge'<br>
+icon<br>
+<br>
+2009-11-12 01:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1047753&amp;view=rev">1047753</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp<br>
+Show the selected documentation home page by default.<br>
+<br>
+2009-11-12 01:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1047749&amp;view=rev">1047749</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+language/duchain/navigation/abstractdeclarationnavigationcontext.cpp,<br>
+shell/documentationview.cpp, shell/documentationview.h,<br>
+interfaces/idocumentation.cpp,<br>
+interfaces/idocumentationprovider.h, interfaces/idocumentation.h<br>
+Make it possible to have home pages in every documentation provider. Provide a<br>
+default implementation for the viewer.<br>
+<br>
+2009-11-11 21:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1047698&amp;view=rev">1047698</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/projectmanagerview/projectmanagerviewplugin.cpp<br>
+prefill rename dialog with old name, don't trigger rename action when name did<br>
+not get changed<br>
+<br>
+2009-11-08 15:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1046382&amp;view=rev">1046382</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1046385&amp;view=rev">1046385</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/project.cpp<br>
+shell/projectcontroller.cpp, shell/project.h,<br>
+interfaces/iproject.h<br>
+shell/settings/projectconfig.kcfg, shell/projectcontroller.cpp,<br>
+shell/settings/projectsettings.ui<br>
+shell/settings/projectconfig.kcfg, shell/projectcontroller.cpp<br>
+Proper message in case a project name is already used.<br>
+open/close shouldn't be public API. Both of those functions are not useful<br>
+outside of shell, so lets not expose the API.<br>
+For new users its better if Build&amp;Co automatically work. Add opened<br>
+projects to the buildset (if no item from the project is in it yet).<br>
+For newbie users its better to re-open projects, so change the default to<br>
+true.<br>
+<br>
+2009-11-08 15:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1046379&amp;view=rev">1046379</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/problemreporter/problemreporterplugin.h,<br>
+plugins/problemreporter/problemhighlighter.cpp,<br>
+language/interfaces/iproblem.h,<br>
+plugins/problemreporter/problemreporterplugin.cpp,<br>
+plugins/problemreporter/problemhighlighter.h<br>
+- Link yellow underlines to the "Highlight semantic problems" option in the<br>
+language support settings, and update it directly when the setting was changed<br>
+- Add some copyright notices BUG: 199190<br>
+<br>
+2009-11-08 14:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1046371&amp;view=rev">1046371</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+shell/settings/ccconfig.kcfg<br>
+Change the default to the same it is in the code, so the setting works better<br>
+<br>
+2009-11-07 18:03 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1046169&amp;view=rev">1046169</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/selectionjumper.cpp (removed),<br>
+plugins/snippet/snippetcompletionitem.cpp,<br>
+plugins/snippet/CMakeLists.txt, plugins/snippet/selectionjumper.h<br>
+(removed)<br>
+use KTextEditor::TemplateInterface for snippets. This makes mirroring,<br>
+navigation etc. work without any custom code. NOTE: variables must be marked<br>
+as , but this gives more features, see also TemplateInterface documentation<br>
+PS: we also get neat magic-vars like %{name}, %{date}, %{time} etc. pp. for<br>
+free.<br>
+<br>
+2009-11-03 20:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044453&amp;view=rev">1044453</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044454&amp;view=rev">1044454</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+interfaces/idocumentationcontroller.h, shell/core.cpp,<br>
+shell/core.h, shell/documentationcontroller.h,<br>
+shell/plugincontroller.cpp<br>
+interfaces/idebugcontroller.h,<br>
+interfaces/idocumentationcontroller.h, shell/debugcontroller.h,<br>
+shell/documentationcontroller.h, shell/plugincontroller.cpp<br>
+Remove contextMenuExtension from IDocumentationController. CCMAIL:<br>
+aleixpol@gmail.com<br>
+Remove contextMenuExtension from IDebugController, no reason for being public.<br>
+<br>
+2009-11-03 07:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044132&amp;view=rev">1044132</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp, shell/documentationview.h,<br>
+interfaces/idocumentationprovider.h<br>
+Let the documentation plugins to add new items in the documentation history<br>
+for internal navigation<br>
+<br>
+2009-11-03 00:09 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044088&amp;view=rev">1044088</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/patchreview/patchreview.cpp,<br>
+plugins/patchreview/patchreview.h<br>
+- Make patch-review highlighting work after document-reload - Generally make<br>
+patch-review work on documents that were not open in an editor already (kate<br>
+reloads documents randomly during startup to change encoding and similar<br>
+things, which breaks the smart-ranges and used to break the whole<br>
+patch-review)<br>
+<br>
+2009-11-03 00:06 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044087&amp;view=rev">1044087</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+interfaces/ipatchsource.h<br>
+Update the documentation a bit<br>
+<br>
+2009-11-02 23:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044078&amp;view=rev">1044078</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+sublime/mainwindow_p.cpp, sublime/mainwindow.cpp,<br>
+sublime/mainwindow_p.h<br>
+Revert the update-disabling for now, as it might be an issue of my local<br>
+machine<br>
+<br>
+2009-11-02 23:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044074&amp;view=rev">1044074</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+shell/workingsetcontroller.cpp<br>
+Don't forget disabling the updates<br>
+<br>
+2009-11-02 22:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044057&amp;view=rev">1044057</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044058&amp;view=rev">1044058</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+sublime/mainwindow_p.cpp, sublime/mainwindow.cpp,<br>
+sublime/mainwindow_p.h<br>
+shell/workingsetcontroller.cpp<br>
+Disable widget updates in many situations, to somewhat reduce the ugly<br>
+flickering all over the place when using Qt 4.6<br>
+Only re-enable updates if updating was enabled before<br>
+<br>
+2009-11-02 21:00 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1044012&amp;view=rev">1044012</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+sublime/mainwindow.cpp<br>
+Only emit activeViewChanged if it has actually changed<br>
+<br>
+2009-11-02 18:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043964&amp;view=rev">1043964</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp<br>
+add toolbar toggle action to the default context menu of tool views, else<br>
+hiding the toolbar could not be reverted. while we are at it, also add the<br>
+actions from the toolbar to the context menu.<br>
+<br>
+2009-11-02 18:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043957&amp;view=rev">1043957</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/problemreporter/problemwidget.cpp<br>
+remove some unused headers<br>
+<br>
+2009-11-02 18:25 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043954&amp;view=rev">1043954</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/problemreporter/problemwidget.cpp<br>
+use view-refresh icon for full-update action, imo reflects this action better<br>
+<br>
+2009-11-02 18:12 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043943&amp;view=rev">1043943</a>]  mwolff &lt;mwolff&gt;<br>
+language/backgroundparser/parsejob.cpp,<br>
+language/backgroundparser/parsejob.h<br>
+don't expect a parent given for parse jobs, as the backgroundparser manages<br>
+them, but the language support plugin creates them<br>
+<br>
+2009-11-01 22:37 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043598&amp;view=rev">1043598</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/execute/nativeappconfig.ui<br>
+Forgot to adjust the include here.<br>
+<br>
+2009-11-01 22:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043590&amp;view=rev">1043590</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043591&amp;view=rev">1043591</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+interfaces/iprojectcontroller.h,<br>
+plugins/projectmanagerview/builditembuilderjob.cpp,<br>
+plugins/projectmanagerview/projectmanagerviewplugin.h,<br>
+project/projectbuildsetmodel.h (added),<br>
+plugins/projectmanagerview/projectbuildsetmodel.cpp (removed),<br>
+plugins/execute/nativeappconfig.cpp, (...)<br>
+project/projectitemlineedit.h (added),<br>
+util/projectitemlineedit.cpp (removed), project/CMakeLists.txt,<br>
+util/projectitemlineedit.h (removed),<br>
+project/projectitemlineedit.cpp (added), util/CMakeLists.txt<br>
+Move the buildset model into the project library and make it accessible via<br>
+the projectController. This will allow other plugins/libraries access to the<br>
+buildset and manipulate it, for example automatically adding projects to the<br>
+buildset upon opening the project.<br>
+Move the projectitem lineedit into the project library to be able to link util<br>
+into project lib.<br>
+<br>
+2009-11-01 19:11 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043525&amp;view=rev">1043525</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/ducontext.cpp, language/duchain/ducontext.h<br>
+Add a function that allows applying all aliases (namespace-aliases and<br>
+-imports) to an identifier, in perspective from one context<br>
+<br>
+2009-11-01 10:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043302&amp;view=rev">1043302</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/mainwindow.cpp, shell/mainwindow.h<br>
+Support dropping urls into our mainwindow. This was easier than I thought<br>
+initially. BUG:212600<br>
+<br>
+2009-10-31 20:06 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043120&amp;view=rev">1043120</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+plugins/projectmanagerview/projectmanagerviewplugin.cpp<br>
+Do not rename the file in the filesystem in the action, expect the filemanager<br>
+plugin to do so.<br>
+<br>
+2009-10-31 19:08 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043102&amp;view=rev">1043102</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043108&amp;view=rev">1043108</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/runcontroller.cpp, shell/runcontroller.h<br>
+shell/plugincontroller.cpp<br>
+shell/runcontroller.cpp, shell/runcontroller.h<br>
+plugins/projectmanagerview/projecttreeview.cpp<br>
+interfaces/launchconfigurationtype.h,<br>
+plugins/execute/nativeappconfig.cpp,<br>
+plugins/execute/nativeappconfig.h<br>
+interfaces/launchconfigurationtype.h,<br>
+plugins/execute/nativeappconfig.cpp,<br>
+plugins/execute/nativeappconfig.h<br>
+shell/runcontroller.cpp, shell/runcontroller.h,<br>
+interfaces/iruncontroller.h, shell/launchconfigurationdialog.cpp<br>
+Implement a contextMenuExtension function that allows to execute/debug/... any<br>
+project model item.<br>
+call the runcontrollers contextMenuExtension function.<br>
+provide a contextMenuExtension function to populate context menus with<br>
+run-stuff.<br>
+Also include stuff from the RunGroup<br>
+Provide a function to populate a launch configuration from a project item.<br>
+Supply a way to know wether a given launch configuration can handle a certain<br>
+project item or file.<br>
+Add public API to create a new launch configuration. This will be useful to<br>
+have plugins provide ways of launching things like project items.<br>
+<br>
+2009-10-31 18:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043096&amp;view=rev">1043096</a>]  jbrouault &lt;jbrouault&gt;<br>
+KDevPlatformConfig.cmake.in<br>
+Use the prefixed name when looking for imported targets<br>
+<br>
+2009-10-31 15:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043039&amp;view=rev">1043039</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp<br>
+give the context menus for removing, locking and positioning dock views a<br>
+title with the name and icon of the dock widget. also set the widget's window<br>
+title earlier, so it can be accessed for setting the title.<br>
+<br>
+2009-10-31 15:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1043035&amp;view=rev">1043035</a>]  mwolff &lt;mwolff&gt;<br>
+shell/mainwindow_p.cpp<br>
+don't crash if no tool view is selected for adding<br>
+<br>
+2009-10-31 03:27 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1042921&amp;view=rev">1042921</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/mainwindow_p.cpp, sublime/mainwindow.cpp,<br>
+shell/uicontroller.h, sublime/ideal.cpp, sublime/mainwindow.h,<br>
+shell/mainwindow_p.cpp, (...)<br>
+add context menu to IdealDockBars, propagate the signal, similar to the tab<br>
+signal. but this time let the handler (i.e. shell/mainwindow_p) create the<br>
+menu, which makes the code a lot easier on that side. you can add new tool<br>
+views from the context menu. please review, at least one part has to be<br>
+cleaned up imo (regarding Sublime::Area and addToolView - you cannot force a<br>
+position so far).<br>
+<br>
+2009-10-30 22:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1042866&amp;view=rev">1042866</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/contextbrowser/contextbrowserview.cpp,<br>
+plugins/contextbrowser/contextbrowser.cpp,<br>
+plugins/contextbrowser/contextbrowser.h<br>
+Make the context-browser history management and the previous/next context<br>
+shortcuts work properly with multiple main-windows<br>
+<br>
+2009-10-30 20:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1042826&amp;view=rev">1042826</a>]  mwolff &lt;mwolff&gt;<br>
+shell/uicontroller.h<br>
+cleanup code style<br>
+<br>
+2009-10-29 14:26 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1042281&amp;view=rev">1042281</a>]  mwolff &lt;mwolff&gt;<br>
+interfaces/iuicontroller.h<br>
+fix documentation<br>
+<br>
+2009-10-28 23:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1042022&amp;view=rev">1042022</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/mainwindow_p.cpp<br>
+minor cleanup<br>
+<br>
+2009-10-28 23:12 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1042008&amp;view=rev">1042008</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp, sublime/ideal.h<br>
+fix the Tool View menu, i.e. make it possible to toggle dock views from it,<br>
+not only enable them. problem is that QActions in a QActionCollection that is<br>
+set to exclusive cannot be _unchecked_. =&gt; Remove the collection and check<br>
+manually that only one widget is visible per bar at any time.<br>
+<br>
+2009-10-28 21:47 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041962&amp;view=rev">1041962</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+plugins/projectmanagerview/projectmanagerviewplugin.h,<br>
+plugins/projectmanagerview/projectmanagerviewplugin.cpp<br>
+Merge the rename actions.<br>
+<br>
+2009-10-28 19:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041893&amp;view=rev">1041893</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+plugins/projectmanagerview/projectmanagerviewplugin.h,<br>
+plugins/projectmanagerview/projectmanagerviewplugin.cpp<br>
+Add interface to rename folders and files from the project manager view.<br>
+<br>
+2009-10-28 19:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041890&amp;view=rev">1041890</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/interfaces/idebugsession.h, shell/debugcontroller.cpp,<br>
+debugger/framestack/framestackwidget.cpp,<br>
+debugger/interfaces/idebugsession.cpp<br>
+Add IDebugSession::convertToLocalUrl and IDebugSession::convertToRemoteUrl<br>
+that allows debugging with remote urls. Call it when opening files from frame<br>
+stack.<br>
+<br>
+2009-10-28 18:55 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041884&amp;view=rev">1041884</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/breakpoint/breakpoint.cpp<br>
+Allow remote urls for breakpoints<br>
+<br>
+2009-10-28 11:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041719&amp;view=rev">1041719</a>]  Patrick Spendrin &lt;ps_ml gmx.de&gt;<br>
+language/duchain/repositories/itemrepository.h<br>
+the crash has been fixed by fixing initialization order<br>
+<br>
+2009-10-28 01:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041445&amp;view=rev">1041445</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp<br>
+make it possible to lock/unlock and remove tool views from the context menu<br>
+<br>
+2009-10-28 00:59 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041441&amp;view=rev">1041441</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp, sublime/ideal.h<br>
+show the same context menu on the tool view toggle-button as on the tool view<br>
+itself (i.e. the position menu)<br>
+<br>
+2009-10-28 00:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041436&amp;view=rev">1041436</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp<br>
+don't crash when all docks from a dockbar get removed and the user selects<br>
+'previous tool view' action<br>
+<br>
+2009-10-28 00:04 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041426&amp;view=rev">1041426</a>]  mwolff &lt;mwolff&gt;<br>
+shell/mainwindow_p.cpp, shell/mainwindow_actions.cpp,<br>
+shell/mainwindow_p.h<br>
+remove useless 'Show Statusbar' action from menu, remove it's code (which has<br>
+no effect anyways). KDevelop simply has no status bar since like half a year<br>
+now...<br>
+<br>
+2009-10-27 23:51 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041424&amp;view=rev">1041424</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp, sublime/ideal.h<br>
+remove unused IdealDockWidgetButton class<br>
+<br>
+2009-10-27 23:48 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041423&amp;view=rev">1041423</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/CMakeLists.txt<br>
+remove dead reference to switcher.h from install list<br>
+<br>
+2009-10-27 23:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1041416&amp;view=rev">1041416</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/CMakeLists.txt, sublime/switcher.h (removed),<br>
+sublime/switcher.cpp (removed)<br>
+remove unused switcher.{h,cpp}<br>
+<br>
+2009-10-26 22:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040816&amp;view=rev">1040816</a>]  Patrick Spendrin &lt;ps_ml gmx.de&gt;<br>
+language/duchain/topducontextdynamicdata.cpp<br>
+one beer for every forgotten file.close() ;-) (can't be deleted otherwise)<br>
+<br>
+2009-10-26 19:12 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040740&amp;view=rev">1040740</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/stringhelpers.cpp<br>
+Also replace characters a la 'b' in "clearStrings()" This fixes code<br>
+completion in c++ behind '\"'<br>
+<br>
+2009-10-26 16:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040668&amp;view=rev">1040668</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/repositories/typerepository.cpp<br>
+Fix a possible initialization order issue<br>
+<br>
+2009-10-26 15:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040642&amp;view=rev">1040642</a>]  Patrick Spendrin &lt;ps_ml gmx.de&gt;<br>
+util/commandexecutor.h, util/commandexecutor.cpp<br>
+add the possibility to run the command from the shell<br>
+<br>
+2009-10-26 01:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040303&amp;view=rev">1040303</a>]  Patrick Spendrin &lt;ps_ml gmx.de&gt;<br>
+language/duchain/repositories/itemrepository.cpp<br>
+remove endless loop after a crash<br>
+<br>
+2009-10-25 23:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040287&amp;view=rev">1040287</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/ideal.cpp<br>
+unify indendation, use spaces instead of tabs<br>
+<br>
+2009-10-25 23:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040286&amp;view=rev">1040286</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp, shell/documentationview.h<br>
+Do not let the documentation combo steal the focus. Show the clear icon in the<br>
+search field lineedit.<br>
+<br>
+2009-10-25 23:02 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040278&amp;view=rev">1040278</a>]  mwolff &lt;mwolff&gt;<br>
+shell/mainwindow_p.cpp, shell/mainwindow_actions.cpp,<br>
+shell/mainwindow_p.h<br>
+add 'reload all' to context menu of text documents, reloads all openDocuments<br>
+as returned by DocumentController<br>
+<br>
+2009-10-25 22:41 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040272&amp;view=rev">1040272</a>]  Patrick Spendrin &lt;ps_ml gmx.de&gt;<br>
+language/duchain/repositories/itemrepository.h<br>
+add a fixme and a short explanation<br>
+<br>
+2009-10-25 22:11 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040263&amp;view=rev">1040263</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+plugins/execute/nativeappconfig.cpp<br>
+Use the proper signal to check if the project line edit changed. That way we<br>
+get when the line edit has changed due to completion as well.<br>
+<br>
+2009-10-25 22:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040256&amp;view=rev">1040256</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/quickopen/quickopenplugin.cpp<br>
+Fix quick-open<br>
+<br>
+2009-10-25 16:59 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1040115&amp;view=rev">1040115</a>]  Patrick Spendrin &lt;ps_ml gmx.de&gt;<br>
+language/duchain/repositories/itemrepository.h<br>
+for now disable this as it makes kdevelop die on windows<br>
+<br>
+2009-10-24 23:16 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1039939&amp;view=rev">1039939</a>]  mwolff &lt;mwolff&gt;<br>
+language/duchain/topducontextdynamicdata.cpp<br>
+revert last patch, was crap - sorry<br>
+<br>
+2009-10-24 23:12 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1039936&amp;view=rev">1039936</a>]  mwolff &lt;mwolff&gt;<br>
+language/duchain/topducontextdynamicdata.cpp<br>
+don't leak the QFile in TopDUContextDynamicData::loadData<br>
+<br>
+2009-10-24 18:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1039837&amp;view=rev">1039837</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/quickopen/quickopenplugin.cpp,<br>
+plugins/quickopen/quickopenplugin.h<br>
+Do not stop running jobs when pressing 'Escape' in a quickopen line<br>
+<br>
+2009-10-24 12:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1039705&amp;view=rev">1039705</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/repositories/itemrepository.cpp,<br>
+language/duchain/repositories/itemrepository.h,<br>
+language/duchain/duchain.cpp<br>
+When KDevelop has crashes 2 times in order with a specific duchain repository,<br>
+automatically clear that repository.<br>
+<br>
+2009-10-21 11:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1038539&amp;view=rev">1038539</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+KDevPlatformConfig.cmake.in<br>
+Another fix needed for making the renamed import-targets work. I wonder why it<br>
+worked at home...<br>
+<br>
+2009-10-21 07:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1038356&amp;view=rev">1038356</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+Hopefully the last place I overlooked to rename the variables<br>
+<br>
+2009-10-20 22:17 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1038262&amp;view=rev">1038262</a>]  mwolff &lt;mwolff&gt;<br>
+CMakeLists.txt<br>
+seems like apaku forget this part in his last commits<br>
+<br>
+2009-10-20 21:10 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1038222&amp;view=rev">1038222</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1038229&amp;view=rev">1038229</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+cmake/modules/FindKDevPlatform.cmake<br>
+plugins/grepview/CMakeLists.txt,<br>
+plugins/documentview/CMakeLists.txt, KDevPlatformConfig.cmake.in<br>
+Forgot to do the renaming here in the docs.<br>
+Rename the library variables to _LIBRARIES as suggested by Alexander, it<br>
+better reflects what they contain as they'll produce link-lines that also<br>
+include their interface-libs<br>
+<br>
+2009-10-20 20:30 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1038213&amp;view=rev">1038213</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+Use a namespace of the imported targets, this way its easier to identify<br>
+problems due to broken cmake-stuff.<br>
+<br>
+2009-10-19 18:47 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037668&amp;view=rev">1037668</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/variable/variablecollection.h,<br>
+debugger/variable/variablecollection.cpp<br>
+Let the plugin decide what kind of locals it want's to show. XDebug has<br>
+separate "Superglobals"<br>
+<br>
+2009-10-19 17:10 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037641&amp;view=rev">1037641</a>]  mwolff &lt;mwolff&gt;<br>
+language/duchain/declaration.h<br>
+add Import kind to Declaration, so we can re-use all the nice Declaration<br>
+features for file includes, e.g. uses, jump to dec==file etc. To use, just add<br>
+the declaration to the _included_ file, I personally add it directly to the<br>
+beginning, with an empty range. Than just build uses for every include. Works<br>
+very well. TODO: port the code to create a nice navigation widget from the<br>
+IncludeItem to KDevplatform, so others can re-use it.<br>
+<br>
+2009-10-18 17:09 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037240&amp;view=rev">1037240</a>]  Andrew Coles &lt;andrew_coles yahoo.co.uk&gt;<br>
+plugins/patchreview/patchreview.cpp<br>
+Proof-reading change: - Eliminated exclamation points (should not be used<br>
+outwith games etc.) - Added missing period at end of multi-sentence message.<br>
+<br>
+2009-10-18 16:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037218&amp;view=rev">1037218</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037220&amp;view=rev">1037220</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/grepview/kdevgrepview.rc<br>
+plugins/grepview/kdevgrepview.rc<br>
+And its actually group not append.<br>
+Forgot to increase the version number after the last change.<br>
+<br>
+2009-10-18 15:03 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037197&amp;view=rev">1037197</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037198&amp;view=rev">1037198</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/variable/variablecollection.h<br>
+debugger/variable/variablecollection.cpp<br>
+Revert 1033903, this is not needed anymore as updateLocals now returns the<br>
+Variables<br>
+Don't attach in Locals::updateLocals, instead leave the call to the plugin.<br>
+Needed because for xdebug we don't need it as the value/children is avaliable<br>
+directly.<br>
+<br>
+2009-10-18 13:42 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037165&amp;view=rev">1037165</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037168&amp;view=rev">1037168</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+CMakeLists.txt<br>
+plugins/CMakeLists.txt<br>
+Remove the log-message, it just confuses people as long as we don't support<br>
+the komparepart.<br>
+Fix wrong variable name for the language library<br>
+Build the new grepview plugin<br>
+<br>
+2009-10-18 13:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037154&amp;view=rev">1037154</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037163&amp;view=rev">1037163</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/grepview (added)<br>
+plugins/openwith/openwithplugin.h,<br>
+plugins/openwith/openwithplugin.cpp<br>
+shell/mainwindow.cpp<br>
+shell/mainwindow_p.cpp<br>
+shell/mainwindow_p.h<br>
+shell/plugincontroller.cpp<br>
+interfaces/iplugincontroller.h<br>
+Grepview is also a general purpose plugin, so lets move it up to the platform.<br>
+implement basic support for opening multiple files via context menu/openwith.<br>
+BUG:208265<br>
+now that the pluginUnloaded signal is emitted properly lets use it to<br>
+de-register xml gui clients from this mainwindow. Fixes a crash when using<br>
+"Configure shortcuts" after closing the last open project.<br>
+properly deregister all xmlguiclients when a plugin is removed and/or<br>
+destroyed.<br>
+need to use fully qualified name for the slot argument for connect() to work.<br>
+Properly emit the pluginUnloaded signal<br>
+add documentation for the pluginUnloaded signal. Mention that the iplugin<br>
+might already have free'd all its resources.<br>
+<br>
+2009-10-18 12:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037112&amp;view=rev">1037112</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/documentcontroller.cpp<br>
+Use a temp variable for encoding to be able to change it.<br>
+<br>
+2009-10-18 12:09 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037105&amp;view=rev">1037105</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037107&amp;view=rev">1037107</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/documentcontroller.cpp<br>
+shell/documentcontroller.cpp<br>
+shell/mainwindow_p.cpp, shell/documentcontroller.cpp<br>
+Implement support for opening multiple files via File-&gt;Open... This doesn't<br>
+change the behaviour of openDocument(KUrl()). That call will still ask for a<br>
+filename and allow to choose only 1 file.<br>
+--unused variable<br>
+No need to mention "file" again in the action text, its the file menu after<br>
+all.<br>
+<br>
+2009-10-18 10:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1037040&amp;view=rev">1037040</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/variable/variablecollection.h,<br>
+debugger/variable/variablecollection.cpp<br>
+Return variables, so values or children can be added<br>
+<br>
+2009-10-17 22:16 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036847&amp;view=rev">1036847</a>]  Patrick Spendrin &lt;ps_ml gmx.de&gt;<br>
+shell/uicontroller.cpp<br>
+cleanup a bit; use constantly m_controller after it has been set.<br>
+<br>
+2009-10-17 15:50 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036676&amp;view=rev">1036676</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036677&amp;view=rev">1036677</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/projectcontroller.cpp, shell/projectcontroller.h<br>
+plugins/projectmanagerview/kdevprojectmanagerview.desktop<br>
+Remove useless code for the projectview-loading.<br>
+Make the projectmanagerview automatically load on startup<br>
+<br>
+2009-10-17 15:09 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036659&amp;view=rev">1036659</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+Provide the same cmake variables for the libraries as are set by<br>
+FindKDevPlatform, so we can more easily move around plugins. Fixes compilation<br>
+of documentview.<br>
+<br>
+2009-10-17 15:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036656&amp;view=rev">1036656</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036657&amp;view=rev">1036657</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+Messages.sh, shell/core.cpp,<br>
+cmake/modules/FindKDevPlatform.cmake,<br>
+KDevPlatformConfig.cmake.in, Architecture.dox<br>
+plugins/CMakeLists.txt<br>
+Remove the last remaining of Veritas<br>
+Add the documentview plugin that is here now.<br>
+<br>
+2009-10-17 13:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036618&amp;view=rev">1036618</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+Increase the version after the recent changes.<br>
+<br>
+2009-10-17 13:40 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036605&amp;view=rev">1036605</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036613&amp;view=rev">1036613</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/CMakeLists.txt<br>
+plugins/git (removed)<br>
+plugins/documentview (added)<br>
+CMakeLists.txt<br>
+No git plugin here anymore.<br>
+Move the git plugin as it unfortunately doesn't work at all as far as I know.<br>
+Move this plugin to the platform as its useful for other kdevplatform apps<br>
+too.<br>
+no veritas here anymore.<br>
+<br>
+2009-10-17 13:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036588&amp;view=rev">1036588</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+veritas (removed)<br>
+Move the veritas library to playground as its been unmaintained for a while<br>
+and nobody is interested in it as far as history shows.<br>
+<br>
+2009-10-17 12:59 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036566&amp;view=rev">1036566</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1036568&amp;view=rev">1036568</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+sublime/mainwindow_p.cpp,<br>
+language/codecompletion/codecompletionmodel.cpp,<br>
+shell/openprojectpage.cpp, sublime/mainwindow.cpp,<br>
+sublime/mainwindow_p.h,<br>
+language/codecompletion/codecompletionmodel.h, (...)<br>
+CMakeLists.txt<br>
+Remove now-useless version checks for KDE 4.2/Qt4.4<br>
+Increase requirement to KDE 4.3<br>
+<br>
+2009-10-14 21:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1035382&amp;view=rev">1035382</a>]  Andrew Coles &lt;andrew_coles yahoo.co.uk&gt;<br>
+shell/openprojectdialog.cpp, shell/projectcontroller.cpp<br>
+Corrected a couple of minor typos.<br>
+<br>
+2009-10-14 18:19 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1035304&amp;view=rev">1035304</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1035307&amp;view=rev">1035307</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+shell/debugcontroller.cpp<br>
+debugger/variable/variablecollection.cpp<br>
+Add asserts to make sure required controllers are returned correctly by the<br>
+DebugSession<br>
+Revert 1030728, DebugSession must provide a VariableController. XDebug does<br>
+that now too.<br>
+<br>
+2009-10-13 16:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1034825&amp;view=rev">1034825</a>]  mwolff &lt;mwolff&gt;<br>
+shell/languagecontroller.cpp<br>
+fix lookup by language-name, since X-KDevelop-Language is defined as QString,<br>
+the QStringList operator 'in' won't work in the KTrader language. makes<br>
+loading language plugins on-demand via LanguageController::language() possible<br>
+<br>
+2009-10-13 05:41 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1034570&amp;view=rev">1034570</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+shell/core.cpp, shell/debugcontroller.cpp,<br>
+shell/debugcontroller.h<br>
+Stop debug session in cleanup method, not in destructor, as the core is gone<br>
+in destructor. (as suggested by Andreas)<br>
+<br>
+2009-10-12 19:37 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1034465&amp;view=rev">1034465</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+shell/debugcontroller.cpp, shell/debugcontroller.h<br>
+Stop debug session on shutdown<br>
+<br>
+2009-10-11 14:19 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1033902&amp;view=rev">1033902</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1033903&amp;view=rev">1033903</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/variable/variablecollection.h<br>
+debugger/variable/variablecollection.h,<br>
+debugger/interfaces/ivariablecontroller.cpp<br>
+Make methods public to modify children from outside. (Needed in xdebug plugin)<br>
+Move code that marks watches out of scope when debugger ended into platform<br>
+<br>
+2009-10-09 07:27 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1032997&amp;view=rev">1032997</a>]  Laurent Montel &lt;montel kde.org&gt;<br>
+language/codegen/codegenerator.cpp<br>
+Add missing i18n<br>
+<br>
+2009-10-06 07:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1031809&amp;view=rev">1031809</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+sublime/ideallayout.cpp<br>
+Properly reset the maximized widget member if a widget is removed from the<br>
+layout. Fixes a crash when trying to close the maximized toolview. BUG:209550<br>
+<br>
+2009-10-03 07:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1030726&amp;view=rev">1030726</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1030728&amp;view=rev">1030728</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+debugger/variable/variablecollection.cpp<br>
+debugger/interfaces/idebugsession.cpp<br>
+debugger/interfaces/idebugsession.cpp<br>
+Don't crash when debugger doesn't provide a VariableController<br>
+Make FrameStackModel and VariableController optional, not every debugger might<br>
+implement them.<br>
+Call function to get FrameStackModel, as it does delayed initialization and<br>
+might not yet be initialized.<br>
+<br>
+2009-10-01 13:11 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1030052&amp;view=rev">1030052</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1030055&amp;view=rev">1030055</a>]  mwolff &lt;mwolff&gt;<br>
+language/duchain/navigation/abstractnavigationcontext.cpp<br>
+language/duchain/navigation/abstractnavigationcontext.h<br>
+fix init order to remove compiler warning<br>
+make declarationKind virtual instead of static so we can do language-dependant<br>
+stuff in it<br>
+<br>
+2009-09-30 10:04 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1029596&amp;view=rev">1029596</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/highlighting/colorcache.cpp<br>
+Make the connections queued, to prevent a possible deadlock-crash BUG: 208966<br>
+<br>
+2009-09-29 11:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1029271&amp;view=rev">1029271</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/dvcs/test2/CMakeLists.txt<br>
+Multiple targets with the same name are not supported since CMake 2.6.0, so<br>
+lets fix this (even though KDE enforces the pre-2.6 behaviour).<br>
+<br>
+2009-09-28 13:47 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1028923&amp;view=rev">1028923</a>]  Bertjan Broeksema &lt;b.broeksema home.nl&gt;<br>
+language/duchain/builders/abstractusebuilder.h<br>
+Implement mapping between Uses and AST nodes.<br>
+<br>
+2009-09-24 11:40 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1027586&amp;view=rev">1027586</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/editor/editorintegratorstatic.h,<br>
+language/editor/editorintegrator.cpp,<br>
+language/editor/editorintegrator.h,<br>
+language/backgroundparser/parsejob.cpp,<br>
+language/editor/editorintegratorstatic.cpp,<br>
+project/builderjob.cpp<br>
+Remove the remaining revision management code from the editor-integrator. It<br>
+used to not properly release revisions. This fixes the problem that the<br>
+patch-review didn't work at all in recent revisions of kate, and fixes the<br>
+problem that all highlighting from the foreground thread (patch-review,<br>
+problem-reporter) completely stopped working after a document was reloaded<br>
+<br>
+2009-09-23 15:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1027216&amp;view=rev">1027216</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/genericprojectmanager/genericmanager.cpp<br>
+remove obsolete TODO<br>
+<br>
+2009-09-23 15:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1027215&amp;view=rev">1027215</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/genericprojectmanager/genericmanager.h,<br>
+plugins/genericprojectmanager/genericmanager.cpp<br>
+use created() and deleted() signals instead of dirty(), is lot nicer and<br>
+faster, since we don't have to re-import the whole parent-dir, only add/delete<br>
+what is required<br>
+<br>
+2009-09-22 22:30 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026949&amp;view=rev">1026949</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp<br>
+Delay deletion so that we don't get stuff removed while changing<br>
+documentation. Makes it possible to use actions in the documentation for<br>
+navigation.<br>
+<br>
+2009-09-22 20:30 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026915&amp;view=rev">1026915</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/problemreporter/problemhighlighter.cpp<br>
+Unlock the smart-lock earlier. This fixes a possible deadlock.<br>
+<br>
+2009-09-22 06:13 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026645&amp;view=rev">1026645</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+shell/launchconfigurationdialog.cpp<br>
+Partly revert r1025008, crash was solved by removing invalid nodes from the<br>
+tree after lanuch type changed.<br>
+<br>
+2009-09-21 07:33 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026226&amp;view=rev">1026226</a>]  Dirk Mueller &lt;mueller kde.org&gt;<br>
+shell/launchconfiguration.cpp<br>
+always return something<br>
+<br>
+2009-09-21 01:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026188&amp;view=rev">1026188</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp, shell/documentationview.h<br>
+Use the proper signal to search in the documentation. Cache the documentation<br>
+providers.<br>
+<br>
+2009-09-20 22:16 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026164&amp;view=rev">1026164</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/ducontext.cpp,<br>
+language/duchain/topducontext.cpp, language/duchain/ducontext.h,<br>
+language/duchain/topducontext.h<br>
+Limit the maximum followed inheritance depth during search to 20, to prevent a<br>
+crash due to endless recursion in endless inheritance chains BUG: 193114<br>
+<br>
+2009-09-20 15:12 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026037&amp;view=rev">1026037</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp<br>
+Use filtered completion because otherwise it's too slow when using QtHelp (I<br>
+wonder why, since in QComboBox it worked like a charm). Properly delete the<br>
+documentationWidgets.<br>
+<br>
+2009-09-20 14:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026024&amp;view=rev">1026024</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp, shell/documentationview.h<br>
+Changed the search view from QComboBox to QLineEdit+QCompleter. Fixes crashes<br>
+and doesn't add weird stuff to the model.<br>
+<br>
+2009-09-20 13:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1026015&amp;view=rev">1026015</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp<br>
+Don't crash when there's no documentation plugin loaded<br>
+<br>
+2009-09-19 15:25 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025745&amp;view=rev">1025745</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetstore.cpp<br>
+remove obsolete connection<br>
+<br>
+2009-09-19 12:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025686&amp;view=rev">1025686</a>]  mwolff &lt;mwolff&gt;<br>
+language/codecompletion/codecompletiontesthelper.h<br>
+make it possible to set the position of the code completion context in unit<br>
+tests<br>
+<br>
+2009-09-18 15:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025379&amp;view=rev">1025379</a>]  mwolff &lt;mwolff&gt;<br>
+language/duchain/navigation/abstractnavigationcontext.h<br>
+make makeLink virtual so we can intersect it esp. for scripting languages<br>
+where linking to internal function files makes no sense<br>
+<br>
+2009-09-18 14:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025371&amp;view=rev">1025371</a>]  mfuchs &lt;mfuchs&gt;<br>
+shell/savedialog.cpp<br>
+The savedialog has a save-icon and shows the items checked by default.<br>
+<br>
+2009-09-18 02:26 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025118&amp;view=rev">1025118</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp<br>
+Remove wrong include.<br>
+<br>
+2009-09-18 02:08 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025115&amp;view=rev">1025115</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp,<br>
+interfaces/idocumentationcontroller.h,<br>
+interfaces/idocumentationprovider.cpp, shell/documentationview.h,<br>
+shell/documentationcontroller.cpp,<br>
+interfaces/idocumentationprovider.h, (...)<br>
+Makes it possible to provide an index for each documentation provider. It also<br>
+adds the needed interface to the documentationview so that we can take<br>
+advantage of it.<br>
+<br>
+2009-09-17 19:48 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025008&amp;view=rev">1025008</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1025011&amp;view=rev">1025011</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+util/CMakeLists.txt<br>
+shell/launchconfiguration.cpp<br>
+shell/launchconfigurationdialog.h,<br>
+shell/launchconfigurationdialog.cpp<br>
+shell/launchconfigurationdialog.cpp<br>
+install file so it can be used by other plugins<br>
+Don't return launcher that is invalid for the current type. Invalid Launches<br>
+can be configured when the type is changed. Please review. CCMAIL:<br>
+apaku@gmx.de<br>
+Reload avaliable launch modes when launch type is changed<br>
+Don't call parent implementation for KComboBox, data would be overwritten<br>
+again.<br>
+<br>
+2009-09-17 19:25 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1024998&amp;view=rev">1024998</a>]  Nikolaus Sams &lt;niko.sams gmail.com&gt;<br>
+plugins/execute/projectitemlineedit.h (removed),<br>
+plugins/execute/nativeappconfig.ui,<br>
+plugins/execute/CMakeLists.txt, util/projectitemlineedit.cpp<br>
+(added), plugins/execute/nativeappconfig.cpp,<br>
+util/projectitemlineedit.h (added), (...)<br>
+Move ProjectItemLineEdit into util so it can be used by multiple plugins.<br>
+<br>
+2009-09-17 18:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1024981&amp;view=rev">1024981</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp, shell/documentationview.h<br>
+Show the title of the current documentation.<br>
+<br>
+2009-09-17 00:26 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1024633&amp;view=rev">1024633</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1024634&amp;view=rev">1024634</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetstore.cpp<br>
+plugins/snippet/editsnippet.ui<br>
+remove obsolete connection, neither slot nor signal exist anymore<br>
+make the richtext better translatable<br>
+<br>
+2009-09-16 18:26 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1024512&amp;view=rev">1024512</a>]  Matt Rogers &lt;mattr kde.org&gt;<br>
+vcs/dvcs/ui/branchmanager.cpp, vcs/dvcs/ui/branchmanager.h<br>
+Rename the checkouted signal to checkedOut Nobody else uses this signal yet.<br>
+The impact is minimal, and the weird name is gone. :)<br>
+<br>
+2009-09-16 00:16 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1024087&amp;view=rev">1024087</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/interfaces/iproblem.cpp, language/CMakeLists.txt,<br>
+language/duchain/navigation/problemnavigationcontext.cpp (added),<br>
+plugins/problemreporter/problemhighlighter.cpp,<br>
+language/interfaces/iproblem.h,<br>
+language/duchain/navigation/abstractnavigationwidget.cpp, (...)<br>
+Show a navigation-widget when hovering problems from the problem reporter. It<br>
+contains the information, and if the problem has a solution assistant, offers<br>
+the different solutions through a menu.<br>
+<br>
+2009-09-15 20:34 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1024024&amp;view=rev">1024024</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/duchain/functiondeclaration.cpp<br>
+Don't crash if the type attached to a FunctionDeclaration is not a<br>
+FunctionType. This can happen with "typedef " functions BUG: 207452<br>
+<br>
+2009-09-15 16:33 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023941&amp;view=rev">1023941</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/selectionjumper.cpp,<br>
+plugins/snippet/snippetcompletionitem.cpp<br>
+when hitting ESC jump to the end of the last range. additionally add an<br>
+(emtpy) range to the end of each snippet when there are other markers. this<br>
+way we can easily accept the 'suggested' snippet and continue typing at the<br>
+end of the snippet<br>
+<br>
+2009-09-15 16:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023939&amp;view=rev">1023939</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippet.cpp<br>
+fix loading of snippets with meta-data and newline handling<br>
+<br>
+2009-09-15 16:09 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023934&amp;view=rev">1023934</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetrepository.cpp<br>
+make subrepos actually usable by supplying their items during code completion<br>
+as well<br>
+<br>
+2009-09-15 15:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023931&amp;view=rev">1023931</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetrepository.cpp<br>
+remove all snippets + subrepos when deleting a repo, rmDir does not delete<br>
+non-empty dirs<br>
+<br>
+2009-09-15 15:50 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023929&amp;view=rev">1023929</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetrepository.cpp,<br>
+plugins/snippet/snippetrepository.h<br>
+refactor SnippetRepository: don't keep lists of pointers around, thats a)<br>
+doubled b) leads often to crashes since we must keep track when what gets<br>
+deleted. also fix the dtor: we must not call parent()-&gt;removeRow(row())<br>
+since that would again try to delete and hence crash<br>
+<br>
+2009-09-15 14:40 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023911&amp;view=rev">1023911</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/genericprojectmanager/genericmanager.cpp<br>
+add some debug output, since I'm not sure this whole deleting-files business<br>
+is rock-solid yet.<br>
+<br>
+2009-09-15 14:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023895&amp;view=rev">1023895</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetstore.cpp<br>
+fix warning, properly add parens<br>
+<br>
+2009-09-15 13:30 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023889&amp;view=rev">1023889</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetstore.cpp<br>
+don't try to create repos with empty path<br>
+<br>
+2009-09-14 22:09 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023544&amp;view=rev">1023544</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023545&amp;view=rev">1023545</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/uicontroller.cpp<br>
+plugins/subversion/svncheckoutjob.cpp<br>
+Now that the snippet plugin got some love and becomes rather useful, lets have<br>
+it in the code area by default. BUG:192939<br>
+Hmm, expecting a non-existing directory wasn't such a good idea, svn doesn't<br>
+fail, so we shouldn't do so either.<br>
+<br>
+2009-09-14 21:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023528&amp;view=rev">1023528</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023531&amp;view=rev">1023531</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/subversion/svncheckoutjob.cpp<br>
+plugins/appwizard/appwizardplugin.cpp<br>
+plugins/appwizard/projectvcspage.cpp<br>
+plugins/subversion/svnimportjob.cpp<br>
+Fix the checkout job, only allow to checkout into a non-existing destination<br>
+directory and use QFileInfo::canonicalFilePath only on the parent dir of the<br>
+destination as the function returns an empty string for non-existing files.<br>
+Fix initializeCVCS, it used the source location from the vcs plugin, which<br>
+doesn't exist in the case of cvcs as the project is extracted into a tempdir.<br>
+Use the source locations last part for the repository destination if the vcs<br>
+plugin supports that. Makes the svn plugin import the new project foobar into<br>
+&lt;repository&gt;/foobar instead of directly into the root.<br>
+Make sure we only try to import existing directories, anything else might make<br>
+us import the users $HOME or worse..<br>
+<br>
+2009-09-14 16:10 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023361&amp;view=rev">1023361</a>]  yurchor &lt;yurchor&gt;<br>
+plugins/snippet/snippetview.cpp<br>
+Typo fix<br>
+<br>
+2009-09-13 22:41 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023106&amp;view=rev">1023106</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023119&amp;view=rev">1023119</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/subversion/tests/svnimport.cpp<br>
+plugins/cvs/cvsplugin.h, plugins/subversion/kdevsvnplugin.cpp,<br>
+plugins/subversion/kdevsvnplugin.h, plugins/cvs/cvsplugin.cpp,<br>
+vcs/interfaces/icentralizedversioncontrol.h<br>
+plugins/subversion/tests/svnimport.cpp,<br>
+plugins/subversion/tests/svnimport.h<br>
+plugins/subversion/svnimportjob.cpp,<br>
+plugins/subversion/svncheckoutjob.cpp<br>
+plugins/subversion/tests/svnimport.cpp<br>
+plugins/cvs/cvsplugin.h, plugins/subversion/kdevsvnplugin.cpp,<br>
+plugins/subversion/kdevsvnplugin.h, plugins/cvs/cvsplugin.cpp,<br>
+vcs/interfaces/icentralizedversioncontrol.h<br>
+plugins/subversion/tests/svnimport.cpp,<br>
+plugins/subversion/tests/svnimport.h<br>
+plugins/appwizard/projectvcspage.cpp<br>
+plugins/appwizard/projectselectionpage.cpp,<br>
+plugins/appwizard/projectselectionpage.h<br>
+plugins/subversion/svnimportmetadatawidget.h,<br>
+vcs/widgets/vcsimportmetadatawidget.h,<br>
+plugins/subversion/svnimportmetadatawidget.cpp<br>
+plugins/subversion/svnimportmetadatawidget.h,<br>
+vcs/widgets/vcsimportmetadatawidget.h,<br>
+plugins/subversion/svnimportmetadatawidget.cpp<br>
+plugins/subversion/svnimportjob.cpp,<br>
+plugins/subversion/kdevsvnplugin.cpp,<br>
+plugins/subversion/svncheckoutjob.cpp<br>
+plugins/subversion/tests/svnimport.cpp,<br>
+plugins/subversion/tests/svnimport.h<br>
+plugins/subversion/tests/svnimport.cpp,<br>
+plugins/subversion/tests/svnimport.h<br>
+++compile<br>
+Revert "Allow a icvcs plugin to try to recover from import errors. This can<br>
+be" Not needed after all.<br>
+New test validating that importing also works when directories in the remote<br>
+path don't exist. svn auto-creates them.<br>
+Fix the url normalization by also removing duplicate '/' inside the url path.<br>
+Use proper dirName() and show that there's still a bug in the import job wrt.<br>
+url normalization.<br>
+Allow a icvcs plugin to try to recover from import errors. This can be used by<br>
+svn to automatically create missing directories in the repository when<br>
+importing a new project.<br>
+A new test checking that importing into &lt;repo&gt;/&lt;projectname&gt; works<br>
+properly (the basic test imports directly into &lt;repo&gt;/)<br>
+Make sure the import metadata widget uses the source location for the<br>
+destination (if he supports that) so svn imports are into<br>
+&lt;repo&gt;/&lt;projectname&gt;<br>
+Emit locationChanged() with the complete location, not just the<br>
+destination-dir. Needed so the vcs-page gets the complete location as source.<br>
+Hence also emit the signal when the project name changes.<br>
+Ooops, const setter doesn't make any sense, make it non-const.<br>
+Allow to re-use part of the source location as import destination for svn.<br>
+This will be used in the appwizard to make sure the user ends up with a<br>
+directory in the svn repository thats named after his project.<br>
+Properly fixup remote and local urls to be as svn wants them: Canonical, no<br>
+duplicate or trailing "/".<br>
+Some more refactoring to more easily create other tests. This shows that we're<br>
+still not fixing up the urls properly in all cases.<br>
+Refactor the test a bit so its easier to extend.<br>
+<br>
+2009-09-13 22:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023104&amp;view=rev">1023104</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+vcs/vcsdiffpatchsources.cpp<br>
+Delete the commit patch source directly after the commit is done, to prevent<br>
+an empty widget from floating around after the action<br>
+<br>
+2009-09-13 22:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023101&amp;view=rev">1023101</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+vcs/vcsdiffpatchsources.cpp<br>
+Do not insert double newlines between filenames in the list<br>
+<br>
+2009-09-13 22:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023099&amp;view=rev">1023099</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+interfaces/ipatchsource.cpp, plugins/patchreview/patchreview.ui,<br>
+interfaces/ipatchsource.h, plugins/patchreview/patchreview.cpp,<br>
+vcs/vcsdiffpatchsources.cpp (added), vcs/vcspluginhelper.cpp,<br>
+(...)<br>
+Use the patch-review area as replacement for the commit dialog The<br>
+patch-review toolview contains a large text-edit for the commit message, a<br>
+button to execute the commit, and checkboxes for selecting all files to<br>
+commit, exactly equal to the contents of the commit dialog<br>
+<br>
+2009-09-13 22:08 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023098&amp;view=rev">1023098</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+shell/project.cpp<br>
+Remove some massive debug output This commit was reviewed and committed using<br>
+the upcoming patch-review commit integration :-)<br>
+<br>
+2009-09-13 19:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023065&amp;view=rev">1023065</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetcompletionitem.cpp,<br>
+plugins/snippet/snippetcompletionitem.h<br>
+the expanding widget is owned by the caller, thanks David, for pointing that<br>
+out\!<br>
+<br>
+2009-09-13 19:13 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023046&amp;view=rev">1023046</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetcompletionitem.cpp<br>
+keep indendation level when executing snippet completion items.<br>
+<br>
+2009-09-13 18:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023029&amp;view=rev">1023029</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1023035&amp;view=rev">1023035</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetvariablemodel.cpp (removed),<br>
+plugins/snippet/snippetvariablesubst.cpp (removed),<br>
+plugins/snippet/CMakeLists.txt, plugins/snippet/snippetview.cpp,<br>
+plugins/snippet/snippetvariablemodel.h (removed),<br>
+plugins/snippet/snippetvariablesubst.h (removed), (...)<br>
+plugins/snippet/editsnippet.ui<br>
+plugins/snippet/selectionjumper.cpp (added),<br>
+plugins/snippet/snippetcompletionitem.cpp,<br>
+plugins/snippet/CMakeLists.txt, plugins/snippet/selectionjumper.h<br>
+(added)<br>
+plugins/snippet/snippetcompletionitem.cpp,<br>
+plugins/snippet/snippetcompletionitem.h<br>
+plugins/snippet/snippetcompletionitem.cpp (added),<br>
+plugins/snippet/CMakeLists.txt,<br>
+plugins/snippet/snippetcompletionmodel.cpp,<br>
+plugins/snippet/snippetcompletionitem.h (added),<br>
+plugins/snippet/snippetcompletionmodel.h<br>
+plugins/snippet/editsnippet.ui<br>
+plugins/snippet/snippetview.cpp<br>
+reuse snippet completion item when inserting a snippet from the snippet view.<br>
+remove now-obsolete stuff.<br>
+update explanation text in snippet dialog reflecting last commit<br>
+introduce a new way to input snippet variables: when the item gets completed,<br>
+a SelectionJumper gets created that manages a list of smartranges for the<br>
+variables. the first range is selected at the beginning. You can jump to the<br>
+next/prev variable (and get its range selected) with ALT + Left and ALT +<br>
+Right respectivly. Esc closes the SelectionJumper. TODO: maybe it should be<br>
+better visible that a selection jumper is still running. or delete the<br>
+selection jumper when the user moves the cursor by hand. but that could lead<br>
+to other issues.<br>
+show snippet contents in expandable widget<br>
+introduce a CompletionTreeItem based SnippetCompletionItem this breaks<br>
+variable expansion in snippets when executing code completion, but I have<br>
+better plans for that. also, it is CompletionTreeItem based so language<br>
+plugins will eventually be able to leverage its functionality.<br>
+add short label explaining what snippet keywords are there for<br>
+make sure the user doesn't remove snippet repositories by accident, by showing<br>
+him a warning message.<br>
+<br>
+2009-09-13 16:16 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022961&amp;view=rev">1022961</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+shell/documentationview.cpp,<br>
+plugins/documentswitcher/documentswitcherplugin.cpp,<br>
+plugins/contextbrowser/contextbrowser.cpp,<br>
+shell/projectcontroller.cpp,<br>
+plugins/projectmanagerview/projectmanagerviewplugin.cpp,<br>
+plugins/projectmanagerview/projectmanagerview.cpp<br>
+Added some icons to the interface.<br>
+<br>
+2009-09-13 12:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022890&amp;view=rev">1022890</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackwidget.h,<br>
+debugger/framestack/framestackmodel.cpp,<br>
+debugger/interfaces/iframestackmodel.h,<br>
+debugger/framestack/framestackwidget.cpp,<br>
+debugger/framestack/framestackmodel.h<br>
+Introduce the notion of current frame.<br>
+<br>
+2009-09-13 12:37 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022881&amp;view=rev">1022881</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022889&amp;view=rev">1022889</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/subversion/tests/CMakeLists.txt,<br>
+plugins/subversion/tests/svnimport.cpp (added),<br>
+plugins/subversion/tests/svnimport.h (added)<br>
+plugins/subversion/svncheckoutjob.cpp<br>
+plugins/subversion/svnimportjob.cpp<br>
+plugins/subversion/svnimportjob.cpp<br>
+plugins/subversion/svninternaljobbase.h,<br>
+plugins/subversion/svninternaljobbase.cpp<br>
+cmake/modules/FindSubversionLibrary.cmake<br>
+vcs/dvcs/dvcsplugin.cpp<br>
+plugins/subversion/svncheckoutjob.h,<br>
+plugins/subversion/svncopyjob.cpp,<br>
+plugins/subversion/svnimportjob.cpp,<br>
+plugins/subversion/svnmovejob.h,<br>
+plugins/subversion/svnrevertjob.h,<br>
+plugins/subversion/svncatjob.h, (...)<br>
+vcs/dvcs/dvcsplugin.cpp<br>
+Add a unit-test for importing into a repository (also checks out, but that<br>
+should also be covered separately).<br>
+Fix checkout, we always want HEAD when checking out (until we support checking<br>
+out specific revisions at least)<br>
+svn doesn't like trailing slashes or double "//" in its files or urls, so make<br>
+sure we're passing around a clean version. BUG:202335<br>
+Fix running import's, got the expression wrong in the if. CCBUG:202335<br>
+The kill variable needs its own mutex so we don't cause deadlocks.<br>
+Fix the find-module using HINTS<br>
+Revert the unload-change, the plugins already do this. Disable deletion of the<br>
+factory, it crashes for some - yet unknown reasons in the svnimport test.<br>
+Make all except the update job silent so they don't raise the toolview. For<br>
+the update job its important to see wether any conflicts have appeared (once<br>
+we have highlighting in the project treeview this is not needed so much<br>
+anymore). For the other jobs the output is usually useless.<br>
+Properly deregister and delete the toolview factory. Fixes a possible crash on<br>
+close<br>
+<br>
+2009-09-13 11:58 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022864&amp;view=rev">1022864</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackwidget.h,<br>
+debugger/framestack/framestackmodel.cpp,<br>
+debugger/interfaces/iframestackmodel.h,<br>
+debugger/framestack/framestackwidget.cpp,<br>
+debugger/framestack/framestackmodel.h<br>
+Rename "active thread" to "current thread". Basically, that's how the thing is<br>
+called in GDB, so let's not create confusion by calling it something else.<br>
+<br>
+2009-09-13 10:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022838&amp;view=rev">1022838</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackwidget.h,<br>
+debugger/interfaces/ivariablecontroller.h,<br>
+debugger/interfaces/idebugsession.h, debugger/CMakeLists.txt,<br>
+debugger/interfaces/iframestackmodel.cpp (added),<br>
+debugger/framestack/framestackmodel.cpp, (...)<br>
+Make thread switching work. The primary goal of this patch is to make the<br>
+"Watches" item in the variables view update when a different thread is<br>
+selected by the user. This also does lots of refactoring in update logic for<br>
+frame and variables, switching it to use event as opposed to states. The<br>
+reason is that change in current thread and frame does not result in any<br>
+change of IDebugSession::state, and therefore we can't detect this. CCBUG:<br>
+207167<br>
+<br>
+2009-09-12 11:57 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022737&amp;view=rev">1022737</a>]  yurchor &lt;yurchor&gt;<br>
+plugins/snippet/snippet.cpp<br>
+Typo fix<br>
+<br>
+2009-09-12 02:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022558&amp;view=rev">1022558</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetstore.cpp,<br>
+plugins/snippet/snippetrepository.cpp,<br>
+plugins/snippet/snippetstore.h,<br>
+plugins/snippet/snippetrepository.h<br>
+fix the whole snippet repo removal stuff, that was totally broken since lists<br>
+of pointers where kept that never got updated properly...<br>
+<br>
+2009-09-12 01:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022550&amp;view=rev">1022550</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022552&amp;view=rev">1022552</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/editsnippet.ui<br>
+plugins/snippet/snippet.cpp,<br>
+plugins/snippet/snippetrepository.cpp<br>
+plugins/snippet/snippetview.cpp,<br>
+plugins/snippet/snippetstore.cpp, plugins/snippet/snippet.cpp,<br>
+plugins/snippet/snippetrepository.cpp,<br>
+plugins/snippet/addrepository.ui<br>
+add short explanation to snippet dialog, mentioning the $variable$ syntax<br>
+only try to remove files or folders if they exist<br>
+show error messages to the user when a file operation fails. don't force the<br>
+user to select an existing folder as project repository location, but instead<br>
+create the dir if required. also show a little explanation text in the<br>
+add-repo dialog<br>
+<br>
+2009-09-12 00:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022547&amp;view=rev">1022547</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetcompletionmodel.cpp<br>
+copy completion range before requesting interpreted string, as it creates a<br>
+dialog that makes the completion list lose focus. that in turn deleted the<br>
+range which would crash when we finally try to replace the text<br>
+<br>
+2009-09-11 23:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022534&amp;view=rev">1022534</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/snippet/snippetcompletionmodel.cpp<br>
+when executing a snippet from completion, insert the interpreted snippet, not<br>
+the plain text version<br>
+<br>
+2009-09-11 23:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022528&amp;view=rev">1022528</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/genericprojectmanager/genericmanagerlistjob.cpp,<br>
+plugins/genericprojectmanager/genericmanagerlistjob.h<br>
+handle all entries of a folder in one go, fixes the whole 'remove obsolete<br>
+items' logic work again, since the premise 'entries()' gets only emitted once<br>
+for each listed dir was totally wrong. thanks to Radu Benea for this patch,<br>
+once again\!<br>
+<br>
+2009-09-11 16:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022373&amp;view=rev">1022373</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/mainwindow_p.cpp, sublime/mainwindow.cpp,<br>
+shell/textdocument.h, sublime/mainwindow.h,<br>
+shell/mainwindow_p.cpp, sublime/container.cpp, (...)<br>
+Extend actions available from tab context menu, supply these new actions: new<br>
+file reload file split view left/right split view top/bottom Also make the<br>
+text document reload() method a signal so we can access it easily in this<br>
+case. BUG: 182804<br>
+<br>
+2009-09-11 00:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022172&amp;view=rev">1022172</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/patchreview/patchreview.cpp,<br>
+plugins/patchreview/patchreview.h<br>
+Do the seeking between hunks based on smart-ranges instead of the diff-model.<br>
+This makes the seeking keep work correctly after lines were inserted/removed.<br>
+<br>
+2009-09-10 23:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022160&amp;view=rev">1022160</a>]  mwolff &lt;mwolff&gt;<br>
+sublime/container.cpp, sublime/container.h<br>
+Add context menu to container tabbar with generic "close tab" and "close other<br>
+tabs" actions. I eventually want to add more features, like "split view" or<br>
+"new tab". But the latter seems to be out of the scope of sublime as far as I<br>
+can see. Hence I'll eventually have to refactor this code so sublime<br>
+implementers (like kdevelop shell) can provide custom context menu actions.<br>
+Imo the two actions alone are far better than no context menu at all. I really<br>
+wanted "close other tabs"...<br>
+<br>
+2009-09-10 20:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022118&amp;view=rev">1022118</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/genericprojectmanager/CMakeLists.txt,<br>
+plugins/genericprojectmanager/genericmanager.h,<br>
+plugins/genericprojectmanager/genericmanagerlistjob.cpp (added),<br>
+plugins/genericprojectmanager/genericmanagerlistjob.h (added),<br>
+plugins/genericprojectmanager/genericmanager.cpp<br>
+refactor parts of the genericmanager: - use a composite job and sub-jobs for<br>
+sub-directories. this makes listing of symlinked dirs possible. additionally<br>
+it does not traverse into filtered directories anymore, as the old<br>
+KIO::listDirRecursive would do - finally utilize the semi-new createImportJob<br>
+method which fixes integration into the project-parse job etc. renderes some<br>
+hacks obsolete. Many thanks to Radu Benea for this patch<br>
+<br>
+2009-09-10 18:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022079&amp;view=rev">1022079</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+project/projectmodel.cpp<br>
+Add another safety-net. However child should _never_ return a null-pointer<br>
+unless "funky things" are happening. For example two threads accessing the<br>
+project model at the same time, one adding a folder and settings its rowcount<br>
+and then adding the files individually. Another thread might ask this folder<br>
+for a child that hasn't been added. Hence adding a Q_ASSERT() so we can catch<br>
+such cases in development builds, but don't force a crash onto our users.<br>
+<br>
+2009-09-10 18:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1022074&amp;view=rev">1022074</a>]  mwolff &lt;mwolff&gt;<br>
+project/projectmodel.cpp<br>
+check pointer before accessing it<br>
+<br>
+2009-09-09 20:49 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021701&amp;view=rev">1021701</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021702&amp;view=rev">1021702</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/documentswitcher/documentswitcherplugin.cpp<br>
+plugins/documentswitcher/documentswitcherplugin.cpp<br>
+Also print out mainwindow info.<br>
+Some more output to better identify the area-list thats being used.<br>
+<br>
+2009-09-09 19:37 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021669&amp;view=rev">1021669</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/documentswitcher/documentswitcherplugin.cpp<br>
+Add some debug output to check wether sublime really emits the viewAdded<br>
+signal multiple times. See http://bugs.kde.org/show_bug.cgi?id=204383<br>
+<br>
+2009-09-09 17:47 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021638&amp;view=rev">1021638</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+CMakeLists.txt<br>
+The kompare-integration breaks proper review of changes done to CMakeLists.txt<br>
+when using createClass, so disable it for now.<br>
+<br>
+2009-09-09 09:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021463&amp;view=rev">1021463</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackmodel.h<br>
+That was not meant to be pure.<br>
+<br>
+2009-09-09 09:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021461&amp;view=rev">1021461</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackmodel.cpp,<br>
+debugger/interfaces/iframestackmodel.h,<br>
+debugger/framestack/framestackmodel.h<br>
+Introduce IFrameStackModel::actOnStop.<br>
+<br>
+2009-09-08 16:57 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021254&amp;view=rev">1021254</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackmodel.cpp,<br>
+debugger/interfaces/iframestackmodel.h,<br>
+debugger/framestack/framestackwidget.cpp,<br>
+debugger/framestack/framestackmodel.h<br>
+Always update the framestack model. While saving one command on each stop<br>
+might be good, it proves extremely hard to design a debugger if the current<br>
+thread and frame is undefined unless the frame stack widget is visible.<br>
+<br>
+2009-09-08 09:53 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1021141&amp;view=rev">1021141</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackmodel.cpp<br>
+Mark no frame active on start, as opposed to 0th.<br>
+<br>
+2009-09-07 08:30 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020720&amp;view=rev">1020720</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+plugins/patchreview/patchreview.cpp<br>
+Fix warnings about member initialization order.<br>
+<br>
+2009-09-07 07:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020715&amp;view=rev">1020715</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020716&amp;view=rev">1020716</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/runcontroller.cpp<br>
+shell/runcontroller.cpp<br>
+Ooops, didn't mean to commit this part.<br>
+Properly shutdown all running processes when runcontroller is cleaned.<br>
+<br>
+2009-09-05 22:48 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020288&amp;view=rev">1020288</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020293&amp;view=rev">1020293</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+language/codegen/createclass.h<br>
+language/codegen/createclass.h<br>
+language/codegen/applychangeswidget.h<br>
+language/codegen/documentchangeset.h<br>
+language/interfaces/iquickopen.h<br>
+language/util/includeitem.cpp<br>
+spell<br>
+In the libraries, use Q_SIGNALS: and Q_SLOTS: instead of signals: and slots:<br>
+They are syntactically equivalent and should be used to avoid conflicts with<br>
+boost signals, and with python's use of "slots" in its headers.<br>
+use KDE/KClass in angle brackets<br>
+use KDE/KClass in angle brackets<br>
+use KDE/KClass in angle brackets<br>
+Files that do not end with a newline character can cause problems<br>
+<br>
+2009-09-05 22:40 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020270&amp;view=rev">1020270</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020285&amp;view=rev">1020285</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+sublime/area.cpp<br>
+shell/progressmanager.h<br>
+shell/patchdocument.cpp<br>
+plugins/patchreview/patchreview.h<br>
+plugins/subversion/svnblamejob.cpp<br>
+outputview/outputjob.cpp<br>
+Do not assign QString::null or QString() to a QString. Instead use the<br>
+.clear() method<br>
+Spell<br>
+Files that do not end with a newline character can cause problems<br>
+missing or improper include guard in header<br>
+Files that do not end with a newline character can cause problems<br>
+spelling<br>
+<br>
+2009-09-05 22:25 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020269&amp;view=rev">1020269</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+debugger/framestack/framestackmodel.h<br>
+use KDE/KClass in angle brackets. see<br>
+http://techbase.kde.org/Policies/Library_Code_Policy#Getting_.23includes_right<br>
+<br>
+2009-09-05 16:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020216&amp;view=rev">1020216</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+interfaces/ipatchsource.cpp, plugins/patchreview/patchreview.ui,<br>
+interfaces/ipatchsource.h, plugins/patchreview/patchreview.cpp,<br>
+plugins/patchreview/patchreview.h<br>
+Improve patch-review: - Never create multiple patch-review working sets - Add<br>
+a "Finish Review" and for future an optional "Cancel Review" button. When<br>
+"Finish Review" is pressed, all files in the review-area are deleted, the<br>
+patch is removed from patch-review, and kdevelop switches back to the code<br>
+area. - Remove some useless buttons - Make the "Show" button work nicer: It<br>
+just does the same thing that happens when a patch-review is started: Open the<br>
+diff and all related files in the review-area - Do not crash when the<br>
+document-controller opens a modal dialog while starting review<br>
+<br>
+2009-09-05 16:11 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020213&amp;view=rev">1020213</a>]  danxuliu &lt;danxuliu gmail.com&gt;<br>
+veritas/tests/CMakeLists.txt<br>
+Fix testresult executable name, which fixes failing memory test (the<br>
+executable wasn't found)<br>
+<br>
+2009-09-05 09:16 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020050&amp;view=rev">1020050</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/interfaces/ivariablecontroller.h,<br>
+debugger/variable/variablecollection.h,<br>
+debugger/interfaces/ivariablecontroller.cpp,<br>
+debugger/variable/variabletooltip.cpp,<br>
+debugger/variable/variablecollection.cpp<br>
+Encapsulate varobj inside GdbVariable (platform part).<br>
+<br>
+2009-09-05 07:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020038&amp;view=rev">1020038</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/interfaces/ivariablecontroller.h,<br>
+debugger/variable/variablecollection.h,<br>
+debugger/variable/variablecollection.cpp<br>
+Move varobj creation to GdbVariable.<br>
+<br>
+2009-09-05 02:19 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020010&amp;view=rev">1020010</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020011&amp;view=rev">1020011</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+plugins/patchreview/patchreview.cpp<br>
+plugins/patchreview/patchreview.cpp<br>
+Fix last commit<br>
+Don't crash if no model-list was created<br>
+<br>
+2009-09-05 02:12 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1020009&amp;view=rev">1020009</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+interfaces/ipatchsource.cpp (added),<br>
+plugins/patchreview/localpatchsource.cpp,<br>
+plugins/patchreview/CMakeLists.txt, interfaces/CMakeLists.txt,<br>
+interfaces/ipatchsource.h (added),<br>
+plugins/patchreview/localpatchsource.h, (...)<br>
+Move the responsibility of visualizing a patch into the patch-review plugin,<br>
+and access it through a global interface: - Rename the 'test' area to 'review'<br>
+area - Create global interfaces for putting custom dynamic patches into the<br>
+patch-review plugin - Use that interface to pass VCS patches to the<br>
+patch-review plugin directly When reviewing a patch: - Switch into the review<br>
+area - Open the patch in one file, either through kompare integration, or as a<br>
+simple ".patch" file with kate highlighting, for overview - Open and highlight<br>
+all related documents within editor-views, and jump to the first changed<br>
+position within each document The kompare integration will need some more<br>
+work, to find a good balance between the functionalities of patches<br>
+highlighted right in the editor, and within kompare parts.<br>
+<br>
+2009-09-04 21:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1019955&amp;view=rev">1019955</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+language/codegen/createclass.cpp<br>
+Add a zero declaration to the list if no declaration was found. The cpp new<br>
+class dialog expects the declaration-list to equal its access-list, else it<br>
+asserts. Still not perfect as the base specifier will not be added now if no<br>
+declaration was found, but much better than asserting. I hate debugging such<br>
+miserably tested code.. future refactorings should happen in a branch, and<br>
+only be merged into trunk after proper testing.<br>
+<br>
+2009-09-04 20:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1019942&amp;view=rev">1019942</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+shell/workingsetcontroller.h, shell/workingsetcontroller.cpp<br>
+- Add markers to working-sets whether they are persistent or not - Delete all<br>
+non-persistent working sets that are not active within any area during<br>
+shutdown - Mark working sets persistent if the user did any conscious action<br>
+on the working-set ever (activating, deactivating, merging, etc.) This<br>
+prevents the problem that unaware users may accidentally accumulate tons of<br>
+useless working sets.<br>
+<br>
+2009-09-04 16:37 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1019858&amp;view=rev">1019858</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/interfaces/ivariablecontroller.h,<br>
+debugger/variable/variablecollection.h,<br>
+debugger/variable/variabletooltip.cpp,<br>
+debugger/variable/variablecollection.cpp<br>
+Introduce GDB-specific Variable subclass. I was working on finishing pretty<br>
+printing support, which requires handling 'here are some new children' as well<br>
+as 'children were removed' notifications from GDB. Doing this inside<br>
+variablecontroller proved nasty, as then I had to made most of TreeItem<br>
+interface public. This commit introduces GdbVariable that in future will<br>
+handle everything. This patch does not change anything in behaviour, it is<br>
+pure refactoring.<br>
+<br>
+2009-09-04 12:34 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1019803&amp;view=rev">1019803</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/variable/variablecollection.h,<br>
+debugger/variable/variablecollection.cpp<br>
+Remove floatsam.<br>
+<br>
+2009-09-03 18:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1019484&amp;view=rev">1019484</a>]  Stephan Binner &lt;binner kde.org&gt;<br>
+plugins/openwith/kdevopenwith.desktop<br>
+remove duplicate "with" in Comment<br>
+<br>
+2009-08-30 20:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017522&amp;view=rev">1017522</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017523&amp;view=rev">1017523</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+shell/partdocument.cpp, language/duchain/uses.cpp,<br>
+language/duchain/appendedlist.h,<br>
+language/codecompletion/codecompletionitem.h,<br>
+sublime/mainwindow.h, language/duchain/importers.cpp, (...)<br>
+language/editor/modificationrevisionset.cpp<br>
+Fix various warnings from MSVC. Patch by Yaron Hirsch<br>
+CCMAIL:yhirsch@netvision.net.il<br>
+fix initialization for this repository by making it static. Patch by Yaron<br>
+Hirsch CCMAIL:yhirsch@netvision.net.il<br>
+<br>
+2009-08-30 20:19 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017519&amp;view=rev">1017519</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/mercurial/mercurialplugin.h,<br>
+shell/kross/wrappers/krossprojectmodelimpl.h,<br>
+plugins/subversion/svnjobbase.cpp,<br>
+plugins/sourceformatter/sourceformatterplugin.h,<br>
+shell/launchconfiguration.h,<br>
+shell/kross/wrappers/krossducontext.h, (...)<br>
+Properly set svn:eol-style to native.<br>
+<br>
+2009-08-30 16:42 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017434&amp;view=rev">1017434</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+language/codecompletion/abstractincludefilecompletionitem.h<br>
+header-only template classes do not need an export macro. How often do I have<br>
+to repeat this until people will learn it?<br>
+<br>
+2009-08-30 16:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017432&amp;view=rev">1017432</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+language/util/includeitem.cpp (added)<br>
+forgot to commit this file.<br>
+<br>
+2009-08-30 16:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017431&amp;view=rev">1017431</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+language/CMakeLists.txt, language/util/includeitem.h<br>
+msvc doesn't like inline classes very much, so export it and also uninline it.<br>
+<br>
+2009-08-30 15:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017411&amp;view=rev">1017411</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/patchreview/CMakeLists.txt<br>
+Use the right variable name, interesting that this didn't broke on windows.<br>
+<br>
+2009-08-30 15:17 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017404&amp;view=rev">1017404</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017405&amp;view=rev">1017405</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/patchreview/CMakeLists.txt<br>
+plugins/patchreview/libdiff2/CMakeLists.txt (removed),<br>
+plugins/patchreview/libdiff2/diffmodel.h,<br>
+plugins/patchreview/libdiff2/diffsettings.h,<br>
+plugins/patchreview/libdiff2/difference.h,<br>
+plugins/patchreview/libdiff2/komparemodellist.h<br>
+use the proper KDE variable for enabling exceptions, -fexceptions is gcc-only.<br>
+Remove all remainings of the library as they cause problems building the<br>
+plugin on windows and there's no need for exported symbols or a separate<br>
+CMakeLists.txt anymore.<br>
+<br>
+2009-08-30 14:57 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1017399&amp;view=rev">1017399</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+interfaces/CMakeLists.txt, interfaces/ipatchdocument.h,<br>
+interfaces/ipatchdocument.cpp (added)<br>
+include interfacesexport.h so the export macro is actually defined properly.<br>
+Extract the destructor to a .cpp file, msvc doesn't like classes with just<br>
+headers when there's an implemented function in it.<br>
+<br>
+2009-08-27 15:58 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1016363&amp;view=rev">1016363</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/classbrowser/classtree.cpp,<br>
+plugins/classbrowser/classbrowserplugin.cpp,<br>
+plugins/classbrowser/classwidget.cpp (added),<br>
+plugins/classbrowser/classtree.h,<br>
+plugins/classbrowser/CMakeLists.txt,<br>
+plugins/classbrowser/classwidget.h (added)<br>
+move classwidget into its own set of .cpp/.h files cleanup some header<br>
+includes<br>
+<br>
+2009-08-27 12:52 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1016291&amp;view=rev">1016291</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+shell/debugcontroller.cpp,<br>
+debugger/framestack/framestackwidget.cpp<br>
+When current debug session is deleted, inform everybody. Also, teach<br>
+framestack widget that there might not be a current debug session.<br>
+<br>
+2009-08-27 06:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1016214&amp;view=rev">1016214</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+cmake/modules/FindKompare.cmake<br>
+Revert "Change KDE requirement for kompare." I don't know what your intention<br>
+was but KDE 4.1 is definetly wrong. Please be more careful when you do changes<br>
+and double-check the diff before you commit. CCMAIL:killerfox512@gmail.com<br>
+<br>
+2009-08-27 02:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1016108&amp;view=rev">1016108</a>]  rzarazua &lt;rzarazua&gt;<br>
+cmake/modules/FindKompare.cmake<br>
+Change KDE requirement for kompare.<br>
+<br>
+2009-08-26 14:32 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015891&amp;view=rev">1015891</a>]  mwolff &lt;mwolff&gt;<br>
+shell/textdocument.cpp<br>
+return an invalid cursor when we have no view. returning a default cursor is<br>
+not what we want. we already had a bug due to this at one time. better fix it<br>
+now before another bug occurs<br>
+<br>
+2009-08-26 14:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015888&amp;view=rev">1015888</a>]  mwolff &lt;mwolff&gt;<br>
+shell/textdocument.cpp<br>
+make textdocument more failsafe<br>
+<br>
+2009-08-26 13:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015866&amp;view=rev">1015866</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackwidget.h,<br>
+debugger/variable/variablecollection.h,<br>
+debugger/framestack/framestackwidget.cpp<br>
+Fix compilation and crash on startup.<br>
+<br>
+2009-08-26 12:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015839&amp;view=rev">1015839</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/variable/variablecollection.h,<br>
+debugger/variable/variablecollection.cpp<br>
+Fix connection to VariableCollection::updateAutoUpdate. Using<br>
+ICore::self()-&gt;debugController() inside VariableCollection ctor is not<br>
+working, since it's called from DebugController's ctor, and naturally the<br>
+debugController() returns null at this point.<br>
+<br>
+2009-08-26 12:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015821&amp;view=rev">1015821</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+interfaces/idebugcontroller.h, shell/debugcontroller.cpp,<br>
+shell/debugcontroller.h<br>
+More forgotten changes :-(<br>
+<br>
+2009-08-26 11:59 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015814&amp;view=rev">1015814</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+debugger/framestack/framestackwidget.h,<br>
+debugger/interfaces/istackcontroller.h (removed),<br>
+debugger/interfaces/idebugsession.h, debugger/CMakeLists.txt,<br>
+debugger/framestack/framestackmodel.cpp,<br>
+debugger/interfaces/iframestackmodel.h (added), (...)<br>
+Refactor stack frame getting. The primary reason for this change is that with<br>
+current GDB, it is no longer required to actively ask for the list of threads.<br>
+Insteads, one can listen to the notifications that are emitted whenever a<br>
+thread is created, or exited. The current interface, specifically<br>
+IStackController::fetchThread, on the other hand, assumes active polling. It<br>
+seems more reasonable to move all responsibility to FrameStackModel, so that<br>
+debugger-specific children classes of it can either pull, or use notification,<br>
+or other methods. Also, FrameStackModel was associated with IDebugController.<br>
+It makes more sense to associate it with a session, so that when we eventually<br>
+support debugging two programs at the same time, each can have it's own<br>
+thread. So, this patch kills IStackController, moving responsibility to<br>
+FrameStackModel. GDB is not yet switched to use notifications, this is a topic<br>
+for the next patch.<br>
+<br>
+2009-08-26 07:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015657&amp;view=rev">1015657</a>]  Andras Mantia &lt;amantia kde.org&gt;<br>
+plugins/execute/nativeappconfig.cpp<br>
+Make use of the defined environments for lanuches<br>
+<br>
+2009-08-25 22:48 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015609&amp;view=rev">1015609</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015610&amp;view=rev">1015610</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/classbrowser/allclassesfolder.cpp,<br>
+plugins/classbrowser/projectfolder.cpp<br>
+shell/textdocument.cpp<br>
+don't change the name of the folter node when filtering, the line edit shows<br>
+what we are filtering for. also make sure the folder node name for 'all<br>
+classes' is localizable<br>
+only try to delete the document if it was ever set. prevents crash in<br>
+DUChain::documentAboutToBeDeleted with doc=0x0<br>
+<br>
+2009-08-25 22:33 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015605&amp;view=rev">1015605</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1015606&amp;view=rev">1015606</a>]  mwolff &lt;mwolff&gt;<br>
+plugins/classbrowser/projectfolder.cpp (added),<br>
+plugins/classbrowser/classmodel.cpp,<br>
+plugins/classbrowser/projectfolder.h (added),<br>
+plugins/classbrowser/classmodel.h,<br>
+plugins/classbrowser/CMakeLists.txt<br>
+plugins/classbrowser/allclassesfolder.cpp,<br>
+plugins/classbrowser/allclassesfolder.h,<br>
+plugins/classbrowser/documentclassesfolder.cpp (added),<br>
+plugins/classbrowser/CMakeLists.txt,<br>
+plugins/classbrowser/documentclassesfolder.h (added)<br>
+add per-project folders to the class browser<br>
+move documentclassesfolder to its own .h/.cpp files<br>
+<br>
+2009-08-24 02:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1014859&amp;view=rev">1014859</a>]  mwolff &lt;mwolff&gt;<br>
+language/duchain/classdeclaration.h,<br>
+language/duchain/classdeclaration.cpp<br>
+add missing ctor<br>
+<br>
+2009-08-21 18:57 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1014171&amp;view=rev">1014171</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+plugins/patchreview/patchreview.cpp<br>
+Fix two signal errors<br>
+<br>

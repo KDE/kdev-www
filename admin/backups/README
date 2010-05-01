@@ -1,0 +1,18 @@
+This folder contains cron automated weekly backups of the MySQL database:
+kdevelop_db
+
+And of the MRTG databases:
+dynamic/new_dl_per_hour.log
+dynamic/online.log
+
+kdevelop_po_files translation status:
+dynamic/KDE_3_*.ihtml
+
+mediawiki uploaded images
+mediawiki/images/*
+
+website translation status
+dynamic/translation_status*.html
+
+authors information (not all changes are in CVS)
+*/authors.ihtml

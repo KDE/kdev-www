@@ -1,0 +1,11 @@
+--- phpMyAdmin2/libraries/common.inc.php	2008-08-28 18:48:52.000000000 +0200
++++ phpMyAdmin/libraries/common.inc.php	2008-09-01 01:40:26.000000000 +0200
+@@ -402,8 +402,6 @@
+          * also, server needed for cookie login screen (multi-server)
+          */
+         'server', 'db', 'table', 'target',
+-        /* to change the language on login screen or main page */
+-        'lang',
+         /* Session ID */
+         'phpMyAdmin',
+         /* Cookie preferences */

@@ -1,0 +1,128 @@
+<?php
+include_once("../../access.inc");
+extract($_SERVER);  // This is required for some apache configurations
+if(!isset($PHP_AUTH_USER)) {
+  exit;
+}else{
+  if ($PHP_AUTH_USER == $k_login && $PHP_AUTH_PW == $k_password) {
+    // delete the login and password variables for safety reasons
+    unset($k_login);
+    unset($k_password);
+  }
+  else {
+    echo "Invalid username or password\n";
+    exit;
+  }
+}
+?>
+
+<h1>Website features</h1>
+
+<ul>
+<li>Internationalization</li>
+<ul>
+  <li>Automatic recognition and utilization of the user preferred language (set in his browser preferences)</li>
+  <li>Easy translation, because only the content needs translation, the layout is language independent</li>
+  <li>Hourly generated tar files with the translatable and translated files</li>
+  <li>Active translators get daily pleas by e-mail to translate a page if the English version changed</li>
+</ul>
+
+<li>Multiple software versions</li>
+<ul>
+  <li><strong>NO regressions</strong>, previous KDevelop versions are still supported by the website</li>
+</ul>
+
+<li>Forum</li>
+<ul>
+  <li>latest Phorum5 forum software. Fast, feature-full and extremely easy to update</li>
+  <li>Supports polls</li>
+  <li>Supports the gestbook. Very easy to block an IP or "spam words"</li>
+</ul>
+
+<li>Wiki</li>
+<ul>
+  <li>latest MediaWiki forum software. Fast, feature-full and easy to update</li>
+</ul>
+
+<li>Statistics</li>
+<ul>
+  <li>Statistics about the visited pages are automatically collected in a small and optimized MySQL table</li>
+  <li>It displays most visited pages, page distribution per language, most wanted but not yet translated pages and most wanted but outdated pages</li>
+  <li>Statistics about error pages are also collected inclusive HTTP referrer and user agent (for robots)</li>
+</ul>
+
+<li>Sitemap</li>
+<ul>
+  <li>Automatic and very configurable graphviz based clickable sitemap</li>
+</ul>
+
+<li>Anti-Spam</li>
+<ul>
+  <li>Automatic blocking and trapping of unfriendly e-mail collectors robot spiders</li>
+</ul>
+
+</ul>
+
+
+<br>
+<br>
+Amilcar Lucas<br>
+October 2005<br>
+
+
+<h1>How does this website work</h1>
+
+<p>
+The webserver is at the university of Potsdam in Germany (the uni where
+Ex-KDeveloper Bernd Gehrmann, Ralf Funken and Sandy Meier came from). Sandy Meier is
+still the owner and root user of the website files location, but he's been
+99,9% inactive since 2 or 3 years. On demand, he only gives website access
+accounts to new KDevelop team members who also want to maintain the website.
+Every work on this server is based on unsolicited work.</p>
+<p>The website itself is accessed and changed via cvs file management. 
+The file structure on the server is the same as the structure in the internet.
+The layout is programmed in PHP.</p>
+<p>The website is a multi-language one, where English is default. To support a
+new different language than English see the <a href="howto.html">howto page</a>.
+</p>
+<p>Usually, there's one maintainer registered for each language.
+The common mechanism for changing the content of a page of www.kdevelop.org
+is to first change the English version of the web page file. Next midnight
+all registered translators will get an email with a notification about the
+changed files with the plea to translate the appropriate language-specific copy.
+Now they can cvs-update (or download the file from the <a href="../index.html?filename=website_translation_status.html&amp;set_lang=en">translation status page</a>), translate the changed files and commit back. All
+translators also have access to the original English version.
+All cvs commits to the website repository will be online with the next ten minutes. A permanently running background process on the webserver always
+synchronizes the website with the cvs repository, automatically. As extra feature,
+the ChangeLog of the KDevelop source code repository is shown on the main web
+page, also synchronized with every full hour.</p>
+<p align="center"><img src="../HEAD/doc/api/html/Development.png" alt="KDevelop Teamwork toolchain"></p>
+<p>Total redesigns and big changes to the website have
+first to be discussed with the other KDevelop developers on the mailing-list,
+but usually, it will be suppressed because the current mechanism is so cool
+that it must not be changed. :-P</p>
+
+Hope, that helps<br>
+Ciao<br>
+F@lk<br>
+August 2003<br>
+
+<p>During the month of January 2008 the website was converted from HTML 4.01 Transitional to
+<a href="http://www.w3.org/TR/html401/">HTML 4.01 strict</a>
+and the content got separated from the presentation which is now exclusively done in
+<a href="http://www.w3.org/Style/CSS/">CSS</a>.
+Tables are no longer used to create the website layout; so it now renders progressively with the main content served before the navigational elements being therefore faster, this also allows people with disabilities to visit our site now.
+The new structure is more search-engine friendly, and
+<a href="http://www.sitemaps.org/">website maps for search engine robots</a>
+are now created daily so the current 1627 unique pages of this site and the 84 unique pages of it's wiki get indexed only when they change, allowing more frequent and precise crawls, at the same time reducing wasted bandwidth (unmodified pages do not get crawled).
+The 7841 posts of the
+<a href="../phorum5/">forum</a>
+are not yet indexed by the search-engines because their information flows into the FAQ, wiki and user-manual pages, and this saves bandwidth.
+This website contains 500033 html links, all of them were checked with
+<a href="http://linkchecker.sourceforge.net/">linkchecker</a>
+and only a few of them (&lt; 100) are broken, mostly links published more that four years ago.</p>
+
+<p>Enjoy,<br>
+Amilcar Lucas<br>
+January 2008
+</p>

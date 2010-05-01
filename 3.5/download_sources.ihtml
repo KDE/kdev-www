@@ -1,0 +1,55 @@
+<h4>KDevelop 3.5.5-0 src.rpm [2009-08-11]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td><a href="http://www.centos.org/">CentOS</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/CentOS_5/src/">5</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://fedoraproject.org/">Fedora</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_6/src/">FE 6</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_7/src/">FE 7</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_8/src/">FE 8</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_9/src/">FE 9</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_10/src/">FE 10</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.mandriva.com/">Mandriva</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Mandriva_2007/src/">2007</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Mandriva_2008/src/">2008</a><!--,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Mandriva_2009/src/">2009</a>-->
+</td>
+</tr><tr align="center">
+<td><a href="http://www.redhat.com/">Red Hat</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/RHEL_5/src/">Enterprise Linux 5</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.opensuse.org/">openSUSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_10.2/src/">10.2</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_10.3/src/">10.3</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_11.0/src/">11.0</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_11.1/src/">11.1</a><!--,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_Factory/src/">Factory</a>-->
+</td>
+</tr><tr align="center">
+<td><a href="http://www.novell.com/linux/">SUSE Linux Enterprise</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/SLE_10/src/">10</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.ubuntu.com/">Ubuntu</a> and <a href="http://www.kubuntu.org/">Kubuntu</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/xUbuntu_6.06/">6.06</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/xUbuntu_7.10/">7.10</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/xUbuntu_8.04/">8.04</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/xUbuntu_8.10/">8.10</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/xUbuntu_9.04/">9.04</a>
+</td>
+</tr>
+</table>
+<br>
+<br>
+<a 
+href="http://download.opensuse.org/repositories/home:/amilcarlucas/xUbuntu_9.04/kdevelop_3.5.5.orig.tar.gz">kdevelop-3.5.5.orig.tar.gz</a> (9.0 MB) MD5sum: abc6cc2831ad4c0f4da9fba9e38edce1<br>
+<br>

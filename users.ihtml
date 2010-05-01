@@ -1,0 +1,28 @@
+<?php
+module_head($l_user_progs);
+echo $l_user_progs_text;
+
+mysql_select_db('kdevelop_db');
+
+$result = mysql_query('SELECT name,description,link FROM user_progs order by name asc');
+$number= mysql_num_rows($result);
+
+while($row = mysql_fetch_object($result)){
+  echo (empty($row->link)?$row->name:"<a href=\"$row->link\">$row->name</a>");
+  echo " - $row->description <br>\n";
+}
+
+echo "<br>$number Programs<br>\n";
+module_tail();
+
+$result = mysql_query('SELECT MAX(UNIX_TIMESTAMP( `date_added` )) as ts1 FROM `user_progs` WHERE UNIX_TIMESTAMP( `date_added` ) > 0');
+if ($row = mysql_fetch_object($result)){
+  $ts1 = $row->ts1;
+}
+mysql_free_result($result);
+
+// It even works for english files :)
+$ts2 = file_exists("lang/$lang/users.html")?filemtime("lang/$lang/users.html"):filemtime('users.html');
+
+return max($ts1,$ts2);
+?>

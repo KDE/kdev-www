@@ -1,0 +1,23 @@
+<?php 
+global $l_what_is_KDevelop;
+global $l_def_KDevelop;
+global $l_def_KDevPlatform;
+global $l_versions;
+global $l_def_KDevelop4;
+global $l_def_KDevelop3;
+module_head($l_what_is_KDevelop);?>
+<dl>
+<dt><b>KDevelop</b></dt><dd><?php echo $l_def_KDevelop; ?></dd>
+<dt><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?></dd>
+</dl>
+<?php module_tail();?>
+
+<?php module_head($l_versions);?>
+<dl>
+<dt><b>KDevelop4</b></dt><dd><?php echo $l_def_KDevelop4; ?></dd>
+<dt><b>KDevelop3</b></dt><dd><?php echo $l_def_KDevelop3; ?></dd>
+</dl>
+For more info see the 
+<a href="mediawiki/index.php/KDevelop_4/KDev3_KDev4_comparison_table">
+detailed side-by-side comparison of KDevelop 3 and KDevelop 4</a>.
+<?php module_tail();?>

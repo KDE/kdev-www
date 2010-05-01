@@ -1,0 +1,26 @@
+<?php
+module_head("Sitemap");
+global $lang;
+$mapfile    = "dynamic/sitemap_" . $lang . ".map";
+$image_file = "dynamic/sitemap_" . $lang . ".png";
+if (!file_exists($image_file)){
+  // default to english
+  $mapfile    = "dynamic/sitemap_en.map";
+  $image_file = "dynamic/sitemap_en.png";
+} else
+  if (filesize($image_file) == 0) {
+    // it exists but has 0 bytes then default to english
+    $mapfile    = "dynamic/sitemap_en.map";
+    $image_file = "dynamic/sitemap_en.png";
+  }
+// for some strange reason the Turkish sitemap seams to create an "undefined GetImageSize()"
+if ($lang == 'tr') {
+  $image_size = '';
+} else {
+  $size = GetImageSize($image_file);
+  $image_size = $size[3];
+}
+echo "<a href=\"$mapfile\"><img src=\"$image_file\" $image_size ismap alt=\"sitemap\"></a><br>\n";
+module_tail();
+return filemtime($image_file);
+?>

@@ -1,0 +1,297 @@
+<h4>KDevelop 3.3.6 [2007-01-25]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="4">Linux Intel x86</td>
+<td><a href="http://www.kubuntu.org/">Kubuntu</a></td><td>
+<a href="http://kubuntu.org/announcements/kde-356.php">6.10 (Edgy)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.pardus.org.tr/">Pardus</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.6/Pardus/">1.1</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.redhat.com/">Red Hat</a> (<a href="http://kde-redhat.sourceforge.net/">Unofficial</a>)
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/kde-org.txt">README</a></td><td>
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/5/i386/">Fedora Core 5</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/6/i386/">Fedora Core 6</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/7/i386/">Fedora Core 7</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_9.3/i586/">9.3</a>,
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_10.0/i586/">10.0</a>,
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_10.1/i586/">10.1</a>,
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_10.2/i586/">10.2</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">Linux AMD x86 64bit</td>
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_9.3/x86_64/">9.3</a>,
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_10.0/x86_64/">10.0</a>,
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_10.1/x86_64/">10.1</a>,
+<a href="http://software.opensuse.org/download/KDE:/KDE3/SUSE_Linux_10.2/x86_64/">10.2</a>
+</td>
+</tr>
+</table>
+<br>
+
+<h4>KDevelop 3.3.4 [2006-08-02]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="7">Linux Intel x86</td>
+<td><a href="http://www.arklinux.org/">Ark Linux</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.4/ArkLinux/">(i586)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.archlinux.org/">Arch Linux</a></td><td>
+<a href="ftp://ftp.archlinux.org/testing/os/i686/">(i686)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.kubuntu.org/">Kubuntu</a></td><td>
+<a href="http://kubuntu.org/announcements/kde-354.php">6.06 LTS (dapper)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.pardus.org.tr/">Pardus</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.4/Pardus/">1.0</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.redhat.com/">Red Hat</a> (<a href="http://kde-redhat.sourceforge.net/">Unofficial</a>)
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/kde-org.txt">README</a></td><td>
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/all/">all platforms</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/5/i386/">Fedora Core 5</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/6/i386/">Fedora Core 6</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.slackware.org/">Slackware</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.4/contrib/Slackware/noarch/">Language packages</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.4/contrib/Slackware/10.1">10.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.4/contrib/Slackware/10.2">10.2</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_9.3/i586/">9.3</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.0/i586/">10.0</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.1/i586/">10.1</a>
+</td>
+</tr><tr align="center">
+<td rowspan="2">Linux AMD x86 64bit</td>
+<td><a href="http://www.slamd64.com/">slamd64</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.4/Slamd64/">AMD 64</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_9.3/x86_64/">9.3</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.0/x86_64/">10.0</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.1/x86_64/">10.1</a>
+</td>
+</tr>
+</table>
+<br>
+
+<h4>KDevelop 3.3.3 [2006-05-31]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="6">Linux Intel x86</td>
+<td><a href="http://www.archlinux.org/">Arch Linux</a></td><td>
+<a href="ftp://ftp.archlinux.org/testing/os/i686/">(i686)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.kubuntu.org/">Kubuntu</a>, <a href="http://kubuntu.org/announcements/kde-353.php">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.3/kubuntu/">6.06 LTS (dapper)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.pardus.org.tr/">Pardus</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.3/Pardus/">1.0</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.redhat.com/">Red Hat</a> (<a href="http://kde-redhat.sourceforge.net/">Unofficial</a>)
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/kde-org.txt">README</a></td><td>
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/all/">all platforms</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/redhat/">Red Hat</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/">Fedora</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/centos/">CentOS</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.slackware.org/">Slackware</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.3/contrib/Slackware/10.1">10.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.3/contrib/Slackware/10.2">10.2</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_9.3/i586/">9.3</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.0/i586/">10.0</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.1/i586/">10.1</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">Linux AMD x86 64bit</td>
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_9.3/x86_64/">9.3</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.0/x86_64/">10.0</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/KDE3/SUSE_Linux_10.1/x86_64/">10.1</a>
+</td>
+</tr>
+</table>
+<br>
+
+<h4>KDevelop 3.3.2 [2006-03-28]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="5">Linux Intel x86</td>
+<td><a href="http://www.archlinux.org/">Arch Linux</a></td><td>
+<a href="ftp://ftp.archlinux.org/extra/os/i686/">(i686)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.kubuntu.org/">Kubuntu</a>, <a href="http://kubuntu.org/announcements/kde-352.php">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/kubuntu/">5.10 (Breezy) and development version (Dapper)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.pardus.org.tr/">Pardus</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.2/Pardus/">1.0</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.slackware.org/">Slackware</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/contrib/Slackware/10.1">10.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/contrib/Slackware/10.2">10.2</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/ix86/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/ix86/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/ix86/10.0/">10.0</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">Linux AMD x86 64bit</td>
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/x86_64/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/x86_64/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.2/SuSE/x86_64/10.0/">10.0</a>
+</td>
+</tr>
+</table>
+<br>
+
+<h4>KDevelop 3.3.1 [2006-01-31]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="4">Linux Intel x86</td>
+<td><a href="http://www.archlinux.org/">Arch Linux</a></td><td>
+<a href="ftp://ftp.archlinux.org/extra/os/i686/">(i686)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.kubuntu.org/">Kubuntu</a>, <a href="http://kubuntu.org/announcements/kde-351.php">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/kubuntu/">5.10 (Breezy) and development version (Dapper)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.slackware.org/">Slackware</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/contrib/Slackware/10.1">10.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/contrib/Slackware/10.2">10.2</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/ix86/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/ix86/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/ix86/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/ix86/10.0/">10.0</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">Linux AMD x86 64bit</td>
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/x86_64/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/x86_64/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/x86_64/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.1/SuSE/x86_64/10.0/">10.0</a>
+</td>
+</tr>
+</table>
+<br>
+
+<h4>KDevelop 3.3.0 [2005-11-29]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="4">Linux Intel x86</td>
+<td><a href="http://www.debian.org/">Debian</a></td><td>
+<a href="http://packages.debian.org/unstable/kde/kdevelop3">Sid</a> (debian.org)
+</td>
+</tr><tr align="center">
+<td>Kubuntu</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/kubuntu/pool-breezy/kdevelop3/">breezy</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.mandriva.com/">Mandriva</a></td><td>
+<a href="http://qa.mandriva.com/twiki/bin/view/Main/CookerHowTo">Cooker</a>
+</td>
+</tr><tr align="center">
+<td>Slackware <a href="http://download.kde.org/binarydownload.html?url=/stable/3.5/contrib/Slackware/10.2/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/contrib/Slackware/10.1/">10.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/contrib/Slackware/10.2/">10.2</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">Linux Intel x586</td>
+<td>SuSE <a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/ix86/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/ix86/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/ix86/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/ix86/10.0/">10.0</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">Linux AMD x86 64bit</td>
+<td>SuSE <a href="http://download.kde.org/binarydownload.html?url=unstable/3.5/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/x86_64/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/x86_64/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/x86_64/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/SuSE/x86_64/10.0/">10.0</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">SUN</td>
+<td>Solaris GCC</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5/contrib/Solaris/GCC/9/">9</a>
+</td>
+</tr>
+</table>
+<br>
+
+<h4>KDevelop 3.3 Release Candidate 1 (3.3-rc1) [2005-11-11]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="1">Linux Intel x486</td>
+<td>Klax</td><td>
+<a href="http://developer.kde.org/~binner/klax/devel.html">Klax</a>
+</td>
+</tr>
+</table>
+<br>

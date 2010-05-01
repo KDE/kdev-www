@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>KDevelop - Qtopia tutorial</title>
+  <meta name="author" content="Roberto Raggi">
+  <meta name="keywords" content="kdevelop,Qtopia,IDE,GUI,unix,development,cpp,c++,Qt,qt,tutorial">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body>
+
+<center>
+<h1>KDevelop 3 and Qtopia 1.6</h1>
+<small>Roberto Raggi (roberto at kdevelop org)</small><br>
+<br>
+</center>
+
+<center>
+  prev &nbsp; &nbsp; <a href="step_1.html">next</a>
+</center>
+
+<h2>Introduction</h2>
+<p>
+This tutorial describes how to use <b>KDevelop 3</b> to develop
+<b>Qtopia</b> applications.
+</p>
+
+<h2>1. Download KDevelop 3</h2>
+<p>
+You can download <b>KDevelop 3</b> from <b>KDE</b> CVS. Follow the
+<a href="http://www.kdevelop.org/index.html?filename=3.0/branches_compiling.html">Instructions for a self-compiled version of KDevelop-3</a>
+from the <a href="http://www.kdevelop.org">KDevelop</a> site.
+</p>
+
+<h2>2. Setup Qtopia environment</h2>
+<p>
+The great <a href="http://www.trolltech.com">TrollTech</a>'s Qtopia SDK 1.6 is available
+<a href="http://www.trolltech.com/download/qtopia/gpl.html">here</a>.
+</p>
+
+<p>
+This small <b>bash</b> script setups the Qtopia environment. For instance,
+you can put the script in the file <b>setup_qtopia.sh</b> and execute it
+with the command <tt>source setup_qtopia.sh</tt>
+</p>
+
+<pre>
+ # setup qtopia 1.6 sdk
+ export QTDIR=/opt/Qtopia
+ export QTEDIR=$QTDIR
+ export QPEDIR=$QTDIR
+ export PATH=$QTDIR/bin:$PATH
+ export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
+
+ TMAKEPATH=$QTDIR/tmake/lib/qws/linux-x86-g++/
+ PATH=$QTDIR/tmake/bin:$PATH
+ export TMAKEPATH
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<?php
+include_once("../../access.inc");
+extract($_SERVER);  // This is required for some apache configurations
+if(!isset($PHP_AUTH_USER)) {
+  Header("WWW-Authenticate: Basic realm=\"KDevelop.org administrative area\"");
+  Header("HTTP/1.0 401 Unauthorized");
+  echo "Back to <a href=\"../index.html\">KDevelop homepage</a>\n";
+  exit;
+} else {
+  if ($PHP_AUTH_USER == $k_login && $PHP_AUTH_PW == $k_password) {
+
+    // Establish a permanent connection with the MySQL server
+    mysql_pconnect ("localhost",$k_login,$k_password);
+
+    // delete the login and password variables for safety reasons
+    unset($k_login);
+    unset($k_password);
+
+  }
+  else {
+    echo "Invalid username or password\n";
+    exit;
+  }
+}
+?>
+<!-- < xml version="1.0" encoding="iso-8859-1"?> -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+<head>
+  <title>KDevelop.org website administrative area</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<frameset rows="150,*">
+<frame src="frames_header.html" marginwidth="0" marginheight="0" scrolling="no">
+<frame src="howto.html"  name="content_frame" marginwidth="5" marginheight="10">
+</frameset>
+<noframes><body>Opps... your browser does not support frames</body></noframes>
+</html>

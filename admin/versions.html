@@ -1,0 +1,254 @@
+<?php
+include_once("../../access.inc");
+extract($_SERVER);  // This is required for some apache configurations
+if(!isset($PHP_AUTH_USER)) {
+  exit;
+}else{
+  if ($PHP_AUTH_USER == $k_login && $PHP_AUTH_PW == $k_password) {
+    // delete the login and password variables for safety reasons
+    unset($k_login);
+    unset($k_password);
+  }
+  else {
+    echo "Invalid username or password\n";
+    exit;
+  }
+}
+
+/*
+ * The next four functions are an adaptation of the original mediawiki/includes/SpecialVersion.php functions
+ */
+	function extensionCredits() {
+
+		global $wgExtensionCredits, $wgExtensionFunctions, $wgParser, $wgSkinExtensionFunction;
+
+		if ( ! count( $wgExtensionCredits ) && ! count( $wgExtensionFunctions ) && ! count( $wgSkinExtensionFunction ) )
+			return '';
+
+		$extensionTypes = array(
+			'specialpage' => 'Special pages',
+			'parserhook' => 'Parser hooks',
+			'variable' => 'Variables',
+			'other' => 'Other',
+		);
+		//wfRunHooks( 'SpecialVersionExtensionTypes', array( &$this, &$extensionTypes ) );
+		
+		$out = "\nExtensions:<br />\n";
+		foreach ( $extensionTypes as $type => $text ) {
+			if ( isset ( $wgExtensionCredits[$type] ) && count ( $wgExtensionCredits[$type] ) ) {
+				$out .= " $text:<br />\n";
+				foreach ( $wgExtensionCredits[$type] as $extension ) {
+					$out .= formatCredits(
+						isset ( $extension['name'] )        ? $extension['name']        : '',
+						isset ( $extension['version'] )     ? $extension['version']     : null,
+						isset ( $extension['author'] )      ? $extension['author']      : '',
+						isset ( $extension['url'] )         ? $extension['url']         : null,
+						isset ( $extension['description'] ) ? $extension['description'] : ''
+					);
+				}
+			}
+		}
+
+
+		if ( count( $wgExtensionFunctions ) ) {
+			$out .= "Extension functions:<br />\n";
+			$out .= listToText( $wgExtensionFunctions ) . "<br />\n";
+		}
+
+		if ( $cnt = count( $tags = $wgParser->getTags() ) ) {
+			for ( $i = 0; $i < $cnt; ++$i )
+				$tags[$i] = "&lt;{$tags[$i]}&gt;";
+			$out .= "Parser extension tags:<br />\n";
+			$out .= listToText( $tags ). "<br />\n";
+		}
+
+		if( $cnt = count( $fhooks = $wgParser->getFunctionHooks() ) ) {
+			$out .= "Parser function hooks:<br />\n";
+			$out .= listToText( $fhooks ) . "<br />\n";
+		}
+
+		if ( count( $wgSkinExtensionFunction ) ) {
+			$out .= "Skin extension functions:<br />\n";
+			$out .= listToText( $wgSkinExtensionFunction ) . "<br />\n";
+		}
+
+		return $out;
+	}
+
+	function formatCredits( $name, $version = null, $author = null, $url = null, $description = null) {
+
+		$ret = '';
+		if ( isset( $url ) )
+			$ret .= "<a href=\"$url\">";
+		$ret .= "$name";
+		if ( isset( $version ) )
+			$ret .= " (version $version)";
+		$ret .= "";
+		if ( isset( $url ) )
+			$ret .= '</a>';
+		if ( isset( $description ) )
+			$ret .= ', ' . $description;
+		if ( isset( $description ) && isset( $author ) )
+			$ret .= ', ';
+		if ( isset( $author ) )
+			$ret .= ' by ' . listToText( (array)$author );
+
+		return "$ret<br />\n";
+	}
+
+	/**
+	 * @param array $list
+	 * @return string
+	 */
+	function listToText( $list ) {
+		$cnt = count( $list );
+
+	    if ( $cnt == 1 ) {
+			// Enforce always returning a string
+			return (string)arrayToString( $list[0] );
+	    } elseif ( $cnt == 0 ) {
+			return '';
+		} else {
+			$t = array_slice( $list, 0, $cnt - 1 );
+			$one = array_map( 'arrayToString', $t );
+			$two = arrayToString( $list[$cnt - 1] );
+
+			return implode( ', ', $one ) . " and $two";
+	    }
+	}
+
+	/**
+	 * @static
+	 *
+	 * @param mixed $list Will convert an array to string if given and return
+	 *                    the paramater unaltered otherwise
+	 * @return mixed
+	 */
+	function arrayToString( $list ) {
+		if ( ! is_array( $list ) ) {
+			return $list;
+		} else {
+			$class = get_class( $list[0] );
+			return "($class, {$list[1]})";
+		}
+	}
+
+// Phorum stuff (needs to be here in the begining of the file, to be included before sending the http header)
+define('phorum_page','script');
+chdir('../phorum5');
+require_once('common.php');
+
+
+// Mediawiki stuff
+define( 'MEDIAWIKI', true );
+
+chdir('../mediawiki');
+$IP='';                                 // to avoid a warning in includes/DefaultSettings.php
+require_once( 'includes/Defines.php' ); // required for DB_MASTER in bad-behavior-mediawiki.php
+require_once( 'includes/DefaultSettings.php' );
+require_once( './LocalSettings.php' );
+require_once( 'includes/ProfilerStub.php' );
+require_once( 'includes/Setup.php' );
+//require_once( 'includes/GlobalFunctions.php' );
+
+
+echo '<p>This Website uses the following software versions:</p>
+';
+
+// PHP apache module
+echo "<a href=\"http://www.php.net/\">PHP</a> (apache module) : " . phpversion() . " (" . php_sapi_name() . ")<br />\n";
+
+// PHP cli
+$v = exec('php --version | grep cli');
+echo "<a href=\"http://www.php.net/\">PHP</a> (command line interpreter) : $v <br />\n";
+
+// MySQL
+$v = exec('mysql --version');
+echo "<a href=\"http://dev.mysql.com/\">MySQL</a> : $v <br />\n";
+
+// Mediawiki
+echo "<a href=\"http://www.mediawiki.org/\">MediaWiki</a> : $wgVersion<br />\n";
+echo extensionCredits();
+
+// Phorum
+echo "<a href=\"http://phorum.org/\">Phorum</a> : " . PHORUM ."<br />\n";
+
+// Doxygen
+$v = exec('doxygen --version');
+if ($v == '')
+  $v = exec('/home/smeier/bin/doxygen --version');
+if ($v == '')
+  $v = 'not available';
+echo "<a href=\"http://www.doxygen.org/\">Doxygen</a> : $v <br />\n";
+
+// Dot
+$v = exec('dot -V 2>&1');
+$v = str_replace('dot version','',$v);
+if ($v == '')
+  $v = 'not available';
+echo "<a href=\"http://www.graphviz.org/\">dot</a> : $v <br />\n";
+
+// Webalizer
+$v = shell_exec('webalizer -v 2>&1');
+if ($v == '')
+  $v = 'not available';
+echo "<a href=\"http://www.mrunix.net/webalizer/\">webalizer</a> : $v <br />\n";
+
+// cvschangelogbuilder
+$v = shell_exec('cd ../bin && ./cvschangelogbuilder.pl --help 2>&1 | head -n 1');
+echo "<a href=\"http://cvschangelogb.sourceforge.net/\">cvschangelogbuilder</a> : $v <br />\n";
+
+// phpRemoteView
+$v = shell_exec('grep " *  Version" ../admin/remview_03_10_23.php');
+$v = str_replace(' *  Version','',$v);
+echo "<a href=\"http://php.spb.ru/remview/\">phpRemoteView</a> : $v <br />\n";
+
+// GraphViz Site Map Generator
+$v = shell_exec('grep "\$vers = " ../bin/update_sitemap.php | sed "s/\$vers = //g"');
+echo "<a href=\"http://urlgreyhot.com/personal/resources/sitemap_generator\">GraphViz Site Map Generator</a> : $v <br />\n";
+
+// python based RSS generator
+$v = shell_exec('grep "__version__ =" ../bin/PyRSS2Gen.py | sed "s/__version__ =//g"');
+echo "<a href=\"http://www.dalkescientific.com/Python/PyRSS2Gen.html\">PyRSS2Gen</a> : $v <br />\n";
+
+// MRTG
+$v = shell_exec('grep Generator ../dynamic/online.html | sed "s/<META HTTP-EQUIV=\"Generator\" CONTENT=\"MRTG//g" | sed "s/\">//g"');
+if ($v == '')
+  // for newer MRTG versions
+  $v = shell_exec('grep generator ../dynamic/online.html | sed "s/<meta http-equiv=\"generator\" content=\"MRTG//g" | sed "s/\" \/>//g"');
+if ($v == '')
+  $v = 'not available';
+echo "<a href=\"http://oss.oetiker.ch/mrtg/\">MRTG</a> : $v <br />\n";
+
+// ScanErrLog
+$v = shell_exec('grep "__version__ = \"" ../admin/scanerrlog.py | sed "s/__version__ = \"//g" | sed "s/\"//g"');
+echo "<a href=\"http://www.librelogiciel.com/software/ScanErrLog/Download/action_Download\">scanerrlog</a> : $v <br />\n";
+
+// jaxml (required by ScanErrLog)
+$v = shell_exec('grep "__version__ = \"" ../admin/jaxml.py | sed "s/__version__ = \"//g" | sed "s/\"//g"');
+echo "<a href=\"http://www.librelogiciel.com/software/jaxml/Download/action_Download\">jaxml</a> : $v <br />\n";
+
+$v = shell_exec('grep " version " ../ie7/ie7-standard-p.js');
+echo "<a href=\"http://dean.edwards.name/IE7/usage/\">compliance patch for microsoft browsers</a> : $v <br />\n";
+
+// phpMyAdmin for html based MySQL database administration
+if (file_exists('../../phpMyAdmin/libraries/Config.class.php')){
+  chdir('../../phpMyAdmin/');
+  $v = shell_exec("grep \"set('PMA_VERSION'\" libraries/Config.class.php | sed \"s/this->set('PMA_VERSION', '//g\" | sed \"s/');//g\"");
+  $v = str_replace('$','',$v);
+} else {
+  $v = 'not available';
+}
+echo "<a href=\"http://www.phpmyadmin.net/\">phpMyAdmin</a> : $v <br />\n";
+
+// IRC chat applet
+$v = '2.2.1';
+echo "<a href=\"http://www.pjirc.com/\">IRC chat applet</a> : $v <br />\n";
+
+
+echo "<br />
+Other software:<br />\n
+<a href=\"http://ch.tudelft.nl/~arthur/svn2cl/\">svn2cl.xsl</a><br />\n
+<a href=\"http://www.codingmonkeys.de/goodies/\">svnlog.xslt</a><br />\n";
+
+?>

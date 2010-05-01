@@ -1,0 +1,51 @@
+2007-01-15 09:24  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=623698&amp;view=rev">623698</A>]  binner<br>
+
+kdevelop.lsm: coolo wants to release this<br><br>
+
+2007-01-15 09:05  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=623683&amp;view=rev">623683</A>]  coolo<br>
+
+configure.in.in: I go forward as I planned, if the tag leaves
+unused, it's ok too<br><br>
+
+2007-01-04 16:22  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=619861&amp;view=rev">619861</A>]  apaku<br>
+
+languages/java/javasupportpart.cpp: Fix compilation on KDE 3.3 and
+older<br><br>
+
+2006-11-20 15:29  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=606495&amp;view=rev">606495</A>]  apaku<br>
+
+parts/doxygen/config.cpp: Backport fix from 3.4 branch, committing
+on behalf of Amilcar.<br><br>
+
+2006-11-20 12:12  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=606420&amp;view=rev">606420</A>]  aclu<br>
+
+parts/doxygen/README.dox, parts/doxygen/config.h,
+parts/doxygen/doxygenconfigwidget.cpp,
+parts/doxygen/doxygenpart.cpp, parts/doxygen/lang_cfg.h,
+parts/doxygen/version.cpp,
+branches/kdevelop/3.4/parts/doxygen/config.cpp,
+branches/kdevelop/3.4/parts/doxygen/messages.cpp: Fix Doxygen
+1.5.1 support<br><br>
+
+2006-10-27 19:55  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=599602&amp;view=rev">599602</A>]  mutz<br>
+
+buildtools/autotools/choosetargetdlgbase.ui,
+buildtools/lib/widgets/makeoptionswidgetbase.ui,
+buildtools/projectmanager/importers/qmake/projectconfigurationdlgbase.ui,
+buildtools/qmake/projectconfigurationdlgbase.ui,
+editors/editor-chooser/editchooser.ui,
+kdevdesigner/designer/editfunctions.ui,
+languages/cpp/ccconfigwidgetbase.ui,
+languages/cpp/configproblemreporter.ui,
+languages/cpp/debugger/debuggertracingdialogbase.ui,
+languages/php/phpconfigwidgetbase.ui, ... : fix ui files<br><br>
+
+2006-10-24 07:45  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=598621&amp;view=rev">598621</A>]  binner<br>
+
+src/profileengine/editor/profileeditor.cpp,
+src/profileengine/editor/profileeditor.h: compile better<br><br>
+
+2006-10-10 06:17  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=594103&amp;view=rev">594103</A>]  rgruber<br>
+
+parts/grepview/grepdlg.cpp: Fixed broken and removed unused
+templates<br><br>

@@ -1,0 +1,4 @@
+<IfModule mod_expires.c>
+### expires after 1 hour after modified on the server
+ExpiresByType image/png A3520
+</IfModule>

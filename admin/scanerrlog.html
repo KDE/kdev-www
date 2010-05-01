@@ -1,0 +1,25 @@
+<?php
+include_once("../../access.inc"); // for the login and password variables
+extract($_SERVER);  // This is required for some apache configurations
+if(!isset($PHP_AUTH_USER)) {
+  exit;
+}else{
+  if ($PHP_AUTH_USER == $k_login && $PHP_AUTH_PW == $k_password) {
+  }
+  else {
+    echo "Invalid username or password\n";
+    exit;
+  }
+}
+
+if (is_dir('/var/log/httpd')){
+  $err_log=`./scanerrlog.py -l3 -d /var/log/httpd/kdevelop.httpd.error_log`;
+} elseif (is_dir('/var/log/apache2')){
+  $err_log=`./scanerrlog.py -l3 -d /var/log/apache2/error_log`;
+} else {
+  echo '<h3>Error could not found apache logs</h3>';
+  exit();
+}
+// Remove some redundant parts to make the lines smaller
+echo str_replace('/home/smeier/public_html/www/','',$err_log);
+?>

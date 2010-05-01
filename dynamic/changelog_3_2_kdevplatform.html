@@ -1,0 +1,30 @@
+2009-11-29 18:59  [r1056284]  apaku<br>
+
+s/CMAKE_(SOURCE|BINARY)_DIR/KDevPlatform_(SOURCE|BINARY)_DIR/
+Needed to properly built within sdk.<br><br>
+
+2009-11-29 18:50  [r1056276]  apaku<br>
+
+Adjust to new location, need to use kdevplatform_SOURCE_DIR now.<br><br>
+
+2009-11-29 18:07  [r1056251]  toma<br>
+
+Move kdevplatform to extragear/sdk.<br><br>
+
+2009-11-29 08:14  [r1055941]  rodda<br>
+
+Convenience types to set last type and instance Rearrange
+usingDeclaration to put parameters which are often left default at
+the end<br><br>
+
+2009-11-28 23:18  [r1055891]  dymo<br>
+
+Fix tab activation bug after closing another tabs without
+switching to them (for example clicking on another tab's close
+button). We should remove the widget from container's stack before
+removing it from the tabbar, tabbar activates new widget by its
+index, and if the old one is still in stack, then indices are off
+by one. For me this also fixes the crash in ctrl-tab document
+switcher (which probably got activation signal of the view which
+was already deleted). BUG:204383<br><br>
+

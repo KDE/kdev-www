@@ -1,0 +1,25 @@
+<?php 
+
+global $lang;
+global $languages;
+$l_top_lang_visited_pages="Top {$languages[$lang]} visited pages";
+$l_page="Webpage";
+$l_last_update="last updated";
+$l_last_visited="last visited";
+$l_average_daily_visits="average daily visits";
+
+$l_global_website_statistics="Global website statistics";
+
+$l_served_pages="This server serves an average of %.02f pages per day distribuited over the translated languages like this (the results in the table exclude the main.html pages)&nbsp;:";
+$l_language="language";
+$l_percentage="percentage";
+
+$l_stat_graphics="These graphics show the average visitors at www.kdevelop.org";
+$l_day_graphic=  "Day graphic";
+$l_week_graphic= "Week graphic";
+$l_month_graphic="Month graphic";
+$l_year_grahic=  "Year graphic";
+
+return include("inc/stats.php");
+
+?>

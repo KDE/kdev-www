@@ -1,0 +1,128 @@
+BODY			{
+				font-family: sans-serif;
+				font-style: normal;
+				font-weight: normal;
+				color: #222222;
+				}
+
+B				{
+				font-weight: bold;
+				}
+
+I				{
+				font-style: italic;
+				}
+
+strong			{
+				font-weight: bold;
+				color: #3e91eb;
+				}
+
+H4				{
+				font-weight:  bold;
+				margin-top: 0pt;
+				margin-bottom: 0pt;
+				}
+
+H3				{
+				font-size: 120%;
+				font-weight:  bold;
+				margin-top: 12pt;
+				margin-bottom: 6pt;
+				}
+
+H2				{
+				font-size: 180%;
+				font-weight:  bold;
+				margin-top: 18pt;
+				margin-bottom: 6pt;
+				}
+
+H1				{
+				font-family: "Courier New",Courier;
+				font-size: 300%;
+				font-weight:  bold;
+				margin-top: 18pt;
+				margin-bottom: 6pt;
+				}
+
+TH,TD			{
+				font-family: sans-serif;
+				font-style: normal;
+				font-weight: normal;
+				color: #222222;
+				}
+
+TH.header		{
+				font-weight: bold;
+				background-color: #bccddb;
+				}
+
+TD.oddheader	{
+				font-weight: bold;
+				background-color: #bccddb;
+				}
+
+TD.evenheader	{
+				font-weight: bold;
+				background-color: #bccddb;
+				}
+
+TD.odd			{
+				background-color: #e6f0f9;
+				}
+
+TD.even			{
+				background-color: #d3e0ea;
+				}
+
+TH.menuheader	{
+				font-weight: bold;
+				text-align: center;
+				background-color: #3e91eb;
+				}
+
+TD.menuentry	{
+				text-align: center;
+				vertical-align: middle;
+				background-color: #e6f0f9;
+				}
+
+TH.moduleheader	{
+				font-weight: bold;
+				text-align: center;
+				background-color: #3e91eb;
+				}
+
+TD.moduleentry	{
+				text-align: left;
+				vertical-align: middle;
+				background-color: #e6f0f9;
+				}
+
+TD.fill			{
+				font-size: 30%;
+				}
+
+A:link			{
+				text-decoration:  none;
+				color: #0066aa;
+}
+
+A:active		{
+				text-decoration:  none;
+				color: #0066aa;
+				}
+
+A:visited		{
+				text-decoration:  none;
+				color: #173789;
+				}
+
+A:hover			{
+				text-decoration:  underline;
+				}
+
+IMG				{
+				border: 0;
+				}

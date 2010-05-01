@@ -1,0 +1,148 @@
+<h4>KDevelop 3.2.3 [2005-10-13]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="4">Linux Intel x86</td>
+<td>Kubuntu</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/kubuntu/">Hoary</a>
+</td>
+</tr><tr ALIGN=center>
+<td>Mandriva</td><td>
+<a href="http://qa.mandriva.com/twiki/bin/view/Main/CookerHowTo">Cooker</a>
+</td>
+</tr><tr ALIGN=center>
+<td>Slackware</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/contrib/Slackware/10.1">10.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/contrib/Slackware/10.2">10.2</a>
+</td>
+</tr><tr ALIGN=center>
+<td>SuSE</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/ix86/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/ix86/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/ix86/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/ix86/9.3/">10.0</a>
+</td>
+</tr><tr ALIGN=center>
+<td rowspan="1">Linux AMD x86 64bit</td>
+<td>SuSE</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/x86_64/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/x86_64/9.2/">9.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/x86_64/9.3/">9.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.3/SuSE/x86_64/10.0/">10.0</a>
+</td>
+</tr>
+</table>
+
+
+<h4>KDevelop 3.2.2 [2005-07-28]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="3">Linux Intel x86</td>
+<td>Conectiva</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/Conectiva/conectiva/RPMS.kde/">10</a>
+</td>
+</tr><tr ALIGN=center>
+<td><a href="http://kde-redhat.sourceforge.net/">Red Hat (Unofficial)</a>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/contrib/kde-redhat/README.txt">README.txt</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/contrib/kde-redhat/all/">all platforms</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/contrib/kde-redhat/redhat/9/">Red Hat 9</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/contrib/kde-redhat/fedora/2/i386/">Fedora Core 2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/contrib/kde-redhat/fedora/3/i386/">Fedora Core 3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/contrib/kde-redhat/redhat/el3/i386/">Red Hat Enterprise 3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/contrib/kde-redhat/redhat/el4/i386/">Red Hat Enterprise 4</a>
+</td>
+</tr><tr ALIGN=center>
+<td>SuSE <a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.2/SuSE/ix86/9.0/">9.0</a>
+</td>
+</tr>
+</table>
+
+
+<h4>KDevelop 3.2.1 [2005-05-31]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="3">Linux Intel x86</td>
+<td>Conectiva</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/Conectiva/conectiva/RPMS.kde/">10</a>
+</td>
+</tr><tr ALIGN=center>
+<td>Kubuntu</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/kubuntu/pool/kdevelop/">Hoary 1</a>
+</td>
+</tr><tr ALIGN=center>
+<td><a href="http://kde-redhat.sourceforge.net/">Red Hat (Unofficial)</a>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/contrib/kde-redhat/README.txt">README.txt</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/contrib/kde-redhat/all/">all platforms</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/contrib/kde-redhat/redhat/9/">Red Hat 9</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/contrib/kde-redhat/fedora/2/i386/">Fedora Core 2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/contrib/kde-redhat/fedora/3/i386/">Fedora Core 3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/contrib/kde-redhat/redhat/el3/i386/">Red Hat Enterprise 3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4.1/contrib/kde-redhat/redhat/el4/i386/">Red Hat Enterprise 4</a>
+</td>
+</tr>
+</table>
+
+
+<h4>KDevelop 3.2 [2005-03-16]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="3">Linux Intel x86</td>
+<td>Debian</td><td>
+<a href="http://packages.debian.org/unstable/kde/kdevelop3">Sid</a> (debian.org)
+</td>
+</tr><tr ALIGN=center>
+<td><a href="http://www.redhat.com/">Red Hat</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4/RedHat/Fedora3/i386/">Fedora 3</a>
+</td>
+</tr><tr ALIGN=center>
+<td>SuSE <a href="http://download.kde.org/binarydownload.html?url=stable/3.4/SuSE/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4/SuSE/ix86/8.2/">8.2</a>
+</td>
+</tr><tr ALIGN=center>
+<td rowspan="1">SUN</td>
+<td>Solaris GCC</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.4/contrib/Solaris/GCC/9/">9</a>
+</td>
+</tr>
+</table>
+
+
+<h4>KDevelop 3.2 beta 1 (3.1.91) [2005-01-13]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="1">Linux Intel x86</td>
+<td>Slackware</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=unstable/3.3.91/contrib/Slackware/10.0/">10.0</a>
+</td>
+</tr><tr ALIGN=center>
+<td rowspan="1">Linux AMD x86 64bit</td>
+<td>SuSE</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=unstable/3.3.91/SuSE/x86_64/9.0/">9.0</a>
+</td>
+</tr>
+</table>

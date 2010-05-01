@@ -1,0 +1,140 @@
+<?php
+include_once("../../access.inc");
+extract($_SERVER);  // This is required for some apache configurations
+if(!isset($PHP_AUTH_USER)) {
+  exit;
+}else{
+  if ($PHP_AUTH_USER == $k_login && $PHP_AUTH_PW == $k_password) {
+    // delete the login and password variables for safety reasons
+    unset($k_login);
+    unset($k_password);
+
+    // free the session file, for the other frames to be loaded
+    session_write_close();
+
+  }
+  else {
+    echo "Invalid username or password\n";
+    exit;
+  }
+}
+
+// Get the username of the owner of this file
+$owner = posix_getpwuid(fileowner(__FILE__));
+$owner_name = $owner['name'];
+
+// serve the links according to the file owner
+if ($owner_name == 'smeier')
+  $server_url='http://fara.cs.uni-potsdam.de/~smeier';
+else
+  $server_url="http://localhost/~$owner_name";
+
+$phpMyAdmin_QueryURL = $server_url . '/phpMyAdmin/sql.php?db=kdevelop_db&amp;';
+
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+
+<head>
+<title>Admin menu</title>
+<meta name="DESCRIPTION" content="Admin menu">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style type="text/css">
+h1{font-family: Arial;font-style : normal ;font-size : 9pt; font-weight :bold;text-align :right;padding-right : 3em }
+td{font-family: Arial;font-style : normal ;font-size : 8pt; }
+</style>
+</head>
+<!--The script below will redirect the links page into the index.html frameset.  This code is used in the event that this page gets indexed by a search engine and someone accesses it directly. Be sure to change the name of the page specified in the script if you change the page name of the index.html page.  To disable the code for working on this page just tempoarily remove the trailing bracket  from the first SCRIPT tag.  Then replace it to reactivate.-->
+
+<SCRIPT TYPE="text/javascript">
+<!--
+if (parent.location.href == self.location.href) {
+if (window.location.href.replace)
+window.location.replace('index.html');
+else
+// causes problems with back button, but works
+window.location.href = 'index.html';
+}
+// -->
+</SCRIPT>
+<body>
+<table align="center" width="100%" border="0" frame="above">
+  <tbody align="center">
+    <tr>
+      <th><a href="../index.html" target="_blank">Website</a></th>
+      <th><a href="http://www.mysql.org/" target="_blank">MySQL</a></th>
+      <th><a href="../phorum5/" target="_blank">Forum</a></th>
+      <th><a href="../mediawiki/" target="_blank">Wiki</a></th>
+      <th><a href="../index.html?filename=mailinglist.html" target="_blank">Mailing Lists</a></th>
+      <th>Downloads</th>
+      <th><a href="../HEAD/doc/api/html/" target="_blank">Doxygen</a></th>
+      <th><a href="http://people.ee.ethz.ch/~oetiker/webtools/mrtg/mrtg-reference.html" target="_blank">MRTG</a></th>
+      <th>Apache</th>
+      <th>Spam robots</th>
+    </tr>
+    <tr>
+      <td><a href="howto.html" target="content_frame">HowTo</a></td>
+      <td><a href="<?php echo $server_url; ?>/phpMyAdmin/" target="content_frame">phpMyAdmin</a></td>
+      <td><a href="howto_forum.html" target="content_frame">HowTo</a></td>
+      <td><a href="howto_wiki.html" target="content_frame">HowTo</a></td>
+      <td><a href="http://barney.cs.uni-potsdam.de/mailman/admin/kdevelop-devel" target="_blank">devel admin</a></td>
+      <td><a href="http://download.kde.org/download.php?url=stable/latest/" target="content_frame">download.kde.org</a></td>
+      <td><a href="../HEAD/doc/api/doxytag.log" target="content_frame">API doxytag log</a></td>
+      <td><a href="../dynamic/online.html" target="_blank">online page</a></td>
+      <td><a href="apache_error_log.html" target="content_frame">error log</a></td>
+      <td><a href="<?php echo $phpMyAdmin_QueryURL; ?>table=stats_bad_robots&amp;pos=0&amp;session_max_rows=30&amp;disp_direction=horizontal&amp;repeat_cells=100&amp;dontlimitchars=0&amp;sql_query=SELECT+%2AFROM+%60stats_bad_robots%60++ORDER+BY+%60stats_bad_robots%60.%60last_visited%60++DESC" target="_top">latest bad robots</a></td>
+    </tr>
+    <tr>
+      <td><a href="stats.html" target="content_frame">stats</a></td>
+      <td><a href="howto_phpMyAdmin.html" target="content_frame">HowTo</a></td>
+      <td><a href="../phorum5/admin.php" target="content_frame">Admin</a></td>
+      <td><a href="../mediawiki/index.php/Special:Recentchanges" target="_blank">Recentchanges</a></td>
+      <td><a href="http://barney.cs.uni-potsdam.de/mailman/admindb/kdevelop-devel" target="_blank">moderate devel</a></td>
+      <td><a href="http://www.kde-apps.org/content/show.php?content=10157" target="content_frame">kde-apps.org</a></td>
+      <td><a href="../HEAD/doc/api/doxygen.mail.log" target="content_frame">API doxygen log</a></td>
+      <td><a href="logs/online.mrtg.log" target="content_frame">online log</a></td>
+      <td><a href="apache_access_log.html" target="content_frame">access log</a></td>
+      <td><a href="<?php echo $phpMyAdmin_QueryURL; ?>table=stats_page_error&amp;pos=0&amp;session_max_rows=30&amp;disp_direction=horizontal&amp;repeat_cells=100&amp;dontlimitchars=0&amp;sql_query=SELECT+%2AFROM+%60stats_page_error%60++WHERE+%60status%60+%3D+403++ORDER+BY+%60stats_page_error%60.%60last_visited%60++DESC" target="content_frame">latest forbiden (403)</a></td>
+    </tr>
+    <tr>
+      <td><a href="features.html" target="content_frame">features</a></td>
+      <td><a href="logs/backup_mysql_db.log" target="content_frame">Backup log</a></td>
+      <td><a href="../phorum5/topusers.php" target="content_frame">top users</a></td>
+      <td><a href="<?php echo $phpMyAdmin_QueryURL; ?>table=mw_bad_behavior&amp;pos=0&amp;session_max_rows=30&amp;disp_direction=horizontal&amp;repeat_cells=100&amp;dontlimitchars=0&amp;sql_query=SELECT+%2AFROM+%60mw_bad_behavior%60++ORDER+BY+%60date%60++DESC" target="content_frame">latest bad behaviors</a></td>
+      <td><a href="http://barney.cs.uni-potsdam.de/mailman/admin/kdevelop-bugs" target="_blank">bugs admin</a></td>
+      <td><a href="logs/website_cvs_up.log" target="content_frame">cvs up log</a></td>
+      <td><a href="../HEAD/doc/platform/doxygen.mail.log" target="content_frame">platform doxygen log</a></td>
+      <td><a href="../dynamic/new_dl_per_hour.html" target="_blank">new_dl_per_hour page</a></td>
+      <td><a href="webalizer_stats/" target="_blank">webalizer stats</a></td>
+      <td><a href="<?php echo $phpMyAdmin_QueryURL; ?>table=stats_page_error&amp;pos=0&amp;session_max_rows=30&amp;disp_direction=horizontal&amp;repeat_cells=100&amp;dontlimitchars=0&amp;sql_query=SELECT+%2AFROM+%60stats_page_error%60++WHERE+%60status%60+%3D+301+OR+status+%3D+303+OR+status+%3D+410++ORDER+BY+%60stats_page_error%60.%60last_visited%60++DESC" target="content_frame">latest redirects (301,303,410)</a></td>
+    </tr>
+    <tr>
+      <td><a href="www_changelog/cvschangelogbuilder_www.html" target="content_frame">CVS statistics</a></td>
+      <td></td>
+      <td><a href="../phorum5/switchuser.php" target="content_frame">switch user</a></td>
+      <td></td>
+      <td><a href="http://barney.cs.uni-potsdam.de/mailman/admindb/kdevelop-bugs" target="_blank">moderate bugs</a></td>
+      <td><a href="logs/website_cvs_up.err.log" target="content_frame">cvs up err log</a></td>
+      <td></td>
+      <td><a href="logs/new_dl_per_hour.mrtg.log" target="content_frame">new_dl_per_hour log</a></td>
+      <td><a href="scanerrlog.html" target="content_frame">scan err log</a></td>
+      <td><a href="<?php echo $phpMyAdmin_QueryURL; ?>table=stats_page_error&amp;pos=0&amp;session_max_rows=30&amp;disp_direction=horizontal&amp;repeat_cells=100&amp;dontlimitchars=0&amp;sql_query=SELECT+%2AFROM+%60stats_page_error%60++WHERE+%60status%60+%3D+404+OR+status+%3D+400++ORDER+BY+%60stats_page_error%60.%60last_visited%60++DESC" target="content_frame">latest error pages (404,400)</a></td>
+    </tr>
+    <tr>
+      <td><a href="versions.html" target="content_frame">software versions</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><a href="http://barney.cs.uni-potsdam.de/mailman/admin/kdevelop" target="_blank">users admin</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</body>
+
+</html>

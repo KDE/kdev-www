@@ -1,0 +1,732 @@
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=af">Afrikaans</a> (af)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/af/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">1022</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">24.73</font></td>
+  <td align="right"><font size="2">2010</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">48.64</font></td>
+  <td align="right"><font size="2">1100</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">26.62</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="49"><img src="graphics/stats/bar4.gif" height="15" width="97"><img src="graphics/stats/bar1.gif" height="15" width="53"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ar">Arabic</a> (ar)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ar/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=az">Azerbaijani</a> (az)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/az/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">82</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 1.98</font></td>
+  <td align="right"><font size="2">2552</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">61.76</font></td>
+  <td align="right"><font size="2">1498</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">36.25</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="3"><img src="graphics/stats/bar4.gif" height="15" width="123"><img src="graphics/stats/bar1.gif" height="15" width="72"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=bg">Bulgarian</a> (bg)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/bg/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">794</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">19.22</font></td>
+  <td align="right"><font size="2">1680</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">40.66</font></td>
+  <td align="right"><font size="2">1658</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">40.13</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="38"><img src="graphics/stats/bar4.gif" height="15" width="81"><img src="graphics/stats/bar1.gif" height="15" width="80"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=br">Breton</a> (br)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/br/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">1283</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">31.05</font></td>
+  <td align="right"><font size="2">22</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.53</font></td>
+  <td align="right"><font size="2">2827</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">68.42</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="62"><img src="graphics/stats/bar4.gif" height="15" width="1"><img src="graphics/stats/bar1.gif" height="15" width="136"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=bs">Bosnian</a> (bs)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/bs/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3106</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">75.17</font></td>
+  <td align="right"><font size="2">725</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">17.55</font></td>
+  <td align="right"><font size="2">301</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 7.28</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="150"><img src="graphics/stats/bar4.gif" height="15" width="35"><img src="graphics/stats/bar1.gif" height="15" width="14"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ca">Catalan</a> (ca)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ca/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3312</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">80.15</font></td>
+  <td align="right"><font size="2">507</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">12.27</font></td>
+  <td align="right"><font size="2">313</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 7.58</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="160"><img src="graphics/stats/bar4.gif" height="15" width="24"><img src="graphics/stats/bar1.gif" height="15" width="15"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=cs">Czech</a> (cs)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=cy">Welsh</a> (cy)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/cy/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">678</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">16.41</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">3454</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">83.59</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="32"><img src="graphics/stats/bar1.gif" height="15" width="167"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=da">Danish</a> (da)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/da/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=de">German</a> (de)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/de/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4131</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">99.98</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">1</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.02</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="199"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=el">Greek</a> (el)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/el/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">360</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 8.71</font></td>
+  <td align="right"><font size="2">376</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 9.10</font></td>
+  <td align="right"><font size="2">3396</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">82.19</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="17"><img src="graphics/stats/bar4.gif" height="15" width="18"><img src="graphics/stats/bar1.gif" height="15" width="164"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=en_GB">British English</a> (en_GB)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/en_GB/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=eo">Esperanto</a> (eo)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/eo/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">2</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.05</font></td>
+  <td align="right"><font size="2">644</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">15.59</font></td>
+  <td align="right"><font size="2">3486</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">84.37</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar4.gif" height="15" width="31"><img src="graphics/stats/bar1.gif" height="15" width="168"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=es">Spanish</a> (es)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/es/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3233</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">78.24</font></td>
+  <td align="right"><font size="2">892</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">21.59</font></td>
+  <td align="right"><font size="2">7</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.17</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="156"><img src="graphics/stats/bar4.gif" height="15" width="43"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=et">Estonian</a> (et)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/et/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=eu">Basque</a> (eu)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/eu/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=fi">Finnish</a> (fi)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/fi/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3124</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">75.61</font></td>
+  <td align="right"><font size="2">690</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">16.70</font></td>
+  <td align="right"><font size="2">318</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 7.70</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="151"><img src="graphics/stats/bar4.gif" height="15" width="33"><img src="graphics/stats/bar1.gif" height="15" width="15"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=fo">Faroese</a> (fo)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/fo/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">62</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 1.50</font></td>
+  <td align="right"><font size="2">2325</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">56.27</font></td>
+  <td align="right"><font size="2">1745</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">42.23</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="3"><img src="graphics/stats/bar4.gif" height="15" width="112"><img src="graphics/stats/bar1.gif" height="15" width="84"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=fr">French</a> (fr)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/fr/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3556</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">86.06</font></td>
+  <td align="right"><font size="2">427</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">10.33</font></td>
+  <td align="right"><font size="2">149</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 3.61</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="172"><img src="graphics/stats/bar4.gif" height="15" width="20"><img src="graphics/stats/bar1.gif" height="15" width="7"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ga">Irish Gaelic</a> (ga)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ga/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">905</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">21.90</font></td>
+  <td align="right"><font size="2">32</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.77</font></td>
+  <td align="right"><font size="2">3195</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">77.32</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="43"><img src="graphics/stats/bar4.gif" height="15" width="1"><img src="graphics/stats/bar1.gif" height="15" width="154"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=gl">Galician</a> (gl)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=he">Hebrew</a> (he)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=hi">Hindi</a> (hi)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/hi/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">2637</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">63.82</font></td>
+  <td align="right"><font size="2">631</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">15.27</font></td>
+  <td align="right"><font size="2">864</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">20.91</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="127"><img src="graphics/stats/bar4.gif" height="15" width="30"><img src="graphics/stats/bar1.gif" height="15" width="41"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=hr">Croatian</a> (hr)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/hr/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">943</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">22.82</font></td>
+  <td align="right"><font size="2">2600</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">62.92</font></td>
+  <td align="right"><font size="2">589</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">14.25</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="45"><img src="graphics/stats/bar4.gif" height="15" width="125"><img src="graphics/stats/bar1.gif" height="15" width="28"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=hu">Hungarian</a> (hu)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/hu/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=id">Indonesian</a> (id)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/id/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">153</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 3.70</font></td>
+  <td align="right"><font size="2">2479</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">60.00</font></td>
+  <td align="right"><font size="2">1500</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">36.30</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="7"><img src="graphics/stats/bar4.gif" height="15" width="119"><img src="graphics/stats/bar1.gif" height="15" width="72"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=is">Icelandic</a> (is)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/is/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">1049</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">25.39</font></td>
+  <td align="right"><font size="2">2477</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">59.95</font></td>
+  <td align="right"><font size="2">606</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">14.67</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="50"><img src="graphics/stats/bar4.gif" height="15" width="119"><img src="graphics/stats/bar1.gif" height="15" width="29"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=it">Italian</a> (it)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/it/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ja">Japanese</a> (ja)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ja/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3448</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">83.45</font></td>
+  <td align="right"><font size="2">375</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 9.08</font></td>
+  <td align="right"><font size="2">309</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 7.48</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="166"><img src="graphics/stats/bar4.gif" height="15" width="18"><img src="graphics/stats/bar1.gif" height="15" width="14"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ko">Korean</a> (ko)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ko/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">178</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 4.31</font></td>
+  <td align="right"><font size="2">2334</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">56.49</font></td>
+  <td align="right"><font size="2">1620</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">39.21</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="8"><img src="graphics/stats/bar4.gif" height="15" width="112"><img src="graphics/stats/bar1.gif" height="15" width="78"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=lt">Lithuanian</a> (lt)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=lv">Latvian</a> (lv)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/lv/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">91</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 2.20</font></td>
+  <td align="right"><font size="2">1907</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">46.15</font></td>
+  <td align="right"><font size="2">2134</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">51.65</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="4"><img src="graphics/stats/bar4.gif" height="15" width="92"><img src="graphics/stats/bar1.gif" height="15" width="103"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ms">Malay</a> (ms)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=mt">Maltese</a> (mt)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=nb">Norwegian Bookmal</a> (nb)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/nb/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">2274</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">55.03</font></td>
+  <td align="right"><font size="2">1010</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">24.44</font></td>
+  <td align="right"><font size="2">848</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">20.52</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="110"><img src="graphics/stats/bar4.gif" height="15" width="48"><img src="graphics/stats/bar1.gif" height="15" width="41"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=nds">Low Saxon</a> (nds)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=nl">Dutch</a> (nl)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/nl/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4131</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">99.98</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">1</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.02</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="199"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=nn">Norwegian Nynorsk</a> (nn)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/nn/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">171</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 4.14</font></td>
+  <td align="right"><font size="2">2260</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">54.70</font></td>
+  <td align="right"><font size="2">1701</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">41.17</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="8"><img src="graphics/stats/bar4.gif" height="15" width="109"><img src="graphics/stats/bar1.gif" height="15" width="82"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=nso">Northern Sotho</a> (nso)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/nso/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">162</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 3.92</font></td>
+  <td align="right"><font size="2">1145</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">27.71</font></td>
+  <td align="right"><font size="2">2825</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">68.37</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="7"><img src="graphics/stats/bar4.gif" height="15" width="55"><img src="graphics/stats/bar1.gif" height="15" width="136"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=pl">Polish</a> (pl)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/pl/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4131</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">99.98</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">1</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.02</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="199"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=pt">Portuguese</a> (pt)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/pt/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=pt_BR">Brazilian Portuguese</a> (pt_BR)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/pt_BR/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4131</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">99.98</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">1</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.02</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="199"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ro">Romanian</a> (ro)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ro/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">135</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 3.27</font></td>
+  <td align="right"><font size="2">2279</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">55.15</font></td>
+  <td align="right"><font size="2">1718</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">41.58</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="6"><img src="graphics/stats/bar4.gif" height="15" width="110"><img src="graphics/stats/bar1.gif" height="15" width="83"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ru">Russian</a> (ru)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ru/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4070</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">98.50</font></td>
+  <td align="right"><font size="2">5</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.12</font></td>
+  <td align="right"><font size="2">57</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 1.38</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="196"><img src="graphics/stats/bar1.gif" height="15" width="2"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=se">Northern Sami</a> (se)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=sl">Slovenian</a> (sl)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/sl/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3469</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">83.95</font></td>
+  <td align="right"><font size="2">362</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 8.76</font></td>
+  <td align="right"><font size="2">301</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 7.28</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="167"><img src="graphics/stats/bar4.gif" height="15" width="17"><img src="graphics/stats/bar1.gif" height="15" width="14"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=sr">Serbian</a> (sr)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/sr/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4130</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">99.95</font></td>
+  <td align="right"><font size="2">1</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.02</font></td>
+  <td align="right"><font size="2">1</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.02</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="199"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=sv">Swedish</a> (sv)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/sv/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ta">Tamil</a> (ta)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ta/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">4108</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">99.42</font></td>
+  <td align="right"><font size="2">3</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.07</font></td>
+  <td align="right"><font size="2">21</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.51</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="198"><img src="graphics/stats/bar1.gif" height="15" width="1"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=th">Thai</a> (th)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=tr">Turkish</a> (tr)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/tr/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">2078</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">50.29</font></td>
+  <td align="right"><font size="2">1331</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">32.21</font></td>
+  <td align="right"><font size="2">723</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">17.50</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="100"><img src="graphics/stats/bar4.gif" height="15" width="64"><img src="graphics/stats/bar1.gif" height="15" width="34"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=uk">Ukrainian</a> (uk)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/uk/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">872</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">21.10</font></td>
+  <td align="right"><font size="2">2359</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">57.09</font></td>
+  <td align="right"><font size="2">901</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">21.81</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="42"><img src="graphics/stats/bar4.gif" height="15" width="114"><img src="graphics/stats/bar1.gif" height="15" width="43"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=uz">Uzbek</a> (uz)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=ven">Venda</a> (ven)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/ven/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">81</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 1.96</font></td>
+  <td align="right"><font size="2">1276</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">30.88</font></td>
+  <td align="right"><font size="2">2775</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">67.16</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="3"><img src="graphics/stats/bar4.gif" height="15" width="61"><img src="graphics/stats/bar1.gif" height="15" width="134"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=vi">Vietnamese</a> (vi)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=wa">Walloon</a> (wa)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=xh">Xhosa</a> (xh)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/xh/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">421</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">10.19</font></td>
+  <td align="right"><font size="2">2715</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">65.71</font></td>
+  <td align="right"><font size="2">996</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">24.10</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="20"><img src="graphics/stats/bar4.gif" height="15" width="131"><img src="graphics/stats/bar1.gif" height="15" width="48"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=zh_CN">Chinese Simplified</a> (zh_CN)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/zh_CN/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">3076</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">74.44</font></td>
+  <td align="right"><font size="2">747</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">18.08</font></td>
+  <td align="right"><font size="2">309</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 7.48</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="148"><img src="graphics/stats/bar4.gif" height="15" width="36"><img src="graphics/stats/bar1.gif" height="15" width="14"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=zh_TW">Chinese Traditional</a> (zh_TW)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/templates/kdesdk/kdevelop.pot">kdevelop.pot</a></font></nobr></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">0</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 0.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">100.00</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar1.gif" height="15" width="200"></td>
+</tr>
+<tr bgcolor="#ffffff">
+  <td><font size="2"><nobr><a href="http://l10n.kde.org/team-infos.php?teamcode=zu">Zulu</a> (zu)</font></nobr></td>
+  <td><font size="2"><nobr><a href="http://websvn.kde.org/*checkout*/branches/KDE/3.3/kde-i18n/zu/messages/kdesdk/kdevelop.po">kdevelop.po</a></font></nobr></td>
+  <td align="right"><font size="2">226</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2"> 5.47</font></td>
+  <td align="right"><font size="2">2420</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">58.57</font></td>
+  <td align="right"><font size="2">1486</font></td>
+  <td bgcolor="#f0f0f0" align="right"><font size="2">35.96</font></td>
+  <td align="right"><font size="2">4132</font></td>
+  <td><img src="graphics/stats/bar0.gif" height="15" width="10"><img src="graphics/stats/bar4.gif" height="15" width="117"><img src="graphics/stats/bar1.gif" height="15" width="71"></td>
+</tr>

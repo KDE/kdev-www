@@ -1,0 +1,2180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>KDE Weekly Bug Summary</title>
+
+
+<link rel="Top" href="http://bugs.kde.org/">
+
+
+    
+
+    <script type="text/javascript">
+  <!--
+  
+  function initHelp() {}
+  // -->
+  </script>
+
+    
+
+    
+      <link href="skins/standard/global.css"
+            rel="stylesheet"
+            type="text/css">
+    <!--[if IE]>
+      
+      <link href="skins/standard/IE-fixes.css"
+            rel="stylesheet"
+            type="text/css">
+    <![endif]-->
+
+    
+        <link href="skins/standard/global.css"
+              rel="alternate stylesheet"
+              title="Classic"
+              type="text/css">
+      <!--[if IE]>
+        
+        <link href="skins/standard/IE-fixes.css"
+              rel="alternate stylesheet"
+              title="Classic"
+              type="text/css">
+      <![endif]-->
+
+    
+        
+            <link href="skins/contrib/oxygen/global.css"
+                  rel="stylesheet"
+                  title="oxygen"
+                  type="text/css">
+        <!--[if IE]>
+          
+          <link href="skins/contrib/oxygen/IE-fixes.css"
+                rel="stylesheet"
+                title="oxygen"
+                type="text/css">
+        <![endif]-->
+
+    
+
+    
+        <link href="skins/custom/global.css" rel="stylesheet" type="text/css">
+    <!--[if IE]>
+      
+      <link href="skins/custom/IE-fixes.css"
+            rel="stylesheet"
+            type="text/css">
+    <![endif]-->
+
+    
+
+    
+    <link rel="search" type="application/opensearchdescription+xml"
+                       title="Bugzilla" href="./search_plugin.cgi">
+
+  </head>
+
+
+
+  <body onload=""
+        class="bugs-kde-org">
+
+<div id="container">
+<div id="header_container">
+  <div id="header_top"><div><div>
+    <img alt ="" src="/media/images/top-kde.jpg"/>
+    KDE Bug Tracking System </div></div></div>
+  <div id="header_bottom">
+    <div id="menu">
+      <ul>
+        <li><a href="./index.cgi">Home</a></li>
+        <li><a href="./wizard.cgi">Report New Wish or Bug</a></li>
+        <li><a href="./query.cgi">Query Existing Reports</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="header_bottom_sub">
+    <div id="subtitle_wrapper">
+      <ul>
+      </ul>
+    </div>
+    <div id="information_wrapper">
+      <ul>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="body_wrapper">
+  <div id="body">
+      <!-- begin main content -->
+    <div id="right">
+      <div class="content">
+        <div id="main">
+          <div class="clearer">&nbsp;</div>
+
+<h3 style="text-align:center;">Total: 16632 bugs and 14849 wishes</h3>
+
+<h4 style="text-align:center;">692 bugs opened, 525 bugs closed in the last 7 days<br>
+(183 wishes opened, 55 wishes closed)</h4>
+
+<form action="weekly-bug-summary.cgi" style="text-align:center;">Report top<select name="tops">
+      <option value="10">10
+        </option>
+      <option value="20">20
+        </option>
+      <option value="30">30
+        </option>
+      <option value="50">50
+        </option>
+      <option value="100" selected="selected">100
+        </option>
+    </select>
+summary over the last<select name="days">
+      <option value="1">1
+        </option>
+      <option value="2">2
+        </option>
+      <option value="7" selected="selected">7
+        </option>
+      <option value="14">14
+        </option>
+      <option value="31">31
+        </option>
+      <option value="180">180
+        </option>
+      <option value="365">365
+        </option>
+    </select>
+days and <input type="submit" value="Show" />
+</form>
+
+<h3 style="text-align:center;">Top 100 KDE modules with the most bugs:</h3>
+
+<table align="center" border="0" cellspacing="2" cellpadding="5">
+<tr style="background-color: #EEF6FF;"><th>Product</th>
+<th>Open<br />bugs</th>
+<th>Opened in<br />last 7 days</th>
+<th>Closed in<br />last 7 days</th>
+<th>Change</th>
+<th>Open<br />wishes</th>
+<th>Opened in<br />last 7 days</th>
+<th>Closed in<br />last 7 days</th>
+<th>Change</th>
+<th>&nbsp;</th></tr>
+
+<tr>
+	<td><a href="component-report.cgi?product=konqueror">konqueror</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=konqueror&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">2579</a></td>
+	<td style="text-align:right;">+69</td>
+	<td style="text-align:right;">-45</td>
+	<td style="text-align:right; background-color: #FF9999;">24</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=konqueror&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">1995</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=konqueror&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kmail">kmail</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmail&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">1675</a></td>
+	<td style="text-align:right;">+47</td>
+	<td style="text-align:right;">-33</td>
+	<td style="text-align:right; background-color: #FF9999;">14</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmail&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">1395</a></td>
+	<td style="text-align:right;">+11</td>
+	<td style="text-align:right;">-5</td>
+	<td style="text-align:right; background-color: ;">6</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kmail&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdelibs">kdelibs</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdelibs&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">745</a></td>
+	<td style="text-align:right;">+25</td>
+	<td style="text-align:right;">-20</td>
+	<td style="text-align:right; background-color: #FF9999;">5</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdelibs&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">499</a></td>
+	<td style="text-align:right;">+8</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: ;">6</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdelibs&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kio">kio</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kio&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">719</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-10</td>
+	<td style="text-align:right; background-color: #99FF99;">-6</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kio&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">390</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kio&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kopete">kopete</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kopete&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">464</a></td>
+	<td style="text-align:right;">+27</td>
+	<td style="text-align:right;">-27</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kopete&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">650</a></td>
+	<td style="text-align:right;">+6</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">5</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kopete&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=korganizer">korganizer</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=korganizer&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">423</a></td>
+	<td style="text-align:right;">+14</td>
+	<td style="text-align:right;">-18</td>
+	<td style="text-align:right; background-color: #99FF99;">-4</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=korganizer&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">367</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-3</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=korganizer&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kcontrol">kcontrol</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kcontrol&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">389</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kcontrol&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">351</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kcontrol&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=k3b">k3b</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=k3b&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">371</a></td>
+	<td style="text-align:right;">+7</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">7</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=k3b&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">251</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=k3b&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=plasma">plasma</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=plasma&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">340</a></td>
+	<td style="text-align:right;">+122</td>
+	<td style="text-align:right;">-60</td>
+	<td style="text-align:right; background-color: #FF9999;">62</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=plasma&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">428</a></td>
+	<td style="text-align:right;">+41</td>
+	<td style="text-align:right;">-7</td>
+	<td style="text-align:right; background-color: ;">34</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=plasma&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=amarok">amarok</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=amarok&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">322</a></td>
+	<td style="text-align:right;">+28</td>
+	<td style="text-align:right;">-43</td>
+	<td style="text-align:right; background-color: #99FF99;">-15</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=amarok&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">496</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: ;">2</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=amarok&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kate">kate</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kate&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">300</a></td>
+	<td style="text-align:right;">+6</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">5</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kate&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">542</a></td>
+	<td style="text-align:right;">+10</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">9</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kate&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kicker">kicker</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kicker&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">289</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kicker&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">316</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kicker&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kwin">kwin</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kwin&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">279</a></td>
+	<td style="text-align:right;">+31</td>
+	<td style="text-align:right;">-18</td>
+	<td style="text-align:right; background-color: #FF9999;">13</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kwin&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">233</a></td>
+	<td style="text-align:right;">+11</td>
+	<td style="text-align:right;">-4</td>
+	<td style="text-align:right; background-color: ;">7</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kwin&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=valgrind">valgrind</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=valgrind&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">252</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=valgrind&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">72</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=valgrind&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kontact">kontact</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kontact&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">220</a></td>
+	<td style="text-align:right;">+14</td>
+	<td style="text-align:right;">-6</td>
+	<td style="text-align:right; background-color: #FF9999;">8</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kontact&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">138</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kontact&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kaffeine">kaffeine</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kaffeine&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">203</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kaffeine&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">95</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">2</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kaffeine&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=dolphin">dolphin</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=dolphin&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">202</a></td>
+	<td style="text-align:right;">+24</td>
+	<td style="text-align:right;">-20</td>
+	<td style="text-align:right; background-color: #FF9999;">4</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=dolphin&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">247</a></td>
+	<td style="text-align:right;">+9</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">9</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=dolphin&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=konsole">konsole</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=konsole&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">201</a></td>
+	<td style="text-align:right;">+10</td>
+	<td style="text-align:right;">-7</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=konsole&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">137</a></td>
+	<td style="text-align:right;">+6</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">5</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=konsole&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kde">kde</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kde&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">165</a></td>
+	<td style="text-align:right;">+18</td>
+	<td style="text-align:right;">-15</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kde&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">176</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kde&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=akregator">akregator</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=akregator&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">163</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-11</td>
+	<td style="text-align:right; background-color: #99FF99;">-7</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=akregator&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">186</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=akregator&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=systemsettings">systemsettings</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=systemsettings&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">155</a></td>
+	<td style="text-align:right;">+24</td>
+	<td style="text-align:right;">-7</td>
+	<td style="text-align:right; background-color: #FF9999;">17</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=systemsettings&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">104</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">3</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=systemsettings&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=knode">knode</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=knode&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">155</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-3</td>
+	<td style="text-align:right; background-color: #FF9999;">1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=knode&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">185</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=knode&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=umbrello">umbrello</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=umbrello&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">155</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=umbrello&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">148</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=umbrello&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=digikam">digikam</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=digikam&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">155</a></td>
+	<td style="text-align:right;">+28</td>
+	<td style="text-align:right;">-23</td>
+	<td style="text-align:right; background-color: #FF9999;">5</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=digikam&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">221</a></td>
+	<td style="text-align:right;">+6</td>
+	<td style="text-align:right;">-3</td>
+	<td style="text-align:right; background-color: ;">3</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=digikam&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kword">kword</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kword&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">146</a></td>
+	<td style="text-align:right;">+7</td>
+	<td style="text-align:right;">-13</td>
+	<td style="text-align:right; background-color: #99FF99;">-6</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kword&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">99</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kword&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kaddressbook">kaddressbook</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kaddressbook&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">138</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kaddressbook&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">224</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kaddressbook&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=ark">ark</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ark&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">122</a></td>
+	<td style="text-align:right;">+5</td>
+	<td style="text-align:right;">-7</td>
+	<td style="text-align:right; background-color: #99FF99;">-2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ark&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">58</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=ark&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=gwenview">gwenview</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=gwenview&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">121</a></td>
+	<td style="text-align:right;">+7</td>
+	<td style="text-align:right;">-7</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=gwenview&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">141</a></td>
+	<td style="text-align:right;">+5</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">4</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=gwenview&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kghostview">kghostview</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kghostview&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">113</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kghostview&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">48</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kghostview&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=krusader">krusader</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krusader&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">109</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krusader&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">71</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=krusader&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=quanta">quanta</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=quanta&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">98</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=quanta&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">114</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=quanta&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kipiplugins">kipiplugins</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kipiplugins&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">97</a></td>
+	<td style="text-align:right;">+6</td>
+	<td style="text-align:right;">-4</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kipiplugins&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">131</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">2</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kipiplugins&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kpdf">kpdf</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kpdf&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">96</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kpdf&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">113</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kpdf&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kmenuedit">kmenuedit</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmenuedit&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">79</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmenuedit&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">38</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kmenuedit&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=knetworkmanager">knetworkmanager</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=knetworkmanager&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">75</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=knetworkmanager&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">33</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=knetworkmanager&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kftpgrabber">kftpgrabber</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kftpgrabber&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">74</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kftpgrabber&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">35</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kftpgrabber&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=ksvg">ksvg</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ksvg&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">73</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ksvg&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">8</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=ksvg&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=juk">juk</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=juk&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">72</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: #99FF99;">-2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=juk&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">157</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=juk&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kppp">kppp</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kppp&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">71</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kppp&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">48</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kppp&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kde-bluetooth">kde-bluetooth</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kde-bluetooth&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">71</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kde-bluetooth&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">10</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kde-bluetooth&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=noatun">noatun</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=noatun&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">70</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=noatun&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">56</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=noatun&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kpackage">kpackage</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kpackage&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">69</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kpackage&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">36</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kpackage&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=superkaramba">superkaramba</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=superkaramba&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">68</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=superkaramba&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">16</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=superkaramba&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=bindings">bindings</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=bindings&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">66</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=bindings&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">5</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=bindings&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kaudiocreator">kaudiocreator</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kaudiocreator&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">66</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kaudiocreator&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">52</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kaudiocreator&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kuickshow">kuickshow</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kuickshow&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">65</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kuickshow&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">50</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kuickshow&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdevelop">kdevelop</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">65</a></td>
+	<td style="text-align:right;">+9</td>
+	<td style="text-align:right;">-12</td>
+	<td style="text-align:right; background-color: #99FF99;">-3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">88</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-3</td>
+	<td style="text-align:right; background-color: ;">-2</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdevelop&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kspread">kspread</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kspread&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">64</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kspread&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">97</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kspread&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kscd">kscd</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kscd&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">64</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kscd&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">20</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kscd&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=krita">krita</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krita&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">63</a></td>
+	<td style="text-align:right;">+6</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">5</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krita&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">71</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=krita&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdeprint">kdeprint</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdeprint&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">62</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdeprint&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">42</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdeprint&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=krunner">krunner</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krunner&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">61</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-6</td>
+	<td style="text-align:right; background-color: #99FF99;">-2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krunner&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">34</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">2</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=krunner&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kbabel">kbabel</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kbabel&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">57</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kbabel&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">43</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kbabel&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=konversation">konversation</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=konversation&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">56</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=konversation&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">121</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=konversation&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=khelpcenter">khelpcenter</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=khelpcenter&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">55</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=khelpcenter&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">22</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=khelpcenter&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kresources">kresources</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kresources&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">55</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kresources&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">11</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kresources&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=okular">okular</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=okular&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">54</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-4</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=okular&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">83</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=okular&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=bugs.kde.org">bugs.kde.org</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=bugs.kde.org&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">53</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=bugs.kde.org&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">49</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=bugs.kde.org&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=krandr">krandr</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krandr&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">52</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krandr&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">15</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=krandr&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kile">kile</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kile&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">52</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kile&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">137</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kile&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=Phonon">Phonon</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=Phonon&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">51</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=Phonon&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">16</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=Phonon&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kscreensaver">kscreensaver</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kscreensaver&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">51</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-7</td>
+	<td style="text-align:right; background-color: #99FF99;">-6</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kscreensaver&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">39</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kscreensaver&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kooka">kooka</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kooka&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">49</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kooka&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">39</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kooka&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=klaptopdaemon">klaptopdaemon</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=klaptopdaemon&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">47</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=klaptopdaemon&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">20</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=klaptopdaemon&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=boson">boson</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=boson&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">46</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=boson&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">74</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=boson&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kompare">kompare</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kompare&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">45</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-5</td>
+	<td style="text-align:right; background-color: #99FF99;">-3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kompare&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">19</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">-1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kompare&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=buildsystem">buildsystem</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=buildsystem&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">44</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=buildsystem&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">6</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=buildsystem&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=koffice">koffice</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=koffice&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">43</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=koffice&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">60</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=koffice&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kmplayer">kmplayer</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmplayer&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">43</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmplayer&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">25</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kmplayer&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kget">kget</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kget&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">42</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-3</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kget&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">69</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kget&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=korn">korn</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=korn&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">41</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=korn&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">19</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=korn&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=ksysguard">ksysguard</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ksysguard&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">40</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ksysguard&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">50</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">-1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=ksysguard&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kfind">kfind</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kfind&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">39</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kfind&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">33</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kfind&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdetv">kdetv</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdetv&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">38</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdetv&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">6</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdetv&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=ksirc">ksirc</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ksirc&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">38</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=ksirc&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">33</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=ksirc&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=i18n">i18n</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=i18n&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">37</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=i18n&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">11</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=i18n&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kpresenter">kpresenter</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kpresenter&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">37</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: #99FF99;">-2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kpresenter&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">34</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kpresenter&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=keditbookmarks">keditbookmarks</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=keditbookmarks&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">36</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=keditbookmarks&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">42</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=keditbookmarks&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdevplatform">kdevplatform</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdevplatform&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">36</a></td>
+	<td style="text-align:right;">+5</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">5</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdevplatform&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">41</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdevplatform&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=docs">docs</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=docs&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">36</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=docs&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">22</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=docs&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kivio">kivio</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kivio&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">35</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kivio&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">48</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kivio&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=klipper">klipper</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=klipper&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">35</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=klipper&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">65</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=klipper&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=adept">adept</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=adept&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">35</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-5</td>
+	<td style="text-align:right; background-color: #99FF99;">-4</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=adept&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">38</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=adept&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdm">kdm</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdm&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">34</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdm&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">50</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdm&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kexi">kexi</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kexi&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">34</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kexi&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">10</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kexi&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=krfb">krfb</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krfb&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">33</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=krfb&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">20</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=krfb&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdesu">kdesu</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdesu&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">32</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdesu&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">12</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdesu&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kfile">kfile</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kfile&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">32</a></td>
+	<td style="text-align:right;">+4</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kfile&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">12</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kfile&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=artwork">artwork</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=artwork&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">32</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #99FF99;">-1</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=artwork&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">34</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=artwork&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kphotoalbum">kphotoalbum</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kphotoalbum&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">31</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kphotoalbum&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">34</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">2</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kphotoalbum&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=solid">solid</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=solid&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">31</a></td>
+	<td style="text-align:right;">+7</td>
+	<td style="text-align:right;">-3</td>
+	<td style="text-align:right; background-color: #FF9999;">4</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=solid&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">8</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=solid&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=khotkeys">khotkeys</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=khotkeys&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">28</a></td>
+	<td style="text-align:right;">+2</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=khotkeys&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">31</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=khotkeys&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kdvi">kdvi</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdvi&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">28</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kdvi&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">22</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kdvi&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=marble">marble</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=marble&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">28</a></td>
+	<td style="text-align:right;">+10</td>
+	<td style="text-align:right;">-8</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=marble&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">17</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=marble&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=Akonadi">Akonadi</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=Akonadi&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">27</a></td>
+	<td style="text-align:right;">+9</td>
+	<td style="text-align:right;">-3</td>
+	<td style="text-align:right; background-color: #FF9999;">6</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=Akonadi&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">4</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=Akonadi&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kolf">kolf</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kolf&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">27</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kolf&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">12</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kolf&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=kmilo">kmilo</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmilo&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">27</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=kmilo&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">12</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=kmilo&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=cervisia">cervisia</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=cervisia&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">26</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=cervisia&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">44</a></td>
+	<td style="text-align:right;">+0</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">0</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=cervisia&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=nepomuk">nepomuk</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=nepomuk&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">26</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-1</td>
+	<td style="text-align:right; background-color: #FF9999;">2</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=nepomuk&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">2</a></td>
+	<td style="text-align:right;">+1</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">1</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=nepomuk&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+<tr>
+	<td><a href="component-report.cgi?product=Oxygen">Oxygen</a></td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=Oxygen&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor">26</a></td>
+	<td style="text-align:right;">+5</td>
+	<td style="text-align:right;">-2</td>
+	<td style="text-align:right; background-color: #FF9999;">3</td>
+	<td style="text-align:right;"><a href="buglist.cgi?product=Oxygen&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist">19</a></td>
+	<td style="text-align:right;">+3</td>
+	<td style="text-align:right;">-0</td>
+	<td style="text-align:right; background-color: ;">3</td>
+	<td style="text-align:right;"><a href="reports.cgi?product=Oxygen&output=show_chart&datasets=NEW%3A&datasets=ASSIGNED%3A&datasets=REOPENED%3A&datasets=UNCONFIRMED%3A&datasets=RESOLVED%3A&banner=1">Graph</a></td>
+</tr>
+</table>
+
+<h3 style="text-align:center;"><a name="closers">Top 100 people who resolved the most reports in the last 7 days:</a></h3>
+<table align="center" border="0" cellspacing="2" cellpadding="5">
+<tr style="background-color: #EEF6FF;">
+	<th>User</th><th># Resolved</th>
+</tr>
+<tr>
+	<td>andresbajotierra gmail com</td>
+	<td>89</td>
+<tr>
+<tr>
+	<td>finex finex org</td>
+	<td>34</td>
+<tr>
+<tr>
+	<td>kretschmann kde org</td>
+	<td>23</td>
+<tr>
+<tr>
+	<td>pino kde org</td>
+	<td>17</td>
+<tr>
+<tr>
+	<td>cgiboudeaux gmail com</td>
+	<td>17</td>
+<tr>
+<tr>
+	<td>zander kde org</td>
+	<td>13</td>
+<tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>13</td>
+<tr>
+<tr>
+	<td>lmurray undefinedfire com</td>
+	<td>11</td>
+<tr>
+<tr>
+	<td>frank78ac googlemail com</td>
+	<td>11</td>
+<tr>
+<tr>
+	<td>faure kde org</td>
+	<td>11</td>
+<tr>
+<tr>
+	<td>jtamate gmail com</td>
+	<td>10</td>
+<tr>
+<tr>
+	<td>l lunak kde org</td>
+	<td>10</td>
+<tr>
+<tr>
+	<td>echidnaman kubuntu org</td>
+	<td>10</td>
+<tr>
+<tr>
+	<td>marcel wiesweg gmx de</td>
+	<td>9</td>
+<tr>
+<tr>
+	<td>david nolden kdevelop art-master de</td>
+	<td>8</td>
+<tr>
+<tr>
+	<td>tommi tervo gmail com</td>
+	<td>8</td>
+<tr>
+<tr>
+	<td>peter penz gmx at</td>
+	<td>8</td>
+<tr>
+<tr>
+	<td>ruiz kde org</td>
+	<td>7</td>
+<tr>
+<tr>
+	<td>mattr kde org</td>
+	<td>7</td>
+<tr>
+<tr>
+	<td>shafff ukr net</td>
+	<td>7</td>
+<tr>
+<tr>
+	<td>ubuntu martin-graesslin com</td>
+	<td>6</td>
+<tr>
+<tr>
+	<td>parallelgrapefruit gmail com</td>
+	<td>6</td>
+<tr>
+<tr>
+	<td>annma kde org</td>
+	<td>6</td>
+<tr>
+<tr>
+	<td>iamsergio gmail com</td>
+	<td>5</td>
+<tr>
+<tr>
+	<td>david usermode org</td>
+	<td>5</td>
+<tr>
+<tr>
+	<td>kde-2 dotancohen com</td>
+	<td>5</td>
+<tr>
+<tr>
+	<td>frank osterfeld kdemail net</td>
+	<td>5</td>
+<tr>
+<tr>
+	<td>TomTrnka seznam cz</td>
+	<td>5</td>
+<tr>
+<tr>
+	<td>apaku gmx de</td>
+	<td>5</td>
+<tr>
+<tr>
+	<td>aurelien gateau free fr</td>
+	<td>4</td>
+<tr>
+<tr>
+	<td>aseigo kde org</td>
+	<td>4</td>
+<tr>
+<tr>
+	<td>kedgedev centrum cz</td>
+	<td>4</td>
+<tr>
+<tr>
+	<td>maksim kde org</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>kde pharma-traduction ch</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>joris guisson gmail com</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>sf_knue web de</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>asraniel fryx ch</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>haraldhv stud ntnu no</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>fred_wells charter net</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>andi clemens gmx net</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>winter kde org</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>rahn kde org</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>mcguire kde org</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>dharms depauw edu</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>ahartmetz gmail com</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>tsdgeos terra es</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>davide bettio kdemail net</td>
+	<td>3</td>
+<tr>
+<tr>
+	<td>zahl transbay net</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>jr jriddell org</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>kde_bugzilla zen ssokolow spamgourmet com</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>notmart gmail com</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>nospam tils org</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>manolis koppermind homelinux org</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>wm161 wm161 net</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>krienke uni-koblenz de</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>krf gmx de</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>t zachmann zagge de</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>john layt net</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>rkrell gmx net</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>lemma confuego org</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>gkiagiad csd uoc gr</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>robertknight gmail com</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>tomalbers kde nl</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>lukast dev gmail com</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>nive nivalis org</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>jacopods+kde gmail com</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>Regnaron web de</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>grundleborg googlemail com</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>listes rusconi laposte net</td>
+	<td>2</td>
+<tr>
+<tr>
+	<td>charon episode-iv de</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>StormByte gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>dpalacio uninorte edu co</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>kdedevel etotheipiplusone com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>rafael regisp gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>alpha super-one laposte net</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>bart cerneels kde org</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>msoos freemail hu</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>gyoder stny rr com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>christos lazaridis+kde bugzilla gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>kevin krammer gmx at</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>brandon ml gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>dhaval patel sh</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>ervin kde org</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>l appelhans gmx de</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>nielsslot gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>bschindler student ethz ch</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>lilwong gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>usenbinz gmx de</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>browserbugs gtalbot org</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>xenoterracide gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>michael_zanetti gmx net</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>niko sams gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>earle downlode org</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>chanika gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>ricardsonwilliams yahoo com br</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>ruchir brahmbhatt ecosmob com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>viesturs zarins mii lu lv</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>mbianchi gmail com</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>anders alweb dk</td>
+	<td>1</td>
+<tr>
+<tr>
+	<td>bugs kde org mooby net</td>
+	<td>1</td>
+<tr>
+</table>
+
+<h3 style="text-align:center;"><a name="fixers">Top 100 people who most quickly fixed a report in the last 7 days:</a></h3>
+<table align="center" border="0" cellspacing="2" cellpadding="5">
+<tr style="background-color: #EEF6FF;">
+<th>User</th><th>Elapsed time</th></tr>
+<tr>
+	<td>kretschmann kde org</td>
+	<td>21 min (<a href="show_bug.cgi?id=182706">182706</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>27 min (<a href="show_bug.cgi?id=182412">182412</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>33 min (<a href="show_bug.cgi?id=182754">182754</a>)</td>
+</tr>
+<tr>
+	<td>lmurray undefinedfire com</td>
+	<td>41 min (<a href="show_bug.cgi?id=182146">182146</a>)</td>
+</tr>
+<tr>
+	<td>lmurray undefinedfire com</td>
+	<td>46 min (<a href="show_bug.cgi?id=182561">182561</a>)</td>
+</tr>
+<tr>
+	<td>marcel wiesweg gmx de</td>
+	<td>70 min (<a href="show_bug.cgi?id=182334">182334</a>)</td>
+</tr>
+<tr>
+	<td>shafff ukr net</td>
+	<td>120 min (<a href="show_bug.cgi?id=181921">181921</a>)</td>
+</tr>
+<tr>
+	<td>faure kde org</td>
+	<td>120 min (<a href="show_bug.cgi?id=182472">182472</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>4 h (<a href="show_bug.cgi?id=181964">181964</a>)</td>
+</tr>
+<tr>
+	<td>asraniel fryx ch</td>
+	<td>5 h (<a href="show_bug.cgi?id=182592">182592</a>)</td>
+</tr>
+<tr>
+	<td>t zachmann zagge de</td>
+	<td>9 h (<a href="show_bug.cgi?id=181908">181908</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>9 h (<a href="show_bug.cgi?id=181930">181930</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>10 h (<a href="show_bug.cgi?id=181940">181940</a>)</td>
+</tr>
+<tr>
+	<td>aseigo kde org</td>
+	<td>10 h (<a href="show_bug.cgi?id=181884">181884</a>)</td>
+</tr>
+<tr>
+	<td>cyb lepi org</td>
+	<td>10 h (<a href="show_bug.cgi?id=182157">182157</a>)</td>
+</tr>
+<tr>
+	<td>Parker Coates gmail com</td>
+	<td>13 h (<a href="show_bug.cgi?id=182233">182233</a>)</td>
+</tr>
+<tr>
+	<td>joris guisson gmail com</td>
+	<td>14 h (<a href="show_bug.cgi?id=182127">182127</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>21 h (<a href="show_bug.cgi?id=182610">182610</a>)</td>
+</tr>
+<tr>
+	<td>faure kde org</td>
+	<td>26 h (<a href="show_bug.cgi?id=182138">182138</a>)</td>
+</tr>
+<tr>
+	<td>kdedevel etotheipiplusone com</td>
+	<td>26 h (<a href="show_bug.cgi?id=182618">182618</a>)</td>
+</tr>
+<tr>
+	<td>sebastian trueg de</td>
+	<td>33 h (<a href="show_bug.cgi?id=181826">181826</a>)</td>
+</tr>
+<tr>
+	<td>joris guisson gmail com</td>
+	<td>42 h (<a href="show_bug.cgi?id=182327">182327</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>43 h (<a href="show_bug.cgi?id=182352">182352</a>)</td>
+</tr>
+<tr>
+	<td>kevin krammer gmx at</td>
+	<td>50 h (<a href="show_bug.cgi?id=182162">182162</a>)</td>
+</tr>
+<tr>
+	<td>andresbajotierra gmail com</td>
+	<td>2 days (<a href="show_bug.cgi?id=181834">181834</a>)</td>
+</tr>
+<tr>
+	<td>marcel wiesweg gmx de</td>
+	<td>2 days (<a href="show_bug.cgi?id=181705">181705</a>)</td>
+</tr>
+<tr>
+	<td>shafff ukr net</td>
+	<td>3 days (<a href="show_bug.cgi?id=182035">182035</a>)</td>
+</tr>
+<tr>
+	<td>michael_zanetti gmx net</td>
+	<td>3 days (<a href="show_bug.cgi?id=182114">182114</a>)</td>
+</tr>
+<tr>
+	<td>marcel wiesweg gmx de</td>
+	<td>4 days (<a href="show_bug.cgi?id=181792">181792</a>)</td>
+</tr>
+<tr>
+	<td>nielsslot gmail com</td>
+	<td>4 days (<a href="show_bug.cgi?id=181938">181938</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>4 days (<a href="show_bug.cgi?id=181853">181853</a>)</td>
+</tr>
+<tr>
+	<td>parallelgrapefruit gmail com</td>
+	<td>5 days (<a href="show_bug.cgi?id=182025">182025</a>)</td>
+</tr>
+<tr>
+	<td>david usermode org</td>
+	<td>6 days (<a href="show_bug.cgi?id=181875">181875</a>)</td>
+</tr>
+<tr>
+	<td>haraldhv stud ntnu no</td>
+	<td>6 days (<a href="show_bug.cgi?id=181678">181678</a>)</td>
+</tr>
+<tr>
+	<td>peter penz gmx at</td>
+	<td>6 days (<a href="show_bug.cgi?id=181765">181765</a>)</td>
+</tr>
+<tr>
+	<td>aurelien gateau free fr</td>
+	<td>7 days (<a href="show_bug.cgi?id=181177">181177</a>)</td>
+</tr>
+<tr>
+	<td>tsdgeos terra es</td>
+	<td>8 days (<a href="show_bug.cgi?id=181637">181637</a>)</td>
+</tr>
+<tr>
+	<td>faure kde org</td>
+	<td>10 days (<a href="show_bug.cgi?id=181180">181180</a>)</td>
+</tr>
+<tr>
+	<td>shafff ukr net</td>
+	<td>10 days (<a href="show_bug.cgi?id=181344">181344</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>11 days (<a href="show_bug.cgi?id=181334">181334</a>)</td>
+</tr>
+<tr>
+	<td>kretschmann kde org</td>
+	<td>13 days (<a href="show_bug.cgi?id=181187">181187</a>)</td>
+</tr>
+<tr>
+	<td>zander kde org</td>
+	<td>14 days (<a href="show_bug.cgi?id=180885">180885</a>)</td>
+</tr>
+<tr>
+	<td>lmurray undefinedfire com</td>
+	<td>17 days (<a href="show_bug.cgi?id=180536">180536</a>)</td>
+</tr>
+<tr>
+	<td>zander kde org</td>
+	<td>20 days (<a href="show_bug.cgi?id=180177">180177</a>)</td>
+</tr>
+<tr>
+	<td>marcel wiesweg gmx de</td>
+	<td>21 days (<a href="show_bug.cgi?id=180223">180223</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>22 days (<a href="show_bug.cgi?id=180065">180065</a>)</td>
+</tr>
+<tr>
+	<td>jr jriddell org</td>
+	<td>31 days (<a href="show_bug.cgi?id=178820">178820</a>)</td>
+</tr>
+<tr>
+	<td>annma kde org</td>
+	<td>41 days (<a href="show_bug.cgi?id=178114">178114</a>)</td>
+</tr>
+<tr>
+	<td>winter kde org</td>
+	<td>47 days (<a href="show_bug.cgi?id=177893">177893</a>)</td>
+</tr>
+<tr>
+	<td>davide bettio kdemail net</td>
+	<td>48 days (<a href="show_bug.cgi?id=177290">177290</a>)</td>
+</tr>
+<tr>
+	<td>kretschmann kde org</td>
+	<td>50 days (<a href="show_bug.cgi?id=177680">177680</a>)</td>
+</tr>
+<tr>
+	<td>kedgedev centrum cz</td>
+	<td>52 days (<a href="show_bug.cgi?id=177442">177442</a>)</td>
+</tr>
+<tr>
+	<td>frank osterfeld kdemail net</td>
+	<td>62 days (<a href="show_bug.cgi?id=176262">176262</a>)</td>
+</tr>
+<tr>
+	<td>caulier gilles gmail com</td>
+	<td>69 days (<a href="show_bug.cgi?id=175746">175746</a>)</td>
+</tr>
+<tr>
+	<td>asraniel fryx ch</td>
+	<td>78 days (<a href="show_bug.cgi?id=175176">175176</a>)</td>
+</tr>
+<tr>
+	<td>jr jriddell org</td>
+	<td>180 days (<a href="show_bug.cgi?id=167699">167699</a>)</td>
+</tr>
+<tr>
+	<td>zander kde org</td>
+	<td>187 days (<a href="show_bug.cgi?id=167492">167492</a>)</td>
+</tr>
+<tr>
+	<td>aurelien gateau free fr</td>
+	<td>203 days (<a href="show_bug.cgi?id=166075">166075</a>)</td>
+</tr>
+<tr>
+	<td>john tapsell kdemail net</td>
+	<td>214 days (<a href="show_bug.cgi?id=165376">165376</a>)</td>
+</tr>
+<tr>
+	<td>andresbajotierra gmail com</td>
+	<td>231 days (<a href="show_bug.cgi?id=163708">163708</a>)</td>
+</tr>
+<tr>
+	<td>rdieter math unl edu</td>
+	<td>245 days (<a href="show_bug.cgi?id=162729">162729</a>)</td>
+</tr>
+<tr>
+	<td>shafff ukr net</td>
+	<td>263 days (<a href="show_bug.cgi?id=162016">162016</a>)</td>
+</tr>
+<tr>
+	<td>faure kde org</td>
+	<td>265 days (<a href="show_bug.cgi?id=161681">161681</a>)</td>
+</tr>
+<tr>
+	<td>iamsergio gmail com</td>
+	<td>267 days (<a href="show_bug.cgi?id=161624">161624</a>)</td>
+</tr>
+<tr>
+	<td>faure kde org</td>
+	<td>354 days (<a href="show_bug.cgi?id=157630">157630</a>)</td>
+</tr>
+<tr>
+	<td>frank osterfeld kdemail net</td>
+	<td>433 days (<a href="show_bug.cgi?id=152702">152702</a>)</td>
+</tr>
+<tr>
+	<td>cgiboudeaux gmail com</td>
+	<td>498 days (<a href="show_bug.cgi?id=149911">149911</a>)</td>
+</tr>
+<tr>
+	<td>mattr kde org</td>
+	<td>540 days (<a href="show_bug.cgi?id=148659">148659</a>)</td>
+</tr>
+<tr>
+	<td>andi clemens gmx net</td>
+	<td>557 days (<a href="show_bug.cgi?id=148166">148166</a>)</td>
+</tr>
+<tr>
+	<td>frank osterfeld kdemail net</td>
+	<td>628 days (<a href="show_bug.cgi?id=145185">145185</a>)</td>
+</tr>
+<tr>
+	<td>frank osterfeld kdemail net</td>
+	<td>709 days (<a href="show_bug.cgi?id=141776">141776</a>)</td>
+</tr>
+<tr>
+	<td>zander kde org</td>
+	<td>713 days (<a href="show_bug.cgi?id=141805">141805</a>)</td>
+</tr>
+<tr>
+	<td>TomTrnka seznam cz</td>
+	<td>763 days (<a href="show_bug.cgi?id=139418">139418</a>)</td>
+</tr>
+<tr>
+	<td>andresbajotierra gmail com</td>
+	<td>879 days (<a href="show_bug.cgi?id=133588">133588</a>)</td>
+</tr>
+<tr>
+	<td>winter kde org</td>
+	<td>914 days (<a href="show_bug.cgi?id=131417">131417</a>)</td>
+</tr>
+<tr>
+	<td>rong dev gmail com</td>
+	<td>1010 days (<a href="show_bug.cgi?id=126047">126047</a>)</td>
+</tr>
+<tr>
+	<td>david usermode org</td>
+	<td>1046 days (<a href="show_bug.cgi?id=123983">123983</a>)</td>
+</tr>
+<tr>
+	<td>faure kde org</td>
+	<td>1135 days (<a href="show_bug.cgi?id=118593">118593</a>)</td>
+</tr>
+<tr>
+	<td>iamsergio gmail com</td>
+	<td>1336 days (<a href="show_bug.cgi?id=106672">106672</a>)</td>
+</tr>
+<tr>
+	<td>iamsergio gmail com</td>
+	<td>2442 days (<a href="show_bug.cgi?id=42899">42899</a>)</td>
+</tr>
+</table>
+</div> <!-- close "main" -->
+      </div> <!-- close "content" -->
+    </div> <!-- close "right" -->
+
+    <div id="left">
+<div class="menu_box">
+        <div class="menutitle"><div>
+        <h2>Actions</h2>
+        </div></div>
+  <ul>
+<li>
+  <p>
+	<form id="show-bug" name="f" action="buglist.cgi" method="get"
+        onsubmit="if (this.quicksearch.value == '')
+                  { alert('Please enter one or more search terms first.');
+                    return false; } return true;">
+    <input size=10 type="text" name="quicksearch">
+  </form>
+	</p>
+</li>
+
+
+  <li><a href="report.cgi">Reports</a></li>
+
+     <li><a href="request.cgi">Requests</a></li>
+
+  </ul>
+
+
+ 
+<div class="menutitle"><div>
+  <h2>Reports</h2>
+</div></div>
+	<ul>
+		<li><a href="buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=UNCONFIRMED&amp;bugidtype=include&amp;chfield=%5BBug+creation%5D&amp;chfieldfrom=1d&amp;chfieldto=Now&amp;bug_file_loc=&amp;cmdtype=doit">Bugs reported today</a></li>
+		<li><a href="buglist.cgi?bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_status=UNCONFIRMED&amp;bugidtype=include&amp;chfield=%5BBug+creation%5D&amp;chfieldfrom=3d&amp;chfieldto=Now&amp;bug_file_loc=&amp;cmdtype=doit">Bugs reported in the last 3 days</a></li>
+		<li><a href="buglist.cgi?bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=Importance&amp;field0-0-0=attachments.ispatch&amp;type0-0-0=greaterthan&amp;value0-0-0=0">Bug reports with patches</a></li>
+
+	<li><a href="weekly-bug-summary.cgi">Weekly Bug statistics</a></li>
+        <li><a href="buglist.cgi?bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;bug_severity=crash&amp;bug_severity=normal&amp;bug_severity=minor&amp;votes=120&amp;order=bugs.votes">The most hated bugs</a></li>
+	<li>
+  <a href="buglist.cgi?bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=critical&amp;bug_severity=grave&amp;bug_severity=major&amp;order=bugs.bug_severity">The most severe bugs</a></li>
+	<li><a href="duplicates.cgi">The most frequently reported bugs</a></li>
+	<li><a href="buglist.cgi?bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;bug_severity=wishlist&amp;votes=120&amp;order=bugs.votes">The most wanted features</a></li>
+        <li>
+	<a href="buglist.cgi?keywords=junior-jobs&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;cmdtype=doit">Junior Jobs</a></li>
+	<li><a href="reports.cgi">Report ownership counts and charts</a></li>
+
+	</ul>
+
+
+<div class="menutitle"><div>
+		<h2>My Account</h2>
+		</div></div>
+  <ul>
+       <li><a href="createaccount.cgi">New&nbsp;Account</a></li>
+       <li><a href="index.cgi?GoAheadAndLogIn=1">Log&nbsp;In</a></li>
+  </ul>
+
+    </div> <!-- close "menu_box" -->
+
+    </div> <!-- close "left" -->
+    <div class="clearer"></div>
+  </div> <!-- close "body" -->
+  <div class="clearer"></div>
+</div>  <!-- close "body_wrapper" -->
+
+
+    <div id="end_body"></div>
+
+    <div id="footer"><div id="footer_text">
+        This website is maintained by <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;sysadmin&#64;kde&#46;or&#x67;">The KDE sysadmins</a> (don't email them about bugs in KDE!)<br />
+        KDE<sup>&#174;</sup> and <a href="/media/images/kde_gear_black.png">the K Desktop Environment<sup>&#174;</sup> logo</a> are registered trademarks of <a href="http://ev.kde.org/" title="Homepage of the KDE non-profit Organization">KDE e.V.</a> |
+        <a href="http://www.kde.org/contact/impressum.php">Legal</a>
+    </div></div>
+  </div>
+
+</body>
+</html></div>

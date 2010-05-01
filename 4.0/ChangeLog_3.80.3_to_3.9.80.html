@@ -1,0 +1,1018 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <title>KDevelop - 4.0 alpha 1 (3.9.80) ndividual SVN commit logs</title>
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="keywords" content="kdevelop,svn,development,changelog,history,changes">
+</head>
+
+<body lang="en">
+2008-04-21 23:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=799607&amp;view=rev">799607</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=799610&amp;view=rev">799610</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+buildtools/managers/qmake/duchain/qmakeeditorintegrator.cpp<br>
+buildtools/managers/qmake/duchain/.qmakeeditorintegrator.cpp.swp<br>
+(removed)<br>
+buildtools/managers/qmake/duchain/qmakeeditorintegrator.cpp<br>
+buildtools/managers/qmake/parser/qmakeastdefaultvisitor.cpp,<br>
+buildtools/managers/qmake/parser/CMakeLists.txt,<br>
+buildtools/managers/qmake/parser/ast.h,<br>
+buildtools/managers/qmake/parser/buildastvisitor.h,<br>
+buildtools/managers/qmake/qmakefile.cpp,<br>
+
+buildtools/managers/qmake/parser/tests/testhelpers.cpp, (...)<br>
+Add a note about checking wether there's better way to set the right cursor<br>
+end<br>
+this one shouldn't go in<br>
+Adjust to assumptions from KTE (backside is always behind the last character)<br>
+Change the AST, remove all the functions and directly use public API in the<br>
+classes.<br>
+<br>
+2008-04-20 22:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=799261&amp;view=rev">799261</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+plugins/grepview/grepviewplugin.cpp,<br>
+buildtools/builders/makebuilder/makebuilder.cpp,<br>
+buildtools/builders/qmakebuilder/qmakebuilder.cpp,<br>
+plugins/grepview/grepviewplugin.h,<br>
+buildtools/builders/makebuilder/makebuilder.h,<br>
+buildtools/builders/cmakebuilder/cmakebuilder.cpp, (...)<br>
+Fix a couple of signal connections due to changed API<br>
+<br>
+2008-04-20 20:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=799230&amp;view=rev">799230</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/cmakemanager.cpp<br>
+Remove the kDebug with the typeid call.<br>
+<br>
+2008-04-19 15:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798835&amp;view=rev">798835</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/util/activetooltip.h<br>
+Correct logic for closing tooltip on mouse moves.<br>
+<br>
+2008-04-19 15:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798828&amp;view=rev">798828</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+
+languages/cpp/debugger/tooltipwidget.cpp,<br>
+languages/cpp/debugger/tooltipwidget.h<br>
+If we're out of screen height, put the vertical scrollbar back.<br>
+<br>
+2008-04-19 14:57 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798823&amp;view=rev">798823</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/util/treeview.h,<br>
+languages/cpp/debugger/tooltipwidget.cpp,<br>
+languages/cpp/debugger/tooltipwidget.h<br>
+
+Automatically resize the tooltip vertically if the content no longer fits.<br>
+<br>
+2008-04-19 12:49 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798776&amp;view=rev">798776</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/variablecollection.h,<br>
+languages/cpp/debugger/breakpointcontroller.h,<br>
+languages/cpp/debugger/tooltipwidget.cpp,<br>
+languages/cpp/debugger/variablecollection.cpp,<br>
+languages/cpp/debugger/breakpointcontroller.cpp,<br>
+
+languages/cpp/debugger/tooltipwidget.h<br>
+Allow to add a watch, or watchpoint, straight from variable tooltip.<br>
+<br>
+2008-04-19 11:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798772&amp;view=rev">798772</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/tooltipwidget.h<br>
+Remove floatsam<br>
+<br>
+2008-04-19 11:36 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798769&amp;view=rev">798769</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+
+languages/cpp/debugger/breakpointcontroller.h,<br>
+languages/cpp/debugger/breakpointcontroller.cpp<br>
+For watchpoints, show both original user location and real address.<br>
+<br>
+2008-04-19 10:55 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798756&amp;view=rev">798756</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/breakpointcontroller.h,<br>
+languages/cpp/debugger/breakpointwidget.h,<br>
+languages/cpp/debugger/util/treeitem.cpp,<br>
+
+languages/cpp/debugger/util/treeitem.h,<br>
+languages/cpp/debugger/breakpointcontroller.cpp<br>
+Report breakpoint errors from GDB. Never insert breakpoints after the special<br>
+item.<br>
+<br>
+2008-04-19 09:06 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798741&amp;view=rev">798741</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/variablecollection.cpp<br>
+Properly handle the change of type of watched expression<br>
+
+<br>
+2008-04-19 08:02 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798734&amp;view=rev">798734</a>]  Malcolm Hunter &lt;malcolm.hunter gmx.co.uk&gt;<br>
+src/kdevelopui.rc<br>
+Typo found by mvillarino<br>
+<br>
+2008-04-18 18:41 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798640&amp;view=rev">798640</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798644&amp;view=rev">798644</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+
+languages/cpp/debugger/breakpointcontroller.cpp<br>
+languages/cpp/debugger/stackmanager.cpp<br>
+languages/cpp/debugger/util/treeitem.cpp<br>
+languages/cpp/debugger/breakpointcontroller.h,<br>
+languages/cpp/debugger/breakpointcontroller.cpp<br>
+languages/cpp/debugger/framestackwidget.cpp,<br>
+languages/cpp/debugger/stackmanager.h,<br>
+languages/cpp/debugger/breakpointwidget.h,<br>
+languages/cpp/debugger/stackmanager.cpp<br>
+
+Do not try to save the 'click to create'breakpoint item.<br>
+Fix an off-by-one error causing incremental frame fetch to misbehave.<br>
+Fix a bug whereby we'd fetch more children when click on non-... item.<br>
+Create new breakpoint by just editing location in next table row.<br>
+Make selection of threads and frames in framestack work.<br>
+<br>
+2008-04-18 17:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798621&amp;view=rev">798621</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798622&amp;view=rev">798622</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/tests/cmakeast_test.cpp (added),<br>
+buildtools/managers/cmake/tests/cmakeast_test.h (added)<br>
+buildtools/managers/cmake/tests/cmake_writefileast_test.cpp<br>
+(removed),<br>
+buildtools/managers/cmake/tests/cmake_removeast_test.cpp<br>
+(removed),<br>
+buildtools/managers/cmake/tests/cmake_linkdirectoriesast_test.h<br>
+(removed), buildtools/managers/cmake/tests/cmake_setast_test.h<br>
+(removed),<br>
+
+buildtools/managers/cmake/tests/cmake_tryrunast_test.cpp<br>
+(removed),<br>
+buildtools/managers/cmake/tests/cmake_findlibraryast_test.cpp<br>
+(removed), (...)<br>
+Forgot to add these files<br>
+Removed old tests and put all the test in the same file.<br>
+<br>
+2008-04-18 17:32 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798619&amp;view=rev">798619</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+plugins/grepview/grepviewplugin.cpp,<br>
+buildtools/builders/makebuilder/makebuilder.cpp,<br>
+buildtools/builders/qmakebuilder/qmakebuilder.cpp,<br>
+buildtools/builders/cmakebuilder/cmakebuilder.cpp,<br>
+buildtools/builders/qmakebuilder/qmakebuilder.h,<br>
+src/profiles/IDE/profile.config<br>
+Change how outputview works. We now support creating a new toolview and inside<br>
+that multiple output widgets (or one) with either history-like or<br>
+list/tab-like navigation between them.<br>
+
+<br>
+2008-04-18 16:06 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798589&amp;view=rev">798589</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+Removed useless debug information<br>
+<br>
+2008-04-18 16:01 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798582&amp;view=rev">798582</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+
+Now a cmake file can be saved reliably (afaik) :)<br>
+<br>
+2008-04-18 14:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798540&amp;view=rev">798540</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemodelitems.cpp,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/cmakemodelitems.h,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.h,<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+
+Reload (the whole project) after saving the cmake file.<br>
+<br>
+2008-04-18 13:55 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798518&amp;view=rev">798518</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppcodecompletionmodel.cpp,<br>
+languages/cpp/codecompletioncontext.cpp,<br>
+languages/cpp/cppcodecompletionmodel.h,<br>
+languages/cpp/codecompletioncontext.h,<br>
+languages/cpp/cppcodecompletionworker.cpp<br>
+
+When there is too many overloaded functions or operators for the argument hint<br>
+list(currently set to 5), then only show the name and the count of overloads.<br>
+Try making the item-names in the completion list bold, not working yet.<br>
+<br>
+2008-04-18 10:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798442&amp;view=rev">798442</a>]  Hamish Rodda &lt;rodda kde.org&gt;<br>
+languages/cpp/cppduchain/declarationbuilder.cpp<br>
+Don't pollute the output with debug info that cannot be turned off<br>
+<br>
+
+2008-04-18 09:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798414&amp;view=rev">798414</a>]  Hamish Rodda &lt;rodda kde.org&gt;<br>
+src/kdevelopui.rc<br>
+I was sure I committed this yesterday but apparently not. Plug the focus<br>
+editor action into the window menu.<br>
+<br>
+2008-04-18 09:06 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798411&amp;view=rev">798411</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798413&amp;view=rev">798413</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/cppcodecompletionmodel.cpp<br>
+languages/cpp/cppduchain/navigationwidget.cpp<br>
+Show "enumerator" in front of enumerators in the completion list<br>
+add newlines behind the use lists<br>
+<br>
+2008-04-18 08:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798407&amp;view=rev">798407</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+Fix crash on reparse.<br>
+
+<br>
+2008-04-17 22:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798308&amp;view=rev">798308</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/gdbcontroller.h,<br>
+languages/cpp/debugger/breakpointcontroller.h,<br>
+languages/cpp/debugger/gdbcontroller.cpp,<br>
+languages/cpp/debugger/variablecollection.cpp,<br>
+languages/cpp/debugger/breakpointcontroller.cpp<br>
+Fix running debugger for a second time. Fix display of the current source<br>
+
+line.<br>
+<br>
+2008-04-17 22:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798304&amp;view=rev">798304</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/parser/cmakeast.cpp,<br>
+buildtools/managers/cmake/cmakecodecompletionmodel.cpp,<br>
+buildtools/managers/cmake/cmakecodecompletionmodel.h,<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+
+Support for macros on the cmake completion model.<br>
+<br>
+2008-04-17 18:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798194&amp;view=rev">798194</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/variablecollection.h,<br>
+languages/cpp/debugger/variablecollection.cpp<br>
+When watch goes out of scope, gray it.<br>
+<br>
+2008-04-17 18:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798191&amp;view=rev">798191</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/cmakecodecompletionmodel.cpp,<br>
+buildtools/managers/cmake/cmakecodecompletionmodel.h<br>
+Improved the cmake code completion capabilities.<br>
+<br>
+2008-04-17 17:53 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798176&amp;view=rev">798176</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/framestackwidget.cpp,<br>
+languages/cpp/debugger/stackmanager.h,<br>
+languages/cpp/debugger/framestackwidget.h,<br>
+
+languages/cpp/debugger/stackmanager.cpp<br>
+Select the thread we've stopped in<br>
+<br>
+2008-04-17 17:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798156&amp;view=rev">798156</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/variablecollection.h,<br>
+languages/cpp/debugger/gdbcontroller.cpp,<br>
+languages/cpp/debugger/variablecollection.cpp<br>
+Implement display of function return values, after "step out".<br>
+
+<br>
+2008-04-17 16:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798143&amp;view=rev">798143</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/variablecollection.h,<br>
+languages/cpp/debugger/util/activetooltip.h (added),<br>
+languages/cpp/debugger/variablewidget.cpp,<br>
+languages/cpp/debugger/CMakeLists.txt,<br>
+languages/cpp/debugger/tooltipwidget.cpp (added),<br>
+languages/cpp/debugger/variablewidget.h, (...)<br>
+
+Revamp variables support. As result, pretty much nothing works, but we have<br>
+variable tooltips that are capable of displaying structures.<br>
+<br>
+2008-04-17 16:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798142&amp;view=rev">798142</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+languages/cpp/cpplanguagesupport.cpp<br>
+Ported the languages to the new platform changes.<br>
+
+<br>
+2008-04-17 15:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798128&amp;view=rev">798128</a>]  Alexander Dymo &lt;adymo kdevelop.org&gt;<br>
+buildtools/managers/cmake/tests/CMakeLists.txt<br>
+Fix the build<br>
+<br>
+2008-04-17 14:51 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798119&amp;view=rev">798119</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/managers/cmake/tests/CMakeLists.txt<br>
+
+Disable all failing tests for now. It takes immense amounts of time to link<br>
+them and they're relinked everytime cmakecommon library needs relinking. They<br>
+should be better grouped and put into fewer tests. Aleix said he'll be doing<br>
+that sooner or later. CCMAIL:aleixpol@gmail.com<br>
+<br>
+2008-04-17 13:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798099&amp;view=rev">798099</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakecodecompletionmodel.cpp (added),<br>
+buildtools/managers/cmake/cmakecodecompletionmodel.h (added),<br>
+
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+buildtools/managers/cmake/parser/astfactory.cpp,<br>
+buildtools/managers/cmake/CMakeLists.txt,<br>
+buildtools/managers/cmake/parser/astfactory.h<br>
+First code completion support for CMake scripts. :)<br>
+<br>
+2008-04-17 12:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798082&amp;view=rev">798082</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppcodecompletionmodel.cpp<br>
+
+If there is no rows, don't bother with computing parents.<br>
+<br>
+2008-04-17 11:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798074&amp;view=rev">798074</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppcodecompletionmodel.cpp<br>
+Fix crash<br>
+<br>
+2008-04-17 11:48 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798072&amp;view=rev">798072</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/cppcodecompletionmodel.cpp<br>
+Do not crash when the top-context is not a C++ context.<br>
+<br>
+2008-04-17 09:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=798034&amp;view=rev">798034</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+Now we run make on the correct directory.<br>
+<br>
+2008-04-16 23:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797896&amp;view=rev">797896</a>]  Pino Toscano &lt;pino kde.org&gt;<br>
+
+languages/cpp/cppduchain/tests/test_duchain.cpp<br>
+include typeinfo for using typeid<br>
+<br>
+2008-04-16 19:36 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797712&amp;view=rev">797712</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cpplanguagesupport.h,<br>
+languages/cpp/cppcodecompletion.h (removed),<br>
+languages/cpp/CMakeLists.txt,<br>
+languages/cpp/cpplanguagesupport.cpp,<br>
+
+languages/cpp/cppcodecompletion.cpp (removed)<br>
+Use the universal CodeCompletion helper class from kdevplatform to reduce<br>
+duplication.<br>
+<br>
+2008-04-16 19:30 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797703&amp;view=rev">797703</a>]  Roberto Raggi &lt;roberto kdevelop.org&gt;<br>
+src/kdevelopui.rc<br>
+UI fixes<br>
+<br>
+
+2008-04-16 18:03 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797678&amp;view=rev">797678</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemodelitems.cpp,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/cmakemodelitems.h,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.h,<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+buildtools/managers/cmake/cmakemanager.h<br>
+
+Now we can jump to a target declaration from the project manager.<br>
+<br>
+2008-04-16 18:03 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797677&amp;view=rev">797677</a>]  Urs Wolfer &lt;uwolfer kde.org&gt;<br>
+plugins/appwizard/appwizardplugin.cpp,<br>
+languages/cpp/debugger/breakpointcontroller.cpp<br>
+icon fixes<br>
+<br>
+2008-04-16 16:58 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797658&amp;view=rev">797658</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/tests/cmakeduchaintest.cpp<br>
+Little fixes on the duchain cmake support.<br>
+<br>
+2008-04-16 16:36 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797652&amp;view=rev">797652</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797654&amp;view=rev">797654</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cpplanguagesupport.cpp<br>
+languages/cpp/cppcodecompletionmodel.cpp,<br>
+
+languages/cpp/quickopen.cpp, languages/cpp/includepathresolver.h<br>
+This belongs to the last commit.<br>
+- Speed up the completion widget computation a bit, by preveting the use of<br>
+kurl, and doing less string manipulation per item. - Disable indentation in<br>
+the completion widget for now<br>
+<br>
+2008-04-16 16:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797646&amp;view=rev">797646</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/navigationwidget.cpp<br>
+
+Only pick C++ parsing environments, to prevent an assertion later.<br>
+<br>
+2008-04-16 15:58 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797640&amp;view=rev">797640</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+src/kdevelopui.rc<br>
+Move the project config submenu into the project menu, just makes more sense<br>
+there.<br>
+<br>
+2008-04-16 15:32 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797623&amp;view=rev">797623</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+languages/cpp/cpplanguagesupport.cpp<br>
+Don't use symboltable, not installed anymore.<br>
+<br>
+2008-04-16 14:43 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797614&amp;view=rev">797614</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.h,<br>
+buildtools/managers/cmake/parser/cmakeast.h,<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+
+buildtools/managers/cmake/parser/cmakelistsparser.h,<br>
+buildtools/managers/cmake/tests/cmakeduchaintest.cpp, (...)<br>
+Uses on the targets in the CMakeLists.txt files :).<br>
+<br>
+2008-04-16 13:23 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797586&amp;view=rev">797586</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797587&amp;view=rev">797587</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+buildtools/managers/cmake/tests/cmakeduchaintest.h,<br>
+buildtools/managers/cmake/tests/cmakeduchaintest.cpp<br>
+
+languages/cpp/tests/test_cppcodecompletion.cpp,<br>
+languages/cpp/cppduchain/contextbuilder.cpp,<br>
+languages/cpp/cppduchain/declarationbuilder.cpp,<br>
+languages/cpp/cppduchain/tests/test_duchain.cpp,<br>
+languages/cpp/cppduchain/tests/test_expressionparser.cpp<br>
+Add a simple test for uses in cmake, currently failing.<br>
+Adapt to the DUChain API change: No more custom handling of the symbol table.<br>
+<br>
+2008-04-16 13:02 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797580&amp;view=rev">797580</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+
+languages/cpp/debugger/breakpointwidget.h (added),<br>
+languages/cpp/debugger/breakpointcontroller.h,<br>
+languages/cpp/debugger/util/treeitem.cpp,<br>
+languages/cpp/debugger/CMakeLists.txt,<br>
+languages/cpp/debugger/gdb.cpp,<br>
+languages/cpp/debugger/util/treemodel.cpp, (...)<br>
+Reimplement the breakpoints widget. Much improved layout, and simplified.<br>
+Breakpoint markers currently do not work, as well as tracing, ignore count,<br>
+and inserting breakpoint in the running program.<br>
+
+<br>
+2008-04-16 12:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797578&amp;view=rev">797578</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+Don't dump a lot of debug output by default.<br>
+<br>
+2008-04-16 12:33 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797576&amp;view=rev">797576</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+buildtools/managers/cmake/CMakeLists.txt<br>
+Don't commit before building. fix the typo<br>
+<br>
+2008-04-16 12:25 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797572&amp;view=rev">797572</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/managers/cmake/CMakeLists.txt<br>
+Set a default debug area so all kDebug() calls automatically go to the cmake<br>
+area.<br>
+<br>
+
+2008-04-16 10:40 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797544&amp;view=rev">797544</a>]  Roberto Raggi &lt;roberto kdevelop.org&gt;<br>
+languages/cpp/kdevcppsupport.rc,<br>
+buildtools/managers/custommake/kdevcustommakemanager.rc,<br>
+plugins/qtdesigner/kdevqtdesigner.rc,<br>
+buildtools/builders/makebuilder/kdevmakebuilder.rc,<br>
+languages/cpp/debugger/kdevcppdebuggerui.rc,<br>
+plugins/grepview/kdevgrepview.rc, (...)<br>
+
+Ui fixes<br>
+<br>
+2008-04-16 10:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797540&amp;view=rev">797540</a>]  Roberto Raggi &lt;roberto kdevelop.org&gt;<br>
+languages/cpp/debugger/debuggerplugin.h,<br>
+languages/cpp/debugger/debuggerplugin.cpp<br>
+use initializeGuiState()<br>
+<br>
+2008-04-16 10:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797539&amp;view=rev">797539</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/tests/cmakeduchaintest.h,<br>
+buildtools/managers/cmake/tests/cmakeduchaintest.cpp<br>
+Fixed the test to compile. Added uses test cases.<br>
+<br>
+2008-04-16 09:14 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797523&amp;view=rev">797523</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+buildtools/managers/cmake/cmakemanager.h<br>
+Fit the new language support api.<br>
+
+<br>
+2008-04-16 08:47 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797514&amp;view=rev">797514</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+languages/cpp/cpplanguagesupport.h,<br>
+buildtools/managers/cmake/cmakemodelitems.h,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.h,<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+languages/cpp/cpplanguagesupport.cpp, (...)<br>
+
+Added uses capabilities to the cmake language support Change the languages to<br>
+the last platform api changes.<br>
+<br>
+2008-04-16 08:42 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797513&amp;view=rev">797513</a>]  Alexander Dymo &lt;adymo kdevelop.org&gt;<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+buildtools/managers/cmake/cmakemanager.h<br>
+Match the interface (do not return const <br>
+* type) and fix the build<br>
+
+<br>
+2008-04-16 08:32 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797511&amp;view=rev">797511</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakehighlighting.cpp<br>
+Removed unnecessary, old and deprecated include<br>
+<br>
+2008-04-15 18:56 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797406&amp;view=rev">797406</a>]  Pino Toscano &lt;pino kde.org&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.h<br>
+
+extra ';'<br>
+<br>
+2008-04-15 16:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797369&amp;view=rev">797369</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/cmakehighlighting.cpp (added),<br>
+buildtools/managers/cmake/cmakehighlighting.h (added),<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+buildtools/managers/cmake/CMakeLists.txt,<br>
+
+buildtools/managers/cmake/kdevcmakemanager.desktop, (...)<br>
+Progress on the cmake language support.<br>
+<br>
+2008-04-15 15:36 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797353&amp;view=rev">797353</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/stackmanager.cpp<br>
+Fix stack view corner cases. Fixes messups when a thread has no child frames,<br>
+and when trying to fetch more frames when last frame displayed is the last<br>
+frame the target has.<br>
+
+<br>
+2008-04-15 14:09 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797326&amp;view=rev">797326</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/rpp/pp-macro-expander.cpp<br>
+Remove debug output<br>
+<br>
+2008-04-15 13:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797321&amp;view=rev">797321</a>]  Alexander Dymo &lt;adymo kdevelop.org&gt;<br>
+src/CMakeLists.txt<br>
+
+On MacOS add some descriptive strings to the generated bundle so that, for<br>
+example, the application name is shown as "KDevelop" instead of lowercased<br>
+"kdevelop".<br>
+<br>
+2008-04-15 13:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797320&amp;view=rev">797320</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/tests/cmakeduchaintest.h (added),<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/parser/cmakeast.cpp,<br>
+
+buildtools/managers/cmake/parser/cmakelistsparser.cpp,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.h,<br>
+buildtools/managers/cmake/parser/cmakeast.h, (...)<br>
+First work on the cmake language support.<br>
+<br>
+2008-04-15 12:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797303&amp;view=rev">797303</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cpplanguagesupport.cpp<br>
+Make switch declaration/definition work when you're on the line of the<br>
+
+definition but outside of its actual context. Always jump to first column.<br>
+<br>
+2008-04-15 10:29 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797284&amp;view=rev">797284</a>]  Roberto Raggi &lt;roberto kdevelop.org&gt;<br>
+src/kdevelopui.rc, languages/cpp/debugger/debuggerplugin.h,<br>
+plugins/valgrind/kdevvalgrind.rc,<br>
+languages/cpp/debugger/kdevcppdebuggerui.rc,<br>
+languages/cpp/debugger/debuggerplugin.cpp<br>
+More UI fixes<br>
+
+<br>
+2008-04-15 09:49 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797273&amp;view=rev">797273</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/rpp/pp-macro-expander.cpp<br>
+Escape quotes when creating strings in the preprocessor.<br>
+<br>
+2008-04-15 09:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797269&amp;view=rev">797269</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/expressionvisitor.cpp<br>
+
+Also process arguments for function-calls to unresolved functions. That way we<br>
+also get highlighting/navigation for them.<br>
+<br>
+2008-04-15 08:38 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797262&amp;view=rev">797262</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/tests/test_cppcodecompletion.cpp,<br>
+languages/cpp/parser/parsesession.cpp,<br>
+languages/cpp/parser/rpp/pp-stream.h,<br>
+languages/cpp/parser/rpp/anchor.h (added),<br>
+
+languages/cpp/tests/test_cppcodecompletion.h,<br>
+languages/cpp/parser/rpp/pp-environment.cpp, (...)<br>
+Correctly manage ranges while doing macro expansions: - Uses that come from<br>
+the bodies of macros, and not from arguments, get empty ranges -<br>
+Uses/declarations/contexts that come from macro bodies do not create ranges<br>
+that leave the physical borders of the macro invocation any more This makes<br>
+highlighting work a lot better when macros are involved.<br>
+<br>
+2008-04-15 08:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797257&amp;view=rev">797257</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/cppduchain/tests/test_duchain.cpp,<br>
+languages/cpp/cppduchain/tests/test_duchain.h<br>
+Remove testForeach, we don't need it any more.<br>
+<br>
+2008-04-15 08:15 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797255&amp;view=rev">797255</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/managers/qmake/duchain/contextbuilder.cpp,<br>
+buildtools/managers/qmake/duchain/CMakeLists.txt,<br>
+buildtools/managers/qmake/parser/ast.h,<br>
+
+buildtools/managers/qmake/duchain (added),<br>
+buildtools/managers/qmake/duchain/contextbuilder.h,<br>
+buildtools/managers/qmake/duchain/qmakeduchainexport.h, (...)<br>
+Merge the duchain stuff, I won't break the existing functionality with it and<br>
+its just easier to work in trunk/ on this.<br>
+<br>
+2008-04-15 07:50 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797248&amp;view=rev">797248</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/util/treeview.cpp,<br>
+
+languages/cpp/debugger/util/treeitem.cpp,<br>
+languages/cpp/debugger/util/treeview.h,<br>
+languages/cpp/debugger/util/treemodel.cpp,<br>
+languages/cpp/debugger/stackmanager.cpp,<br>
+languages/cpp/debugger/util/treeitem.h, (...)<br>
+Don't wipe away entire model when updating stack. This commit makes updates<br>
+much smoother on the screen.<br>
+<br>
+2008-04-14 21:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797085&amp;view=rev">797085</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp<br>
+Don't crash when not having a string.<br>
+<br>
+2008-04-14 19:16 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797036&amp;view=rev">797036</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797037&amp;view=rev">797037</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/managers/custommake/custommakemanager.cpp<br>
+plugins/documentview/kdevdocumentview.cpp,<br>
+languages/cpp/cppduchain/templatedeclaration.cpp,<br>
+
+buildtools/managers/custommake/custommakemanager.cpp,<br>
+buildtools/managers/custommake/custommakemanager.h<br>
+Ooops, small fix, build wasn't finished yet.<br>
+Rework how fetching of context menu actions from plugins work. The actual 2<br>
+context menus we had are empty for now as I still need to write the actual<br>
+merging code. But the infrastructure is in place and the various places<br>
+ported. It allows to specify actions and into which group in the menu they<br>
+should appear in. BTW: This change was completely developed in KDevelop4!!!<br>
+CCMAIL:kdevelop-devel@kdevelop.org<br>
+
+<br>
+2008-04-14 18:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=797019&amp;view=rev">797019</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/framestackwidget.cpp,<br>
+languages/cpp/debugger/threaditem.cpp (removed),<br>
+languages/cpp/debugger/framestackwidget.h,<br>
+languages/cpp/debugger/threaditem.h (removed),<br>
+languages/cpp/debugger/util/treeitem.cpp (added),<br>
+languages/cpp/debugger/gdb.cpp, (...)<br>
+
+Reimplement stack view.<br>
+<br>
+2008-04-14 15:35 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796950&amp;view=rev">796950</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+We will not add some unneeded files to the project model anymore.<br>
+<br>
+2008-04-14 13:51 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796893&amp;view=rev">796893</a>]  Hamish Rodda &lt;rodda kde.org&gt;<br>
+
+src/kdevelopui.rc<br>
+Plug execute project action Plug project-&gt;close all projects<br>
+<br>
+2008-04-14 13:02 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796871&amp;view=rev">796871</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/rpp/pp-stream.h<br>
+Add a comment that explains the function<br>
+<br>
+2008-04-14 10:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796783&amp;view=rev">796783</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/parser/lexer.cpp<br>
+Oops, it is __typeof__ not ___typeof__<br>
+<br>
+2008-04-14 09:55 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796780&amp;view=rev">796780</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/ast.h, languages/cpp/parser/parser.cpp,<br>
+languages/cpp/parser/lexer.cpp, languages/cpp/parser/parser.h,<br>
+languages/cpp/parser/tokens.cpp, languages/cpp/parser/tokens.h<br>
+Remove hardcoded support for foreach statements: Revert r767834 and r757917.<br>
+
+The C++ support can perfectly deal with foreach as a macro now, and also<br>
+builds uses for the init-declarations and such.<br>
+<br>
+2008-04-14 09:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796765&amp;view=rev">796765</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/lexer.cpp<br>
+Add support for the gcc __typeof__ keyword<br>
+<br>
+2008-04-14 08:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796738&amp;view=rev">796738</a>]  Harald Fernengel &lt;harry kdevelop.org&gt;<br>
+
+plugins/valgrind/valgrindcontrol.h,<br>
+plugins/valgrind/valgrindmodel.h,<br>
+plugins/valgrind/valgrindcontrol.cpp<br>
+use a socket for communication with valgrind, so the app's stderr won't get<br>
+mangled with valgrind's XML output.<br>
+<br>
+2008-04-14 08:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796729&amp;view=rev">796729</a>]  Hamish Rodda &lt;rodda kde.org&gt;<br>
+src/kdevelopui.rc<br>
+
+Remove old toolbar cruft<br>
+<br>
+2008-04-13 21:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796606&amp;view=rev">796606</a>]  Frederik Gladhorn &lt;frederik.gladhorn gmx.de&gt;<br>
+src/kdevelopui.rc<br>
+Make merging of menus work again - a missing noMerge="1". CCMAIL:<br>
+rodda@kde.org<br>
+<br>
+2008-04-13 14:20 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796397&amp;view=rev">796397</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/cmakebuilddircreator.h,<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+buildtools/managers/cmake/cmakebuilddircreator.cpp,<br>
+buildtools/managers/cmake/cmakepreferences.cpp<br>
+Fixed some cmake preferences usability issues.<br>
+<br>
+2008-04-13 12:57 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796360&amp;view=rev">796360</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/cmakemanager.cpp,<br>
+buildtools/managers/cmake/cmakepreferences.cpp<br>
+Fixed some issues related to trailing slashes and include directories.<br>
+<br>
+2008-04-13 10:05 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796329&amp;view=rev">796329</a>]  Frederik Gladhorn &lt;frederik.gladhorn gmx.de&gt;<br>
+buildtools/managers/cmake/cmakebuilddircreator.cpp<br>
+Let the build dir urlrequester select dirs instead of files.<br>
+
+<br>
+2008-04-13 09:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796323&amp;view=rev">796323</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/cmakemanager.cpp<br>
+FIXED some include path resolution problems.<br>
+<br>
+2008-04-12 23:13 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796173&amp;view=rev">796173</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+
+doc/api/Mainpage.dox<br>
+Smal improvements<br>
+<br>
+2008-04-12 09:39 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=796006&amp;view=rev">796006</a>]  Harald Fernengel &lt;harry kdevelop.org&gt;<br>
+languages/cpp/app_templates/qmake_qt4guiapp/src/main.cpp<br>
+the default qmake template should not trigger spacin errors<br>
+<br>
+2008-04-12 07:57 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=795978&amp;view=rev">795978</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/cppduchain/navigationwidget.cpp<br>
+Do not escape "&lt;br /&gt;"s into comments, we want newlines instead.<br>
+<br>
+2008-04-09 10:31 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=795150&amp;view=rev">795150</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/navigationwidget.cpp<br>
+Do not escape text that already is html. Fixes some uglyness in the<br>
+navigation-widget introduced with one of the last commits.<br>
+
+<br>
+2008-04-08 22:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794942&amp;view=rev">794942</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/builders/qmakebuilder/iqmakebuilder.h<br>
+Fix includes so only KDEVELOP_INCLUDE_DIR is needed<br>
+<br>
+2008-04-06 23:10 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794221&amp;view=rev">794221</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppparsejob.cpp,<br>
+
+languages/cpp/cppduchain/contextbuilder.cpp,<br>
+languages/cpp/cppduchain/contextbuilder.h<br>
+Only temporarily import context while parsing that are not already reachable<br>
+through some of the other imports. This greatly increases the parsing speed,<br>
+this was a significant bottleneck.<br>
+<br>
+2008-04-06 23:07 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794219&amp;view=rev">794219</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/navigationwidget.cpp<br>
+
+Escape all strings, so the formatting doesn't get messed up if they contain<br>
+html similar content<br>
+<br>
+2008-04-06 15:52 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794114&amp;view=rev">794114</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+doc/api/Mainpage.dox<br>
+Opps<br>
+<br>
+2008-04-06 13:51 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794080&amp;view=rev">794080</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+
+doc/api/Mainpage.dox<br>
+More and better info<br>
+<br>
+2008-04-06 13:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794070&amp;view=rev">794070</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794071&amp;view=rev">794071</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+src/Mainpage.dox (removed)<br>
+src/shell.dox (added)<br>
+Moved to shell.dox<br>
+
+Fix documentation<br>
+<br>
+2008-04-06 13:22 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=794069&amp;view=rev">794069</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+doc/api/Mainpage.dox<br>
+fix file name<br>
+<br>
+2008-04-04 21:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=793717&amp;view=rev">793717</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=793720&amp;view=rev">793720</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/cppcodecompletionmodel.cpp<br>
+languages/cpp/cppduchain/usebuilder.cpp<br>
+languages/cpp/cppduchain/declarationbuilder.cpp<br>
+Use timeouts to prevent deadlocks<br>
+Also visit the type-specifier of conditions. Now we get uses and highlighting<br>
+for those too.(I forgot why I disabled this, I think the reason is fixed by<br>
+now)<br>
+Only do the name mangling for functions, because for classes the problem is<br>
+solved differently by creating a surrounding scope context.<br>
+
+<br>
+2008-04-04 21:10 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=793705&amp;view=rev">793705</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/declarationbuilder.cpp<br>
+store the template-parameters of the last scope-part in definitions<br>
+<br>
+2008-04-04 20:45 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=793697&amp;view=rev">793697</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/contextbuilder.cpp,<br>
+
+languages/cpp/cppduchain/declarationbuilder.cpp,<br>
+languages/cpp/cppduchain/usebuilder.cpp<br>
+Release the duchain lock before acquiring the smart-lock to reduce deadlock<br>
+danger<br>
+<br>
+2008-04-04 13:27 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=793584&amp;view=rev">793584</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.h<br>
+
+Improved the parsing of the cmake scripts (better and faster variable<br>
+resolution).<br>
+<br>
+2008-04-03 23:52 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=793434&amp;view=rev">793434</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=793440&amp;view=rev">793440</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/usebuilder.cpp<br>
+languages/cpp/cppduchain/typeconversion.cpp<br>
+languages/cpp/cppduchain/declarationbuilder.cpp<br>
+
+languages/cpp/cppduchain/contextbuilder.cpp<br>
+languages/cpp/cppparsejob.cpp<br>
+Get the use ranges after acquiring the smart-lock<br>
+Use AbstractType::equals instead of comparing mangled strings. Computing the<br>
+mangles strings was very slow(QRegExp was used somewhere) This greatly<br>
+increases the speed of use-building(the last step in the progress bar)<br>
+Mangle the identifier of class-member definitions directly in openDeclaration,<br>
+so the old declaration can be found while updating. This reduces the<br>
+highlighting flashing, the declarations were re-created with each update<br>
+
+before.<br>
+Adapt to the signature change<br>
+Lock the definition use chain in finer granularity. This increases the<br>
+responsiveness while editing, because these operations are slow.<br>
+<br>
+2008-04-02 00:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792754&amp;view=rev">792754</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cpphighlighting.cpp,<br>
+languages/cpp/cpphighlighting.h<br>
+
+Speed up the highlighting-computation, by caching the local class information.<br>
+Since highlighting is done with the kate smart-mutex locked, this results in<br>
+more responsive editing, without the annoying breaks.<br>
+<br>
+2008-04-01 23:28 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792745&amp;view=rev">792745</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/parser/cmakelistsparser.h<br>
+Improved a little the performance on foreach() and improved the regex on<br>
+
+entryList (when finding libraries).<br>
+<br>
+2008-04-01 14:54 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792547&amp;view=rev">792547</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp<br>
+Fixed some issues that appeared with the last enhancement.<br>
+<br>
+2008-04-01 14:30 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792542&amp;view=rev">792542</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp<br>
+Removed some QRegExp use from the visitor, as we said on the list. It doesn't<br>
+make much of a difference btw.<br>
+<br>
+2008-03-31 22:18 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792374&amp;view=rev">792374</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/rpp/pp-macro-expander.cpp<br>
+Finally fix a hard to debug, annoying bug: Always correctly initialize the<br>
+local location-table when resolving macro-arguments. This fixes a problem<br>
+
+where all the ranges in complete files were completely useless, and thus the<br>
+whole completion/navigation was also. Example: languages/cpp/parser/parser.cpp<br>
+in KDevelop-4 source.<br>
+<br>
+2008-03-31 22:13 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792373&amp;view=rev">792373</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppduchain/contextbuilder.cpp,<br>
+languages/cpp/cppduchain/contextbuilder.h<br>
+Add a mechanism to debug mutual manipulation of kate smart-ranges, and add<br>
+
+debug-output when a context-range is bad(end &lt; start)<br>
+<br>
+2008-03-31 20:21 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792314&amp;view=rev">792314</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/managers/qmake/parser/qmakelexer.cpp<br>
+Allow <br>
+* as part of an identifier, this is used for scopenames in Qt's<br>
+buildsystem: !wince*:!cross_compiler:..<br>
+
+<br>
+2008-03-31 20:08 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792306&amp;view=rev">792306</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792307&amp;view=rev">792307</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/setuphelpers.cpp<br>
+languages/cpp/cppduchain/declarationbuilder.cpp<br>
+Add a gcc macro<br>
+Prevent a crash while updating<br>
+<br>
+
+2008-03-31 16:46 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792212&amp;view=rev">792212</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792213&amp;view=rev">792213</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/tests/test_parser.cpp<br>
+languages/cpp/parser/rpp/pp-engine.cpp<br>
+- Add a test for the new added functionality in the preprocessor/lexer - Fix<br>
+this test so it succeeds again<br>
+Exclude comments from macros-definitions. This should solve a lot of problems<br>
+
+where most of the document seemingly wasn't parsed at all, because a macro<br>
+with a body like "BlaBla /*" was used, and the rest of the file was "commented<br>
+out".<br>
+<br>
+2008-03-31 16:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792211&amp;view=rev">792211</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeast.cpp,<br>
+buildtools/managers/cmake/tests/create_test.rb,<br>
+buildtools/managers/cmake/tests/cmake_returnast_test.cpp (added),<br>
+
+buildtools/managers/cmake/parser/cmakeast.h,<br>
+buildtools/managers/cmake/tests/cmake_exportast_test.cpp (added),<br>
+buildtools/managers/cmake/tests/cmake_returnast_test.h (added),<br>
+(...)<br>
+Added some commands from 2.6. Some visual improvement to the cache model.<br>
+<br>
+2008-03-31 16:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792210&amp;view=rev">792210</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/lexer.cpp, languages/cpp/parser/lexer.h<br>
+
+Be more intelligent when merging comments: - Do not append comments to the<br>
+first translation-unit comment - Do not append comments to comments that are<br>
+not the first token in the line, because those still belong to the item they<br>
+are written behind.<br>
+<br>
+2008-03-31 15:03 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792181&amp;view=rev">792181</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cpplanguagesupport.cpp<br>
+Dont crash<br>
+
+<br>
+2008-03-31 10:19 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792115&amp;view=rev">792115</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/debugger/memviewdlg.cpp,<br>
+languages/cpp/debugger/gdboutputwidget.cpp<br>
+Add comments with the original icon names so its easier to re-surrect them<br>
+later on.<br>
+<br>
+2008-03-31 09:06 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792093&amp;view=rev">792093</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=792097&amp;view=rev">792097</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/debugger/variablewidget.cpp,<br>
+languages/cpp/debugger/memviewdlg.cpp,<br>
+languages/cpp/debugger/gdboutputwidget.cpp,<br>
+plugins/documentview/kdevdocumentview.cpp<br>
+languages/cpp/cpplanguagesupport.cpp<br>
+languages/cpp/cppcodecompletionmodel.cpp<br>
+Use existing icons for the dock-widgets. This increases the responsiveness<br>
+while editing, because it seems like the icon-cache was hammering the<br>
+file-system while each repaint searching for the non-existing icons.<br>
+
+Use a timeout when trying to lock the duchain while searching for macros<br>
+triggered by the editor. This makes working with the code more fluid.<br>
+Use DUChainReadLocker with timeout, instead of custom locking<br>
+<br>
+2008-03-29 18:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=791518&amp;view=rev">791518</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakepreferences.cpp<br>
+We run cmake after changing CMakeCache.txt<br>
+<br>
+
+2008-03-29 17:47 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=791492&amp;view=rev">791492</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakecachedelegate.h,<br>
+buildtools/managers/cmake/cmakecachemodel.cpp,<br>
+buildtools/managers/cmake/cmakecachemodel.h,<br>
+buildtools/managers/cmake/cmakecachedelegate.cpp,<br>
+buildtools/managers/cmake/cmakepreferences.cpp<br>
+- Use a persistant editor for the boolean delegate.<br>
+
+<br>
+2008-03-29 15:11 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=791440&amp;view=rev">791440</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/cmakecachedelegate.h (added),<br>
+buildtools/managers/cmake/cmakecachemodel.cpp,<br>
+buildtools/managers/cmake/tests/cmake_cmakepolicyast_test.cpp<br>
+(added), buildtools/managers/cmake/cmakecachemodel.h,<br>
+buildtools/managers/cmake/CMakeLists.txt,<br>
+buildtools/managers/cmake/tests/cmake_breakast_test.cpp (added),<br>
+
+(...)<br>
+- Added some missing tests (which are empty btw). - New delegate for the cache<br>
+model, so that we can edit the values with the proper widget.<br>
+<br>
+2008-03-28 23:04 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=791304&amp;view=rev">791304</a>]  Aleix Pol Gonzalez &lt;aleixpol gmail.com&gt;<br>
+buildtools/managers/cmake/parser/cmakeprojectvisitor.cpp,<br>
+buildtools/managers/cmake/parser/cmakeast.cpp,<br>
+buildtools/managers/cmake/parser/cmakelistsparser.cpp,<br>
+
+buildtools/managers/cmake/parser/cmakeast.h,<br>
+buildtools/managers/cmake/parser/cmakelistsparser.h<br>
+- FIXED some code style issues. - NEW commands support<br>
+<br>
+2008-03-28 22:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=791280&amp;view=rev">791280</a>-<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=791282&amp;view=rev">791282</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cpplanguagesupport.h,<br>
+languages/cpp/cpplanguagesupport.cpp<br>
+
+languages/cpp/setuphelpers.cpp<br>
+- Add a problem to the problem-list when the build-manager did not return a<br>
+build-directory for the include-path resolver - Add a class that allows<br>
+searching for UI-lockups by adding a breakpoint to IOBlockTester::lockup.<br>
+Disabled by default(enable DEBUG_UI_LOCKUP)<br>
+Add some more standard-macros<br>
+<br>
+2008-03-25 02:11 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=789735&amp;view=rev">789735</a>]  Robert Knight &lt;robertknight gmail.com&gt;<br>
+
+languages/cpp/setuphelpers.cpp<br>
+Fix reading of standard macros defined by gcc. The buffer returned by<br>
+QIODevice::readLine() may include a new line character at the end. The<br>
+new-linecharacter was being include as part of the macro definition which<br>
+later confused rpp.<br>
+<br>
+2008-03-24 16:02 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=789562&amp;view=rev">789562</a>]  Robert Knight &lt;robertknight gmail.com&gt;<br>
+languages/cpp/parser/dumptree.cpp<br>
+
+Fix assert failure when visiting a null AST node with DumpTree.<br>
+<br>
+2008-03-23 02:44 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=789065&amp;view=rev">789065</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/parser/lexer.cpp,<br>
+languages/cpp/parser/commentformatter.cpp<br>
+Merge consecutive comments to one, and process such merged comments nicely.<br>
+This gives us much better comments in many kde functions/classes.<br>
+<br>
+
+2008-03-20 02:55 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=787882&amp;view=rev">787882</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/setuphelpers.cpp<br>
+Always add an __attribute__ macro, so we never hit problems with it.(Example:<br>
+duchainlock.cpp loaded from kdevplatform)<br>
+<br>
+2008-03-20 02:12 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=787876&amp;view=rev">787876</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/cppparsejob.cpp<br>
+Set the priority of the parsing-thread to the lowest possible. This makes the<br>
+GUI much more responsive while the background-parser is active. However this<br>
+is ugly(should be implemented in a generic way in the background-parser), but<br>
+it seems like it's not possible to control the thread-priority through<br>
+thread-weaver.<br>
+<br>
+2008-03-17 22:49 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=786793&amp;view=rev">786793</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+
+plugins/appwizard/importproject.cpp<br>
+There's no autotools support in Kdevelop4 currently, so don't pretend we can<br>
+import projects of that type. Fixes import for custom makefile projects.<br>
+<br>
+2008-03-16 02:50 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=786082&amp;view=rev">786082</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppparsejob.cpp<br>
+Only add temporary imports when needed. This prevents a big speed regression<br>
+in the following patch to kdevplatform.<br>
+
+<br>
+2008-03-15 01:24 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=785814&amp;view=rev">785814</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+languages/cpp/cppparsejob.cpp, languages/cpp/cppparsejob.h<br>
+Provide nice fine-grained parsing progress/feedback. The actuall progress is<br>
+just an estimation, but it's nice to see that something is happening.<br>
+<br>
+2008-03-15 00:02 +0000 [r<a href="http://websvn.kde.org/trunk/KDE/kdevelop/?rev=785802&amp;view=rev">785802</a>]  David Nolden &lt;david.nolden.kde art-master.de&gt;<br>
+
+languages/cpp/parser/parser.cpp,<br>
+languages/cpp/parser/tests/test_parser.cpp,<br>
+languages/cpp/parser/commentparser.cpp,<br>
+languages/cpp/parser/parser.h,<br>
+languages/cpp/parser/commentparser.h<br>
+- Fix parsing of comments for class-member declarations - Fix parsing of<br>
+comments for enumerators - Some general yet incomplete fixes(allow multiple<br>
+comments in a line, but that's not really important ;)<br>
+<br>
+</body>
+</html>

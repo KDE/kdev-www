@@ -1,0 +1,10 @@
+<?php
+global $l_pt_main_year;
+$module_title=sprintf($l_pt_main_year, 2009);
+module_head($module_title);
+echo '<p><b>'.strftime("%Y-%B-%d", 1246140000).'</b> - ';
+include_file("news/2009-06-28.html");
+echo "</p>\n";
+module_tail();
+return 1246197309;
+?>

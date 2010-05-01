@@ -1,0 +1,5 @@
+2009-09-04 10:37 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=1019773&amp;view=rev">1019773</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/clearcase/clearcasemanipulator.cpp<br>
+Bugfix for NetBSD and DragonFly, supplied by Thomas Klausner<br>
+CCMAIL:tk@giga.or.at<br>
+<br>

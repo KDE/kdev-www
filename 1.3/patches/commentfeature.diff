@@ -1,0 +1,298 @@
+diff -c kdevelop/ceditwidget.h kdevelop_new/ceditwidget.h
+*** kdevelop/ceditwidget.h	Wed Nov 10 06:37:18 1999
+--- kdevelop_new/ceditwidget.h	Wed Nov 10 06:33:57 1999
+***************
+*** 117,122 ****
+--- 117,134 ----
+     */
+    void unIndent()                 { KWrite::unIndent(); }
+  
++ public: // Comment methods
++ 
++   /** Adds '//' to the beginning of the current line or of the lines in the
++    * selection
++    */
++   void comment()                   { KWrite::comment(); }
++ 
++   /** Removes '//' to the beginning of the current line or of the lines in the
++    * selection
++    */
++   void unComment()                 { KWrite::unComment(); }
++ 
+  public: // Queries
+  
+    /** Return the popupmenu. 
+diff -c kdevelop/ckdevelop.cpp kdevelop_new/ckdevelop.cpp
+*** kdevelop/ckdevelop.cpp	Wed Nov 10 06:37:17 1999
+--- kdevelop_new/ckdevelop.cpp	Wed Nov 10 06:33:55 1999
+***************
+*** 525,530 ****
+--- 525,531 ----
+    edit_widget->replace();
+    slotStatusMsg(i18n("Ready."));
+  }
++ 
+  void CKDevelop::slotEditIndent(){
+  	edit_widget->indent();
+  }
+***************
+*** 532,537 ****
+--- 533,545 ----
+  	edit_widget->unIndent();
+  }
+  
++ void CKDevelop::slotEditComment(){
++ 	edit_widget->comment();
++ }
++ void CKDevelop::slotEditUncomment(){
++ 	edit_widget->unComment();
++ }
++ 
+  void CKDevelop::slotEditSpellcheck(){
+  	edit_widget->spellcheck();
+  }
+***************
+*** 2492,2497 ****
+--- 2500,2507 ----
+    enableCommand(ID_EDIT_SPELLCHECK);
+    enableCommand(ID_EDIT_INDENT);
+    enableCommand(ID_EDIT_UNINDENT);
++   enableCommand(ID_EDIT_COMMENT);
++   enableCommand(ID_EDIT_UNCOMMENT);
+    enableCommand(ID_EDIT_SELECT_ALL);
+    enableCommand(ID_EDIT_DESELECT_ALL);
+    enableCommand(ID_EDIT_INVERT_SELECTION);
+***************
+*** 2578,2583 ****
+--- 2588,2595 ----
+      disableCommand(ID_EDIT_SPELLCHECK);
+      disableCommand(ID_EDIT_INDENT);
+      disableCommand(ID_EDIT_UNINDENT);
++     disableCommand(ID_EDIT_COMMENT);
++     disableCommand(ID_EDIT_UNCOMMENT);
+      disableCommand(ID_EDIT_SELECT_ALL);
+      disableCommand(ID_EDIT_DESELECT_ALL);
+      disableCommand(ID_EDIT_INVERT_SELECTION);
+***************
+*** 2884,2889 ****
+--- 2896,2903 ----
+  	
+  	ON_STATUS_MSG(ID_EDIT_INDENT,														i18n("Moves the selection to the right"))
+  	ON_STATUS_MSG(ID_EDIT_UNINDENT,													i18n("Moves the selection to the left"))
++ 	ON_STATUS_MSG(ID_EDIT_COMMENT,													i18n("Adds // to the beginning of each selected line"))
++ 	ON_STATUS_MSG(ID_EDIT_UNCOMMENT,												i18n("Removes // from the beginning of each selected line"))
+  	
+    ON_STATUS_MSG(ID_EDIT_SELECT_ALL,              			    i18n("Selects the whole document contents"))
+  	ON_STATUS_MSG(ID_EDIT_DESELECT_ALL,											i18n("Deselects the whole document contents"))
+diff -c kdevelop/ckdevelop.h kdevelop_new/ckdevelop.h
+*** kdevelop/ckdevelop.h	Wed Nov 10 06:37:18 1999
+--- kdevelop_new/ckdevelop.h	Wed Nov 10 06:33:57 1999
+***************
+*** 256,261 ****
+--- 256,263 ----
+    void slotEditReplace();
+    void slotEditIndent();
+    void slotEditUnindent();
++   void slotEditComment();
++   void slotEditUncomment();
+    /** selects the whole editing widget text */
+    void slotEditSelectAll();
+    /** inverts the selection */
+diff -c kdevelop/ckdevelop_init.cpp kdevelop_new/ckdevelop_init.cpp
+*** kdevelop/ckdevelop_init.cpp	Wed Nov 10 06:37:17 1999
+--- kdevelop_new/ckdevelop_init.cpp	Wed Nov 10 06:33:55 1999
+***************
+*** 268,273 ****
+--- 268,279 ----
+    accel->insertItem( i18n("Unindent"), "Unindent",IDK_EDIT_UNINDENT );
+    accel->connectItem( "Unindent", this, SLOT(slotEditUnindent() ), true, ID_EDIT_UNINDENT );
+  
++   accel->insertItem( i18n("Comment"), "Comment",IDK_EDIT_COMMENT );
++   accel->connectItem( "Comment", this, SLOT(slotEditComment() ), true, ID_EDIT_COMMENT );
++ 
++   accel->insertItem( i18n("Uncomment"), "Uncomment",IDK_EDIT_UNCOMMENT );
++   accel->connectItem( "Uncomment", this, SLOT(slotEditUncomment() ), true, ID_EDIT_UNCOMMENT );
++ 
+    accel->insertItem( i18n("Insert File"), "InsertFile", (unsigned int) 0);
+    accel->connectItem( "InsertFile", this, SLOT(slotEditInsertFile()), true, ID_EDIT_INSERT_FILE );
+    
+***************
+*** 481,486 ****
+--- 487,495 ----
+    edit_menu->insertSeparator();
+  	edit_menu->insertItem(Icon("indent.xpm"),i18n("In&dent"), this,SLOT(slotEditIndent()),0,ID_EDIT_INDENT);
+  	edit_menu->insertItem(Icon("unindent.xpm"),i18n("&Unindent"), this, SLOT(slotEditUnindent()),0,ID_EDIT_UNINDENT);
++   edit_menu->insertSeparator();
++ 	edit_menu->insertItem(Icon("comment.xpm"),i18n("Co&mment"), this,SLOT(slotEditComment()),0,ID_EDIT_COMMENT);
++ 	edit_menu->insertItem(Icon("uncomment.xpm"),i18n("Unco&mment"), this, SLOT(slotEditUncomment()),0,ID_EDIT_UNCOMMENT);
+  
+    edit_menu->insertSeparator();
+    edit_menu->insertItem(i18n("&Insert File..."),this, SLOT(slotEditInsertFile()),0,ID_EDIT_INSERT_FILE);
+***************
+*** 1169,1174 ****
+--- 1178,1185 ----
+      accel->changeMenuAccel(edit_menu, ID_EDIT_SEARCH_IN_FILES,"Grep" );
+      accel->changeMenuAccel(edit_menu, ID_EDIT_INDENT,"Indent" );
+      accel->changeMenuAccel(edit_menu, ID_EDIT_UNINDENT,"Unindent" );
++     accel->changeMenuAccel(edit_menu, ID_EDIT_COMMENT,"Comment" );
++     accel->changeMenuAccel(edit_menu, ID_EDIT_UNCOMMENT,"Uncomment" );
+      accel->changeMenuAccel(edit_menu, ID_EDIT_SELECT_ALL, "SelectAll");
+  		
+      accel->changeMenuAccel(view_menu,ID_VIEW_GOTO_LINE ,"GotoLine" );
+diff -c kdevelop/resource.h kdevelop_new/resource.h
+*** kdevelop/resource.h	Wed Nov 10 06:37:18 1999
+--- kdevelop_new/resource.h	Wed Nov 10 06:33:58 1999
+***************
+*** 62,67 ****
+--- 62,69 ----
+  
+  #define ID_EDIT_INDENT             	11091
+  #define ID_EDIT_UNINDENT            11092
++ #define ID_EDIT_COMMENT             11093
++ #define ID_EDIT_UNCOMMENT           11094
+  
+  #define ID_EDIT_SELECT_ALL          11100
+  #define ID_EDIT_DESELECT_ALL        11110
+***************
+*** 354,360 ****
+  #define IDK_EDIT_INDENT								CTRL+Key_I
+  
+  #define IDK_TOGGLE_LAST        				CTRL+Key_L
+! 
+  #define IDK_FILE_NEW	       					CTRL+Key_N						// standard key
+  #define IDK_FILE_OPEN	       					CTRL+Key_O						// standard key
+  #define IDK_FILE_PRINT         				CTRL+Key_P						// standard key
+--- 356,363 ----
+  #define IDK_EDIT_INDENT								CTRL+Key_I
+  
+  #define IDK_TOGGLE_LAST        				CTRL+Key_L
+! #define IDK_EDIT_COMMENT							CTRL+Key_M
+! #define IDK_EDIT_UNCOMMENT						CTRL+ALT+Key_M
+  #define IDK_FILE_NEW	       					CTRL+Key_N						// standard key
+  #define IDK_FILE_OPEN	       					CTRL+Key_O						// standard key
+  #define IDK_FILE_PRINT         				CTRL+Key_P						// standard key
+diff -c kdevelop/kwrite/kwdoc.cpp kdevelop_new/kwrite/kwdoc.cpp
+*** kdevelop/kwrite/kwdoc.cpp	Wed Nov 10 06:37:23 1999
+--- kdevelop_new/kwrite/kwdoc.cpp	Wed Nov 10 06:34:08 1999
+***************
+*** 2373,2378 ****
+--- 2373,2433 ----
+    pseudoModal = w;
+  }
+  
++ void KWriteDoc::comment(KWriteView *view, VConfig &c) {
++   TextLine *textLine;
++ 
++   c.flags |= cfPersistent;
++   recordStart(c.cursor);
++   c.cursor.x = 0;
++   if (selectEnd < selectStart) {
++     //comment single line
++     textLine = contents.at(c.cursor.y);
++     recordReplace(c.cursor,0,"//",2);
++   } else {
++     //comment selection
++     for (c.cursor.y = selectStart; c.cursor.y <= selectEnd; c.cursor.y++) {
++       textLine = contents.at(c.cursor.y);
++       if (textLine->isSelected() || textLine->numSelected()) recordReplace(c.cursor,0,"//",2);
++     }
++     c.cursor.y--;
++   }
++   recordEnd(view,c);
++ }
++ 
++ void KWriteDoc::unComment(KWriteView *view, VConfig &c) {
++   PointStruc cursor;
++   TextLine *textLine;
++   bool started;
++ 
++   c.flags |= cfPersistent;
++   cursor = c.cursor;
++   c.cursor.x = 0;
++   if (selectEnd < selectStart) {
++     //uncomment single line
++     textLine = contents.at(c.cursor.y);
++     if ((textLine->getChar(0) != '/') || (textLine->getChar(1) != '/')) return;
++     recordStart(cursor);
++     recordReplace(c.cursor,2,"",0);
++   } else {
++     //unindent selection
++     started = false;
++     for (c.cursor.y = selectStart; c.cursor.y <= selectEnd; c.cursor.y++) {
++       textLine = contents.at(c.cursor.y);
++       if ((textLine->isSelected() || textLine->numSelected())
++         && (textLine->getChar(0) == '/')
++ 				&& (textLine->getChar(1) == '/')) {
++         if (!started) {
++           recordStart(cursor);
++           started = true;
++         }
++         recordReplace(c.cursor,2,"",0);
++       }
++     }
++     c.cursor.y--;
++   }
++   recordEnd(view,c);
++ }
++ 
+  void KWriteDoc::indent(KWriteView *view, VConfig &c) {
+    TextLine *textLine;
+
+diff -c kdevelop/kwrite/kwdoc.h kdevelop_new/kwrite/kwdoc.h
+*** kdevelop/kwrite/kwdoc.h	Wed Nov 10 06:37:23 1999
+--- kdevelop_new/kwrite/kwdoc.h	Wed Nov 10 06:34:09 1999
+***************
+*** 241,246 ****
+--- 241,248 ----
+  
+      void indent(KWriteView *, VConfig &);
+      void unIndent(KWriteView *, VConfig &);
++     void comment(KWriteView *, VConfig &);
++     void unComment(KWriteView *, VConfig &);
+  
+      QList<TextLine> contents;
+      QColor colors[5];
+diff -c kdevelop/kwrite/kwview.cpp kdevelop_new/kwrite/kwview.cpp
+*** kdevelop/kwrite/kwview.cpp	Wed Nov 10 06:37:23 1999
+--- kdevelop_new/kwrite/kwview.cpp	Wed Nov 10 06:34:09 1999
+***************
+*** 1610,1615 ****
+--- 1610,1629 ----
+    kWriteDoc->updateViews();
+  }
+  
++ void KWrite::comment() {
++   VConfig c;
++   kWriteView->getVConfig(c);
++   kWriteDoc->comment(kWriteView,c);
++   kWriteDoc->updateViews();
++ }
++ 
++ void KWrite::unComment() {
++   VConfig c;
++   kWriteView->getVConfig(c);
++   kWriteDoc->unComment(kWriteView,c);
++   kWriteDoc->updateViews();
++ }
++ 
+  void KWrite::selectAll() {
+    kWriteDoc->selectAll();
+    kWriteDoc->updateViews();
+diff -c kdevelop/kwrite/kwview.h kdevelop_new/kwrite/kwview.h
+*** kdevelop/kwrite/kwview.h	Wed Nov 10 06:37:23 1999
+--- kdevelop_new/kwrite/kwview.h	Wed Nov 10 06:34:09 1999
+***************
+*** 390,395 ****
+--- 390,401 ----
+      /** Moves the current line or the selection one position to the left
+      */
+      void unIndent();
++     /** Adds "//" at the beginning of the current line or of each line in the selection
++     */
++     void comment();
++     /** Removes "//" at the beginning of the current line or of each line in the selection
++     */
++     void unComment();
+      /** Selects all text
+      */
+      void selectAll();

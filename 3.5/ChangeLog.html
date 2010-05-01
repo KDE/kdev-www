@@ -1,0 +1,30 @@
+<?php
+module_head('KDevelop 3.5.x ChangeLog <a href="3.5/ChangeLog.rss" title="Subscribe to RSS feed" hreflang="en"><img src="graphics/rss.gif" width="16" height="16" alt="RSS feed"></a>');
+if ($lang != "en") echo "    <span lang=\"en\" dir=\"ltr\">\n";
+include("$k_base_version/ChangeLog.ihtml");
+
+// Add other versions here
+
+echo '<h3><a name="3_5_5">KDevelop 3.5.5</a></h3>';
+include("$k_base_version/ChangeLog_3.5.5.ihtml");
+
+echo '<h3><a name="3_5_4">KDevelop 3.5.4</a></h3>';
+include("$k_base_version/ChangeLog_3.5.4.ihtml");
+
+echo '<h3><a name="3_5_3">KDevelop 3.5.3</a></h3>';
+include("$k_base_version/ChangeLog_3.5.3.ihtml");
+
+echo '<h3><a name="3_5_2">KDevelop 3.5.2</a></h3>';
+include("$k_base_version/ChangeLog_3.5.2.ihtml");
+
+echo '<h3><a name="3_5_1">KDevelop 3.5.1</a></h3>';
+include("$k_base_version/ChangeLog_3.5.1.ihtml");
+
+echo '<p>Visit the
+<a href="3.5/ChangeLog_3.4.1_to_3.5.0.html">
+individual SVN commit logs between KDevelop 3.4.1 and KDevelop 3.5.0</a> for a more detailed list of changes.</p>';
+if ($lang != "en") echo "    </span>\n";
+
+module_tail();
+return filemtime("$k_base_version/ChangeLog.ihtml");
+?>

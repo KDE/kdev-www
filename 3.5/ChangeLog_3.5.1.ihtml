@@ -1,0 +1,566 @@
+2008-02-13 09:54 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=774478&amp;view=rev">774478</a>]  Stephan Kulow &lt;coolo kde.org&gt;<br>
+kdevelop.lsm<br>
+3.5.9<br>
+<br>
+2008-02-13 09:47 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=774442&amp;view=rev">774442</a>]  Stephan Kulow &lt;coolo kde.org&gt;<br>
+configure.in.in<br>
+3.5.1<br>
+<br>
+2008-02-11 13:05 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=773582&amp;view=rev">773582</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/interfaces/extensions/dcop/KDevAppFrontendIface.cpp<br>
+Compile fix, made the same mistake as David last night - though I had compiled<br>
+already..<br>
+<br>
+2008-02-11 08:45 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=773513&amp;view=rev">773513</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/documentation/plugins/doxygen/docdoxygenplugin.desktop,<br>
+editors/editor-chooser/kdeveditorchooser.desktop,<br>
+parts/bookmarks/kdevbookmarks.desktop,<br>
+parts/distpart/kdevdistpart.desktop,<br>
+parts/regexptest/kdevregexptest.desktop,<br>
+parts/filelist/kdevfilelist.desktop, (...)<br>
+Fix the mixup of stderr and stdout output. Unfortunately this is a lot more<br>
+invasive then I hoped. BUG:152482<br>
+<br>
+2008-02-08 10:10 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=772295&amp;view=rev">772295</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/autotools/autoprojectpart.cpp,<br>
+buildtools/custommakefiles/customprojectpart.cpp,<br>
+buildtools/qmake/trollprojectpart.cpp<br>
+Really force output into C locale, seems like LC_MESSAGES is not enough at<br>
+least for gcc.<br>
+<br>
+2008-02-07 13:37 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=772003&amp;view=rev">772003</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/autotools/autoprojectpart.cpp,<br>
+src/kdevideextension.cpp,<br>
+buildtools/custommakefiles/customprojectpart.cpp,<br>
+src/settingswidget.ui, buildtools/qmake/trollprojectpart.cpp<br>
+Implement a new global option. This allows to force the build process to use<br>
+the C locale for messages (by setting the LC_MESSAGES variable before starting<br>
+the buildtool) and thus allows users to choose between having translated<br>
+output or being able to click on files in the output to go to the source.<br>
+<br>
+2008-02-07 11:46 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=771974&amp;view=rev">771974</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/trollprojectpart.cpp<br>
+Ooops, that part shouldn't have been comitted.<br>
+<br>
+2008-02-06 11:03 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=771541&amp;view=rev">771541</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/widgets/processlinemaker.cpp, lib/widgets/processlinemaker.h<br>
+Remove the timers again, they cause more problems than they fix. Patch by<br>
+Bernd Buschinski<br>
+<br>
+2008-02-06 10:18 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=771532&amp;view=rev">771532</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/subversion/subversion_fileinfo.cpp<br>
+Properly initialize these variables, warnings--. Patch by Bernd Buschinski.<br>
+<br>
+2008-02-05 15:44 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=771257&amp;view=rev">771257</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/trollprojectwidget.h,<br>
+buildtools/qmake/qmakeoptionswidget.cpp,<br>
+buildtools/qmake/qmakeoptionswidgetbase.ui,<br>
+buildtools/qmake/qmakescopeitem.cpp,<br>
+buildtools/qmake/trollprojectwidget.cpp,<br>
+buildtools/qmake/scope.cpp, (...)<br>
+Allow to choose between displaying variables and resolved filenames in the<br>
+manager. Also adds a last bit for the fix for opening files in included .pri<br>
+files.<br>
+<br>
+2008-02-05 14:51 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=771233&amp;view=rev">771233</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/trollprojectwidget.cpp<br>
+Fix opening of files listed in include scopes.<br>
+<br>
+2008-01-31 21:54 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=769224&amp;view=rev">769224</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/interfaces/kdevproject.cpp,<br>
+languages/cpp/problemreporter.cpp, buildtools/qmake/scope.h,<br>
+lib/interfaces/hashedstring.cpp,<br>
+languages/cpp/simpletypenamespace.cpp,<br>
+languages/cpp/simpletype.cpp, (...)<br>
+A couple of unused variable cleanups. Patch from Bernd Buschinski, thanks.<br>
+CCMAIL: b.buschinski@web.de<br>
+<br>
+2008-01-31 20:56 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=769206&amp;view=rev">769206</a>-<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=769208&amp;view=rev">769208</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/outputviews/filterdlg.ui<br>
+languages/ruby/app_templates/qtruby4app/Makefile.in (removed)<br>
+Fix tab order on this dialog.<br>
+This file doesn't belong into svn.<br>
+<br>
+2008-01-27 19:19 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=767302&amp;view=rev">767302</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/trollprojectwidget.h, buildtools/qmake/scope.h,<br>
+buildtools/qmake/qmakeoptionswidgetbase.ui,<br>
+buildtools/qmake/trollprojectwidget.cpp,<br>
+buildtools/qmake/scope.cpp<br>
+Implement support for reading environment variables for parsing .pro files<br>
+from the Make Options page (as its already done for the qmake run). BUG:156440<br>
+Along the way fix a subtle bug - qmake allows absolute directory paths in<br>
+SUBDIRS variable.<br>
+<br>
+2008-01-27 18:15 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=767282&amp;view=rev">767282</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/qmakeoptionswidget.cpp,<br>
+buildtools/qmake/qmakeoptionswidget.h,<br>
+buildtools/qmake/qmakeoptionswidgetbase.ui,<br>
+buildtools/qmake/trollprojectwidget.cpp,<br>
+buildtools/qmake/trollprojectpart.cpp<br>
+Implement support for manual choosing of the "top level" qmake project file.<br>
+<br>
+2008-01-24 14:02 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=765689&amp;view=rev">765689</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/clearcase/clearcasemanipulator.cpp<br>
+Use our own getline also on Solaris which misses it as well. BUG:140907<br>
+<br>
+2008-01-22 13:29 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=764740&amp;view=rev">764740</a>]  Oswald Buddenhagen &lt;ossi kde.org&gt;<br>
+configure.in.in<br>
+use correct variable.<br>
+<br>
+2008-01-18 21:24 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=763200&amp;view=rev">763200</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/qmakeoptionswidget.cpp,<br>
+buildtools/qmake/qmakeoptionswidgetbase.ui,<br>
+buildtools/qmake/scope.cpp<br>
+allow to disable all parser error messages.<br>
+<br>
+2008-01-17 13:10 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=762618&amp;view=rev">762618</a>]  David Faure &lt;faure kde.org&gt;<br>
+kdevdesigner/designer/hierarchyview.cpp,<br>
+kdevdesigner/designer/propertyeditor.cpp,<br>
+kdevdesigner/designer/hierarchyview.h<br>
+Fix nspluginscan crash due to global QPixmaps. Global objects in libraries are<br>
+bad! BUG: 139042<br>
+<br>
+2008-01-12 09:07 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=760215&amp;view=rev">760215</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/grepview/grepdlg.h, parts/grepview/grepdlg.cpp<br>
+Use a KHistoryCombo for the search field. BUG:155425<br>
+<br>
+2008-01-10 13:23 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=759413&amp;view=rev">759413</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/subversion/subversion_part.cpp<br>
+Make it more clear that Diff to disk shows the difference between the working<br>
+copy version and the modified file.<br>
+<br>
+2008-01-08 08:52 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=758556&amp;view=rev">758556</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+configure.in.in<br>
+Implement a simple test for the qassistantclient.h header and tell users in<br>
+which package debian-based distro's ship it.<br>
+<br>
+2007-12-28 18:14 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=753894&amp;view=rev">753894</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/widgets/qcomboview.cpp<br>
+Set the cursor of the lineedit to the first character so the start of function<br>
+names is visible instead of the last argument when you have a small function<br>
+navigator in the toolbar. BUG:154761<br>
+<br>
+2007-12-21 15:28 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=751287&amp;view=rev">751287</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/breakpoint.cpp,<br>
+languages/cpp/debugger/gdbcontroller.cpp,<br>
+languages/cpp/debugger/breakpoint.h,<br>
+languages/cpp/debugger/gdbcontroller.h,<br>
+languages/cpp/debugger/tests/print_pointers/print_pointers.kdevelop<br>
+Use native pending breakpoints, if supported by GDB.<br>
+<br>
+2007-12-18 18:05 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=750118&amp;view=rev">750118</a>]  Thomas McGuire &lt;Thomas.McGuire gmx.net&gt;<br>
+parts/fileselector/fileselector_widget.cpp<br>
+Automatically add <br>
+* wildcards to the start and the end of the filter<br>
+string of the file selector widget. This makes filtering easier and faster.<br>
+FEATURE: 153729<br>
+<br>
+2007-12-12 22:27 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=747770&amp;view=rev">747770</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/app_templates/qtopia4app/Makefile (removed)<br>
+Remove useless Makefile<br>
+<br>
+2007-12-12 21:25 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=747751&amp;view=rev">747751</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/debugger/variablewidget.cpp,<br>
+languages/cpp/setuphelper.cpp<br>
+Reduce the number of warnings. Patch by Bernd Buschinski<br>
+&lt;b.buschinski@web.de CCMAIL:b.buschinski@web.de<br>
+<br>
+2007-12-12 21:17 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=747749&amp;view=rev">747749</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/debugger/gdbcontroller.cpp<br>
+Fix a typo, patch by Bernd Buschinski &lt;b.buschinski@web.de&gt;<br>
+CCMAIL:b.buschinski@web.de<br>
+<br>
+2007-12-04 21:32 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744916&amp;view=rev">744916</a>]  Oliver Kellogg &lt;okellogg users.sourceforge.net&gt;<br>
+languages/ada/AdaTokenTypes.hpp,<br>
+languages/ada/AdaTreeParserSuperTokenTypes.txt,<br>
+languages/ada/ada.store.g, languages/ada/AdaLexer.cpp,<br>
+languages/ada/ada.tree.g, languages/ada/ada.g, (...)<br>
+Integrate changes to ada.g by Daniel Zuberbuehler. Regenerate using<br>
+antlr-2.7.7. CCMAIL:dzubi@users.sourceforge.net<br>
+<br>
+2007-12-04 15:56 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744798&amp;view=rev">744798</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/astyle/kdevpart_astyle.rc<br>
+use the kpartgui dtd and adhere to it.<br>
+<br>
+2007-12-04 13:54 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744783&amp;view=rev">744783</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/autotools/autoprojectpart.cpp<br>
+Fix a stupid mistake, first check wether the current lib has already been<br>
+seen, then add it not the other way around.<br>
+<br>
+2007-12-04 11:11 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744760&amp;view=rev">744760</a>]  Richard Dale &lt;Richard_Dale tipitina.demon.co.uk&gt;<br>
+languages/ruby/app_templates/qtruby4app/qtruby4app.rb<br>
+* When a file dialog is cancelled, a nil filename is returned, not an empty<br>
+string<br>
+<br>
+2007-12-03 19:11 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744479&amp;view=rev">744479</a>]  Andras Mantia &lt;amantia kde.org&gt;<br>
+languages/cpp/debugger/variablewidget.cpp<br>
+Fix displaying of some variable types (like QString).<br>
+<br>
+2007-12-03 18:59 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744473&amp;view=rev">744473</a>]  Richard Dale &lt;Richard_Dale tipitina.demon.co.uk&gt;<br>
+languages/ruby/app_templates/qtruby4app/ReadMe<br>
+* Change the ReadMe instructions and explain that the rbrcc tool needs to be<br>
+run<br>
+<br>
+2007-12-03 18:36 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744467&amp;view=rev">744467</a>]  Richard Dale &lt;Richard_Dale tipitina.demon.co.uk&gt;<br>
+languages/ruby/app_templates/qtruby4app/app-Makefile<br>
+* The Qt4 QtRuby ui file compiler is called 'rbuic4'<br>
+<br>
+2007-12-03 18:15 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744460&amp;view=rev">744460</a>]  Richard Dale &lt;Richard_Dale tipitina.demon.co.uk&gt;<br>
+languages/ruby/app_templates/qtruby4app/app.filelist (added),<br>
+languages/ruby/app_templates/qtruby4app/app-Makefile (added),<br>
+languages/ruby/app_templates/qtruby4app/filenew.xpm (added),<br>
+languages/ruby/app_templates/qtruby4app/ReadMe (added),<br>
+languages/ruby/app_templates/Makefile.am,<br>
+languages/ruby/app_templates/qtruby4app/qtruby4app.png (added),<br>
+(...)<br>
+2007-12-03 Richard Dale &lt;rdale@foton.es&gt; <br>
+* Added a QtRuby4 project<br>
+based on the C++ Qt4 one<br>
+<br>
+2007-12-02 16:13 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=744048&amp;view=rev">744048</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/fileselector/fileselector_widget.cpp<br>
+Update the fileselector during typing of a filter. Seems to work fine, even<br>
+with some hundreds of files in a directory BUG:153279<br>
+<br>
+2007-12-02 00:24 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743806&amp;view=rev">743806</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/widgets/processwidget.h<br>
+Make the default blend a little less, this improves readability on the app<br>
+tab. BUG:151994<br>
+<br>
+2007-12-01 22:07 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743779&amp;view=rev">743779</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/debugger/variablewidget.cpp<br>
+Add some sanity checks so that handleSpecialTypes shouldn't crash anymore.<br>
+BUG:144433<br>
+<br>
+2007-12-01 21:48 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743776&amp;view=rev">743776</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/appwizard/appwizarddlg.cpp,<br>
+parts/appwizard/appwizarddlgbase.ui<br>
+Fix changing the destination dir after hitting Finish once (when the writing<br>
+to the destination failed). There was no check wether the destination is<br>
+writeable and thus the accept() code as executed all the way, including<br>
+replacing all the variables in the template, like the destination of the<br>
+files. This made it impossible to change the destination later on. BUG:144182<br>
+<br>
+2007-12-01 19:44 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743743&amp;view=rev">743743</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/projectconfigurationdlgbase.ui<br>
+properly connect the workingdir widget to the activateApply<br>
+<br>
+2007-12-01 19:27 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743741&amp;view=rev">743741</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/uimode/uichooser_widget.cpp, parts/uimode/uichooser.ui<br>
+Remove the "delayed" option for the tabwidget. This was overlooked when<br>
+removing the kmdi-ui modes, simpleideal doesn't support the delayed hover.<br>
+BUG:143229<br>
+<br>
+2007-12-01 18:32 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743719&amp;view=rev">743719</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/subclassingdlg.cpp<br>
+Revert the last change, it would break adding implementations to an existing<br>
+file as KDevelop uses the $SPECIALIZATION$ comment.<br>
+<br>
+2007-12-01 18:29 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743717&amp;view=rev">743717</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/subclassingdlg.cpp<br>
+replace $SPECIALIZATION$ with some meaningful value<br>
+<br>
+2007-12-01 17:44 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743694&amp;view=rev">743694</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/compiler/gccoptions/gccoptionsplugin.cpp<br>
+Add the div-by-zero warnings. BUG:139222<br>
+<br>
+2007-12-01 17:21 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743687&amp;view=rev">743687</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/addmethoddialog.cpp<br>
+Use the suffix that the user chose under the C++ support tab. BUG:133555<br>
+<br>
+2007-12-01 00:38 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743466&amp;view=rev">743466</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/custommakefiles/customprojectpart.cpp<br>
+Only check for Makefile/makefile in the compile-file sourcedir when we're<br>
+using make. BUG:118788<br>
+<br>
+2007-11-30 23:43 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743444&amp;view=rev">743444</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/cvsservice/integrator/integratordlg.h<br>
+Forgot to commit the header change<br>
+<br>
+2007-11-30 23:21 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743438&amp;view=rev">743438</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/cvsservice/integrator/integratordlg.cpp<br>
+Don't change the text in the module lineedit any time init() is called as<br>
+unfortunately the appwizard calls init() on each page change. Makes it<br>
+possible to specify arbitrary paths in the cvs repository. BUG:104653<br>
+<br>
+2007-11-30 21:56 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743415&amp;view=rev">743415</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/uimode/uichooser_widget.cpp<br>
+Disable the tab-setting-groups when we don't show tabs<br>
+<br>
+2007-11-30 20:16 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743381&amp;view=rev">743381</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/appwizard/licenses/BSD<br>
+If we label it BSD license, it should also have the text of a BSD license.<br>
+BUG:101817<br>
+<br>
+2007-11-30 20:01 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743376&amp;view=rev">743376</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/custommakefiles/customprojectpart.cpp<br>
+automatically build and install if the executable doesn't exist (no matter<br>
+wether any file was changed or not). BUG:99361<br>
+<br>
+2007-11-30 19:47 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743372&amp;view=rev">743372</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/debugger/dbgtoolbar.cpp<br>
+Don't make the debugger toolbar modal, its enough if its always on top.<br>
+BUG:96047<br>
+<br>
+2007-11-30 18:36 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743355&amp;view=rev">743355</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/autotools/addexistingfilesdlg.cpp<br>
+Use relative links, makes the whole thing portable across machines. BUG:83561<br>
+<br>
+2007-11-30 18:15 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743349&amp;view=rev">743349</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+vcs/cvsservice/cvsoptionswidget.cpp<br>
+strip whitespace from begin/end of typed values. BUG:80850<br>
+<br>
+2007-11-30 18:10 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743347&amp;view=rev">743347</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/autotools/addtargetdlg.cpp<br>
+Don't inject the lib prefix when building a module. BUG:76677<br>
+<br>
+2007-11-30 16:51 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743334&amp;view=rev">743334</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/debugger/dbgtoolbar.cpp<br>
+fix calculation of sizeHint for the buttons that have both pixmap and text.<br>
+BUG:69855<br>
+<br>
+2007-11-30 16:40 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743327&amp;view=rev">743327</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/autotools/autoprojectpart.cpp,<br>
+buildtools/autotools/autoprojectpart.h<br>
+Check for circular dependecies and tell the user if one is found. BUG:68818<br>
+<br>
+2007-11-30 15:59 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743310&amp;view=rev">743310</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/outputviews/makewidget.cpp<br>
+If none of the existing methods finds a file for a given filename from make<br>
+output try to find one in the list of project files. This is as good as<br>
+KDevelop can do, I don't see any more options to find a file. BUG:65541<br>
+<br>
+2007-11-30 15:35 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743306&amp;view=rev">743306</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/autotools/autoprojectwidget.cpp<br>
+Try harder to find a selected subproject/target pair for adding files. If<br>
+anybody knew it was that easy this would've probably been fixed ages ago.<br>
+BUG:62510<br>
+<br>
+2007-11-29 20:32 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=743087&amp;view=rev">743087</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/custommakefiles/addfilesdialog.h (removed),<br>
+buildtools/custommakefiles/addfilesdialogbase.ui (removed),<br>
+buildtools/custommakefiles/selectnewfilesdialog.h (added),<br>
+buildtools/custommakefiles/selectnewfilesdialogbase.ui (added),<br>
+buildtools/custommakefiles/Makefile.am,<br>
+buildtools/custommakefiles/customprojectpart.cpp, (...)<br>
+Rename the addfilesdialog class and files. This dialog had the same name as a<br>
+completely different dialog the the buildtools-widgets library which causes a<br>
+crash when: - start kdevelop and load a custom makefile project - switch to a<br>
+qmake project - try to add an existing file and go up one level. Thanks to<br>
+hbemail gmail com for finding and reporting this. BUG:153127<br>
+<br>
+2007-11-28 11:09 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=742609&amp;view=rev">742609</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/widgets/processlinemaker.cpp<br>
+Ooops, didn't read the kdev4 code close enough, missed a small bit in the<br>
+backport. Thanks Oswald for noticing.<br>
+<br>
+2007-11-27 21:51 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=742354&amp;view=rev">742354</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/widgets/processwidget.cpp, lib/widgets/processlinemaker.cpp,<br>
+lib/widgets/processlinemaker.h, parts/outputviews/makewidget.cpp<br>
+Backport the flush() method from KDevelop4 and apply its usage everywhere<br>
+ProcessLineMaker is used. As the grepview uses the processwidget this should<br>
+fix a bug that Oswald saw (grepview cut off some characters from its output)<br>
+CCMAIL:ossi@kde.org<br>
+<br>
+2007-11-27 13:41 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=742203&amp;view=rev">742203</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+src/projectsession.cpp<br>
+iterate over the document data list.<br>
+<br>
+2007-11-24 19:15 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=741087&amp;view=rev">741087</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/projectconfigurationdlgbase.ui,<br>
+languages/cpp/debugger/gdbcontroller.h<br>
+Patch from Bernd Buschinski. Removes unused function start2() from<br>
+gdbcontroller and fixes a signal/slot connection in the QMake project config<br>
+dialog. CCMAIL:b.buschinski@web.de<br>
+<br>
+2007-11-20 19:06 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=739264&amp;view=rev">739264</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/widgets/processlinemaker.cpp, lib/widgets/processlinemaker.h<br>
+Don't chop up process output between stderr and stdout. Patch from Oswald<br>
+Buddenhagen. BUG:152482<br>
+<br>
+2007-11-17 17:08 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=738015&amp;view=rev">738015</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/qmakescopeitem.cpp, buildtools/qmake/scope.cpp<br>
+Fix removing values inside a scope. BUG:151389<br>
+<br>
+2007-11-17 17:02 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=738012&amp;view=rev">738012</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/scope.h,<br>
+buildtools/qmake/trollprojectwidget.cpp,<br>
+buildtools/qmake/scope.cpp<br>
+Change the way subscopes are walked for fetching variable values. This is only<br>
+needed/wanted when reading variables whose output is used for running the app<br>
+or make. I don't think anything breaks with this (except seeing the values of<br>
+include()'ed files when checking the project options of a subdir, which is a<br>
+feature, not a bug) BUG:151392 CCBUG:150721<br>
+<br>
+2007-11-17 15:30 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=737987&amp;view=rev">737987</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+src/partcontroller.cpp<br>
+widget may return null, avoid the QObject::connect error message<br>
+<br>
+2007-11-17 15:27 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=737981&amp;view=rev">737981</a>-<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=737986&amp;view=rev">737986</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/debugger/gdbbreakpointwidget.cpp<br>
+parts/outputviews/makewidget.cpp<br>
+Fix QObject::connect message<br>
+fix QObject::connect message<br>
+<br>
+2007-11-17 15:11 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=737978&amp;view=rev">737978</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/widgets/processlinemaker.cpp, lib/widgets/processlinemaker.h<br>
+Revert revision 727625, it broke the debugger code that sends the app-output<br>
+to the app-widget. As I never saw any bugreports about KDevelop chopping up<br>
+its output, I'm taking the easy way here. @Oswald: If you want to fix this,<br>
+please also port all usages of the public slots you removed. BUG:152309<br>
+CCMAIL:ossi@kde.org<br>
+<br>
+2007-11-03 13:43 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=732323&amp;view=rev">732323</a>]  David Jarvie &lt;software astrojar.org.uk&gt;<br>
+parts/abbrev/addtemplatedlgbase.ui<br>
+Make it compile<br>
+<br>
+2007-11-03 13:04 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=732307&amp;view=rev">732307</a>]  David Jarvie &lt;software astrojar.org.uk&gt;<br>
+parts/regexptest/regexptestdlgbase.ui,<br>
+parts/bookmarks/bookmarks_settings_base.ui,<br>
+parts/documentation/docprojectconfigwidgetbase.ui,<br>
+parts/documentation/editbookmarkdlg.ui,<br>
+parts/documentation/editcatalogdlgbase.ui,<br>
+parts/documentation/find_documentationbase.ui, (...)<br>
+Make it compile<br>
+<br>
+2007-11-03 09:51 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=732240&amp;view=rev">732240</a>]  David Jarvie &lt;software astrojar.org.uk&gt;<br>
+parts/appwizard/appwizarddlgbase.ui<br>
+Make it compile<br>
+<br>
+2007-10-23 23:34 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=728703&amp;view=rev">728703</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/cppsupportpart.cpp<br>
+Small bugfix that could theorethically cause double-updating in plugins when<br>
+the codemodel can't be updated by c++ support.<br>
+<br>
+2007-10-23 22:58 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=728690&amp;view=rev">728690</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/cppsupportpart.cpp<br>
+This should fix the lag that could be experienced, specially on larger<br>
+projects. As David pointed out the updatedSourceInfo signal is more like a<br>
+"the whole code-model changed" thing. Everybody who experiences short delays<br>
+when typing normal code, please svn up and test. I couldn't get the delay to<br>
+work here the last days so I'm not 100% sure it fixes this problem (but I'm<br>
+pretty confident) CCMAIL:kdevelop-devel@kdevelop.org CCMAIL:cyb@lepi.org<br>
+<br>
+2007-10-23 19:49 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=728599&amp;view=rev">728599</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/qmakescopeitem.cpp<br>
+Resolve variable values for DESTDIR and TARGET<br>
+<br>
+2007-10-23 12:52 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=728486&amp;view=rev">728486</a>]  Kris Wong &lt;wongk seapine.com&gt;<br>
+parts/quickopen/quickopendialog.h,<br>
+parts/quickopen/quickopendialog.cpp,<br>
+parts/quickopen/quickopenfiledialog.cpp<br>
+Fix issue with multiple selections not working quite right after the list is<br>
+populated.<br>
+<br>
+2007-10-22 13:29 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=728119&amp;view=rev">728119</a>]  Kris Wong &lt;wongk seapine.com&gt;<br>
+parts/quickopen/quickopenbase.ui,<br>
+parts/quickopen/quickopendialog.cpp,<br>
+parts/quickopen/quickopenfiledialog.cpp<br>
+Re-apply previous commit, this time with keyboard navigation working as it<br>
+does currently.<br>
+<br>
+2007-10-21 10:25 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=727625&amp;view=rev">727625</a>]  Oswald Buddenhagen &lt;ossi kde.org&gt;<br>
+lib/widgets/processlinemaker.cpp, lib/widgets/processlinemaker.h<br>
+stop chopping up message lines from compiler, etc. note that lines that were<br>
+previously chopped up will now come in out of order. while this "regression"<br>
+could be fixed, there is no guarantee at all that the complete lines arrive in<br>
+order in the first place, so i see relatively little point in bothering with<br>
+this.<br>
+<br>
+2007-10-20 14:04 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=727433&amp;view=rev">727433</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/quickopen/quickopenbase.ui,<br>
+parts/quickopen/quickopenfiledialog.cpp<br>
+Revert r727064 it completely breaks keyboard navigation in the quickopen<br>
+dialog. @Kris: As I said I'm all for having multi-selection, but not without<br>
+loosing the keyboard navigation. Currently you cannot open a file by typing in<br>
+a few letters and then selecting one using up/down arrows<br>
+CCMAIL:wongk@seapine.com<br>
+<br>
+2007-10-19 15:56 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=727064&amp;view=rev">727064</a>]  Kris Wong &lt;wongk seapine.com&gt;<br>
+parts/quickopen/quickopenbase.ui,<br>
+parts/quickopen/quickopenfiledialog.cpp<br>
+Support extended selection on the Quick Open File dialog.<br>
+<br>
+2007-10-17 23:09 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726541&amp;view=rev">726541</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/projectconfigurationdlg.cpp,<br>
+buildtools/qmake/qmakescopeitem.cpp<br>
+Small bugfix for in-project libs. Display foo.pro if a subproject is not a dir<br>
+but only the file. BUG:150798<br>
+<br>
+2007-10-17 22:21 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726526&amp;view=rev">726526</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/trollprojectwidget.cpp,<br>
+buildtools/qmake/scope.cpp<br>
+Actually remove the .pro file when removing a subproject and the user wanted<br>
+to delete the file/dir. CCBUG:150796<br>
+<br>
+2007-10-17 22:07 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726520&amp;view=rev">726520</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/projectconfigurationdlg.cpp,<br>
+buildtools/qmake/qmakescopeitem.cpp, buildtools/qmake/scope.cpp<br>
+QMake lists are sometimes ordered, respect that in Scope::listsEqual. Fix the<br>
+creation of lib/dep/include items wrt. the order. BUG:150799 BUG:150878<br>
+<br>
+2007-10-17 14:56 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726339&amp;view=rev">726339</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/openwith/kdevopenwith.desktop<br>
+Fix typo, patch by Jeremy Laine BUG:150392<br>
+<br>
+2007-10-17 11:42 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726268&amp;view=rev">726268</a>]  Dirk Mueller &lt;mueller kde.org&gt;<br>
+languages/python/kde_pydoc.py<br>
+implement some basic html escaping to avoid injection issues in the help<br>
+browser<br>
+<br>
+2007-10-17 08:57 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726224&amp;view=rev">726224</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/gdbcontroller.cpp<br>
+Route MI target stream records to the Application window. BUG: 141334.<br>
+<br>
+2007-10-17 07:34 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726204&amp;view=rev">726204</a>]  Vladimir Prus &lt;ghost cs.msu.su&gt;<br>
+languages/cpp/debugger/gdbcontroller.cpp,<br>
+languages/cpp/debugger/gdbcontroller.h<br>
+Arrange for the initial output from gdb, prior to first prompt, to be always<br>
+shown. Add missing newline after gdb invocation command in the console. On<br>
+exit, show the exit message in the console.<br>
+<br>
+2007-10-16 22:02 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=726036&amp;view=rev">726036</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/trollprojectwidget.cpp<br>
+Allow to select .pro files for a subproject and fix creation of .pro files as<br>
+new subproject. BUG:150796<br>
+<br>
+2007-10-16 09:55 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=725836&amp;view=rev">725836</a>]  Richard Dale &lt;Richard_Dale tipitina.demon.co.uk&gt;<br>
+languages/ruby/app_templates/rails/rails.kdevtemplate, ChangeLog<br>
+* Add Rails 2.0 file type suffixes; .html.erb, .js.rjs and .xml.builder<br>
+<br>
+2007-10-15 18:57 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=725585&amp;view=rev">725585</a>]  Richard Dale &lt;Richard_Dale tipitina.demon.co.uk&gt;<br>
+languages/ruby/rubysupport_part.cpp,<br>
+languages/ruby/app_templates/rails/rails.kdevtemplate,<br>
+languages/ruby/file_templates/Makefile.am,<br>
+languages/ruby/file_templates/js.rjs (added),<br>
+languages/ruby/file_templates/html.erb (added),<br>
+parts/filecreate/template-info.xml, (...)<br>
+* Add Rails 2.0 file type suffixes; .html.erb, .js.rjs and .xml.builder<br>
+<br>
+2007-10-13 22:17 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=724943&amp;view=rev">724943</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/qmake/trollprojectwidget.h, buildtools/qmake/scope.h,<br>
+src/simplemainwindow.cpp,<br>
+buildtools/qmake/trollprojectwidget.cpp,<br>
+buildtools/qmake/scope.cpp, buildtools/qmake/trollprojectpart.cpp<br>
+Merge the latest bugfixes from the kdevelop/3.5 branch<br>
+<br>
+2007-10-13 20:53 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=724915&amp;view=rev">724915</a>]  Andras Mantia &lt;amantia kde.org&gt;<br>
+languages/cpp/debugger/gdbcontroller.cpp,<br>
+languages/cpp/debugger/dbgpsdlg.cpp,<br>
+languages/cpp/debugger/variablewidget.cpp,<br>
+languages/cpp/debugger/debuggerpart.cpp<br>
+Status/error messages are not questions!<br>
+<br>
+2007-10-13 20:41 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=724909&amp;view=rev">724909</a>]  Andras Mantia &lt;amantia kde.org&gt;<br>
+languages/cpp/debugger/breakpoint.cpp<br>
+Regression fix: do not lose the breakpoints that were set in a dlopened shared<br>
+library.<br>
+<br>
+2007-10-13 20:18 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=724905&amp;view=rev">724905</a>]  Andras Mantia &lt;amantia kde.org&gt;<br>
+languages/cpp/debugger/gdbcontroller.cpp<br>
+This is not a question, but an information message.<br>
+<br>
+2007-10-10 17:51 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=723781&amp;view=rev">723781</a>]  Albert Astals Cid &lt;tsdgeos terra.es&gt;<br>
+buildtools/lib/widgets/runoptionswidget.cpp<br>
+fix typo it's /run/autokdesu no /run/autokdsu<br>
+<br>

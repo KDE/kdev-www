@@ -1,0 +1,19 @@
+<?php
+module_head('KDevPlatform 1.0.x ChangeLog <a href="4.0/ChangeLog_kdevplatform.rss" title="Subscribe to RSS feed" hreflang="en"><img src="graphics/rss.gif" width="16" height="16" alt="RSS feed"></a>');
+if ($lang != "en") echo "    <span lang=\"en\" dir=\"ltr\">\n";
+include("$k_base_version/ChangeLog_kdevplatform.ihtml");
+
+// Add other versions here
+
+echo '<p>Visit the
+<a href="4.0/ChangeLog_kdevplatform_0.9.93.html">
+individual SVN commit logs between alpha 2 and beta 7 release</a> for a more detailed list of changes.</p>';
+
+echo '<p>Visit the
+<a href="4.0/ChangeLog_kdevplatform_0.9.81.html">
+individual SVN commit logs between the creation of KDevPlatform and its first alpha 2 release</a> for a more detailed list of changes.</p>';
+if ($lang != "en") echo "    </span>\n";
+
+module_tail();
+return filemtime("$k_base_version/ChangeLog_kdevplatform.ihtml");
+?>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="gss.xsl"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <sitemap>
+      <loc>http://www.kdevelop.org/sitemap-translated.xml.gz</loc>
+      <lastmod>2008-09-03T10:38:26+00:00</lastmod>
+   </sitemap>
+   <sitemap>
+      <loc>http://www.kdevelop.org/sitemap-mediawiki.xml.gz</loc>
+      <lastmod>2008-03-09T20:06:26+00:00</lastmod>
+   </sitemap>
+</sitemapindex>

@@ -1,0 +1,14 @@
+<?php
+echo '<p><b>'.strftime("%Y-%B-%d", 1257289200).'</b> - ';
+include_file("news/2009-11-04.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1250892000).'</b> - ';
+include_file("news/2009-08-22.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1249941600).'</b> - ';
+include_file("news/2009-08-11.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1246140000).'</b> - ';
+include_file("news/2009-06-28.html");
+echo "</p>\n";
+?>

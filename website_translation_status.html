@@ -1,0 +1,17 @@
+<?php
+global $lang;
+$time_stamp1 = 0;
+$time_stamp2 = 0;
+if ($lang == 'en') {
+  include('dynamic/website_translation_status.html');
+  $time_stamp2 = filemtime('dynamic/website_translation_status.html');
+} else {
+  if (file_exists("lang/$lang/translator_info.html")) {
+    include("lang/$lang/translator_info.html");
+    $time_stamp1 = filemtime("lang/$lang/translator_info.html");
+  }
+  include("dynamic/translation_status_$lang.html");
+  $time_stamp2 = filemtime("dynamic/translation_status_$lang.html");
+}
+return ($time_stamp1>$time_stamp2?$time_stamp1:$time_stamp2);
+?>

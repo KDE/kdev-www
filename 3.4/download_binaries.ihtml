@@ -1,0 +1,113 @@
+<h4>KDevelop 3.4.1 (official release) [2007-05-22]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="7">Linux x86 (32bit)</td>
+<td><a href="http://www.archlinux.org/">Arch Linux</a></td><td>
+<a href="ftp://ftp.archlinux.org/extra/os/i686/">(i686)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.kubuntu.org/">Kubuntu</a>, <a href="http://kubuntu.org/announcements/kde-357.php">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.7/kubuntu/">7.04 (Feisty)</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.mandriva.com/">Mandriva</a>, <a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.7/Mandriva/README">README</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.7/Mandriva/">2007.1</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.pardus.org.tr/">Pardus</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.5.7/Pardus/">1.0</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.redhat.com/">Red Hat</a> (<a href="http://kde-redhat.sourceforge.net/">Unofficial</a>)
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/kde-org.txt">README</a></td><td>
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/all/">all platforms</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/redhat/4/i386/">Red Hat 4</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/redhat/5/i386/">Red Hat 5</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/redhat/el4/i386/">Red Hat Enterprise 4</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/redhat/el5/i386/">Red Hat Enterprise 5</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/5/i386/">Fedora 5</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/6/i386/">Fedora 6</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/7/i386/">Fedora 7</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/8/i386/">Fedora 8</a>,
+<a href="http://apt.kde-redhat.org/apt/kde-redhat/fedora/9/i386/">Fedora 9</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.slackware.org/">Slackware</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.7/contrib/Slackware/10.1">10.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.5.7/contrib/Slackware/10.2">10.2</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.opensuse.org/">OpenSUSE/SUSE Linux</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/repositories/KDE:/Backports/SUSE_Linux_10.0/">10.0</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/Backports/SUSE_Linux_10.1/">10.1</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/Backports/openSUSE_10.2/">10.2</a>
+</td>
+</tr><tr align="center">
+<td rowspan="1">Linux x86_64 (64bit)</td>
+<td><a href="http://www.opensuse.org/">OpenSUSE/SUSE Linux</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/repositories/KDE:/Backports/SUSE_Linux_10.0/">10.0</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/Backports/SUSE_Linux_10.1/">10.1</a>,
+<a href="http://software.opensuse.org/download/repositories/KDE:/Backports/openSUSE_10.2/">10.2</a>
+</td>
+</tr>
+</table>
+<br>
+
+<h4>GDB 6.6.90 [2007-10-01]</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr align="center">
+<td rowspan="5">Linux x86 (32bit)</td>
+<td><a href="http://fedora.redhat.com/">Fedora</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_Extras_5/i386/">FE 5</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_Extras_6/i386/">FE 6</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_7/i386/">Fedora 7</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.mandriva.com/">Mandriva</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Mandriva_2006/i586/">2006</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/SUSE_Linux_10.0/i586/">10.0</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/SUSE_Linux_10.1/i586/">10.1</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.opensuse.org/">openSUSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_10.2/i586/">10.2</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_Factory/i586/">Factory</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.novell.com/linux/">SUSE Linux Enterprise</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/SLE_10/i586/">10</a>
+</td>
+</tr><tr align="center">
+<td rowspan="4">Linux x86_64 (64bit)</td>
+<td><a href="http://fedora.redhat.com/">Fedora</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_Extras_5/x86_64/">FE 5</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_Extras_6/x86_64/">FE 6</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/Fedora_7/x86_64/">Fedora 7</a>
+</td>
+</tr><tr align="center">
+<td><a href="http://www.suse.com/">SuSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/SUSE_Linux_10.0/x86_64/">10.0</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/SUSE_Linux_10.1/x86_64/">10.1</a>
+</tr><tr align="center">
+<td><a href="http://www.opensuse.org/">openSUSE</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_10.2/x86_64/">10.2</a>,
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/openSUSE_Factory/x86_64/">Factory</a>
+</tr><tr align="center">
+<td><a href="http://www.novell.com/linux/">SUSE Linux Enterprise</a>, <a href="http://en.opensuse.org/Build_Service/User">README</a></td><td>
+<a href="http://software.opensuse.org/download/home:/amilcarlucas/SLE_10/x86_64/">10</a>
+</tr>
+</table>
+<br>

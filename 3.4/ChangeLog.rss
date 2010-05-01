@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>SVN: branches/KDE/3.5/kdevelop/</title>
+    <link>http://www.kdevelop.org/index.html?filename=3.4/ChangeLog.html</link>
+    <description>svn commit log</description>
+    <language>en-us</language>
+    <copyright>1998-2007, The KDevelop team</copyright>
+    <generator>svnlog.xslt</generator>
+    <ttl>60</ttl>
+    <item>
+      <title>Rev:726339 [apaku] - Fix typo, patch by Jeremy Laine BUG:150392... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=726339&amp;view=rev</link>
+      <pubDate>Wed, 17 Oct 2007 14:56:59 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Fix typo, patch by Jeremy Laine
+BUG:150392
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 17 Oct 2007 14:56:59 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/openwith/kdevopenwith.desktop"&gt;/branches/KDE/3.5/kdevelop/parts/openwith/kdevopenwith.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:726268 [mueller] - implement some basic html escaping to avoid injec... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=726268&amp;view=rev</link>
+      <pubDate>Wed, 17 Oct 2007 11:42:13 GMT</pubDate>
+      <author>mueller@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;implement some basic html escaping to avoid injection issues
+in the help browser
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 17 Oct 2007 11:42:13 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/python/kde_pydoc.py"&gt;/branches/KDE/3.5/kdevelop/languages/python/kde_pydoc.py&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:726224 [vprus] - Route MI target stream records to the Application... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=726224&amp;view=rev</link>
+      <pubDate>Wed, 17 Oct 2007 08:57:45 GMT</pubDate>
+      <author>vprus@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Route MI target stream records to the Application window.
+BUG: 141334.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 17 Oct 2007 08:57:45 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop"&gt;/branches/KDE/3.5/kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:726204 [vprus] - Arrange for the initial output from gdb, prior to... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=726204&amp;view=rev</link>
+      <pubDate>Wed, 17 Oct 2007 07:34:58 GMT</pubDate>
+      <author>vprus@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Arrange for the initial output from gdb, prior to first prompt, to
+be always shown. Add missing newline after gdb invocation command
+in the console.  On exit, show the exit message in the console.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 17 Oct 2007 07:34:58 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop"&gt;/branches/KDE/3.5/kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.h"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:726036 [apaku] - Allow to select .pro files for a subproject and f... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=726036&amp;view=rev</link>
+      <pubDate>Tue, 16 Oct 2007 22:02:26 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Allow to select .pro files for a subproject and fix creation of .pro files as new subproject.
+BUG:150796&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Tue, 16 Oct 2007 22:02:26 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:725836 [rdale] - * Add Rails 2.0 file type suffixes; .html.erb, .j... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=725836&amp;view=rev</link>
+      <pubDate>Tue, 16 Oct 2007 09:55:41 GMT</pubDate>
+      <author>rdale@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;* Add Rails 2.0 file type suffixes; .html.erb, .js.rjs and .xml.builder
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Tue, 16 Oct 2007 09:55:41 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/app_templates/rails/rails.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/app_templates/rails/rails.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/ChangeLog"&gt;/branches/KDE/3.5/kdevelop/ChangeLog&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:725585 [rdale] - * Add Rails 2.0 file type suffixes; .html.erb, .j... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=725585&amp;view=rev</link>
+      <pubDate>Mon, 15 Oct 2007 18:57:10 GMT</pubDate>
+      <author>rdale@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;* Add Rails 2.0 file type suffixes; .html.erb, .js.rjs and .xml.builder&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Mon, 15 Oct 2007 18:57:10 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/rubysupport_part.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/rubysupport_part.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/app_templates/rails/rails.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/app_templates/rails/rails.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/js.rjs"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/js.rjs&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/html.erb"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/html.erb&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/filecreate/template-info.xml"&gt;/branches/KDE/3.5/kdevelop/parts/filecreate/template-info.xml&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/grepview/grepdlg.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/grepview/grepdlg.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/app_templates/rails/app.kdevelop"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/app_templates/rails/app.kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/rubytemplates"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/rubytemplates&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/xml.builder"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/file_templates/xml.builder&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:724943 [apaku] - Merge the latest bugfixes from the kdevelop/3.5 b... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=724943&amp;view=rev</link>
+      <pubDate>Sat, 13 Oct 2007 22:17:23 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Merge the latest bugfixes from the kdevelop/3.5 branch
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 13 Oct 2007 22:17:23 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.h"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.h"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/src/simplemainwindow.cpp"&gt;/branches/KDE/3.5/kdevelop/src/simplemainwindow.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectpart.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectpart.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:724915 [amantia] - Status/error messages are not questions!... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=724915&amp;view=rev</link>
+      <pubDate>Sat, 13 Oct 2007 20:53:36 GMT</pubDate>
+      <author>amantia@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Status/error messages are not questions!&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 13 Oct 2007 20:53:36 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/dbgpsdlg.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/dbgpsdlg.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/variablewidget.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/variablewidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerpart.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerpart.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:724909 [amantia] - Regression fix: do not lose the breakpoints that... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=724909&amp;view=rev</link>
+      <pubDate>Sat, 13 Oct 2007 20:41:59 GMT</pubDate>
+      <author>amantia@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Regression fix: do not lose the breakpoints that were set in a dlopened shared library.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 13 Oct 2007 20:41:59 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/breakpoint.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/breakpoint.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:724905 [amantia] - This is not a question, but an information messag... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=724905&amp;view=rev</link>
+      <pubDate>Sat, 13 Oct 2007 20:18:15 GMT</pubDate>
+      <author>amantia@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;This is not a question, but an information message.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 13 Oct 2007 20:18:15 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/gdbcontroller.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:723781 [aacid] - fix typo it's /run/autokdesu no /run/autokdsu... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=723781&amp;view=rev</link>
+      <pubDate>Wed, 10 Oct 2007 17:51:05 GMT</pubDate>
+      <author>aacid@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;fix typo it's /run/autokdesu no /run/autokdsu
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 10 Oct 2007 17:51:05 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/lib/widgets/runoptionswidget.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/lib/widgets/runoptionswidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:722974 [coolo] - updating lsm... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=722974&amp;view=rev</link>
+      <pubDate>Mon, 8 Oct 2007 11:06:05 GMT</pubDate>
+      <author>coolo@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;updating lsm&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Mon, 8 Oct 2007 11:06:05 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/kdevelop.lsm"&gt;/branches/KDE/3.5/kdevelop/kdevelop.lsm&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:722624 [apaku] - Merge the latest change from the branch. This aga... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=722624&amp;view=rev</link>
+      <pubDate>Sun, 7 Oct 2007 18:22:51 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Merge the latest change from the branch. This again disables the shortcut for
+first/last window because I implemented that in the wrong way.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 7 Oct 2007 18:22:51 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/src/simplemainwindow.cpp"&gt;/branches/KDE/3.5/kdevelop/src/simplemainwindow.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:722530 [apaku] - Merge the changes from the kdevelop/3.5 branch fo... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=722530&amp;view=rev</link>
+      <pubDate>Sun, 7 Oct 2007 14:39:48 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Merge the changes from the kdevelop/3.5 branch for the KDE 3.5.8 release.
+Leaving the version number at 3.5.0 to make it easier for people that used the
+3.4.90 packages to upgrade to 3.5.0 (it has at least 2 bugfixes over 3.4.90)
+
+CCMAIL:kdevelop-devel@kdevelop.org
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 7 Oct 2007 14:39:48 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakesimple/qmakesimple.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakesimple/qmakesimple.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.h"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4view_base.ui"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4view_base.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlg.h"&gt;/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlg.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/outputviews/compileerrorfilter.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/outputviews/compileerrorfilter.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/classview/classviewpart.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/classview/classviewpart.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/configure.in"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/configure.in&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/app.kdevelop"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/app.kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty-Makefile.cvs"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty-Makefile.cvs&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakescopeitem.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakescopeitem.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/quickopen/kdevquickopen.desktop"&gt;/branches/KDE/3.5/kdevelop/parts/quickopen/kdevquickopen.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/lib/parsers/qmake/qmake.ll"&gt;/branches/KDE/3.5/kdevelop/buildtools/lib/parsers/qmake/qmake.ll&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4appui.rc"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4appui.rc&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeapp/qmakeapp.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeapp/qmakeapp.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/app.kdevelop"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/app.kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.desktop"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/qtopia4app.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/qtopia4app.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4view.h"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4view.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.kdevelop"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/ccconfigwidgetbase.ui"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/ccconfigwidgetbase.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/cppsupportpart.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/cppsupportpart.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/rubysupport_part.h"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/rubysupport_part.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/classview/digraphview.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/classview/digraphview.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/main.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/main.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/lib/interfaces/extensions/kdevquickopen.h"&gt;/branches/KDE/3.5/kdevelop/lib/interfaces/extensions/kdevquickopen.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.kdevelop"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/makefileempty-Makefile"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/makefileempty-Makefile&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.h"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/script/kdevscriptproject.rc"&gt;/branches/KDE/3.5/kdevelop/buildtools/script/kdevscriptproject.rc&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/script/scriptprojectpart.h"&gt;/branches/KDE/3.5/kdevelop/buildtools/script/scriptprojectpart.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.kcfg"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.kcfg&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.html"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.html&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/choosesubprojectdlg.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/choosesubprojectdlg.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerpart.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerpart.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4view.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4view.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/documentation/plugins/pdb/docpdbplugin.desktop"&gt;/branches/KDE/3.5/kdevelop/parts/documentation/plugins/pdb/docpdbplugin.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/examplebase.ui"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/examplebase.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakescopeitem.h"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakescopeitem.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.h"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/scope.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty.png"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty.png&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/projectconfigurationdlg.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/projectconfigurationdlg.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/Makefile"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/Makefile&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Deleted&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlg.ui"&gt;/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlg.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/script/scriptprojectpart.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/script/scriptprojectpart.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.kdevelop.filelist"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.kdevelop.filelist&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/lib/interfaces/extensions/kdevelopquickopen.desktop"&gt;/branches/KDE/3.5/kdevelop/lib/interfaces/extensions/kdevelopquickopen.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/lib/parsers/qmake/qmake_lex.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/lib/parsers/qmake/qmake_lex.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/settings.kcfgc"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/settings.kcfgc&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/configure.in.in"&gt;/branches/KDE/3.5/kdevelop/configure.in.in&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/quickopen/quickopen_part.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/quickopen/quickopen_part.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/vcs/subversion/kdevsvnd.cpp"&gt;/branches/KDE/3.5/kdevelop/vcs/subversion/kdevsvnd.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/app.kdevelop"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/app.kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerconfigwidgetbase.ui"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerconfigwidgetbase.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/makefileempty.png"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/makefileempty.png&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/lib/interfaces/extensions/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/lib/interfaces/extensions/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.png"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.png&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/prefs_base.ui"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/prefs_base.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty-Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/automakeempty-Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/cpp.appwizard"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/cpp.appwizard&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakeoptionswidget.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakeoptionswidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.pro"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qmakeempty/qmakeempty.pro&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlgbase.ui"&gt;/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlgbase.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/kdevrubysupport.rc"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/kdevrubysupport.rc&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/automakeempty/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/classview/hierarchydlg.h"&gt;/branches/KDE/3.5/kdevelop/parts/classview/hierarchydlg.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/Example.png"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/Example.png&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.cpp"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/trollprojectwidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlg.cpp"&gt;/branches/KDE/3.5/kdevelop/vcs/subversion/commitdlg.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/CMakeLists.txt"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/src/simplemainwindow.cpp"&gt;/branches/KDE/3.5/kdevelop/src/simplemainwindow.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/quickopen/quickopen_part.h"&gt;/branches/KDE/3.5/kdevelop/parts/quickopen/quickopen_part.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/makefileempty.kdevtemplate"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/makefileempty/makefileempty.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakeoptionswidgetbase.ui"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/qmakeoptionswidgetbase.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/documentation/plugins/doxygen/docdoxygenplugin.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/documentation/plugins/doxygen/docdoxygenplugin.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/vcs/subversion/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/vcs/subversion/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.desktop"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/classview/classviewpart.h"&gt;/branches/KDE/3.5/kdevelop/parts/classview/classviewpart.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/projectconfigurationdlgbase.ui"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/projectconfigurationdlgbase.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/README"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/README&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerconfigwidget.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/debugger/debuggerconfigwidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/ruby/rubysupport_part.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/ruby/rubysupport_part.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/qtopia4app.png"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/qtopia4app.png&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/main.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/main.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/classview/hierarchydlg.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/classview/hierarchydlg.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/Makefile.am"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/Makefile.am&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.h"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kapp4.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/example.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/app.pro"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/qtopia4app/app.pro&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/classview/digraphview.h"&gt;/branches/KDE/3.5/kdevelop/parts/classview/digraphview.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.png"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/app_templates/kde4app/kde4app.png&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:720785 [okellogg] - add space before "Output:"... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=720785&amp;view=rev</link>
+      <pubDate>Wed, 3 Oct 2007 18:09:07 GMT</pubDate>
+      <author>okellogg@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;add space before "Output:"&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 3 Oct 2007 18:09:07 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/languages/cpp/includepathresolver.cpp"&gt;/branches/KDE/3.5/kdevelop/languages/cpp/includepathresolver.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:720701 [okellogg] - Fix typo. CCMAIL:mattr@kde.org... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=720701&amp;view=rev</link>
+      <pubDate>Wed, 3 Oct 2007 14:24:40 GMT</pubDate>
+      <author>okellogg@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Fix typo.
+CCMAIL:mattr@kde.org
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 3 Oct 2007 14:24:40 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/buildtools/qmake/projectconfigurationdlgbase.ui"&gt;/branches/KDE/3.5/kdevelop/buildtools/qmake/projectconfigurationdlgbase.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:714911 [mueller] - fix compile... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=714911&amp;view=rev</link>
+      <pubDate>Thu, 20 Sep 2007 21:32:18 GMT</pubDate>
+      <author>mueller@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;fix compile
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 20 Sep 2007 21:32:18 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/lib/astyle/astyle.h"&gt;/branches/KDE/3.5/kdevelop/lib/astyle/astyle.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:711417 [scripty] - SVN_SILENT made messages (.desktop file)... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=711417&amp;view=rev</link>
+      <pubDate>Wed, 12 Sep 2007 02:52:57 GMT</pubDate>
+      <author>scripty@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;SVN_SILENT made messages (.desktop file)&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 12 Sep 2007 02:52:57 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/documentation/plugins/pdf/docpdfplugin.desktop"&gt;/branches/KDE/3.5/kdevelop/parts/documentation/plugins/pdf/docpdfplugin.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/documentation/plugins/qt/docqtplugin.desktop"&gt;/branches/KDE/3.5/kdevelop/parts/documentation/plugins/qt/docqtplugin.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:707429 [sansome] - BUG: 149448 When importing a project, ensure that... </title>
+      <link>http://websvn.kde.org/branches/KDE/3.5/kdevelop//?rev=707429&amp;view=rev</link>
+      <pubDate>Sat, 1 Sep 2007 21:06:27 GMT</pubDate>
+      <author>sansome@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;BUG: 149448
+When importing a project, ensure that the suggested project name doesn't contain invalid characters (like '-')
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 1 Sep 2007 21:06:27 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/parts/appwizard/importdlg.cpp"&gt;/branches/KDE/3.5/kdevelop/parts/appwizard/importdlg.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+  </channel>
+</rss>

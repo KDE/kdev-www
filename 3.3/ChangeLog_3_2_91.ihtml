@@ -1,0 +1,325 @@
+2005-09-10 13:35  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=459274&amp;view=rev">459274</A>]  coolo<br>
+
+kdevelop.lsm: update lsm file<br><br>
+
+2005-09-10 13:02  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=459232&amp;view=rev">459232</A>]  coolo<br>
+
+configure.in.in: beta1<br><br>
+
+2005-09-07 15:19  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=458232&amp;view=rev">458232</A>]  rgruber<br>
+
+languages/cpp/debugger/gdbparser.cpp: Fixed problem that no
+further struct members get showen in variable-widget when gdb
+prints something like ,'' <repeats 10 times> for one of the
+struct's members<br><br>
+
+2005-09-07 12:10  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=458160&amp;view=rev">458160</A>]  vprus<br>
+
+languages/cpp/debugger/gdboutputwidget.cpp: Scroll gdb output
+window to the bottom when new text is added. BUG: 111486<br><br>
+
+2005-09-07 11:38  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=458155&amp;view=rev">458155</A>]  vprus<br>
+
+languages/cpp/debugger/dbgcontroller.h,
+languages/cpp/debugger/gdbcontroller.cpp: When explicitly breaking
+into program as result of "pause" button in gdb window, suppress
+"Program received SIGINT" message. BUG: 111504<br><br>
+
+2005-09-07 11:00  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=458143&amp;view=rev">458143</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: Prevent debugger from
+becoming unusable if gdb crashes. When debugger issues any
+command, it wraps it in two markers, say: set prompt \032V set
+variable foo = bar causes gdb to reply with \032V <output from the
+command> \032V This allows the debugger to find output that
+correspond to any given command. In the above example, if "set
+variable" command crashes the debugger, the internal buffer for
+gdb output will contains just "\032V". That buffer was not
+cleared, so after restart KDevelop would try to find the second
+\032V, and never succeed. It looked like debugger is running, but
+user could not enter any commands and all debugger actions did not
+work. CCBUG: 97795<br><br>
+
+2005-09-07 10:53  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=458141&amp;view=rev">458141</A>]  vprus<br>
+
+languages/cpp/debugger/debuggerpart.cpp,
+languages/cpp/debugger/debuggerpart.h,
+languages/cpp/debugger/gdbcontroller.cpp,
+languages/cpp/debugger/gdbcontroller.h: Property report when gdb
+has crashed.<br><br>
+
+2005-09-07 07:09  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=458073&amp;view=rev">458073</A>]  vprus<br>
+
+parts/outputviews/makewidget.cpp: When clicking on error in make
+output widget, don't hide the widget, because that hiding
+behaviour is highly irritating. CCMAIL:
+kdevelop-devel kdevelop.org<br><br>
+
+2005-08-31 17:45  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=455506&amp;view=rev">455506</A>]  gianni<br>
+
+languages/ruby/rubyconfigwidgetbase.ui: fixuifiles to improve
+translation<br><br>
+
+2005-08-31 12:23  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=455408&amp;view=rev">455408</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: Suppress the 'Program
+received signal SIGINT' message on 'Restart program' command.<br><br>
+
+2005-08-31 10:06  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=455356&amp;view=rev">455356</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: Do not pass -nx (ignore
+.gdbinit) option to gdb. Talked with jbb about it, and decided
+this should not cause any problems, because all kdevelop-specific
+settings are applied after loading .gdbinit. BUG: 111001<br><br>
+
+2005-08-31 08:55  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=455336&amp;view=rev">455336</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: Allow to specify gdb
+path without trailing slash. When using the browse button, the
+path has no trailing slash, which did not work before. And humans
+common omit trailing slash too.<br><br>
+
+2005-08-31 08:33  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=455331&amp;view=rev">455331</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: Produce nice error
+message is debugger can't be started, as opposed to entering
+"debugger seems to working" state.<br><br>
+
+2005-08-30 16:09  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=455109&amp;view=rev">455109</A>]  djurban<br>
+
+branches/KDE/3.5/kdelibs/mimetypes/application/Makefile.am,
+branches/KDE/3.5/kdelibs/mimetypes/chm.desktop,
+mimetypes/Makefile.am, mimetypes/chm.desktop: - moving chm
+mimetype to kdelibs for 3.5<br><br>
+
+2005-08-30 14:35  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=455066&amp;view=rev">455066</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: Fix stderr->stdout
+redirection when invoking script that remotely executed the
+program.<br><br>
+
+2005-08-29 13:21  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=454610&amp;view=rev">454610</A>]  vprus<br>
+
+src/partcontroller.cpp: Disable Kate shortcuts in
+PartController::integrateTextEditorPart, not in
+PartController::integratePart. When EditorWrapper comes in effect
+(which seem to happen when there's lot of open files), the first
+method does no seem to get any widget at all, and when widget is
+created in EditorWrapper, only integrateTextEditorPart is called.
+As a result, Kate shortcuts were not disabled when there were lots
+of open files.<br><br>
+
+2005-08-26 05:42  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=453393&amp;view=rev">453393</A>]  vprus<br>
+
+languages/cpp/debugger/debuggertracingdialog.cpp: Correct
+validation for custom format string for tracing dialog.
+Previously, custom format string could not be used with non-zero
+number of expressions.<br><br>
+
+2005-08-24 12:19  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=452819&amp;view=rev">452819</A>]  vprus<br>
+
+languages/cpp/debugger/gdbparser.cpp,
+languages/cpp/debugger/gdbparser.h: Add 'const' to some 'char *'
+variables.<br><br>
+
+2005-08-24 09:31  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=452736&amp;view=rev">452736</A>]  vprus<br>
+
+languages/cpp/debugger/debuggerpart.cpp, src/partcontroller.cpp:
+Assign shortcuts to most common debugger functions: F9 --
+run/continue F10 -- step over F11 -- step in F12 -- step out The
+shortcuts are choosed to be located on the same block of F-keys,
+to ease memorization and also so that "step in/step out" are next
+to each other. The "watch from expression" and "toggle breakpoint"
+actions don't yet any shortcuts yet -- I believe they probably
+don't need them. Breakpoint can be toggled with mouse and watch
+from expression is in the popup menu. I'm not sure with F9 -- run
+in debugger/continue shortcut, one can argue that F9 should be run
+while "shift+F9" should be run in debugger. In any case, some
+project manager don't have any shortcut for "run" at all, and some
+use "shift+f9" and I don't want to mess with that yet. This change
+comes at expense of Kate, which no longer has shortcuts for the
+"hide/show folding markers", "dynamic word wrap" and "hide/show
+line numbers" action. However, those are far less important in IDE
+than debugger actions. * src/partcontroller.cpp
+(PartController::integratePart): For texteditor, disable some
+action. Make sure we do it only if the actions are in fact
+defined, and shortcuts conflict with debugger, so that we don't do
+anything wrong if text editor is not Kate. See comment in code for
+further explanations. * languages/cpp/debugger/debuggerpart.cpp
+(DebuggerPart::DebuggerPart): Assign shortcuts. CCMAIL:
+kdevelop-devel kdevelop.org BUG: 85453<br><br>
+
+2005-08-23 15:51  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=452516&amp;view=rev">452516</A>]  mueller<br>
+
+lib/catalog/catalog.cpp: introduce a concept called error handling<br><br>
+
+2005-08-23 13:42  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=452479&amp;view=rev">452479</A>]  vprus<br>
+
+languages/cpp/debugger/gdbbreakpointwidget.cpp,
+languages/cpp/debugger/gdbbreakpointwidget.h: Remove unsed code<br><br>
+
+2005-08-23 13:36  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=452478&amp;view=rev">452478</A>]  vprus<br>
+
+languages/cpp/debugger/debuggerpart.cpp: Clean application output
+window each time application is restarted under debugger.<br><br>
+
+2005-08-23 13:14  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=452468&amp;view=rev">452468</A>]  vprus<br>
+
+languages/cpp/debugger/Makefile.am,
+languages/cpp/debugger/breakpoint.cpp,
+languages/cpp/debugger/breakpoint.h,
+languages/cpp/debugger/debuggerpart.cpp,
+languages/cpp/debugger/debuggertracingdialog.cpp,
+languages/cpp/debugger/debuggertracingdialog.h,
+languages/cpp/debugger/debuggertracingdialogbase.ui,
+languages/cpp/debugger/gdbbreakpointwidget.cpp,
+languages/cpp/debugger/gdbbreakpointwidget.h,
+languages/cpp/debugger/gdbcommand.cpp, ... : Implement
+"tracepoints" -- breakpoints that don't stop execution, but rather
+print values of some expressions and continue. Essentially the
+same as "printf debugging", but does not requires changing code
+and rebuilding. CCMAIL: kdevelop-devel kdevelop.org<br><br>
+
+2005-08-23 12:14  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=452451&amp;view=rev">452451</A>]  vprus<br>
+
+languages/cpp/debugger/gdbbreakpointwidget.cpp: Fix the problem
+with black background that breakpoint widget has when shown first
+time. * debugger/gdbbreakpointwidget.cpp
+(GDBBreakpointWidget::focusInEvent): Set current cell, if not
+already set.<br><br>
+
+2005-08-20 09:12  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=451275&amp;view=rev">451275</A>]  amantia<br>
+
+languages/cpp/debugger/kdevdebugger.rc: Move the restart
+application button at the end. It's just too easy to press it by
+mistake while debugging (it was between "continue" and "step").<br><br>
+
+2005-08-20 09:11  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=451274&amp;view=rev">451274</A>]  amantia<br>
+
+parts/documentation/plugins/doxygen/docdoxygenplugin.cpp: Search
+recursively for doxygen tag files (now also for the Index view).
+The index cache ($KDEHOME/share/apps/kdevdocumentation/index) must
+be removed otherwise it doesn't find the new entries... CCMAIL:
+kdevelop-devel kdevelop.org<br><br>
+
+2005-08-19 17:30  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450999&amp;view=rev">450999</A>]  amantia<br>
+
+parts/documentation/plugins/doxygen/docdoxygenplugin.cpp,
+parts/documentation/plugins/doxygen/docdoxygenplugin.h: Search
+recursively for doxygen tag files. Fixes browsing of the KDE
+3.5/trunk apidocs. CCMAIL:kdevelop-devel kdevelop.org<br><br>
+
+2005-08-19 11:58  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450884&amp;view=rev">450884</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: i18n already returns
+QString, no need to create another from from result. Thanks to
+Lukas Tinkl for noticing.<br><br>
+
+2005-08-19 10:48  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450870&amp;view=rev">450870</A>]  vprus<br>
+
+languages/cpp/debugger/gdbcontroller.cpp: Before running debugger,
+check if application is indeed executable. BUG: 72547<br><br>
+
+2005-08-18 13:27  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450556&amp;view=rev">450556</A>]  vprus<br>
+
+languages/cpp/debugger/variablewidget.cpp: Add "Remember value"
+and "Watch variable" items to the variable window popup menu. BUG:
+78566<br><br>
+
+2005-08-18 10:59  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450506&amp;view=rev">450506</A>]  vprus<br>
+
+languages/cpp/debugger/dbgcontroller.h,
+languages/cpp/debugger/debuggerpart.cpp,
+languages/cpp/debugger/debuggerpart.h,
+languages/cpp/debugger/gdbcontroller.cpp,
+languages/cpp/debugger/gdbcontroller.h,
+languages/cpp/debugger/kdevdebugger.rc: Improve start/stop
+behaviour of the debugger. - When application exists, don't kill
+the debugger. So, we don't need to restart debugger again, and
+restarting can be very slow due to loading numerous symbols. Also,
+now the debugger windows don't disappear when applications exists,
+only when user explicitly stops the debugger, so - he can look at
+gdb output - the variables window is not constantly shown/hidden
+when restarting debugger - Add "Restart" action that runs the
+program from the beginning without restarting the debugger. *
+debuggerpart.cpp (DebuggerPart::slotStatus): Revert revision
+377895 that introduced "stop debugger on application exit"
+behaviour in attempt to workaround bug 73946.
+(DebuggerPart::DebuggerPart): Create new action. It turns out we
+even have icon for it already. * gdbcontroller.cpp
+(GDBController::programNoApp): Really fix bug 73946.
+(GDBController::slotRestart): New slot. CCBUG: 73946 BUG: 108534
+CCMAIL: kdevelop-devel kdevelop.org<br><br>
+
+2005-08-18 06:49  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450424&amp;view=rev">450424</A>]  vprus<br>
+
+languages/cpp/debugger/variablewidget.cpp: Don't try to parse "No
+argument" response from gdb.<br><br>
+
+2005-08-18 06:48  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450423&amp;view=rev">450423</A>]  vprus<br>
+
+languages/cpp/debugger/variablewidget.cpp,
+languages/cpp/debugger/variablewidget.h: Ubreak display of
+QStrings broken in r436822. * variablewidget.cpp
+(VarItem::checkForRequest): Rename to 'handleSpecialTypes'.
+Instead of looking at data, check the type of variable.
+(VarItem::updateValue): Remove \000 from gdb output. Below is the
+exact explanation of the breakage. The previous code worked like
+this for the case of reference to QString 1. Gdb sends something
+like s = {d = 0x1234} 2. Parser create VarItem and calls
+setCache("{d = 0x1234}") 3. setCache does not recognize anything
+yet (due to leading "{") 4. User clicks on the "open" 5.
+VarItem::setOpen is called, it calls gdb parser again with "{d =
+0x1234}" 6. Parser notices it's a structure so it stripts "{} and
+calls setCache again. 7. setCache notices "d = 0x1234" and asks
+for string value. 8. setCache calls setOpen again, which calls gdb
+parser again, with "d = 0x1234" 9. Parser sets the 'd' child of
+variable. 10. The string value arrives. After my changes in 436822
+the double call to parser (step 5 and 8) are gone, now gdb parser
+strips {} immediately and proceeds to setting the 'd' child, so
+the code that used to detect QString never worked. It was kind of
+a hack anyway, and it detected 'd = 0x' pattern, and not the type
+of variable. CCMAIL: amantia kde.org<br><br>
+
+2005-08-18 06:27  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450421&amp;view=rev">450421</A>]  vprus<br>
+
+languages/cpp/debugger/variablewidget.cpp: Get rid of some
+unnecessary repaints.<br><br>
+
+2005-08-17 13:17  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=450051&amp;view=rev">450051</A>]  rdale<br>
+
+ChangeLog, languages/ruby/rubyconfigwidget.cpp,
+languages/ruby/rubyconfigwidgetbase.ui,
+languages/ruby/rubysupport_part.cpp,
+languages/ruby/rubysupport_part.h: * The $SHELL environment
+variable is set to 'irb' for ruby projects. * Added a project
+option to customise the ruby shell * A 'def cd(dir) Dir.chdir dir
+end' line must be added to your .irbrc file to prevent syntax
+errors when konsole changes directory<br><br>
+
+2005-08-16 20:29  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=449834&amp;view=rev">449834</A>]  aclu<br>
+
+lib/catalog/Makefile.am: Make it compile using the configure flags<br><br>
+
+2005-08-12 19:46  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=446198&amp;view=rev">446198</A>]  mueller<br>
+
+Makefile.am, bdb, configure.in.in, kdevelop.m4.in,
+lib/catalog/Makefile.am, lib/catalog/catalog.cpp,
+lib/util/rurl.cpp, lib/util/rurl.h: remove bdb copy and use the
+system supplied one.<br><br>
+
+2005-08-11 09:26  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=445579&amp;view=rev">445579</A>]  escuder<br>
+
+languages/php/phpcodecompletion.cpp: KDevelop PHPSupportPart :
+Correct variable name<br><br>
+
+2005-08-10 15:09  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=445146&amp;view=rev">445146</A>]  escuder<br>
+
+languages/php/phpcodecompletion.cpp,
+languages/php/phpconfigdata.cpp,
+languages/php/phpconfigwidget.cpp, languages/php/phperrorview.cpp,
+languages/php/phperrorview.h, languages/php/phphtmlview.cpp,
+languages/php/phphtmlview.h, languages/php/phpparser.cpp,
+languages/php/phpparser.h, languages/php/phpsupportpart.cpp:
+Kdevelop PHPSupportPart: Reactive some codecompletition, Cleanup
+code<br><br>

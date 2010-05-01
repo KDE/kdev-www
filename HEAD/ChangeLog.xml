@@ -1,0 +1,4617 @@
+<?xml version="1.0"?>
+<log>
+<logentry
+   revision="1056285">
+<author>apaku</author>
+<date>2009-11-29T19:00:51.215609Z</date>
+<paths>
+<path
+   action="M">/trunk/extragear/sdk/kdevelop/projectmanagers/cmake/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/extragear/sdk/kdevelop/languages/cpp/parser/rpp/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/extragear/sdk/kdevelop/projectbuilders/cmakebuilder/CMakeLists.txt</path>
+<path
+   action="M">/trunk/extragear/sdk/kdevelop/languages/cpp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/extragear/sdk/kdevelop/languages/cpp/cppduchain/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/extragear/sdk/kdevelop/languages/cpp/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/extragear/sdk/kdevelop/CMakeLists.txt</path>
+</paths>
+<msg>Use project-specific "root" of source/binary dir, so we properly build as part of sdk.
+</msg>
+</logentry>
+<logentry
+   revision="1056254">
+<author>toma</author>
+<date>2009-11-29T18:08:10.579693Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop</path>
+<path
+   copyfrom-path="/trunk/KDE/kdevelop"
+   copyfrom-rev="1056252"
+   action="A">/trunk/extragear/sdk/kdevelop</path>
+</paths>
+<msg>Move kdevelop to extragear/sdk.
+</msg>
+</logentry>
+<logentry
+   revision="1056070">
+<author>scripty</author>
+<date>2009-11-29T11:06:42.890215Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/kdevcustommakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/kdevqthelp.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.notifyrc</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/cmake_qt4core_qtest.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/cmake_qt4core.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/kdevcppsupport.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevindent.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/cmake_plaincpp.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevastyle.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/cmake_qt4gui.kdevtemplate</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1055627">
+<author>nsams</author>
+<date>2009-11-28T11:51:54.855446Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+</paths>
+<msg>Actually debugController is 0 on shutdown</msg>
+</logentry>
+<logentry
+   revision="1055626">
+<author>nsams</author>
+<date>2009-11-28T11:51:50.086293Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.cpp</path>
+</paths>
+<msg>Fix tests by giving them some more time to update</msg>
+</logentry>
+<logentry
+   revision="1055625">
+<author>nsams</author>
+<date>2009-11-28T11:51:45.353733Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+</paths>
+<msg>Fix crash on shutdown with active DebugSession</msg>
+</logentry>
+<logentry
+   revision="1055624">
+<author>nsams</author>
+<date>2009-11-28T11:50:24.906111Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Remove unused code; currentFrame/Thread is handled by FrameStackModel.</msg>
+</logentry>
+<logentry
+   revision="1055595">
+<author>scripty</author>
+<date>2009-11-28T11:09:55.877550Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1055240">
+<author>vprus</author>
+<date>2009-11-27T16:57:38.686204Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbglobal.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Revert removal of s_appRunning.
+
+This change broke adding breakpoints while application is running,
+and had other bugs. The ideal solution is to add support for non-stop
+mode, including keeping per-thread 'running' state and automatically
+picking a suitable thread to use for inserting breakpoint. However,
+such changes are too big, and we're in feature freeze.
+</msg>
+</logentry>
+<logentry
+   revision="1054788">
+<author>vprus</author>
+<date>2009-11-26T19:49:09.263855Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbcommand.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/gdbmi.h</path>
+</paths>
+<msg>Revert revision 1025632, whereby we switched -stack-list-variables.
+
+That command never hit 7.0 branch, and there are various bikeshedy
+issues on gdb trunk.
+</msg>
+</logentry>
+<logentry
+   revision="1054777">
+<author>dfaure</author>
+<date>2009-11-26T18:50:58.792665Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/implementationhelperitem.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.h</path>
+</paths>
+<msg>Compile with -DQT_STRICT_ITERATORS
+</msg>
+</logentry>
+<logentry
+   revision="1054516">
+<author>zwabel</author>
+<date>2009-11-26T08:51:55.302126Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.h</path>
+</paths>
+<msg>Make code-completion work behind the 'case' keyword. Add some tests.
+Thanks for patch by Olivier.jg
+BUG: 211925
+</msg>
+</logentry>
+<logentry
+   revision="1054290">
+<author>apaku</author>
+<date>2009-11-25T20:34:51.002097Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+</paths>
+<msg>Sourceformatter support was disabled in kdevplatform, so disable the formatters.</msg>
+</logentry>
+<logentry
+   revision="1054108">
+<author>apaku</author>
+<date>2009-11-25T14:35:49.005188Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+</paths>
+<msg>Increase version number for Beta7
+</msg>
+</logentry>
+<logentry
+   revision="1054005">
+<author>zwabel</author>
+<date>2009-11-25T10:28:03.027083Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro-expander.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.h</path>
+</paths>
+<msg>Never temporarily modify macros in the current environment, as it crashes if the macro has been mmapped in read-only mode.
+Instead, insert temporary macros.
+BUG: 216071
+</msg>
+</logentry>
+<logentry
+   revision="1053736">
+<author>zwabel</author>
+<date>2009-11-24T18:19:28.938018Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpplanguagesupport.cpp</path>
+</paths>
+<msg>The document may be deleted during waitForUpdate(), so only use the document for a short time.
+</msg>
+</logentry>
+<logentry
+   revision="1053718">
+<author>danxuliu</author>
+<date>2009-11-24T17:11:00.651899Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop</path>
+</paths>
+<msg>X-KDevelop-Interfaces has to list even those interfaces that are inherited</msg>
+</logentry>
+<logentry
+   revision="1053388">
+<author>mwolff</author>
+<date>2009-11-23T23:43:43.430113Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/qt4.py</path>
+</paths>
+<msg>add QUrl pretty printer, makes printing of KUrls kinda work as well</msg>
+</logentry>
+<logentry
+   revision="1053022">
+<author>zwabel</author>
+<date>2009-11-22T23:55:45.321575Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.cpp</path>
+</paths>
+<msg>Don't run the parser at all when only the "TopDUContext::Empty" feature is requested.</msg>
+</logentry>
+<logentry
+   revision="1053016">
+<author>zwabel</author>
+<date>2009-11-22T23:50:09.853340Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cpppreprocessenvironment.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/environmentmanager.h</path>
+</paths>
+<msg>When merging macro-sets that are already stored in a repository into an environment, insert the repository-macros directly, without copying each macro.
+This speeds up the preprocessing/parsing.</msg>
+</logentry>
+<logentry
+   revision="1052940">
+<author>zwabel</author>
+<date>2009-11-22T20:42:01.122173Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/preprocessjob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/typebuilder.cpp</path>
+</paths>
+<msg>- Implement the "TopDUContext::SimplifiedDeclarationsAndContexts" feature-level in the C++ language support, which allows a simplified processing-level similar to ctags
+- Implement the "TopDUContext::Empty" feature-level which only produces top-context meta-information from the preprocessor (import-structure, macros, etc.)
+- Recursively check whether the required feature-set of child-contexts is satisfied when updating
+</msg>
+</logentry>
+<logentry
+   revision="1052939">
+<author>zwabel</author>
+<date>2009-11-22T20:37:09.842166Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpplanguagesupport.cpp</path>
+</paths>
+<msg>Enforce a duchain update of the switch candidate files when switching between header/source
+</msg>
+</logentry>
+<logentry
+   revision="1052341">
+<author>scripty</author>
+<date>2009-11-21T10:53:45.639306Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1052144">
+<author>apaku</author>
+<date>2009-11-20T21:25:31.400627Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makejob.cpp</path>
+</paths>
+<msg>Enforce english messages for make so our parsing works.</msg>
+</logentry>
+<logentry
+   revision="1052132">
+<author>mmrozowski</author>
+<date>2009-11-20T20:42:06.190210Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/CMakeLists.txt</path>
+</paths>
+<msg>Make QtHelp plugin optional but enabled by default.</msg>
+</logentry>
+<logentry
+   revision="1051915">
+<author>scripty</author>
+<date>2009-11-20T10:33:11.870248Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/kcm_kdev_makebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.notifyrc</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kcm_kdevcmake_settings.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1051657">
+<author>apaku</author>
+<date>2009-11-19T23:35:15.220528Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_preferences.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_formatter.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_formatter.h</path>
+</paths>
+<msg>Fix fill empty lines setting and some related things.
+Patch by Olivier.jg, thanks.
+CCMAIL:olivier.jg@gmail.com
+BUG:213257</msg>
+</logentry>
+<logentry
+   revision="1051649">
+<author>apol</author>
+<date>2009-11-19T22:54:20.271944Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>also provide the range for the deprecated-command problem.
+</msg>
+</logentry>
+<logentry
+   revision="1051647">
+<author>apol</author>
+<date>2009-11-19T22:52:43.222281Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Fix compilation and properly fix last bug.
+</msg>
+</logentry>
+<logentry
+   revision="1051628">
+<author>apol</author>
+<date>2009-11-19T22:15:02.306537Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Provide the Url when setting a problem.
+
+BUG: 187628
+</msg>
+</logentry>
+<logentry
+   revision="1050649">
+<author>zwabel</author>
+<date>2009-11-17T20:21:38.202531Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.cpp</path>
+</paths>
+<msg>Fix code-completion for "ClassType instance(" constructor argument-hints, and potentially fix some other problems.
+Add test.</msg>
+</logentry>
+<logentry
+   revision="1050324">
+<author>zwabel</author>
+<date>2009-11-17T09:18:59.111429Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/lexer.cpp</path>
+</paths>
+<msg>Don't crash in specific circumstances when newlines are involved.
+Thanks for the patch by Olivier.jg
+
+BUG: 200233
+</msg>
+</logentry>
+<logentry
+   revision="1050265">
+<author>apol</author>
+<date>2009-11-16T23:40:41.858829Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>When try compile, if it's already on the cache, use that value.
+That way we will just return the always-true when we don't have a builddir.
+That makes it possible to work with kdebase/workspace.
+
+</msg>
+</logentry>
+<logentry
+   revision="1050264">
+<author>apaku</author>
+<date>2009-11-16T23:38:47.160986Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/cmakejob.cpp</path>
+</paths>
+<msg>If a cmake cache exists already in the builddir run cmake with "." so it
+simply re-reads cmakelists.txt and rebuilds its files based on the
+cache.</msg>
+</logentry>
+<logentry
+   revision="1050198">
+<author>nsams</author>
+<date>2009-11-16T20:54:24.728830Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/qt4.py</path>
+</paths>
+<msg>Implement QList pretty printer QList::node::t() in python to find out
+how QList stores it's data.
+Very hackish solution but I can't do it better.
+
+BUG: 213459</msg>
+</logentry>
+<logentry
+   revision="1050196">
+<author>nsams</author>
+<date>2009-11-16T20:54:13.564932Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.h</path>
+</paths>
+<msg>Remove dead declaration</msg>
+</logentry>
+<logentry
+   revision="1049928">
+<author>zwabel</author>
+<date>2009-11-16T08:30:38.437656Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpputils.cpp</path>
+</paths>
+<msg>Create the access-replacer object statically as a child of the foreground thread, so that its action is executed in the foreground thread as it should be, preventing possible crashes.
+
+BUG: 214713</msg>
+</logentry>
+<logentry
+   revision="1049852">
+<author>apol</author>
+<date>2009-11-16T00:03:20.485880Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Added PROJECT_ variables relative to the binary dir.
+Resolve the possible output directories.
+
+BUG: 203975
+</msg>
+</logentry>
+<logentry
+   revision="1049848">
+<author>zwabel</author>
+<date>2009-11-15T23:55:49.230506Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/makeimplementationprivate.cpp</path>
+</paths>
+<msg>Fix compilation
+</msg>
+</logentry>
+<logentry
+   revision="1049847">
+<author>zwabel</author>
+<date>2009-11-15T23:54:59.804630Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpputils.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/makeimplementationprivate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpputils.cpp</path>
+</paths>
+<msg>- Really compute the standard include-path only once, instead of calling gcc again and again
+- Fix the licence of cpputils.*, the code was just copied from another place.
+</msg>
+</logentry>
+<logentry
+   revision="1049842">
+<author>zwabel</author>
+<date>2009-11-15T23:48:07.147751Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp</path>
+</paths>
+<msg>Properly check whether uses should be built
+</msg>
+</logentry>
+<logentry
+   revision="1049841">
+<author>zwabel</author>
+<date>2009-11-15T23:47:47.832325Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.cpp</path>
+</paths>
+<msg>Don't create error-highlights when no overloaded constructor was found (may also be the default constructor)
+</msg>
+</logentry>
+<logentry
+   revision="1049797">
+<author>apol</author>
+<date>2009-11-15T21:24:42.203762Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.h</path>
+<path
+   action="A">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakehelpdocumentation.cpp</path>
+<path
+   action="A">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakehelpdocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/icmakedocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+<path
+   action="A">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedoc.h</path>
+</paths>
+<msg>Provide a decent initial page for the cmake documentation plugin.
+</msg>
+</logentry>
+<logentry
+   revision="1049781">
+<author>apaku</author>
+<date>2009-11-15T20:56:10.435949Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>If the cmake plugin doesn't depend on the cmake-doc plugin it shouldn't
+expect to find it installed.
+
+(use case: documentation-toolview crashed upon starting, so I deleted
+both doc-plugins, which then crashed cmake-manager while opening a cmake
+file)</msg>
+</logentry>
+<logentry
+   revision="1049648">
+<author>zwabel</author>
+<date>2009-11-15T16:22:35.110734Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cpppreprocessenvironment.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppduchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-engine.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/preprocessjob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/tests/main.cpp</path>
+</paths>
+<msg>Greatly simplify the management of the macros owned by preprocess-environments.
+This should also close some memory-leaks.
+
+CCBUG: 214298</msg>
+</logentry>
+<logentry
+   revision="1049631">
+<author>apaku</author>
+<date>2009-11-15T15:41:56.660847Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeparserutils.cpp</path>
+</paths>
+<msg>Prevent creation of internal dirs in the cwd.
+
+Set a proper temporary working directory when executing a process. If this
+is not done, any data the process creates will end up in KDevelop's
+current working directory.</msg>
+</logentry>
+<logentry
+   revision="1049630">
+<author>apaku</author>
+<date>2009-11-15T15:41:52.662183Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelopui.rc</path>
+</paths>
+<msg>Add a new top-level menu for Sessions.</msg>
+</logentry>
+<logentry
+   revision="1049564">
+<author>apaku</author>
+<date>2009-11-15T13:08:30.370414Z</date>
+<paths>
+<path
+   action="M">/trunk/playground/devtools/kdevelop4-extra-plugins/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/CMakeLists.txt</path>
+<path
+   action="M">/trunk/playground/devtools/kdevelop4-extra-plugins/valgrind/CMakeLists.txt</path>
+<path
+   action="A">/trunk/playground/devtools/kdevelop4-extra-plugins/valgrind/cmake/FindKDevPlatform.cmake</path>
+<path
+   copyfrom-path="/trunk/KDE/kdevelop/debuggers/valgrind"
+   copyfrom-rev="1049557"
+   action="A">/trunk/playground/devtools/kdevelop4-extra-plugins/valgrind</path>
+<path
+   action="A">/trunk/playground/devtools/kdevelop4-extra-plugins/valgrind/cmake</path>
+<path
+   action="D">/trunk/KDE/kdevelop/debuggers/valgrind</path>
+</paths>
+<msg>Move valgrind to playground.
+
+The valgrind plugin is currently broken and none of us has time to fix it up
+and bring it into a releaseable state. So lets move it to playground.
+
+Add the needed boilerplate code to make it compile standalone.
+</msg>
+</logentry>
+<logentry
+   revision="1049301">
+<author>apol</author>
+<date>2009-11-15T00:37:14.742167Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Fixed rename algorithm for cmake.
+Do not rename project root to prevent a crash.
+
+CCMAIL: 214273
+</msg>
+</logentry>
+<logentry
+   revision="1049248">
+<author>apaku</author>
+<date>2009-11-14T22:28:52.613198Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelopui.rc</path>
+</paths>
+<msg>Allow users to display a list of loaded plugins.
+
+Add the new action to the rc file so users can access a list of all
+loaded plugins (even those that cannot be enabled/disabled).</msg>
+</logentry>
+<logentry
+   revision="1048872">
+<author>zwabel</author>
+<date>2009-11-14T03:05:44.686195Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.h</path>
+</paths>
+<msg>- Fix a duchain problem where sometimes some uses were not built within an initializer. Specifically this happened when the initializer was mis-parsed as a parameter-declaration-clause.
+- Add test, and todo to also fix constructor-uses for that case.</msg>
+</logentry>
+<logentry
+   revision="1048862">
+<author>zwabel</author>
+<date>2009-11-14T02:19:52.863244Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.h</path>
+</paths>
+<msg>Improve the use-building for constructors: Make it work in nearly all known syntactical forms. In order to achieve this, the handling of SimpleDeclaration was moved into ExpressionVisitor instead of UseBuilder for declarations with init-declarators.</msg>
+</logentry>
+<logentry
+   revision="1048757">
+<author>apol</author>
+<date>2009-11-13T22:14:27.512839Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+</paths>
+<msg>save the properties documentation for cmake.
+</msg>
+</logentry>
+<logentry
+   revision="1048756">
+<author>apol</author>
+<date>2009-11-13T22:14:07.148649Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>properly update the file set while renaming</msg>
+</logentry>
+<logentry
+   revision="1048497">
+<author>apaku</author>
+<date>2009-11-13T13:00:48.090295Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/cmakejob.cpp</path>
+</paths>
+<msg>Show the cmake commandline thats being executed.
+</msg>
+</logentry>
+<logentry
+   revision="1048471">
+<author>coles</author>
+<date>2009-11-13T12:02:35.658381Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/kdevvalgrind.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop</path>
+</paths>
+<msg>Assigning icons to plugins for when they appear in the 'Configure Plugins' view.
+
+- for kdevcmakebuilder, it was attempting to use 'gear', which is actually called 'system-run'.
+- valgrind, in lieu of anything better on offer, gets the 'debugger' icon, given that's the category in which it falls.
+
+</msg>
+</logentry>
+<logentry
+   revision="1047756">
+<author>apol</author>
+<date>2009-11-12T02:13:13.967209Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecondition.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakecondition_test.cpp</path>
+</paths>
+<msg>Fix conditions. When undefined cmake just allows 1, guess why.
+</msg>
+</logentry>
+<logentry
+   revision="1047751">
+<author>apol</author>
+<date>2009-11-12T01:25:26.946275Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+</paths>
+<msg>Adapt to kdevplatform changes.
+Adds a very simple home page.
+</msg>
+</logentry>
+<logentry
+   revision="1047750">
+<author>apol</author>
+<date>2009-11-12T01:24:58.965464Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpdocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpdocumentation.cpp</path>
+</paths>
+<msg>Adapt to kdevplatform changes.
+Adds an index.
+</msg>
+</logentry>
+<logentry
+   revision="1047440">
+<author>bbroeksema</author>
+<date>2009-11-11T10:26:33.060653Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+</paths>
+<msg>I forgot one test case for ctor uses.
+</msg>
+</logentry>
+<logentry
+   revision="1047167">
+<author>bbroeksema</author>
+<date>2009-11-10T16:23:27.155983Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.h</path>
+</paths>
+<msg>Add a test for different kinds of constructor uses.
+</msg>
+</logentry>
+<logentry
+   revision="1047166">
+<author>zwabel</author>
+<date>2009-11-10T16:22:31.838618Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+</paths>
+<msg>Fix some problems during code-completion: Code-completion could become very slow for example behind "for(int a = 0;a&lt;b-&gt;" due to a quadratic expansion of code completion contexts. Now parent-contexts are only created if they are actually different from the current context.</msg>
+</logentry>
+<logentry
+   revision="1047029">
+<author>scripty</author>
+<date>2009-11-10T10:20:02.890380Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/kdevvalgrind.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1046370">
+<author>zwabel</author>
+<date>2009-11-08T14:40:04.133123Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionparser.h</path>
+</paths>
+<msg>Add some info about required duchain locking</msg>
+</logentry>
+<logentry
+   revision="1046367">
+<author>zwabel</author>
+<date>2009-11-08T14:36:49.950058Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp</path>
+</paths>
+<msg>Lock the whole duchain for reading before evaluating expressions, so contexts can not disappear during the evaluation</msg>
+</logentry>
+<logentry
+   revision="1046366">
+<author>zwabel</author>
+<date>2009-11-08T14:32:23.367261Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionparser.cpp</path>
+</paths>
+<msg>Don't crash if a context disappears early while evaluating a type
+BUG: 213641</msg>
+</logentry>
+<logentry
+   revision="1045849">
+<author>zwabel</author>
+<date>2009-11-06T21:18:49.012216Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/ast.h</path>
+</paths>
+<msg>Add copyright notice
+</msg>
+</logentry>
+<logentry
+   revision="1045848">
+<author>zwabel</author>
+<date>2009-11-06T21:18:29.210983Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/codeassistant.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/codeassistant.h</path>
+</paths>
+<msg>Make the connections non-queued, and reach the event on through a QPointer, to prevent a possible crash in eventuallyStartAssistant</msg>
+</logentry>
+<logentry
+   revision="1045646">
+<author>mwolff</author>
+<date>2009-11-06T13:37:55.662808Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/qt4.py</path>
+</paths>
+<msg>include the type of the contents when printing the identifier for a container</msg>
+</logentry>
+<logentry
+   revision="1045629">
+<author>mwolff</author>
+<date>2009-11-06T12:02:04.691221Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/qt4.py</path>
+</paths>
+<msg>add pretty pritner for QHash - please test</msg>
+</logentry>
+<logentry
+   revision="1045577">
+<author>scripty</author>
+<date>2009-11-06T10:10:16.685305Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/kdevcustommakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/kcm_kdev_makebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.notifyrc</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/kdevvalgrind.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/kdevqthelp.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/x-kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/cmake_qt4core.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/kdevcppsupport.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/cmake_qt4gui.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/cmake_plaincpp.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kcm_kdevcmake_settings.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1044930">
+<author>apol</author>
+<date>2009-11-04T22:40:57.066973Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecondition.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecondition.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakecondition_test.cpp</path>
+</paths>
+<msg>Evaluate on values too in cmake condition.
+
+BUG: 212988
+</msg>
+</logentry>
+<logentry
+   revision="1044888">
+<author>apol</author>
+<date>2009-11-04T21:16:10.295458Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeast.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeast.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeastvisitor.h</path>
+</paths>
+<msg>Add missing command (get_dir_props).
+
+</msg>
+</logentry>
+<logentry
+   revision="1044812">
+<author>apol</author>
+<date>2009-11-04T17:46:30.195426Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Always return 1 when adding an executable so that we don't get caught in an infinite loop.
+</msg>
+</logentry>
+<logentry
+   revision="1044721">
+<author>zwabel</author>
+<date>2009-11-04T14:39:44.661417Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/signatureassistant.cpp</path>
+</paths>
+<msg>Fix one more possible crash during editing coming from the signature assistant (the size of 'defaultParams' has to match the size of 'parameters')
+</msg>
+</logentry>
+<logentry
+   revision="1044262">
+<author>scripty</author>
+<date>2009-11-03T10:24:29.467100Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/kdevcustommakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/kcm_kdev_makebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/kdevqthelp.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.notifyrc</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/cmake_qt4core_qtest.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/cmake_qt4core.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/kdevcppsupport.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevindent.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/kdevmakebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/cmake_plaincpp.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/kdevvalgrind.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/x-kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevastyle.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/cmake_qt4gui.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kcm_kdevcmake_settings.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1044140">
+<author>apol</author>
+<date>2009-11-03T08:21:52.621893Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeloadprojecttest.cpp</path>
+</paths>
+<msg>fix paths</msg>
+</logentry>
+<logentry
+   revision="1044139">
+<author>apol</author>
+<date>2009-11-03T08:18:52.433786Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeloadprojecttest.cpp</path>
+</paths>
+<msg>make test runnable without being andreas.
+</msg>
+</logentry>
+<logentry
+   revision="1044135">
+<author>apol</author>
+<date>2009-11-03T07:46:25.567499Z</date>
+<paths>
+<path
+   action="A">/trunk/KDE/kdevelop/documentation/qthelp/qthelpdocumentation.h</path>
+<path
+   action="A">/trunk/KDE/kdevelop/documentation/qthelp/qthelpdocumentation.cpp</path>
+</paths>
+<msg>add missing files from last commit</msg>
+</logentry>
+<logentry
+   revision="1044134">
+<author>apol</author>
+<date>2009-11-03T07:40:30.964794Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.h</path>
+</paths>
+<msg>adapt to kdevplatform changes
+</msg>
+</logentry>
+<logentry
+   revision="1044133">
+<author>apol</author>
+<date>2009-11-03T07:39:05.680876Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.h</path>
+</paths>
+<msg>Add internal QtHelp navigation history adapting to kdevplatform changes
+</msg>
+</logentry>
+<logentry
+   revision="1044086">
+<author>zwabel</author>
+<date>2009-11-02T23:52:20.312914Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/signatureassistant.cpp</path>
+</paths>
+<msg>Fix possible crash in signature assistant
+BUG: 212826
+</msg>
+</logentry>
+<logentry
+   revision="1043944">
+<author>mwolff</author>
+<date>2009-11-02T18:13:15.724532Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp</path>
+</paths>
+<msg>adapt to kdevplatform changes</msg>
+</logentry>
+<logentry
+   revision="1043893">
+<author>apaku</author>
+<date>2009-11-02T16:06:37.074068Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Be more robust if people don't use execute_process(COMMAND), this results in an empty commands-list.
+</msg>
+</logentry>
+<logentry
+   revision="1043881">
+<author>zwabel</author>
+<date>2009-11-02T15:29:29.691736Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp</path>
+</paths>
+<msg>Do not show nameless declarations in the completion list</msg>
+</logentry>
+<logentry
+   revision="1043879">
+<author>zwabel</author>
+<date>2009-11-02T15:27:44.642574Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/setuphelpers.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/setuphelpers.cpp</path>
+</paths>
+<msg>Add copyright notice</msg>
+</logentry>
+<logentry
+   revision="1043806">
+<author>bbroeksema</author>
+<date>2009-11-02T11:30:19.486500Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.cpp</path>
+</paths>
+<msg>Fix a test to get rid of invalid warnings.
+</msg>
+</logentry>
+<logentry
+   revision="1043714">
+<author>apaku</author>
+<date>2009-11-02T10:11:33.313389Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makejob.cpp</path>
+</paths>
+<msg>Forgot to adjust this place when switching from url back to string for the makeBinary.
+</msg>
+</logentry>
+<logentry
+   revision="1043592">
+<author>apaku</author>
+<date>2009-11-01T22:21:48.158699Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makeconfig.ui</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makebuilderconfig.kcfg</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makebuilderpreferences.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makebuilderpreferences.h</path>
+</paths>
+<msg>A string value is better for the makeBinary so we can properly support a
+plain name for the binary that we then search in PATH. This is a bit
+more code, but makes it clear that this item is a bit custom.</msg>
+</logentry>
+<logentry
+   revision="1043532">
+<author>zwabel</author>
+<date>2009-11-01T19:18:23.001701Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppduchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/sourcemanipulation.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppduchain.h</path>
+</paths>
+<msg>- Add a function that strips all unneeded prefixes from a qualified identifier, and also recognized whether the identifier identifies a namespace that is imported into the current context.
+- Be more intelligent when adding "namespace Namespace {...}" during source code insertion, for example while creating a definition. The namespace is not added any more if it is already imported through a "using namespace ..." directive.</msg>
+</logentry>
+<logentry
+   revision="1043530">
+<author>zwabel</author>
+<date>2009-11-01T19:15:03.632184Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/signatureassistant.cpp</path>
+</paths>
+<msg>Never transfer the default-parameters between a definition and a declaration. They are only set on the declaration. This fixes a recent regression where default-parameters either were deleted from the declaration, or were duplicated from the declaration to the definition.</msg>
+</logentry>
+<logentry
+   revision="1043528">
+<author>zwabel</author>
+<date>2009-11-01T19:12:38.991065Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodegen.cpp</path>
+</paths>
+<msg>Move code out of the assertion</msg>
+</logentry>
+<logentry
+   revision="1043121">
+<author>apol</author>
+<date>2009-10-31T20:07:35.367239Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Do not just tell the project management that the file is renamed, actually rename the file too.
+</msg>
+</logentry>
+<logentry
+   revision="1042819">
+<author>apaku</author>
+<date>2009-10-30T19:37:03.020112Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/main.cpp</path>
+</paths>
+<msg>build++</msg>
+</logentry>
+<logentry
+   revision="1042806">
+<author>apaku</author>
+<date>2009-10-30T18:41:07.504185Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/app/splashscreen.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/CMakeLists.txt</path>
+<path
+   action="D">/trunk/KDE/kdevelop/app/splashscreen.h</path>
+</paths>
+<msg>Remove dead splashscreen code.</msg>
+</logentry>
+<logentry
+   revision="1042805">
+<author>apaku</author>
+<date>2009-10-30T18:41:03.745379Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/main.cpp</path>
+</paths>
+<msg>Re-Add the display of the splash screen. Its shown only very shortly
+now, but still its nice IMHO.</msg>
+</logentry>
+<logentry
+   revision="1042800">
+<author>apaku</author>
+<date>2009-10-30T18:30:35.691325Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/pics/misc/kdevelop-splash.png</path>
+</paths>
+<msg>Update the splash screen with an image made by Ruan Strydom, thanks a
+lot.</msg>
+</logentry>
+<logentry
+   revision="1042799">
+<author>apaku</author>
+<date>2009-10-30T18:30:30.838640Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/pics/misc/CMakeLists.txt</path>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/misc/kdevassistant-splash.png</path>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/misc/kdevdesigner-splash.png</path>
+</paths>
+<msg>Remove old unused dead splash screens</msg>
+</logentry>
+<logentry
+   revision="1042795">
+<author>apaku</author>
+<date>2009-10-30T18:24:58.749124Z</date>
+<paths>
+<path
+   action="A">/trunk/KDE/kdevelop/cmake/modules/FindKDevPlatform.cmake</path>
+</paths>
+<msg>Add FindKDevPlatform.cmake here as I'll be removing it from kdevplatform
+soon. Reasoning is that the cmake-module should be in kdelibs (maybe
+even upstream cmake) and not installed by kdevplatform itself, however
+kdevelop is supposed to be buildable with kde4.3 which won't have the
+cmake module yet, hence provide a fallback here.</msg>
+</logentry>
+<logentry
+   revision="1042606">
+<author>sengels</author>
+<date>2009-10-30T09:38:26.991647Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makejob.cpp</path>
+</paths>
+<msg>what comes out there is a Url and not a string</msg>
+</logentry>
+<logentry
+   revision="1042604">
+<author>sengels</author>
+<date>2009-10-30T09:36:53.177343Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+</paths>
+<msg>remove whitespaces from documentation</msg>
+</logentry>
+<logentry
+   revision="1041948">
+<author>apol</author>
+<date>2009-10-28T21:28:49.480177Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Add some first version of CMake file and folder renaming.
+Tested only in dummy projects.
+</msg>
+</logentry>
+<logentry
+   revision="1041926">
+<author>apol</author>
+<date>2009-10-28T21:02:27.096114Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakedebugvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeast.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeast.h</path>
+</paths>
+<msg>Fix find_package parsing.
+</msg>
+</logentry>
+<logentry
+   revision="1041877">
+<author>apol</author>
+<date>2009-10-28T18:26:36.718391Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+</paths>
+<msg>Let QtHelp decide when to setup the documentation.
+Should leverage the plugin initialization.
+</msg>
+</logentry>
+<logentry
+   revision="1041853">
+<author>sengels</author>
+<date>2009-10-28T16:56:42.225050Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makebuilderconfig.kcfg</path>
+</paths>
+<msg>save as Url</msg>
+</logentry>
+<logentry
+   revision="1041109">
+<author>bbroeksema</author>
+<date>2009-10-27T11:46:56.904576Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/ast.h</path>
+<path
+   action="A">/trunk/KDE/kdevelop/languages/cpp/parser/parentvisitor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.h</path>
+<path
+   action="A">/trunk/KDE/kdevelop/languages/cpp/parser/parentvisitor.cpp</path>
+</paths>
+<msg>Add a new visitor that sets the parent of the AST nodes in the tree.
+This visitor is only executed when the AST of a topducontext is
+kept.
+</msg>
+</logentry>
+<logentry
+   revision="1040742">
+<author>zwabel</author>
+<date>2009-10-26T19:24:11.098228Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+</paths>
+<msg>Extend the test a little
+</msg>
+</logentry>
+<logentry
+   revision="1040741">
+<author>zwabel</author>
+<date>2009-10-26T19:13:11.515612Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+</paths>
+<msg>Add a test for the fixed code completion int C++ behind a used '\"' character
+</msg>
+</logentry>
+<logentry
+   revision="1040309">
+<author>sengels</author>
+<date>2009-10-26T03:57:33.442962Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+</paths>
+<msg>check for documents in both doc/ and doc/qch/
+disable to much output</msg>
+</logentry>
+<logentry
+   revision="1040298">
+<author>apol</author>
+<date>2009-10-26T00:45:22.206656Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.h</path>
+</paths>
+<msg>Fix doc line.
+</msg>
+</logentry>
+<logentry
+   revision="1040293">
+<author>apol</author>
+<date>2009-10-26T00:30:25.552813Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.h</path>
+</paths>
+<msg>missing changes from last commit</msg>
+</logentry>
+<logentry
+   revision="1040283">
+<author>apol</author>
+<date>2009-10-25T23:27:53.633796Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Don't add the already specified (but not created) build directories to the cmake project tree.
+
+BUG: 205765
+</msg>
+</logentry>
+<logentry
+   revision="1039838">
+<author>zwabel</author>
+<date>2009-10-24T18:30:09.388807Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp</path>
+</paths>
+<msg>Don't crash when stopping KDevelop while the C++ duchain builder is still running</msg>
+</logentry>
+<logentry
+   revision="1039722">
+<author>zwabel</author>
+<date>2009-10-24T12:40:57.973905Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/signatureassistant.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/signatureassistant.h</path>
+</paths>
+<msg>Solve several problems in the signature-change assistant. Argument-names are now updated as well, but uses are not renamed yet.
+
+BUG: 201262
+Thanks for patch by Olivier.jg</msg>
+</logentry>
+<logentry
+   revision="1039712">
+<author>zwabel</author>
+<date>2009-10-24T12:23:11.140898Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/ast.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parser.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/name_compiler.cpp</path>
+</paths>
+<msg>Create and show argument declarations for ellipsis, aka '...'
+BUG: 98861
+Thanks for patch by Olivier.jg</msg>
+</logentry>
+<logentry
+   revision="1038561">
+<author>apaku</author>
+<date>2009-10-21T12:21:05.617861Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/CMakeLists.txt</path>
+</paths>
+<msg>Wow, I wouldn't have thought that we had so many broken link-lines in our codebase.
+</msg>
+</logentry>
+<logentry
+   revision="1038540">
+<author>apaku</author>
+<date>2009-10-21T11:18:42.977411Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/CMakeLists.txt</path>
+</paths>
+<msg>external libraries need to be used via ${variablename} not by trying to guess the imported targetname.
+</msg>
+</logentry>
+<logentry
+   revision="1038368">
+<author>apaku</author>
+<date>2009-10-21T07:50:56.561096Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Use the executable directory as working dir, if no working dir is set or
+the working dir is not valid. Patch by Olivier JG, thanks.
+BUG:203979
+CCMAIL:olivier.jg@gmail.com</msg>
+</logentry>
+<logentry
+   revision="1038224">
+<author>apaku</author>
+<date>2009-10-20T21:07:52.516481Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/headergen/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/CMakeLists.txt</path>
+</paths>
+<msg>Rename the library variables to _LIBRARIES as suggested by Alexander, it
+better reflects what they contain as they'll produce link-lines that
+also include their interface-libs</msg>
+</logentry>
+<logentry
+   revision="1037787">
+<author>sengels</author>
+<date>2009-10-20T01:03:48.435840Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/tests/test_pool.cpp</path>
+</paths>
+<msg>disable building this part of the test for now</msg>
+</logentry>
+<logentry
+   revision="1037691">
+<author>aacid</author>
+<date>2009-10-19T19:59:59.667611Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/main.cpp</path>
+</paths>
+<msg>fix typo found by marce villarino
+</msg>
+</logentry>
+<logentry
+   revision="1037686">
+<author>aacid</author>
+<date>2009-10-19T19:53:35.533903Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/main.cpp</path>
+</paths>
+<msg>fix typo on a commented string, by marce villarino
+</msg>
+</logentry>
+<logentry
+   revision="1037672">
+<author>apaku</author>
+<date>2009-10-19T19:03:58.919014Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakebuilddirchooser.cpp</path>
+</paths>
+<msg>Disallow choosing a relative directory for the builddir as this is not
+supported currently.
+BUG:204736</msg>
+</logentry>
+<logentry
+   revision="1037246">
+<author>mwolff</author>
+<date>2009-10-18T17:30:36.531371Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/kde4.py</path>
+</paths>
+<msg>add pretty printer for KTextEditor::Range</msg>
+</logentry>
+<logentry
+   revision="1037241">
+<author>mwolff</author>
+<date>2009-10-18T17:14:37.319232Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/CMakeLists.txt</path>
+<path
+   action="A">/trunk/KDE/kdevelop/debuggers/gdb/printers/kde4.py</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/gdbinit</path>
+</paths>
+<msg>Add stub for KDE4 pretty printers, so far only support KTextEditor::Cursor</msg>
+</logentry>
+<logentry
+   revision="1037197">
+<author>nsams</author>
+<date>2009-10-18T15:02:42.697056Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevplatform/debugger/variable/variablecollection.cpp</path>
+</paths>
+<msg>Don't attach in Locals::updateLocals, instead leave the call to the plugin.
+Needed because for xdebug we don't need it as the value/children is avaliable directly.</msg>
+</logentry>
+<logentry
+   revision="1037195">
+<author>nsams</author>
+<date>2009-10-18T15:01:59.518345Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Increase required gdb version to 7.0.0 as it's released</msg>
+</logentry>
+<logentry
+   revision="1037167">
+<author>apaku</author>
+<date>2009-10-18T13:42:05.498580Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/tools/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+</paths>
+<msg>REmove the now-empty tools subdir.</msg>
+</logentry>
+<logentry
+   revision="1037163">
+<author>apaku</author>
+<date>2009-10-18T13:38:19.195819Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/tools/grepview</path>
+<path
+   copyfrom-path="/trunk/KDE/kdevelop/tools/grepview"
+   copyfrom-rev="1037162"
+   action="A">/trunk/KDE/kdevplatform/plugins/grepview</path>
+</paths>
+<msg>Grepview is also a general purpose plugin, so lets move it up to the platform.
+</msg>
+</logentry>
+<logentry
+   revision="1037160">
+<author>apaku</author>
+<date>2009-10-18T13:37:33.387030Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/kdevgrepview.rc</path>
+</paths>
+<msg>Use the right group for find-in-files.</msg>
+</logentry>
+<logentry
+   revision="1037115">
+<author>apaku</author>
+<date>2009-10-18T12:23:11.814311Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpplanguagesupport.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/main.cpp</path>
+</paths>
+<msg>Remove last remainings of veritas</msg>
+</logentry>
+<logentry
+   revision="1037027">
+<author>nsams</author>
+<date>2009-10-18T10:15:41.540521Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/qt4.py</path>
+</paths>
+<msg>Fix QString pretty printer</msg>
+</logentry>
+<logentry
+   revision="1036822">
+<author>sengels</author>
+<date>2009-10-17T21:19:50.506100Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.h</path>
+</paths>
+<msg>fix msvc similar to contextbuilder.h</msg>
+</logentry>
+<logentry
+   revision="1036619">
+<author>apaku</author>
+<date>2009-10-17T13:44:49.395459Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+</paths>
+<msg>Increase the version and the kdevplatform requirement</msg>
+</logentry>
+<logentry
+   revision="1036612">
+<author>apaku</author>
+<date>2009-10-17T13:40:26.206911Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/CMakeLists.txt</path>
+</paths>
+<msg>No documentview here anymore.</msg>
+</logentry>
+<logentry
+   revision="1036607">
+<author>apaku</author>
+<date>2009-10-17T13:37:41.509447Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/tools/documentview</path>
+<path
+   copyfrom-path="/trunk/KDE/kdevelop/tools/documentview"
+   copyfrom-rev="1036606"
+   action="A">/trunk/KDE/kdevplatform/plugins/documentview</path>
+</paths>
+<msg>Move this plugin to the platform as its useful for other kdevplatform apps too.
+</msg>
+</logentry>
+<logentry
+   revision="1036580">
+<author>apaku</author>
+<date>2009-10-17T13:19:43.579972Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpplanguagesupport.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpplanguagesupport.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/CMakeLists.txt</path>
+</paths>
+<msg>Build fixups after the removal of several plugins</msg>
+</logentry>
+<logentry
+   revision="1036576">
+<author>apaku</author>
+<date>2009-10-17T13:13:20.934011Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/tools/coverage</path>
+<path
+   copyfrom-path="/trunk/KDE/kdevelop/tools/coverage"
+   copyfrom-rev="1036575"
+   action="A">/trunk/playground/devtools/kdevelop4-extra-plugins/coverage</path>
+</paths>
+<msg>Move this to playground too as it also depends on the unit-testing stuff.
+</msg>
+</logentry>
+<logentry
+   revision="1036574">
+<author>apaku</author>
+<date>2009-10-17T13:09:28.660155Z</date>
+<paths>
+<path
+   copyfrom-path="/trunk/KDE/kdevelop/languages/cpp/veritas"
+   copyfrom-rev="1036573"
+   action="A">/trunk/playground/devtools/kdevelop4-extra-plugins/veritascpp</path>
+<path
+   action="D">/trunk/KDE/kdevelop/languages/cpp/veritas</path>
+</paths>
+<msg>Move the veritas-stuff (unit-testing) for C++ to playground. Its also unmaintained and I'd like to get rid of the whole veritas library for our first release.
+</msg>
+</logentry>
+<logentry
+   revision="1036573">
+<author>apaku</author>
+<date>2009-10-17T13:08:27.426991Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/xtest</path>
+<path
+   copyfrom-path="/trunk/KDE/kdevelop/xtest"
+   copyfrom-rev="1036572"
+   action="A">/trunk/playground/devtools/kdevelop4-extra-plugins/xtest</path>
+</paths>
+<msg>Move the xtest plugin to playground, its been unmaintained since half a year and has a couple of problems.
+</msg>
+</logentry>
+<logentry
+   revision="1036569">
+<author>apaku</author>
+<date>2009-10-17T12:59:26.338547Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/model.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/processselection.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/templatedeclaration.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/missingincludemodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/model.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/missingincludemodel.h</path>
+</paths>
+<msg>Remove now-useless version checks for KDE 4.2/Qt4.4</msg>
+</logentry>
+<logentry
+   revision="1036567">
+<author>apaku</author>
+<date>2009-10-17T12:59:14.972606Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+</paths>
+<msg>Increase requirement to KDE 4.3</msg>
+</logentry>
+<logentry
+   revision="1036505">
+<author>apaku</author>
+<date>2009-10-17T10:45:25.308311Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/cmakebuilder.cpp</path>
+</paths>
+<msg>Small Qt gotcha: when specifying 1 exclusive filter (like NoDotAndDotDot) in
+QDir::entryList() then you need to also specify an inclusive filter,
+else the resulting list will be empty.
+Patch by Olivier.jg
+CCMAIL: olivier.jg@gmail.com
+BUG:208694</msg>
+</logentry>
+<logentry
+   revision="1035506">
+<author>scripty</author>
+<date>2009-10-15T09:19:39.347186Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1035219">
+<author>apol</author>
+<date>2009-10-14T15:01:49.636715Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeast.cpp</path>
+</paths>
+<msg>Use the proper argument when checking the package version.
+
+BUG: 210415
+</msg>
+</logentry>
+<logentry
+   revision="1034466">
+<author>nsams</author>
+<date>2009-10-12T19:40:30.131795Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+</paths>
+<msg>Don't crash when exiting kdevelop with running debug session.
+BUG: 210294</msg>
+</logentry>
+<logentry
+   revision="1034251">
+<author>scripty</author>
+<date>2009-10-12T09:42:21.148506Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/kdevcustommakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/kdevqthelp.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.notifyrc</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/kdevcppsupport.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevindent.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/kdevqtest.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/kcm_kdev_lcovsettings.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/kdevmakebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/cmake_plaincpp.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/kdevgrepview.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/documentview/kdevdocumentview.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/kdevcoverage.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevastyle.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/cmake_qt4gui.kdevtemplate</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1033902">
+<author>nsams</author>
+<date>2009-10-11T14:19:18.848691Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevplatform/debugger/variable/variablecollection.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevplatform/debugger/interfaces/ivariablecontroller.cpp</path>
+</paths>
+<msg>Move code that marks watches out of scope when debugger ended into platform</msg>
+</logentry>
+<logentry
+   revision="1033900">
+<author>nsams</author>
+<date>2009-10-11T14:18:33.602259Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.h</path>
+</paths>
+<msg>Remove unused variable</msg>
+</logentry>
+<logentry
+   revision="1033827">
+<author>scripty</author>
+<date>2009-10-11T09:43:15.817257Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1033772">
+<author>segato</author>
+<date>2009-10-11T00:38:39.429590Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parser.h</path>
+</paths>
+<msg>use stdext only with msvc</msg>
+</logentry>
+<logentry
+   revision="1032918">
+<author>mwolff</author>
+<date>2009-10-08T21:20:36.295900Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>fix gdb version detection for versions like '7.0', i.e. _not_ 'X.Y.Z', but 'X.Y' only
+please test</msg>
+</logentry>
+<logentry
+   revision="1032749">
+<author>apol</author>
+<date>2009-10-08T11:56:13.100636Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+</paths>
+<msg>Do not crash when trying to get the identifier from a declaration that doesn't exist anymore.
+I wonder what should be the proper reaction, though.
+
+BUG: 209843
+</msg>
+</logentry>
+<logentry
+   revision="1032222">
+<author>scripty</author>
+<date>2009-10-07T10:10:36.618112Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/kdevgrepview.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.notifyrc</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1031832">
+<author>scripty</author>
+<date>2009-10-06T08:48:00.886758Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1031356">
+<author>stikonas</author>
+<date>2009-10-04T19:26:05.644964Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4appview.cpp</path>
+</paths>
+<msg>i18n: pluralize the label in kde4app.</msg>
+</logentry>
+<logentry
+   revision="1031177">
+<author>mlaurent</author>
+<date>2009-10-04T09:37:23.393460Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/tests/fakedetailswidget.cpp</path>
+</paths>
+<msg>not necessary
+</msg>
+</logentry>
+<logentry
+   revision="1030057">
+<author>apaku</author>
+<date>2009-10-01T13:15:45.923606Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Build++</msg>
+</logentry>
+<logentry
+   revision="1030041">
+<author>apaku</author>
+<date>2009-10-01T12:49:52.591473Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Also search through CMAKE_PREFIX_PATH for libraries</msg>
+</logentry>
+<logentry
+   revision="1030040">
+<author>apaku</author>
+<date>2009-10-01T12:49:42.877309Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>No need to search under &lt;prefix&gt;/ for files, cmake docs explicitly state
+that the search is done only in &lt;prefix&gt;/include/</msg>
+</logentry>
+<logentry
+   revision="1030008">
+<author>apol</author>
+<date>2009-10-01T11:35:40.268496Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Do not consider /include as the suffix but part of the prefix.
+Adapted these changes to find paths and files.
+</msg>
+</logentry>
+<logentry
+   revision="1029979">
+<author>bbroeksema</author>
+<date>2009-10-01T09:57:56.586839Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_expressionparser.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/type_visitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_expressionparser.h</path>
+</paths>
+<msg>Fix a bug in the expression and type visitor. Const and volatile modifiers where not
+set correctly for simple types.
+
+@see http://reviewboard.kde.org/r/1742/
+</msg>
+</logentry>
+<logentry
+   revision="1029826">
+<author>apol</author>
+<date>2009-09-30T20:25:59.964730Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Fix last commit.
+- Do not use QDir::separator, it's just wrong, Qt deals with it.
+- Adapt to the current infrastructure.
+
+Thanks apaku for the fix, though :)
+</msg>
+</logentry>
+<logentry
+   revision="1029795">
+<author>apaku</author>
+<date>2009-09-30T18:51:32.091370Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Compile++</msg>
+</logentry>
+<logentry
+   revision="1029783">
+<author>apaku</author>
+<date>2009-09-30T18:23:18.340870Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Really fix find_path searches for headers installed into a "well known"
+prefix.
+BUG:205055</msg>
+</logentry>
+<logentry
+   revision="1028956">
+<author>bbroeksema</author>
+<date>2009-09-28T16:04:12.278460Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.cpp</path>
+</paths>
+<msg>Remove some more debug statements (which I introduced myself).w
+</msg>
+</logentry>
+<logentry
+   revision="1028951">
+<author>bbroeksema</author>
+<date>2009-09-28T15:52:29.683957Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.cpp</path>
+</paths>
+<msg>Disable a debug statement that causes a crash because the DUChain is not locked.
+
+A better fix might be to find out why it is not locked (assuming that it should
+be locked at that point). However, I'm not shure if it should be guaranteed that
+the DUChain is locked in mapAstDuChain.
+</msg>
+</logentry>
+<logentry
+   revision="1028923">
+<author>bbroeksema</author>
+<date>2009-09-28T13:47:28.663723Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/declarationbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/declarationbuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parsesession.h</path>
+<path
+   action="M">/trunk/KDE/kdevplatform/language/duchain/builders/abstractusebuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.cpp</path>
+</paths>
+<msg>Implement mapping between Uses and AST nodes.
+</msg>
+</logentry>
+<logentry
+   revision="1028207">
+<author>scripty</author>
+<date>2009-09-26T09:10:06.405992Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1027543">
+<author>scripty</author>
+<date>2009-09-24T09:35:25.731841Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1026952">
+<author>apol</author>
+<date>2009-09-22T22:36:49.354877Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+</paths>
+<msg>Remove useless verbosity
+</msg>
+</logentry>
+<logentry
+   revision="1026950">
+<author>apol</author>
+<date>2009-09-22T22:32:16.156461Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.h</path>
+</paths>
+<msg>Use kdevplatform infrastructure for navigation inside the plugin view.
+</msg>
+</logentry>
+<logentry
+   revision="1026920">
+<author>apol</author>
+<date>2009-09-22T20:37:32.720953Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.h</path>
+</paths>
+<msg>Show alternatives for pages that have multiple options.
+Properly provide the good keyword in case of index search.
+</msg>
+</logentry>
+<logentry
+   revision="1026692">
+<author>scripty</author>
+<date>2009-09-22T09:06:53.102367Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1026358">
+<author>apol</author>
+<date>2009-09-21T15:11:25.566951Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+</paths>
+<msg>Properly retrieve the index data.
+</msg>
+</logentry>
+<logentry
+   revision="1026165">
+<author>zwabel</author>
+<date>2009-09-20T22:17:33.865144Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppduchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppducontext.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/templatedeclaration.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppduchain.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppducontext.h</path>
+</paths>
+<msg>Limit the maximum followed inheritance depth during search to 20, to prevent a crash due to endless recursion in endless inheritance chains
+BUG: 193114
+</msg>
+</logentry>
+<logentry
+   revision="1026152">
+<author>apol</author>
+<date>2009-09-20T21:32:44.144517Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+</paths>
+<msg>Properly set the plugin extensions
+</msg>
+</logentry>
+<logentry
+   revision="1026151">
+<author>apol</author>
+<date>2009-09-20T21:24:39.695497Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.h</path>
+<path
+   action="A">/trunk/KDE/kdevelop/projectmanagers/cmake/icmakedocumentation.h</path>
+<path
+   action="A">/trunk/KDE/kdevelop/projectmanagers/cmake/icmakemanager.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+<path
+   action="A">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Separe the cmake plugin into a documentation plugin and the projectmanager
+</msg>
+</logentry>
+<logentry
+   revision="1026040">
+<author>apol</author>
+<date>2009-09-20T15:30:48.033631Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+</paths>
+<msg>Fix index building for CMake documentation.
+</msg>
+</logentry>
+<logentry
+   revision="1025632">
+<author>vprus</author>
+<date>2009-09-19T10:20:33.044504Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbcommand.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/gdbmi.h</path>
+</paths>
+<msg>Use -stack-list-variables, as opposed to two commands.
+This requires CVS HEAD of GDB as of today.
+</msg>
+</logentry>
+<logentry
+   revision="1025631">
+<author>vprus</author>
+<date>2009-09-19T10:19:46.920049Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/print_pointers/print_pointers.cpp</path>
+</paths>
+<msg>Add a function arg to the test</msg>
+</logentry>
+<logentry
+   revision="1025591">
+<author>vprus</author>
+<date>2009-09-19T08:52:17.111971Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Kinda revive locals.
+
+First, unconditionally refresh locals, since the code for 
+doing that only when 'locals' item is expanded appears to
+be not working. Second, execute -stack commands in the current
+context. Now, locals are displayed, and refreshed as frames are
+changed. However, expansion state of locals is not presersed.
+</msg>
+</logentry>
+<logentry
+   revision="1025352">
+<author>ewoerner</author>
+<date>2009-09-18T13:58:00.726526Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.h</path>
+</paths>
+<msg>Make kdevelop compile with KDE4_ENABLE_FINAL
+</msg>
+</logentry>
+<logentry
+   revision="1025190">
+<author>vprus</author>
+<date>2009-09-18T08:50:15.160879Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+</paths>
+<msg>Reenable incremental variable children fetch.
+
+From now on, KDevelop needs GDB CVS from
+2009-09-17 or later.
+</msg>
+</logentry>
+<logentry
+   revision="1025116">
+<author>apol</author>
+<date>2009-09-18T02:10:27.977345Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Adapt to the documentation changes in kdevplatform.
+Use QtHelp's model index for the QtHelp support to provide the index.
+Create some simple QStringListModel to create the index for the CMake support.
+
+</msg>
+</logentry>
+<logentry
+   revision="1024791">
+<author>scripty</author>
+<date>2009-09-17T09:33:08.021057Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/kdevcustommakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/kcm_kdev_makebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/kdevqthelp.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.notifyrc</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/kcm_kdev_veritassettings.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/cmake_qt4core_qtest.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/cmake_qt4core.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/kdevcppsupport.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevindent.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/kdevqtest.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/kdevmakebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/kcm_kdev_lcovsettings.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/cmake_plaincpp.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/kdevgrepview.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/documentview/kdevdocumentview.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/documentview/settings/kcm_documentview_settings.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/kdevvalgrind.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app/x-kdevelop.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/kdevcoverage.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/kdevastyle.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/cmake_qt4gui.kdevtemplate</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/kcm_kdevcmake_settings.desktop</path>
+</paths>
+<msg>SVN_SILENT made messages (.desktop file)</msg>
+</logentry>
+<logentry
+   revision="1024549">
+<author>mwoehlke</author>
+<date>2009-09-16T19:52:38.968424Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/CMakeLists.txt</path>
+</paths>
+<msg>Fix compilation with Qt-4.6.
+
+For now, this is the easy way. We could also include &lt;QTestGui&gt; (and may
+want to do so in the future), but that needs 4.6. This will work also
+with 4.5.
+
+</msg>
+</logentry>
+<logentry
+   revision="1024536">
+<author>apaku</author>
+<date>2009-09-16T19:36:52.177408Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/outputfilters.cpp</path>
+</paths>
+<msg>Add icc and icpc (both intel compiler) to the list of supported
+compilers.
+BUG:207598</msg>
+</logentry>
+<logentry
+   revision="1024021">
+<author>zwabel</author>
+<date>2009-09-15T20:29:07.858490Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/typeconversion.cpp</path>
+</paths>
+<msg>Add some null-pointer checks, to prevent a possible crash
+BUG: 206870</msg>
+</logentry>
+<logentry
+   revision="1023956">
+<author>apol</author>
+<date>2009-09-15T17:27:19.835040Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+</paths>
+<msg>Added some icons to the cmake completion model.
+</msg>
+</logentry>
+<logentry
+   revision="1023952">
+<author>apol</author>
+<date>2009-09-15T17:13:57.884169Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+</paths>
+<msg>Make it possible to complete deep paths in CMakeLists.txt files.
+</msg>
+</logentry>
+<logentry
+   revision="1023549">
+<author>zwabel</author>
+<date>2009-09-14T22:19:26.406659Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makebuilder.cpp</path>
+</paths>
+<msg>Stop all running make jobs before starting new ones
+BUG: 207341
+</msg>
+</logentry>
+<logentry
+   revision="1023266">
+<author>vprus</author>
+<date>2009-09-14T11:29:15.403482Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+</paths>
+<msg>Make expanding structures work with CVS HEAD of gdb.
+
+It appears I've accidentally made use of feature that is still
+only available in archer.
+</msg>
+</logentry>
+<logentry
+   revision="1023255">
+<author>vprus</author>
+<date>2009-09-14T11:08:23.039658Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+</paths>
+<msg>Correct variables 'has more' flag computation.
+</msg>
+</logentry>
+<logentry
+   revision="1023155">
+<author>apol</author>
+<date>2009-09-14T01:02:13.987743Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.h</path>
+</paths>
+<msg>Added basic support for path completion in the cmake language.
+I say basic because it still doesn't work with /.
+</msg>
+</logentry>
+<logentry
+   revision="1023147">
+<author>apol</author>
+<date>2009-09-14T00:31:22.313277Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Use the CMakeDocumentation module to get the documentation.
+Simplify some of the code.
+</msg>
+</logentry>
+<logentry
+   revision="1023130">
+<author>apol</author>
+<date>2009-09-13T23:17:03.427826Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+</paths>
+<msg>Remove useless code (:S).
+Adapt better to the current code when completing.
+</msg>
+</logentry>
+<logentry
+   revision="1023129">
+<author>apol</author>
+<date>2009-09-13T23:16:25.621469Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Some code clean up.
+</msg>
+</logentry>
+<logentry
+   revision="1022891">
+<author>vprus</author>
+<date>2009-09-13T12:44:57.197656Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Execute GDB varobj command in the context of current frame.
+
+With this patch, changing both thread and frame update the
+watches properly.
+</msg>
+</logentry>
+<logentry
+   revision="1022865">
+<author>vprus</author>
+<date>2009-09-13T11:58:46.776793Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbframestackmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>KDevelop side: Rename "active thread" to "current thread".
+</msg>
+</logentry>
+<logentry
+   revision="1022839">
+<author>vprus</author>
+<date>2009-09-13T10:36:55.135295Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbframestackmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/breakpointcontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbglobal.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/breakpointcontroller.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>KDevelop side: Make thread switching work.
+
+BUG: 207167
+</msg>
+</logentry>
+<logentry
+   revision="1022767">
+<author>zwabel</author>
+<date>2009-09-12T13:37:42.309905Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro-expander.cpp</path>
+</paths>
+<msg>Don't crash with bogus merge tokens that have no text in front.
+Thanks for patch by Nicolai Haehnhle
+BUG: 207171
+</msg>
+</logentry>
+<logentry
+   revision="1022526">
+<author>apol</author>
+<date>2009-09-11T22:55:50.101430Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Properly identify the project root. The old method is not valid anymore since the reparenting change a while ago.
+
+BUG: 205825
+</msg>
+</logentry>
+<logentry
+   revision="1022481">
+<author>apol</author>
+<date>2009-09-11T20:42:33.760977Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakeprojectvisitor_test.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecondition.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakeprojectvisitor_test.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeparserutils.cpp</path>
+</paths>
+<msg>- Added new test to check modules automatically.
+- Small changes n the code.
+</msg>
+</logentry>
+<logentry
+   revision="1022390">
+<author>vprus</author>
+<date>2009-09-11T16:50:37.796072Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbglobal.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Kill the s_appRunning state.
+
+For one thing, GDB in non-stop mode does not even have such
+a concept, as each thread can be run and stopped individually.
+Secondly, this is only used to display status messages, to
+a non-existent status bar.
+</msg>
+</logentry>
+<logentry
+   revision="1022366">
+<author>apol</author>
+<date>2009-09-11T16:05:40.807314Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemodelitems.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemodelitems.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Let the cmake scripts set where the binaries are located.
+
+BUG: 203975
+</msg>
+</logentry>
+<logentry
+   revision="1022221">
+<author>vprus</author>
+<date>2009-09-11T07:06:41.394774Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbglobal.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Remove definitely-unused gdb states.
+</msg>
+</logentry>
+<logentry
+   revision="1021817">
+<author>vprus</author>
+<date>2009-09-10T06:44:03.108081Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/threads/threads.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/threads/Makefile</path>
+</paths>
+<msg>Make the 'threads' debugger test do something testable.
+</msg>
+</logentry>
+<logentry
+   revision="1021465">
+<author>vprus</author>
+<date>2009-09-09T09:41:24.757895Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>On stop, switch to the thread that caused the stop.
+</msg>
+</logentry>
+<logentry
+   revision="1021258">
+<author>vprus</author>
+<date>2009-09-08T17:04:41.740433Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+</paths>
+<msg>Create watch expressions in the context of the selected thread.
+
+Now, if you select a thread in framestack widget, and add
+variable, it will be evaluated in the thread you have just
+selected. Unfortunately, if you hit a breakpoint the thread
+that has hit the breakpoint is not auto-selected yet. Also,
+you can select a frame as you like, and that will have no
+effect.
+</msg>
+</logentry>
+<logentry
+   revision="1021256">
+<author>vprus</author>
+<date>2009-09-08T17:02:06.751328Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.cpp</path>
+</paths>
+<msg>Update tests for platform change.
+</msg>
+</logentry>
+<logentry
+   revision="1020777">
+<author>vprus</author>
+<date>2009-09-07T09:44:28.337979Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbcommand.cpp</path>
+</paths>
+<msg>Use the --thread and --frame option to specify context to operate on.
+</msg>
+</logentry>
+<logentry
+   revision="1020483">
+<author>mlaurent</author>
+<date>2009-09-06T12:30:25.842983Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/kde4_single_case/suite.xml</path>
+</paths>
+<msg>Remove executable attribute
+</msg>
+</logentry>
+<logentry
+   revision="1020219">
+<author>zwabel</author>
+<date>2009-09-05T17:08:58.949561Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/ast.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/declarationbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.cpp</path>
+</paths>
+<msg>Fix cppduchaintest:
+Only build uses for elaborated type specifier if it is not a forward declaration. 
+</msg>
+</logentry>
+<logentry
+   revision="1020217">
+<author>zwabel</author>
+<date>2009-09-05T16:53:00.772843Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.h</path>
+</paths>
+<msg>- Correctly build uses for c-style struct uses like "struct bar* a"
+- Add test
+Thanks for patch by Nicolai Hähnle
+</msg>
+</logentry>
+<logentry
+   revision="1020054">
+<author>vprus</author>
+<date>2009-09-05T09:48:20.386899Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/print_pointers/print_pointers.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbcommand.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/gdbmi.h</path>
+</paths>
+<msg>Prepare for upcoming GDB pretty-printing improvements.
+
+The most important change is that we can display when
+children are added and removed from containers.
+
+This functionality at presently needs more bleeding-edge
+GDB than CVS HEAD. If you are using CVS HEAD, you won't
+get the goodies, but nothing should break. I'll post
+more details when CVS HEAD of GDB is ready for testing
+this.
+</msg>
+</logentry>
+<logentry
+   revision="1020049">
+<author>vprus</author>
+<date>2009-09-05T09:15:36.665454Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+</paths>
+<msg>Encapsulate varobj inside GdbVariable.
+
+At this point, pretty much no code outside GdbVariable even know
+that varobjs exist. The exceptions are:
+1. The code thay relays -var-update responso to individual
+GdbVariable instance. This will stay.
+2. The code that creates watches and watchpoints from GdbVariable.
+This will be eventually refactored.
+</msg>
+</logentry>
+<logentry
+   revision="1020039">
+<author>vprus</author>
+<date>2009-09-05T07:45:14.904737Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+</paths>
+<msg>KDevelop side: Move varobj creation to GdbVariable.</msg>
+</logentry>
+<logentry
+   revision="1019973">
+<author>danxuliu</author>
+<date>2009-09-04T22:20:49.601241Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovprefswidget.ui</path>
+</paths>
+<msg>When KUIT strings are used, paragraphs must be separated using &lt;para&gt; tags instead of new lines (as new lines aren't taken into account)</msg>
+</logentry>
+<logentry
+   revision="1019956">
+<author>zwabel</author>
+<date>2009-09-04T21:14:53.463092Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/cppnewclass.cpp</path>
+</paths>
+<msg>Don't crash if a base-declaration was not found
+</msg>
+</logentry>
+<logentry
+   revision="1019936">
+<author>danxuliu</author>
+<date>2009-09-04T20:24:32.077154Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovjob.cpp</path>
+</paths>
+<msg>Inform the user if something went wrong while executing geninfo</msg>
+</logentry>
+<logentry
+   revision="1019860">
+<author>vprus</author>
+<date>2009-09-04T16:40:07.648723Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.h</path>
+<path
+   action="A">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp</path>
+<path
+   action="A">/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/CMakeLists.txt</path>
+</paths>
+<msg>KDevelop side:  Introduce GDB-specific Variable subclass.
+</msg>
+</logentry>
+<logentry
+   revision="1017783">
+<author>zwabel</author>
+<date>2009-08-31T13:38:44.499048Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/declarationbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/typebuilder.cpp</path>
+</paths>
+<msg>Fix testDeclareStruct, and some minor underlying problems. Add a test for elaborated type specifiers in typedefs.
+</msg>
+</logentry>
+<logentry
+   revision="1017742">
+<author>zwabel</author>
+<date>2009-08-31T10:30:47.549701Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_duchain.cpp</path>
+</paths>
+<msg>Fix the testSpecializedTemplates test, by using the un-aliased type
+</msg>
+</logentry>
+<logentry
+   revision="1017524">
+<author>apaku</author>
+<date>2009-08-30T20:30:36.825266Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/typeconversion.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/declarationbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/listnode.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/overloadresolutionhelper.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/environmentmanager.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/qtfunctiondeclaration.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/ast.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakelistsparser.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/custommakemodelitems.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/typeconversion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/typebuilder.cpp</path>
+</paths>
+<msg>Fix various warnings from MSVC. Patch by Yaron Hirsch
+CCMAIL:yhirsch@netvision.net.il</msg>
+</logentry>
+<logentry
+   revision="1017520">
+<author>apaku</author>
+<date>2009-08-30T20:22:57.673293Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionevaluationresult.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/tests/fakedetailswidget.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/breakpointcontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/breakpoints/foo.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestcasetest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/classdeclarationfactory.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/createqtestwizard.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestsuitetest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputdelegate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/unresolvedincludeassistant.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/debugeecrash.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/footest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/tiny_project/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportmodeltest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/missingincludeitem.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/dll/helper.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/multiple_cases/moneytest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/kdevtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestcasetest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/two_module/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/navigationwidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakenavigationwidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/multipleFailuresSingleCommand.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/viewstub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/single_case/money.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/valgrindconfig.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeparserutils.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/drilldownview.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/qt4app/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/macronavigationcontext.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/multiple_cases/banktest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/reportmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/signatureassistant.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/coverageexport.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/segFault.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/item.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpputils.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/cppduchainchangeset.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/anchor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/viewstub.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suitebuildertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/commentformatter.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/builtinoperators.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/bar/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestregistertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/simplerefactoring.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/includenavigationcontext.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/bar/bartest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeduchaintest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/includewritertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/drilldownview.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/skip.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/multiple_cases/bank.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/tests/configwidgettest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/two_module/src/foo.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/templateparameterdeclaration.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/grepoutputdelegate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/fakeqtest3_slow.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/valgrindtree.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/%{APPNAME}.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/classwriter.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/debugeeslow.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeprojectdata.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdblaunchconfig.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputdelegate.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestsuitetest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/examples/switchtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/bar/bartest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/methodskeleton.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestmodelitems.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/colorrange.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovjob.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/annotationmanager.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/ktextdocumentstubtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/covoutputdelegate.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestrunnertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/qassert.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/implementationhelperitem.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/multiple_cases/moneytest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/discretecolorrange.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/testswitch.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/selectcoredialog.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/examples/includecompletion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/missingdeclarationassistant.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeparserutilstest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/cppcodegen_snippets.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/stringhelpers.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecachereader.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestsettings.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportfileitemtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovprefs.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/casebuildertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakecondition_test.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/examples/dummy.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/qt4app/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeparserutilstest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/sourcemanipulation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakeprojectvisitor_test.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/lcovinfoparsertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdb.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/lib/ASBeautifier.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/missingincludemodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4appview.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/cppunit/moneytest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/valgrindtree.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_cases/banktest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/codegenerator.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/empty/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/garbage_add_subdirectory/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/examples/stubgeneration.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/coveredfile.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppduchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/colorrange.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/examples/baz.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/signatureassistant.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/reportmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/multiple_cases/banktest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/lcovjobtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/grepoutputmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/codegenerator.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/testswitch.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestrunnertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/ktextdocumentstubtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/parserstresstest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/debugbuilders.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/modelbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportitemstest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/includepathresolver.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/fakeqtest2_2cmds_fail.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/discretecolorrangetest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/tests/configwidgettest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/missingincludeitem.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/casebuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppduchain.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_cases/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestplugin.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/miparser.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_formatter.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/astutilities.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/cmakebuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/reportwidget.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/setuphelpers.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/classskeletontest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/xmlregister.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/empty_add_subdirectory/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/lib/ASFormatter.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/covoutputmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qxqtestexport.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/gdbmi.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/standalonerunner.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/settings/cmakecachemodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/kdevtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/documentaccess.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakedebugvisitor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/macroset.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/declarationnavigationcontext.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportfileitemtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/templateparameterdeclaration.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/covoutputmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/dataTest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovinfoparser.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/valgrindwidget.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/missingdeclarationtype.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeast_test.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodegen.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/cmake/modules/FindCheck.cmake</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/documentaccess.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/grepoutputdelegate.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/valgrindconfig.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/makeimplementationprivate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/tokens.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/sourcemanipulation.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/indent_plugin.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/veritascppexport.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/examples/foo.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/bar/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/cppunit/money.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbcommandqueue.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppdebughelper.h.cmake</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/simplerefactoring.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/environmentmanager.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/classdeclarationfactory.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/gradientcolorrangetest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/single_subdirectory/subdir/foo.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeloadprojecttest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_preferences.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/indent_plugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/grepoutputmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/coveredfile.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/%{APPNAME}.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/icmakebuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/methodskeletontest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/lib/astyle_stringiterator.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/cmakejob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/kde4_single_case/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/environmentmanager.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/tiny_project/foo.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportwidgettest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/coveredfiletest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdblaunchconfig.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbframestackmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/macroset.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovjob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/threads/threads.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/configwidget.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/item.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/expectedFailure.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/kde4_single_case/moneytest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/_abstractvariableitem.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/annotationmanager.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/qtfunctiondeclaration.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/bar/bartest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/stubcreationtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/milexer.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/configwidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/coveredfiletest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/annotationmanagertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakeutils.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/gradientcolorrangetest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakedebugvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbcommandqueue.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/tests/test_generator.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestcommandtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/uutcreationtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakehighlighting.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/classskeleton.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovinfoparser.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/valgrindwidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/missingdeclarationtype.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/lcovinfoparsertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cpputils.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionevaluationresult.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/stubconstructor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/settings/cmakecachedelegate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/commentparser.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/createqtestwizard.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/tracing/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/tests/%{APPNAME}Test.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/variablemap.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestregistertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/classskeletontest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/stubcontextaction.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/includewriter.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputmorpher.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/templatedeclaration.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/executablestub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/codeassistant.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/progressdialogs.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/qtfunctiondeclaration.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makeoutputdelegate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/classwritertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/stubcontextaction.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputmorpher.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/examples/switch.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/missingincludemodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/cppduchainchangeset.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/ast/changevisitor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/single_case/money.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/constructorskeleton.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/stringhelpers.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdb.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/debugee.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/lib/ASResource.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/cmakejob.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/selectcoredialog.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/includepathcomputer.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/cppnewclass.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/documentstub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/ast/astchange.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/single_subdirectory/subdir/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/settings/cmakecachemodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_cases/moneytest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/casebuildertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/uutconstructor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/helpers.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/lcovprefs.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/gradientcolorrange.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/bar/bartest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/commentparser.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_preferences.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/settings/cmakecachedelegate.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/cmake/modules/FindCppUnit.cmake</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/documentaccessstub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/includepathresolver.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/breakpoints/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportitemstest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/bar/baztest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/grepview/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_cases/moneytest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/variablemap.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/miparser.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/uutcontextaction.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/_watchitem.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/single_case/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/pluginstub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/tests/fakedetailswidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/infinite_loop/infinite_loop.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/lib/astyle.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodegen.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/annotationmanagertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/progressdialogs.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/qt4app/qt4app.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/reportwidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/includenavigationcontext.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/CppBuildConfig.cmake</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debuggertracingdialog.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cpppreprocessenvironment.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/newtestwizardtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/uutcontextaction.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecondition.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakecondition_test.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestoutputmorphertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/colorrangetest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/single_case/moneytest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/qt4app/qt4app.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputparser.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/discretecolorrangetest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeparserutils.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/%{APPNAME}.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/modelbuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/templatedeclaration.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/corestub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/macronavigationcontext.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/plugincontrollerstub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputparser.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/multiple_cases/money.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestcommandtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/setuphelpers.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/configureandbuildjob.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/builtinoperators.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/cmakebuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/stubconstructor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/includepathcomputer.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/stubcreationtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestoutputparsertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_cases/bank.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/examples/bar.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/tests/%{APPNAME}Test.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cpppreprocessenvironment.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/newtestwizardtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/executable.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/covoutputdelegate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/reportproxymodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/constructorskeletontest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmake_cmakeprojectvisitor_test.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/uutcreationtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/xmlregister.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/commentformatter.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/unresolvedincludeassistant.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpnetwork.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/_watchitem.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/ast/changevisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/segfault/segfault.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/_abstractvariableitem.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppducontext.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/annotationmodel.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportmodeltest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/%{APPNAME}.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/kde4_single_case/moneytest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/configureandbuildjob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/coverageplugin.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/missingdeclarationproblem.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/coveredfilefactory.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/ast/changeimplementor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecondition.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestoutputmorphertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/uutconstructor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/test/t011.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4appview.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/single_subdirectory/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/cppunit/moneytest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/methodskeleton.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestmodelitems.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeast_test.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/kde4_single_case/money.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/codeassistant.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/coverageplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/classwritertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakehighlighting.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/suitebuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suitebuildertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/missingdeclarationassistant.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/fakeqtest1_2cmds.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/classskeleton.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/ast/changeimplementor.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/configmodule.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/lcovjobtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/nonterminatedOutput.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/navigationwidget.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakenavigationwidget.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeloadprojecttest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/ast/astchange.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/cppducontext.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/annotationmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/colorrangetest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/single_case/moneytest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_cases/money.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/implementationhelperitem.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/lib/astyle_stringiterator.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/print_pointers/print_pointers.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/lib/ASEnhancer.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/printers/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/missingdeclarationproblem.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/qtestoutputparsertest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/overloadresolutionhelper.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/kasserts.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/reportwidgettest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/discretecolorrange.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/examples/uutgeneration.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/footest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputjob.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/pluginstub.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/quickopen.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/macrorepository.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/suite1/qassertx.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/debugeerecursion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/cmake/modules/FindKDevelop.cmake</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/standalonerunner.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/testutils.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/constructorskeleton.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/overloadresolutionhelper.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_itemrepository.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/single_case/moneytest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/chartools.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakebuilddirchooser.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/tests/outputparsertestmain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/methodskeletontest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/tests/test_itemrepository.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/examples/prime/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_plugin.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmaketypes.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_cases/banktest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_formatter.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/debugeethreads.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/stringhelpers.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/cmakeduchaintest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_cmake/multiple_suites/foo/bar/baztest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/executable.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/includewritertest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestsettings.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/gdbmi.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/basicsetrepository.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_plugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/tests/constructorskeletontest.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/suitebuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/classwriter.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/mi/milexer.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/navigation/declarationnavigationcontext.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/cppnewclass.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debuggertracingdialog.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/quickopen.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/macrorepository.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/config/configmodule.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestoutputjob.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/casebuilder.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/%{APPNAME}.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/helpers.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/tests/dll/main.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/qtest_qmake/single_case/moneytest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/breakpointcontroller.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/makeimplementationprivate.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectbuilders/makebuilder/makeoutputdelegate.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/%{APPNAME}.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbglobal.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakebuilddirchooser.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/rpp/chartools.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/reportproxymodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/CMakeLists.txt</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakecachereader.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/stringhelpers.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/examples/check/money.h</path>
+</paths>
+<msg>Set svn:eol-style native on all files.
+</msg>
+</logentry>
+<logentry
+   revision="1016085">
+<author>apol</author>
+<date>2009-08-26T23:31:51.984837Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Add all the needed variables when searching files and paths.
+
+BUG: 205055
+</msg>
+</logentry>
+<logentry
+   revision="1016082">
+<author>apol</author>
+<date>2009-08-26T23:07:25.949864Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeprojectvisitor.cpp</path>
+</paths>
+<msg>Remove verbosity.
+</msg>
+</logentry>
+<logentry
+   revision="1016081">
+<author>apol</author>
+<date>2009-08-26T23:04:25.878322Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Let QObject decide when to delete the documentation.
+cmakedocumentation.cpp change in the last commit should be here.
+</msg>
+</logentry>
+<logentry
+   revision="1016079">
+<author>apol</author>
+<date>2009-08-26T22:42:27.308422Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakedocumentation.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakemanager.cpp</path>
+</paths>
+<msg>Do not add the directories that are above the subproject root.
+
+BUG: 204424
+</msg>
+</logentry>
+<logentry
+   revision="1015924">
+<author>cgiboudeaux</author>
+<date>2009-08-26T16:13:08.868976Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdbframestackmodel.h</path>
+</paths>
+<msg>Fix include.</msg>
+</logentry>
+<logentry
+   revision="1015873">
+<author>vprus</author>
+<date>2009-08-26T13:38:31.574835Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/disassemblewidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/memviewdlg.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdboutputwidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/disassemblewidget.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/memviewdlg.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdboutputwidget.h</path>
+</paths>
+<msg>More sessionAdded -&gt; currentSessionChanged updates.
+</msg>
+</logentry>
+<logentry
+   revision="1015818">
+<author>vprus</author>
+<date>2009-08-26T12:03:06.429374Z</date>
+<paths>
+<path
+   action="A">/trunk/KDE/kdevelop/debuggers/gdb/gdbframestackmodel.cpp</path>
+</paths>
+<msg>Missed files</msg>
+</logentry>
+<logentry
+   revision="1015817">
+<author>vprus</author>
+<date>2009-08-26T12:01:33.040204Z</date>
+<paths>
+<path
+   action="A">/trunk/KDE/kdevelop/debuggers/gdb/gdbframestackmodel.h</path>
+</paths>
+<msg>Missed files</msg>
+</logentry>
+<logentry
+   revision="1015815">
+<author>vprus</author>
+<date>2009-08-26T12:00:49.736688Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/debuggers/gdb/stackcontroller.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.h</path>
+<path
+   action="D">/trunk/KDE/kdevelop/debuggers/gdb/stackcontroller.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/CMakeLists.txt</path>
+</paths>
+<msg>KDevelop-side of stack getting refactoring. See platform commit for explanations.
+</msg>
+</logentry>
+<logentry
+   revision="1014816">
+<author>rzarazua</author>
+<date>2009-08-23T21:10:27.359973Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/astutilities.h</path>
+</paths>
+<msg>Added utility function to find all the AST nodes of a kind down an AST branch</msg>
+</logentry>
+<logentry
+   revision="1014461">
+<author>apaku</author>
+<date>2009-08-22T22:18:21.891631Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/CMakeLists.txt</path>
+</paths>
+<msg>Increase version number for Beta5</msg>
+</logentry>
+<logentry
+   revision="1014361">
+<author>cgiboudeaux</author>
+<date>2009-08-22T15:32:50.975403Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/tests/CMakeLists.txt</path>
+</paths>
+<msg>languages/cpp/expressionparser doesn't exist. Don't include it.</msg>
+</logentry>
+<logentry
+   revision="1014275">
+<author>apaku</author>
+<date>2009-08-22T09:45:49.250772Z</date>
+<paths>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/hi48-app-kdevdesigner.png</path>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/hi32-app-kdevassistant.png</path>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/hi16-app-kdevassistant.png</path>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/hi32-app-kdevdesigner.png</path>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/hi48-app-kdevassistant.png</path>
+<path
+   action="D">/trunk/KDE/kdevelop/pics/hi16-app-kdevdesigner.png</path>
+</paths>
+<msg>Remove dead icons.</msg>
+</logentry>
+<logentry
+   revision="1014247">
+<author>binner</author>
+<date>2009-08-22T05:31:48.150048Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/pics/CMakeLists.txt</path>
+</paths>
+<msg>fix last commit
+</msg>
+</logentry>
+<logentry
+   revision="1014221">
+<author>binner</author>
+<date>2009-08-21T22:48:31.258067Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/pics/CMakeLists.txt</path>
+</paths>
+<msg>application menu icons must stay in global namespace
+</msg>
+</logentry>
+<logentry
+   revision="1013863">
+<author>rzarazua</author>
+<date>2009-08-20T22:54:45.850495Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/ui/privateimplementation.ui</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/makeimplementationprivate.cpp</path>
+</paths>
+<msg>Correctly display the private implementation dialog</msg>
+</logentry>
+<logentry
+   revision="1013826">
+<author>valouch</author>
+<date>2009-08-20T20:22:00.895551Z</date>
+<paths>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codegen/codeassistant.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/custommake/custommaketreesynchronizer.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/settings/cmakecachedelegate.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/memviewdlg.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/valgrind/valgrindmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/codegenerator.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakenavigationwidget.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_preferences.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/usebuilder.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/viewstub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/astyle_formatter.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/builtinoperators.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/dumpchain.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/documentation/qthelp/qthelpplugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/covoutputmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/expressionvisitor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/formatters/indent_plugin.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/parser/parser.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/cppduchain/sourcemanipulation.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/veritas/uutconstructor.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/parser/cmakeast.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/missingincludemodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/languages/cpp/codecompletion/item.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/projectmanagers/cmake/cmakecodecompletionmodel.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/xtest/qtest/qtestmodelitems.cpp</path>
+<path
+   action="M">/trunk/KDE/kdevelop/tools/coverage/tests/pluginstub.h</path>
+<path
+   action="M">/trunk/KDE/kdevelop/debuggers/gdb/gdb.cpp</path>
+</paths>
+<msg>--warnings
+
+Worked well for over a week, so shoul be safe.</msg>
+</logentry>
+</log>

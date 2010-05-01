@@ -1,0 +1,52 @@
+2008-12-18 09:16 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=898463&amp;view=rev">898463</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+configure.in.in, kdevelop.lsm<br>
+Release KDevelop 3.5.4<br>
+<br>
+2008-12-02 15:39 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=891675&amp;view=rev">891675</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/app_templates/kde4app/kapp4.kcfg<br>
+Forgot the rc suffix on the kconfig file. CCBUG:176695<br>
+<br>
+2008-12-02 13:04 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=891535&amp;view=rev">891535</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+languages/cpp/app_templates/kde4app/kapp4.kcfg<br>
+Use a variable for the kconfig filename. BUG:176695<br>
+<br>
+2008-11-14 11:44 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=884132&amp;view=rev">884132</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/tools/tools_part.cpp<br>
+Apparently someone thought its cool to have accelerators (Alt+&lt;Letter&gt;)<br>
+for context menus, that broke the external tools because they use the menu<br>
+text to find the right group in the config file. This fixes that by storing a<br>
+mapping between the popup-entry-id and the actual text of the config group.<br>
+BUG:175060<br>
+<br>
+2008-11-01 16:14 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=878679&amp;view=rev">878679</a>]  Amilcar do Carmo Lucas &lt;amilcar kdevelop.org&gt;<br>
+parts/doxygen/config.cpp, parts/doxygen/version.cpp<br>
+Update to Doxygen 1.5.7.1<br>
+<br>
+2008-11-01 15:39 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=878661&amp;view=rev">878661</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/custommakefiles/customprojectpart.cpp<br>
+Make sure we don't descend into recursive links when trying to find new files.<br>
+CCBUG: 173924<br>
+<br>
+2008-10-17 10:12 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=872468&amp;view=rev">872468</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+parts/documentation/plugins/devhelp/docdevhelpplugin.cpp<br>
+also check for readability, apparently QDir::entryInfoList also returns a 0<br>
+pointer in that case. BUG:173012<br>
+<br>
+2008-09-04 18:44 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=857119&amp;view=rev">857119</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+buildtools/custommakefiles/customprojectpart.cpp<br>
+Ooops, seems I somehow used the wrong config group here, which caused the<br>
+custom makefile support to never obey the "use kde locale instead of C"<br>
+option. BUG: 163733 CCBUG: 163733<br>
+<br>
+2008-08-30 22:52 +0000 [r<a href="http://websvn.kde.org/branches/KDE/3.5/kdevelop/?rev=855009&amp;view=rev">855009</a>]  Andreas Pakulat &lt;apaku gmx.de&gt;<br>
+lib/cppparser/lexer.cpp<br>
+increase the vector by 5001 instead of 5000, for some reason one could hit an<br>
+out-of-bounds error when using 5000 instead of 5001 in a specific position of<br>
+a file. This might just be a workaround, but I couldn't reproduce the original<br>
+error when placing the cursor one token further than the place it originally<br>
+triggered in. Thus I'm at least somewhat sure the bug is actually fixed and<br>
+not just workarounded for this particular example David, Kris, anybody who<br>
+ever looked at cppparser please check out<br>
+https://bugs.kde.org/show_bug.cgi?id=170044 and this patch and let me know if<br>
+I did something stupid :) BUG: 170044 CCMAIL: kdevelop-devel@kdevelop.org<br>
+<br>

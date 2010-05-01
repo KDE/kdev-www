@@ -1,0 +1,53 @@
+<?php module_head("KDevelop $k_series_version Features");?>
+
+It contains all of
+<a href="index.html?filename=3.1/features.html">
+KDevelop 3.1.x features</a> plus:<br>
+<ul>
+
+<li><b>New refactored codebase</b>
+<ul>
+<li>The KDevelop codebase has been refactored with the goal of improving code reuse and documenting the base library 
+classes that compose KDevelop. These base classes form the new <em>KDevelop platform</em> and present a concise and well documented API</li>
+</ul>
+</li>
+
+<li><b>New RAD (<em>R</em>apid <em>A</em>pplication <em>D</em>evelopment) tools</b>
+<ul>
+<li>KDevDesigner integration enables GUI design from within KDevelop itself</li>
+<li>KDevAssistent integration provides a feature rich documentation viewer from within KDevelop</li>
+<li>The C++ Class Wizard can now be used for classes in the persistant class store. This means, for example,
+that if the Code Completion database for Qt is built then subclassing from Qt classes is possible in the wizard</li>
+</ul>
+</li>
+
+<li><b>Much improved ruby language support</b>
+<ul>
+<li>New ruby debugger, combined with improved inspect methods in the 
+qtruby/korundum bindings, for showing Qt::Object metadata such as properties, 
+while debugging</li>
+<li>Class browser has an improved parser that shows Qt and DCOP signals and 
+slots, attr_accessor methods and instance variables</li>
+<li>New project templates for a KDE application framework, KConfig XT, DCOP server and 
+Qt only apps</li>
+<li>Full Qt designer/rbuic integration</li>
+</ul>
+</li> 
+
+<li><b>Other improvements and bugfixes</b>
+<ul>
+<li>The Version Control support was refactored. Most of the integration features that were disabled in KDevelop&nbsp;3.1
+are back in 3.2, together with a much improved Subversion plugin.</li>
+<li>Improved "Find in files", Ctags support and history navigation provide faster code navigation</li>
+<li>More application templates are provided</li>
+<li>new templates for cmake based C/C++ apps and libraries</li>
+<li>new templates for scons-based kde apps</li>
+<li>see the
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+change log page</a> for more details</li>
+</ul>
+</li>
+
+</ul>
+
+<?php module_tail();?>

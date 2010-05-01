@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>SVN: trunk/KDE/kdevplatform</title>
+    <link>http://www.kdevelop.org/index.html?filename=HEAD/ChangeLog.html</link>
+    <description>svn commit log</description>
+    <language>en-us</language>
+    <copyright>1998-2009, The KDevelop team</copyright>
+    <generator>svnlog.xslt</generator>
+    <ttl>60</ttl>
+    <item>
+      <title>Rev:1056284 [apaku] - s/CMAKE_(SOURCE|BINARY)_DIR/KDevPlatform_(SOURCE|... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1056284&amp;view=rev</link>
+      <pubDate>Sun, 29 Nov 2009 18:59:51 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;s/CMAKE_(SOURCE|BINARY)_DIR/KDevPlatform_(SOURCE|BINARY)_DIR/
+Needed to properly built within sdk.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 29 Nov 2009 18:59:51 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/plugins/subversion/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/plugins/subversion/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/shell/settings/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/shell/settings/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/shell/kross/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/shell/kross/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/shell/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/shell/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/plugins/classbrowser/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/plugins/classbrowser/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/plugins/cvs/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/plugins/cvs/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1056276 [apaku] - Adjust to new location, need to use kdevplatform_... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1056276&amp;view=rev</link>
+      <pubDate>Sun, 29 Nov 2009 18:50:53 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Adjust to new location, need to use kdevplatform_SOURCE_DIR now.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 29 Nov 2009 18:50:53 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform/sublime/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevplatform/sublime/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1056251 [toma] - Move kdevplatform to extragear/sdk.... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1056251&amp;view=rev</link>
+      <pubDate>Sun, 29 Nov 2009 18:07:16 GMT</pubDate>
+      <author>toma@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Move kdevplatform to extragear/sdk.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 29 Nov 2009 18:07:16 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Deleted&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform"&gt;/trunk/KDE/kdevplatform&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevplatform"&gt;/trunk/extragear/sdk/kdevplatform&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055941 [rodda] - Convenience types to set last type and instance R... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055941&amp;view=rev</link>
+      <pubDate>Sun, 29 Nov 2009 08:14:19 GMT</pubDate>
+      <author>rodda@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Convenience types to set last type and instance
+Rearrange usingDeclaration to put parameters which are often left default at the end&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 29 Nov 2009 08:14:19 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/language/duchain/builders/abstractexpressionvisitor.h"&gt;/trunk/KDE/kdevplatform/language/duchain/builders/abstractexpressionvisitor.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055891 [dymo] - Fix tab activation bug after closing another tabs... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055891&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 23:18:45 GMT</pubDate>
+      <author>dymo@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Fix tab activation bug after closing another tabs without switching to them
+(for example clicking on another tab's close button).
+We should remove the widget from container's stack before removing it from the tabbar,
+tabbar activates new widget by its index, and if the old one is still in stack, then
+indices are off by one.
+For me this also fixes the crash in ctrl-tab document switcher (which probably got
+activation signal of the view which was already deleted).
+BUG:204383
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 23:18:45 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/sublime/container.cpp"&gt;/trunk/KDE/kdevplatform/sublime/container.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055628 [nsams] - Update locals only once. (fixes crash)... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055628&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 11:51:60 GMT</pubDate>
+      <author>nsams@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Update locals only once. (fixes crash)&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 11:51:60 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/debugger/interfaces/ivariablecontroller.h"&gt;/trunk/KDE/kdevplatform/debugger/interfaces/ivariablecontroller.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/debugger/interfaces/ivariablecontroller.cpp"&gt;/trunk/KDE/kdevplatform/debugger/interfaces/ivariablecontroller.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055594 [scripty] - SVN_SILENT made messages (.desktop file)... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055594&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 11:09:50 GMT</pubDate>
+      <author>scripty@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;SVN_SILENT made messages (.desktop file)&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 11:09:50 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/openwith/kdevopenwith.desktop"&gt;/trunk/KDE/kdevplatform/plugins/openwith/kdevopenwith.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/grepview/kdevgrepview.desktop"&gt;/trunk/KDE/kdevplatform/plugins/grepview/kdevgrepview.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/documentview/kdevdocumentview.desktop"&gt;/trunk/KDE/kdevplatform/plugins/documentview/kdevdocumentview.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/documentview/settings/kcm_documentview_settings.desktop"&gt;/trunk/KDE/kdevplatform/plugins/documentview/settings/kcm_documentview_settings.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/patchreview/kdevpatchreview.desktop"&gt;/trunk/KDE/kdevplatform/plugins/patchreview/kdevpatchreview.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/problemreporter/kdevproblemreporter.desktop"&gt;/trunk/KDE/kdevplatform/plugins/problemreporter/kdevproblemreporter.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055430 [dymo] - Do not leave empty toplevel widgets after closing... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1055430&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 00:00:00 GMT</pubDate>
+      <author>dymo@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Do not leave empty toplevel widgets after closing all open files with "Close All":
+- it was the left corner workingset indicator widget which was reparented to 0 and stayed visible
+- the current fix is to hide it before reparenting and show right after adding to the corner
+- this fix is of course bad, but it's not worse than the code which manages this widget
+  (in general, workingsets do not properly integrate into the UI)
+
+BUG:198251
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 00:00:00 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/sublime/mainwindow_p.cpp"&gt;/trunk/KDE/kdevplatform/sublime/mainwindow_p.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/sublime/container.cpp"&gt;/trunk/KDE/kdevplatform/sublime/container.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054794 [apaku] - Revert "Qt doesn't update the selection state whe... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054794&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 20:20:35 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Revert "Qt doesn't update the selection state when the model removes rows, so"
+Actually there is no bug in Qt (should've checked this before
+comitting).&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 20:20:35 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/projectmanagerview/projectmanagerview.cpp"&gt;/trunk/KDE/kdevplatform/plugins/projectmanagerview/projectmanagerview.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054789 [apaku] - Qt doesn't update the selection state when the mo... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054789&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 20:01:56 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Qt doesn't update the selection state when the model removes rows, so
+lets do it ourselves.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 20:01:56 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/projectmanagerview/projectmanagerview.cpp"&gt;/trunk/KDE/kdevplatform/plugins/projectmanagerview/projectmanagerview.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054720 [rodda] - Allow setting of the last type in the abstract ex... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054720&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 15:35:31 GMT</pubDate>
+      <author>rodda@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Allow setting of the last type in the abstract expression visitor&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 15:35:31 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/language/duchain/builders/abstractexpressionvisitor.h"&gt;/trunk/KDE/kdevplatform/language/duchain/builders/abstractexpressionvisitor.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054711 [dfaure] - Fix compilation with strict iterators.... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054711&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 15:15:34 GMT</pubDate>
+      <author>dfaure@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Fix compilation with strict iterators.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 15:15:34 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/patchreview/libdiff2/komparemodellist.cpp"&gt;/trunk/KDE/kdevplatform/plugins/patchreview/libdiff2/komparemodellist.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/patchreview/libdiff2/kompareprocess.cpp"&gt;/trunk/KDE/kdevplatform/plugins/patchreview/libdiff2/kompareprocess.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/contextbrowser/contextbrowser.cpp"&gt;/trunk/KDE/kdevplatform/plugins/contextbrowser/contextbrowser.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/patchreview/patchreview.cpp"&gt;/trunk/KDE/kdevplatform/plugins/patchreview/patchreview.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/shell/launchconfigurationdialog.cpp"&gt;/trunk/KDE/kdevplatform/shell/launchconfigurationdialog.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054693 [dfaure] - fix compilation with strict iterators... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054693&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 14:38:45 GMT</pubDate>
+      <author>dfaure@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;fix compilation with strict iterators
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 14:38:45 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/util/activetooltip.cpp"&gt;/trunk/KDE/kdevplatform/util/activetooltip.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054382 [apaku] - Oops, I mean to make this a KLineEdit, not KTextE... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054382&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 23:10:19 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Oops, I mean to make this a KLineEdit, not KTextEdit.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 23:10:19 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/subversion/svnimportmetadatawidget.cpp"&gt;/trunk/KDE/kdevplatform/plugins/subversion/svnimportmetadatawidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/subversion/ui/importmetadatawidget.ui"&gt;/trunk/KDE/kdevplatform/plugins/subversion/ui/importmetadatawidget.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054379 [apaku] - Make the destination a plain lineedit, having a u... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054379&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 23:08:19 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Make the destination a plain lineedit, having a url-requester there
+causes too much confusion.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 23:08:19 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/subversion/svnimportmetadatawidget.cpp"&gt;/trunk/KDE/kdevplatform/plugins/subversion/svnimportmetadatawidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/subversion/ui/importmetadatawidget.ui"&gt;/trunk/KDE/kdevplatform/plugins/subversion/ui/importmetadatawidget.ui&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054291 [apaku] - Disable the sourceformatter as its not possible t... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054291&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 20:34:56 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Disable the sourceformatter as its not possible to fix this up without
+major time investment.
+
+I've looked a bit at the code today and all I can say is wow,
+this is broken. It stores pointers to plugins, doesn't update them as needed
+assumes everywhere that things will be alright (i.e. no empty-checks, no
+null-pointer-checks). This is not possible to fix easily without changing
+major parts of the code. At this point in the release such a major
+restructuring is not going to happen, additionally this codebase is basically
+unmaintained ever since it was imported into svn.
+
+So we'll have to live without it for 4.0&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 20:34:56 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/plugins/CMakeLists.txt"&gt;/trunk/KDE/kdevplatform/plugins/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/interfaces/CMakeLists.txt"&gt;/trunk/KDE/kdevplatform/interfaces/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/shell/core.cpp"&gt;/trunk/KDE/kdevplatform/shell/core.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/shell/CMakeLists.txt"&gt;/trunk/KDE/kdevplatform/shell/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/shell/core.h"&gt;/trunk/KDE/kdevplatform/shell/core.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/language/codegen/documentchangeset.cpp"&gt;/trunk/KDE/kdevplatform/language/codegen/documentchangeset.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/interfaces/icore.h"&gt;/trunk/KDE/kdevplatform/interfaces/icore.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054289 [apaku] - These messages have no meaning to endusers and th... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054289&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 20:34:49 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;These messages have no meaning to endusers and they can't do anything about the warnings.
+Hence they should be debug messages.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 20:34:49 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/language/backgroundparser/backgroundparser.cpp"&gt;/trunk/KDE/kdevplatform/language/backgroundparser/backgroundparser.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054107 [apaku] - Increase version number for beta7... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1054107&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 14:35:38 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Increase version number for beta7
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 14:35:38 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/CMakeLists.txt"&gt;/trunk/KDE/kdevplatform/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1053947 [apol] - When the debugging session was closed, the model... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1053947&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 03:32:49 GMT</pubDate>
+      <author>apol@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;When the debugging session was closed, the model was dereferenced and the changed when the column changed signal was triggered.
+Added a conditional to check if the session is still alive to ask for more frames.
+
+Just fixes a crash.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 03:32:49 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/debugger/framestack/framestackwidget.cpp"&gt;/trunk/KDE/kdevplatform/debugger/framestack/framestackwidget.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1053748 [zwabel] - Significantly speed up the reference-counting for... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevplatform/?rev=1053748&amp;view=rev</link>
+      <pubDate>Tue, 24 Nov 2009 18:58:08 GMT</pubDate>
+      <author>zwabel@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Significantly speed up the reference-counting for the case that there is only one reference-counted memory range, which should be 99% of the cases.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Tue, 24 Nov 2009 18:58:08 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevplatform/language/duchain/referencecounting.cpp"&gt;/trunk/KDE/kdevplatform/language/duchain/referencecounting.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+  </channel>
+</rss>

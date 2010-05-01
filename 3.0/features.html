@@ -1,0 +1,118 @@
+<?php module_head("KDevelop 3.0.x Features");?>
+
+
+<ul>
+
+<li><b>Plugin-based architecture</b>
+<ul>
+<li>Functionality can be added, replaced and removed without altering core source code.</li>
+<li>Libraries license (LGPL) allows creating commercial and free IDE plugins.</li>
+<li>Support for profiles which determine a set of plugins to be loaded. This is especially usefull for restricted environments or custom setups.</li>
+</ul>
+</li>
+
+<li><b>Project Management</b>
+<ul>
+<li>Native non-intrusive <b>automake</b> and <b>qmake</b> support. Hand-made modifications allowed and recognized by the IDE, also existing projects and subprojects can be easily imported.</li>
+<li>Ability to use custom makefiles to build the project.</li>
+<li>Support for <b>ant</b> - build tool for java projects.</li>
+<li>Support for extra project types like pascal, haskell, ada and scripting projects.</li>
+<li>A framework for adding support for any build system by creating build system plugins for the generic project manager.</li>
+<li>New file wizard to manage file templates and create new files in project from templates.</li>
+<li>Compiler plugins to define compiler options in convenient dialogs.</li>
+<li>Configuration profiles with the ability to specify different compilers, compiler flags, build directories, target architecture, etc.</li>
+<li>Project documenting facilities such as <b>doxygen</b> support for creating automatic API-documentation (in html, tex and man formats) for a project with cross-references to the used libraries.</li>
+<li>Internationalization support, allowing translators to add their target language to a project easily, including support of <a href="http://l10n.kde.org/tools/kbabel/" target="main">KBabel</a>.</li>
+<li>Support for Qt/Embedded projects (for the <a href="http://developer.sharpsec.com/" target="_top">Zaurus</a> and <a href="http://www.compaq.com/products/iPAQ/" target="_top">iPAQ</a> platforms).</li>
+</ul>
+</li>
+
+<li><b>Language Support</b>
+<ul>
+<li>15 supported languages including Ada, C, C++, Objective-C (via C support), SQL, Fortran, Haskell,
+Java, PHP, Pascal, Perl, Python, Ruby, Bash, XUL (unofficially).</li>
+<li>Problem reporter which reports various "problems" with the source code as you type. Problems include language syntax errors, TODO's and FIXME's.</li>
+<li>Class browser to display a hierarchy of classes and other symbols in project.</li>
+<li>Language parsers to feed class browser and problem reporter.</li>
+<li>Class, method and attribute wizards for object-oriented languages.</li>
+<li>Automatic code completion and code hinting for class variables, methods, function arguments and more.</li>
+<li>Source formatting, syntax highlighting and code folding.</li>
+<li>C++ specific features, such as
+<ul>
+<li>"make member" - creating method definition in source file basing on the method declaration in header file;</li>
+<li>"extract interface"- extracting interface (method declarations) and creating abstract base class with that interface;</li>
+<li>"subclassing" - automated subclass creating and slot implementing for Qt Designer forms.</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><b>Integrated Debugger</b>
+<ul>
+<li>GDB and Java debugger frontends.</li>
+<li>Integrated GDB console.</li>
+<li>Line, address, method breakpoints and watchpoints.</li>
+<li>Conditional breakpoints.</li>
+<li>Disassembler and frame stack viewer.</li>
+<li>Variable watch tree.</li>
+<li>Memory, registers and libraries viewers.</li>
+<li>Debugger shell (libtool) support.</li>
+<li>Remote debugging.</li>
+</ul>
+</li>
+
+<li><b>Code Editing</b>
+<ul>
+<li>Any editor which implements KDE KTextEditor interface can be used with KDevelop.</li>
+<li>Currently available editors are <a href="http://kate.kde.org/" target="main">Kate</a>, QEditor (based on the Qt Designer editor) and KVim.</li>
+<li>Project wide bookmarks which are stored in the project file.</li>
+<li>Difference viewer between currently edited text and text on the disk.</li>
+<li>Difference viewer for patch files.</li>
+<li>Grep integration - regular expression search in project.</li>
+<li>Project wide find and replace tool.</li>
+</ul>
+</li>
+
+<li><b>Version Control System</b>
+<ul>
+<li>A common API to include VCS support in KDevelop.</li>
+<li>Supported VCS systems: CVS, Perforce, Subversion and Clearcase.</li>
+</ul>
+</li>
+
+<li><b>Application Wizard</b>
+<ul>
+<li>Application wizard generates complete, ready-to-go sample applications.</li>
+<li>Templates for each supported language and build system exist.</li>
+<li>Ability to use custom application templates not included in distribution.</li>
+<li>A bunch of KDE related project templates (KPart applications, simple KDE applications, KControl modules, Kicker (panel) applets, KOffice parts, KIOSlaves, <a href="http://www.konqueror.org/" target="main">Konqueror</a>, Noatun and Kate plugins and desktop styles).</li>
+</ul>
+</li>
+
+<li><b>Documentation Viewer</b>
+<ul>
+<li>A unified interface to browsing documentation.</li>
+<li>TOC, index and full text search (with htdig) capabilities.</li>
+<li>Autodetection and inclusion of Qt, KDE Libs and DevHelp documentation.</li>
+<li>Support for custom documentation collections (KDevelopTOC format).</li>
+<li>Ability to open local, remote and even compressed documentation (using any protocol supported by Konqueror - http, ftp, sftp, tar, zip, etc.).</li>
+<li>Ability to open various documentation formats (html, text, ps, pdf, chm, etc.).</li>
+</ul>
+</li>
+
+<li><b>Other Features</b>
+<ul>
+<li>The user interface is fully configurable, it allows on the fly switching between classic MDI modes like toplevel, childframe and the new IDEAl mode featuring sliding tool-views.</li>
+<li>Embedded console.</li>
+<li>File selector, file tree and file groups facilities obviating the need for an external file manager.</li>
+<li>The inclusion of any other program you need for development by adding it to the "Tools"-menu according to your individual needs.</li>
+<li>Regular expression tester.</li>
+<li>Valgrind integration to find memory leaks in programs.</li>
+<li>Project distribution and packaging tool for automated creation of source and binary packages.</li>
+<li>CTags integration.</li>
+<li>Part explorer to query available KDE services.</li>
+</ul>
+</li>
+</ul>
+
+<?php module_tail();?>

@@ -1,0 +1,33 @@
+<?php module_head("KDevelop HEAD downloads");?>
+<br><h3>Sources for KDE &gt;= <?php echo $k_min_required_kde_version; ?> :</h3>
+<a href="http://download.kde.org/download.php?url=unstable/snapshots/kdevelop.tar.bz2">Latest development, and therefore <b>unstable</b>, snapshot (tar.bz2)</a><br>
+<br>
+<ol>
+<li>Before continuing please check if your computer has the
+<a href="index.html?filename=HEAD/requirements.html">required software</a> installed.
+</li>
+<br>
+<li>Download the source tar.bz2 file.
+</li>
+<br>
+<li>Uncompress the source file and change to the base directory:
+<dl>
+<dd class="code">$ bunzip2 kdevelop.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop.tar</dd>
+<dd class="code">$ cd kdevelop</dd>
+</dl>
+</li>
+</ol>
+<?php include_file("HEAD/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+if ($lang == 'en') {
+  $ts3 = filemtime("$k_base_version/download.html");
+  $ts4 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts3 = file_exists("lang/$lang/$k_base_version/download.html")?filemtime("lang/$lang/$k_base_version/download.html"):filemtime("$k_base_version/download.html");
+  $ts4 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts3,$ts4));
+?>

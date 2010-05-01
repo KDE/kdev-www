@@ -1,0 +1,45 @@
+# /robots.txt for http://www.kdevelop.org/
+# This file is crucial for the correct functioning of the
+# robot  t r a p s  that are scattered all over the website.
+#
+# Nothing to index here
+#   /bin/
+#   /graphics/
+#   /ie7/
+#   /inc/
+# It has it's own internal search engine
+#   /phorum5/
+#   /HEAD/doc/api/
+#   /HEAD/doc/platform/
+# The rest of the directories should not be accessed directly, but via the main index.html file
+#
+# comments to webmaster kdevelop.org
+#
+
+User-agent: *
+Disallow: /bin/
+Disallow: /graphics/
+Disallow: /ie7/
+Disallow: /inc/
+Disallow: /phorum5/
+Allow:    /phorum5/index.php
+Allow:    /phorum5/read.php
+Disallow: /HEAD/doc/api/
+Allow:    /HEAD/doc/api/html/index.html
+Disallow: /HEAD/doc/platform/
+Disallow: /dynamic/
+Disallow: /guestbook/
+Disallow: /lang/
+Allow:    /lang/de/1.3/doc/
+Allow:    /lang/fr/1.3/doc/programming/
+Disallow: /HEAD/
+Disallow: /mediawiki/index.php?
+Disallow: /mediawiki/index.php/Special
+Disallow: /mediawiki/index.php/Talk
+Disallow: /mediawiki/index.php/MediaWiki
+Disallow: /mediawiki/index.php/Help
+Disallow: /mediawiki/index.php/User
+Disallow: /mediawiki/skins
+Disallow: /mediawiki/*&
+
+Sitemap: http://www.kdevelop.org/sitemap.xml

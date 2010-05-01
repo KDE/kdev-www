@@ -1,0 +1,11 @@
+2008-03-04 22:43:09 -- Started mrtg with config 'new_dl_per_hour.mrtg.cfg'
+2008-03-04 22:43:09 -- Use of uninitialized value in concatenation (.) or string at /usr/bin/mrtg line 1366.
+2008-03-04 22:43:09 -- Use of uninitialized value in concatenation (.) or string at /usr/bin/mrtg line 1366.
+2008-03-04 22:43:09 -- Use of uninitialized value in concatenation (.) or string at /usr/bin/mrtg line 1375.
+2008-03-04 22:43:09 -- Use of uninitialized value in concatenation (.) or string at /usr/bin/mrtg line 1375.
+2008-03-14 13:03:57 -- Started mrtg with config 'new_dl_per_hour.mrtg.cfg'
+2008-03-14 13:04:07 -- Started mrtg with config 'new_dl_per_hour.mrtg.cfg'
+2009-12-29 01:30:22 -- Started mrtg with config 'new_dl_per_hour.mrtg.cfg'
+2009-12-29 01:36:50 -- Started mrtg with config 'new_dl_per_hour.mrtg.cfg'
+2009-12-29 01:38:06 -- Started mrtg with config 'new_dl_per_hour.mrtg.cfg'
+2009-12-29 01:46:11 -- Started mrtg with config 'new_dl_per_hour.mrtg.cfg'

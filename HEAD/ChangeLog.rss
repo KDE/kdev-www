@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>SVN: trunk/KDE/kdevelop</title>
+    <link>http://www.kdevelop.org/index.html?filename=HEAD/ChangeLog.html</link>
+    <description>svn commit log</description>
+    <language>en-us</language>
+    <copyright>1998-2009, The KDevelop team</copyright>
+    <generator>svnlog.xslt</generator>
+    <ttl>60</ttl>
+    <item>
+      <title>Rev:1056285 [apaku] - Use project-specific "root" of source/binary dir,... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1056285&amp;view=rev</link>
+      <pubDate>Sun, 29 Nov 2009 00:00:00 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Use project-specific "root" of source/binary dir, so we properly build as part of sdk.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 29 Nov 2009 00:00:00 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop/projectmanagers/cmake/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevelop/projectmanagers/cmake/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop/languages/cpp/parser/rpp/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevelop/languages/cpp/parser/rpp/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop/projectbuilders/cmakebuilder/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevelop/projectbuilders/cmakebuilder/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop/languages/cpp/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevelop/languages/cpp/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop/languages/cpp/cppduchain/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevelop/languages/cpp/cppduchain/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop/languages/cpp/tests/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevelop/languages/cpp/tests/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop/CMakeLists.txt"&gt;/trunk/extragear/sdk/kdevelop/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1056254 [toma] - Move kdevelop to extragear/sdk.... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1056254&amp;view=rev</link>
+      <pubDate>Sun, 29 Nov 2009 18:08:11 GMT</pubDate>
+      <author>toma@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Move kdevelop to extragear/sdk.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 29 Nov 2009 18:08:11 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Deleted&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop"&gt;/trunk/KDE/kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Added&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/kdevelop"&gt;/trunk/extragear/sdk/kdevelop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1056070 [scripty] - SVN_SILENT made messages (.desktop file)... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1056070&amp;view=rev</link>
+      <pubDate>Sun, 29 Nov 2009 11:06:43 GMT</pubDate>
+      <author>scripty@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;SVN_SILENT made messages (.desktop file)&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 29 Nov 2009 11:06:43 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectmanagers/custommake/kdevcustommakemanager.desktop"&gt;/trunk/KDE/kdevelop/projectmanagers/custommake/kdevcustommakemanager.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop"&gt;/trunk/KDE/kdevelop/debuggers/gdb/kdevgdb.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/documentation/qthelp/kdevqthelp.desktop"&gt;/trunk/KDE/kdevelop/documentation/qthelp/kdevqthelp.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/app/kdevelop.notifyrc"&gt;/trunk/KDE/kdevelop/app/kdevelop.notifyrc&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/cmake_qt4core_qtest.kdevtemplate"&gt;/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core_qtest/cmake_qt4core_qtest.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/cmake_qt4core.kdevtemplate"&gt;/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4core/cmake_qt4core.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/kdevcppsupport.desktop"&gt;/trunk/KDE/kdevelop/languages/cpp/kdevcppsupport.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/formatters/kdevindent.desktop"&gt;/trunk/KDE/kdevelop/formatters/kdevindent.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop"&gt;/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop"&gt;/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/cmake_plaincpp.kdevtemplate"&gt;/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_plaincpp/cmake_plaincpp.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop"&gt;/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakemanager.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/app/kdevelop.desktop"&gt;/trunk/KDE/kdevelop/app/kdevelop.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/formatters/kdevastyle.desktop"&gt;/trunk/KDE/kdevelop/formatters/kdevastyle.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop"&gt;/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/cmake_qt4gui.kdevtemplate"&gt;/trunk/KDE/kdevelop/app_templates/cpp/CMake/cmake_qt4gui/cmake_qt4gui.kdevtemplate&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055627 [nsams] - Actually debugController is 0 on shutdown... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1055627&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 11:51:55 GMT</pubDate>
+      <author>nsams@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Actually debugController is 0 on shutdown&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 11:51:55 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055626 [nsams] - Fix tests by giving them some more time to update... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1055626&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 11:51:50 GMT</pubDate>
+      <author>nsams@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Fix tests by giving them some more time to update&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 11:51:50 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/unittests/gdbtest.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055625 [nsams] - Fix crash on shutdown with active DebugSession... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1055625&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 11:51:45 GMT</pubDate>
+      <author>nsams@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Fix crash on shutdown with active DebugSession&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 11:51:45 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/gdbvariable.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055624 [nsams] - Remove unused code; currentFrame/Thread is handle... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1055624&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 11:50:25 GMT</pubDate>
+      <author>nsams@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Remove unused code; currentFrame/Thread is handled by FrameStackModel.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 11:50:25 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/debugsession.h"&gt;/trunk/KDE/kdevelop/debuggers/gdb/debugsession.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055595 [scripty] - SVN_SILENT made messages (.desktop file)... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1055595&amp;view=rev</link>
+      <pubDate>Sat, 28 Nov 2009 11:09:56 GMT</pubDate>
+      <author>scripty@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;SVN_SILENT made messages (.desktop file)&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sat, 28 Nov 2009 11:09:56 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop"&gt;/trunk/KDE/kdevelop/projectmanagers/cmake/tests/manual/kde4app/kde4app.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop"&gt;/trunk/KDE/kdevelop/projectmanagers/cmake/kdevcmakedocumentation.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1055240 [vprus] - Revert removal of s_appRunning. This change brok... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1055240&amp;view=rev</link>
+      <pubDate>Fri, 27 Nov 2009 16:57:39 GMT</pubDate>
+      <author>vprus@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Revert removal of s_appRunning.
+
+This change broke adding breakpoints while application is running,
+and had other bugs. The ideal solution is to add support for non-stop
+mode, including keeping per-thread 'running' state and automatically
+picking a suitable thread to use for inserting breakpoint. However,
+such changes are too big, and we're in feature freeze.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Fri, 27 Nov 2009 16:57:39 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/gdbglobal.h"&gt;/trunk/KDE/kdevelop/debuggers/gdb/gdbglobal.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054788 [vprus] - Revert revision 1025632, whereby we switched -sta... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1054788&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 19:49:09 GMT</pubDate>
+      <author>vprus@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Revert revision 1025632, whereby we switched -stack-list-variables.
+
+That command never hit 7.0 branch, and there are various bikeshedy
+issues on gdb trunk.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 19:49:09 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/variablecontroller.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/debugsession.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/gdbcommand.cpp"&gt;/trunk/KDE/kdevelop/debuggers/gdb/gdbcommand.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/mi/gdbmi.h"&gt;/trunk/KDE/kdevelop/debuggers/gdb/mi/gdbmi.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054777 [dfaure] - Compile with -DQT_STRICT_ITERATORS... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1054777&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 18:50:59 GMT</pubDate>
+      <author>dfaure@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Compile with -DQT_STRICT_ITERATORS
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 18:50:59 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/codecompletion/implementationhelperitem.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/codecompletion/implementationhelperitem.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.h"&gt;/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-location.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054516 [zwabel] - Make code-completion work behind the 'case' keywo... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1054516&amp;view=rev</link>
+      <pubDate>Thu, 26 Nov 2009 08:51:55 GMT</pubDate>
+      <author>zwabel@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Make code-completion work behind the 'case' keyword. Add some tests.
+Thanks for patch by Olivier.jg
+BUG: 211925
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Thu, 26 Nov 2009 08:51:55 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/codecompletion/context.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.h"&gt;/trunk/KDE/kdevelop/languages/cpp/tests/test_cppcodecompletion.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054290 [apaku] - Sourceformatter support was disabled in kdevplatf... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1054290&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 20:34:51 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Sourceformatter support was disabled in kdevplatform, so disable the formatters.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 20:34:51 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/CMakeLists.txt"&gt;/trunk/KDE/kdevelop/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054108 [apaku] - Increase version number for Beta7... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1054108&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 14:35:49 GMT</pubDate>
+      <author>apaku@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Increase version number for Beta7
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 14:35:49 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/CMakeLists.txt"&gt;/trunk/KDE/kdevelop/CMakeLists.txt&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1054005 [zwabel] - Never temporarily modify macros in the current en... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1054005&amp;view=rev</link>
+      <pubDate>Wed, 25 Nov 2009 10:28:03 GMT</pubDate>
+      <author>zwabel@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Never temporarily modify macros in the current environment, as it crashes if the macro has been mmapped in read-only mode.
+Instead, insert temporary macros.
+BUG: 216071
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Wed, 25 Nov 2009 10:28:03 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro-expander.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro-expander.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.h"&gt;/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1053736 [zwabel] - The document may be deleted during waitForUpdate(... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1053736&amp;view=rev</link>
+      <pubDate>Tue, 24 Nov 2009 18:19:29 GMT</pubDate>
+      <author>zwabel@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;The document may be deleted during waitForUpdate(), so only use the document for a short time.
+&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Tue, 24 Nov 2009 18:19:29 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/cpplanguagesupport.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/cpplanguagesupport.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1053718 [danxuliu] - X-KDevelop-Interfaces has to list even those inte... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1053718&amp;view=rev</link>
+      <pubDate>Tue, 24 Nov 2009 17:11:01 GMT</pubDate>
+      <author>danxuliu@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;X-KDevelop-Interfaces has to list even those interfaces that are inherited&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Tue, 24 Nov 2009 17:11:01 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop"&gt;/trunk/KDE/kdevelop/projectbuilders/cmakebuilder/kdevcmakebuilder.desktop&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1053388 [mwolff] - add QUrl pretty printer, makes printing of KUrls... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1053388&amp;view=rev</link>
+      <pubDate>Mon, 23 Nov 2009 23:43:43 GMT</pubDate>
+      <author>mwolff@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;add QUrl pretty printer, makes printing of KUrls kinda work as well&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Mon, 23 Nov 2009 23:43:43 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/debuggers/gdb/printers/qt4.py"&gt;/trunk/KDE/kdevelop/debuggers/gdb/printers/qt4.py&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1053022 [zwabel] - Don't run the parser at all when only the "TopDUC... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1053022&amp;view=rev</link>
+      <pubDate>Sun, 22 Nov 2009 23:55:45 GMT</pubDate>
+      <author>zwabel@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;Don't run the parser at all when only the "TopDUContext::Empty" feature is requested.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 22 Nov 2009 23:55:45 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/cppparsejob.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/cppduchain/contextbuilder.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+    <item>
+      <title>Rev:1053016 [zwabel] - When merging macro-sets that are already stored i... </title>
+      <link>http://websvn.kde.org/trunk/KDE/kdevelop/?rev=1053016&amp;view=rev</link>
+      <pubDate>Sun, 22 Nov 2009 23:50:10 GMT</pubDate>
+      <author>zwabel@k_d_e_v_e_l_o_p.org</author>
+      <description disable-output-escaping="yes">&lt;div style="white-space:pre"&gt;When merging macro-sets that are already stored in a repository into an environment, insert the repository-macros directly, without copying each macro.
+This speeds up the preprocessing/parsing.&lt;/div&gt;&lt;br/&gt;
+                (&lt;em&gt;Sun, 22 Nov 2009 23:50:10 GMT&lt;/em&gt;)&lt;br/&gt;&lt;br/&gt;
+                &lt;table&gt;
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/cppduchain/cpppreprocessenvironment.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/cppduchain/cpppreprocessenvironment.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.cpp"&gt;/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-environment.cpp&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro.h"&gt;/trunk/KDE/kdevelop/languages/cpp/parser/rpp/pp-macro.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; 
+        &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Modified&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&amp;nbsp;&lt;a href="http://websvn.kde.org/trunk/KDE/kdevelop/languages/cpp/cppduchain/environmentmanager.h"&gt;/trunk/KDE/kdevelop/languages/cpp/cppduchain/environmentmanager.h&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt; &lt;/table&gt;
+           </description>
+    </item>
+  </channel>
+</rss>

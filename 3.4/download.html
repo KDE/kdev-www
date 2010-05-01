@@ -1,0 +1,53 @@
+<?php module_head("KDevelop $k_series_version binary downloads");?>
+<br>
+<h3>Binaries :</h3>
+<p>
+Some Linux/UNIX OS vendors have kindly provided binary packages of KDevelop for some
+versions of their distribution, and in other cases community volunteers have done so.
+Some of these binary packages are available for free download from KDE's http or FTP mirrors.
+</p>
+<?php
+  $l_architecture = "Architecture";
+  $l_distribution = "Distribution";
+  $l_distribution_version = "Distribution version";
+  include("$k_base_version/download_binaries.ihtml");
+?>
+<br>
+<?php
+module_tail();
+module_head("KDevelop $k_series_version source downloads");
+?>
+<br><h3>Sources for KDE &gt;= <?php echo $k_min_required_kde_version; ?> :</h3>
+<?php include("$k_base_version/download_sources.ihtml"); ?>
+<br>
+<p>Or you could get the
+<a href="index.html?filename=<?php echo $k_base_version; ?>/branches_compiling.html">
+latest sources directly from KDevelop's SVN source repository</a>.</p>
+<ol>
+<li>Before continuing please check if your computer has the
+<a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">required software</a> installed.
+</li>
+<br>
+<li>Uncompress the source file and change to the base directory:
+<dl>
+<dd class="code">$ bunzip2 kdevelop-<?php echo $k_latest_version; ?>.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop-<?php echo $k_latest_version; ?>.tar</dd>
+<dd class="code">$ cd kdevelop-<?php echo $k_latest_version; ?></dd>
+</dl>
+</li>
+</ol>
+<?php include_file("$k_base_version/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+$ts1 = filemtime("$k_base_version/download_binaries.ihtml");
+$ts2 = filemtime("$k_base_version/download_sources.ihtml");
+if ($lang == 'en') {
+  $ts3 = filemtime("$k_base_version/download.html");
+  $ts4 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts3 = file_exists("lang/$lang/$k_base_version/download.html")?filemtime("lang/$lang/$k_base_version/download.html"):filemtime("$k_base_version/download.html");
+  $ts4 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts1,$ts2,$ts3,$ts4));
+?>

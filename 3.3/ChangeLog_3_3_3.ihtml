@@ -1,0 +1,94 @@
+2006-05-23 10:34  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=543997&amp;view=rev">543997</A>]  binner<br>
+
+branches/KDE/3.5/kdeaccessibility/kdeaccessibility.lsm,
+branches/KDE/3.5/kdeaddons/kdeaddons.lsm,
+branches/KDE/3.5/kdeadmin/kdeadmin.lsm,
+branches/KDE/3.5/kdeartwork/kdeartwork.lsm,
+branches/KDE/3.5/kdebase/kdebase.lsm,
+branches/KDE/3.5/kdebase/konqueror/version.h,
+branches/KDE/3.5/kdebase/startkde,
+branches/KDE/3.5/kdebindings/kdebindings.lsm,
+branches/KDE/3.5/kdeedu/kdeedu.lsm,
+branches/KDE/3.5/kdegames/kdegames.lsm, ... : bump version for KDE
+3.5.3<br><br>
+
+2006-05-15 14:03  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=541073&amp;view=rev">541073</A>]  rdale<br>
+
+languages/ruby/app_templates/kapp/main.rb: * Remove redundant DCOP
+registration call<br><br>
+
+2006-05-11 16:07  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=539734&amp;view=rev">539734</A>]  escuder<br>
+
+languages/php/phpsupportpart.cpp: KDevelop / PHP : Fix multiple
+add of the same function in the global NameSpace<br><br>
+
+2006-04-24 10:41  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=533279&amp;view=rev">533279</A>]  rdale<br>
+
+languages/ruby/debugger/variablewidget.cpp: * Fixed bug in
+accessing elements of Arrays and Hashs within instance variables<br><br>
+
+2006-04-21 11:06  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=532146&amp;view=rev">532146</A>]  rdale<br>
+
+languages/ruby/rubysupport_part.cpp: * Applied patch from Tim
+Harper for the Ruby class parser: * This will recognize classes
+like so: class Widget::WidgetContentTextController <
+Widget::WidgetContentController and, just discards the namespace
+Widget:: and stores WidgetContentTextController. CCMAIL:
+kdevelop-devel@kdevelop.org<br><br>
+
+2006-04-15 21:54  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=530247&amp;view=rev">530247</A>]  dymo<br>
+
+parts/appwizard/appwizarddlg.cpp: Backported the fix for
+QTextStream encoding.<br><br>
+
+2006-04-12 23:41  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=529276&amp;view=rev">529276</A>]  mattr<br>
+
+languages/python/kde_pydoc.py: backport new kde_pydoc.py file that
+adds support for python 2.4<br><br>
+
+2006-04-11 00:16  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=528442&amp;view=rev">528442</A>]  mattr<br>
+
+parts/documentation/interfaces/kdevdocumentationplugin.h,
+parts/documentation/plugins/chm/docchmplugin.cpp,
+parts/documentation/plugins/chm/docchmplugin.h,
+parts/documentation/protocols/chm/chm.cpp: add support for reading
+TOC from CHM documentation.<br><br>
+
+2006-04-11 00:13  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=528440&amp;view=rev">528440</A>]  mattr<br>
+
+languages/python/app_templates/pyqt/app.py: fix the python
+template so that the file dialog works out of the box.<br><br>
+
+2006-04-09 04:39  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=527678&amp;view=rev">527678</A>]  mattr<br>
+
+buildtools/qmake/trollprojectwidget.cpp,
+languages/cpp/cppcodecompletion.cpp,
+languages/cpp/cppnewclassdlg.cpp,
+languages/cpp/createpcsdialog.cpp,
+languages/cpp/subclassingdlg.cpp,
+languages/kjssupport/subclassingdlg.cpp,
+parts/documentation/protocols/chm/chmfile.cpp,
+parts/documentation/protocols/chm/decompress.cpp,
+parts/filecreate/filecreate_part.cpp,
+parts/filelist/projectviewpart.cpp: merge the following revisions
+from the kdevelop 3.4 branch: - 527665 - 527667 - 527668 - 527676<br><br>
+
+2006-04-03 19:10  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=526072&amp;view=rev">526072</A>]  rdale<br>
+
+src/profiles/IDE/ScriptingLanguageIDE/RubyIDE/profile.config: *
+Re-enable the 'Quick Open' and 'File Groups' plugins for Ruby, as
+requested by Tim Harper<br><br>
+
+2006-04-02 20:08  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=525771&amp;view=rev">525771</A>]  dfaure<br>
+
+parts/appwizard/appwizarddlg.cpp: Exiting on me because of an
+error in a module is a bit... unexpected. kdevelop (appwizard):
+There was an error loading the module KDevCVSIntegrator kdevelop
+(appwizard): libcvsservice.so.0: cannot open shared object file:
+No such file or directory OK, but surely I can do without CVS in
+such a case...<br><br>
+
+2006-04-01 19:44  [r<A HREF="http://websvn.kde.org/branches/kdevelop/3.3/?rev=525366&amp;view=rev">525366</A>]  dymo<br>
+
+languages/cpp/backgroundparser.cpp: Backport the fix from 3.4
+branch here. Many people reported it helps.<br><br>

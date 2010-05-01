@@ -1,0 +1,418 @@
+<?php
+// Auxiliary functions
+require('inc/functions.php');
+
+// Process the apache server header, do redirections if necessary,
+// validate the parameters passed in the URI, connect to the MySQL
+// database, protect against bad e-mail collecting web robots, do
+// the visitors statistics, and set the language preference cookie.
+require('inc/apache_header.php');
+
+// The theme
+require('inc/theme3.php');
+
+// Load the english translation this way if there is an
+// untranslated string it will get the english value by default
+require('translations.inc');
+
+// Load the translations
+if (file_exists("lang/$lang/translations.inc")){
+  // The use of "include" is deliberate
+  include("lang/$lang/translations.inc");
+
+  // To correctly compute dates and other localized strings
+  if (setlocale(LC_ALL, "$l_locale.$l_charset_encoding") == false)
+    echo "setlocale() failed\n";
+}
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<?php
+  // Declare the language of this page
+  $htmllang_code = $lang;
+  // HTML compliant lang codes take the form "language-countryCode"
+  if (isset($lang[2]) and $lang[2]=='_')
+    $htmllang_code[2]='-';
+  if ($lang == 'ar')
+    echo "<html lang=\"$htmllang_code\" dir=\"rtl\">\n";
+  else
+    echo "<html lang=\"$htmllang_code\">\n";
+?>
+<head>
+<?php
+  // Use the correct charater encoding
+  echo ("  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=$l_charset_encoding\">\n");
+
+  // Build the title of the page using the filename and the variables defined in the translations.inc file
+  echo '  <title>KDevelop - ' . get_title_variable($filename) . "</title>\n";
+
+  // One default stylesheet and three optional ones
+  echo "  <link rel=\"stylesheet\"  media=\"screen\" type=\"text/css\" title=\"KDevelop3 green\" href=\"theme3.css\">\n";
+
+  if (strpos($filename, '3.4/ChangeLog.html') !== FALSE ){
+    echo '  <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="3.4/ChangeLog.rss">
+';
+  }
+  if (strpos($filename, '3.5/ChangeLog.html') !== FALSE ){
+    echo '  <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="3.5/ChangeLog.rss">
+';
+  }
+  if (strpos($filename, 'HEAD/ChangeLog.html') !== FALSE ){
+    echo '  <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="HEAD/ChangeLog.rss">
+';
+  }
+  if (strpos($filename, 'HEAD/ChangeLog_kdevplatform.html') !== FALSE ){
+    echo '  <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="HEAD/ChangeLog_kdevplatform.rss">
+';
+  }
+  if ($filename == 'main.html'){
+    echo '  <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="dynamic/kdevelop_news_'.$lang.'.rss">
+';
+  }
+
+   // Refresh page content every hour
+  if ( ( strpos($filename, 'ChangeLog.html') !== FALSE )
+   // or ( strpos($filename, 'stats.html') !== FALSE )
+    or ( strpos($filename, 'translation_status') !== FALSE ) ){
+    echo '  <meta http-equiv="refresh" content="3600">
+';
+  }
+
+  // other pages with the same content, but another language. For search engines
+  // see http://www.w3.org/TR/html401/struct/links.html#edef-LINK
+  foreach($activelanguages as $lang_i){
+    $htmllang_code_i = "$lang_i\">\n";
+    if (isset($lang_i[2]) and $lang_i[2]=='_')
+      $htmllang_code_i[2]='-';
+    if ($lang_i==$lang){
+      echo '  <meta http-equiv="Content-Language" content="'.$htmllang_code_i;
+    } else {
+      echo '  <link rel="alternate" type="text/html" href="index.html?filename='.$filename;
+      echo ($lang_i!='en'?"&amp;set_lang=$lang_i":'').'" hreflang="'.$htmllang_code_i;
+    }
+  }
+
+unset($keywords);     // delete it just in case
+unset($meta_robots);  // delete it just in case
+// These things are here in the "most requested first" order
+if ($filename=='main.html'){
+  $keywords='KDevelop,linux,open,source,IDE,GUI,unix,development,cpp,c++,solaris,BSD,kde,KDE,Qt,qt,tutorial,free,gpl,gnu,GNOME,ada,pascal,fortran,perl,phyton,ruby,haskell';
+  $meta_robots='index,follow';}  // index because has interresting info, and it will otherwise fail the later (translation) test
+elseif (strpos($filename,'download') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,download,binaries,binary,source,rpm,linux,solaris,macos,windows,install,software,free';
+elseif (strpos($filename,'features') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,features,list,capabilities,c++,ada,pascal,fortran,perl,phyton,ruby,haskell,java';
+elseif (strpos($filename,'screenshots') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,screenshots';
+elseif (strpos($filename,'tutorials') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,tutorial,GUI,introduction,free';
+elseif (strpos($filename,'versions') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,released,versions';
+elseif (strpos($filename,'users') !== FALSE ){ // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,programs,using,users';
+  $meta_robots=($lang=='en'?'':'no').'index,nofollow';}  // Restrict the serach engines spiders
+elseif (strpos($filename,'requirements') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,requirements,install,software';
+elseif (strpos($filename,'faq') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,faq,FAQ,starting,introduction';
+elseif (strpos($filename,'changes') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,changes,history';
+elseif (strpos($filename,'ChangeLog') !== FALSE ){ // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,changes,history,commits,SVN';
+  $meta_robots=($lang=='en'?'':'no').'index,nofollow';}  // Restrict the serach engines spiders
+elseif (strpos($filename,'kdevelop.') !== FALSE ) // the . is IMPORTANT
+  $keywords='KDevelop,information,release';
+elseif (strpos($filename,'branches_compiling') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,download,source,SVN,branches,install,compiling';
+elseif (strpos($filename,'authors') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,credits,authors,developers,thanks,contacts,website';
+elseif (strpos($filename,'kdevelop_po_status') !== FALSE ){ // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,translation,i18n,internationalization,i10l,GUI';
+  $meta_robots='index,nofollow';}  // Restrict the serach engines spiders
+elseif (strpos($filename,'announce-kdevelop') !== FALSE || strpos($filename,'pressrelease') !== FALSE || strpos($filename,'in_the_press') !== FALSE)
+  $keywords='KDevelop,announce,public,press,release';
+elseif (strpos($filename,'bugs') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,report,bugs,whishes';
+elseif (strpos($filename,'license') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,license,gpl,gnu';
+elseif (strpos($filename,'sitemap') !== FALSE ){ // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,sitemap,website,map';
+  $meta_robots='index,follow';}  // index because has interresting info, and it will otherwise fail the later (translation) test
+elseif (strpos($filename,'main') !== FALSE ) // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,news,history';
+elseif (strpos($filename, 'guestbook') !== FALSE ){ // The 3 === are CORRRECT and it is faster than strstr() function
+  $keywords='KDevelop,guestbook';
+  $meta_robots='noindex,nofollow';}  // do not index guestbook pages, there is no interresting information there
+elseif (strpos($filename, 'translation_status') !== FALSE){
+  if ($filename == 'optional_files_translation_status.html')
+    $meta_robots=($lang=='en'?'':'no').'index,nofollow';  // no real information in the translated optional... pages
+  else
+    $meta_robots='index,nofollow';  // Restrict the serach engines spiders
+}
+elseif ($filename == 'stats.html'){
+  $keywords='KDevelop,website,statistics';
+  $meta_robots='index,nofollow';}
+
+if (isset($keywords))
+  echo "  <meta name=\"keywords\" content=\"$keywords\">\n";
+
+if (!isset($meta_robots)){
+  if ($lang=='en')   // index english pages by default (if not stated otherwise in the lines above)
+    $meta_robots='index,follow';
+  else               // only index translated pages, untranslated pages have English content and so avoid it being indexed twice
+    $meta_robots=(file_exists("lang/$lang/$filename")?'':'no').'index,follow';
+}
+echo "  <meta name=\"robots\" content=\"$meta_robots\">\n";
+?>
+  <meta name="author" content="Sandy Meier, Stefan Bartel, Thomas Fromm, Amilcar Lucas">
+</head>
+<body>
+<?php
+if( $filename == 'main.html' )
+  echo "<div id=\"news\">   <!-- begin column 2 of 3 -->\n";
+else
+  echo "<div id=\"maincontent\">   <!-- begin column 2 of 2 -->\n";
+
+//require('protest_against_software_patents.ihtml');
+require('request_translation_help.ihtml');
+
+if ($filename == 'main.html')
+  include_file('what_is_kdevelop.ihtml');
+
+if (strpos($filename,'4.0/ChangeLog.') !== FALSE || strpos($filename,'HEAD/ChangeLog.') !== FALSE){
+  module_head('Bugs fixed');
+  global $K_VERSION;
+  echo '<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&resolution=FIXED&resolution=WORKSFORME&bugidtype=include&chfield=resolution&chfieldfrom='.$K_VERSION['4.0']['latest_release_date'].'&chfieldto=NOW&order=Bug+Number&cmdtype=doit">Bugs fixed after the release of version '.$K_VERSION['4.0']['latest_version'].'</a>';
+  module_tail();
+}
+if (strpos($filename,'4.0/ChangeLog_') !== FALSE || strpos($filename,'HEAD/ChangeLog_') !== FALSE){
+  module_head('Bugs fixed');
+  global $KPLATFORM_VERSION;
+  echo '<a href="http://bugs.kde.org/buglist.cgi?product=kdevplatform&resolution=FIXED&resolution=WORKSFORME&bugidtype=include&chfield=resolution&chfieldfrom='.$KPLATFORM_VERSION['1.0']['latest_release_date'].'&chfieldto=NOW&order=Bug+Number&cmdtype=doit">Bugs fixed after the release of version '.$KPLATFORM_VERSION['1.0']['latest_version'].'</a>';
+  module_tail();
+}
+
+$last_updated_time= include_file($filename);
+
+if ($filename == 'main.html')
+  include('dynamic/blogs_rss_feeds.ihtml');
+
+echo "<div id=\"others\">\n";
+// These things are here in the "most requested first" order
+// The 3 === are CORRRECT and it is faster than strstr() function
+if (strpos($filename,'main1') !== FALSE || strpos($filename,'main2') !== FALSE){
+  include('inc/other_main.php');
+}elseif (strpos($filename,'download') !== FALSE)
+  include('inc/other_download.php');
+elseif (strpos($filename,'features') !== FALSE)
+  include('inc/other_features.php');
+elseif (strpos($filename,'requirements') !== FALSE)
+  include('inc/other_requirements.php');
+elseif (strpos($filename,'screenshots1') !== FALSE)
+  include('inc/other_screenshots1.php');
+elseif (strpos($filename,'screenshots.') !== FALSE) // the . is IMPORTANT
+  include('inc/other_screenshots.php');
+elseif (strpos($filename,'faq') !== FALSE)
+  include('inc/other_faq.php');
+elseif (strpos($filename,'changes') !== FALSE)
+  include('inc/other_changes.php');
+elseif (strpos($filename,'ChangeLog') !== FALSE)
+  include('inc/other_ChangeLog.php');
+elseif (strpos($filename,'kdevelop.') !== FALSE) // the . is IMPORTANT
+  include('inc/other_kdevelop.php');
+elseif (strpos($filename,'branches_compiling') !== FALSE)
+  include('inc/other_branches_compiling.php');
+elseif (strpos($filename,'authors') !== FALSE)
+  include('inc/other_authors.php');
+elseif (strpos($filename,'screenshots2') !== FALSE)
+  include('inc/other_screenshots2.php');
+elseif (strpos($filename,'screenshots3') !== FALSE)
+  include('inc/other_screenshots3.php');
+elseif (strpos($filename,'kdevelop_po_status') !== FALSE)
+  include('inc/other_kdevelop_po_status.php');
+elseif (strpos($filename,'announce-kdevelop') !== FALSE || strpos($filename,'pressrelease') !== FALSE || strpos($filename,'in_the_press') !== FALSE){
+  include('dynamic/blogs_rss_feeds_long.ihtml');
+  include('inc/other_announce-kdevelop.php');
+}elseif (strpos($filename,'bugs') !== FALSE)
+  include('inc/other_bugs.php');
+echo "</div>\n";
+
+if (!empty($last_updated_time)){
+   echo "  <p class=\"footnote\" id=\"pagemodtime\">$l_last_updated".strftime(' %c',$last_updated_time)."</p>\n";
+}
+
+if ($lang != 'en'){
+  echo "  <address class=\"footnote\" id=\"translator\">$l_translation_by" . get_translator_name_with_email('HEAD', $lang) . "</address>\n";
+  echo "  <br>\n";
+}
+echo "  <address class=\"footnote\" id=\"webmaster\">$l_website_bugs<a href =\"mailto:webmaster@kdevelop.org?subject=KDevelop+website\">webmaster</a>.</address>\n";
+?>
+</div>   <!-- end column 2 -->
+
+<?php
+  if( $filename == 'main.html' ){
+    echo "<div id=\"quickoverview\">   <!-- begin column 3 -->\n";
+
+    if ($navmenu=='developer'){
+      module_head($l_forum);
+      echo $l_forum_description;
+      module_tail();
+    }
+
+    /*module_head($l_on_line_chat);
+    echo $l_irc_description;
+    module_tail();*/
+
+    include('inc/picture_corner.php');
+
+    include('inc/new_dl_per_hour.php');
+
+    include('inc/user_progs.php');
+
+    include('inc/change_log.php');
+
+    $resultlogtab = mysql_query('SELECT ip FROM stats_userlog;');
+    $result       = mysql_query('select visitors from stats_counter where 1=1 order by visitors desc;');
+    $numberlogtab = mysql_num_rows($resultlogtab);
+    $visitors     = mysql_result($result,0,'visitors');
+
+    print "<div id=\"sitestats\">
+<p><b>$numberlogtab</b><br>
+<a href=\"index.html?filename=stats.html\">$l_user_online</a></p>
+<p><b>$visitors</b><br>
+<small>$l_visitors_since</small></p>
+</div>";
+?>
+
+<!--eXTReMe tracker begin DO NOT EDIT START-->
+<noscript><div><img width="1" height="1" src="http://z1.extreme-dm.com/z/?tag=kdevelop&amp;j=n&amp;jv=n" alt="tracker"></div></noscript>
+<a href="http://extremetracking.com/open;sum?tag=kdevelop" title="View statistics">
+<img src="graphics/stats/tracking.gif" height="38" width="41" alt="eXTReMe Tracker"></a>
+<script type="text/javascript"><!--
+EXs=screen;EXw=EXs.width;navigator.appName!="Netscape"?
+EXb=EXs.colorDepth:EXb=EXs.pixelDepth;
+navigator.javaEnabled()==1?EXjv="y":EXjv="n";
+EXd=document;EXw?"":EXw="na";EXb?"":EXb="na";
+EXd.write("<img src=\"http://z1.extreme-dm.com",
+"/z/?tag=kdevelop&amp;rs=41&amp;j=y&amp;jv="+EXjv+"&amp;srw="+EXw+"&amp;srb="+EXb+"&amp;",
+"l="+escape(EXd.referrer)+"\" height=\"1\" width=\"1\">");//-->
+</script>
+<!--eXTReMe tracker end DO NOT EDIT END-->
+
+<a href="http://www.mysql.com/" title="www.mysql.com"><img src="graphics/mysql.png" alt="Works with MySQL" height="31" width="88"></a>
+<a href="http://www.php.net/" title="www.php.net"><img src="graphics/php.png" alt="Powered by PHP" height="31" width="88"></a>
+
+</div>   <!-- end column 3 -->
+<?php
+  }
+?>
+
+<div id="sitenavigation">   <!-- begin column 1 -->
+<a href="phorum5/jambot.php"></a>
+
+<?php
+    if ($navmenu=='developer')
+       include('inc/quick_downloads.php');
+/*
+       if ($navmenu=='user') {
+         echo "<div class=\"tabs\" id=\"toptabs\">
+        <table cellpadding=\"4\" cellspacing=\"0\" border=\"0\"><tr>
+          <th><a href=\"index.html?filename=$filename&amp;set_navmenu=user\">User</a></th>
+          <td><a href=\"index.html?filename=$filename&amp;set_navmenu=developer\">Developer</a></td>
+        </tr></table>
+       </div>\n";
+       } else {
+         echo "<div class=\"tabs\" id=\"toptabs\">
+        <table cellpadding=\"4\" cellspacing=\"0\" border=\"0\"><tr>
+          <td><a href=\"index.html?filename=$filename&amp;set_navmenu=user\">User</a></td>
+          <th><a href=\"index.html?filename=$filename&amp;set_navmenu=developer\">Developer</a></th>
+        </tr></table>
+       </div>\n";
+       }
+*/
+       if ($navmenu=='user') {
+         $menufilename="dynamic/menu_normal_user_$lang.html";
+         // if the cached menu is outdated, update it
+         if (!file_exists($menufilename) ||
+             (filemtime('inc/menu_normal_user.php') > filemtime($menufilename)) ||
+             (filemtime('translations.inc') > filemtime($menufilename)) ||
+             (filemtime('bin/website_globals.php') > filemtime($menufilename)) ||
+             (file_exists("lang/$lang/translations.inc") && (filemtime("lang/$lang/translations.inc") > filemtime($menufilename)))
+           ){
+           include('inc/menu_normal_user.php');
+         }
+       } else{
+         $menufilename="dynamic/menu_$lang.html";
+         // if the cached menu is outdated, update it
+         if (!file_exists($menufilename) ||
+             (filemtime('inc/menu.php') > filemtime($menufilename)) ||
+             (filemtime('translations.inc') > filemtime($menufilename)) ||
+             (filemtime('bin/website_globals.php') > filemtime($menufilename)) ||
+             (file_exists("lang/$lang/translations.inc") && (filemtime("lang/$lang/translations.inc") > filemtime($menufilename)))
+           ){
+           include('inc/menu.php');
+         }
+       }
+       include($menufilename);
+       require('inc/mysqlcounter.php');
+      ?>
+  <div id="validator"><a href="http://validator.w3.org/check?uri=referer"><img src="graphics/valid-html401.png" alt="Valid HTML 4.01!" height="31" width="88"></a></div>
+</div>   <!-- end column 1 -->
+
+<div id="logo">   <!-- begin KDevelop.org Banner -->
+  <a href="." title="<?php echo $l_back_kdevelop_home;?>">
+  <img height="100" width="450" src="graphics/theme3/KDevelopBanner.png" alt="KDevelop homepage logo"></a>
+  <a href="graphics/botjam.php"></a>
+</div>   <!-- end KDevelop.org Banner -->
+
+<div id="languageselector">   <!-- language selection flags -->
+<?php
+foreach($activelanguages as $lang_i){
+   $htmllang_code_i = $lang_i;
+   // HTML compliant lang codes take the form "language-countryCode"
+   if (isset($htmllang_code_i[2]))
+     $htmllang_code_i[2]='-';
+   echo "  <a href=\"index.html?filename=$filename&amp;set_lang=$lang_i\" hreflang=\"$htmllang_code_i\" title=\"$languages[$lang_i]\"><img height=\"15\" width=\"30\" src=\"graphics/flags/$lang_i.gif\" alt=\"$languages[$lang_i]\"></a>\n";
+}
+?>
+  <a href="guestbook/diebotdie.php"></a>
+</div>   <!-- end language selection flags -->
+
+<div id="sitesearch">   <!-- begin Google based SiteSearch -->
+  <table<?php if ($lang == 'ar') echo ' dir="rtl"'; ?>><tr><td>
+      <a href="http://www.google.com/"><img height="30" width="82" src="graphics/Logo_google.gif" alt="Powered by Google"></a>
+    </td><td>
+      <form method="get" action="http://www.google.com/search"><div>
+      <input type="text" name="q" size="25" maxlength="255" value=""> <input type="submit" name="btnG" value="<?php echo $l_search; ?>"></div>
+      <div id="searchdomain">
+      <input type="hidden" name="domains" value="www.kdevelop.org">
+      <input type="radio" name="sitesearch" value=""> www
+      <input type="radio" name="sitesearch" value="www.kdevelop.org" checked="checked"> www.kdevelop.org
+      </div>
+      </form>
+  </td></tr></table>
+</div>   <!-- end Google based SiteSearch  -->
+
+<div id="menu">
+ <ul>
+<?php
+printf('  <li%s><a href="/" title="%s"><span>%s</span></a></li>
+', ($filename=='main.html')?' class="selected"':'', "KDevelop - $l_pt_main", $l_home);
+printf('  <li%s><a href="index.html?filename=3.5/download.html" title="%s"><span>%s</span></a></li>
+', (strpos($filename,'download') !== FALSE)?' class="selected"':'', $l_download, $l_download);
+printf('  <li%s><a href="index.html?filename=3.5/screenshots.html" title="%s"><span>%s</span></a></li>
+', (strpos($filename,'screenshots') !== FALSE)?' class="selected"':'', $l_screenshots, $l_screenshots);
+printf('  <li%s><a href="index.html?filename=3.5/features.html" title="%s"><span>%s</span></a></li>
+', (strpos($filename,'features') !== FALSE)?' class="selected"':'', $l_features, $l_features);
+printf('  <li%s><a href="index.html?filename=tutorials.html" title="%s"><span>%s</span></a></li>
+', ($filename=='tutorials.html')?' class="selected"':'', $l_pt_tutorials, $l_tutorials);
+printf('  <li%s><a href="index.html?filename=3.3/faq.html" title="%s"><span>%s</span></a></li>
+', (strpos($filename,'faq') !== FALSE)?' class="selected"':'', $l_faq, $l_faq);
+printf('  <li%s><a href="index.html?filename=sitemap.html" title="%s"><span>%s</span></a></li>
+', ($filename=='sitemap.html')?' class="selected"':'', $l_sitemap, $l_sitemap);
+?>
+ </ul>
+</div>
+
+</body>
+</html>

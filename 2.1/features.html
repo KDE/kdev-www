@@ -1,0 +1,108 @@
+<?php module_head("KDevelop 2.x features");?>
+
+<h4>Project Management:</h4>
+The project file keeps all information for your project files like file properties
+(include or exclude from distribution), and projects can be created and changed individually.
+The generated projects are autoconf/automake-compatible. 
+
+<h4>Dialog Editor:</h4>
+KDevelop provides you an easy way to create GUI interfaces with the built-in dialog editor.
+You can let KDevelop generate the dialog sourcecode and get full control of the dialog functionality.
+
+<h4>Classparser / Classtools:</h4>
+The classview currently features the parsing of almost any C++ and C statement, nested classes,
+structures within classes and operators as well as namespaces. It is also possible to add methods and 
+attributes using the classtools dialogs. The classtool is a new feature of kdevelop. The idea is that you 
+generally want a tool to view inheritance and methods that are usable through inheritance.
+This need is fulfilled with the classtool. It's an intuitive way to browse the classes
+in the system and to view their relationship. 
+
+<h4>Integrated Debugger:</h4>
+With KDevelop 1.1 you are provided a complete integrated debugger which lets you use KDevelop´s classviewer 
+even more efficently when debugging as you can easily access the sourcecode to set breakpoints and watch 
+variables of your application.
+ 
+<h4>Graphical Class Viewer:</h4>
+The graphical class viewer offers you the possibility to get an overview of your project
+and all of your classes. 
+
+<h4>Application Wizard:</h4>
+The KAppWizard offers the generation of different application frameworks to create new programs.
+Available are a standard KDE application with menubar, toolbar and statusbar, a mini-KDE-application
+with an empty Mainwindow, a complete GNOME application, a Qt-only based application also with menubar, toolbar and statusbar
+and finally a C/C++ Terminal application type. KDevelop 1.1 even incudes KDE 2/Qt 2 frameworks for those 
+developers that want to stay on the bleeding edge of KDE development.  All of those are generated and adapted
+to your new application's needs and are ready to run within seconds.
+
+<h4>Documentation:</h4>
+KDevelop ships with a complete documentation set which consists of five handbooks: The user manual, 
+programming handbook, tutorial handbook and KDE library reference guides. This documentation plus a C/C++ reference 
+and the Qt and KDE documentation can be easily accessed by the integrated documentation browser. 
+
+<h4>Four Treeviews:</h4>
+The treeviews allow to easily switch between source/headerfiles, classes and documentation which enables 
+you to manage your project files without using an external filemanager. 
+
+<h4>Integrated Editor:</h4>
+Full featured editor with syntax highlighting. (KWrite) 
+
+<h4>Integrated Unix tools for development:</h4>
+We integrated a lot of features which we thought could be very useful. Also during testing
+KDevelop we had new ideas on making routine work simple and so tried to implement those ideas
+as well. To mention are kdoc, kiconedit, kdbg, automake & friends etc.
+
+<h4>Integrated Documentation Browser:</h4>
+The documentation browser offers direct access to the current documentation of the Qt and KDE libraries, the 
+KDevelop manuals and tutorials. With the help of the documentation tree, you can browse directly to the 
+documentation for any KDE/Qt class or method.
+ 
+<h4>Powerful Help System:</h4>
+The help system provides Quickhelp messages, "What's this" and statusbar help anywhere, so you always get
+feedback about where you are and what you can do.
+ 
+<h4>Class Generator:</h4>
+Creates your classes on the fly. 
+
+<h4>3 MDI visualization modes in a choice:</h4>
+Let KDevelop's user interface look like MS Visual C++, Borland Builder, KDEStudio or like Gimp.
+Dock the views as you want to. It allows:<br>
+
+<ul>
+<li>to open as many source files as you want</li>
+<li>to open as many documentation browser files as you want</li>
+<li>to open multiple views on one source file.</li>
+<li>to work in the user interface mode of your choice. You can switch
+  between these ones:<br>
+   1. Every single view is a toplevel window on desktop. Even the tool
+      views (trees and output). Addionally, there's a control window
+      containing the bars and menus. Like in Gimp.<br>
+   2. Childframe MDI mode like in MS Visual C++.<br>
+   3. TabPage MDI mode like in KDEStudio or Borland Builder</li>
+<li>to use an application-owned taskbar for the opened views
+  (but of course, you can switch that off)</li>
+<li>to work with full floatable tool views</li>
+</ul>
+<br><br>
+
+<table border=0><TR><TD><a href="graphics/screenshots/2.1/kdev2.0-pict1.jpg" target=new><img src="graphics/screenshots/2.1/kdev2.0-pict1_small.jpg" alt="default user interface"></a></TD><TD>
+This is the default user interface, a scenario which somehow looks like
+MSVC ;-). Note the view-taskbar at the bottom. And furthermore, do you
+see the little "undock" button in the upper right corner of the window
+(next to the minimize button of the editor view)? If you click on it,
+the editor view will undock to desktop and it becomes toplevel.</TD></TR>
+
+<TR><TD><a href="graphics/screenshots/2.1/kdev2.0-pict2.jpg" target=new><img src="graphics/screenshots/2.1/kdev2.0-pict2_small.jpg" alt="TabPage MDI mode"></a></TD><TD>
+This is TabPage MDI mode. Statistically it seems it's the most often used mode.</TD></TR>
+<TR><TD><a href="graphics/screenshots/2.1/kdev2.0-pict3.jpg" target=new><img src="graphics/screenshots/2.1/kdev2.0-pict3_small.jpg" alt="toplevel mode mode"></a></TD><TD>
+I suppose, most Unix users are used to work in toplevel mode where every
+view is directly on the desktop. Nothing easier than that with
+KDevelop-2.0! You can even tear tool-views out of their tab window. E.g.
+you see that I dragged the documentation browser out of the trees.
+Note: Docking back of one view to the main control window means to get
+back to "Childframe" mode.
+</TD></TR>
+</TABLE>
+
+<h4>Code completion and text expansion:</h4>
+
+<?php module_tail();?>

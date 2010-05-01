@@ -1,0 +1,638 @@
+<?php module_head("KDevelop $k_series_version F.A.Q. (Frequently Asked Questions)");?>
+<p>There is a <b>newer but non-translated</b> (English-only) <a href="mediawiki/index.php/FAQ" hreflang="en">wiki-based FAQ</a> version of this page and a <a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/nutshell.html" hreflang="en"><i>nutshell</i> page in the user manual</a></p>
+<table id="toc" class="toc" summary="Contents"><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li><a href="#File_FAQs">1 File FAQs</a>
+<ul>
+<li><a href="#Where_is_the_Automake_manager_in_KDevelop.3F">1.1 Where is the Automake manager in KDevelop?</a></li>
+<li><a href="#How_do_I_create_New_Files_in_a_Project.3F">1.2 How do I create New Files in a Project?</a></li>
+<li><a href="#How_do_I_remove_a_File_from_a_Project.3F">1.3 How do I remove a File from a Project?</a></li>
+<li><a href="#How_to_add_existing_files_to_a_project.3F">1.4 How to add existing files to a project?</a></li>
+</ul>
+</li>
+<li><a href="#Projects_FAQs">2 Projects FAQs</a>
+<ul>
+<li><a href="#How_to_convert_my_VC.2B.2B_project.3F">2.1 How to convert my VC++ project?</a></li>
+<li><a href="#How_to_create_a_truly_empty_project.3F">2.2 How to create a truly empty project?</a></li>
+<li><a href="#How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F">2.3 How to create a simple project with just a Makefile (also known as Custom Project)&nbsp;?</a></li>
+<li><a href="#How_to_create_a_simple_Automake_project_with_a_directory_hierarchy_.3F">2.4 How to create a simple Automake project with a directory hierarchy&nbsp;?</a></li>
+<li><a href="#What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F">2.5 What do the "build configurations" (Project Options-&gt;Configure Options) mean?</a></li>
+<li><a href="#What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F">2.6 What to do if project does not build again after switching to/from default target?</a></li>
+<li><a href="#How_to_add_subprojects.3F">2.7 How to add subprojects?</a></li>
+<li><a href="#What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F">2.8 What to do when automake &amp; friends fails with strange error messages?</a></li>
+<li><a href="#I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F">2.9 I get "Wrong autoconf version" etc. Error. What can I do?</a></li>
+<li><a href="#How_can_I_develop_with_Qt4_and_KDevelop-3.4.x.3F">2.10 How can I develop with Qt4 and KDevelop-3.4.x?</a></li>
+<li><a href="#How_can_I_develop_with_Qt4_and_KDevelop-3.3.x.3F">2.11 How can I develop with Qt4 and KDevelop-3.3.x?</a></li>
+<li><a href="#How_can_I_set_up_a_project_with_SCons.3F">2.12 How can I set up a project with SCons?</a></li>
+</ul>
+</li>
+<li><a href="#Libraries_FAQ">3 Libraries FAQ</a>
+<ul>
+<li><a href="#What_are_the_differences_between_.a.2C_.so_and_.la_libraries_.3F">3.1 What are the differences between .a, .so and .la libraries&nbsp;?</a></li>
+<li><a href="#How_to_create_a_.so_library.3F">3.2 How to create a .so library?</a></li>
+<li><a href="#How_to_create_a_.a_library.3F">3.3 How to create a .a library?</a></li>
+<li><a href="#How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F">3.4 How to create a .la library (a.k.a. a libtool archive)?</a></li>
+<li><a href="#How_to_add_an_external_include_path_to_a_project.3F">3.5 How to add an external include path to a project?</a></li>
+<li><a href="#How_to_link_against_a_.so_library.3F">3.6 How to link against a .so library?</a></li>
+<li><a href="#How_to_link_against_a_.a_library.3F">3.7 How to link against a .a library?</a></li>
+<li><a href="#How_to_link_against_a_.la_library.3F">3.8 How to link against a .la library?</a></li>
+<li><a href="#How_to_link_with_libraries_where_the_source_within_those_libraries_heavily_depend_on_each_other.3F">3.9 How to link with libraries where the source within those libraries heavily depend on each other?</a></li>
+</ul>
+</li>
+<li><a href="#Debug_FAQs">4 Debug FAQs</a>
+<ul>
+<li><a href="#Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F">4.1 Debugging a console application&nbsp;: How do I get the console to show so I can enter data?</a></li>
+<li><a href="#How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F">4.2 How to debug exec objects with libtool "temporary wrapper scripts"?</a></li>
+<li><a href="#Why_does_the_debugger_ignore.2Fdoes_not_stop_at_breakpoints.3F">4.3 Why does the debugger ignore/does not stop at breakpoints?</a></li>
+<li><a href="#Why_does_the_debugger_issue_the_error_.22no_debug_information_or_source.22_.3F">4.4 Why does the debugger issue the error "no debug information or source"&nbsp;?</a></li>
+<li><a href="#How_to_do_remote_or_cross_debugging_.3F">4.5 How to do remote or cross debugging&nbsp;?</a></li>
+</ul>
+</li>
+<li><a href="#Code_Completion_FAQs">5 Code Completion FAQs</a>
+<ul>
+<li><a href="#How_can_I_enable_code_completion.3F">5.1 How can I enable code completion?</a></li>
+<li><a href="#How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F">5.2 How to teach new macros to the C/C++ parser?</a></li>
+<li><a href="#How_can_I_enable_code_completion_for_external_libraries.3F">5.3 How can I enable code completion for external libraries?</a></li>
+<li><a href="#Code_completion_still_doesn.27t_work">5.4 Code completion still doesn't work</a></li>
+<li><a href="#Why_doesn.27t_my_Qt4_Persistent_Class_Store_work_for_all_Qt4_classes.3F">5.5 Why doesn't my Qt4 Persistent Class Store work for all Qt4 classes?</a></li>
+</ul>
+</li>
+<li><a href="#KDevelop_installation_FAQs">6 KDevelop installation FAQs</a>
+<ul>
+<li><a href="#How_long_does_it_usually_take_to_compile_kdevelop.3F">6.1 How long does it usually take to compile kdevelop?</a></li>
+<li><a href="#I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F">6.2 I get an error message "couldn't create a language plugin". What is wrong?</a></li>
+<li><a href="#I_get_an_.22error:_qassistantclient.h:_No_such_file_or_directory.22._What_is_wrong.3F">6.3 I get an "error: qassistantclient.h: No such file or directory". What is wrong?</a></li>
+<li><a href="#I_get_an_.22error:_possibly_undefined_macro:_AM_PROG_LIBTOOL.22._What_is_wrong.3F">6.4 I get an "error: possibly undefined macro: AM_PROG_LIBTOOL". What is wrong?</a></li>
+</ul>
+</li>
+<li><a href="#Version_Control_Systems">7 Version Control Systems</a>
+<ul>
+<li><a href="#What_files_should_I_check_in_my_VCS.3F">7.1 What files should I check in my VCS?</a></li>
+<li><a href="#Working_with_Clearcase_views_and_KDE">7.2 Working with Clearcase views and KDE</a></li>
+<li><a href="#How_to_use_the_SVN_plugin.3F">7.3 How to use the SVN plugin?</a></li>
+</ul>
+</li>
+<li><a href="#Code_indentation">8 Code indentation</a>
+<ul>
+<li><a href="#Does_KDevelop_provide_on-line_.28as_you_type.29_code_indentation_aka_smart_indentation.2C_aka_auto_indentation.2C_aka_on-the-fly_indentation.3F">8.1 Does KDevelop provide on-line (as you type) code indentation aka smart indentation, aka auto indentation, aka on-the-fly indentation?</a></li>
+<li><a href="#I_do_not_like_the_on-line_code_indentation.2C_does_KDevelop_provide_other.2C_more_configurable.2C_indenter.3F">8.2 I do not like the on-line code indentation, does KDevelop provide other, more configurable, indenter?</a></li>
+</ul>
+</li>
+<li><a href="#Legal_FAQs">9 Legal FAQs</a>
+<ul>
+<li><a href="#Am_I_allowed_to_develop_proprietary_.28closed_source.2C_non-free.29_applications_with_KDevelop.3F">9.1 Am I allowed to develop proprietary (closed source, non-free) applications with KDevelop?</a></li>
+<li><a href="#Am_I_allowed_to_develop_proprietary_plugins_for_KDevelop.3F">9.2 Am I allowed to develop proprietary plugins for KDevelop?</a></li>
+</ul>
+</li>
+<li><a href="#Misc._FAQs">10 Misc. FAQs</a>
+<ul>
+<li><a href="#I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F">10.1 I am developing an application which needs exception handling. How can I make it?</a></li>
+<li><a href="#My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F">10.2 My configure.in.in hasn't any AC_CHECK_COMPILERS() call. Where should I put the CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" mentioned above?</a></li>
+<li><a href="#Is_there_any_HOWTO_available_on_how_to_work_with_QT_designer_made_dialogs_.3F">10.3 Is there any HOWTO available on how to work with QT designer made dialogs&nbsp;?</a></li>
+<li><a href="#Why_don.27t_I_see_the_compilation_error_messages.3F">10.4 Why don't I see the compilation error messages?</a></li>
+<li><a href="#How_to_add_a_translation_to_a_KDE_program.3F">10.5 How to add a translation to a KDE program?</a></li>
+<li><a href="#How_to_add_icons_to_a_project.3F">10.6 How to add icons to a project?</a></li>
+<li><a href="#How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29">10.7 How to set up a different compiler (native or cross compilers)</a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<a name="File_FAQs"></a><h2>File FAQs</h2>
+<a name="Where_is_the_Automake_manager_in_KDevelop.3F"></a><h3>Where is the Automake manager in KDevelop?</h3>
+<p>Click on the bottom tab on the right of KDevelop.
+<a href="mediawiki/index.php/Image:Automake_manager.png" title="Image:Automake_manager.png"><img alt="Image:Automake_manager.png" longdesc="mediawiki/index.php/Image:Automake_manager.png" src="mediawiki/images/8/8e/Automake_manager.png" width="216" height="427"></a>
+</p><p><br>
+</p>
+<a name="How_do_I_create_New_Files_in_a_Project.3F"></a><h3>How do I create New Files in a Project?</h3>
+<p>Select the sub-project in the upper half of the Automake Manager, then right-click in the lower half on the groups title you want to have the files added and select Create New File.... 
+</p><p><br>
+</p>
+<a name="How_do_I_remove_a_File_from_a_Project.3F"></a><h3>How do I remove a File from a Project?</h3>
+<p>Select the sub-project in the upper half of the Automake Manager, then in the lower half open the groups list you want to have the file removed from, right click on the file in this list and select Remove. 
+</p><p><br>
+</p>
+<a name="How_to_add_existing_files_to_a_project.3F"></a><h3>How to add existing files to a project?</h3>
+<p>The way you add existing files to a project is predicated on which build system you've chosen for your project.  However, no matter what build system you are using you'll have to copy the existing sources into the <code>src/</code> directory of your new KDevelop project.
+</p><p>Next:
+</p>
+<ul>
+<li>If you've chosen the Automake Manager based project (see: <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Where is the Automake manager in KDevelop?</a>) then to add existing files to your project simply select the sub-project in the upper half of the Automake Manager, in the lower half on the groups choose the target that you want to add your files to, right click on it for the context menu, and select <a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">"Add Existing files...."</a>
+
+<li>If you've chosen the QMake Manager based project then your task is very similar to the Automake Manager.
+
+<li>If you've chosen the Custom Makefile based project then you'll have to edit your Custom Makefile by hand to add files to your project.
+</ul>
+<p><br>
+</p>
+<a name="Projects_FAQs"></a><h2>Projects FAQs</h2>
+<a name="How_to_convert_my_VC.2B.2B_project.3F"></a><h3>How to convert my VC++ project?</h3>
+<p>KDevelop does not provide a way to automatically import your VC++ project.  However, you can convert the project by creating a new KDevelop project using the New Project Wizard templates such as the C++-&gt;Simple Hello World template.  Then you can copy the source files (*.cpp and *.h) from your VC++ project into the <code>src/</code> directory of your new KDevelop Automake based project. Finally, follow the instructions above for adding existing files to a project.
+</p><p>A semi solution may be to use the <code>dsw2make</code> script, it takes a VC++ project file (*.dsw) with it's descendent dsp files and produces a Makefile for each one of them. Make sure it works as some mismatches may occur usually it related to the paths, case sensitivity and CR/LF. If a CR/LF problem appears use applications such as <code>dos2unix</code> or <code>d2u</code> to solve the problem. At this point you should have a regular project based on a makefiles chain. Import the project as an existing project.
+</p>
+<a name="How_to_create_a_truly_empty_project.3F"></a><h3>How to create a truly empty project?</h3>
+<ul><li>Goto <i>Project-&gt;New Project...-&gt;C++-&gt;Simple Hello World program</i> and create a project
+</li><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Remove the single existing target in the project</a>
+</li><li>Select <i>remove also source files</i> in the dialog that pops up.
+</li></ul>
+<a name="How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F"></a><h3>How to create a simple project with just a Makefile (also known as Custom Project)&nbsp;?</h3>
+<p>Create a Custom Project. There is no direct way to create a custom project (i.e. a project which does use its own makefiles). Use Project-&gt;Import Existing Project instead. Remember to set the appropriate Project Type, labeled by an additional (Custom Makefiles) in the dialog. Use Project Options Early. Whenever you start a new project do not forget to set the Project-&gt;Project Options... to your needs. 
+</p><p><br>
+</p>
+<a name="How_to_create_a_simple_Automake_project_with_a_directory_hierarchy_.3F"></a><h3>How to create a simple Automake project with a directory hierarchy&nbsp;?</h3>
+<p>If you want to create a project with a directory hierarchy, where each folder contains groups of cpp/h files which should built to a single executable binary file.
+</p>
+<pre>Ex:
+  src
+  src/gui
+  src/gui/components
+  src/logic
+  src/logic/algorithms
+  src/logic/sublogic
+</pre>
+<p><br>
+This can be accomplished using convenience libraries. Each subdirectory will be compiled and linked into a libtool-library, afterwards, all libtool-libs are linked together into one executable.
+</p>
+<ul><li><b>Step1</b>: 
+<ul><li>In the AutoMake Manager, add a subproject for each subdirectory:
+</li><li>Automake Manager -&gt; [RMB on subdir] -&gt; Add Subproject
+</li></ul>
+</li></ul>
+<ul><li><b>Step 2</b>:
+<ul><li> Add a Libtool target for each subproject, and populate these libraries with the .cpp files in the subdirectory:
+<ul><li> Automake Manager -&gt; [RMB on subdir] -&gt; Add New Target
+</li><li> Primary: Libtool Library
+</li><li> Prefix: noinst
+</li><li> File name: &lt;your name&gt;.la 
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Step 3</b>: 
+<ul><li>Add the libraries to your executable:
+<ul><li>Automake Manager -&gt; [RMB on binary] -&gt; Options -&gt; Libraries 
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Step 4</b>: 
+<ul><li>Add library dependencies for each of the subprojects:
+</li><li>If <i>libalgo.la</i> depends on classes from <i>libbase.la</i>:
+<ul><li>Automake Manager -&gt; [RMB on libalgo] -&gt; Options -&gt; Libraries (check the box for libbase.la)
+</li></ul>
+</li></ul>
+</li></ul>
+<pre>Ex:
+ src/logic/base [libbase.la]
+ src/logic/algorithm [libalgo.la]
+</pre>
+<p><b>Note</b>: If you forgot a dependency, add the correct dependency, run clean for the subproject, and recompile the entire project (F8).
+</p><p><br>
+</p>
+<a name="What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F"></a><h3>What do the "build configurations" (Project Options-&gt;Configure Options) mean?</h3>
+<ul><li><b>debug</b>: 
+<ul><li>the separate build directory is set to "debug"
+</li><li>-g3 -O0 compiler options are used to make debugging possible with no problems with optimization
+</li></ul>
+</li><li><b>optimized</b>: 
+<ul><li>separate "optimized" build directory
+</li><li>-O2 -g0 flags to turn off debug information and turn on optimizations
+</li></ul>
+</li><li><b>default</b>:
+<ul><li>no special meaning, no compiler flags and build directories are set
+</li><li>binaries and libs will be located among with the source code
+</li><li><b>Important!</b> Do not use "default" configuration at the same time as "debug" and "optimized". But "debug" and "optimized" can be used together with no problems because different build directories are set.
+</li></ul>
+</li></ul>
+<p><br>
+</p>
+<a name="What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F"></a><h3>What to do if project does not build again after switching to/from default target?</h3>
+<p>There is a problem with the automake/autoconf machinery. If Project-&gt;Build Configuration provides to select from three build directories: default, optimized, and debug, by all means stick to either the default or the debug/optimized targets. 
+</p>
+<ul><li> Once you configured your project with default it will no longer build with debug or optimized. 
+</li><li> Once you configured your project with debug or optimized it will no longer build with default. 
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_add_subprojects.3F"></a><h3>How to add subprojects?</h3>
+<p>Select the automake-manager. In the upper half, you see the projects. To add a subproject, select the project to which you want to add a subproject and click on the icon "add subproject". A new folder is created with the name of the subproject (in the filesystem and the automake-manager).
+</p><p>You should now create a libtool-target for the new subproject. If you have done this, make this target active and add files to it.
+</p><p>The libtool-target in the subproject can be linked to your main binary-target by right-clicking it and select "settings". Under the tab "libraries" you select the appropriate help-library (.la file).
+</p>
+<a name="What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F"></a><h3>What to do when <i>automake &amp; friends</i> fails with strange error messages?</h3>
+<p>Open a console window in your project root directory and type: 
+</p>
+<pre>libtoolize --copy --force</pre>
+<p>It should solve the problem of conflicting autotools versions between KDevelop and your installed system.
+</p><p><br>
+</p>
+<a name="I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F"></a><h3>I get "Wrong autoconf version" etc. Error. What can I do? </h3>
+<p>There are several error messages concerning too old versions of autoconf etc. preventing configure from working properly. Run autoreconf in the directory tree where the configure.in files in question are. This command will try to update the information in the GNU Build System files. See man autoreconf for more information.
+If you get:
+</p>
+<pre>*** YOU'RE USING autoconf (GNU Autoconf) 2.60.
+*** KDE requires autoconf 2.53 or newer</pre>
+<p>then you need to replace the admin dir of your project with the one from KDE 3.5. You can do that by following these steps (assuming /home/user/projects/myproject as path for the project):
+</p>
+<ul><li> cd to a temporary folder
+</li><li> svn co svn://anonsvn.kde.org/home/kde/branches/KDE/3.5/kde-common/admin admin
+</li><li> rm -rf admin/.svn
+</li><li> rm -rf /home/user/projects/myproject/admin
+</li><li> mv admin /home/user/projects/myproject/
+</li></ul>
+<p><br>
+</p>
+<a name="How_can_I_develop_with_Qt4_and_KDevelop-3.4.x.3F"></a><h3>How can I develop with Qt4 and KDevelop-3.4.x? </h3>
+<ul><li> Go to the Project Options (in the Project menu) and select the C++ Support. Open the Qt tab and make sure the Qt4 checkbox is checked. Then choose the Qt4 qmake binary for example:
+</li></ul>
+<pre>      /usr/bin/qmake-qt4 (on a Debian Unstable System)
+</pre>
+<ul><li> Also make sure to choose the right designer for Qt4, for example:
+</li></ul>
+<pre>      /usr/bin/designer-qt4 (on a Debian Unstable System)
+</pre>
+<ul><li> If you use qmake, you can choose the needed Qt libraries for your project via the qmake manager. Open it and right-click on a subdirectory or the root directory and choose Options from the context menu. On the Configuration page you'll see the various Qt4 libraries and you can choose any you like
+</li></ul>
+<a name="How_can_I_develop_with_Qt4_and_KDevelop-3.3.x.3F"></a><h3>How can I develop with Qt4 and KDevelop-3.3.x? </h3>
+<ul><li>If you are using qmake, kdevelop runs qmake from the PATH, so the qmake from Qt4 must be first in the PATH (<a href="http://bugs.kde.org/show_bug.cgi?id=119107" title="http://bugs.kde.org/show_bug.cgi?id=119107">http://bugs.kde.org/show_bug.cgi?id=119107</a>). For this, don't launch kdevelop as usual, but use the following shellscript instead:
+</li></ul>
+<pre>#!/bin/sh
+export QTDIR=/devel/kde/src/4/qt-copy
+export PATH=$QTDIR/bin:$PATH
+exec kdevelop $*
+</pre>
+<ul><li>The second issue is that the embedded Qt designer is the Qt3 one. Instead we want to launch the Qt4 designer for .ui files. Two steps are needed for this:
+</li></ul>
+<p>Open ~/.kde/share/config/kdeveloprc, find the [General Options] group (not [General]!), and add the line:
+</p>
+<pre>Embed KDevDesigner=false
+</pre>
+<p>Create ~/.kde/share/applnk/.hidden/designer.desktop with the following contents (adjust the path to Qt4)
+</p>
+<pre>[Desktop Entry]
+Type=Application
+Exec=/devel/kde/src/4/qt-copy/bin/designer
+Name=Qt Designer
+GenericName=Interface Designer
+MimeType=application/x-designer
+Icon=designer
+</pre>
+<p>The full path to designer is needed there, even though the PATH is correct in KDevelop. This is because KDevelop doesn't really start designer directly, it asks kdeinit to do so...
+</p><p><br>
+</p>
+<ul><li>Use "Hello World" when creating a new project, not "Application", or your first Qt4 project will be a Qt3-&gt;Qt4 porting project&nbsp;:)
+</li></ul>
+<a name="How_can_I_set_up_a_project_with_SCons.3F"></a><h3>How can I set up a project with SCons? </h3>
+<p><a href="http://www.scons.org" title="http://www.scons.org">SCons</a> is a software construction tool.  KDevelop (as of version 3.4.0) does not support SCons projects directly.  However, it is possible to set up a project very simply using SCons by writing a "stub" Makefile and using the "Custom Makefiles" project type.  An example of a simple stub Makefile is the following (note that lines after target names should be indented with tabs, not spaces):
+</p>
+<pre>project_name:
+        scons
+clean:
+        scons --clean
+</pre>
+<p>This will enable the <i>Build Project</i> and <i>Clean Project</i> actions to work.
+</p>
+<a name="Libraries_FAQ"></a><h2>Libraries FAQ</h2>
+<a name="What_are_the_differences_between_.a.2C_.so_and_.la_libraries_.3F"></a><h3>What are the differences between .a, .so and .la libraries&nbsp;? </h3>
+<p>There is a nice <a href="http://www.dwheeler.com/program-library/Program-Library-HOWTO/t1.html" title="http://www.dwheeler.com/program-library/Program-Library-HOWTO/t1.html">introduction to program libraries using the GNU toolset</a> and there is an <a href="http://sources.redhat.com/autobook/autobook/autobook_68.html" title="http://sources.redhat.com/autobook/autobook/autobook_68.html">introduction to Libtool</a>. Basically:
+</p>
+<ul><li><code>.a</code> (Static libraries) are simply a collection of ordinary object files.
+</li><li><code>.so</code> (Shared Object) are libraries that are loaded by programs when they start, you should read the link above before using this type.
+</li><li><code>.la</code> (<a href="http://www.gnu.org/software/libtool/manual/html_node/index.html" title="http://www.gnu.org/software/libtool/manual/html_node/index.html">Libtool</a> Archive) this is the most flexible one, but you should read the <a href="http://www.gnu.org/software/libtool/manual/html_node/Using-libtool.html" title="http://www.gnu.org/software/libtool/manual/html_node/Using-libtool.html">using libtool manual</a> first.
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_create_a_.so_library.3F"></a><h3>How to create a .so library?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Add a target to the project</a>
+<ul><li><i>primary:</i> program
+</li><li><i>prefix:</i> bin
+</li><li><i>file name:</i> libxxx
+</li><li><i>Linker Flags-&gt;Other:</i> <code>-shared -Wl,-soname,libxxx.so.1 -o libxxx.so.1.0.1</code>
+</li></ul>
+<dl><dd>However, on some systems it results in the following error message during project compilation: 
+</dd><dd><code>-soname command not recognized</code>. 
+</dd><dd>If that happens use only <code>-shared -o libxxx.so</code>
+</dd></dl>
+</li></ul>
+<ul><li>Add the cpp/h files to this target
+</li><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">set <i>compiler flags for c++</i></a> -fPIC
+</li></ul>
+<p>There is also a libtool based method:
+</p>
+<ul><li>Add a sub-project "libxxx" 
+</li><li>Add a target
+</li><li>Choice "Library (libtool)" 
+</li><li>Choice "lib" 
+</li><li>Put your library name "xxx" 
+</li><li>Add your files 
+</li><li>Build the project (Use 'Build project' or F8).
+</li></ul>
+<p>Now, you should have a new library named libxxx.so.0.0.0
+</p><p><br>
+</p>
+<a name="How_to_create_a_.a_library.3F"></a><h3>How to create a .a library?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Add a target to the project</a>
+<ul><li><i>primary:</i> Library
+</li><li><i>prefix:</i> noinst
+</li><li><i>file name:</i> your_lib
+</li></ul>
+</li><li>Add the cpp/h files to this target
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F"></a><h3>How to create a .la library (a.k.a. a libtool archive)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Add a target to the project</a>
+<ul><li><i>primary:</i> Libtool Library
+</li><li><i>prefix:</i> noinst
+</li><li><i>file name:</i> your_lib
+</li></ul>
+</li><li>Add the cpp/h files to this target
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_add_an_external_include_path_to_a_project.3F"></a><h3>How to add an external include path to a project?</h3>
+<p>When your project is <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">Automake</a>) based then you are most probably using the KDevelop Automake manager (see <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Where is the Automake manager in KDevelop?</a>).
+To add an include path to your project do:
+</p>
+<ul><li> select the <em>subproject</em> you want to add the path to on the top view of the AutoMake manager.
+</li><li> select <em>Options...</em> with the RMB or hit the wrench icon
+</li><li> on the <em>Includes</em> tab add your path to the second box (<em>Directories outside of project</em>). Just enter the directory path after the <em>-I</em> (without whitespaces between).
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_link_against_a_.so_library.3F"></a><h3>How to link against a .so library?</h3>
+<p>When your project is <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">Automake</a>) based then you are most probably using the KDevelop Automake manager (see <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Where is the Automake manager in KDevelop?</a>).
+To link your program against a library, or to add a library do&nbsp;:
+</p>
+<ul><li> select the <em>subproject</em> you want to add the library to on the top view of the AutoMake manager.
+</li><li> select <em>Options...</em> with the RMB or hit the wrench icon
+</li><li> on the libraries ("compiler") tab add libs in the second box (<em>link libraries outside of project</em>). Just enter the lib name, without the lib prefix and the <em>.a</em> or <em>.so</em> or <em>.la</em> or what ever ending.
+<ul><li> i.e if your lib is <em>libsomelib.so</em>, then you add it so: <em>-lsomelib</em>
+</li></ul>
+</li><li> If that library is not part of your system wide library path add <code>-Lpath/to/the/library/you/used</code> to the <code>LDFLAGS</code> in your <em>Project-&gt;Project Options...-&gt;Configure Options-&gt;Linker Flags(LDFLAGS):</em>.
+</li></ul>
+<p>Do not forget to add the the location of the library's .h files to the include path of your executable like it's explained in <a href="#How_to_add_an_external_include_path_to_a_project.3F" title="FAQ">FAQ#How to add an external include path to a project?</a>
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.a_library.3F"></a><h3>How to link against a .a library?</h3>
+<p>This is similar to <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#How to link against a .so library?</a>
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.la_library.3F"></a><h3>How to link against a .la library?</h3>
+<p>This is similar to <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#How to link against a .so library?</a>
+</p><p>Addition:
+There's another, more convenient, way to link <em>mybinary</em> against <em>somestuff.la</em>. Let <em>libsomestuff.la</em> reside in <em>$(somedir)</em>, then, instead of adding <code>-lsomestuff -L$(somedir)</code>, just add <code>$(somedir)/libsomestuff.la</code>. The libtool utility can handle this.
+</p><p>The full process (adapted from above):
+</p>
+<ul><li> select the <em>subproject</em> you want to add the library to on the top view of the AutoMake manager.
+</li><li> select <em>Options...</em> with the RMB or hit the wrench icon
+</li><li> on the libraries tab, remove the <code>-l</code> and add <code>$(somedir)/libsomestuff.la</code> in the second box (<em>link libraries outside of project</em>).
+</li></ul>
+<p>This is the same process/behaviour as if linking against convenience libraries within the same project, there, one just has to check the appropriate libraries in the top box (<em>Link convenience libraries inside project</em>).
+</p><p>The messy details:
+The library entries are added to <code>mybinary_LDADD</code> in the appropriate Makefile.am. The LDADD variable can handle libtool archives natively, i.e. it reads the locations of the actual libraries and add them accordingly.
+</p><p><br>
+</p>
+<a name="How_to_link_with_libraries_where_the_source_within_those_libraries_heavily_depend_on_each_other.3F"></a><h3> How to link with libraries where the source within those libraries heavily depend on each other? </h3>
+<p>When you have simple dependencies, just add all libraries and reorder them with the <em>move up</em> and <em>move down</em> options.
+But when the libraries have cyclic and recursive on each other you need to use a different approach:
+In <em>Target Options</em> for <em>"appName"-&gt;LDFLAGS-&gt;Other</em> specify all cyclic and recursive static libs&nbsp;: 
+</p><p>$(all_libraries) --start-group fullPathLib1.a fullPathLib2.a fullPathlibn.a --end-group
+</p><p>Then on <em>Target Options</em> for <em>"appName"-&gt;Libraries-&gt;Link libraries outside project (LDADD)</em> add the full path to the created library:
+</p><p>/fullPathToMyConcatenedLib.so
+</p>
+<a name="Debug_FAQs"></a><h2>Debug FAQs</h2>
+<a name="Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F"></a><h3> Debugging a console application&nbsp;: How do I get the console to show so I can enter data?</h3>
+<p>In the Project Options dialog, go to the Debugger tab and check <i>Enable separate terminal for application IO</i>
+</p><p><br>
+</p>
+<a name="How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F"></a><h3> How to debug exec objects with libtool "temporary wrapper scripts"? </h3>
+<p>When building <code>ltlibraries</code> and linking exec with them, libtool creates wrappers about them, but gdb complains <i>not in executable format: File format not recognized</i>
+</p>
+To make it work do:<pre>
+Project -&gt; Project Options -&gt; Debugger -&gt; Debugging shell -&gt; libtool --mode=execute </pre>
+<p><br>
+</p>
+<a name="Why_does_the_debugger_ignore.2Fdoes_not_stop_at_breakpoints.3F"></a><h3> Why does the debugger ignore/does not stop at breakpoints? </h3>
+<p><b>Autotools projects</b> - Make sure you are using the <code>debug</code> configuration (see: <a href="#What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F" title="FAQ">FAQ#What to do if project does not build again after switching to/from default target?</a>) or that you are compiling with "-g3 -O0" options.
+</p><p><b>QMake projects</b> - You need to manually add <code>CONFIG += debug</code> to your *.pro files, and restart KDevelop.
+</p>
+<a name="Why_does_the_debugger_issue_the_error_.22no_debug_information_or_source.22_.3F"></a><h3> Why does the debugger issue the error "no debug information or source"&nbsp;? </h3>
+<p>Make sure you are using the <code>debug</code> configuration (see: <a href="#What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F" title="FAQ">FAQ#What to do if project does not build again after switching to/from default target?</a>) or that you are compiling with "-g3 -O0" options.
+</p><p><br>
+</p>
+<a name="How_to_do_remote_or_cross_debugging_.3F"></a><h3> How to do remote or cross debugging&nbsp;? </h3>
+<p>See <a href="#How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29" title="FAQ">FAQ#How to set up a different compiler (native or cross compilers)</a>.
+</p>
+<a name="Code_Completion_FAQs"></a><h2>Code Completion FAQs</h2>
+<a name="How_can_I_enable_code_completion.3F"></a><h3>How can I enable code completion?</h3>
+<p>When you have any C/C++ project opened, go to menu Project-&gt;Project Options, in Project Options dialog choose C++ Specific tab, then Code Completion tab. Check the Automatic Code Completion check box and other assorted settings.  Also in the Settings-&gt;Configure KDevelop-&gt;C++ Parsing dialog you can enable and vary the background parsing loop.
+</p><p><br>
+</p>
+<a name="How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F"></a><h3>How to teach new macros to the C/C++ parser?</h3>
+<p>KDevelop's current parser does not parse files in order. If you need to teach new macros to the C/C++ parser, the best way to do this is to parse a fake file that contains only macro definitions before parsing the source files. This is what the <em>C++ Parser Settings</em> dialog is for. The contents of this fake source file is the text you edit in the <em>C++ Parser Settings </em> dialog, which will be parsed first anytime that you load a project.
+</p><p><br>
+</p>
+<a name="How_can_I_enable_code_completion_for_external_libraries.3F"></a><h3>How can I enable code completion for external libraries?</h3>
+<p>When you have any C/C++ project opened, go to menu Project-&gt;Project Settings, in Project Options dialog choose C++ Specific tab, then Code Completion tab. Push Add Persistent Class Store button and complete the New Persistent Class Store wizard. After completing the wizard, make sure that the newly created class store is checked in the list of persistent class stores at Code Completion tab.
+</p><p><br>
+</p>
+<a name="Code_completion_still_doesn.27t_work"></a><h3>Code completion still doesn't work</h3>
+<p>Try disabling the abbreviation part - it often presents a completion popup before the completion engine gets a chance to do so.
+</p><p>Try running the Add Persistent Class Store Wizard on your projects directory.
+<br><br>
+</p>
+<a name="Why_doesn.27t_my_Qt4_Persistent_Class_Store_work_for_all_Qt4_classes.3F"></a><h3>Why doesn't my Qt4 Persistent Class Store work for all Qt4 classes?</h3>
+<p>If you are using KDevelop 3.3.x or below the persistent class store won't work correctly when
+importing Qt4's include directories. Qt4's includes are mostly one-liners 
+with '#include "../../src/blah.h", which KDevelop can't handle.  To work around this, try using Qt4's src directory when creating the completion database.
+</p><p><br>
+</p>
+<a name="KDevelop_installation_FAQs"></a><h2>KDevelop installation FAQs</h2>
+<a name="How_long_does_it_usually_take_to_compile_kdevelop.3F"></a><h3>How long does it usually take to compile kdevelop?</h3>
+<p>This depends on the speed of your machine. A developer has a P4 that runs at 3GHZ and it takes 40 minutes to compile KDevelop the first time. After updating from CVS, it usually takes less time. We would guess the average build time is between 1 and 2 hours after the initial download.
+</p><p>It's a good idea to use gcc-4.0.1. This will drastically reduce the compilation time. Debug compilations ("./configure --enable-debug=full" with -g -O0 flags) are sped up by 45% and release ("./configure --enable-debug=no" with -O2 flag) - by 16%. For example, on AthlonXP1600 / 256Mb RAM system fresh debug compilation takes 45 mins with gcc-4 and 81 mins with gcc-3.3.1. To speed up things even more, the most recent libtool (from CVS HEAD) can also be used.
+</p><p>It is usually safe to have gcc-4 installed in /usr/local among with gcc-3.x in /usr. It is also possible to compile only KDevelop with gcc-4 and leave the rest (Qt, KDE, etc.) without recompilation.
+</p><p>Note! Do not use gcc-4.0.0 because it miscompiles the code. gcc-4.0.1 and later versions are not vulnerable to this problem.
+</p><p><br>
+</p>
+<a name="I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F"></a><h3>I get an error message "couldn't create a language plugin". What is wrong?</h3>
+<p>Just as any other KDE application, you have to make sure that KDevelop's plugins are recognized by KDE. Either install it into your KDE directory (configure --prefix=/opt/kde3 for example) or add KDevelop path to your KDEDIRS environment variable and rerun "kbuildsycoca". Example command line for bash (assuming KDevelop is installed in /home/harry/kdevelop):
+</p>
+<pre>export KDEDIRS=/home/harry/kdevelop:$KDEDIRS &amp;&amp; kbuildsycoca
+</pre>
+<p><br>
+If the error is specifically <b>"Could not create language plugin for C++."</b>, try also making sure you have a valid <b>bdb</b> (Berkeley DB) installation. 
+</p><p>You should see something like this:
+</p>
+<pre>ldd ~/devel/install/lib/libkdevcatalog.so | grep libdb
+        libdb-4.3.so =&gt; /usr/lib64/libdb-4.3.so (0x00002ba8687c9000)
+</pre>
+<p>If you see something like this:
+</p>
+<pre>ldd ~/devel/install/lib/libkdevcatalog.so | grep libdb
+       libdb-4.3.so =&gt; not found
+</pre>
+<p>then your distro's package management hasn't managed to track the bdb dependency correctly and you need to install a compatible bdb version.
+</p>
+<a name="I_get_an_.22error:_qassistantclient.h:_No_such_file_or_directory.22._What_is_wrong.3F"></a><h3>I get an "error: qassistantclient.h: No such file or directory". What is wrong?</h3>
+<p>Your distribution (i.e SUSE, Mandriva, Fedora, Ubuntu) has split Qt 3 into several different packages. You will need to locate and install the development packages for the Qt 3 applications. Since the the names of these packages is distribution dependent, the KDevelop team can't provide an exact name of the package to install. Several possibilities exist, including: 
+</p>
+<ul><li> <code>qt3-apps-dev</code> (Ubuntu)
+</li><li> <code>qt3-devel-doc</code> (SuSE 9.x)
+</li><li> <code>qt3-devel</code> (openSUSE 10.x)
+</li><li> <code>qt3-doc-devel</code>
+</li><li> <code>libqt3-devel</code> (Mandriva)
+</li><li> <code>qt-debuginfo</code> (Fedora)
+</li></ul>
+<p>If your distribution uses a package name not on this list, please add it here for others to reference.
+</p><p><br>
+</p>
+<a name="I_get_an_.22error:_possibly_undefined_macro:_AM_PROG_LIBTOOL.22._What_is_wrong.3F"></a><h3>I get an "error: possibly undefined macro: AM_PROG_LIBTOOL". What is wrong?</h3>
+<p>If you get something like this when trying to build/compile one of KDevelop's template applications:
+</p>
+<pre>
+configure.in: warning: macro `AM_PROG_LIBTOOL' not found in library
+configure.in: error: possibly undefined macro: AM_PROG_LIBTOOL
+If this token and others are legitimate, please use m4_pattern_allow.
+</pre>
+<p>Then it means that you did not read the <a href="index.html?filename=requirements.html" title="index.html?filename=requirements.html">KDevelop requirements page</a> properly. Please install <code>libtool</code>
+</p>
+<a name="Version_Control_Systems"></a><h2>Version Control Systems</h2>
+<a name="What_files_should_I_check_in_my_VCS.3F"></a><h3>What files should I check in my VCS?</h3>
+<ul><li> Source files
+</li><li> The KDevelop project file <code>.kdevelop</code> but make sure that it does not contain any absolute paths in it. Edit the file in a text editor if necessary.
+</li><li> The doxygen configuration file <code>Doxyfile</code>
+</li><li> The minimum set of files from the used build system. Only a minimum set of files should be checked in, files automatically generated by the build system should not be checked in. The build system can be Autotools, QMake, custom Makefiles, CMake, Scons, Ant ... etc, so it's hard to tell you exactly what files each build system uses.
+</li></ul>
+<p><b>Do not check in .pcs and .kdevses files</b>
+</p>
+<a name="Working_with_Clearcase_views_and_KDE"></a><h3>Working with Clearcase views and KDE</h3>
+<p>Clearcase files are typically stored under '/usr/vobs/...' and binary objects may contain references to this path.  If your kdevelop project was defined using a different path (e.g. '/view/[view name]/usr/vobs'), you may experience problems with files being opened twice, confusing breakpoint behaviour and misleading file editing.
+</p><p>If kdevelop is started from a shell inside a clearcase view, it still will be unable to see '/usr/vobs/...' unless KDE was itself started in a clearcase view.
+The following approach solves these problems:
+</p><p><tt>cp /etc/X11/xinit/xinitrc ~/.xinitrc</tt><br>
+change the penultimate line from<br>
+<tt>exec $WINDOWMANAGER</tt><br>
+to<br>
+<tt>/opt/rational/clearcase/rhat_x86/bin/cleartool setview -exec $WINDOWMANAGER ViewName</tt>
+</p><p>where <tt>ViewName</tt> is the name of the view you wish to use.
+</p><p>Unfortunately this does seem to cause problems with non-KDE applications (eg. firefox) and has locked up my machine.  The other alternative is to use another window manager such as Gnome.
+</p>
+<a name="How_to_use_the_SVN_plugin.3F"></a><h3>How to use the SVN plugin?</h3>
+<p>NOTE TO svn+ssh:// repository users.
+</p><p>If you try to initiate svn operation but fails with error message "connect closed unexpectedly", the problem is in authentication. Unlike other protocols such as svn:// , http:// or https:// , the authentication for svn+ssh:// is managed by ssh system. Subversion does not have any control over authentication.
+</p><p>When you started kdevelop with terminal, SSH will ask you a password through terminal. So you should enter the password into terminal. 
+</p><p>But when you started kdevelop via menus (i.e., you didn't associate any terminal), you should install a small X11 program called "ssh-askpass" and set SSH_ASKPASS environment variable to that executable. After that when you try svn operation, ssh-askpass will ask you a password. That's it.
+</p><p>See manpages for ssh-agent.
+</p><p>GENERAL USAGE:
+</p><p>You need to manually checkout the project and source files from a subversion repository. Or you can import new project into repository at the time of project creation by project wizard.
+</p><p>After opening the project, go "Project" menu -&gt; "Project Options" -&gt; "Version control" tab. Select subversion combobox. Save the settings and reopen the project. Then the subversion context menu should appear when you right-click on files. Also each file/dir in FileTree view should be colored differently according to their status.
+</p>
+<a name="Code_indentation"></a><h2>Code indentation</h2>
+<a name="Does_KDevelop_provide_on-line_.28as_you_type.29_code_indentation_aka_smart_indentation.2C_aka_auto_indentation.2C_aka_on-the-fly_indentation.3F"></a><h3>Does KDevelop provide on-line (as you type) code indentation aka smart indentation, aka auto indentation, aka on-the-fly indentation?</h3>
+<p>It does, KDevelop uses <a href="http://kate-editor.org/katepart" title="http://kate-editor.org/katepart">KatePart</a> as it's text (code) editor and KatePart provides this functionality. It can be configured via <code>Settings -&gt; configure editor -&gt; Indentation</code>.
+KatePart is developed by the Kate development team, if you find bugs or have suggestions please contact them directly via their website <a href="http://kate-editor.org/" title="http://kate-editor.org/">http://kate-editor.org/</a>
+</p>
+<a name="I_do_not_like_the_on-line_code_indentation.2C_does_KDevelop_provide_other.2C_more_configurable.2C_indenter.3F"></a><h3>I do not like the on-line code indentation, does KDevelop provide other, more configurable, indenter?</h3>
+<p>Yes, KDevelop has an off-line code formater that you invoke via <code>Edit-&gt;Reformat source</code>. It can be configured using <code>Project -&gt; Project Options -&gt; Formatting</code>. It works by invoking an external tool called <a href="http://astyle.sourceforge.net/" title="http://astyle.sourceforge.net/">astyle</a>. If you find bugs or have suggestions please contact the developers of that tool directly via their website <a href="http://astyle.sourceforge.net/" title="http://astyle.sourceforge.net/">http://astyle.sourceforge.net/</a>
+</p><p><br>
+</p>
+<a name="Legal_FAQs"></a><h2>Legal FAQs</h2>
+<a name="Am_I_allowed_to_develop_proprietary_.28closed_source.2C_non-free.29_applications_with_KDevelop.3F"></a><h3>Am I allowed to develop proprietary (closed source, non-free) applications with KDevelop?</h3>
+<p>Everyone and all entities are free to use KDevelop. The generated code can be put under all licenses you wish. Therefore, the project generator has the fields for adding your own copyright notice to the generated files, but to make things simpler and to have an example, the default is a GPL license notice. So you can add your license notice there.
+When it comes to actually editing etc. your program, using KDevelop is just as using any other editor, it's a program that is GPL that is intended for use and doesn't have any implications on what you use it for. So you can write proprietary software with it despite the fact that KDevelop itself is GPL.
+Towards using KDE functions or any other stuff of free software, you only have to watch the licensing notes on the libraries you're going to use. So for development of proprietary KDE/Qt applications you only need a professional license from Trolltech. The KDE libraries itself are LGPL which means you can use the function calls and link your program to the KDE libraries. This counts for the kdelibs libraries, the kdebase libraries (konqueror and kcontrol etc.) and the koffice libraries (for creating koffice applications).
+For more information, please visit KDevelop Licensing
+</p>
+<a name="Am_I_allowed_to_develop_proprietary_plugins_for_KDevelop.3F"></a><h3>Am I allowed to develop proprietary plugins for KDevelop?</h3>
+<p>KDevelop includes a libkdeveloplgpl.so library to allow development of proprietary plugins. This library includes KDevelop interfaces and utility functions released under LGPL. If you have a professional license from Trolltech you can link your code with libkdeveloplgpl and release it under any license.
+</p><p>Note that this situation is analogous to the binary-only drivers situation in the Linux kernel, so you can expect the FSF not to approve this model.
+</p>
+<a name="Misc._FAQs"></a><h2>Misc. FAQs</h2>
+<a name="I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F"></a><h3>I am developing an application which needs exception handling. How can I make it?</h3>
+<p>Edit the file configure.in(.in) in your toplevel source directory. Here, you
+have to enter after the AC_CHECK_COMPILERS() macro:
+</p>
+<pre>CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"
+</pre>
+<p>and after that you have to recreate your new "configure" by invoking
+</p>
+<pre>make -f Makefile.dist
+</pre>
+<p>at the toplevel source directory and then restart the configure script.
+</p><p><br> 
+</p>
+<a name="My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F"></a><h3>My configure.in.in hasn't any AC_CHECK_COMPILERS() call. Where should I put the CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" mentioned above?</h3>
+<p>The new versions of configure.in.in has been simplified you can now add the line after the AM_INIT_AUTOMAKE(&lt;package-name&gt;,&lt;version&gt;).
+</p><p><br> 
+</p>
+<a name="Is_there_any_HOWTO_available_on_how_to_work_with_QT_designer_made_dialogs_.3F"></a><h3>Is there any HOWTO available on how to work with QT designer made dialogs&nbsp;?</h3>
+<p>Yes, there is a great tutorial on <a href="http://women.kde.org/articles/tutorials/kdevelop3/index.html" title="http://women.kde.org/articles/tutorials/kdevelop3/index.html">http://women.kde.org/articles/tutorials/kdevelop3/index.html</a>
+</p><p><br> 
+</p>
+<a name="Why_don.27t_I_see_the_compilation_error_messages.3F"></a><h3>Why don't I see the compilation error messages?</h3>
+<p>If during compilations you notice some valuable information is missing in the Messages Output View window, it may be that the level of message detail is set too low. Right-click in the window and select another detail level from the context menu.
+</p><p><br>
+</p>
+<a name="How_to_add_a_translation_to_a_KDE_program.3F"></a><h3>How to add a translation to a KDE program?</h3>
+<p>First execute <i>Build-&gt;Create Messages&amp;Merge</i> and after that add a new translation via <i>Project-&gt;Add Translation</i>. This creates a po/$lang.po file.
+The $project.pot file has all the strings in it.
+</p><p><br>
+</p>
+<a name="How_to_add_icons_to_a_project.3F"></a><h3>How to add icons to a project?</h3>
+<p>First add a new subproject via the automake manager called pics. Then right-click the new subproject, choose <i>Settings</i> and then <i>Prefix</i>. Add a new prefix with for example mypics as name and the path <i>$(kde_datadir)/$project/pics</i>. After that create a new target in the pics subproject and choose Data as Primary, mypics as Prefix and add a dummy name. At last add your Icons to the new target. Loading the image can be performed by including the <i>kiconloader.h</i> header file and the following code which adds a pixmap with the name config to a button: <i>button-&gt;setPixmap(UserIcon("config"))</i>
+</p><p><br>
+</p>
+<a name="How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29"></a><h3>How to set up a different compiler (native or cross compilers)</h3>
+<p>Compilers are set for a project:
+</p>
+<ul><li> <i>Project-&gt;Project Options-&gt;Configure Options</i> (autotools based projects only, custom projects do not have such a tab)
+</li><li> add a new configure name, e.g. <i>&lt;compilername&gt;-&lt;platform&gt;-debug</i>
+</li></ul>
+<p>Tab "General":
+</p>
+<ul><li> set configure arguments (e. g. --host and --build options if cross compiling)
+</li><li> set the build directory, to avoid confusions use the same name as the configuration
+</li><li> set any flags if appropiate (LDFLAGS, ENV)
+</li></ul>
+<p>Tab "C":
+</p>
+<ul><li> set the name of your C-compiler binary, e.g. CC, gcc, icc, kcc, ... (cross-compilers also!)
+</li><li> set any flags as appropriate (CFLAGS)
+</li></ul>
+<p>Tab "C++":
+</p>
+<ul><li> set the name of your C++-compiler binary, e.g. cc, g++, ... (cross-compilers also!)
+</li><li> set any flags as appropriate (CXXFLAGS)
+</li></ul>
+<p>Tab "Fortran":
+</p>
+<ul><li> set the name of your Fortran-compiler binary, e.g. g77, g90, gfortran, ... (cross-compilers also!)
+</li><li> set any flags as appropriate (FFLAGS)
+</li></ul>
+<p>Close the options, select your configuration in <i>Project-&gt;Build Configuration</i>, then run <i>Automake &amp; Friends</i>, <i>configure</i> and <i>make</i>.
+</p><p>For example, to set up sparc-sun-solaris2.9 target cross-compiler do:
+</p>
+<ul><li> Project -&gt; Project Options -&gt; Configure Options
+</li><li> Add a new config name, e.g. "sparc-debug""
+</li><li> Configure Arguments:
+</li></ul>
+<pre>--host=i686-pc-linux-gnu -- build=sparc-sun-solaris2.9
+</pre>
+<ul><li> Build Directory:
+</li></ul>
+<pre>sparc-debug
+</pre>
+<ul><li> change to Tab C, insert name of cross gcc, e.g. sun-solaris-sparc2.9-gcc
+</li><li> change to Tab C++, insert name of cross g++, e.g. sun-solaris-sparc2.9-g++
+</li><li> Automake &amp; Friens
+</li><li> configure
+</li><li> make
+</li></ul>
+<p>For cross debugging see <a href="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote+debug+kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3" title="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote+debug+kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3">Remote debugging using KDevelop 3.0 in comp.os.linux.embedded newsgroup</a> or 
+<a href="mediawiki/index.php/Cross_debugging" title="Cross debugging">Cross_debugging</a>.
+The <a href="phorum5/read.php?2,23503" title="phorum5/read.php?2,23503">kdevelop.org forum</a> also contains some info about it.
+</p><p>Make sure that the binaries and libraries of the (cross-)compiler are available in $PATH and $LD_LIBRARY_PATH!
+</p><p>It might be necessary to change some autoconf/automake macros in <i>configure.in</i> to fully support your compiler -- see the last message in this thread <a href="phorum5/read.php?8,27808" title="phorum5/read.php?8,27808">kdevelop.org forum</a> what to do to get <i>gfortran</i> (GNU F90 compiler) working.
+</p>
+<!-- Saved in parser cache with key kdevelop_db-mw_:pcache:idhash:735-0!1!0!!en!2 and timestamp 20080518013015 -->
+
+<?php module_tail(); ?>

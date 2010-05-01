@@ -1,0 +1,14 @@
+Warning: wildcards not supported in HTTP.
+--22:37:52--  http://websvn.kde.org/*checkout*/trunk/kde-common/accounts
+           => `accounts.1'
+Resolving websvn.kde.org... 138.246.255.177
+Connecting to websvn.kde.org|138.246.255.177|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+
+    0K .......... .......... .......... .......... ..........  447.62 KB/s
+   50K .......... .......... .......... .......... ..........  605.95 KB/s
+  100K .........                                               633.78 KB/s
+
+22:37:53 (523.51 KB/s) - `accounts.1' saved [112256]
+

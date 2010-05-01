@@ -1,0 +1,28 @@
+<?php
+global $l_pt_main_year;
+$module_title=sprintf($l_pt_main_year, 2008);
+module_head($module_title);
+echo '<p><b>'.strftime("%Y-%B-%d", 1204153200).'</b> - ';
+include_file("news/2008-02-28.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1203375600).'</b> - ';
+include_file("news/2008-02-19.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1202684400).'</b> - ';
+include_file("news/2008-02-11.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1202425200).'</b> - ';
+include_file("news/2008-02-08.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1201561200).'</b> - ';
+include_file("news/2008-01-29.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1200610800).'</b> - ';
+include_file("news/2008-01-18.html");
+echo "</p>\n";
+echo '<p><b>'.strftime("%Y-%B-%d", 1200351600).'</b> - ';
+include_file("news/2008-01-15.html");
+echo "</p>\n";
+module_tail();
+return 1228600932;
+?>

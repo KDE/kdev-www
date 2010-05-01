@@ -1,0 +1,11 @@
+--- common.inc.php	2008-07-15 19:53:04.000000000 +0200
++++ common.inc.php	2008-07-27 16:03:40.000000000 +0200
+@@ -402,6 +402,8 @@
+          * also, server needed for cookie login screen (multi-server)
+          */
+         'server', 'db', 'table', 'target',
++        /* required for proper operation of www.kdevelop.org/admin/ queries */
++        'sql_query', 'field',
+         /* to change the language on login screen or main page */
+         'lang',
+         /* Session ID */

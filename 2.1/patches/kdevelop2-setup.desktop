@@ -1,0 +1,11 @@
+[KDE Desktop Entry]
+Encoding=UTF-8
+BinaryPattern=kdevelop2;
+Type=Application
+Exec=kdevelop2 --setup
+MimeType=
+Icon=configure
+DocPath=kdevelop2/index.html
+Terminal=0
+Name=KDevelop2 - Setup
+Name[de]=KDevelop2 - Installation

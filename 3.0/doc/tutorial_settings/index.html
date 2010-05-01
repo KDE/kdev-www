@@ -1,0 +1,1245 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+  <title>KDevelop - A tutorial to learn KDE 3 &amp; QT 3</title>
+  <meta name="author" content="Andreas Nicolai">
+  <meta name="keywords" content="kdevelop,IDE,GUI,unix,development,cpp,c++,Qt,qt,tutorial">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<style>
+  h1.titel { text-decoration: underline; }
+  body { font-size:normal; text-align:justify; }
+  table.screenshot { background-color:#909090; border-width:1; };
+  p { text-align:justify; }
+  p.nogideon { color:#0000a0; font-style:italic; margin-left:20px; padding:5px; border-width:1px; border-style:solid; border-color:#0000af }
+  p.note { color:#a00000; font-style:italic; margin-left:20px; padding:5px; border-width:1px; border-style:solid; border-color:#af0000 }
+</style>
+</head>
+
+<body>
+<h3>A tutorial to learn KDE 3 & QT 3</h3>
+<h1 class=titel>How to implement "User defined settings"</h1>
+<i><small>A programming tutorial by <a href="mailto:ghorwin AT users DOT sourceforge DOT net">Andreas Nicolai</a></small></i>
+<br>
+<p>
+<h2>The aim of this tutorial</h2>
+<p>
+In most KDE applications user defined settings can be made and stored. This usually requires:
+<ol>
+<li>an easy way to access the user defined configuration settings from various widgets and classes</li>
+<li>a feature to save and reload the user defined settings</li>
+<li>a typical preferences dialog (including "apply" and "default" buttons)</li>
+</ol>
+<p>
+This tutorial will explain one possible way of achieving these objectives easily and using IMHO a good programming style. It will explain how to create a configuration object (a singleton class), how to read and write user defined configuration settings and explain how to design and program a typical KDE preferences dialog.
+<p>
+<h2>What you will need</h2>
+<ul>
+<li>QT-Designer (prefereably the newest version)</li>
+<li>a running system where you can compile KDE applications (meaning you have KDE version 3.1 and QT 3 installed)</li>
+<li>a little bit of background knowledge in C++ programming (meaning: you should know about classes and inheritance and you should now the language C++ itself, knowledge of the standard template library (STL) is not required since QT offers (nearly) everything we need).</li>
+</ul>
+<p class="nogideon">This tutorial is written for users of KDevelop3 (Gideon). However, if you like to develop KDE programs without using an IDE or if you use a different one, this tutorial will still be very interesting for you. Whenever you see such a blue text box the alternative procedure to using KDevelop is explained.</p>
+<p>
+If you are totally new to KDE programming, take a look at the tutorials available on <a href="http://developer.kde.org/">http://developer.kde.org</a> and <a href="http://www.kdevelop.org/">http://www.kdevelop.org</a>. However, this tutorial will explain a great deal about how to use QT Designer and KDevelop together so maybe after reading the tutorial you will already know a bit about KDE development.
+<p>
+<h1>Content</h1>
+<p>
+<a href="#p1">Part I: Getting started</a><br>
+In this part the generation of the project will be explained. Some general note about the files involved will be made and the automatically generated moc-files will be discussed.
+<p>
+<a href="#p2">Part II: The boring theory</a><br>
+Here the main configuration object will be created and the singleton concept will be explained. We will discuss the advantages of having a central and global configuration object and create the skeleton of this class.
+<p>
+<a href="#p3">Part III: Reading and writing the settings</a><br>
+We introduce some public properties to the configuration object. There will be some notes about source code documentation and I will explain how to access and use the KDE configuration files.
+<p>
+<a href="#p4">Part IV: Designing configuration pages</a><br>
+Finally we start designing our configuration pages. So this chapter is all about designing widgets with QT Designer and how to derive classes from the layouts.
+<p>
+<a href="#p5">Part V: Basic implementation of the settings dialog</a><br>
+Now it's time to implement the basic dialog code and to add the configuration pages. Still we won't see anything but you learn the essentials for creating a preferences dialog.
+<p>
+<a href="#p6">Part VI: Creating and executing the dialog</a><br>
+It's time to finally show the dialog. We will change our main widget from a label to a button and create our dialog as soon as the users presses this button. So in this part the signal/slot concept of the QT library will be explained. Moreover we will discuss the advantages of "creating dialogs on demand".
+<p>
+<a href="#p7">Part VII: Connecting dialog and configuration object</a><br>
+In this part we will connect the configuration data to the dialog. That means we are going to implement functions that transfer the data to and from the dialog. We connect some more signals and slots and finally this part explains, how to execute a default font chooser dialog.
+<p>
+<a href="#p8">Part VIII: Implementation of the "Default" and the "Apply" button feature</a><br>
+Now this final part add the functionality of the "Default" and the "Apply" button. We will modify the configuration object to have a central place for default settings. And we will improve our dialog to enable and disable the "Apply" button (just as we are expecting it).
+<p><br>
+<hr>
+<p>
+<br>
+<h1>Part I: Getting started<a name="p1">&nbsp;</a></h1>
+<p>
+First we create a new KDE project with KDevelop: choose a "Simple KDE Application" and fill in the required fields (I suggest the name "SettingsTutorial" since I used it in my example files). After the wizard has completed its work start the compilation and see if the program starts as expected. You should see a very simple KDE "Hello World" program.<br>
+If you create the more complex "KDE Application Framework" you will save some work, but this tutorial will go the long way...
+<p class="nogideon">No KDevelop: Because creating everything from scratch might be a bit time consuming I would recommend that you take the source tarball at the end of Part II and start with that.</p>
+<p>
+The wizard generated 3 code files:
+<table width="100%">
+<tr><td width="5%">&nbsp;</td>
+<td width="30%">main.cpp</td>
+<td width="65%">main program, basically creates the application object and runs it</td></tr>
+<tr><td width="5%">&nbsp;</td>
+<td width="30%">settingstutorial.h</td>
+<td width="65%">declaration of the application main window</td></tr>
+<tr><td width="5%">&nbsp;</td>
+<td width="30%">settingstutorial.cpp</td>
+<td width="65%">definition of the main window</td></tr>
+</table>
+<p>
+Ignore main.cpp for now (in this tutorial it is not important) and let's have a look at the other two files:
+<p>
+<hr>
+<b>settingstutorial.h</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef _SETTINGSTUTORIAL_H_
+#define _SETTINGSTUTORIAL_H_
+
+#ifdef HAVE_CONFIG_H
+#include </span><span style='color: #000000'><b>&lt;config.h&gt;
+</b></span><span style='color: #33ab00'>#endif
+
+#include </span><span style='color: #000000'><b>&lt;kmainwindow.h&gt;
+
+</b></span><span style='color: #0000ff'>class</span><span style='color: #000000'> SettingsTutorial : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> KMainWindow {
+    Q_OBJECT
+  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    SettingsTutorial</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>virtual</span><span style='color: #000000'> </span><span style='color: #0000ff'>~</span><span style='color: #000000'>SettingsTutorial</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #33ab00'>#endif </span><span style='color: #747474'>// _SETTINGSTUTORIAL_H_
+</span></pre>
+<p>
+<hr>
+<b>settingstutorial.cpp</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"settingstutorial.h"
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"settingstutorial.moc"
+
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlabel.h&gt;
+
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kmainwindow.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;klocale.h&gt;
+
+</b></span><span style='color: #000000'>SettingsTutorial::SettingsTutorial</span><span style='color: #0000ff'>()</span><span style='color: #000000'> : KMainWindow</span><span style='color: #0000ff'>(</span><span style='color: #000000'> 0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #ff00ff'>"SettingsTutorial"</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'> {
+    setXMLFile</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"settingstutorialui.rc"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>new</span><span style='color: #000000'> QLabel</span><span style='color: #0000ff'>(</span><span style='color: #000000'> </span><span style='color: #ff00ff'>"Hello World"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #ff00ff'>"hello label"</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+}
+
+SettingsTutorial::</span><span style='color: #0000ff'>~</span><span style='color: #000000'>SettingsTutorial</span><span style='color: #0000ff'>()
+</span><span style='color: #000000'>{
+}
+</span></pre>
+<hr>
+<p>
+<p class="note">I have removed the default comments, but apart from that it should look similar to the one you (hopefully) created.</p>
+<p>Our preferences dialog main window is derived from the class KMainWindow which supplies us with a number of interesting top widget features (see KDE lib reference).
+<br>The two lines in the constructor of the PrefDialog class do nothing special: The first 'setXMLFile()' can be deleted, since we haven't a rc-file for user interface generation (this will be explained in a different tutorial). And the second one simply creates the QLabel which shows the "Hello World" text (refer to the QLabel class reference for the constructor arguments).
+<p>
+A short note about the line with the moc-file. MOC-files are automatically generated files that contain all the functions and declarations necessary for the compilation of the QObject macros. So whenever you create a class that is derived from QObject (or any child of it) remember that a moc-file will created and the code need to be compiled! Now as I said the moc-file contains additional declarations and definitions of code. So including it in the cpp-file simply means, that the moc-file code will be compiled together with the widgets source code (which is all very fine). If you don't include the moc-file than kdevelop (or rather the underlying autoconf/automake scripts) will generate and compile a .moc.cpp file for you. Compilewise this will usually take longer. So I'd recommand including the moc-file right after the header file.
+<p>
+Well, this was already the first part. We now have a framework to play around with.
+<p>
+<br>
+<h1>Part II: The boring theory<a name="p2">&nbsp;</a></h1>
+<p>
+One of our main objectives was to access the user defined settings easily. So we could put all the settings in one class and access the members of that class from all widgets and objects in the program. Imagine we create a class like this and call it Configuration. Now there should be just one and only one configuration object in the program and it must be available during the whole lifetime of the program (from the very first object that is created to the very last object that is destructed). Why do we need that? When initialising the application we will probably create a lot of objects, some already depending on the user settings! So we need to ensure that there is always and only one instance of the configuration object available.
+<br>
+How can we do this? We simply create a singleton class (you can read more about that in one of the "Effective C++" books from Scott Meyers). This is a simple as that: We just don't allow the user to create instances of the class from scratch or to create copies! And we do this by making the default constructor and copy constructor private.<p>
+But - you will ask - how can we then create an instance of the Configuration class at all? A global variable is a bad choice because the C++ standard doesn't require a certain order in the initialisation of global variables. So you might end up using the configuration object BEFORE it was actually constructed. However, the C++ standard requires that static variables in functions have to be created upon first call of the function. So we only need to create a function that returns a reference to a static configuration object inside the function and we can be assured that the object will exist whenever we want to access it.<p>
+This all boils down to the following few lines:
+<p>
+<hr>
+<b>configuration.h</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef CONFIGURATION_H
+#define CONFIGURATION_H
+
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> Configuration {
+  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>// add some public members (the user settings)
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>private</span><span style='color: #000000'>:
+    Configuration</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    Configuration</span><span style='color: #0000ff'>(const</span><span style='color: #000000'> Configuration</span><span style='color: #0000ff'>&amp;)</span><span style='color: #000000'>;
+
+    </span><span style='color: #747474'>// allow this function to create one instance
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>friend</span><span style='color: #000000'> Configuration</span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #747474'>// use this function to access the settings
+</span><span style='color: #000000'>Configuration</span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// CONFIGURATION_H
+</span></pre>
+<p>
+<hr>
+<b>configuration.cpp</b>
+<hr width=50>
+<pre>
+<span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"configuration.h"
+
+</b></span><span style='color: #000000'>Configuration::Configuration</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #747474'>// </span><span style='color: #000000'>TODO</span><span style='color: #747474'>: Initialisation of user settings
+</span><span style='color: #000000'>};
+
+Configuration</span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #0000ff'>static</span><span style='color: #000000'> Configuration conf;
+    </span><span style='color: #0000ff'>return</span><span style='color: #000000'> conf;
+};
+</span></pre>
+<hr>
+<p>
+Whenever the global function <b>Config()</b> is first called the configuration object will be created and a reference to that object will be returned. From now on you can simply use your configuration settings in any part of the program, just include the configuration header and retrieve a reference to this object via <b>Config()</b>. If you have a member variable <b>m_myButtonText</b> in the configuration class you could for instance access it using <b>Config().m_myButtonText=...</b>.
+<p>
+Before this tutorial part is finished a short remark on adding new classes to a KDevelop project. There are a couple of different ways how to add a new class (consisting of its header and source file). The first is using the "new class" wizard, which is both fast and safe (and self-explainatory). The alternative is to create both files (&lt;newclass&gt;.h and &lt;newclass&gt;.cpp) on your own and use the automake manager to add the files to the project: Open the automake manager, select the current project (lower window, "settingstutorial (program in bin)" and choose "add existing files" in the context menu).
+<p class="nogideon">If you're not using KDevelop you will have to create the header and source file yourself (which should be quite simple) and then you need to modify the <b>makefile.am</b> file in the <b>src</b> subdirectory. Simply add the cpp-source file <b>configuration.cpp</b> to the line with the source files. This line should now look like:
+<pre>
+    settingstutorial_SOURCES = main.cpp settingstutorial.cpp configuration.cpp
+</pre>
+</p>
+<br>
+When you added the new configuration class to the project and compiled it, you are ready for part 3.
+<p>
+In case you want to save yourself the work (although I recommend creating the project and its files yourself to learn it) you can download the current project: <a href="settingstutorial-01.tar.gz">settingstutorial-01.tar.gz</a>. Note that after opening the project in KDevelop you need to run <b>"automake & friends"</b> first, <b>"configure"</b> afterwards and finally you can compile the project.
+<p class="nogideon">If you don't use KDevelop just enter the following lines:
+<pre>
+    make -f Makefile.cvs
+    ./configure
+    make
+</pre>
+</p>
+<p>
+<b>AT THIS POINT WE HAVE FULFILLED OUR OBJECTIVE #1!</b>
+<p>
+<br>
+<h1>Part III: Reading and writing the settings<a name="p3">&nbsp;</a></h1>
+<p>
+As you will probably know already most KDE programs allow user specific settings. These settings are stored in the applications configuration files which you will most likely find in <b>~/.kde/share/config/&lt;application-rc-file&gt;</b>.
+<p>
+The KDE library already provides all the necessary functions to read an write your settings to the application config file. To illustrate that we will just create some simple properties in the configuration object, namely <b>m_font</b>, <b>m_text</b> and <b>m_textColor</b>. Note that I'm using the typical naming convention for member variables which can be summarised in the following <a name="namerules">rules</a>:
+<ol>
+<li>put a <b>m_</b> in front of your member variables, so you know that you are dealing with a member variable and can distinguish it from local variables</li>
+<li>start variables with a small letter followed by capitalised words, e.g. <b>int m_bigTextSize</b></li>
+<li>when offering a member function to retrieve the content of a member variable, name it the same but without the 'm_', e.g. <b> int bigTextSize();</b> </li>
+<li>prepend 'set' for functions to set values, e.g. <b>void setBigTextSize(int size);</b></li>
+</ol>
+<p>
+Now as I said, we will add some public properties in the configuration object (you can also make them private and provide access functions, but for simplicity I will just use public member variables here). And we will need two functions for reading and writing the configuration settings. The class declaration of our Configuration class becomes:
+<hr>
+<b>configuration.h</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef CONFIGURATION_H
+#define CONFIGURATION_H
+
+#include </span><span style='color: #000000'><b>&lt;qstring.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qfont.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qcolor.h&gt;
+
+</b></span><span style='color: #747474'>/// This is the one and only configuration object.
+/// The member functions read() and write() can be used to load and save
+/// the properties to the application configuration file.
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> Configuration {
+  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Reads the configuration data from the application config file.
+</span><span style='color: #000000'>    </span><span style='color: #747474'>/// If a property does not already exist in the config file it will be
+</span><span style='color: #000000'>    </span><span style='color: #747474'>/// set to a default value.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> read</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>/// Writes the configuration data to the application config file.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> write</span><span style='color: #0000ff'>()</span> <span style='color: #0000ff'>const</span><span style='color: #000000'>;
+
+    QString m_text;         </span><span style='color: #747474'>///&lt; The text to be printed in the main widget.
+</span><span style='color: #000000'>    QFont   m_font;         </span><span style='color: #747474'>///&lt; The font to be used for the text.
+</span><span style='color: #000000'>    QColor  m_textColor;    </span><span style='color: #747474'>///&lt; The text colour used in the main widget.
+
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>private</span><span style='color: #000000'>:
+    Configuration</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    Configuration</span><span style='color: #0000ff'>(const</span><span style='color: #000000'> Configuration</span><span style='color: #0000ff'>&amp;)</span><span style='color: #000000'>;
+
+    </span><span style='color: #0000ff'>friend</span><span style='color: #000000'> Configuration</span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #747474'>/// Returns a reference to the application configuration object.
+</span><span style='color: #000000'>Configuration</span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// CONFIGURATION_H
+</span></pre>
+<hr>
+<p>
+There are several new things in this file. At first three QT header files have been included, each for one QT class we are using. If you are not familiar with these classes, take a short look at the QT class reference.
+<p>
+Then we have the new member variables mentioned above and the two member functions <b>read()</b> and <b>write()</b>.<br>
+<p class="note">Remember to make all member functions that don't change the internal state of the class constant!</p>
+<p>
+Apart from that you will probably note that I "wasted" a lot of precious hard disk space by using comments in the source file :-). And moreover, these comments aren't written like normal C++ comments with two dashes, but instead using three dashes (or in the case of the member variables even with three dashes and a &lt;). This is a special way of documenting the source so that documentation generators like <a href="http://www.doxygen.org/">Doxygen</a> can generate neat and informative documentation of your programming interface. If you want to know how such documentation looks like just download <a href="settingstutorial-01html.tar.gz">settingstutorial-01html.tar.gz</a> and take a look.
+<p>
+We now need to define our <b>read()</b> and <b>write()</b> member functions. Here is the implementation...
+<hr>
+<b>configuration.cpp</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"configuration.h"
+
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kapplication.h&gt;</b></span><span style='color: #33ab00'>       </span><span style='color: #747474'>// for 'kapp'
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kconfig.h&gt;</b></span><span style='color: #33ab00'>            </span><span style='color: #747474'>// for KConfig
+
+</span><span style='color: #000000'>Configuration::Configuration</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    read</span><span style='color: #0000ff'>()</span><span style='color: #000000'>; </span><span style='color: #747474'>// read the settings or set them to the default values
+</span><span style='color: #000000'>};
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> Configuration::read</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    KConfig *conf</span><span style='color: #0000ff'>=</span><span style='color: #000000'>kapp</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// read general options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_text </span><span style='color: #0000ff'>=</span><span style='color: #000000'> conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>readEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"text"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #ff00ff'>"Hello World"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// read style options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    QFont defaultFont </span><span style='color: #0000ff'>=</span><span style='color: #000000'> QFont</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Helvetica"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_font </span><span style='color: #0000ff'>=</span><span style='color: #000000'> conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>readFontEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"font"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'>defaultFont</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    QColor defaultColor</span><span style='color: #0000ff'>(</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'>50</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_textColor </span><span style='color: #0000ff'>=</span><span style='color: #000000'> conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>readColorEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"textColor"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'>defaultColor</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> Configuration::write</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> {
+    KConfig *conf</span><span style='color: #0000ff'>=</span><span style='color: #000000'>kapp</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// write general options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>writeEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"text"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>       m_text</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// write style options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>writeEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"font"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>       m_font</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>writeEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"textColor"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>  m_textColor</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};
+
+Configuration</span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #0000ff'>static</span><span style='color: #000000'> Configuration conf;
+    </span><span style='color: #0000ff'>return</span><span style='color: #000000'> conf;
+};
+</span></pre>
+<hr>
+<p>
+Again there are two new include files, namely <b>kapplication.h</b> and <b>kconfig.h</b>. The first supplies us with the global pointer to the application object <b>kapp</b>. The second contains the class declaration of <b>KConfig</b>.
+<p>
+We added a single line in the constructor which simply calls the <b>read()</b> member function and ensures that upon creation we have valid and sensible values in our configuration object.
+<p>
+Now let's take a look at the <b>write()</b> member function (because it's so easy to understand).
+<pre>
+    KConfig *conf</span><span style='color: #0000ff'>=</span><span style='color: #000000'>kapp</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+</pre>
+This line retrieves a pointer to the application config class which provides access to the configuration file. That's all we need to do - all the work with locating/opening/closing of the configuration file is done by the KDE libs. That's what I call comfortable :-)
+<br>
+Now we can write our properties into the file. Each entry consists of a <b>key</b> and the <b>value</b>. The key is a normal text string and the value can be almost any data type provided by the QT library. The key is also only a normal text string and because in a complex program there may be multiple keys with the same name you can further use several groups. To write to a certain property group you set it via
+<pre>
+<span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</pre>
+Now the group <b>General</b> is set and all the following keys are written in this property group.<br>
+<p class="note">The keys in one group must be of course unique!</p>
+<p>
+The command to write to a group is a simple as that:
+<pre>
+    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>writeEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"font"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>       m_font</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</pre>
+The function <b>writeEntry()</b> automatically converts the value into a string and stores key and value in the configuration file.
+The rest of our <b>write()</b> function should be fairly simple to understand. We set another property group and write our style entries into it. The naming of your keys is totally up to you, but you should name them similar to the member variables.
+<p>
+Now let's take a look at the <b>read()</b> function. At first we retrieve the pointer to the application configuration object. Then we set the group we want to read from (still the same as in the <b>write()</b> member function). Reading a simple text string is very easy, as can be seen in the line
+<pre>
+    m_text </span><span style='color: #0000ff'>=</span><span style='color: #000000'> conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>readEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"text"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #ff00ff'>"Hello World"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</pre>
+The first parameter of the <b>readEntry()</b> function is again the key and the second parameter is the default value, in our case we set the default string 'Hello World'. Whenever the key cannot be found or the config file itself doesn't exist (yet) this default value will be returned.
+<p>
+Now the other properties require some conversion. Because the values are written as plain text (without any type identification) we must specify the return type by choosing the correct read function. For nearly every C++ or QT data type there is a special readEntry function. Take a look at the KDE/QT class reference to get a list of them.
+<br>
+For our purposes we simply need to retrieve the font using <b>readFontEntry()</b> and for the colour we need to use the <b>readColorEntry()</b> function. Both read functions take a pointer to an object that contains the default value. Therefore we create a temporary QFont and QColor object and pass their addresses to the read functions.
+<p>
+At any rate the configuration object contains at the end of the read function either the previously stored user values or our default values. And since we call the read function in our constructor, we can be sure that our configuration object contains valid data from the very beginning.
+<p>
+<b>AT THIS POINT WE HAVE FULFILLED OUR OBJECTIVE #2!</b><br>
+Download of the current project: <a href="settingstutorial-02.tar.gz">settingstutorial-02.tar.gz</a>
+<p>
+<br>
+<h1>Part IV: Designing the configuration pages<a name="p4">&nbsp;</a></h1>
+<p>
+A typical KDE preferences dialog shows some icons to the left, one (active) configuration page to the right and some buttons at the bottom. One example is the preferences dialog of KTouch:<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="exampledlg.png"></td></tr></table>
+<p>
+The next picture shows the corresponding configuration page widget (created in QT designer):<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="exampledlgpage.png"></td></tr></table>
+<p>
+The widget in the QT designer is shown with a title bar, but as soon as the widget is embedded in the configuration dialog the title bar disappears and only the content of the widget is shown.
+<p>
+Now obviously these configuration pages have to be created before the actual dialog, so that's what we will do now.
+In KDevelop open the <b>"New File"</b> window and select <b>"Widget (a new widget)"</b>. The dialog requests a filename for the new widget and you should enter "prefgenerallayout" WITHOUT the .ui (it will be added automatically). Some remarks about the file name.
+<ul>
+<li>The file starts with "pref" because it will be part of the preferences dialog</li>
+<li>The middle name ist "general" because it will be the page for the "General" options</li>
+<li>The file ends with "layout" because we will only create the actual layout with QT designer, all functionality will be coded in the class derived from this layout</li>
+</ul>
+<p>
+But first things first, let's continue with adding the ui-file to the project. The following dialog pops up and you simply have to confirm it:<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="addprefpage.png"></td></tr></table>
+<p>
+After pressing OK QT designer will open the file and you will have an empty widget to play around with.
+<p class="nogideon">You can also just open QT designer, create a new widget and save it in the src-subdirectory under the name <b>prefgenerallayout.ui</b>. Now you simply have to add this ui-file to the sources line of the <b>makefile.am</b> again and you're done. This is basically all that KDevelop does for you in this case.</p>
+<p>
+Let's start with changing some properties of the widget itself:
+<ol>
+<li>name: PrefGeneralLayout</li>
+<li>caption: General (this is optional since it won't be used, but it helps to keep an overview over the widgets)</li>
+</ol>
+<p>
+Now you can start adding some widgets to your general page. In our simple example we just have the text to display, so we might use a KLineEdit widget for the text itself and a QLabel to display our need. And make a nice frame around your options... Before fixing the layout your page should look like:<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="prefgeneral01.png"></td></tr></table>
+<p>
+Some comments about the naming of the widgets:
+<ul>
+<li>In general you only need to name the widgets you actually want to modify later, so in our case this will be only the KLineEdit widget.</li>
+<li>Name them in a similar fashion as normal member variables and compose them of the content and the widget type, so for the line edit I would propose "m_textEdit". This is of course only a recommendation but when following such simple conventions it saves you time to check your widget names later. If we are going to change the content of the widget which holds our m_text property and we remember that the widget was a KLineEdit we can already guess the name: m_text + Edit = m_textEdit. Maybe in future KDevelop will have a powerful auto-completion feature which just prompts us all the widgets. But until then this naming scheme will surely help you and other developers.</li>
+</ul>
+<p>
+Now let's create the layout. For some general information I would recommend, that you take a look at the QT manual, where layouting is described in detail. Just for now we have to decide whether the frame should grow when the widget grows or if the frame should stay at it's minimum vertiacal size and the space below the frame should grow: this decides where to place our vertical spacer. I have decided to put the spacer below the frame, so that a vertical layout will cause the frame to stay at its minimum vertical size. The procedure to create the final layout is as follows:
+<ol>
+<li>right-click in the frame and choose "Lay Out Vertically" (your frame will shrink to its minimum size)</li>
+<li>insert a vertical spacer (the spring icon) below the frame</li>
+<li>right-click on the widget and choose "Lay Out Vertically" (your frame will grow to its horizontal maximum and the spacer will grow to fill the space left below the frame).</li>
+</ol>
+<p>
+Play around with these layouting settings and after a while you can create very complex layouts with ease (try using the preview feature of QT Designer).
+<p>
+There is still one thing to do. When you added the widgets layout you will notice that two additional properties appear in the property toolbox (select the widget by clicking on some empty space outside the frame). You need to set the <b>layoutMargin</b>-property to 0 otherwise the widget will have a nasty border around it which spoils the look of the preferences dialog. The final preferences page should look like:<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="prefgeneral02.png"></td></tr></table>
+<p>
+Now save this widget and close QT designer and in case you have several instances of QT designer with the same widget, be careful to save the correct one!
+<p>
+Back in KDevelop just run make and notice how a prefgenerallayout.h header file is automatically generated out of the ui-file (using the uic program) and a newly created prefgenerallayout.cpp file is compiled.
+<p class="nogideon">When you run 'make' after you added the ui-file to <b>automake.am</b> it will automatically generate a new header and source file and compile it. Just as it does when you press compile in KDevelop...</p>
+<p>
+Just for the practice (and because we will need it) add another configuration page with the filename <b>prefstylelayout.ui</b> and design the configuration page widget (with the name PrefStyleLayout) so that it looks like the following:<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="prefstyle01.png"></td></tr></table>
+<p>
+The three widgets we will later use are:
+<ol>
+<li>A KColorButton named "m_colorBtn"</li>
+<li>A KPushButton named "m_fontBtn"</li>
+<li>A QLabel named "m_fontLabel"</li>
+</ol>
+<p>
+Now you can try to design this widget on your own (which is better from the learning point of view) or follow the simple script (which saves a bit of time). Make your choice as long as you get the work done :-)
+<ol>
+<li>create a frame with the property frameShape=Box and frameShadow=Sunken</li>
+<li>create two QLabels inside the frame give them the captions "Text color:" and "Font:"</li>
+<li>create two horizontal spacers in each line right beside the buttons</li>
+<li>set the "size policy" of the left spacers to "fixed"</li>
+<li>create a KColorButton and name it "m_colorBtn"</li>
+<li>create a KPushButton, name it "m_fontBtn" and label it "Choose..."</li>
+<li>align the labels, spacers and buttons in rows and columns (imagine a table)</li>
+<li>right-click in the frame and choose "Lay Out in a Grid" (The frame should shrink and the widgets should be layouted in a grid. If not, right-click the frame again, select "Break Layout" rearrange the buttons/spacers/labels and recreate a grid layout until the layout is ok).</li>
+<li>enlarge the frame a bit, then right-click the frame and select "Break Layout"</li>
+<li>add a QLabel below the 6 widgets (which should be aligned neatly by now)</li>
+<li>name the label "m_fontLabel" and change the following properties of the label
+<ul>
+<li>paletteBackgroundColor -> select white</li>
+<li>frameShape=Box</li>
+<li>text="abcdefg ABCDEFH 0123456789" (or whatever you want)</li>
+<li>hAlign=AlignHCenter</li>
+</ul>
+</li>
+<li>enlarge the font-label so that it is as wide as the upper widgets together</li>
+<li>create a grid layout in the frame again</li>
+<li>add a vertical spacer below the frame</li>
+<li>create a vertical layout in widget</li>
+<li>set the layoutMargin to zero</li>
+<li>save the widget :-)</li>
+</ol>
+<p>
+Ok, now that you have created the second page you can recompile the project (there should be a prefstylelayout.h file afterwards)
+<p>
+Before we get to the part where you actually see something we need to create two new classes - PrefGeneral and PrefStyle, both are child classes of the layouts we created in the last part. You can do this by using the new class wizard. In KDevelop open the new class wizard<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="newclasswizard01.png"></td></tr></table>
+<p>
+and create a new class PrefGeneral (enter that in the class name edit field) which is a QWidget child class (select this checkbox) and derived from PrefGeneralLayout (enter this name in the "Base class" edit field).<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="newclasswizard02.png"></td></tr></table>
+<p>
+The class wizard will generate two new files: <b>prefgeneral.h</b> and <b>prefgeneral.cpp</b>.
+<hr>
+<b>prefgeneral.h</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef PREFGENERAL_H
+#define PREFGENERAL_H
+
+#include </span><span style='color: #000000'><b>&lt;qwidget.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;prefgenerallayout.h&gt;
+
+</b></span><span style='color: #747474'>/// This is the implementation if the "general options" page of the preferences dialog.
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefGeneral : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> PrefGeneralLayout {
+    </span><span style='color: #0000ff'>Q_OBJECT
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Default constructor
+</span><span style='color: #000000'>    PrefGeneral</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// PREFGENERAL_H
+</span></pre>
+<p>
+<hr>
+<b>prefgeneral.cpp</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefgeneral.h"
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefgeneral.moc"
+
+</b></span><span style='color: #000000'>PrefGeneral::PrefGeneral</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'> : PrefGeneralLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'>parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>{
+    </span><span style='color: #747474'>// </span><span style='color: #000000'>TODO</span><span style='color: #747474'>: initialisation of the widgets
+</span><span style='color: #000000'>}
+</span></pre>
+<hr>
+<p class="nogideon">
+If you don't use KDevelop simply create these files on your own (and save them in the <b>src</b> subdirectory). As usual you will have to add the cpp file to the <b>makefile.am</b> and it should compile just fine.</p>
+<p>
+The files shown above look slightly different to the files the "new class"-wizard generated because I made some small changes:
+<ul>
+<li>the comments are removed and replaced with my own</li>
+<li>the destructor is gone (we don't need it)</li>
+<li>the constructor get's default arguments for name and wflags</li>
+<li>the "prefgeneral.moc" will now be included in the prefgeneral.cpp file (see discussion of moc-file includes in Part I).</li>
+</ul>
+<p>
+The same has to be done for the PrefStyleLayout, so we need to create a child class with the name PrefStyle. You can do this on your own or use the current project tarball: <a href="settingstutorial-03.tar.gz">settingstutorial-03.tar.gz</a>
+<p>
+<br>
+<h1>Part V: Basic implementation of the settings dialog<a name="p5">&nbsp;</a></h1>
+<p>
+Now after all this work still there is nothing but a stupid "Hello World" text to be seen...
+<blockquote style="font-style:italic;font-size:small">
+ That's the hassle with being a programmer - you can work for hours and days and still the user won't see a difference... and where you don't see a difference there's obviously nothing been done. That's "logic" from the user's point of view! But maybe you choose to concentrate on coding new user interface gimix like those redmond guys permanently do. So at least the user will 'see' the 'progress'... hehe, well, this has nothing to do with this tutorial, but I just wanted to point that out :-)
+ </blockquote>
+ <p>
+ It's time to implement the dialog. We need a new class (again), this time we call it PrefDialog and we inherit KDialogBase. So open the "new class" wizard and create this new class. You should end up with the following files (again, I have modified the generated files slightly but you should recognise them still...):
+<hr>
+<b>prefdialog.h</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef PREFDIALOG_H
+#define PREFDIALOG_H
+
+#include </span><span style='color: #000000'><b>&lt;qwidget.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kdialogbase.h&gt;
+
+</b></span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefDialog : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> KDialogBase {
+    </span><span style='color: #0000ff'>Q_OBJECT
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    PrefDialog</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// PREFDIALOG_H
+</span></pre>
+<p>
+<hr>
+<b>prefdialog.cpp</b>
+<hr width=50>
+<pre>
+<span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefdialog.h"
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefdialog.moc"
+
+</b></span><span style='color: #000000'>PrefDialog::PrefDialog</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'> : KDialogBase</span><span style='color: #0000ff'>(</span><span style='color: #000000'>parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>{
+}
+</span></pre>
+<hr>
+<p class="nogideon">Again without KDevelop you have to create the files on your own (cut'n paste them) and modify the <b>automake.am</b>. I guess you know how to do this by now, so in future I won't tell you that any longer :-)</p>
+<p>
+We need to create our configuration pages when setting up the dialog. To access these pages later more easily we will store the pointers to the pages in member variables of the dialog class. So we need to add
+<ul>
+<li>the class prototypes for PrefGeneral and PrefStyle in the prefdialog.h</li>
+<li>the private member variables m_prefGeneral and m_prefStyle</li>
+</ul>
+<p> The new <b>prefdialog.h</b> looks like
+<hr>
+<pre>
+<span style='color: #000000'></span><span style='color: #33ab00'>#ifndef PREFDIALOG_H
+#define PREFDIALOG_H
+
+#include </span><span style='color: #000000'><b>&lt;qwidget.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kdialogbase.h&gt;
+
+</b></span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefGeneral;
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefStyle;
+
+</span><span style='color: #747474'>/// The preferences dialog.
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefDialog : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> KDialogBase {
+    </span><span style='color: #0000ff'>Q_OBJECT
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Constructor
+</span><span style='color: #000000'>    PrefDialog</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>private</span><span style='color: #000000'>:
+    PrefGeneral    *m_prefGeneral;
+    PrefStyle      *m_prefStyle;
+};
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// PREFDIALOG_H
+</span></pre>
+<hr>
+<p>
+<p class="note">Using the class prototypes helps to keep compile dependencies low. Imagine what happens when you make some changes to the layout of the "General" page: At first all users of <b>prefgenerallayout.h</b> (meaning all files who include prefgenerallayout.h) must recompile. In our case <b>prefgeneral.h</b> includes the layout file and so every user of <b>prefgeneral.h</b> must recompile. This will be <b>prefgeneral.cpp</b> and <b>prefdialog.cpp</b>. If we include <b>prefgeneral.h</b> in the header <b>prefdialog.h</b> then all users of prefdialog.h must recompile as well. So when using class prototypes instead of including the header files we reduce our compile dependencies by at least one file (because surely prefdialog.h will be used by at least one other file).</p>
+<p>
+Now let's take a look at the modifications we have to make to the source file <b>prefdialog.cpp</b>.
+<hr>
+<pre>
+<span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlayout.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for QVBoxLayout
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlabel.h&gt;</b></span><span style='color: #33ab00'>         </span><span style='color: #747474'>// for QLabel
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qframe.h&gt;</b></span><span style='color: #33ab00'>         </span><span style='color: #747474'>// for QFrame
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kcolorbutton.h&gt;</b></span><span style='color: #33ab00'>   </span><span style='color: #747474'>// for KColorButton
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kpushbutton.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KPushButton
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;klocale.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for i18n()
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kiconloader.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KIconLoader
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kglobal.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for KGlobal
+
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefdialog.h"</b></span><span style='color: #33ab00'>     </span><span style='color: #747474'>// class PrefDialog
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefdialog.moc"
+
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefgeneral.h"</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// class PrefGeneral
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefstyle.h"</b></span><span style='color: #33ab00'>      </span><span style='color: #747474'>// class PrefStyle
+
+</span><span style='color: #000000'>PrefDialog::PrefDialog</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'> : KDialogBase</span><span style='color: #0000ff'>(</span><span style='color: #000000'>IconList</span><span style='color: #0000ff'>,</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Preferences"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> Default</span><span style='color: #0000ff'>|</span><span style='color: #000000'>Ok</span><span style='color: #0000ff'>|</span><span style='color: #000000'>Apply</span><span style='color: #0000ff'>|</span><span style='color: #000000'>Cancel</span><span style='color: #0000ff'>,</span><span style='color: #000000'> Ok</span><span style='color: #0000ff'>,</span><span style='color: #000000'> parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>{
+    </span><span style='color: #747474'>// adding page "General options"
+</span><span style='color: #000000'>    QFrame *frame </span><span style='color: #0000ff'>=</span><span style='color: #000000'> addPage</span><span style='color: #0000ff'>(</span><span style='color: #000000'>i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General options"</span><span style='color: #0000ff'>),
+</span><span style='color: #000000'>        KGlobal::iconLoader</span><span style='color: #0000ff'>()-&gt;</span><span style='color: #000000'>loadIcon</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"kfm"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>KIcon::Panel</span><span style='color: #0000ff'>,</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,false)</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    QVBoxLayout *frameLayout </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> QVBoxLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'> frame</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0 </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefGeneral </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> PrefGeneral</span><span style='color: #0000ff'>(</span><span style='color: #000000'>frame</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    frameLayout</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>addWidget</span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefGeneral</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+
+    </span><span style='color: #747474'>// adding page "Style settings"
+</span><span style='color: #000000'>    frame </span><span style='color: #0000ff'>=</span><span style='color: #000000'> addPage</span><span style='color: #0000ff'>(</span><span style='color: #000000'>i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style settings"</span><span style='color: #0000ff'>),
+</span><span style='color: #000000'>        KGlobal::iconLoader</span><span style='color: #0000ff'>()-&gt;</span><span style='color: #000000'>loadIcon</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"style"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>KIcon::Panel</span><span style='color: #0000ff'>,</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,false)</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    frameLayout </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> QVBoxLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'> frame</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0 </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefStyle </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> PrefStyle</span><span style='color: #0000ff'>(</span><span style='color: #000000'>frame</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    frameLayout</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>addWidget</span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefStyle</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+}
+</span></pre>
+<hr>
+<p>
+Ok, at first we include a lot of files, mainly the headers of the widgets we have in our dialog pages. And then we need some classes for the generation of the dialog pages (explained in the following paragraphes).
+<p>
+The class KDialogBase serves as prototype for many different dialog types. Since we need a dialog with an icon list and some default buttons, we use a special constructor for the base class. The parameters for this constructor are the following:
+<ol>
+<li>the type of the dialog: IconList means we have icons to the left of the dialog</li>
+<li>the title of the dialog. <br><span class="note">Note: We are using the makro <b>i18n()</b> which provides the functionality for internationalisation. This concept will be explained in a different tutorial, just remember for now to put any string constants that will be printed to the user inside the i18n() makro.</li>
+<li>the different buttons the dialog should contain. In our case we want to have 4 buttons.</li>
+<li>the button that is selected by default.</li>
+<li>the parent widget</li>
+<li>the identification name</li>
+<li>the window flags</li>
+</ol>
+<p>
+Now that the dialog itself is created we need to add the configuration pages. This is a three-step process. Let's look at the first:
+<pre>
+<span style='color: #000000'>    QFrame *frame </span><span style='color: #0000ff'>=</span><span style='color: #000000'> addPage</span><span style='color: #0000ff'>(</span><span style='color: #000000'>i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General options"</span><span style='color: #0000ff'>),
+</span><span style='color: #000000'>        KGlobal::iconLoader</span><span style='color: #0000ff'>()-&gt;</span><span style='color: #000000'>loadIcon</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"kfm"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>KIcon::Panel</span><span style='color: #0000ff'>,</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,false)</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</pre>
+<p>
+<b>addPage()</b> is a member function of KDialogBase and takes the following parameters:
+<ol>
+<li>the name of the page that will appear in the iconlist</li>
+<li>the name of the page that will be printed on top of the configuration page</li>
+<li>the icon that will be used in the icon list</li>
+</ol>
+<p>
+The first two aren't much of a problem, but where to get the icon from? As usual KDE helps us out. Especially because of the different configurations of KDE the icons can be installed in different directories. The <b>KIconLoader</b> helps us to locate the icons we need. We can ask the global icon loader in the KGlobal namespace to retrieve the icon with a certain name for us. The important parameters to the <b>loadIcon()</b> function are the icon name and the type of the icon, which corresponds to a certain icon size. The icon loader tries really hard to locate an icon of our choice in the many directories that can contain icons. Usually in your own program you will want to supply your own icons which will reside in the application install directory. In this short tutorial we will just "borrow" two typical icons that should be available in a normal KDE installation. With the icon found we add the page and can go to step 2.
+<p>
+<pre>
+    QVBoxLayout *frameLayout </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> QVBoxLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'> frame</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0 </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</pre>
+<p>
+The second step is to create a new vertical layout to put our configuration page into. This layout will be the top-level layout of the page we just added.
+<p>
+<pre>
+    m_prefGeneral </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> PrefGeneral</span><span style='color: #0000ff'>(</span><span style='color: #000000'>frame</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</pre>
+And last but not least we create an instance of the "General options" config page and add this to the layout. <br>
+<p class="Note">We are creating all the objects with <b>new</b>, but we are never free them using <b>delete</b>. Why not? As soon as a QObject is created as a child of (meaning "owned by") another QObject this "parent" takes care of deleting the memory of all its "kids". So the rule for releasing memory is quite simple: Whenever you create an object via <b>new</b> and the object will be owned by a QObject it will be deleted automatically, otherwise you have to delete it yourself.</p>
+<p>
+In our case the QFrame is owned by the dialog itself, the QVBoxLayout is owned by the frame and the PrefGeneral object is owned by the layout. All will be deleted by their parents when the dialog is destroyed.
+<p>
+We do the same with the second page and our dialog is set up. At least you should be able to compile the files by now. However, you will still only see the "Hello world" text in the window. We only need a way to execute the dialog from the main window...
+<p>
+<br>
+<h1>Part VI: Creating and executing the dialog<a name="p6">&nbsp;</a></h1>
+<p>
+Now finally we get back to the main window source code we already saw in the first part. Here is the modified header <b>settingstutorial.h</b>:
+<hr>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef _SETTINGSTUTORIAL_H_
+#define _SETTINGSTUTORIAL_H_
+
+#ifdef HAVE_CONFIG_H
+#include </span><span style='color: #000000'><b>&lt;config.h&gt;
+</b></span><span style='color: #33ab00'>#endif
+
+#include </span><span style='color: #000000'><b>&lt;kmainwindow.h&gt;
+
+</b></span><span style='color: #0000ff'>class</span><span style='color: #000000'> QMouseEvent;
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> KPushButton;
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefDialog;
+
+</span><span style='color: #747474'>/// This is the main window of the tutorial program.
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> SettingsTutorial : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> KMainWindow {
+    </span><span style='color: #0000ff'>Q_OBJECT
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Default constructor.
+</span><span style='color: #000000'>    SettingsTutorial</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>public</span><span style='color: #000000'> </span><span style='color: #0000ff'>slots</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Executes the preferences dialog.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> executePreferencesDlg</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>/// Updates the widgets so that new user settings take effect.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>private</span><span style='color: #000000'>:
+    KPushButton    *m_theTextButton;
+    PrefDialog     *m_prefDialog;
+};
+
+</span><span style='color: #33ab00'>#endif </span><span style='color: #747474'>// _SETTINGSTUTORIAL_H_</span></pre>
+<hr>
+<p>
+If you compare it with the previous listing of Part I we have changed quite a lot. At first the destructor is gone (we didn't need it anyway). Then we added a public slot <b>executePreferencesDlg()</b> which does just that. Next we added another public slot <b>applyPreferences()</b>. The only difference between these public slots and public member functions is that public slots can be connected to signals. I will explain the QT signal/slot mechanism a little bit later. And finally we added some private member variables: one is for the preferences dialog and one for the button. Because we need something to push so that the dialog shows up, we're replacing the "Hello world"-label with a button.
+<p>
+Now let's take a look at the implementation. This is the new <b>settingstutorial.cpp</b>:
+<hr>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qevent.h&gt;</b></span><span style='color: #33ab00'>         </span><span style='color: #747474'>// for QMouseEvent
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlayout.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for QVBoxLayout
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;klocale.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for i18n()
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kpushbutton.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KPushButton
+
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"settingstutorial.h"
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"settingstutorial.moc"
+
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefdialog.h"</b></span><span style='color: #33ab00'>     </span><span style='color: #747474'>// class PrefDialog
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"configuration.h"</b></span><span style='color: #33ab00'>  </span><span style='color: #747474'>// class Configuration and Config()
+
+</span><span style='color: #000000'>SettingsTutorial::SettingsTutorial</span><span style='color: #0000ff'>()
+</span><span style='color: #000000'>  : KMainWindow</span><span style='color: #0000ff'>(</span><span style='color: #000000'> 0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"SettingsTutorial"</span><span style='color: #0000ff'>)</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> m_prefDialog</span><span style='color: #0000ff'>(</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>{
+    m_theTextButton </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> KPushButton</span><span style='color: #0000ff'>(</span><span style='color: #000000'> </span><span style='color: #0000ff'>this</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    setCentralWidget</span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_theTextButton</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'> m_theTextButton</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> clicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> executePreferencesDlg</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+}
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> SettingsTutorial::executePreferencesDlg</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #747474'>// create dialog on demand
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>==</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>
+        m_prefDialog</span><span style='color: #0000ff'>=new</span><span style='color: #000000'> PrefDialog</span><span style='color: #0000ff'>(this)</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>exec</span><span style='color: #0000ff'>()==</span><span style='color: #000000'>QDialog::Accepted</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>        applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> SettingsTutorial::applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    m_theTextButton</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setText</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_text </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_theTextButton</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setPaletteForegroundColor</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_textColor </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_theTextButton</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_font </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};</span></pre><hr>
+<p>
+I guess we have to discuss this in more detail. The comment behind the included header files show which class is declared in which file. Both QT and KDE headers have a simple naming convention. Usually it's just the class name in lower case with a .h at the end (just like the include files we created in this tutorial).
+<p>
+Now let's take a look at the constructor. The old content is gone, and we have something new here. But did you notice the additional parameter in the initialisation list? We initialise the pointer to the preferences dialog with 0. Well, we'll come to this later. Let's take a look at the constructor code:
+<pre>    m_theTextButton </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> KPushButton</span><span style='color: #0000ff'>(</span><span style='color: #000000'> </span><span style='color: #0000ff'>this</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;</pre>
+In this line we simply create a new KPushButton which is owned by our main window (remember our discussion in Part III when you are unsure about whether you should delete that object or not).
+<p>
+<pre>
+    setCentralWidget</span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_theTextButton</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;</pre>
+Here we set the button as our central widget. In a normal program the central widget of an application will most likely be a lot more complex, I could be at least a text editor or HTML view widget. However, for illustrating purposes the button is good enough. Being a central widget the KPushButton will fill the whole content of our main window.
+<p>
+And then we call our member function/slot <b>applyPreferences()</b> which sets three properties of the button. These are the properties we want to change in the settings dialog.<br>
+<p class="Note">Here you see the importance of our configuration object design. It is very robust and from the very begin we can use functions which will use the configuration data in turn without having to worry about whether the values are valid or not. So we actually avoid duplicating source code and we can use the applyPreferences() member function right away.</p>
+<p>
+And finally we "connect" something. Let me explain a bit about QTs signal/slot concept:<p>
+Whenever a user performs a typical action on a widget, like pressing a push button or moving a slider etc. the interactive widget will emit a signal. This signal is different from widget to widget and you can best learn about these signals while browsing through the QT/KDE class reference. A signal can pass a parameter as well! For instance a QSlider will emit a signal <b>valueChanged()</b> and pass an integer value which is the new slider value. This saves you the work of looking up the widget and reading the value manually from the widget (the parameters are quite handy in other situations as well, but that's nothing for this tutorial).
+<p>
+Now a signal can be linked to a slot. Basically the slot is a member function which take the same parameters as the signal passes. So in the case of the QSlider we could create a slot <b>sliderValueChanged(int newValue)</b> and connect it to the valueChanged() signal of the slider. The corresponding source code would look like:
+<pre><span style='color: #000000'>    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'>mySlider</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> valueChanged</span><span style='color: #0000ff'>(int)</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> targetWidget</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> sliderValueChanged</span><span style='color: #0000ff'>(int)</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;</span></pre>
+<b>mySlider</b> and <b>targetWidet</b> are pointers whereas <b>sliderValueChanged(int)</b> is a public slot of the targetWidget. Now after this connection has been made every signal <b>valueChanged(int)</b> of the slider 'mySlider' will result in a call of <b>targetWidget->sliderValueChanged(int)</b> with the parameter value that came from the signal. It's as simple as that.
+<p>
+Now let's apply this to our dialog. We have an interactive widget, the KPushButton. This widget emits the signal <b>clicked()</b> when the user clicks on it. And we have a slot <b>executePreferencesDlg()</b> available. Now we simple need to connect the signal to the slot:
+<pre>
+    <span style='color: #0000ff'>connect(</span><span style='color: #000000'> m_theTextButton</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> clicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> executePreferencesDlg</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;</pre>
+<p>
+The <b>connect()</b> function takes four parameters:
+<ol>
+<li>the pointer to the widget that is emitting the signal : this is our KPushButton</li>
+<li>the name of the signal (inside the SIGNAL() macro) : this is <b>clicked()</b></li>
+<li>the pointer to the widget that should receive the signal : this is our main window (this)</li>
+<li>the name of the slot (inside the SLOT() macro) : this is <b>executePreferencesDlg()</b></li>
+</ol>
+<p>
+Now let's take a look at the <b>executePreferencesDlg()</b> member function:
+<pre><span style='color: #000000'>    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>==</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>        m_prefDialog</span><span style='color: #0000ff'>=new</span><span style='color: #000000'> PrefDialog</span><span style='color: #0000ff'>(this)</span><span style='color: #000000'>;</pre>
+Now this looks strange. Why don't we just create the dialog whenever the function is called on the stack (meaning: as a local object which will be destroyed again when leaving the function)? This is just a performance issue. It is not a big deal if we create the dialog locally, but this way the dialog will only be created once per program start. Now we could create the dialog already in the constructor of our main window, but clearly not every time the program is run the user will open the preferences dialog. So we waste precious time during the program startup. Using this "create on demand" system the dialog will be created only once and ONLY if it will be actually used.<br>
+<p class="Note">A rule of thumb for dialog creation could be: If the dialog is used every time or almost every time the program is startet, create it once during initialisation of the program. If the dialog is seldom used, create them on demand like in our example. If the dialog is a KDE standard dialog, use the ready-made dialogs of the KDE libs (be it a simply message dialog or a a more complex URL-requester dialog).</p>
+<p>
+Before we continue a short question in between. What happens with our program if the host computer runs out of memory and the <b>new</b> fails? Ok, this is very unlikely to happen, but....
+<p>
+<pre><span style='color: #000000'>    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>exec</span><span style='color: #0000ff'>()==</span><span style='color: #000000'>QDialog::Accepted</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>        applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;</pre>
+And finally we execute the dialog and if the dialog was quitted with "Ok" we call our <b>applyPreferences()</b> member function.
+<br>
+The function <b>applyPreferences()</b> is quite simple so I won't explain it. Try to figure it out yourself!
+(we are using the properties of our singleton configuration object which will be returned by the function <b>Config()</b> ).
+<p>
+That was it! Compile the program and test it. Whenever you click on the push button our freshly designed preferences dialog will pop up.<p>
+<table class="screenshot" align="center" border=0 cellpadding=5><tr><td><img src="prefdialog01.png"></td></tr></table>
+<p>
+However, we still need to implement its functionality. And we will do so in Part VII.
+<br>
+The current project tarball is here: <a href="settingstutorial-04.tar.gz">settingstutorial-04.tar.gz</a>
+<p>
+<br>
+<h1>Part VII: Connecting dialog and configuration object<a name="p7">&nbsp;</a></h1>
+<p>
+Now how does the dialog and the configuration object interact. Basically whenever the dialog is shown the widgets should contain the values of the configuration object. Therefore we need a function to transfer the data from the configuration object to the dialog. We will call this function simply <b>updateDialog()</b>.
+<br>
+On the other hand we need a function that transfers the settings made in the dialog to the configuration object. And this needs to be done whenever the users pressed the "Apply" or "Ok" button. We call this function <b>updateConfiguration()</b>. Of course you are free to name that however you like...
+<p>
+The implementation of these member functions looks like (don't forget the member function declarations in the header file!):
+<hr>
+<pre><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::updateDialog</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setText</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_text </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_colorBtn</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setColor</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_textColor </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_font </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+}
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::updateConfiguration</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_text         </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>text</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_textColor    </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_colorBtn</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>color</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_font         </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>font</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+};</span></pre>
+<hr>
+<p>
+These functions are rather simple and we can save the time to explain the lines, right?<br>
+<p class="note">If you have just cut'n pasted this source code you will get some strange compiler messages. Usually they result in missing include files. We have used the KLineEdit, QLabel and the KColorButton widget and so we need to include the corresponding header files (I leave it to you to find out which ones you need :-)</p>
+<p>
+Now when to we need to call the update functions? Just before the dialog is executed, so we will add a call to updateDialog() in the <b>executePreferencesDlg()</b> function of our main window. And we need to call updateConfiguration() when the user accepted the dialog (by pressing "Ok"). That will be another call in <b>executePreferencesDlg()</b>. The apply button will be a bit more tricky so we skip this at first.
+<p>
+Here is the new <b>executePreferencesDlg()</b> function:
+<hr>
+<pre></span><span style='color: #0000ff'>void</span><span style='color: #000000'> SettingsTutorial::executePreferencesDlg</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>==</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>
+        m_prefDialog</span><span style='color: #0000ff'>=new</span><span style='color: #000000'> PrefDialog</span><span style='color: #0000ff'>(this)</span><span style='color: #000000'>;          </span><span style='color: #747474'>// create dialog on demand
+</span><span style='color: #000000'>    m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>updateDialog</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;                   </span><span style='color: #747474'>// update the dialog widgets
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>exec</span><span style='color: #0000ff'>()==</span><span style='color: #000000'>QDialog::Accepted</span><span style='color: #0000ff'>)</span><span style='color: #000000'> {  </span><span style='color: #747474'>// execute the dialog
+</span><span style='color: #000000'>        m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>updateConfiguration</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;        </span><span style='color: #747474'>// store settings in config object
+</span><span style='color: #000000'>        applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;                         </span><span style='color: #747474'>// let settings take effect
+</span><span style='color: #000000'>    };
+};</pre>
+<hr>
+<p>
+When you compile and run the program now you can already change two of the three settings and they will take effekt right after hitting "Ok". However, we didn't ask our configuration object to save the settings. It depends on your program design. Usually saving the settings right at the point where the settings have to be applied isn't a bad idea. At least you always have to take into account that your application might crash and all the configuration changes will be lost. An alternative is to save the settings when the program quits. But in this tutorial we will take the easy way and simply add a call to <b>Config().write()</b> in the <b>applyPreferences()</b> member function. I won't show you this listing this time, you should do at least something yourself! :-)
+<p>
+If you made everything correct the settings in your dialog will be saved and restored the next time you start the program.<br>
+<p>
+Now our "Choose..." font button does not work yet. And this is another perfect opportunity to use connect a signal to a slot.
+<p>
+As we now already the signal <b>clicked()</b> does not pass any parameters so we create a slot with the simple name <b>chooseBtnClicked()</b> as a "private slot" in the class PrefStyle. The slot can be private because the signal is emmitted inside the class PrefStyle and we will never use the slot from the outside. The class declaration of PrefStyle becomes:
+<hr>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef PREFSTYLE_H
+#define PREFSTYLE_H
+
+#include </span><span style='color: #000000'><b>&lt;qwidget.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;prefstylelayout.h&gt;
+
+</b></span><span style='color: #747474'>/// Implementation of the "Style settings" page of the preferences dialog.
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefStyle : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> PrefStyleLayout {
+    </span><span style='color: #0000ff'>Q_OBJECT
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Constructor.
+</span><span style='color: #000000'>    PrefStyle</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>private</span><span style='color: #000000'> </span><span style='color: #0000ff'>slots</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Called whenever the "Choose..." button is clicked.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> chooseBtnClicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// PREFSTYLE_H</span></pre>
+<hr>
+<p>
+Now let's take a look at the modifications we need to make to the file <b>prefstyle.cpp</b>:
+<hr>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qfont.h&gt;</b></span><span style='color: #33ab00'>          </span><span style='color: #747474'>// for QFont
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kpushbutton.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KPushButton
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kfontdialog.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KFontDialog
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlabel.h&gt;
+
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefstyle.h"
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefstyle.moc"
+
+</b></span><span style='color: #000000'>PrefStyle::PrefStyle</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'> : PrefStyleLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'>parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>{
+    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'>m_fontBtn</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> clicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> chooseBtnClicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+}
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefStyle::chooseBtnClicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    QFont tmpFont </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>font</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>int</span><span style='color: #000000'> result </span><span style='color: #0000ff'>=</span><span style='color: #000000'> KFontDialog::getFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'>tmpFont</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>result</span><span style='color: #0000ff'>==</span><span style='color: #000000'>KFontDialog::Accepted</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>        m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'>tmpFont</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};</span></pre>
+<hr>
+<p>
+At first you will notice the new line in the constructor: The signal <b>clicked()</b> of the push button is now connected to our newly created slot.
+<p>
+Now let's discuss the implementation of the slot itself. Most things should look familiar by now but the KFontDialog is somewhat new. Most often used dialogs are provided by the KDE libs. The typical font dialog can also be used right away. Now the namespace KFontDialog contains a ready-made function for asking the user to select a font. It is called <b>getFont()</b> and takes one parameter: the pre-selected font. The parameter is passed by reference and after the dialog has been closed it contains the font which was selected by the user.
+<p>
+Now the rest is fairly obvious. We first get the current font from the font label, open the dialog and if the user has accepted the dialog with "Ok" we set the new font in the font label. Now we have already a fully working preferences dialog and our settings are saved and restored. We could actually already proclaim the end of the tutorial... but, not yet! The "Default" and "Apply" buttons aren't working yet!<br>
+However, here's the current project tarball (if you don't want to do this little bit of work on your own :-)  <a href="settingstutorial-05.tar.gz">settingstutorial-05.tar.gz</a>
+<p>
+If you only need a simple preferences dialog without "Default" and "Apply" button, you can quit here (but remember to remove the button codes from the KDialogBase constructor call)...
+<p>
+<br>
+<h1>Part VIII: Implementation of the "Default" and the "Apply" button feature<a name="p8">&nbsp;</a></h1>
+<p>
+Now at first we need a central place to define our default values. Otherwise we would have to set them twice - in the read() function of the configuration object and in the preferences dialog when the user hits "Default". The best place is obviously the configuration object itself. We simply create a static default member variable for the default values and we have to add the following 3 lines to the <b>configuration.h</b>:
+<pre><span style='color: #000000'>     </span><span style='color: #0000ff'>static</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> QString   m_defaultText;       </span><span style='color: #747474'>///&lt; The default text to be printed.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>static</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> QFont     m_defaultFont;       </span><span style='color: #747474'>///&lt; The default font for the text.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>static</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> QColor    m_defaultTextColor;  </span><span style='color: #747474'>///&lt; The default text color.
+</span></pre>
+The initialisation is done in the source file <b>configuration.cpp</b>. The temporary variables in the <b>read()</b> member function are no longer necessary and can be replaced by our static default variables. The new <b>configuration.cpp</b> looks like:
+<hr>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kapplication.h&gt;</b></span><span style='color: #33ab00'>       </span><span style='color: #747474'>// for 'kapp'
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kconfig.h&gt;</b></span><span style='color: #33ab00'>            </span><span style='color: #747474'>// for KConfig
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;klocale.h&gt;</b></span><span style='color: #33ab00'>            </span><span style='color: #747474'>// for i18n()
+
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"configuration.h"
+
+</b></span><span style='color: #0000ff'>const</span><span style='color: #000000'> QString Configuration::m_defaultText </span><span style='color: #0000ff'>=</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Hello World"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</span><span style='color: #0000ff'>const</span><span style='color: #000000'> QFont   Configuration::m_defaultFont </span><span style='color: #0000ff'>=</span><span style='color: #000000'> QFont</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Helvetica"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+</span><span style='color: #0000ff'>const</span><span style='color: #000000'> QColor  Configuration::m_defaultTextColor </span><span style='color: #0000ff'>=</span><span style='color: #000000'> Qt::black;
+
+Configuration::Configuration</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    read</span><span style='color: #0000ff'>()</span><span style='color: #000000'>; </span><span style='color: #747474'>// read the settings or set them to the default values
+</span><span style='color: #000000'>};
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> Configuration::read</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    KConfig *conf</span><span style='color: #0000ff'>=</span><span style='color: #000000'>kapp</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// read general options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_text </span><span style='color: #0000ff'>=</span><span style='color: #000000'> conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>readEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"text"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> m_defaultText </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// read style options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_font </span><span style='color: #0000ff'>=</span><span style='color: #000000'> conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>readFontEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"font"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'>m_defaultFont </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_textColor </span><span style='color: #0000ff'>=</span><span style='color: #000000'> conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>readColorEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"textColor"</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'>m_defaultTextColor </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> Configuration::write</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> {
+    KConfig *conf</span><span style='color: #0000ff'>=</span><span style='color: #000000'>kapp</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// write general options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>writeEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"text"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>       m_text</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>// write style options
+</span><span style='color: #000000'>    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setGroup</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style"</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>writeEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"font"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>       m_font</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    conf</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>writeEntry</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"textColor"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>  m_textColor</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};
+
+Configuration</span><span style='color: #0000ff'>&amp;</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #0000ff'>static</span><span style='color: #000000'> Configuration conf;
+    </span><span style='color: #0000ff'>return</span><span style='color: #000000'> conf;
+};</span></pre>
+<hr>
+<p>
+If you later want to change the default values, you only need to  change the initialisation values at the top of the file.
+<p>
+Now we have to modify our preferences dialog again. We need a function that sets all widgets in the dialog to the default values whenever the user presses the "Default" button.<br>
+There has been some discussion in the kde-devel mailing list lately about how a default button should work. The big question was: Should a default button reset only the values in the configuration page that is currently shown or should it reset ALL settings. There wasn't an agreement on this but there was something like a final recommendation:<br>
+<p class="note">Reset all configuration pages but prompt the user beforehand. If the user doesn't like resetting everything he can still prevent it.</p>
+<br>
+IMHO this is the correct way to do it, because the default button is not part of any configuration page and thus it belongs to the entire dialog.
+<p>
+Now the KDialogBase has another nice feature. Whenever you choose to have a default button on your page (by specifying the button code in the constructor) you can reimplement the <b>slotDefault()</b> slot and this function will be called whenever the "Default" button is clicked. That is exactly what we will do now. Add these lines to <b>prefdialog.h</b>:
+<pre>  <span style='color: #0000ff'>public</span><span style='color: #000000'> </span><span style='color: #0000ff'>slots</span><span style='color: #000000'>:
+    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> slotDefault</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;</span></pre>
+and this will be the implementation of the function in <b>prefdialog.cpp</b>:
+<hr>
+<pre><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::slotDefault</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>KMessageBox::warningContinueCancel</span><span style='color: #0000ff'>(this,</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"This will set the default options "
+</span><span style='color: #000000'>        </span><span style='color: #ff00ff'>"in ALL pages of the preferences dialog! Continue?"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Set default options?"</span><span style='color: #0000ff'>),
+</span><span style='color: #000000'>        i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Set defaults"</span><span style='color: #0000ff'>))==</span><span style='color: #000000'>KMessageBox::Continue</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>    {
+        m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setText</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_defaultText </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+        m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_colorBtn</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setColor</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_defaultTextColor </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+        m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_defaultFont </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    }
+};</span></pre>
+<hr>
+<p>
+The function <b>KMessageBox::warningContinueCancel()</b> opens another ready-made dialog that is provided by the KDE library. Take a look at the class reference of KMessageBox to get an impression how many different types of dialogs there are. For the warning dialog we need to pass 4 arguments:
+<ol>
+<li>a pointer to the parent widget (this -> the preferences dialog)</li>
+<li>the message text for the user (remember to use the i18n() macro)</li>
+<li>the caption of the dialog</li>
+<li>the text on the "Continue" button</li>
+</ol>
+When the user pressed the "continue" button the dialog will return <b>KMessageBox::Continue</b> and we simply transfer the default values from the configuration object to the widgets. Simple and robust! Well, that was the default button. Only one to go!
+<p>
+<br>
+Now as I said the apply button is a bit tricky. This is not only because of the implementation but because there has been some discussion about what should be the typical behaviour of an "Apply" button. This is what most people agreed upon:<br>
+<p class="note">The "Apply" button should be disabled by default. As soon as the user changed a setting the "Apply" button should be enabled. When activating the "Apply" button the settings should be transfered from the dialog into the common configuration and the changes should be applied immediately (if possible). Afterwards the "Apply" button should be disabled again. The user will recognise by the state of the button, whether he had changed some settings or not.</p>
+<p>
+Well, there has been some disagreement on the statement that changes should be applied immediately. But in my experience most changes can be applied right away. So in this tutorial we will make our changes take effect at once.
+<p>
+Now how can we realise the enable/disable feature for the apply button? Well, as simple as that: We disable the apply button whenever we transfer our settings from or to the dialog (because in both cases the button state will be set to "disable"). And then we only need a public slot that enables the button again. And finally we connect this slot to all the signals of the interactive widgets (or to signals we emit ourselves). We can enable and disable the "Apply" button with the member function <b>enabledButtonApply(bool)</b> of KDialogBase. If we pass 'true' as the argument it will be enabled and otherwise disabled. Now this is what we have to do:
+<ol>
+<li>disable the apply button in the <b>updateDialog()</b> and the <b>updateConfiguration()</b> member functions</li>
+<li>create a public slot <b>enableApply()</b></li>
+<li>connect all interactive widgets to this slot</li>
+</ol>
+Wait, we need something special for the font-label. Since QLabel isn't an interactive widget there is no signal we can connect to. But we have the <b>chooseButtonClicked()</b> slot in the PrefStyle class. Now we can emit there a "fontChanged" signal and connect the "enableApply" slot to this. Ok, here's the newest (and last) version of <b>prefstyle.h</b>:
+<hr>
+<pre>
+<span style='color: #000000'></span><span style='color: #33ab00'>#ifndef PREFSTYLE_H
+#define PREFSTYLE_H
+
+#include </span><span style='color: #000000'><b>&lt;qwidget.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;prefstylelayout.h&gt;
+
+</b></span><span style='color: #747474'>/// Implementation of the "Style settings" page of the preferences dialog.
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefStyle : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> PrefStyleLayout {
+    </span><span style='color: #0000ff'>Q_OBJECT
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Constructor.
+</span><span style='color: #000000'>    PrefStyle</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>private</span><span style='color: #000000'> </span><span style='color: #0000ff'>slots</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Called whenever the "Choose..." button is clicked.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> chooseBtnClicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>signals</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Will be emitted when the user selected a different font.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> fontChanged</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+};
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// PREFSTYLE_H</span></pre>
+<hr>
+and <b>prefstyle.cpp</b>
+<hr>
+<pre>
+<span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qfont.h&gt;</b></span><span style='color: #33ab00'>          </span><span style='color: #747474'>// for QFont
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlabel.h&gt;</b></span><span style='color: #33ab00'>         </span><span style='color: #747474'>// for QLabel
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kpushbutton.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KPushButton
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kfontdialog.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KFontDialog
+
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefstyle.h"
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefstyle.moc"
+
+</b></span><span style='color: #000000'>PrefStyle::PrefStyle</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'> : PrefStyleLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'>parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>{
+    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'>m_fontBtn</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> clicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> chooseBtnClicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+}
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefStyle::chooseBtnClicked</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    QFont tmpFont </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>font</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>int</span><span style='color: #000000'> result </span><span style='color: #0000ff'>=</span><span style='color: #000000'> KFontDialog::getFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'>tmpFont</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>result</span><span style='color: #0000ff'>==</span><span style='color: #000000'>KFontDialog::Accepted</span><span style='color: #0000ff'>)</span><span style='color: #000000'> {
+        m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'>tmpFont</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+        emit fontChanged</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    };
+};</span></pre>
+<hr>
+<p>
+The changes are minimal but you see here how you can declare a signal and how you can emit it (look at the last code line in <b>chooseBtnClicked()</b>). Still very easy!
+<p>
+<br>
+Now that we have a signal to connect to, let's finish the preferences dialog:
+<hr>
+<b>prefdialog.h</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#ifndef PREFDIALOG_H
+#define PREFDIALOG_H
+
+#include </span><span style='color: #000000'><b>&lt;qwidget.h&gt;
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kdialogbase.h&gt;
+
+</b></span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefGeneral;
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefStyle;
+
+</span><span style='color: #747474'>/// The preferences dialog.
+</span><span style='color: #0000ff'>class</span><span style='color: #000000'> PrefDialog : </span><span style='color: #0000ff'>public</span><span style='color: #000000'> KDialogBase {
+    </span><span style='color: #0000ff'>Q_OBJECT
+</span><span style='color: #000000'>  </span><span style='color: #0000ff'>public</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Constructor
+</span><span style='color: #000000'>    PrefDialog</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>=</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+
+    </span><span style='color: #747474'>/// Transfers the settings from the configuration object to the dialog.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> updateDialog</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>/// Transfers the settings from the dialog to the configuration object.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> updateConfiguration</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>public</span><span style='color: #000000'> </span><span style='color: #0000ff'>slots</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Will be called when the "Default" button has been clicked.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> slotDefault</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>/// Will be called when the "Apply" button has been clicked.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> slotApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    </span><span style='color: #747474'>/// Will be called whenever a setting was changed.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>signals</span><span style='color: #000000'>:
+    </span><span style='color: #747474'>/// Will be emitted when the new settings should be applied.
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>void</span><span style='color: #000000'> settingsChanged</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+
+  </span><span style='color: #0000ff'>private</span><span style='color: #000000'>:
+    PrefGeneral    *m_prefGeneral;
+    PrefStyle      *m_prefStyle;
+};
+
+</span><span style='color: #33ab00'>#endif  </span><span style='color: #747474'>// PREFDIALOG_H</span></pre>
+<hr>
+<p>
+As you will notice we have not only added the <b>enableApply()</b> slot! <b>slotApply()</b> works just the same as  <b>slotDefault()</b>: it will be called when the "Apply" button was clicked. And finally we added the signal <b>settingsChanged()</b>. This allows us to notify the rest of the program that the new settings should be applied right away.
+<p>
+Now here comes the final source code of the dialog:
+<hr>
+<b>prefdialog.cpp</b>
+<hr width=50>
+<pre><span style='color: #000000'></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlayout.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for QVBoxLayout
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qlabel.h&gt;</b></span><span style='color: #33ab00'>         </span><span style='color: #747474'>// for QLabel
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;qframe.h&gt;</b></span><span style='color: #33ab00'>         </span><span style='color: #747474'>// for QFrame
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kcolorbutton.h&gt;</b></span><span style='color: #33ab00'>   </span><span style='color: #747474'>// for KColorButton
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kpushbutton.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KPushButton
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;klocale.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for i18n()
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kiconloader.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KIconLoader
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kglobal.h&gt;</b></span><span style='color: #33ab00'>        </span><span style='color: #747474'>// for KGlobal
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;klineedit.h&gt;</b></span><span style='color: #33ab00'>      </span><span style='color: #747474'>// for KLineEdit
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>&lt;kmessagebox.h&gt;</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// for KMessageBox
+
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefdialog.h"</b></span><span style='color: #33ab00'>     </span><span style='color: #747474'>// class PrefDialog
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefdialog.moc"
+
+</b></span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"configuration.h"</b></span><span style='color: #33ab00'>  </span><span style='color: #747474'>// class Configuration and Config()
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefgeneral.h"</b></span><span style='color: #33ab00'>    </span><span style='color: #747474'>// class PrefGeneral
+</span><span style='color: #33ab00'>#include </span><span style='color: #000000'><b>"prefstyle.h"</b></span><span style='color: #33ab00'>      </span><span style='color: #747474'>// class PrefStyle
+
+</span><span style='color: #000000'>PrefDialog::PrefDialog</span><span style='color: #0000ff'>(</span><span style='color: #000000'>QWidget *parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>const</span><span style='color: #000000'> </span><span style='color: #0000ff'>char</span><span style='color: #000000'> *name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> WFlags f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'> : KDialogBase</span><span style='color: #0000ff'>(</span><span style='color: #000000'>IconList</span><span style='color: #0000ff'>,</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Preferences"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> Default</span><span style='color: #0000ff'>|</span><span style='color: #000000'>Ok</span><span style='color: #0000ff'>|</span><span style='color: #000000'>Apply</span><span style='color: #0000ff'>|</span><span style='color: #000000'>Cancel</span><span style='color: #0000ff'>,</span><span style='color: #000000'> Ok</span><span style='color: #0000ff'>,</span><span style='color: #000000'> parent</span><span style='color: #0000ff'>,</span><span style='color: #000000'> name</span><span style='color: #0000ff'>,</span><span style='color: #000000'> f</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>{
+    </span><span style='color: #747474'>// adding page "General options"
+</span><span style='color: #000000'>    QFrame *frame </span><span style='color: #0000ff'>=</span><span style='color: #000000'> addPage</span><span style='color: #0000ff'>(</span><span style='color: #000000'>i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"General options"</span><span style='color: #0000ff'>),
+</span><span style='color: #000000'>        KGlobal::iconLoader</span><span style='color: #0000ff'>()-&gt;</span><span style='color: #000000'>loadIcon</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"kfm"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>KIcon::Panel</span><span style='color: #0000ff'>,</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,false)</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    QVBoxLayout *frameLayout </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> QVBoxLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'> frame</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0 </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefGeneral </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> PrefGeneral</span><span style='color: #0000ff'>(</span><span style='color: #000000'>frame</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    frameLayout</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>addWidget</span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefGeneral</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+
+    </span><span style='color: #747474'>// adding page "Style settings"
+</span><span style='color: #000000'>    frame </span><span style='color: #0000ff'>=</span><span style='color: #000000'> addPage</span><span style='color: #0000ff'>(</span><span style='color: #000000'>i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Style settings"</span><span style='color: #0000ff'>),
+</span><span style='color: #000000'>        KGlobal::iconLoader</span><span style='color: #0000ff'>()-&gt;</span><span style='color: #000000'>loadIcon</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"style"</span><span style='color: #0000ff'>,</span><span style='color: #000000'>KIcon::Panel</span><span style='color: #0000ff'>,</span><span style='color: #000000'>0</span><span style='color: #0000ff'>,false)</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    frameLayout </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> QVBoxLayout</span><span style='color: #0000ff'>(</span><span style='color: #000000'> frame</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0</span><span style='color: #0000ff'>,</span><span style='color: #000000'> 0 </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefStyle </span><span style='color: #0000ff'>=</span><span style='color: #000000'> </span><span style='color: #0000ff'>new</span><span style='color: #000000'> PrefStyle</span><span style='color: #0000ff'>(</span><span style='color: #000000'>frame</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    frameLayout</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>addWidget</span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefStyle</span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+
+    </span><span style='color: #747474'>// connect interactive widgets and selfmade signals to the enableApply slotDefault
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'> m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> textChanged</span><span style='color: #0000ff'>(const</span><span style='color: #000000'> QString</span><span style='color: #0000ff'>&amp;)</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'> m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_colorBtn</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> changed</span><span style='color: #0000ff'>(const</span><span style='color: #000000'> QColor</span><span style='color: #0000ff'>&amp;)</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'> m_prefStyle</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> fontChanged</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+};
+
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::updateDialog</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setText</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_text </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_colorBtn</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setColor</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_textColor </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_font </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    enableButtonApply</span><span style='color: #0000ff'>(false)</span><span style='color: #000000'>;   </span><span style='color: #747474'>// disable apply button
+</span><span style='color: #000000'>};
+
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::updateConfiguration</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_text         </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>text</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_textColor    </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_colorBtn</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>color</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_font         </span><span style='color: #0000ff'>=</span><span style='color: #000000'> m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>font</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;
+    enableButtonApply</span><span style='color: #0000ff'>(false)</span><span style='color: #000000'>;   </span><span style='color: #747474'>// disable apply button
+</span><span style='color: #000000'>};
+
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::slotDefault</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>KMessageBox::warningContinueCancel</span><span style='color: #0000ff'>(this,</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"This will set the default options "
+</span><span style='color: #000000'>        </span><span style='color: #ff00ff'>"in ALL pages of the preferences dialog! Continue?"</span><span style='color: #0000ff'>),</span><span style='color: #000000'> i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Set default options?"</span><span style='color: #0000ff'>),
+</span><span style='color: #000000'>        i18n</span><span style='color: #0000ff'>(</span><span style='color: #ff00ff'>"Set defaults"</span><span style='color: #0000ff'>))==</span><span style='color: #000000'>KMessageBox::Continue</span><span style='color: #0000ff'>)
+</span><span style='color: #000000'>    {
+        m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setText</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_defaultText </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+        m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_colorBtn</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setColor</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_defaultTextColor </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+        m_prefStyle</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_fontLabel</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>setFont</span><span style='color: #0000ff'>(</span><span style='color: #000000'> Config</span><span style='color: #0000ff'>()</span><span style='color: #000000'>.m_defaultFont </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+        enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;   </span><span style='color: #747474'>// enable apply button
+</span><span style='color: #000000'>    };
+};
+
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::slotApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    updateConfiguration</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;      </span><span style='color: #747474'>// transfer settings to configuration object
+</span><span style='color: #000000'>    emit settingsChanged</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;     </span><span style='color: #747474'>// apply the preferences
+</span><span style='color: #000000'>    enableButtonApply</span><span style='color: #0000ff'>(false)</span><span style='color: #000000'>;   </span><span style='color: #747474'>// disable apply button again
+</span><span style='color: #000000'>};
+
+
+</span><span style='color: #0000ff'>void</span><span style='color: #000000'> PrefDialog::enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    enableButtonApply</span><span style='color: #0000ff'>(true)</span><span style='color: #000000'>;   </span><span style='color: #747474'>// enable apply button
+</span><span style='color: #000000'>};</span></pre>
+<hr>
+<p>
+Before you read on, try to find all the changes I've made!
+<p>
+Well, here they are:<br>
+At first I have connected the various signals of the widgets to the <b>enableApply()</b> slot. Note, that in the first connect line
+<pre>    <span style='color: #0000ff'>connect(</span><span style='color: #000000'> m_prefGeneral</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>m_textEdit</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> textChanged</span><span style='color: #0000ff'>(const</span><span style='color: #000000'> QString</span><span style='color: #0000ff'>&amp;)</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;</span></pre>
+I'm connecting a signal that is emitted by the KLineEdit widget. While in the third connect line:
+<pre>    </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'> m_prefStyle</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> fontChanged</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> enableApply</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;</span></pre>
+I connect the signal emitted by the configuration page.
+<p>
+The next change is made in the <b>updateDialog()</b> member function. The apply button will be disabled whenever the function is called. The same happens when the configuration object is updated (because then we committed our changes). So we add this line to <b>updateConfiguration()</b>, too.
+<p>
+There is also a small change in the already existing <b>slotDefault()</b> function. Resetting the configuration should turn on the apply button, too.
+<p>
+And finally the new slots are implemented (the source comments should be sufficient). Note that we emit the <b>settingsChanged()</b> signal only after we transfered the data to the configuration object. It is of course necessary to do that first, because all widgets and classes of the program will only take their values from the configuration object.
+<p>
+Now this works already nicely. But we need to catch the <b>settingsChanged()</b> signal. Otherwise we won't see the changes immediately. And where can we connect to a signal that is emitted by a dialog? In the class that creates the dialog. So this is the last small change we have to do to the <b>settingstutorial.cpp</b>:
+<hr>
+<pre><span style='color: #0000ff'>void</span><span style='color: #000000'> SettingsTutorial::executePreferencesDlg</span><span style='color: #0000ff'>()</span><span style='color: #000000'> {
+    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>==</span><span style='color: #000000'>0</span><span style='color: #0000ff'>)</span><span style='color: #000000'> {
+        m_prefDialog</span><span style='color: #0000ff'>=new</span><span style='color: #000000'> PrefDialog</span><span style='color: #0000ff'>(this)</span><span style='color: #000000'>;          </span><span style='color: #747474'>// create dialog on demand
+</span><span style='color: #000000'>        </span><span style='color: #747474'>// connect to the "settingsChanged" signal
+</span><span style='color: #000000'>        </span><span style='color: #0000ff'>connect(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SIGNAL(</span><span style='color: #000000'> settingsChanged</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>),</span><span style='color: #000000'> </span><span style='color: #0000ff'>this,</span><span style='color: #000000'> </span><span style='color: #0000ff'>SLOT(</span><span style='color: #000000'> applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'> </span><span style='color: #0000ff'>)</span><span style='color: #000000'>  </span><span style='color: #0000ff'>)</span><span style='color: #000000'>;
+    }
+    m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>updateDialog</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;                   </span><span style='color: #747474'>// update the dialog widgets
+</span><span style='color: #000000'>    </span><span style='color: #0000ff'>if</span><span style='color: #000000'> </span><span style='color: #0000ff'>(</span><span style='color: #000000'>m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>exec</span><span style='color: #0000ff'>()==</span><span style='color: #000000'>QDialog::Accepted</span><span style='color: #0000ff'>)</span><span style='color: #000000'> {  </span><span style='color: #747474'>// execute the dialog
+</span><span style='color: #000000'>        m_prefDialog</span><span style='color: #0000ff'>-&gt;</span><span style='color: #000000'>updateConfiguration</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;        </span><span style='color: #747474'>// store settings in config object
+</span><span style='color: #000000'>        applyPreferences</span><span style='color: #0000ff'>()</span><span style='color: #000000'>;                         </span><span style='color: #747474'>// let settings take effect
+</span><span style='color: #000000'>    };
+};</span></pre>
+<hr>
+<p>
+We simply connect the signal emitted by the preferences dialog to the <b>applyPreferences()</b> slot and with that change we have finally finished this tutorial (I'll leave the testing to you :-).
+<p>
+<b>THE END</b>
+<p>
+Here's the final source tarball: <a href="settingstutorial-final.tar.gz">settingstutorial-final.tar.gz</a>.<br>
+Take a look at the <b>html</b> subdir. There is the API documentation generated by doxygen.
+<p>
+For all who didn't read the text, here are the instructions again:
+Extract the files to a directory and open the project with Gideon (KDevelop3). Run "automake & friends" and "configure". Then compile the project. Or simply enter the directory and type
+<pre>
+    make -f Makefile.cvs
+    ./configure
+    make
+</pre>
+This should do it - the executable is in the src subdirectory.
+<br>
+<p>
+<hr>
+<i>Written in about 38 hours on the 17th and 18th of Mei 2003 by <b>Andreas Nicolai</b>. If you find errors (or typos) or if you have any suggestions or anything else: You can contact me under: <a href="mailto:ghorwin AT users DOT sourceforge DOT net">ghorwin AT users DOT sourceforge DOT net</a>.
+<hr>

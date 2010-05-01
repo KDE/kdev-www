@@ -1,0 +1,101 @@
+<h4>KDevelop 3.1.2</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="5">Linux x86</td>
+<td>Conectiva</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/Conectiva/conectiva/RPMS.kde/">10</a>
+</td>
+</tr><tr ALIGN=center>
+<td>Debian</td><td>
+<a href="http://packages.debian.org/unstable/kde/kdevelop3">Sid</a> (debian.org)
+</td>
+</tr><tr ALIGN=center>
+<td><a href="http://kde-redhat.sourceforge.net/">Red Hat (Unofficial)</a></td><td>
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.3.2/contrib/kde-redhat/all/">all platforms</a>,
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.3.2/contrib/kde-redhat/redhat/7.3/">Red Hat 7.3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.3.2/contrib/kde-redhat/redhat/9/">Red Hat 9</a>,
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.3.2/contrib/kde-redhat/fedora/2/">Fedora Core 2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.3.2/contrib/kde-redhat/fedora/3/">Fedora Core 3</a>,
+<a href="http://download.kde.org/binarydownload.html?url=/stable/3.3.2/contrib/kde-redhat/redhat/enterprise/3.0/">Red Hat Enterprise 3</a>
+</td>
+</tr><tr ALIGN=center>
+<td>Slackware</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/contrib/Slackware/10.0">10.0</a>
+</td>
+</tr><tr ALIGN=center>
+<td>SuSE</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/SuSE/ix86/8.2/">8.2</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/SuSE/ix86/9.0/">9.0</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/SuSE/ix86/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/SuSE/ix86/9.2/">9.2</a>
+</td>
+<!--
+</tr><tr ALIGN=center>
+<td>Yoper</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/Yoper/">1.0</a>
+</td>
+-->
+</tr><tr ALIGN=center>
+<td rowspan="1">Linux x86 64bit</td>
+<td>SuSE</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/SuSE/x86_64/9.0/">9.0</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/SuSE/x86_64/9.1/">9.1</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/SuSE/x86_64/9.2/">9.2</a>
+</td>
+<!--
+</tr><tr ALIGN=center>
+<td rowspan="1">SUN</td>
+<td>Solaris GCC</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/contrib/Solaris/GCC/8/">8</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/contrib/Solaris/GCC/9/">9</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.2/contrib/Solaris/GCC/10/">10</a>
+</td>
+-->
+</tr>
+</table>
+
+<h4>KDevelop 3.1.1</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="2">Linux x86</td>
+<td>Slackware</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.1/contrib/Slackware/9.1">9.1</a>
+</td>
+</tr><tr ALIGN=center>
+<td>Yoper</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.1/Yoper/">1.0</a>
+</td>
+</tr><tr ALIGN=center>
+<td rowspan="1">SUN</td>
+<td>Solaris GCC</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.1/contrib/Solaris/GCC/8/">8</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.1/contrib/Solaris/GCC/9/">9</a>,
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3.1/contrib/Solaris/GCC/10/">10</a>
+</td>
+</tr>
+</table>
+
+<h4>KDevelop 3.1</h4>
+<table border="1" cellpadding="2" width="90%">
+<tr>
+<th class=header width="30%"><b><?php echo $l_architecture ?></b></th>
+<th class=header width="30%"><b><?php echo $l_distribution ?></b></th>
+<th class=header><b><?php echo $l_distribution_version ?></b></th>
+</tr>
+<tr ALIGN=center>
+<td rowspan="1">Linux x86</td>
+<td>SuSE</td><td>
+<a href="http://download.kde.org/binarydownload.html?url=stable/3.3/SuSE/ix86/8.1/">8.1</a>
+</td>
+</tr>
+</table>

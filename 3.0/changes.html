@@ -1,0 +1,255 @@
+<?php module_head("KDE_3_2_BRANCH (today)");?>
+This is the <b>stable</b> branch. It will be the future KDevelop 3.0.5 version (not released yet).<br>
+It supports <b>KDE 3.x</b>.
+<ul>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.4 (2004-06-09)");?>
+It supports <b>KDE 3.x</b>. Was tagged on 2004-05-30 and released on 2004-06-09.
+<ul>
+  <li>IMPROVED - Satisfy new haskel compilers and do not return random data.</li>
+  <li>IMPROVED - GUI translations: Hindi and Slovenian.</li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=81579">81579: Don't crash when user attempts "add method" without selecting a class</a>.</li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=71099">71099: Make the importer acknowledge more header suffixes than .h</a></li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=79794">79794: Don't crash when there is no preferred handler for application/x-designer</a>.</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.3 (2004-04-19)");?>
+It supports <b>KDE 3.x</b>. Was tagged on 2004-04-11 and released on 2004-04-19.
+<ul>
+  <li>IMPROVED - Documentation bookmarks.</li>
+  <li>IMPROVED - GUI translations: Danish, German, British English, Spanish, Estonian, French, Hungarian, Italian, Polish, Portuguese, Brazilian Portuguese, Serbian and Swedish, Catalan, Japanese, Dutch, Russian, Tamil and Chinese Simplified.</li>
+  <li>FIXED    - A case where selected items that disappeared due to filesystem events could crash the FileTree.</li>
+  <li>FIXED    - Several language parsers were updated to use QRegExp instead of the deprecated KRegExp. <a href=""http://bugs.kde.org/show_bug.cgi?id=73754">#73754</a>, <a href="http://bugs.kde.org/show_bug.cgi?id=63973">#63973</a> </li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=74570">74570: Custom makefiles project doesn't support "GNUmakefile" file name</a> (Don't try to outguess make.)</li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=75172">75172: Changing projects with unsaved work</a> (Don't set recent project marker when user cancels project change.)</li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=75943">75943: Crash during directory scan</a> (Don't crash when we don't have permission to read a directory.)</li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=77278">77278: Grep component fails to search with spaces in path</a> </li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=78776">78776: Crash in CustomProjectPart::populateProject populating new project</a> </li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.2 (2004-03-09)");?>
+It supports <b>KDE 3.x</b>. Was tagged on 2004-02-28 and released on 2004-03-09.
+<ul>
+    <LI>IMPROVED - Much improved KDevelop User Manual.</LI>
+    <LI>IMPROVED - C++ parser twice as fast and more memory efficient.</LI>
+    <LI>IMPROVED - Configuration script now allows to disable the compilation of certain KDevelop parts.</LI>
+    <LI>IMPROVED - Faster/lighter configuration dialogs - the heaviest pages are now demand-loaded.</LI>
+    <LI>IMPROVED - FileGroups plugin now smarter at applying regexps - much faster for common group definitions (<a href="http://bugs.kde.org/show_bug.cgi?id=72831">#72831</a>)</LI>
+    <LI>IMPROVED - Removed performance bottleneck that made the initial parsing of a project very slow. (refer to <a href="http://bugs.kde.org/show_bug.cgi?id=73671">#73671</a>)</LI>
+    <li>FIXED    - Grep plugin: Don't sometimes crash when interrupting a find while a build is running.</li>
+    <li>FIXED    - Grep plugin: Don't confuse files with very similar filenames and avoid potentially slow O(n) lookup.</li>
+    <li>FIXED    - Grep plugin: Don't show garbage hits - clean up after a previous interrupted run.</li>
+    <LI>ADDED    - A new "Simple Designer based KDE application" template was added.</LI>
+    <LI>FIXED    - The infamous "Gentoo-crash" finally found and fixed. (<a href="http://bugs.kde.org/show_bug.cgi?id=73346">#73346</a>)</LI>
+    <li>FIXED    - A case where a running program that produced a lot of debug output could crash KDevelop (<a href="http://bugs.kde.org/show_bug.cgi?id=67217">#67217</a>, <a href="http://bugs.kde.org/show_bug.cgi?id=71858">#71858</a>) </li>
+    <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73045">#73045</a> : switching docks when no file is loaded crash kdevelop.</li>
+    <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73672">#73672</a> : kdevelop looks weird after previewing forms in KUIViewer.</li>
+    <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73716">#73716</a> : close all in context menu with two changed documents doesn't respond to cancel properly.</li>
+    <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=74585">#74585</a> : Unable to debug Hello World C++ program.</li>
+    <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=74650">#74650</a> : Drop-down lists of toolbar combo views don't appear with UI effects on.</li>
+    <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=74712">#74712</a> : Automake 1.8.x not supported.</li>
+    <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=74955">#74955</a> : Crash when working with Java ant projects.</li>
+    <LI>FIXED    - Lots of other small things we've forgotten...</LI>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.1 (2004-02-16)");?>
+It supports <b>KDE 3.x</b>.
+<ul>
+  <li>IMPROVED - User Manual.
+  <li>IMPROVED - Fixed many typos.
+  <li>IMPROVED - Restructured and updated the todo file.
+  <li>IMPROVED - KCModule Template to use KDE 3.0 API and KGenericFactory.
+  <li>IMPROVED - Updated to the latest Doxygen version.
+  <li>IMPROVED - Make source files generated with appwizard honor the selected file templates.
+  <li>IMPROVED - Clanlib documentation
+  <li>IMPROVED - Ask if user tries to reload the already opened project.
+  <li>IMPROVED - Project templates by ignoring irrelevant documentation and other small fixes.
+  <li>ADDED    - Add ConfigWidgetProxy class for config widget demand load support (reduces memory).
+  <li>ADDED    - SearchText in QEditor
+  <li>ADDED    - Possibility to change fontsize in documentation browser.
+  <li>FIXED    - Make Haskell language support work again
+  <li>FIXED    - Clear all breakpoints
+  <li>FIXED    - A case where unsaved files aren't queried for saving when KDevelop is closed.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=58999">Bug 58999</a> : Debugger will not start (libtool issue)
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=62888">Bug 62888</a> : Back and forward buttons available in context menu.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=69035">Bug 69035</a> : Run Options not honored (custom makefiles)
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=70175">Bug 70175</a> : Problems on minimum wxWindows version test.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=70176">Bug 70176</a> : wxWindows apptemplate broke compilation with Unicode compiled wxWindows
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=71003">Bug 71003</a> : Cannot translate project due to srcdir != builddir.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=72502">Bug 72502</a> : Kdevelop crashes when closing multiple files via Keyboard.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=72523">Bug 72523</a> : Grep dialog doesn't prepopulate with selected text.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=72552">Bug 72552</a> : Unsaved changes icon disappears even if save could not be performed.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=72582">Bug 72582</a> : Crashes while loading plugins after unloading plugins.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73025">Bug 73025</a> : expand text (ctrl+J) crashes kdevelop.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73039">Bug 73039</a> : cvs tools may crash kdevelop.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73116">Bug 73116</a> : Kdevelop crashes when typing a dot at the end of a comment.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73467">Bug 73467</a> : Incomplete make clean for parts/appwizard/common.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=73567">Bug 73567</a> : Use -u instead of -u3 since it is obsoleted.
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=74955">Bug 74955</a> : Crash when working with Java ant projects.
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.0 (2004-02-03)");?>
+Release Candidate 1 (tagged on 2004-01-19) was released as 3.0.0 without changes.
+<ul>
+  <li>NEW      - Should compile fine in Mac OS X.
+  <li>NEW      - Should compile fine in cygwin.
+  <li>IMPROVED - Splashscreen.
+  <li>IMPROVED - Doxygen support.
+  <li>ADDED    - Links in the documentation browser to bug report databases of every supported programming language (except SQL).
+  <li>ADDED    - Links in the documentation browser to bug report databases of Gtk and wxWindows development toolkits.
+  <li>FIXED    - KDE 3.0.x compilation again.
+  <li>FIXED    - some GUI bugs.
+  <li>FIXED    - 3  bugs from the KDevelop2.x and previous release series.
+  <li>FIXED    - 49 KDevelop3.0 specific bugs.
+</ul>
+Here is an <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-12-02&amp;chfieldto=2004-01-19&amp;order=Bug+Number&amp;cmdtype=doit">interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1101&amp;r2=1.1099">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 beta 2 (2003-12-01)");?>
+<ul>
+  <li>NEW      - KDE-accels Ctrl+Shift+Alt+L/R/B/T for IDEAl-docks and Ctrl+Alt+CursorLeft/CursorRight for cycling IDEAl-toolviews.
+  <li>NEW      - Version control color feedback for the file view (currently only implemented by vcs/cvsservice plugin).
+  <li>IMPROVED - pascal parser, it isn't restricted now to pascal-78.
+  <li>IMPROVED - Most object pascal/delphi extensions are supported.
+  <li>IMPROVED - can switch all KDevelop UI modes on the fly.
+  <li>IMPROVED - save the docking state to another section of kdeveloprc (to let people (who tried KMdi alpha versions) escape a vicious cycle).
+  <li>ADDED    - a even cleaner kdevelop.kdevelop file.
+  <li>FIXED    - 7  bugs from the KDevelop2.x and previous release series.
+  <li>FIXED    - 88 KDevelop3.0 specific bugs.
+</ul>
+Here is an <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-10-26&amp;chfieldto=2003-12-02&amp;order=Bug+Number&amp;cmdtype=doit">interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1099&amp;r2=1.1092">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 beta 1 (2003-10-26)");?>
+<ul>
+  <li>NEW      - new Application templates in cpp: kateplugin2, noatunvisual, noatunui, kbearimportfilter, kbearplugin, kfileplugin
+  <li>NEW      - On-line, automaticaly updated every 24H, KDevelop API Documentation can be viewed with the doctreeview.
+  <li>IMPROVED - moved the language specific documentation to the languages/xxx/doc directories
+  <li>IMPROVED - New subversion part added to replace the old svn one
+  <li>IMPROVED - MDI user interfaces
+  <li>IMPROVED - Ada language support (ported it to code model and reenabled background parsing).
+  <li>IMPROVED - Renamed KDevelop executable from gideon to kdevelop. This makes KDevelop3 OVERWRITE KDevelop 2.x instalations.
+  <li>IMPROVED - Restructured the directories acording to the API documentation
+  <li>ADDED    - per target run arguments to the automake manager.
+  <li>FIXED    - 4  bugs from the KDevelop2.x and previous release series.
+  <li>FIXED    - 23 KDevelop3.0 specific bugs.
+</ul>
+Here is an <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-09-24&amp;chfieldto=2003-10-26&amp;order=Bug+Number&amp;cmdtype=doit">interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1092&amp;r2=1.1082">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 7 (2003-09-24)");?>
+<ul>
+  <li>NEW      - mimetypes directory in KDevelop source tree
+  <li>IMPROVED - GUI for enabling and disabling documentation topics in the project configuration dialog
+  <li>IMPROVED - UI tooltips, accels and tab ordering
+  <li>IMPROVED - User Manual
+  <li>IMPROVED - API documentation
+  <li>ADDED    - popup menu for the documentation viewer
+  <li>ADDED    - x-fortran, x-pascal and chm (HTML Help) mime types
+  <li>FIXED    - lots of spelling errors where fixed! :)
+  <li>FIXED    - enable-final compilation
+  <li>FIXED    - 4  bugs from the KDevelop2.x and previous release series.
+  <li>FIXED    - 13 KDevelop3.0 specific bugs.
+</ul>
+Here is an <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-09-11&amp;chfieldto=2003-09-24&amp;order=Bug+Number&amp;cmdtype=doit">interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1082&amp;r2=1.1080">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 6 (2003-09-10)");?>
+<ul>
+  <li>NEW      - Class store
+  <li>NEW      - Delphi compiler plugin
+  <li>NEW      - Version information for plugins to prevent opening binary incompatible plugins from old versions.
+  <li>NEW      - the active programming language can be switched on the fly
+  <li>NEW      - generic project manager
+  <li>NEW      - Imported Kugar property editor library
+  <li>IMPROVED - recognize libtool warning messages
+  <li>IMPROVED - GBA template
+  <li>IMPROVED - Run Options
+  <li>IMPROVED - Class Viewer
+  <li>IMPROVED - Debugger
+  <li>IMPROVED - Toolbars
+  <li>IMPROVED - C++ parser is faster
+  <li>IMPROVED - codecompletion can handle completion for Qt's SIGNAL and SLOT
+  <li>IMPROVED - user interface (new IDEAl mode based on QextMDI)
+  <li>IMPROVED - user manual
+  <li>ADDED    - debug and optimized build configurations to all C and C++ autoproject based templates
+  <li>ADDED    - Integration with cervisia's cvsservice
+  <li>ADDED    - "Force Reedit", "Install" and "Install (as root user)" actions to automake project manager
+  <li>ADDED    - remote debugging possibility
+  <li>ADDED    - class-view to SQL support
+  <li>ADDED    - GUI to create code completion databases (PCS) for Qt and KDE libraries
+  <li>ADDED    - emacs-like "go to declaration/definition" popup menu in c++ files
+  <li>FIXED    - 9  bugs from the KDevelop2.x and previous release series.
+  <li>FIXED    - 81 unspecified or KDevelop3.0 specific bugs.
+</ul>
+Here is an <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-07-01&amp;chfieldto=2003-09-11&amp;order=Bug+Number&amp;cmdtype=doit">interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1080&amp;r2=1.1054">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 5 (2003-07-01)");?>
+<ul>
+  <li>NEW      - Pascal Language Support
+  <li>NEW      - ClearCase project management support
+  <li>NEW      - SQL Module to connect and test SQL statements
+  <li>NEW      - Ada Language Support
+  <li>IMPROVED - Persistent Class Store (now uses berkeley db)
+  <li>IMPROVED - Stop Button now stops many different parts
+  <li>IMPROVED - Editor preferences - persist across all open files
+  <li>IMPROVED - Made the Working Directory of the debugged executable configurable
+  <li>IMPROVED - add and remove of autoproject subprojects
+  <li>IMPROVED - CVS integration
+  <li>IMPROVED - Java support
+  <li>IMPROVED - QMake based project manager
+  <li>ADDED    - Pascal Language Templates
+  <li>ADDED    - Added Presistent Bookmarks
+  <li>ADDED    - index system to the doctreeview
+  <li>ADDED    - full-screen mode
+  <li>FIXED    - 22 bugs from the KDevelop2.x and previous release series.
+  <li>FIXED    - 86 unspecified or KDevelop3.0 specific bugs.
+</ul>
+Here is an <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-04-18&amp;chfieldto=2003-07-02&amp;order=Bug+Number&amp;cmdtype=doit">interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1053&amp;r2=1.1006">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 4 (2003-04-18)");?>
+<ul>
+  <li>NEW   - New File Creation Interface
+  <li>NEW   - Search/Replace Part for multiple files
+  <li>NEW   - Application Templates - kdehello, javahello, qtopia, fortran, pyqt
+  <li>NEW   - Make Output View Verbosity Configuration
+  <li>NEW   - Fortran, Ruby, and tmake Project Support
+  <li>ADDED - New Class Wizard Added Features (inc. Make Member support)
+  <li>ADDED - Better documentation browsing, xml support
+  <li>ADDED - Rewritten Classparser code
+  <li>ADDED - DCOP interface for FilterParts and CppParts
+  <li>IMPROVED - Perl Project Support
+  <li>IMPROVED - Integrated Doxygen Support
+  <li>FIXED    - 51  bugs from the KDevelop2.x and previous release series.
+  <li>FIXED    - 124 unspecified or KDevelop3.0 specific bugs.
+</ul>
+Here is an <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2002-11-12&amp;chfieldto=2003-04-18&amp;order=Bug+Number&amp;cmdtype=doit">interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1005&amp;r2=1.905">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 3 (2003-01-08)");?>
+<ul>
+  <li>Completely rewritten code base utilizing plugin parts
+  <li>Added support for non C++ projects (Java, C, etc)
+  <li>New user interface mode - IDEAl
+  <li>Rewritten, better Automake/Makefile.am project support
+  <li>New qmake project support
+  <li>C++ Autocompletion
+  <li>Source Control Integration (CVS, Perforce, Subversion)
+  <li>Many additional improvements
+</ul>
+<?php module_tail();?>

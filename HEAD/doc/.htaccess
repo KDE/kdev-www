@@ -1,0 +1,5 @@
+<IfModule mod_expires.c>
+ExpiresActive On
+### expires after 1 hour
+ExpiresDefault A3600
+</IfModule>
