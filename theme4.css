@@ -130,12 +130,13 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   margin: 0 0 2.6px 13px;
 }
 #sitenavigation div.moduleentry div.header{
+  position: relative;
   background: url('graphics/theme4/navbox-t-solid.png') top no-repeat;
   padding: 14px 0 0 0;
 }
 #sitenavigation div.moduleentry div.header h3 {
   background: #79be16;
-  padding: 0 11px 3px 9.3px;
+  padding: 0 11px 3px 30px;
   margin: 0 9px 0 9px;
   font-family: 'Linux Biolinum','Optima','Palatino',sans-serif;
   color: white;
@@ -162,10 +163,10 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
 #sitenavigation img.category-icon {
     position: absolute;
     background-repeat: no-repeat;
-    height:38px;
-    left:19px;
+    height:44px;
+    left:8px;
     top:-5px;
-    width:38px;
+    width:52px;
 }
 #sitenavigation div.cat-doc img.category-icon {
     background-image: url(graphics/theme4/cat-doc.png);
