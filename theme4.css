@@ -1,3 +1,29 @@
+body, p, li {
+  font: 11.8px/16.2px 'DejaVu Sans',Verdana,'Lucida Grande',Geneva,sans-serif;
+  color: #111111;
+}
+h1 {
+  font-size: 19px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 13.6px;
+  font-weight: bold;
+  color: #c34609;
+}
+h3 {
+  font-size: 12.2px;
+  font-weight: bold;
+  font-style: italic;
+}
+p {
+  margin: 3px 7px 3.8px 6px;
+}
+a {
+  text-decoration: none;
+  color: #004cc9;
+}
+
 /*
 basic "holly-grail" layout (top box plus two/three columns touching)
 http://www.thenoodleincident.com/tutorials/box_lesson/content_placement/text.html
@@ -94,12 +120,6 @@ th.header {
     background-color: #9CCC92;
     text-align: center;
   }
-
-/* for http links, do not change the order of these declarations */
-a:link { text-decoration: none; color: #136E2C; } /* unvisited links */
-a:visited { text-decoration: none; color: #67A670; } /* visited links */
-a:hover { text-decoration: underline; } /* user hovers */
-a:active { color: red; } /* active links */
 
 /* for each "module" element ( module_head() and module_tail() functions ) */
 div.moduleentry { background-color: #EFF7E3; text-align: justify; margin: 5px; }
