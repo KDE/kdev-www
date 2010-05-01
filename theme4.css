@@ -109,7 +109,7 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
 #sitenavigation div.moduleentry {
   background: url('graphics/theme4/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of quick-access boxes */
-  margin: 0 0 2.6px 0;
+  margin: 0 0 2.6px 13px;
 }
 #sitenavigation div.moduleentry div.header{
   background: url('graphics/theme4/navbox-t-solid.png') top no-repeat;
@@ -128,6 +128,11 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   background: #daf3af url('graphics/theme4/box_green-mh-1px.png') top repeat-x;
   padding: 6.4px 8px 4px 8px;
   margin: 0 9px -6px 9px;
+}
+#sitenavigation div.moduleentry div.content li {
+    background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
+    margin-left:0px;
+    padding-left:10px;
 }
 #sitenavigation div.moduleentry div.footer {
   background: url('graphics/theme4/navbox-bi.gif') repeat-y;
@@ -190,7 +195,7 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
 
 /* main horizontal navigational menu */
 #menu {
- position: absolute; top: 36px;  right: 0em; width: 100%;
+ position: absolute; top: 41px;  right: 0em; width: 100%;
  font-weight:bold;
  font-size:0.9em;
 }
@@ -209,9 +214,28 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
   padding: 4px 8px 3px 1px;
   color: white;
 }
-#menu ul a:hover {
+
+#menu ul a {
   text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 12.6px;
 }
+#menu ul a:before {
+  content: url('graphics/theme4/bullet_toplink-solid.png');
+  position: relative;
+  bottom: 0.16em;
+  padding-right: 5px;
+}
+#menu ul a:hover {
+  color:#fff;
+  text-shadow: #BEED66 0 0 4px;
+}
+#menu ul a:active {
+  color:#BEED66;
+  text-shadow: none;
+}
+
 /*
 #menu ul {
  display:inline;
