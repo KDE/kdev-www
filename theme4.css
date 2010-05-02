@@ -194,6 +194,7 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
 
 #quickoverview div.moduleentry,
 #sitenavigation div.moduleentry {
+  text-align: left;
   background: url('graphics/theme4/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of quick-access boxes */
   margin: 0 0 2.6px 13px;
@@ -239,6 +240,14 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
     position: absolute;
     background-repeat: no-repeat;
 }
+#quickoverview div.moduleentry div.content ul,
+#sitenavigation div.moduleentry div.content ul {
+    list-style-type: none; margin: 0; padding: 0; margin-left: 20px;
+}
+#sitenavigation div.moduleentry div.content ul {
+    margin-left: 5px;
+}
+
 
 /* Quickbox (Home right) */
 #quickoverview div.moduleentry {
@@ -289,9 +298,6 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
     font-style: italic;
     color: black;
     font-size: 10px; font-weight: normal;
-}
-#quickoverview div.cat-download div.content ul {
-    list-style-type: none; margin: 0; padding: 0; margin-left: 20px;
 }
 #quickoverview div.cat-download div.footer {
   background-image: url('graphics/theme4/quickbox_blue-bi.gif');
