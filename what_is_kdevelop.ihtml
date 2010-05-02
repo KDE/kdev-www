@@ -8,7 +8,14 @@ global $l_def_KDevelop3;
 module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
 <img class="screenshot" src="graphics/theme4/screenshot-main.png" height="127" width="174" alt="" />
 <dl>
-<dt><b>KDevelop</b></dt><dd><?php echo $l_def_KDevelop; ?></dd>
+<dt><b>KDevelop</b></dt><dd>
+    <?php echo $l_def_KDevelop; ?>
+    <ul>
+    <li><a href="#">Features</a></li>
+    <li><a href="#">Screenshots</a></li>
+    <li><a href="#">FAQ</a></li>
+    </ul>
+</dd>
 <dt><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?></dd>
 </dl>
 <?php module_tail();?>

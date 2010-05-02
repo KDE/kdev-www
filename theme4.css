@@ -126,7 +126,7 @@ body { padding: 0; margin: 0; }
     right: 0; z-index: 0;
 }
 #news div.moduleentry div.content {
-    padding: 20px; padding-top: 0;
+    padding: 20px; padding-top: 0; padding-bottom: 0;
 }
 #news div.moduleentry div.footer {
     height: 14px; background-position: bottom;
@@ -137,7 +137,12 @@ div.what-is-kdevelop dl dt {
     color: #60a802;
     font-size: 20px;
 }
-div.what-is-kdevelop dl dd {
+div.what-is-kdevelop dl dd { margin-bottom: 10px; }
+div.what-is-kdevelop dl dd ul { margin: 0; }
+div.what-is-kdevelop dl dd li {
+    display: inline;
+    background: url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
+    padding-left: 7px; margin-right: 10px;
 }
 div.what-is-kdevelop .screenshot {
     float: right; margin-top: -30px; margin-right: -15px;
