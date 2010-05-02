@@ -2,7 +2,7 @@
 
 function module_head($subject, $class=''){
     echo "<div class=\"moduleentry $class\">\n";
-    if ($class == 'border') {
+    if (strpos($class, 'border') !== false) {
         echo "<div class=\"border-tl\"></div>\n";
         echo "<div class=\"border-tr\"></div>\n";
         echo "<div class=\"border-bl\"></div>\n";

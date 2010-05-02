@@ -5,14 +5,15 @@ global $l_def_KDevPlatform;
 global $l_versions;
 global $l_def_KDevelop4;
 global $l_def_KDevelop3;
-module_head(/*$l_what_is_KDevelop*/'', 'border');?>
+module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
+<img class="screenshot" src="graphics/theme4/screenshot-main.png" height="127" width="174" alt="" />
 <dl>
 <dt><b>KDevelop</b></dt><dd><?php echo $l_def_KDevelop; ?></dd>
 <dt><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?></dd>
 </dl>
 <?php module_tail();?>
 
-<?php module_head($l_versions);?>
+<?php module_head($l_versions, 'border');?>
 <dl>
 <dt><b>KDevelop4</b></dt><dd><?php echo $l_def_KDevelop4; ?></dd>
 <dt><b>KDevelop3</b></dt><dd><?php echo $l_def_KDevelop3; ?></dd>
