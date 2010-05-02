@@ -413,7 +413,7 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
 
 /* main horizontal navigational menu */
 #menu {
- position: absolute; top: 40px;  left: 430px; width: 100%;
+ position: absolute; top: 40px;  left: 430px;
  font-weight:bold;
  font-size:0.9em;
 }
