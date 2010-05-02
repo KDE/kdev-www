@@ -5,7 +5,7 @@ global $l_def_KDevPlatform;
 global $l_versions;
 global $l_def_KDevelop4;
 global $l_def_KDevelop3;
-module_head($l_what_is_KDevelop);?>
+module_head(/*$l_what_is_KDevelop*/'', 'border');?>
 <dl>
 <dt><b>KDevelop</b></dt><dd><?php echo $l_def_KDevelop; ?></dd>
 <dt><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?></dd>
