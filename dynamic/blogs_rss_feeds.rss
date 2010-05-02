@@ -9,94 +9,451 @@ Aggregated Feed of KDevelop Developer's blog posts.
 </description>
 <language>en-us</language>
 <item>
-  <title>Friedrich Kossebau (frinring): Minitutorial: Viewing raw data of files in Konqueror/KDevelop</title>
-  <link>http://frinring.wordpress.com/2009/07/24/shorttip-viewing-raw-data-of-files-in-konquerorkdevelop/</link>
-  <guid>http://frinring.wordpress.com/?p=319</guid>
-    <pubDate>Fri, 24 Jul 2009 15:28:20 +0200</pubDate>
+  <title>Andreas Pakulat: Finally KDevelop 4.0 final published</title>
+  <link>http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/</link>
+  <guid>http://apaku.wordpress.com/?p=203</guid>
+    <pubDate>Sat, 01 May 2010 15:30:06 +0200</pubDate>
   <description>
-&lt;div&gt;&lt;br /&gt;&lt;p&gt;Want to quickly see the raw data of files in Konqueror or KDevelop? This is possible with the KPart coming with Okteta since KDE 4.1:&lt;/p&gt;
-&lt;h3&gt;Preparations&lt;/h3&gt;
-&lt;p&gt;Open &amp;#8220;System Settings&amp;#8221;, then select &amp;#8220;File Associations&amp;#8221; (Found under &amp;#8220;Advanced&amp;#8221;). Select the file type (e.g. &amp;#8220;audio/x-wav&amp;#8221;) you want to see the raw data of, choose the tab &amp;#8220;Embedding&amp;#8221;.&lt;/p&gt;
-&lt;p&gt;Within &amp;#8220;Services Preference Order&amp;#8221; press button &amp;#8220;Add&amp;#8221;, select &amp;#8220;Embedded Binary Viewer (oktetapart)&amp;#8221; [0] from the list, press &amp;#8220;OK&amp;#8221;:&lt;br /&gt;
-&lt;a href="http://frinring.files.wordpress.com/2009/07/file-associations-add-service.png"&gt;&lt;img src="http://frinring.files.wordpress.com/2009/07/file-associations-add-service.png?w=226&amp;h=300" alt="File Associations - Add Service" title="File Associations - Add Service" width="226" height="300" class="alignnone size-medium wp-image-321" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;If there are already other services listed in the services list make sure the oktetapart is the first entry by selecting it and pressing &amp;#8220;Move Up&amp;#8221; as often as needed. Press &amp;#8220;Apply&amp;#8221; and close the System Settings:&lt;br /&gt;
-&lt;a href="http://frinring.files.wordpress.com/2009/07/file-associations1.png"&gt;&lt;img src="http://frinring.files.wordpress.com/2009/07/file-associations1.png?w=300&amp;h=231" alt="File Associations" title="File Associations" width="300" height="231" class="alignnone size-medium wp-image-320" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;[0] Binary Viewer is a misnomer, changed to Hex Viewer for KDE 4.4&lt;/p&gt;
-&lt;h3&gt;Usage&lt;/h3&gt;
-&lt;p&gt;Now start Konqueror and click with your right mouse button on a wav file. In the context menu select &amp;#8220;Preview in Embedded Binary Viewer&amp;#8221; and you should see the raw data of that file:&lt;br /&gt;
-&lt;a href="http://frinring.files.wordpress.com/2009/07/hex-view-in-konqueror.png"&gt;&lt;img src="http://frinring.files.wordpress.com/2009/07/hex-view-in-konqueror.png?w=300&amp;h=154" alt="Hex View in Konqueror" title="Hex View in Konqueror" width="300" height="154" class="alignnone size-medium wp-image-322" /&gt;&lt;/a&gt;&lt;br /&gt;
-In KDevelop you do as you do with text files, just select a wav file and it will be shown as hex view:&lt;br /&gt;
-&lt;a href="http://frinring.files.wordpress.com/2009/07/hex-view-in-kdevelop.png"&gt;&lt;img src="http://frinring.files.wordpress.com/2009/07/hex-view-in-kdevelop.png?w=300&amp;h=174" alt="Hex View in KDevelop" title="Hex View in KDevelop" width="300" height="174" class="alignnone size-medium wp-image-324" /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Beware: This viewer is only read-only. And while using the Okteta core libs it currently does not come with any of the tools included in Okteta. This hopefully will change for KDE 4.4, but don&amp;#8217;t hold your breath (better sit down and help with coding &lt;img src="http://s.wordpress.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" class="wp-smiley" /&gt;  ).&lt;/p&gt;
-&lt;h3&gt;Undo&lt;/h3&gt;
-&lt;p&gt;If you want to undo this change for the file type, go to the settings as described above, select &amp;#8220;Embedded Binary Viewer (oktetapart)&amp;#8221; in the list under  &amp;#8220;Services Preference Order&amp;#8221; and press &amp;#8220;Remove&amp;#8221;.&lt;/p&gt;
-&lt;p&gt;Next to do: Copy this tutorial to &lt;a href="http://userbase.kde.org/"&gt;UserBase&lt;/a&gt;.&lt;/p&gt;
-  &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/frinring.wordpress.com/319/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/frinring.wordpress.com/319/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/frinring.wordpress.com/319/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/frinring.wordpress.com/319/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/frinring.wordpress.com/319/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/frinring.wordpress.com/319/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/frinring.wordpress.com/319/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/frinring.wordpress.com/319/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/frinring.wordpress.com/319/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/frinring.wordpress.com/319/" /&gt;&lt;/a&gt; &lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=frinring.wordpress.com&amp;blog=251139&amp;post=319&amp;subd=frinring&amp;ref=&amp;feed=1" /&gt;&lt;/div&gt;  </description>
+&lt;p&gt;Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the &lt;a href="http://dot.kde.org/2010/05/01/kdevelop-40-stable-released-wild"&gt;dot story&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It only took us 3 years to get there and I think what we&amp;#8217;ve accomplished is quite amazing. And its just the beginning, we have various ideas how to further continue with KDevelop and bring you even more cool features and improvements. As &lt;a href="http://apaku.wordpress.com/2010/04/26/happy-soc-coding-everybody/"&gt;I already blogged&lt;/a&gt; there&amp;#8217;s two GSoC project with much potential related to KDevelop.&lt;/p&gt;
+&lt;p&gt;So go &lt;a href="http://download.kde.org/stable/kdevelop/4.0.0/src"&gt;get it&lt;/a&gt;, &lt;a href="http://apaku.wordpress.com/2010/04/26/happy-soc-coding-everybody/"&gt; compile it&lt;/a&gt; and enjoy how it makes hacking on code a breeze.&lt;/p&gt;
+&lt;br /&gt;  &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gocomments/apaku.wordpress.com/203/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/comments/apaku.wordpress.com/203/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godelicious/apaku.wordpress.com/203/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/delicious/apaku.wordpress.com/203/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/gostumble/apaku.wordpress.com/203/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/stumble/apaku.wordpress.com/203/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/godigg/apaku.wordpress.com/203/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/digg/apaku.wordpress.com/203/" /&gt;&lt;/a&gt; &lt;a rel="nofollow" href="http://feeds.wordpress.com/1.0/goreddit/apaku.wordpress.com/203/"&gt;&lt;img alt="" border="0" src="http://feeds.wordpress.com/1.0/reddit/apaku.wordpress.com/203/" /&gt;&lt;/a&gt; &lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D203%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
-  <title>Nick Shaforostoff (shaforostoff): Testing KDE 4.3 translation with Lokalize</title>
-  <link>http://shaforostoff.blogspot.com/2009/07/testing-kde-43-translation-with.html</link>
-  <guid isPermaLink="false">tag:blogger.com,1999:blog-8446359260434483152.post-7202817933332798505</guid>
-    <pubDate>Fri, 24 Jul 2009 04:57:20 +0200</pubDate>
-  <description>
-I created Lokalize script to automate UI translation testing: it compiles currently opened PO file and puts it under ~/.kde where KDE can see it, so that when you start your application next time, it will use your translation.&lt;br /&gt;&lt;br /&gt;To use it for your language (you'll need Lokalize coming with KDE 4.3):&lt;br /&gt;&lt;code&gt;&lt;br /&gt;cd trunk/l10n-kde4&lt;br /&gt;svn up scripts&lt;br /&gt;dolphin scripts/lokalize&lt;br /&gt;&lt;/code&gt;&lt;br /&gt;then open Lokalize with project for your language, go to Project -&gt; Configure project -&gt; Scripts and drag-n-drop msgfmt.rc from dolphin to the settings area in Lokalize. Restart Lokalize. You should see a new item under Tools menu.&lt;br /&gt;&lt;br /&gt;To make this script available automatically for all your team members copy &lt;a href="http://websvn.kde.org/trunk/l10n-kde4/ru/lokalize-scripts/msgfmt.rc?view=log"&gt;this msgfmt.rc&lt;/a&gt; to l10n-kde4/LANG/lokalize-scripts (they will also need to &lt;code&gt;svn up trunk/l10n-kde4/scripts&lt;/code&gt;).&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;Now a few words on packages.&lt;br /&gt;I have been given write access to Debian KDE packaging repository (thanks to Sune Vuorela), where I was able to specify right dependencies and recommended packages for Lokalize. If any of other distro packagers are reading this, please sip on &lt;a href="http://svn.debian.org/viewsvn/pkg-kde/trunk/packages/kdesdk/debian/control?view=log"&gt;the spec&lt;/a&gt;.&lt;br /&gt;&lt;br /&gt;P.S. I installed kde 4.2.96 packages from debian experimental (it conflicts with kdevelop package, so I reinstalled kdevelop manually with &lt;code&gt;dpkg -i kdevelop_3.9.94-1_i386.deb&lt;/code&gt; afterwards).&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/8446359260434483152-7202817933332798505?l=shaforostoff.blogspot.com" /&gt;&lt;/div&gt;  </description>
-</item>
-<item>
-  <title>#3: Visualize your code in KDevelop</title>
-  <link>http://liveblue.wordpress.com/2009/07/21/3-visualize-your-code-in-kdevelop/</link>
-  <guid>http://liveblue.wordpress.com/?p=205</guid>
-  <author>Sandro Andrade</author>
-  <pubDate>Tue, 21 Jul 2009 16:55:32 +0200</pubDate>
-  <description>
-Hello planet,
-Yes, after a hard journey through free software conferences including International Forum on Free Software (FISL) and Gran Canaria Desktop Summit, I&amp;#8217;m happy to bring you fresh news about my GSoC project in KDevelop.
-As I&amp;#8217;ve previously mentioned, not rarely we face the hard task of understanding complex interactions between software modules as a pre-requisite [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=liveblue.wordpress.com&amp;blog=7344330&amp;post=205&amp;subd=liveblue&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>Live Blue has Talent</title>
-  <link>http://liveblue.wordpress.com/2009/07/14/live-blue-has-talent/</link>
-  <guid>http://liveblue.wordpress.com/?p=201</guid>
-  <author>tumaix</author>
-  <pubDate>Tue, 14 Jul 2009 18:50:37 +0200</pubDate>
-  <description>
-So, You may think that we are just a bunch of guys sitting in front of our computers, programming for KDevelop , KDE-Edu and KDE-Games, right?
-well, WRONG. as you can see on the video below, we also have Talent!
-
-This is André Brasil,  fellow hackers, applauses.
-       &lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=liveblue.wordpress.com&amp;blog=7344330&amp;post=201&amp;subd=liveblue&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>GSOC 2009 Progress - Smoke Bindings Generator</title>
-  <link>http://www.kdedevelopers.org/node/4019</link>
-  <guid isPermaLink="false">4019 at http://www.kdedevelopers.org</guid>
-  <author>richard dale</author>
-  <pubDate>Fri, 10 Jul 2009 21:32:38 +0200</pubDate>
-  <description>
-&lt;p&gt;Yesterday I wore my GSOC tee-shirt at GCDS and got together with Arno Rehn to review his smoke bindings library generator tool. It turns out the project is going great and is pretty much finished.&lt;/p&gt;
-&lt;p&gt;I can't say I've done a lot of mentoring other than to have an initial discussion about which variant of Roberto Raggi's C++ parsers to use. We chose to use the KDevelop one with some KDE dependencies removed, although in fact from Roberto's comments on &lt;a&gt;Arno's blog&lt;/a&gt; it might have been best to use the Qt Creator one.&lt;/p&gt;
-&lt;p&gt;To test the generator, first I dumped off all methods in the current version of the smoke library for the Qt libs using the 'rbqtapi' tool that comes with QtRuby. Then we built the same lib with the new smoke generator, and dumped off the methods in that into another text file and compared them with Kompare. There we a few minor things wrong like constructors being marked as 'static' methods, but nearly always the new compiler was giving better results than the previous Perl version.&lt;/p&gt;
-&lt;p&gt;This is really good news for language bindings, as for KDE 4.4 we will be able to install the smoke generator as a binary, put up some instructions on TechBase explaining what to do in order to create a Smoke library for your KDE app or library. Mainly you just need to create a list of the C++ classes you want to wrap in an XML file, give it the headers to parse, and you're done. I've already got a script to create a Smoke lib based Ruby extension to use with QtRuby/Korundum, and we can automate that part too. We will be able to move individual bindings out of the kdebindings module and put them in with the app or lib that they wrap. Then we can just have the bindings tools and the core Qt and KDE libs stuff in kdebindings itself.&lt;/p&gt;
-&lt;p&gt;So congratulations to Arno for doing such a great job, and also delivering one month ahead of schedule (my summary comment on the Google mid-term review was 'Absolutely excellent!').&lt;/p&gt;  </description>
-</item>
-<item>
-  <title>Setting up Environment for running KDevelop4</title>
-  <link>http://apaku.wordpress.com/2009/06/24/setting-up-environment-for-running-kdevelop4/</link>
-  <guid>http://apaku.wordpress.com/?p=129</guid>
+  <title>Finally KDevelop 4.0 final published</title>
+  <link>http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/</link>
+  <guid>http://apaku.wordpress.com/?p=203</guid>
   <author>apaku</author>
-  <pubDate>Wed, 24 Jun 2009 21:35:15 +0200</pubDate>
+  <pubDate>Sat, 01 May 2010 15:30:06 +0200</pubDate>
   <description>
-These are short and (hopefully) precise instructions what you need to do when you&amp;#8217;ve built KDevelop4 from source and installed it somewhere other than your KDE libraries are (those are often from packages and then installed in /usr or /opt/kde).
-I&amp;#8217;m assuming here that you have the KDE libraries installed in /usr (i.e. from some packages) [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=apaku.wordpress.com&amp;blog=1182522&amp;post=129&amp;subd=apaku&amp;ref=&amp;feed=1" /&gt;  </description>
+Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 years to get there and I think what we&amp;#8217;ve accomplished is quite amazing. And its just the beginning, we [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D203%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
-  <title>#2: Visualize your code in KDevelop</title>
-  <link>http://liveblue.wordpress.com/2009/06/22/2-visualize-your-code-in-kdevelop/</link>
-  <guid>http://liveblue.wordpress.com/?p=164</guid>
-  <author>Sandro Andrade</author>
-  <pubDate>Mon, 22 Jun 2009 10:16:35 +0200</pubDate>
+  <title>KDevelop 4.0 Stable Released into the Wild</title>
+  <link>http://www.kdenews.org/2010/05/01/kdevelop-40-stable-released-wild</link>
+  <guid isPermaLink="false">3073 at http://www.kdenews.org</guid>
+  <author>apaku</author>
+  <pubDate>Sat, 01 May 2010 14:36:44 +0200</pubDate>
   <description>
-Hey folks, a quick update because something pushes me to my bed  
-After a nice weekend we have a useful integration between KDevelop code editor and control flow graph plugin. You can easily get your graph updated when switching between functions in a class or between different opened classes. With such a mechanism, the [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=liveblue.wordpress.com&amp;blog=7344330&amp;post=164&amp;subd=liveblue&amp;ref=&amp;feed=1" /&gt;  </description>
+&lt;div&gt;&lt;a href="http://www.kdenews.org/taxonomy/term/13"&gt;&lt;img src="http://dot.kde.org/sites/dot.kde.org/files/category_pictures/user-identity.png" alt="Applications" title="Applications" width="48" height="48" /&gt;&lt;/a&gt;&lt;/div&gt;&lt;p&gt;The KDevelop Hackers are proud and happy to announce that KDevelop 4.0 is finally available as a stable release. Released together is the first version of KDevelop PHP plugins, which make KDevelop a very interesting option for PHP developers.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.kdenews.org/2010/05/01/kdevelop-40-stable-released-wild" target="_blank"&gt;read more&lt;/a&gt;&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>Aaron Seigo (aseigo): Plasmoids in windows</title>
+  <link>http://aseigo.blogspot.com/2010/04/plasmoids-in-windows.html</link>
+  <guid isPermaLink="false">tag:blogger.com,1999:blog-7615673.post-9116573654106425547</guid>
+    <pubDate>Sat, 01 May 2010 02:02:48 +0200</pubDate>
+  <description>
+Since forever (where we define the start of time to be when I started working on Plasma) it has been possible to run Plasmoids, or any widget that Plasma can display, in a window on its own using plasmoidviewer. It isn't completely satisfactory for running widgets in a window, though, because at its heart plasmoidviewer is a development tool meant for testing and debugging Plasmoids.&lt;br /&gt;&lt;br /&gt;(By the way, did you know that there are similar apps for DataEngines and Wallpapers? plasmaengineexplorer and plasmawallpaperviewer.)&lt;br /&gt;&lt;br /&gt;Marco worked up a small proof-of-concept app in playground some time ago that lets us run Plasmoids in windows slightly more satisfactorily. Here's a shot of a clock and the microblogging Plasmoids running with a Konversation window in behind and the pretty KRuner window nearby:&lt;br /&gt;&lt;br /&gt;&lt;div align=center&gt;&lt;img src="http://plasma.kde.org/media/windowed_plasmoids.png" width="595" height="496" /&gt;&lt;/div&gt;&lt;br /&gt;&lt;br /&gt;Right clicking on a Plasmoid gets you the usual suspects in the context menu along with a "Quit" entry that quits that Plasmoid. What's really cool is that they all run in the same process, keeping overhead down. Now, the goal for this isn't just to allow us to run Plasmoids in random windows on the desktop, but to provide an infrastructure for running Plasmoids full screen with Plasma Mobile in a way that is resource friendly but which also keeps the apps away from the main UI.&lt;br /&gt;&lt;br /&gt;You can move the Plasmoids around, run them with or without a window border and background and more. It is currently in kdereview, and I'm busy polishing this up for 4.5. The name of this little wonder? plasma-windowed.&lt;br /&gt;&lt;br /&gt;It currently knows about the following command line flags: -b, --border or --noborder to control the window borders (default is to have borders), -f and --fulscreen which starts the app fullscreen. This is just the start (it's only 368 LOC right now), however, and I have lots of ideas on how to make this even spiffier. :)&lt;br /&gt;&lt;br /&gt;Now we can show Plasmoids on the desktop, in panels, on a dashboard, on a mobile device, on a netbook, on a screensaver, floating about and in Amarok. Soonish we'll have them on KDM, Kontact, Skrooge and KDevelop, too. Woo!&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7615673-9116573654106425547?l%3Daseigo.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
+</item>
+<item>
+  <title>GSOC:   Revive Quanta+ Brand for KDE 4</title>
+  <link>http://milianw.de/blog/gsoc-revive-quanta-brand-for-kde-4</link>
+  <guid isPermaLink="false">130 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Wed, 28 Apr 2010 19:19:04 +0200</pubDate>
+  <description>
+&lt;p&gt;Yay I got a GSOC slot :)&lt;/p&gt;
+
+&lt;p&gt;So I hope I don&amp;#8217;t have to introduce myself anymore to you guys. Instead I&amp;#8217;ll show you what I&amp;#8217;ve planned to do over the summer:&lt;/p&gt;
+
+&lt;h5&gt;Motivation for Proposal / Goal:&lt;/h5&gt;
+
+&lt;p&gt;Back in KDE 3 times, Quanta+ was one of the reasons for me to use KDE.
+  In my eyes it was &lt;em&gt;the&lt;/em&gt; IDE for web development out there, and I loved to use it.
+  Sadly it&amp;#8217;s bitrotting nowadays without a finished KDE 4 port. That, combined with
+  the fact that more and more distributions drop all KDE 3 packages, makes the need
+  for a port more urgent than ever.&lt;/p&gt;
+
+&lt;h5&gt;Implementation Details:&lt;/h5&gt;
+
+&lt;p&gt;Thankfully, KDevelop 4 is nearing it&amp;#8217;s first release and the KDevplatform is
+  mature enough nowadays. This means that during summer I shall finish the
+  port of Quanta+ to KDevplatform and supply it with all the plugins
+  required for a proper webdevelopment IDE. My goal is it to provide a proper
+  IDE for PHP webdevelopment. In more detail:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;make Quanta+ 4 compile&lt;/li&gt;
+&lt;li&gt;remove obsolete plugins or code parts in Quanta+&lt;/li&gt;
+&lt;li&gt;port required plugins to KDevplatform structure&lt;/li&gt;
+&lt;li&gt;polish PHP plugin, including XDebug support&lt;/li&gt;
+&lt;li&gt;polish Script Execute plugin&lt;/li&gt;
+&lt;li&gt;polish CSS plugin&lt;/li&gt;
+&lt;li&gt;get a first working version of a XHTML/XML plugin, if time allows even with HTML (SGML) support
+
+&lt;ul&gt;
+&lt;li&gt;support autocompletion&lt;/li&gt;
+&lt;li&gt;support inline validation&lt;/li&gt;
+&lt;li&gt;support documents that use multiple languages (XML, PHP, CSS, JavaScript) at the same time&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;polish the UI/Workflow for Webdevelopment
+
+&lt;ul&gt;
+&lt;li&gt;hide KDevelop/C++ specific actions&lt;/li&gt;
+&lt;li&gt;add templates for common PHP frameworks&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;if time allows, get a rough support for JavaScript (at least Outline for functions)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Put these all together with the existing features in KDevplatform we can reuse,
+we&amp;#8217;ll end up with a hopefully useable IDE for webdevelopment. Hence my final
+goal is it to release a first Beta version of Quanta+ for KDE4.&lt;/p&gt;
+
+&lt;h5&gt;Tentative Timeline:&lt;/h5&gt;
+
+&lt;ol&gt;
+&lt;li&gt;getting rough first shell of Quanta+ 4 up and running, removing old cruft, cleaning up old code and porting required things&lt;br /&gt;
+&lt;em&gt;~ 3 weeks&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;polish existing plugins (PHP, XDebug, Execute Script, CSS, Upload)&lt;br /&gt;
+&lt;em&gt;~ 2 weeks&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;create XHTML/XML plugin&lt;br /&gt;
+&lt;em&gt;~ 3 weeks&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;polish UI/workflow&lt;br /&gt;
+&lt;em&gt;~ 2 weeks&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;bug hunting etc., ending in a first beta release of Quanta+ for KDE 4:&lt;br /&gt;
+&lt;em&gt;~ 2 weeks&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Lets see whether it works out as planned. But I think this commit shows you that I&amp;#8217;m on the right track:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://websvn.kde.org/trunk/extragear/sdk/quanta/data/pics/quanta-splash.png?revision%3D1119284%26view%3Dmarkup" title="http://websvn.kde.org/trunk/extragear/sdk/quanta/data/pics/quanta-splash.png?revision=1119284&amp;view=markup"&gt;http://websvn.kde.org/trunk/extragear/sdk/quanta/data/pics/quanta-splash&amp;#8230;&lt;/a&gt;&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>KDE no Google Summer of Code 2010</title>
+  <link>http://liveblue.wordpress.com/2010/04/28/kde-no-google-summer-of-code-2010/</link>
+  <guid>http://liveblue.wordpress.com/?p=784</guid>
+  <author>Sandro Andrade</author>
+  <pubDate>Wed, 28 Apr 2010 15:12:57 +0200</pubDate>
+  <description>
+O Google anunciou na última segunda-feira os alunos selecionados para o Google Summer of Code 2010: o grande programa de incentivo à participação de novos desenvolvedores em mais 150 instituições que desenvolvem software livre. O KDE é claro não poderia ficar de fora dessa. Este ano foram 50 alunos selecionados, um número recorde desde a [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dliveblue.wordpress.com%26blog%3D7344330%26post%3D784%26subd%3Dliveblue%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>Happy SoC coding everybody</title>
+  <link>http://apaku.wordpress.com/2010/04/26/happy-soc-coding-everybody/</link>
+  <guid>http://apaku.wordpress.com/?p=197</guid>
+  <author>apaku</author>
+  <pubDate>Mon, 26 Apr 2010 22:48:12 +0200</pubDate>
+  <description>
+Google just announced the official and final list of accepted students for the SoC program. KDE got more accepted students this year than past, so its a big success for us all. This will hopefully again be a successful SoC season for KDE, bringing new contributors and implementing lots of cool ideas. The KDevelop team [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D197%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>KDevelop 4.0 Screenshots</title>
+  <link>http://apaku.wordpress.com/2010/04/25/kdevelop-4-0-screenshots/</link>
+  <guid>http://apaku.wordpress.com/?p=194</guid>
+  <author>apaku</author>
+  <pubDate>Sun, 25 Apr 2010 21:18:14 +0200</pubDate>
+  <description>
+This blog entry is a supplemental to the KDevelop 4.0 release announcement to show off the new stable release with some nice screenshots. So enjoy KDevelop after starting and opening a project and file Quick Outline of the current file PHP Quick Outline Quick Open in PHP project As-You-Type Code Completion More Verbose manual Code [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D194%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>KDevelop4 RC3 released (RC2 tarballs are broken)</title>
+  <link>http://apaku.wordpress.com/2010/04/16/kdevelop4-rc3-released-rc2-tarballs-are-broken/</link>
+  <guid>http://apaku.wordpress.com/?p=192</guid>
+  <author>apaku</author>
+  <pubDate>Fri, 16 Apr 2010 20:50:50 +0200</pubDate>
+  <description>
+This time around svn got me, I&amp;#8217;ve used the createtarball script from kdesdk to generate the RC2 tarballs so we ship translations. This worked just fine, except that for some unknown reason svn likes to not check out svn:externals when doing an svn co of kdevplatform. This resulted in a kdevplatform tarball (yes I didn&amp;#8217;t [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D192%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>KDevelop4 Release Candidate 1</title>
+  <link>http://apaku.wordpress.com/2010/04/08/kdevelop4-release-candidate-1/</link>
+  <guid>http://apaku.wordpress.com/?p=186</guid>
+  <author>apaku</author>
+  <pubDate>Thu, 08 Apr 2010 08:51:09 +0200</pubDate>
+  <description>
+Finally getting around to blog about this. We&amp;#8217;ve released RC1 of KDevelop4 today. We&amp;#8217;ve fixed a couple of bugs and got some good performance improvements, but even more will be in RC2. RC2 will also ship with translations, for RC1 we&amp;#8217;ve discovered a severe problem that we couldn&amp;#8217;t fix anymore in time related to translations. [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D186%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>Where Profiling Sucks</title>
+  <link>http://milianw.de/blog/where-profiling-sucks</link>
+  <guid isPermaLink="false">128 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Mon, 05 Apr 2010 03:12:55 +0200</pubDate>
+  <description>
+&lt;p&gt;Ok, you should know by now that I love profiling and making things faster. Yet there&amp;#8217;s always a &amp;#8220;but&amp;#8221;. For me it&amp;#8217;s blocking syscalls, or anything that makes the app &amp;#8220;slow&amp;#8221; for the user but doesn&amp;#8217;t show up in Callgrind as the Instruction Fetch cost doesn&amp;#8217;t go up.&lt;/p&gt;
+
+&lt;p&gt;The usual suspect is of course locks (which we have quite a lot in KDevelop) or QProcesses with &lt;span&gt;&lt;code&gt;waitForFinished()&lt;/code&gt;&lt;/span&gt; or similar&amp;#8230; You won&amp;#8217;t see them in any Callgrind profile. Does anyone know a way to achieve that? Something that makes Callgrind increase the Ir cost for blocking func calls depending on the time it blocks? Or some other tool that would show me these?&lt;/p&gt;
+
+&lt;p&gt;And if you are interested: I was still able to find the cause for slow parsing of Custom Make Manager projects (Qt, Linux Kernel, &amp;#8230;) in KDevelop: The cache in the IncludePathResolver never hit, since a &lt;span&gt;&lt;code&gt;operator==&lt;/code&gt;&lt;/span&gt; was improperly implemented ;-) I really wonder how we could have missed that for so long! I&amp;#8217;ve also added some more changes that should make it much faster to parse projects that rely on the IncludePathResolver. I was personally now able to parse 10.000 files of the Linux Kernel in about 9.5 minutes. This is roughly a third of the Kernel, so I&amp;#8217;d get to a total of approx 30min. Compare that to the 2.5h for 5% that one of our users reported ;-)&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>Profiling Rocks - KDevelop CMake Support now 20x faster</title>
+  <link>http://milianw.de/blog/profiling-rocks-kdevelop-cmake-support-now-20x-faster</link>
+  <guid isPermaLink="false">127 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Wed, 31 Mar 2010 01:24:19 +0200</pubDate>
+  <description>
+&lt;p&gt;I just need to get this out quickly:&lt;/p&gt;
+
+&lt;p&gt;We were aware that KDevelop&amp;#8217;s CMake support was slow. Too slow actually. It was profiled months ago and after a quick look that turned up QRegExp, it was discarded in fear of having to rewrite the whole parser properly, without using QRegExp. Which btw. is still a good idea of course.&lt;/p&gt;
+
+&lt;p&gt;But well, today I felt like I should do some more tinkering. I mean I managed to optimize KDevelop&amp;#8217;s Cpp support recently (parsing Boost&amp;#8217;s huge generated template headers, like e.g. &lt;span&gt;&lt;code&gt;vector200.hpp&lt;/code&gt;&lt;/span&gt; is now 30% faster). I managed to make KGraphViewer usable for huge callgraphs I produce in Massif Visualizer. So how hard could it be to make KDevelop&amp;#8217;s CMake at least /a bit/ faster, he?&lt;/p&gt;
+
+&lt;p&gt;Yeah well an hour later and two commits later, I managed to find and fix two bottlenecks. Both where related to QRegExp. Neither was the actual parser, instead it was the part that &lt;em&gt;evaluated&lt;/em&gt; CMake files, esp. the &lt;span&gt;&lt;code&gt;STRING(...)&lt;/code&gt;&lt;/span&gt; function. So even if we&amp;#8217;d used a proper parser generator, this would still been slow.&lt;/p&gt;
+
+&lt;p&gt;The first one was the typical &lt;a href="http://websvn.kde.org/?view%3Drevision%26revision%3D1109255"&gt;&lt;em&gt;&amp;#8220;don&amp;#8217;t reinvent the wheel&amp;#8221;&lt;/em&gt; kinda commit&lt;/a&gt; which already made the CMake support &lt;strong&gt;two times faster&lt;/strong&gt; for projects that used &lt;span&gt;&lt;code&gt;FindQt4.cmake&lt;/code&gt;&lt;/span&gt;, i.e. any Qt or KDE project. Not bad, right? Well, while I fixed that I saw that KDevelop tried to do some Regular expression replacement on the output of &lt;span&gt;&lt;code&gt;qmake --help&lt;/code&gt;&lt;/span&gt;, this could not been right, could it? With help of Andreas and Aleix &lt;a href="http://websvn.kde.org/?view%3Drevision%26revision%3D1109277"&gt;we found the bug in the parser&lt;/a&gt; and that made the CMake support &lt;strong&gt;10 times faster.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So yeah, CMake projects using Qt or KDE should now get opened a &lt;strong&gt;whopping 20 times faster&lt;/strong&gt; in KDevelop :)&lt;/p&gt;
+
+&lt;p&gt;I really love KCacheGrind and Valgrind&amp;#8217;s callgrind - &lt;em&gt;again&lt;/em&gt; it proved to be the most awesome tool one can imagine! If you are interested in the callgrind files:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="http://users.physik.fu-berlin.de/~milianw/callgrind.cmake.noopt.bz2"&gt;without optimization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://users.physik.fu-berlin.de/~milianw/callgrind.cmake.nativeqregexpreplace.out.bz2"&gt;first optimization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://users.physik.fu-berlin.de/~milianw/callgrind.cmake.kdev.31may2010.bz2"&gt;second optimization&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Note:&lt;/em&gt; with KCacheGrind from trunk you can open these compressed files transparently :)&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>KDevelop4 Beta9 released</title>
+  <link>http://apaku.wordpress.com/2010/03/08/kdevelop4-beta9-released/</link>
+  <guid>http://apaku.wordpress.com/?p=180</guid>
+  <author>apaku</author>
+  <pubDate>Mon, 08 Mar 2010 22:37:01 +0100</pubDate>
+  <description>
+Yeah, finally, this marks the end of a rather long line of beta&amp;#8217;s. The first one is more than a year old! But it also means we&amp;#8217;re finally getting closer to a 4.0 release. Now its time to go through the open bugreports for KDevelop and KDevPlatform. Also make sure you read the dot story [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D180%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>Custom Buildsystem Support for KDevelop4</title>
+  <link>http://apaku.wordpress.com/2010/02/19/custom-buildsystem-support-for-kdevelop4/</link>
+  <guid>http://apaku.wordpress.com/?p=174</guid>
+  <author>apaku</author>
+  <pubDate>Fri, 19 Feb 2010 22:58:42 +0100</pubDate>
+  <description>
+A bit of background first: The buildsystem we (as in froglogic) use for Squish is custom written using Javascript and that means its not very nice to use KDevelop for hacking on the code. The reason is that KDevelop4 needs to know about includes and defines from the projects buildsystem to provide proper autocompletion and [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D174%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>Kate/KDevelop HackSprint - Up To Day 4</title>
+  <link>http://milianw.de/blog/katekdevelop-hacksprint-up-to-day-4</link>
+  <guid isPermaLink="false">122 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Wed, 17 Feb 2010 18:43:38 +0100</pubDate>
+  <description>
+&lt;p&gt;Woha, quite a few days flew by without me blogging about anything. Thankfully the others started to write so I don&amp;#8217;t have to repeat it all ;-) Instead I&amp;#8217;ll concentrate on stuff I did or learned.&lt;/p&gt;
+
+&lt;h5&gt;GHNS for Snippets&lt;/h5&gt;
+
+&lt;p&gt;Well, first I think an excuse is in oder: There is a GHNS button for Kate Snippets in 4.4.0 but it&amp;#8217;s broken, neither me nor Joseph had time to acutally use and fix it&amp;#8230; But anyways, I fixed it now for 4.4.1. For 4.5 we&amp;#8217;ll also have an Upload Dialog.&lt;/p&gt;
+
+&lt;p&gt;I also added &lt;strong&gt;both&lt;/strong&gt; now to KDevelop, you can now upload and download snippets from it. I added a few dump examples but will probably improve it steadily.&lt;/p&gt;
+
+&lt;h5&gt;Kate Performance&lt;/h5&gt;
+
+&lt;p&gt;On Saturday and Sunday I started to profile Kate highlighting for a large MySQL dump and managed to greatly improve the speed. Actually the funny thing is that I could improve RegExp based highlighting (you still should try to prevent using it, it will always be slower than simple char/string based highlighting). And the knowledge for this optimization I had from my time as an active contributor for &lt;a href="http://qbnz.com/highlighter/"&gt;GeSHi&lt;/a&gt;. I feel like it was ages ago, he funny :)&lt;/p&gt;
+
+&lt;p&gt;So if anybody has a big file that takes ages to load (but only if you use KDE 4.5 trunk or higher), tell me and give me the file. I might find some more ways to optimize different languages.&lt;/p&gt;
+
+&lt;h5&gt;Other Stuff&lt;/h5&gt;
+
+&lt;p&gt;Other than that I also managed to fix a few more bugs in Kate and KDevelop and had a good time with the other guys here in Berlin. Yesterday I showed some others how I spent quite a few nights: Partying in Berlin is nice :)&lt;/p&gt;
+
+&lt;p&gt;Oh and Bernhard showed me a little gem of his: &lt;a href="http://github.com/shentok/kate-standalone"&gt;Kate Standalone&lt;/a&gt; which you can use to build &lt;em&gt;only&lt;/em&gt; KatePart from kdelibs trunk. This actually works very well (up until some new API from KDE trunk is used).&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>Writing unittests for KDevelop plugins</title>
+  <link>http://apaku.wordpress.com/2010/02/17/writing-unittests-for-kdevelop-plugins/</link>
+  <guid>http://apaku.wordpress.com/?p=171</guid>
+  <author>apaku</author>
+  <pubDate>Wed, 17 Feb 2010 16:00:29 +0100</pubDate>
+  <description>
+After just completing a basic unit-test for a KDevelop4 plugin I&amp;#8217;m currently working on I realized that its really easy, but we lack some simple examples how to do this. So I sat down and added an article to our Wiki that explains how a basic unittests for a KDevelop4 plugin is structured and how [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D171%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>Kate/KDevelop HackSprint Day 1</title>
+  <link>http://milianw.de/blog/katekdevelop-hacksprint-day-1</link>
+  <guid isPermaLink="false">121 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Sun, 14 Feb 2010 00:58:53 +0100</pubDate>
+  <description>
+&lt;p&gt;So, first day of the Kate/KDevelop hacksprint.&lt;/p&gt;
+
+&lt;p&gt;We just talked and hacked at the rented flat,got to know each other and had a fun time. Everybody made it more or less in time, even last minute attendee Adymo from Ukraine, nice! Hacking-wise the productivity wasn&amp;#8217;t that high, esp. for me, but a few patches got committed here and there.&lt;/p&gt;
+
+&lt;p&gt;Right now I&amp;#8217;m working on a little speedup for Kate, esp. for big MySQL files - lets see how it turns out. Cullmann showed me a few things I could do so maybe it works out, lets see.&lt;/p&gt;
+
+&lt;p&gt;Over the next week I plan to push in user configurable include paths for the PHP plugin and do some more Snippets &amp; Scripting work in Kate, lets see how it turns out. I&amp;#8217;ll go home now, kinda sucks that I don&amp;#8217;t stay with the others here at the flat but have to take a 1h ride into the city&amp;#8230; Berlin is definitely too big :D&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>KDevelop4 Beta8</title>
+  <link>http://apaku.wordpress.com/2010/02/13/kdevelop4-beta8/</link>
+  <guid>http://apaku.wordpress.com/?p=167</guid>
+  <author>apaku</author>
+  <pubDate>Sat, 13 Feb 2010 18:48:38 +0100</pubDate>
+  <description>
+I&amp;#8217;m pleased to announce (as first as it seems) that KDevelop4 released its 8th Beta. This is mostly a bugfix release as we are slowly (but steadily) moving towards a final release. There&amp;#8217;s going to be another Beta soon with (hopefully) some more features as the KDevelop/Kate Sprint just started. Additionally to kdevelop+kdevplatform you&amp;#8217;ll find [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D167%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
+</item>
+<item>
+  <title>Paris, Bruxelles</title>
+  <link>http://www.proli.net/2010/02/04/paris-bruxelles/</link>
+  <guid>http://www.proli.net/?p=85</guid>
+  <author>apol</author>
+  <pubDate>Thu, 04 Feb 2010 19:20:02 +0100</pubDate>
+  <description>
+Hey! Yes, I&amp;#8217;m still alive!!
+Last week I moved to Paris since I will be staying here for 4 months studying at EFREI studying my last lecture credits for my university. That&amp;#8217;s great because that way I get to know better the city and practice the language a little more, which is always nice  .
+But [...]  </description>
+</item>
+<item>
+  <title>Snippets In KDevelop / Kate</title>
+  <link>http://milianw.de/blog/snippets-in-kdevelop-kate</link>
+  <guid isPermaLink="false">119 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Wed, 03 Feb 2010 16:59:46 +0100</pubDate>
+  <description>
+&lt;p&gt;Hey all!&lt;/p&gt;
+
+&lt;p&gt;Just wanted to give you a little rundown on Snippets in Kate 4.4 (via the snippets_tng plugin) and KDevelop Beta 8 (soon to be released).&lt;/p&gt;
+
+&lt;p&gt;Note: The Kate plugin was written by Jowenn and introduced me to all these nice features. For KDevelop I wrote a somewhat simpler yet imo better implementation. We will try to get the best of both worlds into KDE 4.5. Stay tuned!&lt;/p&gt;
+
+&lt;h5&gt;General Usage &amp; Features&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;create a snippet repository (or download via GHNS [see below])&lt;/li&gt;
+&lt;li&gt;create snippets in that repository&lt;/li&gt;
+&lt;li&gt;insert snippets via the snippets view (i.e. double click), or (imo better/faster) insert them via code-completion (remember: CTRL + Space requests code completion at the current cursor position!).&lt;/li&gt;
+&lt;li&gt;snippet gets inserted (properly indented) and potential placeholders/variables get expanded. A variable is something like &lt;span&gt;&lt;code&gt;%{date}&lt;/code&gt;&lt;/span&gt; or &lt;span&gt;&lt;code&gt;${email}&lt;/code&gt;&lt;/span&gt;. Also take a look at the &lt;a href="http://api.kde.org/4.x-api/kdelibs-apidocs/interfaces/ktexteditor/html/classKTextEditor_1_1TemplateInterface.html"&gt;API documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;variables that get inserted via &amp;#8220;${&amp;#8230;}&amp;#8221; will be &amp;#8220;selectable&amp;#8221;, meaning you can jump from one var to the other by hitting TAB / Shift TAB&lt;/li&gt;
+&lt;li&gt;the &lt;span&gt;&lt;code&gt;%{...}&lt;/code&gt;&lt;/span&gt; vars will only get expanded and inserted, without getting selectable.&lt;/li&gt;
+&lt;li&gt;multiple occurrences of the same variable will be updated once one of them gets edited, something that is called &amp;#8220;mirroring&amp;#8221; in other editors.&lt;/li&gt;
+&lt;li&gt;once one edits ESC the cursor is placed at the end of the snippet or to the first occurrence of &lt;span&gt;&lt;code&gt;${cursor}&lt;/code&gt;&lt;/span&gt; or &lt;span&gt;&lt;code&gt;%{cursor}&lt;/code&gt;&lt;/span&gt; and the user types something, the snippet-handler quits and you are left with your normal editor until you insert the next snippet&lt;/li&gt;
+&lt;li&gt;nested snippets (i.e. insert snippet than insert another one) should &amp;#8220;just work&amp;#8221;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;Snippet Management&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;group snippets by file type, i.e. PHP snippets will only be offered during code completion when one edits a PHP file.&lt;br /&gt;
+Note: In KDevelop and KDE 4.4 nested documents are supported, e.g. create a CSS snippet and it will be shown inside the CSS parts of a HTML document or similar. This uses my HighlightInterface I wrote for KDE 4.4. I still have to rewrite some parts of the snippets_tng plugin for Kate so that it works there as well&lt;/li&gt;
+&lt;li&gt;group snippets in repositories, set an Author and a License of your choice&lt;/li&gt;
+&lt;li&gt;publish snippet repositories via GHNS: In Kate you can already download snippets from GHNS but we sadly don&amp;#8217;t have any repos up on opendesktop&amp;#8230; I&amp;#8217;ll have to add some prior to KDE 4.4. Also we didn&amp;#8217;t have enough time to implement uploading of Repos from inside Kate in time for KDE 4.4. So stay tuned for KDE 4.5. KDevelop currently has no support for GHNS, but I plan to fix this tomorrow or the next days - together with uploading from inside KDevelop, i.e. all the nice features of GHNS v3.&lt;/li&gt;
+&lt;li&gt;in KDevelop (and someday in Kate as well) you can simply select a part of your currently opened document and select the &amp;#8220;create snippet from selection&amp;#8221; in the ContextMenu - easy &amp; fast!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5&gt;TODO&lt;/h5&gt;
+
+&lt;p&gt;There&amp;#8217;s much to do.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Highest priority right now for me is to get GHNS with all bells and whistles supported for KDevelop.&lt;/li&gt;
+&lt;li&gt;Then I&amp;#8217;ll merge and integrate the Kate &amp; KDevelop plugins as much as possible, so we have a reduce code base.&lt;/li&gt;
+&lt;li&gt;Also important is to make all shortcuts configurable&lt;/li&gt;
+&lt;li&gt;Another thing is: How could we improve interoperability even between e.g. editors like TextMate or Gedit? Both have snippets features and their bundles are available in the net. If we can support those we&amp;#8217;d save us a lot of work&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, I should probably do a screencast&amp;#8230; Not now though ;-)&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>progress in PHP support for KDevelop</title>
+  <link>http://milianw.de/blog/progress-in-php-support-for-kdevelop</link>
+  <guid isPermaLink="false">116 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Wed, 20 Jan 2010 13:44:50 +0100</pubDate>
+  <description>
+&lt;p&gt;Hey everyone. Been some time since I last blogged&amp;#8230; I want to take the chance to give you all a bit of overview over the last changes in the PHP plugin for KDevelop:&lt;/p&gt;
+
+&lt;h5&gt;Performance Improvements&lt;/h5&gt;
+
+&lt;p&gt;I spent quite some time profiling various aspects of the PHP plugin, be it parsing and DUChain building over to (just yesterday) code completion. I&amp;#8217;m confident to say that I found (and removed) quite a few bottlenecks, making the plugin much more comfortable to use.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;m really blown away time over time again by valgrind &amp; KCachegrind&amp;#8230; What would we do without these tools?&lt;/p&gt;
+
+&lt;h5&gt;Documentation&lt;/h5&gt;
+
+&lt;p&gt;An (imo) very strong point for using KDevelop for PHP programming is it&amp;#8217;s seamless support for documentation. Be it the &amp;#8220;simple&amp;#8221; inline documentation in the Declaration Tooltips or the extended integration of the remote PHP.net docs. But these past days I improved our generator for the inline documentation of built-in PHP language constructs considerably:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;add documentation for function/method parameters&lt;/li&gt;
+&lt;li&gt;add &lt;span&gt;&lt;code&gt;@since&lt;/code&gt;&lt;/span&gt; where appropriate&lt;/li&gt;
+&lt;li&gt;fix some missing declarations or bugs, esp. some that where part of SPL&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These changes increased the size of the generated file to whopping 3.1M. This was too much for me and hence I added support to ship this file zipped (i.e. now it&amp;#8217;s 80% smaller) and we decompress it transparently with the use of &lt;span&gt;&lt;code&gt;KZip&lt;/code&gt;&lt;/span&gt;. Adding such a feature was a breeze, so nice to work with the KDE Api :)&lt;/p&gt;
+
+&lt;p&gt;There are still a few things missing and stuff I plan to improve here, so stay tuned for more news in this regard.&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>Will code for food</title>
+  <link>http://milianw.de/blog/will-code-for-food</link>
+  <guid isPermaLink="false">114 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Tue, 22 Dec 2009 04:34:31 +0100</pubDate>
+  <description>
+&lt;p&gt;Ha, what a bit of a bribe can do to me&amp;#8230; Someday earlier today a user of the PHP plugin for KDevelop brought up the flickering issue in it again. Well as I told him: I myself find it very annoying and wanted to fix it since quite some time, but never got around to it&amp;#8230; Usually that would be it and I&amp;#8217;d go watch some more FamilyGuy until I&amp;#8217;m in the mood to track this bugger down. But well, thankfully Phlogi wasn&amp;#8217;t so easy to dispatch:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&amp;lt;Phlogi&gt; milian: ok&amp;#8230; I&amp;#8217;ll send you pizza and beer if you fix this!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hours of &lt;span&gt;&lt;code&gt;gdb&lt;/code&gt;&lt;/span&gt; sessions later, I finally committed a fix. So Phlogi, if you read this: You owe me ;-)&lt;/p&gt;
+
+&lt;p&gt;To all others: If you tried the PHP plugin out and the flickering was too much for you: Give it a try again! I&amp;#8217;m personally totally overwhelmed, the difference is huge! I often perceived the PHP plugin to be magnitudes slower than the C++ one. Well, looks like most of this was only due to the flickering. Now things are &lt;em&gt;much&lt;/em&gt; smoother.&lt;/p&gt;
+
+&lt;p&gt;Happy holidays!&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>PHP and PHP-Docs plugins now up for review (meaning: SVN location moved!)</title>
+  <link>http://milianw.de/blog/php-and-php-docs-plugins-now-up-for-review-meaning-svn-location-moved</link>
+  <guid isPermaLink="false">113 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Thu, 17 Dec 2009 21:29:41 +0100</pubDate>
+  <description>
+&lt;p&gt;Hey all!&lt;/p&gt;
+
+&lt;p&gt;Just a quick note: Niko and me moved PHP &amp; PHP-Docs to &lt;span&gt;&lt;code&gt;kdereview&lt;/code&gt;&lt;/span&gt;, we hope to move both plugins to &lt;span&gt;&lt;code&gt;extragear/sdk/kdevelop-plugins&lt;/code&gt;&lt;/span&gt;. So, if I understood things correctly, after a two week period the plugins will get moved there (well, if we pass the review, but I think we can do that).&lt;/p&gt;
+
+&lt;p&gt;So for anybody that uses the plugins from SVN, you&amp;#8217;ll have to relocate. The new addresses are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;span&gt;&lt;code&gt;/trunk/kdereview/kdevelop-php&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span&gt;&lt;code&gt;/trunk/kdereview/kdevelop-php-docs&lt;/code&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;See you in two weeks :)&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>Real FOSS appreciation</title>
+  <link>http://milianw.de/blog/real-foss-appreciation</link>
+  <guid isPermaLink="false">110 at http://milianw.de</guid>
+  <author>Milian Wolff</author>
+  <pubDate>Mon, 07 Dec 2009 02:25:04 +0100</pubDate>
+  <description>
+&lt;p&gt;So, it&amp;#8217;s been roughly a year since my first commit to kdelibs. According to Ohloh it&amp;#8217;s been in November 2008.  And boy have I learned much in this year. I learned C++ just to be able to contribute to KDE, since I thought it would be awesome to be able to &amp;#8220;fix your own itch&amp;#8221;.  I have to say: It was the best decision I ever made.&lt;/p&gt;
+
+&lt;p&gt;I really came to appreciate FOSS in a whole new light: Contributing to a big project like KDE gets you in contact with lots of nice people. And they will help you get things done. What&amp;#8217;s better is that in the process you learn lots of things. And I mean lots. I can now use GDB, Valgrind, now my way around some parts of the KDE/Qt API, can investigate performance related questions&amp;#8230; And since these are such huge topics, there&amp;#8217;s always more to learn, much more!&lt;/p&gt;
+
+&lt;p&gt;I doubt someone could learn that much by reading books or writing his own little application without the help of a community. The wealth of possibilities inside KDE will increase your horizon constantly. And there is tons of very good code to study! Want to know why something is not working? Look at the source. Still not helping? Ask your fellow developers. I really have to say it&amp;#8217;s an awesome feeling to be part of this big community.&lt;/p&gt;
+
+&lt;h5&gt;Fixing an itch: Qalculate! backend for Cantor&lt;/h5&gt;
+
+&lt;p&gt;You know, I&amp;#8217;m officially a Physics student, I just happen to be way more interested in programming (the practical part of it, not really that much the theoretical part).&lt;/p&gt;
+
+&lt;p&gt;Since I started with Physics two years ago, I always required a good calculator, esp. for experimental physics. The best calculator I found was &lt;a href="http://qalculate.sourceforge.net/"&gt;Qalculate!&lt;/a&gt;, especially it&amp;#8217;s great support for units and constants made me solve tedious exercises in a fraction of the time it required my fellow students that could not use Qalculate (it only runs on Linux). Really, it&amp;#8217;s an outstanding piece of software in my opinion.&lt;/p&gt;
+
+&lt;p&gt;But to get to the point: Qalculate was the last KDE 3 app on my desktop, and I wanted to change that. Now I read about &lt;a href="http://edu.kde.org/cantor/"&gt;Cantor&lt;/a&gt;, esp. once fellow KDevelop hacker Apol wrote about his &lt;a href="http://www.proli.net/2009/11/07/kalgebra-everywhere/"&gt;KAlgebra backend for Cantor&lt;/a&gt;, and I knew: This is the perfect fit for libqalculate!&lt;/p&gt;
+
+&lt;p&gt;So last week I started and already have a somewhat working backend available:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://websvn.kde.org/trunk/playground/edu/cantor-backends/qalculate/"&gt;http://websvn.kde.org/trunk/playground/edu/cantor-backends/qalculate/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This once again showed the utterly insane greateness of FOSS: I started to hack on the backend and looked at the existing backends for guidance. I also contacted arieder, the author of Cantor, directly and chatted with him, getting help. But I did not only /take/. I reviewed his API, gave suggestions, reported whishes and bugs and eventually hacked a little bit on the sources themselves. Imagine this in a corporate environment: I&amp;#8217;d probably have had to report in some shabby tracker and wait ages for my feature request to be closed as wontfix&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;And while writing the backend I had this realization that also triggered this blog post: I actually did something useful in a few days. I could never have imagined being in that position one year ago. I always thought that C++ was a bit of black magic, especially writing things from scratch. But now&amp;#8230; Now I&amp;#8217;m somehow able to grasp code and come up with something working in a few days.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;problem&lt;/em&gt; this brings, is of course that you can easily loose track and overload yourself with work&amp;#8230; I could spent lots of hours in any part of KDE. My TODO alone bears for KatePart, KDevelop-PHP, KDevelop itself, Quanta, &amp;#8230;. You name it! I think this will become a fun holiday ;-)&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt; Just a quick note: I really think that Cantor will become a great and useful application for science students. It will be your central application for any calculations, either numeric (e.g. Qalculate) or symbolic (e.g. Maxima).&lt;/p&gt;  </description>
+</item>
+<item>
+  <title>KDevelop4 moved</title>
+  <link>http://apaku.wordpress.com/2009/11/29/kdevelop4-moved/</link>
+  <guid>http://apaku.wordpress.com/?p=163</guid>
+  <author>apaku</author>
+  <pubDate>Sun, 29 Nov 2009 21:48:05 +0100</pubDate>
+  <description>
+As we decided that we won&amp;#8217;t make the KDE 4.4 schedule and drop out of it, we thought that we should also play by the KDE policy rules and move out of trunk/KDE. That move has just happened and KDevelop, KDevPlatform and Quanta can now be found under trunk/extragear/sdk/. Everybody who&amp;#8217;s running svn now needs [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dapaku.wordpress.com%26blog%3D1182522%26post%3D163%26subd%3Dapaku%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
   <title>KDevelop4 UI: Areas, Working Sets, etc.</title>
@@ -105,62 +462,31 @@ After a nice weekend we have a useful integration between KDevelop code editor a
   <author>zwabel</author>
   <pubDate>Sun, 21 Jun 2009 23:58:55 +0200</pubDate>
   <description>
-General Progress
-A lot is happening in KDevelop4 these days. Now it&amp;#8217;s nearly already 2 Months ago that we had our developer meeting in Ukraine. We had a lot of fun, although for me the trip started two days late. I didn&amp;#8217;t get my passport in time, damn. But once there, I got quite productive. Since [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=zwabel.wordpress.com&amp;blog=2107769&amp;post=154&amp;subd=zwabel&amp;ref=&amp;feed=1" /&gt;  </description>
+General Progress A lot is happening in KDevelop4 these days. Now it&amp;#8217;s nearly already 2 Months ago that we had our developer meeting in Ukraine. We had a lot of fun, although for me the trip started two days late. I didn&amp;#8217;t get my passport in time, damn. But once there, I got quite productive. [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dzwabel.wordpress.com%26blog%3D2107769%26post%3D154%26subd%3Dzwabel%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
-  <title>Visualize your code in KDevelop</title>
-  <link>http://liveblue.wordpress.com/2009/06/17/visualize-your-code-in-kdevelop/</link>
-  <guid>http://liveblue.wordpress.com/?p=146</guid>
-  <author>Sandro Andrade</author>
-  <pubDate>Thu, 18 Jun 2009 00:22:40 +0200</pubDate>
+  <title>STL Visualization</title>
+  <link>http://vladimir_prus.blogspot.com/2009/06/stl-visualization.html</link>
+  <guid isPermaLink="false">tag:blogger.com,1999:blog-7558958.post-4159580028601221130</guid>
+  <author>Vladimir Prus</author>
+  <pubDate>Sat, 06 Jun 2009 19:24:00 +0200</pubDate>
   <description>
-Who of us hasn&amp;#8217;t ever got lost when doing maintenance and evolution activities in highly complex software with hundreds of thousands of source code lines ? So, this is the first update on my GSoC project about static code visualization (in contrast with dynamic visualization &amp;#8211; as in KCachegrind &amp;#8211; and evolution visualization &amp;#8211; for [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=liveblue.wordpress.com&amp;blog=7344330&amp;post=146&amp;subd=liveblue&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>Beta3 and Beta4</title>
-  <link>http://apaku.wordpress.com/2009/06/02/beta3-and-beta4/</link>
-  <guid>http://apaku.wordpress.com/?p=127</guid>
-  <author>apaku</author>
-  <pubDate>Tue, 02 Jun 2009 22:14:31 +0200</pubDate>
-  <description>
-Anybody who reads the dot will already know, but for those who don&amp;#8217;t (yes I mean you): KDevelop4 has released its third beta. We&amp;#8217;ve fixed tons of bugs, added a new launch framework, new C++ features and added a whole new way of switching the perspective from code to debug and back (KDE4.3 only).
-However since [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=apaku.wordpress.com&amp;blog=1182522&amp;post=127&amp;subd=apaku&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>Progress in non-cpp KDevelop4 land</title>
-  <link>http://milianw.de/blog/progress-in-non-cpp-kdevelop4-land</link>
-  <guid isPermaLink="false">99 at http://milianw.de</guid>
-  <author>Milian Wolff</author>
-  <pubDate>Wed, 27 May 2009 21:09:28 +0200</pubDate>
-  <description>
-&lt;p&gt;Has been a time since I wrote the last update for PHP / webdevelopment related work in KDevelop4&amp;#8230;&lt;/p&gt;
+As of today, KDevelop can nicely display std::vector&lt;std::string&gt;. I'll probably omit the obvious snapshot, and will point to a &lt;a href="http://lists.kde.org/?l%3Dkdevelop%26m%3D125326438617051%26w%3D2"&gt;mailing list post&lt;/a&gt; with instructions for trying it. Instead, I'll tell the story of this feature.
 
-&lt;h5&gt;XDebug&lt;/h5&gt;
+&lt;p&gt;
+For its entire history, GDB did not have any official way to display types from the C++ Standard Library in a sensible way. Several third-party scripts appeared, written in GDB's internal scripting language. However, they were fairly limited. You had to explicitly run those scripts, and all you got was text output without structure, making robust IDE integration impossible. Also, GDB's scripting language is itself unpleasant, and does not even have access to internal data structures and functions. It was clear that we need a way to write pretty-printers using real scripting language, with full access to GDB data structures, and proper integration with frontend interface.
 
-&lt;p&gt;First of all, Niko (nsams) is working diligently on the general debugger framework for KDevelop4. Of course gdb is still the main focus so far yet he always has his XDebug plugin (which is currently unusable) in mind. So expect some great debugging features once he&amp;#8217;s done with the framework.&lt;/p&gt;
+&lt;p&gt;
+The first prototype of Python-based pretty printing was written by myself during free hack slot at a CodeSourcery company meeting. It took maybe 4 hours, if not less, and could display std::string as string automatically. Some 4 hours more lead to the &lt;a href="http://sourceware.org/ml/gdb/2008-02/msg00140.html"&gt;first public prototype&lt;/a&gt;. This version could automatically display std::vector as "[1,2]". The &lt;a href="http://sourceware.org/ml/gdb/2008-04/msg00189.html"&gt;second prototype&lt;/a&gt; could finally display elements of std::vector as children, like one would expect in a variables tree of a frontend, and even report when new elements are added to the vector. However, this version took a couple of days of work, exposed a mere 4 functions from GDB to Python, and was a mess internally. It was clearly already outside the "quick hack" range.
 
-&lt;h5&gt;Remote Projects&lt;/h5&gt;
+&lt;p&gt;
+Those prototypes would never turn into anything, were it not for &lt;a href="http://tromey.com/blog/"&gt;Tom Tromey&lt;/a&gt; and &lt;a href="http://blog.bauermann.eng.br/category/english/"&gt;Thiago Bauermann&lt;/a&gt;, who started a project to add complete Python scripting to GDB. This is much more ambitious than just pretty-printing. In particular, it includes defining new commands in Python, with full access to GDB internals. You can read more details in a &lt;a href="http://tromey.com/blog/?p%3D494"&gt;post series&lt;/a&gt; by Tom. 
 
-&lt;p&gt;Another thing I&amp;#8217;ve not yet written about is a bunch of commits I did just after the Hackaton: Remote Projects! Yes, finally you can work directly on the server with KDevelop. I still have to make sure that the user does not try to open a remote cmake project (or similar), because that is &lt;em&gt;of course&lt;/em&gt; not supported. Only the Generic Project Manager (basically a list of files in a dir) works. There&amp;#8217;s for sure some things to polish, yet I&amp;#8217;d like to see user feedback for that use-case at least.&lt;/p&gt;
+&lt;p&gt;
+Pretty-printing became a part of that large effort, and was greatly improved. One of the most notable change was incremental fetch of children. According to the C++ standard, an object does not exist until its constructor has exited. However, gcc debug info just lists all local variables in a block. A naive pretty-printer, when invoked on such a variable, would likely go into uncharted part of memory trying to fetch all children, and never return. To fix this, the Python pretty-printers were designed to use incremental fetch, using Python iterators, and GDB MI interface was also adjusted to be more incremental (yes, it's a &lt;a href="http://vladimir_prus.blogspot.com/2007/02/debugger-stories-stack-widget.html"&gt;trend&lt;/a&gt;). Beyond that, we've spend at least 3 weeks iterating on finer details. The GDB patch was finally checked in on Sep 15, and KDevelop4 patch shortly after.
 
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: There is still some functionality missing in other areas, like creating a new remote project from a template etc.&lt;/p&gt;
-
-&lt;h5&gt;Out-of-class declarations of member variables&lt;/h5&gt;
-
-&lt;p&gt;The PHP plugin itself got support for some more code, like declarations of members variables outside the class context which was reported by one of our early adopters (&lt;em&gt;hint&lt;/em&gt; &lt;em&gt;hint&lt;/em&gt; - do the same! we need more wishes and bug reports!).&lt;/p&gt;
-
-&lt;h5&gt;Improved DeclarationBuilder&lt;/h5&gt;
-
-&lt;p&gt;Additionally I changed the logic of our DeclarationBuilder so it does not create a new variable declaration for each assigment expression. I think this makes refactoring, use-highlighting etc. in a PHP environment much better for many cases. Sadly it is not yet perfect since we still need to redeclare variables when their type changes. Fixing that would require potentially big changes to the DUChain and I&amp;#8217;m not sure when it will happen.&lt;/p&gt;
-
-&lt;h5&gt;Error Reporting&lt;/h5&gt;
-
-&lt;p&gt;Furthermore I&amp;#8217;ve added some more inline error reportings, namely for redeclaration of &lt;span&gt;&lt;code&gt;$this&lt;/code&gt;&lt;/span&gt; in a class context. This is also an area where &lt;strong&gt;you&lt;/strong&gt; might help us a lot: Send us PHP snippets which fail when executed but are not yet highlighted in the editor. I&amp;#8217;ll try to add them then. Just use the bugtracker on &lt;a href="http://bugs.kde.org"&gt;http://bugs.kde.org&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h5&gt;Performance&lt;/h5&gt;
-
-&lt;p&gt;Also David (dnolden / zwabel) of Cpp-KDev4 fame made some changes which resulted in a good performance win. Thanks!&lt;/p&gt;  </description>
+&lt;p&gt;
+This is still early implementation, and might have bugs, but now it's out for everybody to try.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-4159580028601221130?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>KDevelop error display</title>
@@ -172,117 +498,7 @@ However since [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.g
 For quite a while I wanted KDevelop to display compilation errors directly inside the editor, as opposed to separate window you have to click in. It works now, as shown below.
 &lt;a href="http://4.bp.blogspot.com/_DUtp0m1tSPk/ShQuiXO4JzI/AAAAAAAAAFM/gz1hyKS18pI/s1600-h/inline_error.jpg"&gt;&lt;img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer; width: 400px; height: 288px;" src="http://4.bp.blogspot.com/_DUtp0m1tSPk/ShQuiXO4JzI/AAAAAAAAAFM/gz1hyKS18pI/s400/inline_error.jpg" alt="" id="BLOGGER_PHOTO_ID_5337942626227726130" border="0" /&gt;&lt;/a&gt;
 
-This was implemented by Ivan Ruchkin, a student at Moscow State University, who will be defending a term paper about various KDevelop-related work tomorrow. The patches will be posted to appropriate mailing lists right after that.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-320232628064889202?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
-</item>
-<item>
-  <title>new dependency for kdevelop/gdb</title>
-  <link>http://apaku.wordpress.com/2009/05/08/new-dependency-for-kdevelopgdb/</link>
-  <guid>http://apaku.wordpress.com/?p=125</guid>
-  <author>apaku</author>
-  <pubDate>Fri, 08 May 2009 22:23:00 +0200</pubDate>
-  <description>
-Apparently some people tap into this pitfall, so I&amp;#8217;ll kinda &amp;#8220;announce&amp;#8221; this here. KDevelop4 from trunk requires kdebase/workspace since this week. The reason is a much improved process-selection-widget for our gdb-plugin. This allows far better attach-to-process experience than the old widget. The new widget comes from a library thats so far used by ksysguard and [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=apaku.wordpress.com&amp;blog=1182522&amp;post=125&amp;subd=apaku&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>New Launch Framework Landed</title>
-  <link>http://apaku.wordpress.com/2009/04/30/new-launch-framework-landed/</link>
-  <guid>http://apaku.wordpress.com/?p=123</guid>
-  <author>apaku</author>
-  <pubDate>Thu, 30 Apr 2009 23:43:07 +0200</pubDate>
-  <description>
-Finally, after about 3 weeks of work I&amp;#8217;ve been able to merge back the new launch framework for KDevelop4.
-The rework was needed because the existing gui and framework didn&amp;#8217;t allow for enough flexibility for more complex cases like remote-gdb debugging, or debugging webpages. Also it forced the user to store its configurations inside a project.
-I&amp;#8217;m [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=apaku.wordpress.com&amp;blog=1182522&amp;post=123&amp;subd=apaku&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>KDevelop Hack Sprint 2009 - Day 2 and 3</title>
-  <link>http://milianw.de/blog/kdevelop-hack-sprint-2009-day-2-and-3</link>
-  <guid isPermaLink="false">98 at http://milianw.de</guid>
-  <author>Milian Wolff</author>
-  <pubDate>Thu, 23 Apr 2009 01:31:42 +0200</pubDate>
-  <description>
-&lt;p&gt;Ok, just a quick update on what we are doing / have done the last two days except drinking beer and eating quite a lot of food (though it never seems to be enough somehow&amp;#8230;.)&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Apol was polishing CMake support, speeding up KDevelop startup time when you enabled the QtHelp plugin, making sure that Kross plugins get loaded properly and some other things&lt;/li&gt;
-&lt;li&gt;Adymo started some refactoring of Sublime in an experimental branch (actually they had quite a long discussion right now about things in the UI which should be changed/fixed). Besides that he also fixed some little bugs in the includepath resolver for CMake&lt;/li&gt;
-&lt;li&gt;Nsams is fixing PHP support and adding new features here and there. Esp. completion inside a foreach over a Iterator class works now!&lt;/li&gt;
-&lt;li&gt;and as always ZWabel did fix quite a lot of bugs, most of them which only were discoverable in a few corner cases, very nice indeed.&lt;/li&gt;
-&lt;li&gt;shaforo who sadly already left us again to attend university fixed the sorting in the Project view among other things&lt;/li&gt;
-&lt;li&gt;With Apols help I managed to get started with a documentation plugin which (currently) integrates PHP.net. I plan to make it possible to use the downloadable PHP.net documentation as well to speed things up. Actually setting up a documentation plugin is &lt;em&gt;very&lt;/em&gt; easy! Maybe I&amp;#8217;ll take a look at writing a documentation plugin for Zend, Symfony, etc. pp. as well - should be fairly easy. Maybe I can come up with a generic documentation plugin which makes it possible to include any kind of &lt;span&gt;&lt;code&gt;.html&lt;/code&gt;&lt;/span&gt; documentation with some configurable mapping&amp;#8230; lets see! Or maybe I should take a look at writing Kross plugins (Apol could help me here as well) for that purpose.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Except these changes we also discussed how to support dynamically typed languages like PHP, Ruby, Python and JavaScript better. One result of it that we now plan to fully support the dedicated map types of each language, with autocompletion and such. Of course that won&amp;#8217;t be possible for 100% of the use-cases, but we hope to support at least the most common ones (i.e. 90%). You can take a look at &lt;a href="http://www.kdevelop.org/mediawiki/index.php/SupportForDynamicMaps" title="http://www.kdevelop.org/mediawiki/index.php/SupportForDynamicMaps"&gt;http://www.kdevelop.org/mediawiki/index.php/SupportForDynamicMaps&lt;/a&gt; for more information.&lt;/p&gt;
-
-&lt;p&gt;Additionally Nsams, Apol and Zwabel took a look at the GDB plugin and started working on it a bit. It&amp;#8217;s still a work in progress though.&lt;/p&gt;
-
-&lt;p&gt;My biggest change is that color highlighting support for dark color schemes now is in trunk. It automatically adapts to changes in the global KDE color scheme, yet you still have to manually change the Kate color scheme. Actually I intend to add an interface to Kate so we can use it&amp;#8217;s color schemes instead of the global KDE one - makes much more sense and would fix some bugs (i.e. fix from dark color scheme to a light one). Here&amp;#8217;s a screenshot of it (with the PHP.net documentation showing):&lt;/p&gt;
-
-&lt;p&gt;
-&lt;img src="http://milianw.de/files/kdevelop/dark_highlighting.png" alt="highlighting in kdevelop with dark color scheme" /&gt;
-&lt;br /&gt;
-&lt;small&gt;&lt;em&gt;dark color scheme and syntax highlighting in KDevelop 4&lt;/em&gt;&lt;/small&gt;
-&lt;/p&gt;
-
-&lt;p&gt;If you followed the planet kde you might have seen &lt;a href="http://ariya.blogspot.com/2009/04/on-hue-subdividision-for-mortals.html"&gt;some&lt;/a&gt; &lt;a href="http://ariya.blogspot.com/2009/04/still-about-color-wheel.html"&gt;blog&lt;/a&gt; posts about color reception and color generation by &lt;a href="http://ariya.blogspot.com/"&gt;Ariya Hidayat&lt;/a&gt;. I will take a look at it and implement it in KDevelop. Or I simply pick a given set of colors and use them - for 10 colors or so we need it doesn&amp;#8217;t make that much sense to let them be generated. Yet the article he linked to about &lt;a href="http://doc.trolltech.com/qq/qq26-adaptivecoloring.html"&gt;adaptive coloring for syntax highlighting&lt;/a&gt; will be helpful I think! Thanks!&lt;/p&gt;
-
-&lt;p&gt;Yet it currently works quite well I&amp;#8217;ll first try to fix the colors in the Declaration tooltip, quickopen and codecompletion lists.&lt;/p&gt;
-
-&lt;p&gt;So stay tuned for more KDevelop goodness throughout the next days.&lt;/p&gt;  </description>
-</item>
-<item>
-  <title>KDevelop Hack Sprint 2009 - Day 1</title>
-  <link>http://milianw.de/blog/kdevelop-hack-sprint-2009-day-1</link>
-  <guid isPermaLink="false">97 at http://milianw.de</guid>
-  <author>Milian Wolff</author>
-  <pubDate>Mon, 20 Apr 2009 23:01:26 +0200</pubDate>
-  <description>
-&lt;p&gt;Ok, a short blog about the first day of our KDevelop Hack Sprint at Mykolayiv (see &lt;a href="http://milianw.de/blog/kdevelop-hack-sprint"&gt;my first blog post&lt;/a&gt;). First up, being in the Ukraine is a very interesting experience since it&amp;#8217;s totally different from any place I have ever been to. And thanks to the great hospitality of Alexander (adymo) we already had a city tour of Odessa and Mykolayiv.&lt;/p&gt;
-
-&lt;p&gt;Tomorrow will be the first &lt;em&gt;real&lt;/em&gt; day of our hack sprint: Today we only hacked at our flat for a few hours. Before that we had the city tour through Mykolayiv. And tomorrow David Nolden (zwabel) and Nick Shaforostoff will arrive which will make the list complete.&lt;/p&gt;
-
-&lt;p&gt;Today I personally worked on making KDevelop support dark color schemes better which is still a work in progress (nothing comitted so far). Actually for a real good experience I&amp;#8217;ll have to extend KTextEditor to make it&amp;#8217;s color configuration available for the parent application (i.e. KDevelop). Let&amp;#8217;s see when I get to that. Though I plan to push my patches to KDevplatform beforehand for an intermediate solution.&lt;/p&gt;
-
-&lt;p&gt;Random other notes about Ukraine:
-- I love the Vodka (esp. with its prices) here!
-- breakfast at a cafe is pretty much a no-go here it seems
-- street lights are luxury
-- very many old building all across the city, looks pretty good. Though would look even better if all of them would be in a good shape&amp;#8230; Yet I still prefer it that way - I hate what was done to Berlin after the war, i.e. that they teared most of the old buildings apart instead of repairing them&amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;So, lets see what tomorrow brings, now I&amp;#8217;m back to some more hacking :)&lt;/p&gt;  </description>
-</item>
-<item>
-  <title>KDevelop Hack Sprint</title>
-  <link>http://milianw.de/blog/kdevelop-hack-sprint</link>
-  <guid isPermaLink="false">95 at http://milianw.de</guid>
-  <author>Milian Wolff</author>
-  <pubDate>Thu, 02 Apr 2009 01:38:40 +0200</pubDate>
-  <description>
-&lt;p&gt;Huzza! The KDevelop Hack Sprint 09 is now official.&lt;/p&gt;
-
-&lt;p&gt;Thanks to the huge engagement of &lt;a href="http://adymo.blogspot.com/"&gt;Alexander Dymo&lt;/a&gt; we will meet from the 19&lt;sup&gt;th&lt;/sup&gt; to 26&lt;sup&gt;th&lt;/sup&gt; April 2009. The meeting will take place at Alexander&amp;#8217;s university, the &lt;em&gt;national university of shipbuilding&lt;/em&gt; in &lt;del&gt;Odessa&lt;/del&gt; &lt;ins&gt;Mykolayiv&lt;/ins&gt;, Ukraine. Thanks to the people there responsible for making this sprint possible by providing us with the premises, internet, power etc.&lt;/p&gt;
-
-&lt;p&gt;Since this is my very first Hack Sprint and considering that I only recently started contributing to KDE in general and KDevelop in particular I am &lt;em&gt;very&lt;/em&gt; excited. The topics I will plan to hack on include (all related to PHP language support plugin):&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;add auto completion after &lt;span&gt;&lt;code&gt;require(_once)&lt;/code&gt;&lt;/span&gt; and &lt;span&gt;&lt;code&gt;include(_once)&lt;/code&gt;&lt;/span&gt;, just like it works for &lt;span&gt;&lt;code&gt;#include&lt;/code&gt;&lt;/span&gt; in CPP&lt;/li&gt;
-&lt;li&gt;add auto completion of PHP statements (think &lt;span&gt;&lt;code&gt;echo&lt;/code&gt;&lt;/span&gt;, &lt;span&gt;&lt;code&gt;exit&lt;/code&gt;&lt;/span&gt;, &lt;span&gt;&lt;code&gt;require(_once&lt;/code&gt;&lt;/span&gt;, &lt;span&gt;&lt;code&gt;include(_once)&lt;/code&gt;&lt;/span&gt; etc. pp.)&lt;/li&gt;
-&lt;li&gt;add auto completion for build-in PHP keywords&lt;/li&gt;
-&lt;li&gt;fix auto completion of interfaces / classes after the keywords &lt;span&gt;&lt;code&gt;implements&lt;/code&gt;&lt;/span&gt; and &lt;span&gt;&lt;code&gt;extends&lt;/code&gt;&lt;/span&gt; (working on that right now)&lt;/li&gt;
-&lt;li&gt;fix KDevplatform and the Generic Plugin Manager to support remote projects, i.e. via &lt;span&gt;&lt;code&gt;fish&lt;/code&gt;&lt;/span&gt; or &lt;span&gt;&lt;code&gt;ftp&lt;/code&gt;&lt;/span&gt; (or anything else supported by KIO)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Since I&amp;#8217;ll have a whole week of hacking time I hope to get all that done. And more. Since another great thing about the Sprint will be that I can finally meet Niko (nsams) in person. For those of you who don&amp;#8217;t know: He&amp;#8217;s the one who started the PHP language support plugin. Expect some additional points from &lt;a href="http://techbase.kde.org/Projects/Quanta/Feature_Plan_4"&gt;our roadmap&lt;/a&gt; getting implemented / fixed during that time!&lt;/p&gt;
-
-&lt;p&gt;Furthermore it looks like Mr DUChain himself - &lt;a href="http://zwabel.wordpress.com/"&gt;David Nolden&lt;/a&gt; - will attend as well. I have some ideas regarding parts of the PHP plugin I want to refactor but need additional insight to the way the DUChain works. Let&amp;#8217;s see if David and I can work it out.&lt;/p&gt;
-
-&lt;p&gt;And maybe I can even take a look at Quanta 4 itself&amp;#8230; Let&amp;#8217;s see!&lt;/p&gt;
-
-&lt;p&gt;I&amp;#8217;m very much looking forward to the Sprint and meeting some of the other developers! And much thanks again to Alexander for planning all this. Oh and also a &lt;strong&gt;very&lt;/strong&gt; great &lt;em&gt;Thank You&lt;/em&gt; goes to the &lt;a href="http://ev.kde.org/"&gt;KDE e.V.&lt;/a&gt; for sponsoring the event. I wouldn&amp;#8217;t have been able to attend otherwise!&lt;/p&gt;
-
-&lt;p&gt;Keep an eye on the planet for more blog posts during the Hack Sprint, I&amp;#8217;ll try to write some daily coverage. Now lets see if I can get to sleep&amp;#8230;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; The meeting actually takes place in Mykolayiv, 120km from Odessa :) Thank god that I will be picked up at the airport and don&amp;#8217;t have to find it myself&amp;#8230;&lt;/p&gt;  </description>
+This was implemented by Ivan Ruchkin, a student at Moscow State University, who will be defending a term paper about various KDevelop-related work tomorrow. The patches will be posted to appropriate mailing lists right after that.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-320232628064889202?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>Really rapid C++ development with KDevelop4</title>
@@ -291,8 +507,7 @@ I&amp;#8217;m [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.g
   <author>zwabel</author>
   <pubDate>Fri, 13 Mar 2009 21:52:54 +0100</pubDate>
   <description>
-Code Assistants
-When developing for a statically typed language like C++, there usually is quite a bit of redundancy during the development, especially when creating a completely new piece of code. A powerful IDE with deep code understandic theoretically could save a significant amount of the writing work. My goal with KDevelop4 is to allow the [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=zwabel.wordpress.com&amp;blog=2107769&amp;post=104&amp;subd=zwabel&amp;ref=&amp;feed=1" /&gt;  </description>
+Code Assistants When developing for a statically typed language like C++, there usually is quite a bit of redundancy during the development, especially when creating a completely new piece of code. A powerful IDE with deep code understandic theoretically could save a significant amount of the writing work. My goal with KDevelop4 is to allow [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dzwabel.wordpress.com%26blog%3D2107769%26post%3D104%26subd%3Dzwabel%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
   <title>Typedefs in Templates, and Code-Completion</title>
@@ -301,150 +516,7 @@ When developing for a statically typed language like C++, there usually is quite
   <author>zwabel</author>
   <pubDate>Fri, 06 Mar 2009 15:28:36 +0100</pubDate>
   <description>
-Sometimes you have to decide between being &amp;#8220;correct&amp;#8221;, and being user-friendly.
-Also, sometimes you have to do one painful change with many regressions, to reach an ultimately better state.
-I hope I had to do the last such step before the stable KDevelop release(Though you never know). I have changed the internal representation of the C++ DUChain, [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=zwabel.wordpress.com&amp;blog=2107769&amp;post=90&amp;subd=zwabel&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>Building KDevplatform, KDevelop and the PHP plugin from SVN</title>
-  <link>http://milianw.de/blog/building-kdevplatform-kdevelop-and-the-php-plugin-from-svn</link>
-  <guid isPermaLink="false">93 at http://milianw.de</guid>
-  <author>Milian Wolff</author>
-  <pubDate>Fri, 06 Mar 2009 00:21:47 +0100</pubDate>
-  <description>
-&lt;p&gt;In a follow up to my last post about &lt;a href="http://milianw.de/blog/php-support-for-kdevelop-4-and-eventually-quanta"&gt;the PHP plugin&lt;/a&gt; for KDevelop and Quanta I want to detail how I setup my build environment. Since I&amp;#8217;m only working on KDevelop I only want to compile that. For all other applications, I use the packages my distribution makes available. Below you this is possible.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; I use Kubuntu and hence some commands like &lt;span&gt;&lt;code&gt;aptitude&lt;/code&gt;&lt;/span&gt; and the package names etc. will have to be adapted to your specific distribution. But the general idea should be the same and the packages should be called at least somewhat similar. You could always take a look at &lt;a href="http://techbase.kde.org/Getting_Started/Build/KDE4#Required_packages_from_your_distribution"&gt;the techbase article&lt;/a&gt; on compilation of KDE 4 to get a more general HowTo.&lt;/p&gt;
-
-&lt;p&gt;It is generally a &lt;em&gt;very good&lt;/em&gt; idea to read some articles on the &lt;a href="http://techbase.kde.org"&gt;techbase&lt;/a&gt;. Especially in the Getting Started section.&lt;/p&gt;
-
-&lt;h5&gt;getting the dependencies&lt;/h5&gt;
-
-&lt;p&gt;First, you&amp;#8217;ll need to install some packages to satisfy dependencies &lt;em&gt;and&lt;/em&gt; to get a working compile chain (think cmake, gcc and stuff). The following command only lists very few packages but they have a huge list of dependencies which your package manager will take into account automatically. Don&amp;#8217;t be suprised by a possibly huge list of packages ;-) So some disk space will be required (though I doubt it&amp;#8217;s more than 250MB in total).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You&amp;#8217;ll need the KDE 4.2.x versions of the KDE libraries and development packages. When you use Kubuntu, you can &lt;a href="http://www.kubuntu.org/news/kde-4.2"&gt;follow this article&lt;/a&gt; to get up to date packages for the 8.10 release.&lt;/p&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;ol&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;# I hope these are all, it's been a time since I did that the last time&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;# please report if anything is missing&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;aptitude&lt;/span&gt; &lt;span&gt;install&lt;/span&gt; kdebase-dev kdelibs5-dev kdebase-workspace-dev \&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;                         libqt4-dev build-essential subversion kdesdk-scripts&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h5&gt;setting up your environment&lt;/h5&gt;
-
-&lt;p&gt;Inspired by the techbase &lt;a href="http://techbase.kde.org/Getting_Started/Increased_Productivity_in_KDE4_with_Scripts"&gt;article on improved productivity&lt;/a&gt; in KDE4, particularly the bashrc listed there, I&amp;#8217;ve come up with the following way to configure my system:&lt;/p&gt;
-
-&lt;p&gt;First visit &lt;a href="http://github.com/milianw/shell-helpers/tree/master"&gt;my shell helper git repo&lt;/a&gt; on GitHub and download the two files &lt;span&gt;&lt;code&gt;kde4_setup_build_environment.sh&lt;/code&gt;&lt;/span&gt; and &lt;span&gt;&lt;code&gt;bash_setup_kde4_programming&lt;/code&gt;&lt;/span&gt;.&lt;/p&gt;
-
-&lt;h6&gt;set the environment variables&lt;/h6&gt;
-
-&lt;p&gt;Move the file &lt;span&gt;&lt;code&gt;kde4_setup_build_environment.sh&lt;/code&gt;&lt;/span&gt; to &lt;span&gt;&lt;code&gt;~/.kde/env&lt;/code&gt;&lt;/span&gt; and make it executable. You might want to adapt the paths for the variables &lt;span&gt;&lt;code&gt;KDE_BUILD&lt;/code&gt;&lt;/span&gt;, &lt;span&gt;&lt;code&gt;KDE_SRC&lt;/code&gt;&lt;/span&gt; and &lt;span&gt;&lt;code&gt;KDEDIR&lt;/code&gt;&lt;/span&gt; inside that file to your likings.&lt;/p&gt;
-
-&lt;p&gt;This part is required to make sure that compiled programs will act just like normal programs installed globally (e.g. with your package manager) right from the start of your KDE session. I.e. KRunner works fine and custom plugins are found etc.&lt;/p&gt;
-
-&lt;h6&gt;make your life easier with some bash magic&lt;/h6&gt;
-
-&lt;p&gt;Now alter your &lt;span&gt;&lt;code&gt;~/.bashrc&lt;/code&gt;&lt;/span&gt; and to the bottom of that file add the following line:&lt;/p&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;ol&gt;&lt;li&gt;&lt;div&gt;. ~&lt;span&gt;/&lt;/span&gt;.bash_setup_kde4_programming&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; This assumes that you saved the afore mentioned &lt;span&gt;&lt;code&gt;bash_setup_kde4_programming&lt;/code&gt;&lt;/span&gt; file to &lt;span&gt;&lt;code&gt;~/.bash_setup_kde4_programming&lt;/code&gt;&lt;/span&gt;. You might have to change the path.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; That file also sources the above script to set the environment variables. I&amp;#8217;m not sure it&amp;#8217;s required, but it doesn&amp;#8217;t hurt. So make sure the path is correct there.&lt;/p&gt;
-
-&lt;h5&gt;Now to the fun part&lt;/h5&gt;
-
-&lt;p&gt;Once all that&amp;#8217;s done, &lt;strong&gt;you have to log out of your bash session to get the environments&lt;/strong&gt;. Maybe even logout of your KDE session to make it aware of the new paths as well.&lt;/p&gt;
-
-&lt;h6&gt;checking out KDevplatform, KDevelop and the PHP plugin&lt;/h6&gt;
-
-&lt;p&gt;Get the latest and greatest directly from SVN (see also &lt;a href="http://techbase.kde.org/Getting_Started/Sources/Using_Subversion_with_KDE"&gt;Using Subversion with KDE&lt;/a&gt; on techbase):&lt;/p&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;ol&gt;&lt;li&gt;&lt;div&gt;cs &lt;span&gt;# cs is not a typo! see above&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;svn&lt;/span&gt; &lt;span&gt;co&lt;/span&gt; &lt;span&gt;svn&lt;/span&gt;:&lt;span&gt;//&lt;/span&gt;anonsvn.kde.org&lt;span&gt;/&lt;/span&gt;home&lt;span&gt;/&lt;/span&gt;kde&lt;span&gt;/&lt;/span&gt;trunk&lt;span&gt;/&lt;/span&gt;KDE&lt;span&gt;/&lt;/span&gt;kdevplatform&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;svn&lt;/span&gt; &lt;span&gt;co&lt;/span&gt; &lt;span&gt;svn&lt;/span&gt;:&lt;span&gt;//&lt;/span&gt;anonsvn.kde.org&lt;span&gt;/&lt;/span&gt;home&lt;span&gt;/&lt;/span&gt;kde&lt;span&gt;/&lt;/span&gt;trunk&lt;span&gt;/&lt;/span&gt;KDE&lt;span&gt;/&lt;/span&gt;kdevelop&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;svn&lt;/span&gt; &lt;span&gt;co&lt;/span&gt; &lt;span&gt;svn&lt;/span&gt;:&lt;span&gt;//&lt;/span&gt;anonsvn.kde.org&lt;span&gt;/&lt;/span&gt;home&lt;span&gt;/&lt;/span&gt;kde&lt;span&gt;/&lt;/span&gt;trunk&lt;span&gt;/&lt;/span&gt;playground&lt;span&gt;/&lt;/span&gt;devtools&lt;span&gt;/&lt;/span&gt;kdevelop4-extra-plugins&lt;span&gt;/&lt;/span&gt;php&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h6&gt;compiling and installing&lt;/h6&gt;
-
-&lt;p&gt;Now it&amp;#8217;s time to compile all that code you just checked out. Hopefully you got all &lt;em&gt;required&lt;/em&gt; dependencies. If you need all bells and whistles, you&amp;#8217;ll have to install some more packages I&amp;#8217;m sure. If you run the code below, take a good look at the output of the &lt;span&gt;&lt;code&gt;cmakekde&lt;/code&gt;&lt;/span&gt; command (especially at the beginning). It lists not-found dependencies.&lt;/p&gt;
-
-&lt;p&gt;Note: &lt;span&gt;&lt;code&gt;cmakekde&lt;/code&gt;&lt;/span&gt; is supposed to be run from inside your source folder (e.g. &lt;span&gt;&lt;code&gt;cs $FOLDER; cmakekde&lt;/code&gt;&lt;/span&gt;).&lt;/p&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;ol&gt;&lt;li&gt;&lt;div&gt;cs kdevplatform&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;cmakekde&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;cs kdevelop&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;cmakekde&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;cs php&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;cmakekdke&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;kbuildsycoca4 &lt;span&gt;# make sure new plugins etc. are found&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Pretty easy, hum? Let&amp;#8217;s hope everything worked fine :)&lt;/p&gt;
-
-&lt;h6&gt;staying up to date&lt;/h6&gt;
-
-&lt;p&gt;That above command is only required &lt;em&gt;once&lt;/em&gt;. Everytime after that, you can simply do the following which will make sure you are running the latest and greatest:&lt;/p&gt;
-
-&lt;div&gt;&lt;pre&gt;&lt;ol&gt;&lt;li&gt;&lt;div&gt;cs kdevplatform&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;svn&lt;/span&gt; up &lt;span&gt;&amp;&amp;&lt;/span&gt; &lt;span&gt;make&lt;/span&gt; &lt;span&gt;install&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;cs kdevelop&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;svn&lt;/span&gt; up &lt;span&gt;&amp;&amp;&lt;/span&gt; &lt;span&gt;make&lt;/span&gt; &lt;span&gt;install&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;cs php&lt;/div&gt;&lt;/li&gt;&lt;li&gt;&lt;div&gt;&lt;span&gt;svn&lt;/span&gt; up &lt;span&gt;&amp;&amp;&lt;/span&gt; &lt;span&gt;make&lt;/span&gt; &lt;span&gt;install&lt;/span&gt;&lt;/div&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h5&gt;The End&lt;/h5&gt;
-
-&lt;p&gt;Hope I have not forgotten anything and that this (rather lengthy&amp;#8230;) HowTo is of some help to a few of you out there. Looking forward to feature requests, bug reports etc.&lt;/p&gt;  </description>
-</item>
-<item>
-  <title>PHP support for KDevelop 4 (and eventually Quanta+)</title>
-  <link>http://milianw.de/blog/php-support-for-kdevelop-4-and-eventually-quanta</link>
-  <guid isPermaLink="false">92 at http://milianw.de</guid>
-  <author>Milian Wolff</author>
-  <pubDate>Mon, 02 Mar 2009 23:28:13 +0100</pubDate>
-  <description>
-&lt;p&gt;Hello Planet KDE!&lt;/p&gt;
-
-&lt;p&gt;I want to give you a little insight on the current state of PHP support in KDevelop4:&lt;/p&gt;
-
-&lt;p&gt;Me and Nikolaus Sams (nsams) are working diligently on a &lt;a href="http://websvn.kde.org/trunk/playground/devtools/kdevelop4-extra-plugins/php/"&gt;plugin for PHP support&lt;/a&gt; in playground. It&amp;#8217;s somewhat stable, i.e. we fix any crashes we stumble upon, but I would call it Alpha state at most. It may eat your babies so to speak. Yet I&amp;#8217;m happy to say that at least one user is already using it for production (hi leinir ;-) ).&lt;/p&gt;
-
-&lt;h5&gt;implemented PHP support&lt;/h5&gt;
-
-&lt;p&gt;Well, here&amp;#8217;s a (not complete) list of features that are already working. Though I have to warn you: no screenshots included ;-) It&amp;#8217;s actually all very similar to the C++ screenies you can see on the web.&lt;/p&gt;
-
-&lt;h6&gt;sematic highlighting&lt;/h6&gt;
-
-&lt;p&gt;Let&amp;#8217;s start with a feature that only very recently was added for PHP - semantic highlighting. Niko moved some language independent parts of the C++ plugin from KDevelop to KDevplatform and now PHP has the same code highlighting features as C++.&lt;/p&gt;
-
-&lt;p&gt;I personally love this feature since it makes it even easier to grasp code &lt;em&gt;and&lt;/em&gt; it makes the code highlighting more consistent since there is no visual difference between PHP built-in functions/constants and your own.&lt;/p&gt;
-
-&lt;h6&gt;code completion&lt;/h6&gt;
-
-&lt;p&gt;Arguably one of the most useful features the DUChain enables us to write is code completion. There&amp;#8217;s already full support for:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;PHP built-in functions, classes, constants, superglobals&lt;/li&gt;
-&lt;li&gt;user-defined functions, classes, constants, superglobals, variables, etc.&lt;/li&gt;
-&lt;li&gt;proper code completion for objects which respects access modifiers (private, public, protected) and differentiates between static/non-static members and methods&lt;/li&gt;
-&lt;li&gt;code completion for overridable and implementable functions inside classes&lt;/li&gt;
-&lt;li&gt;hints in the argument list of function- and method class&lt;/li&gt;
-&lt;li&gt;sane code completion after keywords such as &amp;#8220;extends, implements, catch(), new, throw&amp;#8221; and some more I think&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There&amp;#8217;s still some bugs to fix and a few features to implement. But I can easily say that even the current state of code completion makes one wonder how he could use Quanta (from KDE3 times) for such a long time! It&amp;#8217;s simply &lt;em&gt;nothing&lt;/em&gt; compared to this!&lt;/p&gt;
-
-&lt;p&gt;The next feature I hope to add is support for type hinting in function calls. I.e. only show arrays where arrays are requested and the same for objects of a given type. Also no PHP keywords are currently completed &lt;em&gt;at all&lt;/em&gt;&amp;#8230;&lt;/p&gt;
-
-&lt;h6&gt;other DUChain/UseBuilder stuff&lt;/h6&gt;
-
-&lt;p&gt;Thanks to the DUChain you already get lots of information about declarations, such as uses (which files, which lines etc.). Also very neat is the hover popup you might now from C++ which among others shows you phpdoc comments inside your browser. I also plan to integrate the php.net documentation into KDevelop, similar to &lt;a href="http://www.proli.net/2009/02/28/kdevelop4s-documentation-integration/"&gt;what is already possible for QtHelp&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h6&gt;inline validation / syntax checking / linting&lt;/h6&gt;
-
-&lt;p&gt;Another feature which saves lots of time is on-the-fly syntax checking: You won&amp;#8217;t have to fire up your web-app inside a browser just to be greated by that pesty &amp;#8220;syntax error, unexpected &amp;#8216;CHAR&amp;#8217; in FILE on line XYZ&amp;#8221; message&amp;#8230; No! Instead you will see a nice reddish zig-zag line where you made the error and can fix it &lt;em&gt;before&lt;/em&gt; heading off to the browser.&lt;/p&gt;
-
-&lt;p&gt;But we don&amp;#8217;t only do basic syntax checking. We do more than that, thanks again to the power of the (holy?) DUChain. You can spot undeclared variables, function/method/class/constant redeclarations and more. Actually I hope that one day we spot most of the notices, warnings and errors PHP could emit.&lt;/p&gt;
-
-&lt;h6&gt;tests&lt;/h6&gt;
-
-&lt;p&gt;We already have a multitude of regression tests which will make sure that we don&amp;#8217;t mess up any existing stuff. Lets hope for even more of them :) I love test-driven development.&lt;/p&gt;
-
-&lt;h5&gt;The End&lt;/h5&gt;
-
-&lt;p&gt;Well, thats pretty much it for the moment. You can have a look at what we are up to at &lt;a href="http://techbase.kde.org/Projects/Quanta/Feature_Plan_4"&gt;the Quanta Feature plan&lt;/a&gt; on techbase.&lt;/p&gt;
-
-&lt;p&gt;If you are a PHP developer and can write C++ with Qt, why not get in touch with us? You can find us both on the KDevelop mailinglist and at least me and leinir are often found in #kdevelop on freenode.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;PS:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Let me finish with a quick introduction of myself:&lt;/p&gt;
-
-&lt;p&gt;My name is Milian Wolff, I study Physics at the FU Berlin (just finished the 3rd semester). I started learning programming when I was around 14 with PHP. Over the years I became very good in it and the other webdevelopment techniques like Css, JavaScript etc. Recently I started to fullfill my biggest geek dream by learning C++/Qt/KDE and starting to contribute to the KDE project.&lt;/p&gt;
-
-&lt;p&gt;Some of you might now my from the LinuxTag in Berlin where I could be found at the &lt;a href="http://kubuntu-de.org"&gt;Kubuntu-De.org&lt;/a&gt; community booth. At least with some of you I had a beer (well, I doubt it was only &lt;em&gt;one&lt;/em&gt;). I hope to repeat this tradition in 2009. Every once in a while I can also be spotted at &lt;a href="http://ubuntu-berlin.de"&gt;ubuntu-berlin&lt;/a&gt; events.&lt;/p&gt;  </description>
+Sometimes you have to decide between being &amp;#8220;correct&amp;#8221;, and being user-friendly. Also, sometimes you have to do one painful change with many regressions, to reach an ultimately better state. I hope I had to do the last such step before the stable KDevelop release(Though you never know). I have changed the internal representation of the [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dzwabel.wordpress.com%26blog%3D2107769%26post%3D90%26subd%3Dzwabel%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
   <title>KDevelop4’s Documentation Integration</title>
@@ -463,18 +535,7 @@ With KDevelop 4 we have been focusing on putting together the information that t
   <author>zwabel</author>
   <pubDate>Fri, 13 Feb 2009 23:52:21 +0100</pubDate>
   <description>
-In an earlier blog-post I&amp;#8217;ve already written about automatic signal/slot matching and completion(See this). The code-completion box shows you the appropriate connectable signals and slots, and also shows exactly what signals match what slots. Now what if you have a signal, and you know want to connect to it, but you don&amp;#8217;t have a matching [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=zwabel.wordpress.com&amp;blog=2107769&amp;post=81&amp;subd=zwabel&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>KDevelop4 Beta1 Kubuntu Packages Problems</title>
-  <link>http://apaku.wordpress.com/2009/02/06/kdevelop4-beta1-kubuntu-packages-problems/</link>
-  <guid>http://apaku.wordpress.com/?p=111</guid>
-  <author>apaku</author>
-  <pubDate>Fri, 06 Feb 2009 22:01:29 +0100</pubDate>
-  <description>
-Update: Packagers seem to have fixed the problem, updates should be available soon. Thanks for the quick fix.
-Hate to do this, but there&amp;#8217;s been about 6 or 7 people now in #kdevelop and I&amp;#8217;m not using kubuntu hence can&amp;#8217;t test this myself.
-To make a long story short: The Kubuntu packages of KDevelop4 Beta1 are (as [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=apaku.wordpress.com&amp;blog=1182522&amp;post=111&amp;subd=apaku&amp;ref=&amp;feed=1" /&gt;  </description>
+In an earlier blog-post I&amp;#8217;ve already written about automatic signal/slot matching and completion(See this). The code-completion box shows you the appropriate connectable signals and slots, and also shows exactly what signals match what slots. Now what if you have a signal, and you know want to connect to it, but you don&amp;#8217;t have a matching [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dzwabel.wordpress.com%26blog%3D2107769%26post%3D81%26subd%3Dzwabel%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
   <title>KDevelop4: Automatic include-directives and forward-declarations</title>
@@ -483,18 +544,7 @@ To make a long story short: The Kubuntu packages of KDevelop4 Beta1 are (as [...
   <author>zwabel</author>
   <pubDate>Wed, 04 Feb 2009 02:09:21 +0100</pubDate>
   <description>
-Missing Include Completion
-C++ is a great and powerful programming-language. Yet it has the downside against some other languages, that you always have to deal with include-directives or forward-declarations before you can use a class.
-This is a factor that often motivates me not to create too many different source-files, although design-wise that would make sense. Wouldn&amp;#8217;t [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=zwabel.wordpress.com&amp;blog=2107769&amp;post=64&amp;subd=zwabel&amp;ref=&amp;feed=1" /&gt;  </description>
-</item>
-<item>
-  <title>KDevelop4 updates</title>
-  <link>http://apaku.wordpress.com/2009/01/15/kdevelop4-updates/</link>
-  <guid>http://apaku.wordpress.com/?p=106</guid>
-  <author>apaku</author>
-  <pubDate>Thu, 15 Jan 2009 23:56:16 +0100</pubDate>
-  <description>
-C++ support in KDev4 really rocks, if kdevelop doesn&amp;#8217;t crash. Unfortunately it did so about 6 or 8 times in the last hour, luckily most of the time it was the second instance in which I tested my changes   The main instance was only crashing when I removed the .kdevduchain from under it, [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=apaku.wordpress.com&amp;blog=1182522&amp;post=106&amp;subd=apaku&amp;ref=&amp;feed=1" /&gt;  </description>
+Missing Include Completion C++ is a great and powerful programming-language. Yet it has the downside against some other languages, that you always have to deal with include-directives or forward-declarations before you can use a class. This is a factor that often motivates me not to create too many different source-files, although design-wise that would make [...]&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dzwabel.wordpress.com%26blog%3D2107769%26post%3D64%26subd%3Dzwabel%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
   <title>C++ IDE Evolution: From Syntax Highlighting to Semantic Highlighting</title>
@@ -503,7 +553,7 @@ C++ support in KDev4 really rocks, if kdevelop doesn&amp;#8217;t crash. Unfortun
   <author>zwabel</author>
   <pubDate>Thu, 08 Jan 2009 04:19:05 +0100</pubDate>
   <description>
-Most of us developers are so acccustomed to syntax highlighting, that we couldn't live without it. Syntax highlighting helps us keeping an overview or finding the place we're searching for. However it can not help us actually understanding the code. That's where Semantic Highlighting comes into play.&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host=zwabel.wordpress.com&amp;blog=2107769&amp;post=53&amp;subd=zwabel&amp;ref=&amp;feed=1" /&gt;  </description>
+Most of us developers are so acccustomed to syntax highlighting, that we couldn't live without it. Syntax highlighting helps us keeping an overview or finding the place we're searching for. However it can not help us actually understanding the code. That's where Semantic Highlighting comes into play.&lt;img alt="" border="0" src="http://stats.wordpress.com/b.gif?host%3Dzwabel.wordpress.com%26blog%3D2107769%26post%3D53%26subd%3Dzwabel%26ref%3D%26feed%3D1" /&gt;  </description>
 </item>
 <item>
   <title>Guademy and GSoC</title>
@@ -512,8 +562,8 @@ Most of us developers are so acccustomed to syntax highlighting, that we couldn'
   <author>apol</author>
   <pubDate>Mon, 28 Apr 2008 09:51:22 +0200</pubDate>
   <description>
-Yes, this year you will have to put up with me with another Google Summer of Code project (well, mainly Matt Rogers, who is mentoring me again  ). This year I&amp;#8217;ll try to get KDevelop (KDevPlatform) to be able to use plugins written on different languages through Kross. Great!  
-On the other side, [...]  </description>
+Yes, this year you will have to put up with me with another Google Summer of Code project (well, mainly Matt Rogers, who is mentoring me again   ). This year I&amp;#8217;ll try to get KDevelop (KDevPlatform) to be able to use plugins written on different languages through Kross. Great!  
+On the other [...]  </description>
 </item>
 <item>
   <title>KDevelop hackaton</title>
@@ -522,18 +572,18 @@ On the other side, [...]  </description>
   <author>apol</author>
   <pubDate>Mon, 21 Apr 2008 13:40:12 +0200</pubDate>
   <description>
-I am back from Munich, I am at the university now actually :(.
-It was a great week though, lots of hacking, knowing people and community building. It is always nice to know the people which have been sharing with you bugs and features :). It was kind of sad leaving the place but well, we [...]  </description>
+I am back from Munich, I am at the university now actually  .
+It was a great week though, lots of hacking, knowing people and community building. It is always nice to know the people which have been sharing with you bugs and features  . It was kind of sad leaving the place but [...]  </description>
 </item>
 <item>
-  <title>KDevelop Developer Meeting - Day[0]</title>
+  <title>KDevelop Developer Meeting – Day[0]</title>
   <link>http://www.proli.net/2008/04/12/kdevelop-developer-meeting-day0/</link>
   <guid>http://www.proli.net/2008/04/12/kdevelop-developer-meeting-day0/</guid>
   <author>apol</author>
   <pubDate>Sat, 12 Apr 2008 17:39:16 +0200</pubDate>
   <description>
 So today the KDevelop hackaton started. Yesterday I spent all the day just to go to Munich, where the hackaton is happening.
-It was an usual trip: Police trying to get you naked when checking if you have no weapons, train delays (yeah in Germany, I thought that this didn&amp;#8217;t happen here  and some misunderstandings [...]  </description>
+It was an usual trip: Police trying to get you naked when checking if you have no weapons, train delays (yeah in Germany, I thought that this didn&amp;#8217;t happen here   and some [...]  </description>
 </item>
 <item>
   <title>Debugger stories: pending breakpoints</title>
@@ -555,7 +605,7 @@ But it's not longer the case today. As I wrote &lt;a href="http://vladimir_prus.
 &lt;p&gt;
 In addition to that, I wrote patches to add pending breakpoint support to MI -- which mainly involved getting rid of two parallel breakpoint-setting code paths -- one for MI and one for CLI. Thanks to review of Joel Brobecker and Daniel Jacobowitz, those patches went in GDB CVS eariler this month. KDevelop 3.5 SVN was modified to automatically detect and use this GDB feature. So, if you're willing to build CVS HEAD of gdb and KDevelop from KDE 3.5 branch, you can finally have breakpoints in shared library just working.
 &lt;p&gt;
-This was probably my last KDevelop 3.5 commit. KDevelop 4 is ahead.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-4257384193346886291?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
+This was probably my last KDevelop 3.5 commit. KDevelop 4 is ahead.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-4257384193346886291?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>Debugger Stories: Stack widget</title>
@@ -574,7 +624,7 @@ The subtle change is at the bottom of the screenshot—that "(click to get more 
 &lt;p&gt;
 This behaviour is needed for two reasons. First, if your program is stuck in infinite recursion, and you try to interrupt it from KDevelop, in KDevelop 3.3 you're out of luck. As soon as the program is interrupted, KDevelop asks gdb for the list of all frames. Since your program is in infinite recursion, the number of frames is very large, and gdb is not very speedy stack-walker. So, you get to wait 5 mins for the stack to be shown. With incremental display, in a few clicks you'll see what function went astray.
 &lt;p&gt;
-The second reason is embarassing. Even without infinite recursion, getting the list of frames from gdb takes a lot of time. Something like half-a-second for getting 30 frames is not unheard of. Ideally, we'd fix gdb, but since we need incremental fetch anyway, fetching sufficiently small number of frames initially greatly improves responsiveness.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-2173552291981966095?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
+The second reason is embarassing. Even without infinite recursion, getting the list of frames from gdb takes a lot of time. Something like half-a-second for getting 30 frames is not unheard of. Ideally, we'd fix gdb, but since we need incremental fetch anyway, fetching sufficiently small number of frames initially greatly improves responsiveness.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-2173552291981966095?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>Debugger stories: Watchpoints</title>
@@ -601,7 +651,7 @@ But the problem is not just that you'll get false hits when &lt;code&gt;pointer_
 &lt;p&gt;
 KDevelop 3.4 solves this problem in a radical way. All watchpoints are address watchpoints. For any expression you enter, address is computed and watchpoint is set on address. Expression without address (rvalue) can't be watched and you'll get an error message if adding watchpoints for rvalue. Additionally, when the application exits, all watchpoints are disabled, because data addresses can well be different on the next run. When user decides to enable a watchpoint, the address of expression is evaluated again, and a new watchpoints is set to that address.
 &lt;p&gt;
-Hopefully this will make watchpoints more usable for the ordinary programmer.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114906807929380237?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
+Hopefully this will make watchpoints more usable for the ordinary programmer.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114906807929380237?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>Introducing MI branch</title>
@@ -626,7 +676,7 @@ So in the end MI branch had two goals:
 &lt;li&gt;Cleanup internal architecture. Original architecture was a bit too centralized and adding new features required a lot of work. And since many cool features come to mind, it's better be fixed quick.
 &lt;/ol&gt;
 &lt;p&gt;
-The "MI branch" itself is already merged to KDevelop 3.4 branch. In future posts I'll describe all changes the debugger has compared to 3.3 release. Stay tuned.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114655429246885688?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
+The "MI branch" itself is already merged to KDevelop 3.4 branch. In future posts I'll describe all changes the debugger has compared to 3.3 release. Stay tuned.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114655429246885688?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>Non-constant size</title>
@@ -642,7 +692,7 @@ Today, I run into another case where non-const-time &lt;code&gt;size()&lt;/code&
 So I've quickly put up a testcase that repeatedly parses a specific response, and ran it under &lt;a href="http://kcachegrind.sourceforge.net/cgi-bin/show.cgi"&gt;callgrind&lt;/a&gt;.  Ten minutes later I've got a profile with &lt;code&gt;strlen&lt;/code&gt; on  top. It turned out that the parsing code was using &lt;code&gt;QCString&lt;/code&gt; and calling it's &lt;code&gt;length&lt;/code&gt; method at least one for each token, and for certain tokens -- once for each character. The &lt;code&gt;length&lt;/code&gt;, in turn, just calls &lt;code&gt;strlen&lt;/code&gt;. Since the input string was 20K in size, most of runtime was spend measuring the size of that string. 
 &lt;p&gt;Another unexpected behaviour was found in the &lt;code&gt;QCString::mid&lt;/code&gt; function. Internally, it also calls &lt;code&gt;length&lt;/code&gt;, and &lt;code&gt;mid&lt;/code&gt; was called once for each token.
 
-&lt;p&gt;After uses of non-const-time methods were reduced to minimum, the parsing time my test case decreased 40x. No so bad, I think. The only problem is that time spend in gdb is still to high for a GUI, and that won't be that easy to fix.&lt;/span&gt;&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114613323460364990?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
+&lt;p&gt;After uses of non-const-time methods were reduced to minimum, the parsing time my test case decreased 40x. No so bad, I think. The only problem is that time spend in gdb is still to high for a GUI, and that won't be that easy to fix.&lt;/span&gt;&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114613323460364990?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>Printf debugging 2006</title>
@@ -680,7 +730,7 @@ producing logs of variable values as certain points of the program.
 
 &lt;p&gt;More screenshots &lt;a href="http://kdevelop.org/graphics/screenshots/3.3/tracing2.png"&gt;here&lt;/a&gt; and &lt;a href="http://kdevelop.org/graphics/screenshots/3.3/tracing_output.png"&gt;here&lt;/a&gt;.
 
-This is a beginning, future KDevelop version will allow to specify custom commands for breakpoints.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114431922218203677?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
+This is a beginning, future KDevelop version will allow to specify custom commands for breakpoints.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-114431922218203677?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 <item>
   <title>1 + 2</title>
@@ -720,7 +770,7 @@ code that knows calling convention for the target, and memory writing support.
 
 So, it's not just a poor man's calculator, it's also a test for a good deal of debugger functionality. There's also stack frame handling (up/down/where/finish), and printing of complex data types (structures/arrays), but believe me, that works as well.
 
-It looks like my 3-month gdb and simulator hacking comes to an end, and I'll spend more time on more interesting things like improving KDevelop's debugger frontend.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-112195666121491074?l=vladimir_prus.blogspot.com" /&gt;&lt;/div&gt;  </description>
+It looks like my 3-month gdb and simulator hacking comes to an end, and I'll spend more time on more interesting things like improving KDevelop's debugger frontend.&lt;div&gt;&lt;img width="1" height="1" src="https://blogger.googleusercontent.com/tracker/7558958-112195666121491074?l%3Dvladimir_prus.blogspot.com" alt="" /&gt;&lt;/div&gt;  </description>
 </item>
 </channel>
 </rss>

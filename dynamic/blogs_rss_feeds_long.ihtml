@@ -1,33 +1,118 @@
-<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>"); ?>
+<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "dev-blog-posts"); ?>
 <div>
-	<h4><a href="http://frinring.wordpress.com/2009/07/24/shorttip-viewing-raw-data-of-files-in-konquerorkdevelop/">Friedrich Kossebau (frinring): Minitutorial: Viewing raw data of files in Konqueror/KDevelop</a></h4>
-	Want to quickly see the raw data of files in Konqueror or KDevelop? This is possible with the KPart coming with Okteta since KDE 4.1: Preparations Open &#8220;System Settings&#8221;, then select &#822...
-	<p class="footnote">Source: <a href="http://planetkde.org/">Planet KDE</a> | 24 Jul 2009 | 3:28 pm</p>
+	<h4><a href="http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/">Andreas Pakulat: Finally KDevelop 4.0 final published</a></h4>
+	Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 year...
+	<p class="footnote">Source: <a href="http://planetkde.org/">Planet KDE</a> | 1 May 2010 | 3:30 pm</p>
 </div>
 <div>
-	<h4><a href="http://shaforostoff.blogspot.com/2009/07/testing-kde-43-translation-with.html">Nick Shaforostoff (shaforostoff): Testing KDE 4.3 translation with Lokalize</a></h4>
-	I created Lokalize script to automate UI translation testing: it compiles currently opened PO file and puts it under ~/.kde where KDE can see it, so that when you start your application next time, it...
-	<p class="footnote">Source: <a href="http://planetkde.org/">Planet KDE</a> | 24 Jul 2009 | 4:57 am</p>
+	<h4><a href="http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/">Finally KDevelop 4.0 final published</a></h4>
+	Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 year...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 1 May 2010 | 3:30 pm</p>
 </div>
 <div>
-	<h4><a href="http://liveblue.wordpress.com/2009/07/21/3-visualize-your-code-in-kdevelop/">#3: Visualize your code in KDevelop</a></h4>
-	Hello planet, Yes, after a hard journey through free software conferences including International Forum on Free Software (FISL) and Gran Canaria Desktop Summit, I&#8217;m happy to bring you fresh news...
-	<p class="footnote">Source: <a href="http://liveblue.wordpress.com">Live Blue</a> | 21 Jul 2009 | 4:55 pm</p>
+	<h4><a href="http://www.kdenews.org/2010/05/01/kdevelop-40-stable-released-wild">KDevelop 4.0 Stable Released into the Wild</a></h4>
+	The KDevelop Hackers are proud and happy to announce that KDevelop 4.0 is finally available as a stable release. Released together is the first version of KDevelop PHP plugins, which make KDevelop a v...
+	<p class="footnote">Source: <a href="http://www.kdenews.org">KDE.news</a> | 1 May 2010 | 2:36 pm</p>
 </div>
 <div>
-	<h4><a href="http://www.kdedevelopers.org/node/4019">GSOC 2009 Progress - Smoke Bindings Generator</a></h4>
-	Yesterday I wore my GSOC tee-shirt at GCDS and got together with Arno Rehn to review his smoke bindings library generator tool. It turns out the project is going great and is pretty much finished. I c...
-	<p class="footnote">Source: <a href="http://www.kdedevelopers.org/blog">kdedevelopers.org blogs</a> | 10 Jul 2009 | 9:32 pm</p>
+	<h4><a href="http://aseigo.blogspot.com/2010/04/plasmoids-in-windows.html">Aaron Seigo (aseigo): Plasmoids in windows</a></h4>
+	Since forever (where we define the start of time to be when I started working on Plasma) it has been possible to run Plasmoids, or any widget that Plasma can display, in a window on its own using plas...
+	<p class="footnote">Source: <a href="http://planetkde.org/">Planet KDE</a> | 1 May 2010 | 2:02 am</p>
 </div>
 <div>
-	<h4><a href="http://apaku.wordpress.com/2009/06/24/setting-up-environment-for-running-kdevelop4/">Setting up Environment for running KDevelop4</a></h4>
-	These are short and (hopefully) precise instructions what you need to do when you&#8217;ve built KDevelop4 from source and installed it somewhere other than your KDE libraries are (those are often fro...
-	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 24 Jun 2009 | 9:35 pm</p>
+	<h4><a href="http://milianw.de/blog/gsoc-revive-quanta-brand-for-kde-4">GSOC:   Revive Quanta+ Brand for KDE 4</a></h4>
+	Yay I got a GSOC slot :)  So I hope I don&#8217;t have to introduce myself anymore to you guys. Instead I&#8217;ll show you what I&#8217;ve planned to do over the summer:  Motivation for Proposal / Go...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 28 Apr 2010 | 7:19 pm</p>
 </div>
 <div>
-	<h4><a href="http://liveblue.wordpress.com/2009/06/22/2-visualize-your-code-in-kdevelop/">#2: Visualize your code in KDevelop</a></h4>
-	Hey folks, a quick update because something pushes me to my bed   After a nice weekend we have a useful integration between KDevelop code editor and control flow graph plugin. You can easily get your...
-	<p class="footnote">Source: <a href="http://liveblue.wordpress.com">Live Blue</a> | 22 Jun 2009 | 10:16 am</p>
+	<h4><a href="http://apaku.wordpress.com/2010/04/26/happy-soc-coding-everybody/">Happy SoC coding everybody</a></h4>
+	Google just announced the official and final list of accepted students for the SoC program. KDE got more accepted students this year than past, so its a big success for us all. This will hopefully aga...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 26 Apr 2010 | 10:48 pm</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2010/04/25/kdevelop-4-0-screenshots/">KDevelop 4.0 Screenshots</a></h4>
+	This blog entry is a supplemental to the KDevelop 4.0 release announcement to show off the new stable release with some nice screenshots. So enjoy KDevelop after starting and opening a project and fil...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 25 Apr 2010 | 9:18 pm</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2010/04/16/kdevelop4-rc3-released-rc2-tarballs-are-broken/">KDevelop4 RC3 released (RC2 tarballs are broken)</a></h4>
+	This time around svn got me, I&#8217;ve used the createtarball script from kdesdk to generate the RC2 tarballs so we ship translations. This worked just fine, except that for some unknown reason svn l...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 16 Apr 2010 | 8:50 pm</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2010/04/08/kdevelop4-release-candidate-1/">KDevelop4 Release Candidate 1</a></h4>
+	Finally getting around to blog about this. We&#8217;ve released RC1 of KDevelop4 today. We&#8217;ve fixed a couple of bugs and got some good performance improvements, but even more will be in RC2. RC2...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 8 Apr 2010 | 8:51 am</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/where-profiling-sucks">Where Profiling Sucks</a></h4>
+	Ok, you should know by now that I love profiling and making things faster. Yet there&#8217;s always a &#8220;but&#8221;. For me it&#8217;s blocking syscalls, or anything that makes the app &#8220;slow...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 5 Apr 2010 | 3:12 am</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/profiling-rocks-kdevelop-cmake-support-now-20x-faster">Profiling Rocks - KDevelop CMake Support now 20x faster</a></h4>
+	I just need to get this out quickly:  We were aware that KDevelop&#8217;s CMake support was slow. Too slow actually. It was profiled months ago and after a quick look that turned up QRegExp, it was di...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 31 Mar 2010 | 1:24 am</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2010/03/08/kdevelop4-beta9-released/">KDevelop4 Beta9 released</a></h4>
+	Yeah, finally, this marks the end of a rather long line of beta&#8217;s. The first one is more than a year old! But it also means we&#8217;re finally getting closer to a 4.0 release. Now its time to g...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 8 Mar 2010 | 10:37 pm</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2010/02/19/custom-buildsystem-support-for-kdevelop4/">Custom Buildsystem Support for KDevelop4</a></h4>
+	A bit of background first: The buildsystem we (as in froglogic) use for Squish is custom written using Javascript and that means its not very nice to use KDevelop for hacking on the code. The reason i...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 19 Feb 2010 | 10:58 pm</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/katekdevelop-hacksprint-up-to-day-4">Kate/KDevelop HackSprint - Up To Day 4</a></h4>
+	Woha, quite a few days flew by without me blogging about anything. Thankfully the others started to write so I don&#8217;t have to repeat it all ;-) Instead I&#8217;ll concentrate on stuff I did or le...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 17 Feb 2010 | 6:43 pm</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2010/02/17/writing-unittests-for-kdevelop-plugins/">Writing unittests for KDevelop plugins</a></h4>
+	After just completing a basic unit-test for a KDevelop4 plugin I&#8217;m currently working on I realized that its really easy, but we lack some simple examples how to do this. So I sat down and added...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 17 Feb 2010 | 4:00 pm</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/katekdevelop-hacksprint-day-1">Kate/KDevelop HackSprint Day 1</a></h4>
+	So, first day of the Kate/KDevelop hacksprint.  We just talked and hacked at the rented flat,got to know each other and had a fun time. Everybody made it more or less in time, even last minute attende...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 14 Feb 2010 | 12:58 am</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2010/02/13/kdevelop4-beta8/">KDevelop4 Beta8</a></h4>
+	I&#8217;m pleased to announce (as first as it seems) that KDevelop4 released its 8th Beta. This is mostly a bugfix release as we are slowly (but steadily) moving towards a final release. There&#8217;s...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 13 Feb 2010 | 6:48 pm</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/snippets-in-kdevelop-kate">Snippets In KDevelop / Kate</a></h4>
+	Hey all!  Just wanted to give you a little rundown on Snippets in Kate 4.4 (via the snippets_tng plugin) and KDevelop Beta 8 (soon to be released).  Note: The Kate plugin was written by Jowenn and int...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 3 Feb 2010 | 4:59 pm</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/progress-in-php-support-for-kdevelop">progress in PHP support for KDevelop</a></h4>
+	Hey everyone. Been some time since I last blogged&#8230; I want to take the chance to give you all a bit of overview over the last changes in the PHP plugin for KDevelop:  Performance Improvements  I...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 20 Jan 2010 | 1:44 pm</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/will-code-for-food">Will code for food</a></h4>
+	Ha, what a bit of a bribe can do to me&#8230; Someday earlier today a user of the PHP plugin for KDevelop brought up the flickering issue in it again. Well as I told him: I myself find it very annoyin...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 22 Dec 2009 | 4:34 am</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/php-and-php-docs-plugins-now-up-for-review-meaning-svn-location-moved">PHP and PHP-Docs plugins now up for review (meaning: SVN location moved!)</a></h4>
+	Hey all!  Just a quick note: Niko and me moved PHP &amp; PHP-Docs to kdereview, we hope to move both plugins to extragear/sdk/kdevelop-plugins. So, if I understood things correctly, after a two week p...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 17 Dec 2009 | 9:29 pm</p>
+</div>
+<div>
+	<h4><a href="http://milianw.de/blog/real-foss-appreciation">Real FOSS appreciation</a></h4>
+	So, it&#8217;s been roughly a year since my first commit to kdelibs. According to Ohloh it&#8217;s been in November 2008.  And boy have I learned much in this year. I learned C++ just to be able to co...
+	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 7 Dec 2009 | 2:25 am</p>
+</div>
+<div>
+	<h4><a href="http://apaku.wordpress.com/2009/11/29/kdevelop4-moved/">KDevelop4 moved</a></h4>
+	As we decided that we won&#8217;t make the KDE 4.4 schedule and drop out of it, we thought that we should also play by the KDE policy rules and move out of trunk/KDE. That move has just happened and K...
+	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 29 Nov 2009 | 9:48 pm</p>
 </div>
 <div>
 	<h4><a href="http://zwabel.wordpress.com/2009/06/21/kdevelop4-ui-areas-working-sets-etc/">KDevelop4 UI: Areas, Working Sets, etc.</a></h4>
@@ -35,49 +120,14 @@
 	<p class="footnote">Source: <a href="http://zwabel.wordpress.com">Zwabel's Weblog</a> | 21 Jun 2009 | 11:58 pm</p>
 </div>
 <div>
-	<h4><a href="http://liveblue.wordpress.com/2009/06/17/visualize-your-code-in-kdevelop/">Visualize your code in KDevelop</a></h4>
-	Who of us hasn&#8217;t ever got lost when doing maintenance and evolution activities in highly complex software with hundreds of thousands of source code lines ? So, this is the first update on my GSo...
-	<p class="footnote">Source: <a href="http://liveblue.wordpress.com">Live Blue</a> | 18 Jun 2009 | 12:22 am</p>
-</div>
-<div>
-	<h4><a href="http://apaku.wordpress.com/2009/06/02/beta3-and-beta4/">Beta3 and Beta4</a></h4>
-	Anybody who reads the dot will already know, but for those who don&#8217;t (yes I mean you): KDevelop4 has released its third beta. We&#8217;ve fixed tons of bugs, added a new launch framework, new C+...
-	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 2 Jun 2009 | 10:14 pm</p>
-</div>
-<div>
-	<h4><a href="http://milianw.de/blog/progress-in-non-cpp-kdevelop4-land">Progress in non-cpp KDevelop4 land</a></h4>
-	Has been a time since I wrote the last update for PHP / webdevelopment related work in KDevelop4&#8230;  XDebug  First of all, Niko (nsams) is working diligently on the general debugger framework for...
-	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 27 May 2009 | 9:09 pm</p>
+	<h4><a href="http://vladimir_prus.blogspot.com/2009/06/stl-visualization.html">STL Visualization</a></h4>
+	As of today, KDevelop can nicely display std::vector. I'll probably omit the obvious snapshot, and will point to a mailing list post with instructions for trying it. Instead, I'll tell the story of th...
+	<p class="footnote">Source: <a href="http://vladimir_prus.blogspot.com/">Volodya's blog</a> | 6 Jun 2009 | 7:24 pm</p>
 </div>
 <div>
 	<h4><a href="http://vladimir_prus.blogspot.com/2009/05/kdevelop-error-display-and-breadcrumbs.html">KDevelop error display</a></h4>
 	For quite a while I wanted KDevelop to display compilation errors directly inside the editor, as opposed to separate window you have to click in. It works now, as shown below.   This was implemented b...
 	<p class="footnote">Source: <a href="http://vladimir_prus.blogspot.com/">Volodya's blog</a> | 20 May 2009 | 6:22 pm</p>
-</div>
-<div>
-	<h4><a href="http://apaku.wordpress.com/2009/05/08/new-dependency-for-kdevelopgdb/">new dependency for kdevelop/gdb</a></h4>
-	Apparently some people tap into this pitfall, so I&#8217;ll kinda &#8220;announce&#8221; this here. KDevelop4 from trunk requires kdebase/workspace since this week. The reason is a much improved proce...
-	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 8 May 2009 | 10:23 pm</p>
-</div>
-<div>
-	<h4><a href="http://apaku.wordpress.com/2009/04/30/new-launch-framework-landed/">New Launch Framework Landed</a></h4>
-	Finally, after about 3 weeks of work I&#8217;ve been able to merge back the new launch framework for KDevelop4. The rework was needed because the existing gui and framework didn&#8217;t allow for enou...
-	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 30 Apr 2009 | 11:43 pm</p>
-</div>
-<div>
-	<h4><a href="http://milianw.de/blog/kdevelop-hack-sprint-2009-day-2-and-3">KDevelop Hack Sprint 2009 - Day 2 and 3</a></h4>
-	Ok, just a quick update on what we are doing / have done the last two days except drinking beer and eating quite a lot of food (though it never seems to be enough somehow&#8230;.)   Apol was polishing...
-	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 23 Apr 2009 | 1:31 am</p>
-</div>
-<div>
-	<h4><a href="http://milianw.de/blog/kdevelop-hack-sprint-2009-day-1">KDevelop Hack Sprint 2009 - Day 1</a></h4>
-	Ok, a short blog about the first day of our KDevelop Hack Sprint at Mykolayiv (see my first blog post). First up, being in the Ukraine is a very interesting experience since it&#8217;s totally differe...
-	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 20 Apr 2009 | 11:01 pm</p>
-</div>
-<div>
-	<h4><a href="http://milianw.de/blog/kdevelop-hack-sprint">KDevelop Hack Sprint</a></h4>
-	Huzza! The KDevelop Hack Sprint 09 is now official.  Thanks to the huge engagement of Alexander Dymo we will meet from the 19th to 26th April 2009. The meeting will take place at Alexander&#8217;s uni...
-	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 2 Apr 2009 | 1:38 am</p>
 </div>
 <div>
 	<h4><a href="http://zwabel.wordpress.com/2009/03/13/really-rapid-c-development-with-kdevelop4/">Really rapid C++ development with KDevelop4</a></h4>
@@ -90,16 +140,6 @@
 	<p class="footnote">Source: <a href="http://zwabel.wordpress.com">Zwabel's Weblog</a> | 6 Mar 2009 | 3:28 pm</p>
 </div>
 <div>
-	<h4><a href="http://milianw.de/blog/building-kdevplatform-kdevelop-and-the-php-plugin-from-svn">Building KDevplatform, KDevelop and the PHP plugin from SVN</a></h4>
-	In a follow up to my last post about the PHP plugin for KDevelop and Quanta I want to detail how I setup my build environment. Since I&#8217;m only working on KDevelop I only want to compile that. For...
-	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 6 Mar 2009 | 12:21 am</p>
-</div>
-<div>
-	<h4><a href="http://milianw.de/blog/php-support-for-kdevelop-4-and-eventually-quanta">PHP support for KDevelop 4 (and eventually Quanta+)</a></h4>
-	Hello Planet KDE!  I want to give you a little insight on the current state of PHP support in KDevelop4:  Me and Nikolaus Sams (nsams) are working diligently on a plugin for PHP support in playground.
-	<p class="footnote">Source: <a href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a> | 2 Mar 2009 | 11:28 pm</p>
-</div>
-<div>
 	<h4><a href="http://www.proli.net/2009/02/28/kdevelop4s-documentation-integration/">KDevelop4’s Documentation Integration</a></h4>
 	I&#8217;m back to you today to show something that we have been baking lately for KDevelop. It is its new documentation integration. With KDevelop 4 we have been focusing on putting together the infor...
 	<p class="footnote">Source: <a href="http://www.proli.net">TheBlindCow</a> | 28 Feb 2009 | 4:59 pm</p>
@@ -110,19 +150,9 @@
 	<p class="footnote">Source: <a href="http://zwabel.wordpress.com">Zwabel's Weblog</a> | 13 Feb 2009 | 11:52 pm</p>
 </div>
 <div>
-	<h4><a href="http://apaku.wordpress.com/2009/02/06/kdevelop4-beta1-kubuntu-packages-problems/">KDevelop4 Beta1 Kubuntu Packages Problems</a></h4>
-	Update: Packagers seem to have fixed the problem, updates should be available soon. Thanks for the quick fix. Hate to do this, but there&#8217;s been about 6 or 7 people now in #kdevelop and I&#8217;m...
-	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 6 Feb 2009 | 10:01 pm</p>
-</div>
-<div>
 	<h4><a href="http://zwabel.wordpress.com/2009/02/04/automatic-include-directives-and-forward-declarations/">KDevelop4: Automatic include-directives and forward-declarations</a></h4>
 	Missing Include Completion C++ is a great and powerful programming-language. Yet it has the downside against some other languages, that you always have to deal with include-directives or forward-decla...
 	<p class="footnote">Source: <a href="http://zwabel.wordpress.com">Zwabel's Weblog</a> | 4 Feb 2009 | 2:09 am</p>
-</div>
-<div>
-	<h4><a href="http://apaku.wordpress.com/2009/01/15/kdevelop4-updates/">KDevelop4 updates</a></h4>
-	C++ support in KDev4 really rocks, if kdevelop doesn&#8217;t crash. Unfortunately it did so about 6 or 8 times in the last hour, luckily most of the time it was the second instance in which I tested m...
-	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 15 Jan 2009 | 11:56 pm</p>
 </div>
 <div>
 	<h4><a href="http://zwabel.wordpress.com/2009/01/08/c-ide-evolution-from-syntax-highlighting-to-semantic-highlighting/">C++ IDE Evolution: From Syntax Highlighting to Semantic Highlighting</a></h4>
@@ -131,11 +161,11 @@
 </div>
 <div>
 	<h4><a href="http://www.proli.net/2008/04/21/kdevelop-hackaton/">KDevelop hackaton</a></h4>
-	I am back from Munich, I am at the university now actually :(. It was a great week though, lots of hacking, knowing people and community building. It is always nice to know the people which have been...
+	I am back from Munich, I am at the university now actually  . It was a great week though, lots of hacking, knowing people and community building. It is always nice to know the people which have been s...
 	<p class="footnote">Source: <a href="http://www.proli.net">TheBlindCow</a> | 21 Apr 2008 | 1:40 pm</p>
 </div>
 <div>
-	<h4><a href="http://www.proli.net/2008/04/12/kdevelop-developer-meeting-day0/">KDevelop Developer Meeting - Day[0]</a></h4>
+	<h4><a href="http://www.proli.net/2008/04/12/kdevelop-developer-meeting-day0/">KDevelop Developer Meeting – Day[0]</a></h4>
 	So today the KDevelop hackaton started. Yesterday I spent all the day just to go to Munich, where the hackaton is happening. It was an usual trip: Police trying to get you naked when checking if you h...
 	<p class="footnote">Source: <a href="http://www.proli.net">TheBlindCow</a> | 12 Apr 2008 | 5:39 pm</p>
 </div>

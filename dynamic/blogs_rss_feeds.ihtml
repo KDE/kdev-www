@@ -1,27 +1,47 @@
-<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>"); ?>
+<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "dev-blog-posts"); ?>
 <div>
-	<h4><a href="http://frinring.wordpress.com/2009/07/24/shorttip-viewing-raw-data-of-files-in-konquerorkdevelop/">Friedrich Kossebau (frinring): Minitutorial: Viewing raw data of files in Konqueror/KDevelop</a></h4>
-	Want to quickly see the raw data of files in Konqueror or KDevelop? This is possible with the KPart coming with Okteta since KDE 4.1: Preparations Open &#8220;System Settings&#8221;, then select &#822...
-	<p class="footnote">Source: <a href="http://planetkde.org/">Planet KDE</a> | 24 Jul 2009 | 3:28 pm</p>
+	<h4>
+        <span class="date">May 1, 2010</span>
+        Andreas Pakulat: Finally KDevelop 4.0 final published        <a class="source" href="http://planetkde.org/">Planet KDE</a>
+    </h4>
+    <div class="entry-content">
+	Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 year...	<a class="fullpost" href="http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/">read full post...</a>
+	</div>
 </div>
 <div>
-	<h4><a href="http://shaforostoff.blogspot.com/2009/07/testing-kde-43-translation-with.html">Nick Shaforostoff (shaforostoff): Testing KDE 4.3 translation with Lokalize</a></h4>
-	I created Lokalize script to automate UI translation testing: it compiles currently opened PO file and puts it under ~/.kde where KDE can see it, so that when you start your application next time, it...
-	<p class="footnote">Source: <a href="http://planetkde.org/">Planet KDE</a> | 24 Jul 2009 | 4:57 am</p>
+	<h4>
+        <span class="date">May 1, 2010</span>
+        Finally KDevelop 4.0 final published        <a class="source" href="http://apaku.wordpress.com">apaku</a>
+    </h4>
+    <div class="entry-content">
+	Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 year...	<a class="fullpost" href="http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/">read full post...</a>
+	</div>
 </div>
 <div>
-	<h4><a href="http://liveblue.wordpress.com/2009/07/21/3-visualize-your-code-in-kdevelop/">#3: Visualize your code in KDevelop</a></h4>
-	Hello planet, Yes, after a hard journey through free software conferences including International Forum on Free Software (FISL) and Gran Canaria Desktop Summit, I&#8217;m happy to bring you fresh news...
-	<p class="footnote">Source: <a href="http://liveblue.wordpress.com">Live Blue</a> | 21 Jul 2009 | 4:55 pm</p>
+	<h4>
+        <span class="date">May 1, 2010</span>
+        KDevelop 4.0 Stable Released into the Wild        <a class="source" href="http://www.kdenews.org">KDE.news</a>
+    </h4>
+    <div class="entry-content">
+	The KDevelop Hackers are proud and happy to announce that KDevelop 4.0 is finally available as a stable release. Released together is the first version of KDevelop PHP plugins, which make KDevelop a v...	<a class="fullpost" href="http://www.kdenews.org/2010/05/01/kdevelop-40-stable-released-wild">read full post...</a>
+	</div>
 </div>
 <div>
-	<h4><a href="http://www.kdedevelopers.org/node/4019">GSOC 2009 Progress - Smoke Bindings Generator</a></h4>
-	Yesterday I wore my GSOC tee-shirt at GCDS and got together with Arno Rehn to review his smoke bindings library generator tool. It turns out the project is going great and is pretty much finished. I c...
-	<p class="footnote">Source: <a href="http://www.kdedevelopers.org/blog">kdedevelopers.org blogs</a> | 10 Jul 2009 | 9:32 pm</p>
+	<h4>
+        <span class="date">May 1, 2010</span>
+        Aaron Seigo (aseigo): Plasmoids in windows        <a class="source" href="http://planetkde.org/">Planet KDE</a>
+    </h4>
+    <div class="entry-content">
+	Since forever (where we define the start of time to be when I started working on Plasma) it has been possible to run Plasmoids, or any widget that Plasma can display, in a window on its own using plas...	<a class="fullpost" href="http://aseigo.blogspot.com/2010/04/plasmoids-in-windows.html">read full post...</a>
+	</div>
 </div>
 <div>
-	<h4><a href="http://apaku.wordpress.com/2009/06/24/setting-up-environment-for-running-kdevelop4/">Setting up Environment for running KDevelop4</a></h4>
-	These are short and (hopefully) precise instructions what you need to do when you&#8217;ve built KDevelop4 from source and installed it somewhere other than your KDE libraries are (those are often fro...
-	<p class="footnote">Source: <a href="http://apaku.wordpress.com">apaku</a> | 24 Jun 2009 | 9:35 pm</p>
+	<h4>
+        <span class="date">Apr 28, 2010</span>
+        GSOC:   Revive Quanta+ Brand for KDE 4        <a class="source" href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a>
+    </h4>
+    <div class="entry-content">
+	Yay I got a GSOC slot :)  So I hope I don&#8217;t have to introduce myself anymore to you guys. Instead I&#8217;ll show you what I&#8217;ve planned to do over the summer:  Motivation for Proposal / Go...	<a class="fullpost" href="http://milianw.de/blog/gsoc-revive-quanta-brand-for-kde-4">read full post...</a>
+	</div>
 </div>
 <?php echo "<p class=\"detailedchangelog\"><a href=\"index.html?filename=in_the_press.html#Latest_blog_posts\">$l_more_elipsis</a></p>"; module_tail(); ?>
