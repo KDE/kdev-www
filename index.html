@@ -391,18 +391,12 @@ foreach($activelanguages as $lang_i){
 <div id="menu">
  <ul>
 <?php
-printf('  <li%s><a href="/" title="%s"><span>%s</span></a></li>
-', ($filename=='main.html')?' class="selected"':'', "KDevelop - $l_pt_main", $l_home);
 printf('  <li%s><a href="index.html?filename=3.5/download.html" title="%s"><span>%s</span></a></li>
 ', (strpos($filename,'download') !== FALSE)?' class="selected"':'', $l_download, $l_download);
 printf('  <li%s><a href="index.html?filename=3.5/screenshots.html" title="%s"><span>%s</span></a></li>
 ', (strpos($filename,'screenshots') !== FALSE)?' class="selected"':'', $l_screenshots, $l_screenshots);
 printf('  <li%s><a href="index.html?filename=3.5/features.html" title="%s"><span>%s</span></a></li>
 ', (strpos($filename,'features') !== FALSE)?' class="selected"':'', $l_features, $l_features);
-printf('  <li%s><a href="index.html?filename=tutorials.html" title="%s"><span>%s</span></a></li>
-', ($filename=='tutorials.html')?' class="selected"':'', $l_pt_tutorials, $l_tutorials);
-printf('  <li%s><a href="index.html?filename=3.3/faq.html" title="%s"><span>%s</span></a></li>
-', (strpos($filename,'faq') !== FALSE)?' class="selected"':'', $l_faq, $l_faq);
 ?>
  </ul>
 </div>
