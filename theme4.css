@@ -24,6 +24,8 @@ a {
   color: #004cc9;
 }
 
+div.clear { clear: both; }
+
 /*
 basic "holly-grail" layout (top box plus two/three columns touching)
 http://www.thenoodleincident.com/tutorials/box_lesson/content_placement/text.html
@@ -155,6 +157,27 @@ div.what-is-kdevelop dl dd li {
 div.what-is-kdevelop .screenshot {
     float: right; margin-top: -30px; margin-right: -15px;
 }
+
+div.main-versions dl {
+    margin: 10px 0;
+    text-align: left;
+    width: 49%; float: left;
+}
+div.main-versions dd {
+ margin: 0;
+}
+div.main-versions dd ul  {
+    margin: 0; padding-left: 25px;
+}
+div.main-versions dt {
+    font-size: 14px;
+}
+div.main-versions dt span.range {
+    font-size: 10px;
+    font-style: italic;
+    color: #71ac12;
+}
+
 /*
 pure style and beautification stuff, as less layout (position) as possible
 very general stuff

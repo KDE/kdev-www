@@ -16,16 +16,37 @@ module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
     <li><a href="#">FAQ</a></li>
     </ul>
 </dd>
-<dt><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?></dd>
+<dt><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?> <a href="#">more Info...</a></dd>
 </dl>
 <?php module_tail();?>
 
-<?php module_head($l_versions, 'border');?>
-<dl>
-<dt><b>KDevelop4</b></dt><dd><?php echo $l_def_KDevelop4; ?></dd>
-<dt><b>KDevelop3</b></dt><dd><?php echo $l_def_KDevelop3; ?></dd>
+
+<!-- TODO: translation -->
+<?php module_head($l_versions.':', 'border main-versions');?>
+<dl class="version3">
+<dt><b>KDevelop 3.x</b> <span class="range">(1998 - 2008)</span></dt>
+<dd>
+    <!--<?php echo $l_def_KDevelop3; ?>-->
+    <ul>
+        <li>based on Qt 3 / KDE 3</li>
+        <li><em>stable and mature</em>, with support for many programming languages and build systems</li>
+        <li><em>no longer under development</em></li>
+        <li><a href="#">read more...</a></li>
+    </ul>
+</dd>
 </dl>
-For more info see the 
-<a href="mediawiki/index.php/KDevelop_4/KDev3_KDev4_comparison_table">
-detailed side-by-side comparison of KDevelop 3 and KDevelop 4</a>.
+<dl class="version4">
+<dt><b>KDevelop 4.x</b> <span class="range">(since 2005)</span></dt>
+<dd>
+    <!--<?php echo $l_def_KDevelop4; ?>-->
+    <ul>
+        <li>based on Qt 4 / KDE 4</li>
+        <li><em>major rewrite</em> - not yet as many features, but various new more powerful ones</li>
+        <li>C++ and PHP support ready for production use (at least on Linux)</li>
+        <li><em>under active development</em></li>
+        <li><a href="#">read more...</a></li>
+    </ul>
+</dd>
+</dl>
+<div class="clear"></div>
 <?php module_tail();?>
