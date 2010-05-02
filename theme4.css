@@ -200,6 +200,31 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   background-image: url('graphics/theme4/box_blue-mh-1px.png');
   background-color: #b9dbf7;
 }
+#quickoverview div.cat-download div.content a.download {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #063660;
+    font-weight: bold; font-size: 20px;
+    margin-bottom: 5px; margin-left: -8px; margin-right: -8px;
+    padding: 5px; padding-left: 35px;
+    line-height: 10px;
+    background-image: url('graphics/kdevelop_icon_32.png'); background-repeat: no-repeat;
+    background-position: 5px 2px;
+}
+#quickoverview div.cat-download div.content a.download-legacy {
+    background-image: url('graphics/kdevelop30_icon.png');
+    background-position: 15px 2px;
+    color: #487ba5;
+    font-size: 15px;
+}
+#quickoverview div.cat-download div.content a.download span.date {
+    font-style: italic;
+    color: black;
+    font-size: 10px; font-weight: normal;
+}
+#quickoverview div.cat-download div.content ul {
+    list-style-type: none; margin: 0; padding: 0; margin-left: 20px;
+}
 #quickoverview div.cat-download div.footer {
   background-image: url('graphics/theme4/quickbox_blue-bi.gif');
 }
