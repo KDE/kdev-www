@@ -282,18 +282,7 @@ echo "</div>";
     include('inc/user_progs.php');
 
     include('inc/change_log.php');
-/*
-    $resultlogtab = mysql_query('SELECT ip FROM stats_userlog;');
-    $result       = mysql_query('select visitors from stats_counter where 1=1 order by visitors desc;');
-    $numberlogtab = mysql_num_rows($resultlogtab);
-    $visitors     = mysql_result($result,0,'visitors');
-*/
-    print "<div id=\"sitestats\">
-<p><b>$numberlogtab</b><br>
-<a href=\"index.html?filename=stats.html\">$l_user_online</a></p>
-<p><b>$visitors</b><br>
-<small>$l_visitors_since</small></p>
-</div>";
+
 ?>
 
 <!--eXTReMe tracker begin DO NOT EDIT START-->
@@ -310,9 +299,6 @@ EXd.write("<img src=\"http://z1.extreme-dm.com",
 "l="+escape(EXd.referrer)+"\" height=\"1\" width=\"1\">");//-->
 </script>
 <!--eXTReMe tracker end DO NOT EDIT END-->
-
-<a href="http://www.mysql.com/" title="www.mysql.com"><img src="graphics/mysql.png" alt="Works with MySQL" height="31" width="88"></a>
-<a href="http://www.php.net/" title="www.php.net"><img src="graphics/php.png" alt="Powered by PHP" height="31" width="88"></a>
 
 </div>   <!-- end column 3 -->
 <?php
@@ -368,7 +354,6 @@ EXd.write("<img src=\"http://z1.extreme-dm.com",
        include($menufilename);
        require('inc/mysqlcounter.php');
       ?>
-  <div id="validator"><a href="http://validator.w3.org/check?uri=referer"><img src="graphics/valid-html401.png" alt="Valid HTML 4.01!" height="31" width="88"></a></div>
 </div>   <!-- end column 1 -->
 
 <div id="head"></div>
