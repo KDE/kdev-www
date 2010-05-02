@@ -178,6 +178,33 @@ div.main-versions dt span.range {
     color: #71ac12;
 }
 
+div.dev-blog-posts h4 {
+    margin: 0;
+    border-bottom: 1px solid #73952f;
+    font-style: italic;
+    position: relative;
+    padding-right: 50px;
+}
+div.dev-blog-posts h4 .date {
+    margin-top: 2px;
+    color: #73ad1f; font-size: 11px;
+    font-weight: normal;
+    display: block; float: left; width: 80px;
+    font-style: normal;
+}
+div.dev-blog-posts h4 .source {
+    margin-top: 2px;
+    color: black; font-size: 11px;
+    font-style: normal; font-weight: normal;
+    position: absolute; right: 0;
+}
+div.dev-blog-posts .entry-content {
+    margin-bottom: 10px;
+}
+div.dev-blog-posts a.fullpost {
+    background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
+    padding-left:10px;
+}
 /*
 pure style and beautification stuff, as less layout (position) as possible
 very general stuff
