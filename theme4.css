@@ -124,19 +124,22 @@ div.moduleentry { background-color: #EFF7E3; text-align: justify; margin: 5px; }
 h1.moduleheader { background-color: #81A979; text-align: center; font : bold normal medium sans-serif; }
 div.modulecontent { padding: 0px 5px 2px 5px; }
 
+#quickoverview div.moduleentry,
 #sitenavigation div.moduleentry {
   background: url('graphics/theme4/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of quick-access boxes */
   margin: 0 0 2.6px 13px;
 }
-#sitenavigation div.moduleentry div.header{
+#quickoverview div.moduleentry div.header,
+#sitenavigation div.moduleentry div.header {
   position: relative;
   background: url('graphics/theme4/navbox-t-solid.png') top no-repeat;
   padding: 14px 0 0 0;
 }
+#quickoverview div.moduleentry div.header h3,
 #sitenavigation div.moduleentry div.header h3 {
   background: #79be16;
-  padding: 0 11px 3px 30px;
+  padding: 0 11px 3px 25px;
   margin: 0 9px 0 9px;
   font-family: 'Linux Biolinum','Optima','Palatino',sans-serif;
   color: white;
@@ -146,41 +149,116 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   font-size: 14px;
   font-style: normal;
 }
+#quickoverview div.moduleentry div.content,
 #sitenavigation div.moduleentry div.content {
   background: #daf3af url('graphics/theme4/box_green-mh-1px.png') top repeat-x;
   padding: 6.4px 8px 4px 8px;
   margin: 0 9px -6px 9px;
 }
+#quickoverview div.moduleentry div.content li,
 #sitenavigation div.moduleentry div.content li {
     background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
     margin-left:0px;
     padding-left:10px;
 }
+#quickoverview div.moduleentry div.footer,
 #sitenavigation div.moduleentry div.footer {
   background: url('graphics/theme4/navbox-bi.gif') repeat-y;
   height: 14px;
 }
+#quickoverview img.category-icon,
 #sitenavigation img.category-icon {
     position: absolute;
     background-repeat: no-repeat;
-    height:44px;
-    left:8px;
-    top:-5px;
-    width:52px;
-}
-#sitenavigation div.cat-doc img.category-icon {
-    background-image: url(graphics/theme4/cat-doc.png);
-}
-#sitenavigation div.cat-promotion img.category-icon {
-    background-image: url(graphics/theme4/cat-promotion.png);
-}
-#sitenavigation div.cat-community img.category-icon {
-    background-image: url(graphics/theme4/cat-community.png);
-}
-#sitenavigation div.cat-devel img.category-icon {
-    background-image: url(graphics/theme4/cat-devel.png);
 }
 
+/* Quickbox (Home right) */
+#quickoverview div.moduleentry {
+  width: 233px;
+  background-image: url('graphics/theme4/quickbox-liri-1px.gif');
+}
+#quickoverview div.moduleentry div.header {
+  background-image: url('graphics/theme4/quickbox-t-solid.png');
+}
+#quickoverview div.moduleentry div.header h3 {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 25px;
+}
+#quickoverview div.moduleentry div.footer {
+  background-image: url('graphics/theme4/quickbox-bi.gif');
+}
+
+/* Quickbox Download */
+#quickoverview div.cat-download div.header {
+  background-image: url('graphics/theme4/quickbox_blue-t-solid.png');
+}
+#quickoverview div.cat-download div.header h3 {
+  background-color:#1568af;
+}
+#quickoverview div.cat-download div.content {
+  background-image: url('graphics/theme4/box_blue-mh-1px.png');
+  background-color: #b9dbf7;
+}
+#quickoverview div.cat-download div.footer {
+  background-image: url('graphics/theme4/quickbox_blue-bi.gif');
+}
+
+/* Quickbox Support */
+#quickoverview div.cat-support div.header {
+  background-image: url('graphics/theme4/quickbox_red-t-solid.png');
+}
+#quickoverview div.cat-support div.header h3 {
+  background-color:#c24610;
+}
+#quickoverview div.cat-support div.content {
+  background-image: url('graphics/theme4/box_red-mh-1px.png');
+  background-color: #f6cca6;
+}
+#quickoverview div.cat-support div.footer {
+  background-image: url('graphics/theme4/quickbox_red-bi.gif');
+}
+
+
+.cat-doc .category-icon {
+  background: url('graphics/theme4/cat-doc.png') no-repeat;
+  left: 6px; top: -3px;
+  width: 35px; height: 38px;
+}
+.cat-devel .category-icon {
+  background: url('graphics/theme4/cat-devel.png') no-repeat;
+  left: 6px; top: -2px;
+  width: 42px; height: 44px;
+}
+.cat-community .category-icon {
+  background: url('graphics/theme4/cat-community.png') no-repeat;
+  left: 1px; top: -1px;
+  width: 52px; height: 38px;
+}
+.cat-promotion .category-icon {
+  background: url('graphics/theme4/cat-promotion.png') no-repeat;
+  left: 5px; top: 1px;
+  width: 38px; height: 36px;
+}
+.cat-download .category-icon {
+  background: url('graphics/theme4/cat-download.png') no-repeat;
+  right: 3px; top: -3px;
+  width: 59px; height: 69px;
+}
+.cat-support .category-icon {
+  background: url('graphics/theme4/cat-support.png') no-repeat;
+  right: 4px; top: 0px;
+  width: 44px; height: 44px;
+}
+/*
+TODO IE6 overrides
+.cat-doc .cat-icon  { background-image: url('graphics/theme4/cat-doc.gif') }
+.cat-devel .cat-icon  { background-image: url('graphics/theme4/cat-devel.gif') }
+.cat-community .cat-icon  { background-image: url('graphics/theme4/cat-community.gif') }
+.cat-promotion .cat-icon  { background-image: url('graphics/theme4/cat-promotion.gif') }
+.cat-download .cat-icon  { background-image: url('graphics/theme4/cat-download.gif') }
+.cat-support .cat-icon  { background-image: url('graphics/theme4/cat-support.gif') }
+*/
 
 th { border: 1px solid gray; }
 td { border: 1px solid gray; }

@@ -1,9 +1,9 @@
 <?php
 
-function module_head($subject){
+function module_head($subject, $class=''){
 
-echo '<div class="moduleentry">
-  <div class="header"><h3>'.$subject.'</h3></div>
+echo '<div class="moduleentry '.$class.'">
+  <div class="header"><img class="category-icon"/><h3>'.$subject.'</h3></div>
   <div class="content">
 ';
 }
