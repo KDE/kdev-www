@@ -81,12 +81,12 @@ body { padding: 0; margin: 0; }
 #translator { text-align: center; }
 #sitestats { text-align: center; }
 
-#news div.moduleentry {
+#news div.border {
     background-image: url('graphics/theme4/box_lightgreen-mh-1px.png'); background-repeat: repeat-x;
     background-color: #e6f5c3;
     position: relative;
 }
-#news div.moduleentry div.header {
+#news div.border div.header {
     background-image: url('graphics/theme4/box-ti-solid-1px.png'); background-repeat: repeat-x;
     height: 14px;
 }
@@ -97,6 +97,10 @@ body { padding: 0; margin: 0; }
     color: #c34609;
     font-style: normal; font-size: 14px;
 }
+#news div.moduleentry div.header h3 a {
+    color: #c34609;
+}
+
 #news div.moduleentry div.border-tl {
     background-image: url('graphics/theme4/box_lightgreen-tl-solid.png');
     width: 14px; height: 14px; z-index: 5;
@@ -132,7 +136,7 @@ body { padding: 0; margin: 0; }
 #news div.moduleentry div.content {
     padding: 20px; padding-top: 0; padding-bottom: 0;
 }
-#news div.moduleentry div.footer {
+#news div.border div.footer {
     height: 14px; background-position: bottom;
     background-image: url('graphics/theme4/box-bi-solid-1px.png'); background-repeat: repeat-x;
 }
@@ -188,7 +192,7 @@ th.header {
   }
 
 /* for each "module" element ( module_head() and module_tail() functions ) */
-div.moduleentry { background-color: #EFF7E3; text-align: justify; margin: 5px; }
+div.moduleentry { text-align: justify; margin: 5px; }
 h1.moduleheader { background-color: #81A979; text-align: center; font : bold normal medium sans-serif; }
 div.modulecontent { padding: 0px 5px 2px 5px; }
 
