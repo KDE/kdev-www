@@ -4,12 +4,29 @@ cd ~
 
 cd public_html/www/
 
+year=`date +%Y`
+month=`date +%-m`
+day=`date +%d`
+: $(cal $month $year); last_day_of_the_month=$_
+
 # Create Webalizer http statistics for www.kdevelop.org
-# This should be changed to only run on the 1st day on the month
+if [ "$day" -eq "$last_day_of_the_month" ]; then
 mkdir -p admin/webalizer_stats
 # -K 120 Specify how many months should be displayed in the main index (yearly summary) table
 # -k 18  Specify how many months should be displayed in the main index (yearly summary) graph
 nice webalizer -A 100 -M 0 -C 100 -o admin/webalizer_stats/ -n www.kdevelop.org -r kdevelop.org /var/log/httpd/kdevelop.httpd.access_log > admin/logs/webalizer.log 2> admin/logs/webalizer.err.log
+fi
+
+# if for example main2010.html file does not exist, create it with correct permissions
+if [ ! -f main$year.html ]; then
+   touch main$year.html
+   chmod 666 main$year.html
+   # This should only be done on the www.kdevelop.org server, NOT on your local copy
+   if [ `whoami` = "smeier" ]; then
+      cvs -q add -m "Includes news from year $year" main$year.html
+      cvs -q commit -m "Another year has passed" main$year.html
+   fi
+fi
 
 # Add news items to CVS using smeier account, only new items get added
 # This should only be done on the www.kdevelop.org server, NOT on your local copy
@@ -19,6 +36,7 @@ if [ `whoami` = "smeier" ]; then
   cvs -q add *.ihtml
   cvs -q commit -m "Added news item"
   cd ..
+  cvs -q commit -m "Added news item" main*.html
 fi
 
 cd bin

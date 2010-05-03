@@ -53,6 +53,7 @@ Redirect seeother /3.2/index.html http://www.kdevelop.org/index.html?filename=3.
 Redirect seeother /3.3/index.html http://www.kdevelop.org/index.html?filename=3.3/kdevelop.html
 Redirect seeother /3.4/index.html http://www.kdevelop.org/index.html?filename=3.4/kdevelop.html
 Redirect seeother /3.5/index.html http://www.kdevelop.org/index.html?filename=3.5/kdevelop.html
+Redirect seeother /4.0/index.html http://www.kdevelop.org/index.html?filename=4.0/kdevelop.html
 AddType application/rss+xml .rss
 AddType text/javascript .js
 

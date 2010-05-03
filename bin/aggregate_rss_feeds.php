@@ -178,7 +178,7 @@ echo $description; ?>
         <a class="source" href="<?php echo $pfeed->get_permalink(); ?>"><?php echo $pfeed->get_title(); ?></a>
     </h4>
     <div class="entry-content">
-	<?php echo shorten($item->get_description(), 200); ?>
+	<?php echo shorten($item->get_description(), 300); ?>
 	<a class="fullpost" href="<?php echo $item->get_permalink(); ?>">read full post...</a>
 	</div>
 </div>

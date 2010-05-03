@@ -1,4 +1,10 @@
 <tr>
+<td class=even><a href="index.html?filename=4.0/kdevelop.html">KDevelop-4.0.0</a></td>
+<td class=even>KDE &gt;= 4.3</td>
+<td class=even>Qt &gt;= 4.5</td>
+<td class=even>2010-05-01</td>
+</tr>
+<tr>
 <td class=odd><a href="index.html?filename=3.5/kdevelop.html">KDevelop-3.5.5</a></td>
 <td class=odd>KDE &gt;= 3.4, &lt; 4</td>
 <td class=odd>Qt &gt;= 3.3, &lt; 4</td>

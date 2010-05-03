@@ -179,22 +179,31 @@ switch ($filename) {
     break;
 
   // Temporally redirect HEAD pages to the wiki
+  case '4.0/download.html':
   case 'HEAD/download.html':
+    header('HTTP/1.1 303 See other');
+    header('Location: mediawiki/index.php/KDevelop_4#Download');
+    exit();
+    break;
+  case '4.0/branches_compiling.html':
   case 'HEAD/branches_compiling.html':
     header('HTTP/1.1 303 See other');
     header('Location: mediawiki/index.php/KDevelop_4/compiling');
     exit();
     break;
+  case '4.0/features.html':
   case 'HEAD/features.html':
     header('HTTP/1.1 303 See other');
     header('Location: mediawiki/index.php/KDevelop_4/Feature_Plan');
     exit();
     break;
+  case '4.0/requirements.html':
   case 'HEAD/requirements.html':
     header('HTTP/1.1 303 See other');
     header('Location: mediawiki/index.php/KDevelop_4/requirements');
     exit();
     break;
+  case '4.0/screenshots.html':
   case 'HEAD/screenshots1.html':
   case 'HEAD/screenshots2.html':
   case 'HEAD/screenshots3.html':
@@ -202,6 +211,8 @@ switch ($filename) {
     header('Location: mediawiki/index.php/KDevelop_4#Screenshots');
     exit();
     break;
+  case '4.0/changes.html':
+  case '4.0/kdevelop.html':
   case 'HEAD/changes.html':
   case 'HEAD/kdevelop.html':
     header('HTTP/1.1 303 See other');
@@ -272,6 +283,13 @@ switch ($filename) {
   case '3.5/.':
     header('HTTP/1.1 301 Moved Permanently');
     header('Location: index.html?filename=3.5/kdevelop.html');
+    $http_status_code = 301;
+    break;
+  case '4.0':
+  case '4.0/':
+  case '4.0/.':
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: index.html?filename=4.0/kdevelop.html');
     $http_status_code = 301;
     break;
 }
