@@ -173,7 +173,7 @@ echo $description; ?>
 ?>
 <div>
 	<h4><a href="<?php echo $item->get_permalink(); ?>"><?php echo html_entity_decode($item->get_title(), ENT_QUOTES, 'UTF-8'); ?></a></h4>
-	<?php echo shorten($item->get_description(), 200); ?>
+	<?php echo shorten($item->get_description(), 300); ?>
 
 	<p class="footnote">Source: <a href="<?php echo $pfeed->get_permalink(); ?>"><?php echo $pfeed->get_title(); ?></a> | <?php echo $item->get_date('j M Y | g:i a'); ?></p>
 </div>

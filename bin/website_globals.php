@@ -13,7 +13,7 @@ global $stable_KDE_BRANCH;
 global $stable_KDevelop_BRANCH;
 
 // START - EDIT THESE FOR MAJOR RELEASES - START
-$lsv='3.5'; // Latest Stable Version written in major version (x.x)
+$lsv='4.0'; // Latest Stable Version written in major version (x.x)
 
 // These only exist for KDevelop >= 3.0 (but are mostly used for KDevelop >= 3.2)
 $K_VERSION['3.0'] = array(
@@ -97,35 +97,35 @@ $K_VERSION['3.5'] = array(
 $K_VERSION['4.0'] = array(
      'base_version'             =>'4.0',
      'series_version'           =>'4.0.x',
-     'latest_version'           =>'3.9.97',
-     'latest_release_date'      =>'2009-12-11', // tag date
+     'latest_version'           =>'4.0.0',
+     'latest_release_date'      =>'2010-05-01', // tag date
      'kde_base_version'         =>'4.4',
      'branch'                   =>'KDE/4.4',
-     'branch_path'              =>'branches/KDE/4.4/kdevelop',
+     'branch_path'              =>'branches/stable/extragear-kde4/sdk/kdevelop/4.0',
      'i18n_stats_url'           =>'stable',
-     'release_date'             => strtotime('12/16/2009'),
+     'release_date'             => strtotime('05/01/2010'),
      'kde_release'              => '4.4',
-     'kde_release_schedule'     => 'http://techbase.kde.org/Schedules/KDE4/4.4_Release_Schedule',
+     'kde_release_schedule'     => 'http://www.kdevelop.org/mediawiki/index.php/KDevelop_4/4.0_Release_Schedule',
      'min_required_kde_version' =>'4.3');
 
 $KPLATFORM_VERSION['1.0'] = $K_VERSION['4.0'];
 $KPLATFORM_VERSION['1.0']['base_version']   = '1.0';
 $KPLATFORM_VERSION['1.0']['series_version'] = '1.0.x';
-$KPLATFORM_VERSION['1.0']['latest_version'] = '0.9.97';
-$KPLATFORM_VERSION['1.0']['branch_path']    = 'branches/KDE/4.4/kdevplatform';
+$KPLATFORM_VERSION['1.0']['latest_version'] = '1.0.0';
+$KPLATFORM_VERSION['1.0']['branch_path']    = 'branches/stable/extragear-kde4/sdk/kdevplatform/1.0';
 
 $K_VERSION['HEA'] = array(
      'base_version'             =>'HEAD',
      'series_version'           =>'HEAD',
      'latest_version'           =>'HEAD',
-     'latest_release_date'      =>'2009-12-11',  // tag date
+     'latest_release_date'      =>'2010-04-16',  // tag date
      'kde_base_version'         =>'HEAD',
      'branch'                   =>'trunk/extragear/sdk/',  // trunk/KDE
      'branch_path'              =>'trunk/extragear/sdk/kdevelop',
      'i18n_stats_url'           =>'trunk',
-     'release_date'             => strtotime('03/31/2010'),
+     'release_date'             => strtotime('04/16/2010'),
      'kde_release'              => '',
-     'kde_release_schedule'     => 'http://techbase.kde.org/Schedules/KDE4/4.4_Release_Schedule',
+     'kde_release_schedule'     => 'http://techbase.kde.org/Schedules/KDE4/4.5_Release_Schedule',
      'min_required_kde_version' =>'4.3');
 
 // For the user manuals and stuff

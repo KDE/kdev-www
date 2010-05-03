@@ -22,6 +22,7 @@ cvs update -dP > admin/logs/website_cvs_up.log 2> admin/logs/website_cvs_up.err.
 # Sometimes the permissions get restricted by the CVS update operation
 # so open them up, let the webserver overwrite the .ihtml files
 chmod o+w news/*.ihtml
+chmod o+w main201*.html
 
 # Execute manual maintenance tasks
 ./bin/manual_maintenance.sh

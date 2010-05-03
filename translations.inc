@@ -39,12 +39,12 @@ $languages = array("en" => "English",
 $l_more_elipsis = 'more ...';
 
 $l_what_is_KDevelop = 'What is KDevelop ?';
-$l_def_KDevelop = 'is a free, opensource IDE (Integrated Development Environment) for MS Windows, Mac OsX, Linux, Solaris and FreeBSD.
-It is a feature-full, plugin extendable IDE for C/C++ and other programing languages.
-It is based on KDevPlatform, KDE and Qt libraries and is under development since 1998.';
-$l_def_KDevPlatform = 'is a free, opensource set of libraries that can be used as a foundation for IDE-like programs.
+$l_def_KDevelop = 'is a free, open source IDE (Integrated Development Environment) for MS Windows, Mac OS X, Linux, Solaris and FreeBSD.
+It is a feature-full, plugin extensible IDE for C/C++ and other programming languages.
+It is based on KDevPlatform, and the KDE and Qt libraries and is under development since 1998.';
+$l_def_KDevPlatform = 'is a free, open source set of libraries that can be used as a foundation for IDE-like programs.
 It is programing-language independent, and is planned to be used by programs like: KDevelop, Quanta, Kile, KTechLab ... etc.';
-$l_def_KDevelop4 = 'Major rewrite based on Qt4/KDE4 with a powerful language architecture. Under heavy development and currently in Beta phase, recommended for C++ or PHP development with CMake or custom Makefiles as their build system. Recommended for Linux (<b>all other OS might work</b>, but are not tested yet).';
+$l_def_KDevelop4 = 'A major rewrite based on Qt4/KDE4 with a powerful language architecture. Under heavy development and currently in Beta phase, recommended for C++ or PHP development with CMake or custom Makefiles as their build system. Recommended for Linux (<b>all other OS might work</b>, but are not tested yet).';
 $l_def_KDevelop3 = 'Very stable and mature IDE based on Qt3/KDE3 with support for many programing languages and build systems. No longer under development';
 
 // cvsbranches.ihtml page
