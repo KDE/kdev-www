@@ -140,7 +140,7 @@ Aggregated Feed of KDevelop Developer\'s blog posts.
 <language>en-us</language>
 ';
 else
-  echo '<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "dev-blog-posts"); ?>
+  echo '<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts:</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "dev-blog-posts"); ?>
 ';
 
 // Filter them
