@@ -1,4 +1,5 @@
-php_flag short_open_tag off
+AddType application/x-httpd-php .html
+#php_flag short_open_tag off
 # The documents to serve in case of error
 ErrorDocument 404 /error404.html
 ErrorDocument 410 /error410.html
