@@ -279,6 +279,7 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   width: 204px;  /* width of quick-access boxes */
   margin: 0 0 2.6px 13px;
 }
+#quickoverview div.moduleentry { margin-right: 6px; }
 #quickoverview div.moduleentry div.header,
 #sitenavigation div.moduleentry div.header {
   position: relative;
