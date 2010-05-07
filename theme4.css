@@ -178,8 +178,9 @@ div.main-versions dt span.range {
     color: #71ac12;
 }
 
+div.dev-blog-posts .header { height: 10px; }
 div.dev-blog-posts h4 {
-    margin: 0;
+    margin: 0; margin-bottom: 5px;
     border-bottom: 1px solid #73952f;
     font-style: italic;
     position: relative;
@@ -205,6 +206,28 @@ div.dev-blog-posts a.fullpost {
     background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
     padding-left:10px;
 }
+
+
+div.news-list .header { height: 10px; }
+div.news-list p.newsDate {
+    float: left; margin: 0px;
+    color: #73ad1f; font-size: 11px;
+    display: block; width: 80px;
+    font-style: normal;
+}
+div.news-list h2 {
+    margin: 0; margin-bottom: 5px;
+    border-bottom: 1px solid #73952f;
+    font-style: italic;
+    position: relative;
+    padding-right: 50px;
+    color: black;
+}
+div.news-list p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
 /*
 pure style and beautification stuff, as less layout (position) as possible
 very general stuff

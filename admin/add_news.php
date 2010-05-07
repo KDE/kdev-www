@@ -123,20 +123,18 @@ module_head(\$module_title);\n";
     // Only add $posts_in_main_page to the main.html file
     if ($posts < $posts_in_main_page) {
       // this is served to the user
-      $news_file .= "echo '<p><b>'.strftime(\"%Y-%B-%d\", $news_unix_timestamp).'</b> - ';\n";
-      //$news_file .= "echo '<p><b>'.strftime(\"%x\", $news_unix_timestamp).'</b> - ';\n";
+      $news_file .= "echo '<p class=\"newsDate\">'.date(\"M j, Y\", $news_unix_timestamp).\"</p>\\n\";\n";
       $news_file .= 'include_file("'.ereg_replace('\.\./', '', $row->filename)."\");\n";
-      $news_file .= "echo \"</p>\\n\";\n";
+      $news_file .= "echo \"\\n\";\n";
       $posts++;
     }
 
     // Only rebuild the year that got a new "news post" or that got a "news post" deleted
     if ($year == $rebuild_year) {
       // this is served to the user
-      $news_year_file .= "echo '<p><b>'.strftime(\"%Y-%B-%d\", $news_unix_timestamp).'</b> - ';\n";
-      //$news_file .= "echo '<p><b>'.strftime(\"%x\", $news_unix_timestamp).'</b> - ';\n";
+      $news_year_file .= "echo '<p class=\"newsDate\">'.date(\"M j, Y\", $news_unix_timestamp).\"</p>\\n\";\n";
       $news_year_file .= 'include_file("'.ereg_replace('\.\./', '', $row->filename)."\");\n";
-      $news_year_file .= "echo \"</p>\\n\";\n";
+      $news_year_file .= "echo \"\\n\";\n";
     }
 
     // this is for the admin
@@ -238,7 +236,7 @@ if (isset($_POST['Add'])){
   }
 
   // build the contents of the news post file (place it all together)
-  $news_post_body = "<b>$subject</b><br>\n$news_body";
+  $news_post_body = "<h2>$subject</h2>\n<p>\n$news_body\n</p>";
 
   // Verify if the year file is writable, this is necessary for the situation where the $year != $current_year
   if (is_writable($path_to_root."main$year.html") != true)
