@@ -6,7 +6,7 @@ global $l_versions;
 global $l_def_KDevelop4;
 global $l_def_KDevelop3;
 module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
-<img class="screenshot" src="graphics/theme4/screenshot-main.png" height="127" width="174" alt="" />
+<img class="screenshot" src="graphics/theme4/frontpagescreenshot-solid.png" height="127" width="174" alt="" />
 <dl>
 <dt><b>KDevelop</b></dt><dd>
     <?php echo $l_def_KDevelop; ?>
