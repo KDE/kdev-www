@@ -368,6 +368,7 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
     background-image: url('graphics/kdevelop_icon_32.png'); background-repeat: no-repeat;
     background-position: 5px 2px;
 }
+#quickoverview div.cat-download div.content a.download:hover { text-decoration: none; }
 #quickoverview div.cat-download div.content a.download-legacy {
     background-image: url('graphics/kdevelop30_icon.png');
     background-position: 15px 2px;
