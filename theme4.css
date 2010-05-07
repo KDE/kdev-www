@@ -23,6 +23,9 @@ a {
   text-decoration: none;
   color: #004cc9;
 }
+a:hover {
+  text-decoration: underline;
+}
 
 div.clear { clear: both; }
 
