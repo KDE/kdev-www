@@ -5,6 +5,11 @@ if ($filename != "HEAD/authors.html")
 else
   echo "<li>KDevelop - $l_pt_HEAD_authors</li>\n";
 
+if ($filename != "4.0/authors.html")
+  printf("<li><a href=\"index.html?filename=4.0/authors.html\">KDevelop - $l_pt_x_x_authors</a></li>\n", "4.0");
+else
+  printf("<li>KDevelop - $l_pt_x_x_authors</li>\n", "4.0");
+
 if ($filename != "3.5/authors.html")
   printf("<li><a href=\"index.html?filename=3.5/authors.html\">KDevelop - $l_pt_x_x_authors</a></li>\n", "3.5");
 else

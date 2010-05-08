@@ -1,9 +1,14 @@
 <?php module_head("$l_other_versions");
 echo "<ul>";
-if ($filename != "HEAD/screenshots1.html")
-  echo "<li><a href=\"index.html?filename=HEAD/screenshots1.html\">KDevelop - $l_pt_HEAD_screenshots1</a></li>\n";
+if ($filename != "HEAD/screenshots.html")
+  echo "<li><a href=\"index.html?filename=HEAD/screenshots.html\">KDevelop - $l_pt_HEAD_screenshots1</a></li>\n";
 else
   echo "<li>KDevelop - $l_pt_HEAD_screenshots1</li>\n";
+
+if ($filename != "4.0/screenshots.html")
+  printf("<li><a href=\"index.html?filename=4.0/screenshots.html\">KDevelop - $l_pt_x_x_screenshots</a></li>\n", "4.0");
+else
+  printf("<li>KDevelop - $l_pt_x_x_screenshots</li>\n", "4.0");
 
 if ($filename != "3.5/screenshots.html")
   printf("<li><a href=\"index.html?filename=3.5/screenshots.html\">KDevelop - $l_pt_x_x_screenshots</a></li>\n", "3.5");

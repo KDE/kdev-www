@@ -179,6 +179,11 @@ switch ($filename) {
     break;
 
   // Temporally redirect HEAD pages to the wiki
+  case '4.0/announce-kdevelop-4.0.html':
+    header('HTTP/1.1 303 See other');
+    header('Location: mediawiki/index.php/KDevelop_4/4.0_Release_Announcement');
+    exit();
+    break;
   case '4.0/download.html':
   case 'HEAD/download.html':
     header('HTTP/1.1 303 See other');
@@ -203,12 +208,11 @@ switch ($filename) {
     header('Location: mediawiki/index.php/KDevelop_4/requirements');
     exit();
     break;
-  case '4.0/screenshots.html':
   case 'HEAD/screenshots1.html':
   case 'HEAD/screenshots2.html':
   case 'HEAD/screenshots3.html':
     header('HTTP/1.1 303 See other');
-    header('Location: mediawiki/index.php/KDevelop_4#Screenshots');
+    header('Location: index.html?filename=HEAD/screenshots.html');
     exit();
     break;
   case '4.0/changes.html':

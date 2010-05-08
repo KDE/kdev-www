@@ -44,8 +44,8 @@ It is a feature-full, plugin extensible IDE for C/C++ and other programming lang
 It is based on KDevPlatform, and the KDE and Qt libraries and is under development since 1998.';
 $l_def_KDevPlatform = 'is a free, open source set of libraries that can be used as a foundation for IDE-like programs.
 It is programing-language independent, and is planned to be used by programs like: KDevelop, Quanta, Kile, KTechLab ... etc.';
-$l_def_KDevelop4 = 'A major rewrite based on Qt4/KDE4 with a powerful language architecture. Under heavy development and currently in Beta phase, recommended for C++ or PHP development with CMake or custom Makefiles as their build system. Recommended for Linux (<b>all other OS might work</b>, but are not tested yet).';
-$l_def_KDevelop3 = 'Very stable and mature IDE based on Qt3/KDE3 with support for many programing languages and build systems. No longer under development';
+$l_def_KDevelop4 = 'A major rewrite based on Qt4/KDE4 with a powerful language architecture. Under heavy development, recommended for C++ or PHP development with CMake or custom Makefiles as their build system. Recommended for Linux (<b>all other OS might work</b>, but are not tested yet).';
+$l_def_KDevelop3 = 'Very stable and mature IDE based on Qt3/KDE3 with support for many programing languages and build systems. No longer under development.';
 
 // cvsbranches.ihtml page
 $l_unstable_development = 'unstable development for %s';
@@ -135,7 +135,7 @@ $l_irc_description="You can meet other users and developers on the <a href=\"cha
 
 // Picture Corner module
 $l_picture_corner="Picture Corner";
-$l_picture_corner_description="KDevelop 3.0 in IDEAl mode using KDE 3.2 with Plastik theme";
+$l_picture_corner_description="KDevelop 4.0 screenshot";
 
 // User Programs module
 $l_total = "total:";
