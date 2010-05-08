@@ -16,7 +16,7 @@ module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
     <li><a href="#">FAQ</a></li>
     </ul>
 </dd>
-<dt><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?> <a href="#">more Info...</a></dd>
+<dt class="kdevplatform"><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?> <a href="#">more Info...</a></dd>
 </dl>
 <?php module_tail();?>
 

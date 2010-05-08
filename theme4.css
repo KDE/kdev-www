@@ -75,10 +75,10 @@ body { padding: 0; margin: 0; }
 
 
 /* two/three columns touching each other */
-#sitenavigation { position: absolute; top: 120px; left: 0px; width: 10em; }                 /* left column */
-#news           { position: relative; top: 90px; margin-left: 225px; margin-right: 240px; } /* middle column (2 of 3) */
+#sitenavigation { position: absolute; top: 121px; left: 0px; width: 10em; }                 /* left column */
+#news           { position: relative; top: 94px; margin-left: 220px; margin-right: 243px; } /* middle column (2 of 3) */
 #maincontent    { position: relative; top: 120px; margin-left: 225px; margin-right: 0px; }   /* middle column (2 of 2) */
-#quickoverview  { position: absolute; top: 120px; right: 0px; }               /* right column */
+#quickoverview  { position: absolute; top: 121px; right: 0px; }               /* right column */
 
 /* elements at the bottom of the two/three columns */
 .outdatedtranslation { text-align: center; }
@@ -97,8 +97,8 @@ body { padding: 0; margin: 0; }
 }
 #news div.moduleentry div.header h3 {
     padding-left: 20px;
-    position: relative; top: -20px;
-    margin-top: 30px; margin-left: -15px;
+    position: relative; top: -19px;
+    margin-top: 27px; margin-left: -13px;
     color: #c34609;
     font-style: normal; font-size: 14px;
 }
@@ -139,26 +139,33 @@ body { padding: 0; margin: 0; }
     right: 0; z-index: 0;
 }
 #news div.moduleentry div.content {
-    padding: 20px; padding-top: 0; padding-bottom: 0;
+    padding: 16px; padding-top: 2px; padding-bottom: 0;
 }
 #news div.border div.footer {
     height: 14px; background-position: bottom;
     background-image: url('graphics/theme4/box-bi-solid-1px.png'); background-repeat: repeat-x;
 }
 
+div.what-is-kdevelop dl {
+    margin: 0;
+}
 div.what-is-kdevelop dl dt {
     color: #60a802;
     font-size: 20px;
+    margin: 0; padding: 0;
 }
-div.what-is-kdevelop dl dd { margin-bottom: 10px; }
-div.what-is-kdevelop dl dd ul { margin: 0; }
+div.what-is-kdevelop dt.kdevplatform {
+    font-size: 16px;
+}
+div.what-is-kdevelop dl dd { margin-bottom: 11px; margin-left: 22px; margin-top: 4px; }
+div.what-is-kdevelop dl dd ul { margin: 0; padding: 0; padding-left: 15px; padding-top: 4px; }
 div.what-is-kdevelop dl dd li {
     display: inline;
     background: url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
-    padding-left: 7px; margin-right: 10px;
+    padding-left: 11px; margin-right: 10px;
 }
 div.what-is-kdevelop .screenshot {
-    float: right; margin-top: -34px; margin-right: -17px;
+    float: right; margin-top: -24px; margin-right: -16px;
 }
 
 div.main-versions dl {
@@ -277,7 +284,7 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   text-align: left;
   background: url('graphics/theme4/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of quick-access boxes */
-  margin: 0 0 2.6px 13px;
+  margin: 0 0 2.6px 12px;
 }
 #quickoverview div.moduleentry { margin-right: 6px; }
 #quickoverview div.moduleentry div.header,
@@ -289,7 +296,7 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
 #quickoverview div.moduleentry div.header h3,
 #sitenavigation div.moduleentry div.header h3 {
   background: #79be16;
-  padding: 0 11px 3px 25px;
+  padding: 0 11px 4px 25px;
   margin: 0 9px 0 9px;
   font-family: 'Linux Biolinum','Optima','Palatino',sans-serif;
   color: white;
