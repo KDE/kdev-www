@@ -200,7 +200,7 @@ div.dev-blog-posts h4 .date {
     margin-top: 2px;
     color: #73ad1f; font-size: 11px;
     font-weight: normal;
-    display: block; float: left; width: 80px;
+    display: block; float: left; min-width: 7em; padding-right: 7px;
     font-style: normal;
 }
 div.dev-blog-posts h4 .source {
@@ -222,7 +222,7 @@ div.news-list .header { height: 10px; }
 div.news-list p.newsDate {
     float: left; margin: 0px;
     color: #73ad1f; font-size: 11px;
-    display: block; width: 80px;
+    display: block; min-width: 7em; padding-right: 7px;
     font-style: normal;
 }
 div.news-list h2 {
