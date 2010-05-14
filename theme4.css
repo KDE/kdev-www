@@ -28,6 +28,11 @@ a:hover {
 }
 
 div.clear { clear: both; }
+p.more a {
+    background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
+    margin-left:0px;
+    padding-left:10px;
+}
 
 /*
 basic "holly-grail" layout (top box plus two/three columns touching)
@@ -147,6 +152,7 @@ div.border div.footer {
     height: 14px; background-position: bottom;
     background-image: url('graphics/theme4/box-bi-solid-1px.png'); background-repeat: repeat-x;
 }
+
 
 div.what-is-kdevelop dl {
     margin: 0;

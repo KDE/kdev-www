@@ -192,7 +192,7 @@ if ($type == 'rss'){
 } else {
   echo '<?php ';
   if ($total_items < 10)
-    echo 'echo "<p class=\"detailedchangelog\"><a href=\"index.html?filename=in_the_press.html#Latest_blog_posts\">$l_more_elipsis</a></p>"; ';
+    echo 'echo "<p class=\"more\"><a href=\"index.html?filename=in_the_press.html#Latest_blog_posts\">$l_more_elipsis</a></p>"; ';
   echo 'module_tail(); ?>';
 }
 ?>

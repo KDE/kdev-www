@@ -44,4 +44,4 @@
 	Yay I got a GSOC slot :)  So I hope I don&#8217;t have to introduce myself anymore to you guys. Instead I&#8217;ll show you what I&#8217;ve planned to do over the summer:  Motivation for Proposal / Go...	<a class="fullpost" href="http://milianw.de/blog/gsoc-revive-quanta-brand-for-kde-4">read full post...</a>
 	</div>
 </div>
-<?php echo "<p class=\"detailedchangelog\"><a href=\"index.html?filename=in_the_press.html#Latest_blog_posts\">$l_more_elipsis</a></p>"; module_tail(); ?>
+<?php echo "<p class=\"more\"><a href=\"index.html?filename=in_the_press.html#Latest_blog_posts\">$l_more_elipsis</a></p>"; module_tail(); ?>
