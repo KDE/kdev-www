@@ -10,7 +10,7 @@ function module_head($subject, $class='moduleentry'){
         echo "<div class=\"border-l\"></div>\n";
         echo "<div class=\"border-r\"></div>\n";
     }
-    echo "<div class=\"header\"><img class=\"category-icon\"/><h3>$subject</h3></div>\n";
+    echo "<div class=\"header\"><span class=\"category-icon\"></span><h3>$subject</h3></div>\n";
     echo "<div class=\"content\">\n";
 }
 

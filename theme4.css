@@ -321,8 +321,8 @@ div.navbox div.footer {
   background: url('graphics/theme4/navbox-bi.gif') repeat-y;
   height: 14px;
 }
-div.quickbox img.category-icon,
-div.navbox img.category-icon {
+div.quickbox .category-icon,
+div.navbox .category-icon {
     position: absolute;
     background-repeat: no-repeat;
 }
