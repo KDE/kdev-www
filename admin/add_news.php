@@ -106,7 +106,7 @@ function rebuild_news_index_files($path_to_root, $news_dir, $rebuild_year){
   $news_year_file = "<?php
 global \$l_pt_main_year;
 \$module_title=sprintf(\$l_pt_main_year, $rebuild_year);
-module_head(\$module_title, 'news-list');\n";
+module_head(\$module_title, 'moduleentry news-list');\n";
   $news_edit_file = "<table border=\"0\">\n";
 
   $posts = 0;
