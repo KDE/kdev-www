@@ -1,4 +1,4 @@
-<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "dev-blog-posts"); ?>
+<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "moduleentry dev-blog-posts"); ?>
 <div>
 	<h4><a href="http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/">Andreas Pakulat: Finally KDevelop 4.0 final published</a></h4>
 	Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 year...
