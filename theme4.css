@@ -262,17 +262,6 @@ dd.code {
     text-align: left;
   }
 
-table {
-    border-collapse: collapse; /* nice looking table borders */
-    margin-left: auto;         /* center tables (margin-left==margin-right) */
-    margin-right: auto;
-  }
-
-th.header {
-    font-weight: bold;
-    background-color: #9CCC92;
-    text-align: center;
-  }
 
 
 div.quickbox,
@@ -450,58 +439,6 @@ TODO IE6 overrides
 .cat-support .cat-icon  { background-image: url('graphics/theme4/cat-support.gif') }
 */
 
-th { border: 1px solid gray; }
-td { border: 1px solid gray; }
-td.even { background-color: #AEE5A3; }
-td.odd { background-color: #DCEEC2; }
-
-.footnote,
-.footnote a {
-	font-size:12px;
-	line-height:1.3em;
-	color:#aaa;
-}
-
-.footnote em {
-	background-color:transparent;
-	font-style:italic;
-}
-
-.footnote code {
-	background-color:transparent;
-	font:11px/14px monospace;
-	color:#aaa;
-}
-
-
-/*
-Very specific formating/style stuff
-*/
-#searchdomain { font-size: small; }
-#sitesearch td { border: 0px; }
-#sitesearch table { margin-right: 0; }
-#quickdownloads { font-size: small; text-align: left; }
-
-/* website navigation (left column) */
-#sitenavigation h2{ text-align: center; font : bold normal medium sans-serif; margin: 0px; }
-#sitenavigation ul{ text-align: left; list-style-type:none; padding: 0px; margin: 0px;}
-#sitenavigation table{ border: 0; width: 9em; }
-#sitenavigation td { border: 0; }
-#sitenavigation th { border: 0; }
-td.versionlink { font-size: x-small; text-align: center; }
-
-#picturecorner { text-align: center; }
-#userprograms { text-align: center; }
-#latestchangelogs { font-size: x-small; }
-.detailedchangelog { font-size: small; text-align: right; }
-
-/* screenshots pages */
-div.screenshotthumb { float:left;margin: 0 25px 30px 0;vertical-align:top; }
-div.screenshotcaption { text-align:center;width:200px;height:5em; }
-
-#others ul{ list-style-type:none; }
-li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
-
 /* main horizontal navigational menu */
 #menu {
  position: absolute; top: 40px;  left: 430px;
@@ -603,38 +540,3 @@ li.othershoriz { display:inline; padding-right:20px; white-space:nowrap; }
     padding-left:10px;
     background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
 }
-
-/*
-#menu ul {
- display:inline;
- list-style-type:none;
- margin-right:0.6em;
- padding:0pt;
-}
-
-#menu ul li {
- display:inline;
- max-height:1.6em;
- padding:0pt;
- text-align:center;
- white-space:nowrap;
-}
-
-#menu ul li a {
- background:#F0F0F0;
- color:#5D5D5D;
- text-decoration:none;
-}
-
-#menu ul li.selected a {
- background:transparent;
- border-bottom:1px solid white;
- border-top:1px solid #BCBCBC;
- border-left:1px solid #BCBCBC;
- border-right:1px solid #BCBCBC;
-}
-
-#menu ul li span {
- padding: 0em 0.7em;
-}
-*/
