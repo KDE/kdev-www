@@ -76,8 +76,7 @@ body { padding: 0; margin: 0; }
 
 /* two/three columns touching each other */
 #sitenavigation { position: absolute; top: 121px; left: 0px; width: 10em; }                 /* left column */
-#news           { position: relative; top: 94px; margin-left: 220px; margin-right: 243px; } /* middle column (2 of 3) */
-#maincontent    { position: relative; top: 120px; margin-left: 225px; margin-right: 0px; }   /* middle column (2 of 2) */
+#maincontent    { position: relative; top: 94px; margin-left: 220px; margin-right: 243px; }   /* middle column (2 of 3) */
 #quickoverview  { position: absolute; top: 121px; right: 0px; }               /* right column */
 
 /* elements at the bottom of the two/three columns */
