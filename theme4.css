@@ -364,29 +364,35 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
 #quickoverview div.cat-download div.content {
   background-image: url('graphics/theme4/box_blue-mh-1px.png');
   background-color: #b9dbf7;
+  padding-bottom: 10px;
+}
+#quickoverview div.cat-download div.content p {
+    margin: 0;
+    margin-left: 2px; margin-top: -1px; margin-bottom: 2px;
 }
 #quickoverview div.cat-download div.content a.download {
     display: block;
     background-color: rgba(255, 255, 255, 0.5);
     color: #063660;
-    font-weight: bold; font-size: 20px;
-    margin-bottom: 5px; margin-left: -8px; margin-right: -8px;
-    padding: 5px; padding-left: 35px;
+    font-weight: bold; font-size: 16px;
+    margin-bottom: 4px; margin-left: -8px; margin-right: -8px;
+    padding: 5px; padding-bottom: 6px; padding-left: 43px; padding-top: 11px;
     line-height: 10px;
-    background-image: url('graphics/kdevelop_icon_32.png'); background-repeat: no-repeat;
-    background-position: 5px 2px;
+    background-image: url('graphics/kdevelop_icon_27.png'); background-repeat: no-repeat;
+    background-position: 10px 3px;
 }
 #quickoverview div.cat-download div.content a.download:hover { text-decoration: none; }
 #quickoverview div.cat-download div.content a.download-legacy {
     background-image: url('graphics/kdevelop30_icon.png');
-    background-position: 15px 2px;
+    background-position: 19px 3px;
     color: #487ba5;
-    font-size: 15px;
+    font-size: 13px;
+    padding-top: 6px; padding-bottom: 7px;
 }
 #quickoverview div.cat-download div.content a.download span.date {
     font-style: italic;
     color: black;
-    font-size: 10px; font-weight: normal;
+    font-size: 10px; font-weight: normal; position: relative; top: 4px;
 }
 #quickoverview div.cat-download div.footer {
   background-image: url('graphics/theme4/quickbox_blue-bi.gif');
