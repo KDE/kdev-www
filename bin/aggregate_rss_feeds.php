@@ -140,7 +140,7 @@ Aggregated Feed of KDevelop Developer\'s blog posts.
 <language>en-us</language>
 ';
 else
-  echo '<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts:</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "moduleentry dev-blog-posts"); ?>
+  echo '<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts:</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "moduleentry listmodule dev-blog-posts"); ?>
 ';
 
 // Filter them
@@ -172,15 +172,15 @@ echo $description; ?>
 <?php } else {
 ?>
 <div>
-	<h4>
+	<h2>
         <span class="date"><?php echo $item->get_date('M j, Y'); ?></span>
         <?php echo html_entity_decode($item->get_title(), ENT_QUOTES, 'UTF-8'); ?>
         <a class="source" href="<?php echo $pfeed->get_permalink(); ?>"><?php echo $pfeed->get_title(); ?></a>
-    </h4>
-    <div class="entry-content">
+    </h2>
+    <p>
 	<?php echo shorten($item->get_description(), 300); ?>
 	<a class="fullpost" href="<?php echo $item->get_permalink(); ?>">read full post...</a>
-	</div>
+	</p>
 </div>
 <?php
 }

@@ -1,14 +1,14 @@
 <?php
-echo '<p class="newsDate">'.date("M j, Y", 1273010400)."</p>\n";
+echo '<span class="date">'.date("M j, Y", 1273010400)."</span>\n";
 include_file("news/2010-05-05.html");
 echo "\n";
-echo '<p class="newsDate">'.date("M j, Y", 1272664800)."</p>\n";
+echo '<span class="date">'.date("M j, Y", 1272664800)."</span>\n";
 include_file("news/2010-05-01.html");
 echo "\n";
-echo '<p class="newsDate">'.date("M j, Y", 1271368800)."</p>\n";
+echo '<span class="date">'.date("M j, Y", 1271368800)."</span>\n";
 include_file("news/2010-04-16.html");
 echo "\n";
-echo '<p class="newsDate">'.date("M j, Y", 1268002800)."</p>\n";
+echo '<span class="date">'.date("M j, Y", 1268002800)."</span>\n";
 include_file("news/2010-03-08.html");
 echo "\n";
 ?>

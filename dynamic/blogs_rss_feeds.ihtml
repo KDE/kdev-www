@@ -1,47 +1,47 @@
-<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "moduleentry dev-blog-posts"); ?>
+<?php module_head("<a name=\"Latest_blog_posts\">$l_latest_blog_posts</a> <a href=\"dynamic/blogs_rss_feeds.rss\"><img src=\"graphics/rss.gif\" width=\"16\" height=\"16\" alt=\"RSS feed\"></a>", "moduleentry listmodule dev-blog-posts"); ?>
 <div>
-	<h4>
+    <h2>
         <span class="date">May 1, 2010</span>
         Andreas Pakulat: Finally KDevelop 4.0 final published        <a class="source" href="http://planetkde.org/">Planet KDE</a>
-    </h4>
-    <div class="entry-content">
+    </h2>
+    <p>
 	Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 year...	<a class="fullpost" href="http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/">read full post...</a>
-	</div>
+	</p>
 </div>
 <div>
-	<h4>
+    <h2>
         <span class="date">May 1, 2010</span>
         Finally KDevelop 4.0 final published        <a class="source" href="http://apaku.wordpress.com">apaku</a>
-    </h4>
-    <div class="entry-content">
+    </h2>
+    <p>
 	Those reading the dot regularly will already know it, the final release of KDevelop 4.0 is out. For more extensive information what it includes I suggest you read the dot story. It only took us 3 year...	<a class="fullpost" href="http://apaku.wordpress.com/2010/05/01/finally-kdevelop-4-0-final-published/">read full post...</a>
-	</div>
+	</p>
 </div>
 <div>
-	<h4>
+    <h2>
         <span class="date">May 1, 2010</span>
         KDevelop 4.0 Stable Released into the Wild        <a class="source" href="http://www.kdenews.org">KDE.news</a>
-    </h4>
-    <div class="entry-content">
+    </h2>
+    <p>
 	The KDevelop Hackers are proud and happy to announce that KDevelop 4.0 is finally available as a stable release. Released together is the first version of KDevelop PHP plugins, which make KDevelop a v...	<a class="fullpost" href="http://www.kdenews.org/2010/05/01/kdevelop-40-stable-released-wild">read full post...</a>
-	</div>
+	</p>
 </div>
 <div>
-	<h4>
+    <h2>
         <span class="date">May 1, 2010</span>
         Aaron Seigo (aseigo): Plasmoids in windows        <a class="source" href="http://planetkde.org/">Planet KDE</a>
-    </h4>
-    <div class="entry-content">
+    </h2>
+    <p>
 	Since forever (where we define the start of time to be when I started working on Plasma) it has been possible to run Plasmoids, or any widget that Plasma can display, in a window on its own using plas...	<a class="fullpost" href="http://aseigo.blogspot.com/2010/04/plasmoids-in-windows.html">read full post...</a>
-	</div>
+	</p>
 </div>
 <div>
-	<h4>
+    <h2>
         <span class="date">Apr 28, 2010</span>
         GSOC:   Revive Quanta+ Brand for KDE 4        <a class="source" href="http://milianw.de/taxonomy/term/172/0">Milian Wolff - kdevelop</a>
-    </h4>
-    <div class="entry-content">
+    </h2>
+    <p>
 	Yay I got a GSOC slot :)  So I hope I don&#8217;t have to introduce myself anymore to you guys. Instead I&#8217;ll show you what I&#8217;ve planned to do over the summer:  Motivation for Proposal / Go...	<a class="fullpost" href="http://milianw.de/blog/gsoc-revive-quanta-brand-for-kde-4">read full post...</a>
-	</div>
+	</p>
 </div>
 <?php echo "<p class=\"more\"><a href=\"index.html?filename=in_the_press.html#Latest_blog_posts\">$l_more_elipsis</a></p>"; module_tail(); ?>

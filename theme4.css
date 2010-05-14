@@ -195,7 +195,7 @@ div.main-versions dt span.range {
     font-style: italic;
     color: #71ac12;
 }
-
+/*
 div.dev-blog-posts .header { height: 10px; }
 div.dev-blog-posts h4 {
     margin: 0; margin-bottom: 5px;
@@ -211,29 +211,19 @@ div.dev-blog-posts h4 .date {
     display: block; float: left; min-width: 7em; padding-right: 7px;
     font-style: normal;
 }
-div.dev-blog-posts h4 .source {
-    margin-top: 2px;
-    color: black; font-size: 11px;
-    font-style: normal; font-weight: normal;
-    position: absolute; right: 0;
-}
 div.dev-blog-posts .entry-content {
     margin-bottom: 10px;
 }
-div.dev-blog-posts a.fullpost {
-    background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
-    padding-left:10px;
-}
+*/
 
-
-div.news-list .header { height: 10px; }
-div.news-list p.newsDate {
+div.listmodule .header { height: 10px; }
+div.listmodule  span.date {
     float: left; margin: 0px;
     color: #73ad1f; font-size: 11px;
     display: block; min-width: 7em; padding-right: 7px;
-    font-style: normal;
+    font-style: normal; font-weight: normal;
 }
-div.news-list h2 {
+div.listmodule  h2 {
     margin: 0; margin-bottom: 5px;
     border-bottom: 1px solid #73952f;
     font-style: italic;
@@ -241,9 +231,24 @@ div.news-list h2 {
     padding-right: 50px;
     color: black;
 }
-div.news-list p {
+div.listmodule  p {
     margin: 0;
     margin-bottom: 10px;
+}
+div.listmodule a.fullpost {
+    background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
+    padding-left:10px;
+}
+
+div.dev-blog-posts h2 {
+    font-size: 13px;
+    padding-right: 60px;
+}
+div.dev-blog-posts .source {
+    margin-top: 2px;
+    color: black; font-size: 11px;
+    font-style: normal; font-weight: normal;
+    position: absolute; right: 0;
 }
 
 /*
