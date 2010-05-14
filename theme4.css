@@ -86,62 +86,62 @@ body { padding: 0; margin: 0; }
 #translator { text-align: center; }
 #sitestats { text-align: center; }
 
-#news div.border {
+div.border {
     background-image: url('graphics/theme4/box_lightgreen-mh-1px.png'); background-repeat: repeat-x;
     background-color: #e6f5c3;
     position: relative;
 }
-#news div.border div.header {
+div.border div.header {
     background-image: url('graphics/theme4/box-ti-solid-1px.png'); background-repeat: repeat-x;
     height: 14px;
 }
-#news div.moduleentry div.header h3 {
+div.border div.header h3 {
     padding-left: 20px;
     position: relative; top: -19px;
     margin-top: 27px; margin-left: -13px;
     color: #c34609;
     font-style: normal; font-size: 14px;
 }
-#news div.moduleentry div.header h3 a {
+div.border div.header h3 a {
     color: #c34609;
 }
 
-#news div.moduleentry div.border-tl {
+div.border div.border-tl {
     background-image: url('graphics/theme4/box_lightgreen-tl-solid.png');
     width: 14px; height: 14px; z-index: 5;
     position: absolute;
 }
-#news div.moduleentry div.border-tr {
+div.border div.border-tr {
     background-image: url('graphics/theme4/box_lightgreen-tr-solid.png');
     width: 14px; height: 14px; z-index: 5;
     position: absolute; right: 0; top: 0;
 }
-#news div.moduleentry div.border-bl {
+div.border div.border-bl {
     background-image: url('graphics/theme4/box_lightgreen-bili.gif');
     width: 14px; height: 14px; z-index: 5;
     position: absolute; left: 0; bottom: 0;
 }
-#news div.moduleentry div.border-br {
+div.border div.border-br {
     background-image: url('graphics/theme4/box_lightgreen-biri.gif');
     width: 14px; height: 14px; z-index: 5;
     position: absolute; right: 0; bottom: 0;
 }
-#news div.moduleentry div.border-l {
+div.border div.border-l {
     background-image: url('graphics/theme4/box-li-solid-1px.png'); background-repeat: repeat-y;
     width: 9px; height: 100%;
     position: absolute;
     top: 0; z-index: 0;
 }
-#news div.moduleentry div.border-r {
+div.border div.border-r {
     background-image: url('graphics/theme4/box-ri-solid-1px.png'); background-repeat: repeat-y;
     width: 9px; height: 100%;
     position: absolute;
     right: 0; z-index: 0;
 }
-#news div.moduleentry div.content {
+div.border div.content {
     padding: 16px; padding-top: 2px; padding-bottom: 0;
 }
-#news div.border div.footer {
+div.border div.footer {
     height: 14px; background-position: bottom;
     background-image: url('graphics/theme4/box-bi-solid-1px.png'); background-repeat: repeat-x;
 }
@@ -274,26 +274,22 @@ th.header {
     text-align: center;
   }
 
-/* for each "module" element ( module_head() and module_tail() functions ) */
-div.moduleentry { text-align: justify; margin: 5px; }
-h1.moduleheader { background-color: #81A979; text-align: center; font : bold normal medium sans-serif; }
-div.modulecontent { padding: 0px 5px 2px 5px; }
 
-#quickoverview div.moduleentry,
+div.quickbox,
 div.navbox {
   text-align: left;
   background: url('graphics/theme4/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of quick-access boxes */
   margin: 0 0 2.6px 12px;
 }
-#quickoverview div.moduleentry { margin-right: 6px; }
-#quickoverview div.moduleentry div.header,
+div.quickbox  { margin-right: 6px; }
+div.quickbox  div.header,
 div.navbox div.header {
   position: relative;
   background: url('graphics/theme4/navbox-t-solid.png') top no-repeat;
   padding: 14px 0 0 0;
 }
-#quickoverview div.moduleentry div.header h3,
+div.quickbox  div.header h3,
 div.navbox div.header h3 {
   background: #79be16;
   padding: 0 11px 4px 25px;
@@ -306,29 +302,29 @@ div.navbox div.header h3 {
   font-size: 14px;
   font-style: normal;
 }
-#quickoverview div.moduleentry div.content,
+div.quickbox  div.content,
 div.navbox div.content {
   background: #daf3af url('graphics/theme4/box_green-mh-1px.png') top repeat-x;
   padding: 6.4px 8px 4px 8px;
   margin: 0 9px -6px 9px;
 }
-#quickoverview div.moduleentry div.content li,
+div.quickbox  div.content li,
 div.navbox div.content li {
     background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
     margin-left:0px;
     padding-left:10px;
 }
-#quickoverview div.moduleentry div.footer,
+div.quickbox  div.footer,
 div.navbox div.footer {
   background: url('graphics/theme4/navbox-bi.gif') repeat-y;
   height: 14px;
 }
-#quickoverview img.category-icon,
+div.quickbox img.category-icon,
 div.navbox img.category-icon {
     position: absolute;
     background-repeat: no-repeat;
 }
-#quickoverview div.moduleentry div.content ul,
+div.quickbox  div.content ul,
 div.navbox div.content ul {
     list-style-type: none; margin: 0; padding: 0; margin-left: 20px;
 }
@@ -338,39 +334,39 @@ div.navbox div.content ul {
 
 
 /* Quickbox (Home right) */
-#quickoverview div.moduleentry {
+div.quickbox {
   width: 233px;
   background-image: url('graphics/theme4/quickbox-liri-1px.gif');
 }
-#quickoverview div.moduleentry div.header {
+div.quickbox div.header {
   background-image: url('graphics/theme4/quickbox-t-solid.png');
 }
-#quickoverview div.moduleentry div.header h3 {
+div.quickbox  div.header h3 {
   text-align: left;
   padding-left: 10px;
   padding-right: 25px;
 }
-#quickoverview div.moduleentry div.footer {
+div.quickbox  div.footer {
   background-image: url('graphics/theme4/quickbox-bi.gif');
 }
 
 /* Quickbox Download */
-#quickoverview div.cat-download div.header {
+div.cat-download div.header {
   background-image: url('graphics/theme4/quickbox_blue-t-solid.png');
 }
-#quickoverview div.cat-download div.header h3 {
+div.cat-download div.header h3 {
   background-color:#1568af;
 }
-#quickoverview div.cat-download div.content {
+div.cat-download div.content {
   background-image: url('graphics/theme4/box_blue-mh-1px.png');
   background-color: #b9dbf7;
   padding-bottom: 10px;
 }
-#quickoverview div.cat-download div.content p {
+div.cat-download div.content p {
     margin: 0;
     margin-left: 2px; margin-top: -1px; margin-bottom: 2px;
 }
-#quickoverview div.cat-download div.content a.download {
+div.cat-download div.content a.download {
     display: block;
     background-color: rgba(255, 255, 255, 0.5);
     color: #063660;
@@ -381,35 +377,35 @@ div.navbox div.content ul {
     background-image: url('graphics/kdevelop_icon_27.png'); background-repeat: no-repeat;
     background-position: 10px 3px;
 }
-#quickoverview div.cat-download div.content a.download:hover { text-decoration: none; }
-#quickoverview div.cat-download div.content a.download-legacy {
+div.cat-download div.content a.download:hover { text-decoration: none; }
+div.cat-download div.content a.download-legacy {
     background-image: url('graphics/kdevelop30_icon.png');
     background-position: 19px 3px;
     color: #487ba5;
     font-size: 13px;
     padding-top: 6px; padding-bottom: 7px;
 }
-#quickoverview div.cat-download div.content a.download span.date {
+div.cat-download div.content a.download span.date {
     font-style: italic;
     color: black;
     font-size: 10px; font-weight: normal; position: relative; top: 4px;
 }
-#quickoverview div.cat-download div.footer {
+div.cat-download div.footer {
   background-image: url('graphics/theme4/quickbox_blue-bi.gif');
 }
 
 /* Quickbox Support */
-#quickoverview div.cat-support div.header {
+div.cat-support div.header {
   background-image: url('graphics/theme4/quickbox_red-t-solid.png');
 }
-#quickoverview div.cat-support div.header h3 {
+div.cat-support div.header h3 {
   background-color:#c24610;
 }
-#quickoverview div.cat-support div.content {
+div.cat-support div.content {
   background-image: url('graphics/theme4/box_red-mh-1px.png');
   background-color: #f6cca6;
 }
-#quickoverview div.cat-support div.footer {
+div.cat-support div.footer {
   background-image: url('graphics/theme4/quickbox_red-bi.gif');
 }
 

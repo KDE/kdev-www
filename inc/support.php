@@ -1,5 +1,5 @@
 <?php
-module_head('Support', 'cat-support');
+module_head('Support', 'quickbox cat-support');
 echo "<p>Learn to user KDevelop:</p>\n";
 echo "<ul>\n";
 echo "<li><a href=\"#\">User Manual</a></li>\n";

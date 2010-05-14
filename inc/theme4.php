@@ -1,7 +1,7 @@
 <?php
 
-function module_head($subject, $class=''){
-    echo "<div class=\"moduleentry $class\">\n";
+function module_head($subject, $class='moduleentry'){
+    echo "<div class=\"$class\">\n";
     if (strpos($class, 'border') !== false) {
         echo "<div class=\"border-tl\"></div>\n";
         echo "<div class=\"border-tr\"></div>\n";

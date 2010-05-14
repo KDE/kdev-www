@@ -1,5 +1,5 @@
 <?php
-module_head('How to Participate', 'cat-participate');
+module_head('How to Participate', 'quickbox cat-participate');
 echo "<p>Programming</p>\n";
 echo "<ul>\n";
 echo "<li><a href=\"#\">join the development team</a></li>\n";
