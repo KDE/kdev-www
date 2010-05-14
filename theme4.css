@@ -280,7 +280,7 @@ h1.moduleheader { background-color: #81A979; text-align: center; font : bold nor
 div.modulecontent { padding: 0px 5px 2px 5px; }
 
 #quickoverview div.moduleentry,
-#sitenavigation div.moduleentry {
+div.navbox {
   text-align: left;
   background: url('graphics/theme4/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of quick-access boxes */
@@ -288,13 +288,13 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
 }
 #quickoverview div.moduleentry { margin-right: 6px; }
 #quickoverview div.moduleentry div.header,
-#sitenavigation div.moduleentry div.header {
+div.navbox div.header {
   position: relative;
   background: url('graphics/theme4/navbox-t-solid.png') top no-repeat;
   padding: 14px 0 0 0;
 }
 #quickoverview div.moduleentry div.header h3,
-#sitenavigation div.moduleentry div.header h3 {
+div.navbox div.header h3 {
   background: #79be16;
   padding: 0 11px 4px 25px;
   margin: 0 9px 0 9px;
@@ -307,32 +307,32 @@ div.modulecontent { padding: 0px 5px 2px 5px; }
   font-style: normal;
 }
 #quickoverview div.moduleentry div.content,
-#sitenavigation div.moduleentry div.content {
+div.navbox div.content {
   background: #daf3af url('graphics/theme4/box_green-mh-1px.png') top repeat-x;
   padding: 6.4px 8px 4px 8px;
   margin: 0 9px -6px 9px;
 }
 #quickoverview div.moduleentry div.content li,
-#sitenavigation div.moduleentry div.content li {
+div.navbox div.content li {
     background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
     margin-left:0px;
     padding-left:10px;
 }
 #quickoverview div.moduleentry div.footer,
-#sitenavigation div.moduleentry div.footer {
+div.navbox div.footer {
   background: url('graphics/theme4/navbox-bi.gif') repeat-y;
   height: 14px;
 }
 #quickoverview img.category-icon,
-#sitenavigation img.category-icon {
+div.navbox img.category-icon {
     position: absolute;
     background-repeat: no-repeat;
 }
 #quickoverview div.moduleentry div.content ul,
-#sitenavigation div.moduleentry div.content ul {
+div.navbox div.content ul {
     list-style-type: none; margin: 0; padding: 0; margin-left: 20px;
 }
-#sitenavigation div.moduleentry div.content ul {
+div.navbox div.content ul {
     margin-left: 5px;
 }
 
