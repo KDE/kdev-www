@@ -168,10 +168,13 @@ echo "  <meta name=\"robots\" content=\"$meta_robots\">\n";
 </head>
 <body>
 <?php
-if( $filename == 'main.html' )
+if( $filename == 'main.html' ) {
+  echo "<div id=\"layoutcontainer\" class=\"threecols\">\n";
   echo "<div id=\"maincontent\">   <!-- begin column 2 of 3 -->\n";
-else
+} else {
+  echo "<div id=\"layoutcontainer\">\n";
   echo "<div id=\"maincontent\">   <!-- begin column 2 of 2 -->\n";
+}
 
 //require('protest_against_software_patents.ihtml');
 require('request_translation_help.ihtml');
@@ -406,5 +409,6 @@ printf('  <li%s><a href="index.html?filename=4.0/features.html" title="%s"><span
  </ul>
 </div>
 
+</div> <!-- end layout container  -->
 </body>
 </html>
