@@ -333,9 +333,9 @@ div.navbox {
   text-align: left;
   background: url('graphics/theme4/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of quick-access boxes */
-  margin: 0 0 2.6px 12px;
+  margin: 0 0 2.6px 7px;
 }
-div.quickbox  { margin-right: 6px; }
+div.quickbox  { margin-left: 0px; }
 div.quickbox  div.header,
 div.navbox div.header {
   position: relative;
