@@ -335,7 +335,7 @@ div.navbox {
   width: 204px;  /* width of quick-access boxes */
   margin: 0 0 2.6px 7px;
 }
-div.quickbox  { margin-left: 0px; }
+div.quickbox  { margin-left: 0px;  margin-bottom: 7px; }
 div.quickbox  div.header,
 div.navbox div.header {
   position: relative;
@@ -345,7 +345,7 @@ div.navbox div.header {
 div.quickbox  div.header h3,
 div.navbox div.header h3 {
   background: #79be16;
-  padding: 0 11px 4px 25px;
+  padding: 2.5px 11px 5.5px 25px;
   margin: 0 9px 0 9px;
   font-family: 'Linux Biolinum','Optima','Palatino',sans-serif;
   color: white;
@@ -353,19 +353,29 @@ div.navbox div.header h3 {
   text-shadow: 1.5px 1.4px 1px #698C25;
   text-align: right;
   font-size: 14px;
+  font-size-adjust: 0.51;
   font-style: normal;
+  line-height: 100%;
 }
 div.quickbox  div.content,
 div.navbox div.content {
   background: #daf3af url('graphics/theme4/box_green-mh-1px.png') top repeat-x;
-  padding: 6.4px 8px 4px 8px;
+  padding: 7.4px 9px 4px 11px;
   margin: 0 9px -6px 9px;
 }
 div.quickbox  div.content li,
 div.navbox div.content li {
     background:transparent url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
     margin-left:0px;
-    padding-left:10px;
+    padding: 1px 0 1px 10px;
+    line-height: 14.2px;
+}
+div.navbox div.content li {
+  font-style: italic;        /* style of non-clickable list items in left menu */
+  color: #5D9306;
+}
+div.navbox div.content li a {
+  font-style: normal;        /* overrule italics style of parent li */
 }
 div.quickbox  div.footer,
 div.navbox div.footer {
@@ -377,12 +387,25 @@ div.navbox .category-icon {
     position: absolute;
     background-repeat: no-repeat;
 }
-div.quickbox  div.content ul,
-div.navbox div.content ul {
-    list-style-type: none; margin: 0; padding: 0; margin-left: 20px;
+div.navbox div.content ul,
+div.quickbox div.content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0px 0 2px 2px;
 }
-div.navbox div.content ul {
-    margin-left: 5px;
+div.quickbox div.content ul {
+    margin-left: 15px;
+    margin-bottom: 3px;
+}
+div.navbox div.content ul ul,
+div.quickbox div.content ul ul {
+    margin-left: 7px;
+    margin-bottom: -1px;
+}
+div.quickbox div.content p {
+    padding: 0;
+    margin: 0;
+     margin-bottom: 1px; 
 }
 
 
@@ -409,28 +432,27 @@ div.cat-download div.header {
 }
 div.cat-download div.header h3 {
   background-color:#1568af;
+  text-shadow: 1.5px 1.4px 1px #215278;
 }
 div.cat-download div.content {
   background-image: url('graphics/theme4/box_blue-mh-1px.png');
   background-color: #b9dbf7;
-  padding-bottom: 10px;
-}
-div.cat-download div.content p {
-    margin: 0;
-    margin-left: 2px; margin-top: -1px; margin-bottom: 2px;
 }
 div.cat-download div.content a.download {
     display: block;
     background-color: rgba(255, 255, 255, 0.5);
     color: #063660;
     font-weight: bold; font-size: 16px;
-    margin-bottom: 4px; margin-left: -8px; margin-right: -8px;
+    margin-bottom: 4px; margin-left: -11px; margin-right: -9px;
     padding: 5px; padding-bottom: 6px; padding-left: 43px; padding-top: 11px;
     line-height: 10px;
     background-image: url('graphics/kdevelop_icon_27.png'); background-repeat: no-repeat;
     background-position: 10px 3px;
 }
-div.cat-download div.content a.download:hover { text-decoration: none; }
+div.cat-download div.content a.download:hover {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.65);
+}
 div.cat-download div.content a.download-legacy {
     background-image: url('graphics/kdevelop30_icon.png');
     background-position: 19px 3px;
@@ -453,6 +475,7 @@ div.cat-support div.header {
 }
 div.cat-support div.header h3 {
   background-color:#c24610;
+  text-shadow: 1.5px 1.4px 1px #8D4021;
 }
 div.cat-support div.content {
   background-image: url('graphics/theme4/box_red-mh-1px.png');
