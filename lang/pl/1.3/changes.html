@@ -1,0 +1,126 @@
+<?php module_head("Wersje 1.2 - 1.3");?>
+<ul>
+      <li>Przepisane szablony dla Qt 2.x, teraz bazujące tylko na Qt-2.2.1 ponieważ używają one klasy QAction oraz skryptów configure dla odnalezienia aplikacji <b>uic</b> która przetwarza pliki Qt Designer</li>
+      <li>Przepisane szablony dla KDE 2.0, które używają w pełni nowego API a także używają uic dla plików desinger</li>
+      <li>Wsparcie dla nowego <b>Qt Designer</b> w projektach KDE 2.0/Qt-2.2.x</li>
+      <li>Nowy <b>Qt Linguist</b> oraz jego narzędzia dla tworzenia plików tłumaczeń dla aplikacji Qt są w pełni obsługiwane. Obsługa internacjonalizacji jest identyczna jak dla projektów KDE w KDevelop, należy tylko używać tr() zamiast i18(). Stwórz przykładową aplikację Qt aby zobaczyć szczegóły. Pamiętaj, że wszystkie narzędzia Qt muszą być w twojej zmiennej $PATH, zazwyczaj znajdują się one w katalogu $QTDIR/bin</li>
+      <li>Wszystkie szablony KDE 2.0 i Qt 2.2.x używają systemu autoconf/automake KDE, co pozwala deweloperom łatwo skonwertować ich automatyczny system konfiguracji do KDE jeżeli zdecydują się na użycie KDE dla swoich aplikacji.</li>
+      <li>KDevelop dostarcza trzy dodatkowe skrypty dla ułatwienia życia; są one zainstalowane w katalogu $prefix/bin
+     (zazwyczaj $KDEDIR/bin):
+	<ul>
+	  <li><b>extractrc</b>: to jest skrypt orginalnie umieszczony w module kdesdk w repozytorium CVS KDE (KDE Software Development Kit). Jest on automatycznie wywoływany dla plików pot twojej aplikacji i wyciąga łańcuchy znaków z twoich plików zasobów w formacie XML które są używane do budowania interfejsu uzytkownika dla aplikacji KDE 2.0</li>
+	  <li><b>kimport</b>: kimport jest skryptem w perlu, który pozwala na stworzenie pliku projektu *.kdevprj (Plik Projektu KDevelop) z prawie każdego istniejącego projektu automake/autoconf. Uzycie: przejdź do katalogu z twoim projektemi wywołaj: kimport > &lt;nazwatwojegoprojektu&gt;.kdevprj. To przekieruje wyjście do pliku z projektem, który możesz otworzyć w KDevelop</li>
+	  <li><b>kdevdlg2ui</b>: konwertuje istniejące pliki *.kdevdlg stworzone przy użyciu aplikacji KDevelop Dialogeditor na pliki *.ui, które mogą być edytowane przy uzyciu Qt Designer</li>
+	</ul>
+      </li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("Wersje 1.1 - 1.2");?>
+<ul>
+      <li>Obsługa tworzenia aplikacji dla GNOME</li>
+      <li>Interfejs użytkownika został przetłumaczony na 18 a podręcznik na 9 języków</li>
+      <li>Bardzo ulepszona przeglądarka dokumentacji oraz wbudowany debuger</li>
+      <li>Rozszerzona dokumentacja (przewodniki, kdebase/koffice/kdelibs)</li>
+      <li>Podstawowe wsparcie dla bibliotek współdzielonych</li>
+      
+</ul>
+<?php module_tail();?>
+
+<?php module_head("Wersje 1.0 - 1.1");?>
+<ul>
+      <li>7 nowych szablonów aplikacji <br>
+	- KDE1 OpenGL<br>
+	- KDE2 SDI<br>
+	- KDE2 mini<br>
+	- KDE2 MDI<br>
+	- QT2 SDI<br>
+	- QT2 MDI/QWorkspace<br>
+	- QT2 MDI/QextMDI</li>
+      <li>Wbudowany debuger</li>
+      <li>Widoczne zakładki</li>
+      <li>Zakomentuj/Odkomentuj kod w oknie edytora, włącz/wyłacz autokopiowanie w kwrite</li>
+      <li>Obsługa silnika przeszukiwania Htdig</li>
+      <li>Uaktualniona dokumentacja i tłumaczenia</li>
+      
+</ul>
+<?php module_tail();?>
+
+<?php module_head("Wersje 1.0 beta");?>
+<ul>
+      <li>Wiele ważnych poprawek błędów</li>
+      <li>Ulepszony parser klas</li>
+      <li>Konfigurowalny RFV</li>
+      <li>Ulepszona obsługa plików</li>
+      <li>Nowe tłumaczenia</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("Wersje 0.4 - 1.0beta1");?>
+<ul>
+      <li>Integracja CVS</li>
+      <li>Obsługa flex</li>
+      <li>Szablona aplikacji w języku C</li>
+      <li>3 nowe poradniki, włączając wprowadzenie do KDE 2.0/KOM</li>
+      <li>Ulepszone drzewo DOC</li> 
+      <li>Nowa graficzna przeglądarka klas pozwalająca kontrolować cały projekt</li>
+      <li>Większa stabilność, lepsza obsługa</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("Wersje 0.3 - 0.4");?>
+<ul>
+      <li>Przerobiony look&amp;feel</li>
+      <li><b>Edytor okien dialogowych</b> dla QT i KDE z generowaniem kodu źródłowego oraz dynamicznym ładowaniem dialogów</li>
+      <li>Całkiem nowy <b>parser klas</b>, obsługujący C, C++, szablony, makra, i rozszerzenia QT</li>
+      <li>Rozległa dokumentacja (podręcznik oraz poradnik programowania)</li>
+      <li>Narzędzie dla klas (przeglądarka klas)</li>
+      <li>Okna dialogowe dla dodawania zmiennych i metod</li>
+      <li>Zarządzanie projektem obsługuje źródła w podkatalogach przez tworzenie statycznych bibliotek</li>
+      <li>Dodana dystrybucja make</li>
+      <li>Konfigurowalne opcje make</li>
+      <li>Frontend dla grep roszerzający możliwości wyszukiwania dla szybszego przeglądania kodu</li>
+      <li>Parse komunikacjów o błedach</li>
+      <li>Zakładki dla dokumentacji oraz plików źródłowych</li>
+      <li>Konfigurowalne menu narzędzi</li>
+      <li>Przerobiony kreator aplikacji (lepsze wsparcie dla projektów z własnoręcznie pisanymi plikami makefile)</li>
+      <li>Dialog raportowania błedów</li>
+      <li>Tłumaczenia na 17 jezyków w toku</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("Wersje 0.2 - 0.3");?>
+<ul>
+      <li>Integracja KWrite (cofnij,ponów,podświetlanie składni)</li>
+      <li>Nowe bazowe aplikacje (Terminal,Qt)</li>
+      <li>Dialog konfiguracyjny dla przeglądarki dokumentacji</li>
+      <li>Autozapis w edytorze</li>
+      <li>Przełaczalny widok drzewa i wyjścia</li>
+      <li>Konfigurowalna komenda &raquo;make&laquo;</li>
+      <li>Kompletny frontend a2ps/enscript do drukowania</li>
+      <li>Rozpoczęta integracja z KIconEdit oraz KDbg</li>
+      <li>Konfigurowalne klawisze skrótów</li>
+      <li>Pewne ulepszenia w zarządzaniu projektem (dodane pliki do podkatalogów, zamykanie projektu...)</li>
+      <li>Wspardzie dla języków: rosyjskiego,niemieckiego oraz duńskiego.</li>
+      <li>Zaawansowany system pomocy i nowa dokumentacja</li>
+      <li>Program konfiguracyjny oraz "podpowiedź dnia"</li>
+      <li>Wiele, wiele innych zmian... (zobacz plik zmian jeśli chcesz dodatkowych informacji)</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("Wersje 0.1 - 0.2");?>
+<ul>
+      <li>Całkiem nowe zarządzanie projektem, niezgodne z poprzednią wresją :-(</li>
+      <li>Nowa potężna aplikacja bazowa (szkielet SDI)</li>
+      <li>Generator klas</li>
+      <li>Okna dialogowe dla konfigurowania opcji kompilatora i linkera</li>
+      <li>Ogólna Dokumentacja i Przewodnik</li>
+      <li>System pomocy (pasek stanu,KQuickHelp)</li>
+      <li>Szybsze generowanie plików (teraz w C++)</li>
+      <li>Przeglądarka dokumentacji</li>
+      <li>Silniki wyszukiwania</li>
+      <li>Konfigurowalny LFV</li>
+      <li>Generator dokumentacji KDE</li>
+      <li>Poprawionych kilka błedów i wprowadzonych sporo nowych :-)</li>
+</ul>
+<?php module_tail();?>

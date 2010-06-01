@@ -1,0 +1,40 @@
+<?php
+$l_online_un_subscribe='Online přihlášení/odhlášení';
+$l_Mailinglists='Konference:';
+$l_kdevelop_users='KDevelop';
+$l_kdevelop_devel='Vývoj KDevelop';
+$l_kdevelop_bugs='Zprávy o chybách v KDevelop';
+$l_default_email='vaše emailová adresa';
+$l_subscribe='Přihlásit se';
+$l_unsubscribe='Odhlásit se';
+$l_done='HOTOVO!';
+
+require_once('inc/mailinglist.php');
+?>
+
+<?php module_head("Mailová konference pro uživatele KDevelop")?>
+Od února 1999 máme konferenci <b>(kdevelop at kdevelop.org)</b> a většinu času 600-700 přihlášených uživatelů.
+Tento list je pro záladní diskuzi a překlady.
+  <blockquote>
+  Archiv konference je na: <A HREF="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop/">barney.cs.uni-potsdam.de</A>
+  </blockquote>
+Díky Hanku Leiningerovi.<br>
+<br>
+
+<?php
+module_tail();
+module_head("Mailová konference pro vývojáře KDevelop");
+?>
+
+<p>
+Máme také dvě další konference, <em>kdevelop-devel</em> list pro vývojáře KDevelop,
+a <em>kdevelop-bugs</em> pro sledování provozu ze stránek bugs.kde.org. Přihlásit a odhlásit se 
+z těchto konferencí můžete pomocí formuláře na začátku této stránky.</p><p> Zprávy v těchto konferencích mohou být nalezeny v
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-devel/">archivu konference kdevelop-devel</a>
+a
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-bugs/">archivu konference kdevelop-bugs</a>.
+</p>
+
+<p>Je zde také možnost <a href="http://commitfilter.kde.org/">přihlásit se do konference KDevelop SVN změn</a>.
+
+<?php module_tail(); ?>

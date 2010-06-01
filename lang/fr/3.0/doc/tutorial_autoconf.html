@@ -1,0 +1,194 @@
+<?php module_head("Tutoriel sur autoconf et KDevelop");?>
+<p>Sous le syst&egrave;me KDevelop se trouve le syst&egrave;me GNU
+<a href="http://www.gnu.org/software/autoconf/">autoconf</a>.
+<i>autoconf</i> est un ensemble d'outils qui g&eacute;n&egrave;re les
+scripts Makefiles et configure dans les programmes.  Il est puissant, flexible et
+presque compl&egrave;tement incompr&eacute;hensible, surtout lorsque vous voulez simplement
+ajouter une d&eacute;pendance &agrave; un programme.</p>
+
+<p>Le r&eacute;pertoire KDE <b>admin/</b> contient des fichiers et des scripts de
+configuration qui essaient de simplifier ce processus, avec un degr&eacute; limit&eacute;
+de succ&egrave;s.  Les commandes les plus importantes &agrave; utiliser lorsqu'on modifie
+les r&eacute;glages de autoconf dans KDevelop sont <b>make -f admin/Makefile.common</b>
+(et le v&eacute;n&eacute;rable <b>rm config.guess</b> si vous utilisez toujours KDevelop 2.x).
+Appeler make avec la Makefile administrative va reg&eacute;n&eacute;rer les r&eacute;glages autoconf
+et supprimer config.guess va &eacute;liminer le config cache, s'il y a lieu, de tout mauvais r&eacute;glage potentiel.
+</p>
+
+<p>Un sc&eacute;nario commun qui requiert de modifier ces fichiers autoconf est
+d'ajouter une d&eacute;pendance externe &agrave; une biblioth&egrave;que partag&eacute;e qui ne fait pas partie
+de l'interface KDevelop, comme libxml2.  Il est facile d'ajouter les commandes
+<b>`xml2-config --cflags`</b> et <b>`xml2-config --libs`</b> aux paragraphes
+CPPFLAGS et LDFLAGS des options de KDevelop pour le projet que vous
+compilez; cependant, ces valeurs ne sont utilis&eacute;es que lorsque vous compilez avec
+KDevelop et sont perdues lorsqu'une distribution source (.tar.gz)
+est cr&eacute;&eacute;e.</p>
+
+<p>Ajouter alors cette d&eacute;pendance est une t&acirc;che pour autoconf.  Il faut modifier
+deux fichiers dans ce sc&eacute;nario&nbsp;: <b>configure.in.in</b> et
+<b>Makefile.am</b>.  configure.in.in est un squelette cr&eacute;&eacute; par KDevelop
+lorsqu'un projet est cr&eacute;&eacute; la premi&egrave;re fois.  KDevelop ne va pas r&eacute;&eacute;crire sur aucun des changements
+faits dans ce fichier.  Makefile.am est aussi un squelette mais
+KDevelop 2.x peut r&eacute;&eacute;crire sur une partie de ce fichier.  Les paragraphes qui seront
+r&eacute;&eacute;crits sont indiqu&eacute;s clairement et les changements effectu&eacute;s hors de ce paragraphe
+seront conserv&eacute;s. Cette limite n'existe plus avec KDevelop 3.x<p>
+
+<p>Que font donc ces fichiers&nbsp;?</p>
+
+<p><b>configure.in.in</b> est un fichier qui est pars&eacute; par
+<a href="http://www.gnu.org/software/m4/m4.html">m4</a>, le language
+GNU de macro processing.  C'est le m&ecirc;me language macro qui
+est utilis&eacute; pour g&eacute;n&eacute;rer les fichiers de configuration pour <i>sendmail</i>, ainsi
+que pour beaucoup d'autres choses.  Bien que cela puisse &ecirc;tre une chose int&eacute;ressante &agrave; apprendre,
+il ne sera pas expliqu&eacute; ici.  &Agrave; la place, ci-dessous, se trouve une partie de code
+qui peut &ecirc;tre coll&eacute;e dans configure.in.in pour permettre d'inclure
+libxml2&nbsp;:<p>
+
+<pre>
+dnl -----------------------------------------------------------------------
+dnl libxml2 check from http://websvn.kde.org/*checkout*/branches/KDE/3.5/kdelibs/kdoctools/configure.in.in
+
+KDE_FIND_PATH(xml2-config, XML_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxml2 anywhere, check ftp://xmlsoft.org/ for libxml >= 2.4.8. (we also keep a version of it in kdesupport for CVS users' convenience)])
+  HELP_SUBDIR=
+])
+
+if test -n "$XML_CONFIG"; then
+  vers=`$XML_CONFIG --version 2>/dev/null | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" &amp;&amp; test "$vers" -ge 2005000
+  then
+     LIBXML_LIBS="`$XML_CONFIG --libs`"
+     LIBXML_RPATH=
+     for args in $LIBXML_LIBS; do
+          case $args in
+            -L*)
+               LIBXML_RPATH="$LIBXML_RPATH $args"
+               ;;
+          esac
+     done
+     LIBXML_RPATH=`echo $LIBXML_RPATH | sed -e "s/-L/-R/g"`
+     LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
+  else
+     AC_MSG_WARN([You need at least libxml 2.5.0])
+     HELP_SUBDIR=
+  fi
+fi
+
+AC_SUBST(LIBXML_LIBS)
+AC_SUBST(LIBXML_CFLAGS)
+dnl -----------------------------------------------------------------------
+</pre>
+
+<p>Voici quelques explications&nbsp;:</p>
+
+<pre>
+KDE_FIND_PATH(xml2-config, XML_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxml2 anywhere, check ftp://xmlsoft.org/ for libxml >= 2.4.8. (we also keep a version of it in kdesupport for CVS users' convenience)])
+   HELP_SUBDIR=
+])
+</pre>
+
+Ce segment de code cherche simplement le programme <i>xml2-config</i> dans certains chemins
+pr&eacute;d&eacute;finis.  Le chemin qui m&egrave;ne &agrave; l'ex&eacute;cutable est sauvegard&eacute; dans la variable
+<b>XML_CONFIG</b>, qui est le second param&egrave;tre.  Si le programme ne peut pas &ecirc;tre trouv&eacute;,
+cette variable reste non d&eacute;finie et un message d'erreur est imprim&eacute;.</p>
+
+<pre>
+if test -n "$XML_CONFIG"; then
+  vers=`$XML_CONFIG --version 2>/dev/null | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" &amp;&amp; test "$vers" -ge 2005000
+  then
+</pre>
+Si la variable XML_CONFIG est fix&eacute;e, indiquant le chemin correct, il faut alors demander
+la version. Ce programme requiert la version 2.5.0 ou une version sup&eacute;rieure, aussi v&eacute;rifie-t-il
+ici cette valeur.</p>
+
+<pre>
+     LIBXML_LIBS="`$XML_CONFIG --libs`"
+     LIBXML_RPATH=
+     for args in $LIBXML_LIBS; do
+          case $args in
+            -L*)
+               LIBXML_RPATH="$LIBXML_RPATH $args"
+               ;;
+          esac
+     done
+     LIBXML_RPATH=`echo $LIBXML_RPATH | sed -e "s/-L/-R/g"`
+     LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
+</pre>
+
+Lorsque la version correcte est trouv&eacute;e, certaines variables seront d&eacute;finies pour
+&ecirc;tre utilis&eacute;es par d'autres parties du syst&egrave;me autoconf. Ces variables seront
+<b>LIBXML_LIBS</b>, <b>LIBXML_RPATH</b> et <b>LIBXML_CFLAGS</b>.</p>
+
+<pre>
+  else
+     AC_MSG_WARN([You need at least libxml 2.5.0])
+     HELP_SUBDIR=
+  fi
+</pre>
+
+Si libxml2 est trouv&eacute;e mais si la version est trop ancienne, imprime ici le message d'erreur ci dessus.</p>
+
+<pre>
+fi
+
+AC_SUBST(LIBXML_LIBS)
+AC_SUBST(LIBXML_CFLAGS)
+</pre>
+
+Et pour terminer, rendez les variables <b>LIBXML_LIBS</b> et <b>LIBXML_CFLAGS</b>
+accessibles au reste du syst&egrave;me.  <b>LIBXML_RPATH</b> ne sera pas utilis&eacute;e,
+aussi n'est-elle pas mentionn&eacute;e ici, mais elle est disponible pour un export.
+</p>
+
+<p>Maintenant que ces variables sont "export&eacute;es" au reste de autoconf, il
+est temps de les ins&eacute;rer dans les Makefiles. Ceci est heureusement
+une t&acirc;che plus facile.</p>
+
+<p>Depuis le sous-r&eacute;pertoire contenant les fichiers qui ont besoin d'acc&eacute;der &agrave;
+ces en-t&ecirc;tes et biblioth&egrave;ques (cela devrait &ecirc;tre le sous-r&eacute;pretoire <i>project/</i>
+dans <i>project</i>, par exemple), se trouve un fichier
+appel&eacute; <b>Makefile.am</b>. Veuillez remplacer ces lignes&nbsp;:
+<pre>
+# set the include path found by configure
+INCLUDES= $(all_includes)
+
+# the library search path.
+myAppName_LDFLAGS = $(all_libraries)
+</pre>
+
+par celles-ci&nbsp;:
+
+<pre>
+# set the include path found by configure
+INCLUDES= $(all_includes) $(LIBXML_CFLAGS)
+
+# the library search path.
+myAppName_LDFLAGS = $(all_libraries) $(LIBXML_LIBS)
+</pre>
+
+&Agrave; nouveau, veuillez noter le segment que KDevelop va r&eacute;&eacute;crire si vous utilisez
+une version 2.x. Si vous utilisez une version 3, vous pouvez fixer ces options
+soit dans le gestionnaire automake ou &agrave; la main (le gestionnaire automake va les
+int&eacute;grer lorsque vous chargerez le projet &agrave; nouveau).
+</p>
+
+<p>La derni&egrave;re &eacute;tape requise pour compl&eacute;ter cette int&eacute;gration devrait simplement
+&ecirc;tre de lancer <b>make</b>.  Suivant la complexit&eacute; des d&eacute;pendances,
+cependant, il peut &ecirc;tre n&eacute;cessaire de lancer <b>make -f admin/Makefile.common</b>,
+ce qui oblige autoconf &agrave; rafra&icirc;chir ses fichiers et &agrave; effectuer tout changement
+que KDevelop juge important. Si, par exemple, les v&eacute;rifications de version ont chang&eacute;es,
+il peut aussi &ecirc;tre n&eacute;cessaire de supprimer le fichier config.cache et de
+relancer configure.  Arriv&eacute; &agrave; ce point, <b>make</b> est r&eacute;ellement la derni&egrave;re &eacute;tape.</p>
+
+<p>Bravo&nbsp;!  Vous avez maintenant une v&eacute;rification pour libxml2 et une
+distribution qui peut &ecirc;tre compil&eacute;e dans et hors de KDevelop!</p>
+
+<p>Pour une introduction plus d&eacute;taill&eacute;e, veuillez voir <a href="http://www.amath.washington.edu/~lf/tutorials/autoconf/toolsmanual_toc.html">
+ce tutorial</a>.
+
+<p align=right><tt>Auteur&nbsp;: Christopher W. Curtis (ccurtis0 at yahoo dot com), derni&egrave;re modification&nbsp;: 03-11-2003</tt>
+<?php module_tail();?>
+
+

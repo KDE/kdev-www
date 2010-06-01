@@ -1,0 +1,118 @@
+<?php module_head("Trasaturi KDevelop 3.0.x");?>
+
+
+<ul>
+
+<li><b>Arhitectura bazata pe plugin</b>
+<ul>
+<li>Functionalitate poate fi adaugata, inlocuita si scoasa fara a altera codul sursa.</li>
+<li>Licenta librariilor (LGPL) permite crearea de plugin-uri IDE comerciale si gratis.</li>
+<li>Suport pentru profile care determina un set de plugin-uri sa fie incarcate. Aceasta este folositor in special pentru medii restrictionate sau setari customizate.</li>
+</ul>
+</li>
+
+<li><b>Project Management</b>
+<ul>
+<li>Nativ non-intrus suport <b>automake</b> si <b>qmake</b>. Modificari facute manual permise si recunoscute de IDE, de asemenea proiecte si subproiecte existente care pot fi usor importate.</li>
+<li>Abilitate de a folosi makefile-uri pentru a construi proiectul.</li>
+<li>Suport pentru <b>ant</b> - utilitar de constructie pentru proiecte java.</li>
+<li>Suport pentru tipuri de proiect ca pascal, haskell, ada si proiecte de scripting.</li>
+<li>Suport pentru orice sistem de construire creand pluginuri de sistem pentru un project manager general.</li>
+<li>Wizard de fisier nou pentru a administra modele de fisiere si crea fisiere noi in proiect din modele.</li>
+<li>Plugin-uri de compilator pentru a defini optiunile compilatorului in dialoguri convenabile.</li>
+<li>Profile de configurare cu abilitatea de a specifica diferite compilatoare, parametri de compilare, directoare de build, arhitectura tintita etc.</li>
+<li>Facilitati de documentatie a proiectului cum ar fi suport <b>doxygen</b> pentru crearea de documentatie API (in format html, tex si man) pentru un proiect cu referinte incrucisate la librariile folosite.</li>
+<li>Suport de internationalizare, permitand translatorilor sa isi adauge limba lor tinta intr-un proiect cu usurinta, incluzand suport pentru <a href="http://l10n.kde.org/tools/kbabel/" target="main">KBabel</a>.</li>
+<li>Suport pentru proiecte Qt/Embedded (pentru <a href="http://developer.sharpsec.com/" target="_top">Zaurus</a> si platforme <a href="http://www.compaq.com/products/iPAQ/" target="_top">iPAQ</a>).</li>
+</ul>
+</li>
+
+<li><b>Suport de limbaj</b>
+<ul>
+<li>15 limbaje suportate incluzand Ada, C, C++, Objective-C (via C support), SQL, Fortran, Haskell,
+Java, PHP, Pascal, Perl, Python, Ruby, Bash, XUL (neoficial).</li>
+<li>Raportor de probleme care raporteaza diferite "probleme" cu codul sursa in timp ce scrii. Problemele includ erori de sintaxa, TODO's si FIXME's.</li>
+<li>Browser de clase pentru a afisa ierarhia claselor si alte simboluri din proiect.</li>
+<li>Analizatoare de limbaj pentru a ajuta browser-ul de clase si raportorul de probleme.</li>
+<li>Wizard-uri de clase, metode si atribute pentru limbaje orientate pe obiect.</li>
+<li>Completare de cod automata si sugestii pentru variabile de clase, metode, argumente de functii si altele.</li>
+<li>Formatarea sursei, sublinierea sintaxei si impaturirea codului.</li>
+<li>Optiuni specifice C++, cum ar fi
+<ul>
+<li>"make member" - creaza definitia metodei in fisierul sursa bazandu-se pe declararea metodei in fisierul header;</li>
+<li>"extract interface"- extrage interfata (declararea metodelor) si creaza clasa de baza abstracta cu acea interfata;</li>
+<li>"subclassing" - creaza automat subclase si implementeaza slot-uri pentru formulare Qt Designer.</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><b>Debugger integrat</b>
+<ul>
+<li>Frontend-uri pentru debuger-e GDB si Java.</li>
+<li>Consola GDB integrata.</li>
+<li>Breakpoint-uri de linie, adresa si metoda si watchpoint-uri.</li>
+<li>Breakpoint-uri conditionale.</li>
+<li>Disassembler si vizualizator de stiva a cadrului.</li>
+<li>Watch tree pentru variabile.</li>
+<li>Vizualizatoare de memorie, registri si librarii.</li>
+<li>Suport pentru consola de debugger (libtool).</li>
+<li>Debugging de la distanta.</li>
+</ul>
+</li>
+
+<li><b>Editarea codului</b>
+<ul>
+<li>Orice editor care implementeaza interfata KDE KTextEditor poate fi folosit cu KDevelop.</li>
+<li>Editoare disponibile sunt <a href="http://kate.kde.org/" target="main">Kate</a>, QEditor (bazat pe Qt Designer editor) si KVim.</li>
+<li>Bookmark-uri de proiect care sunt stocate in fisierul proiectului.</li>
+<li>Vizualizator de diferente intre textul editat curent si un text de pe disc.</li>
+<li>Vizualizator de diferente pentru fisiere patch.</li>
+<li>Integrare Grep - cautare de expresii in proiect.</li>
+<li>Cautare si inlocuire in proiect.</li>
+</ul>
+</li>
+
+<li><b>Sistem de control a versiunii</b>
+<ul>
+<li>Un API obisnuit care include suport VCS in KDevelop.</li>
+<li>Sisteme VCS suportate: CVS, Perforce, Subversion si Clearcase.</li>
+</ul>
+</li>
+
+<li><b>Wizard de aplicatii</b>
+<ul>
+<li>Wizard-ul de aplicatii genereaza modele de aplicatii complete.</li>
+<li>Modele pentru fiecare limbaj si sistem de construire suportate.</li>
+<li>Abilitatea de a folosi modele customizate de aplicatii care nu sunt incluse in distributie.</li>
+<li>O gramada de modele de proiecte legate de KDE (aplicatii KPart, aplicatii simple de KDE, module KControl, applet-uri Kicker (panel), parti KOffice, KIOSlaves, <a href="http://www.konqueror.org/" target="main">Konqueror</a>, Noatun si pluginuri Kate si stiluri de desktop).</li>
+</ul>
+</li>
+
+<li><b>Vizualizator de documentatie</b>
+<ul>
+<li>O interfata unificata pentru a vedea documentatia.</li>
+<li>Capabilitati TOC, index si cautare full text (cu htdig).</li>
+<li>Autodetectare si incluziune pentru documentatie Qt, KDE Libs si DevHelp.</li>
+<li>Suport pentru colectii de documentatie customizate (format KDevelopTOC).</li>
+<li>Abilitate de a deschide documentatie locala, de la distanta si chiar compresata (folosind orice protocol suportat de Konqueror - http, ftp, sftp, tar, zip, etc.).</li>
+<li>Abilitate de a deschide formate diferite de documentatie (html, text, ps, pdf, chm, etc.).</li>
+</ul>
+</li>
+
+<li><b>Alte trasaturi</b>
+<ul>
+<li>Interfata cu utilizatorul este foarte configurabila, permite trecerea imediata intre moduri clasice MDI ca toplevel, childframe si noul mod IDEAl cu utilitar de vedere "sliding".</li>
+<li>Consola inclusa.</li>
+<li>Selector de fisiere, file tree si facilitati de grupuri de fisiere fara a avea nevoie de un file manager extern.</li>
+<li>Includerea a oricarui alt program de care ai nevoie prin adaugarea sa la meniul "Tools" in functie de nevoile tale.</li>
+<li>Tester de expresii obisnuite.</li>
+<li>Integrare Valgrind pentru a gasi scurgeri de memorie in programe.</li>
+<li>Utilitar de distributie si impachetare a proiectului pentru crearea automate de pachete sursa si binare.</li>
+<li>Integrare CTags.</li>
+<li>Explorer de parti pentrui a cunoaste serviciile KDE disponibile.</li>
+</ul>
+</li>
+</ul>
+
+<?php module_tail();?>

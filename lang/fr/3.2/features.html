@@ -1,0 +1,42 @@
+<?php module_head("Caract&eacute;ristiques de KDevelop $k_series_version");?>
+
+Il comprend toutes les <a href="index.html?filename=3.1/features.html">caract&eacute;ristiques de KDevelop 3.1.x</a> plus&nbsp;:<br>
+  <ul>
+    
+    <li><b>Code de base restructur&eacute;</b>
+      <ul>
+	<li>Le code de base de KDevelop a &eacute;t&eacute; restructur&eacute; dans le but d'am&eacute;liorer la r&eacute;utilisation du code et de documenter les classes de la biblioth&egrave;que de base qui compose KDevelop. Ces classes de base forment la nouvelle <em>plate-forme KDevelop</em> et permettent une API bien document&eacute;e et concise.</li>
+      </ul>
+    </li>
+    
+    <li><b>Nouveaux outils RAD (<em>R</em>apid <em>A</em>pplication <em>D</em>evelopment : d&eacute;velopement rapide d'applications)</b>
+	<li>L'int&eacute;gration de KDevDesigner permet la cr&eacute;ation des interfaces graphiques directement dans KDevelop</li>
+	<li>L'int&eacute;gration de KDevAssistant fournit un visualiseur puissant de documentation dans KDevelop</li>
+	<li>L'assistant de classe C++ Class peut maintenant &ecirc;tre utilis&eacute; pour les classes de la base de donn&eacute;es de compl&eacute;tion de code. Cela signifie, par exemple, que si la base de donn&eacute;es de compl&eacute;tion de code est faite pour Qt alors le surclassement des classes Qt est possible dans l'assistant.</li>
+      </ul>
+    </li>
+    
+    <li><b>Beaucoup d'am&eacute;lioration du support du language ruby</b>
+      <ul>
+	      <li>Nouveau d&eacute;bogueur ruby, combin&eacute; avec des m&eacute;thodes d'inspection am&eacute;lior&eacute;es dans les liens qtruby/korundum, pour montrer les metadata Qt::Object telles que les propri&eacute;t&eacute;s, 
+		      pendant le d&eacute;bogage.</li>
+	      <li>Le navigateur de classes a un analyseur am&eacute;lior&eacute; qui montre les signals Qt et DCOP ainsi que les slots, les m&eacute;thodes attr_accessor et les variables</li>
+	      <li>Nouveaux mod&egrave;les de projets pour une application KDE, une application KConfig XT, un serveur DCOP et 
+		      une application Qt seulement</li>
+              <li>Int&eacute;gration totale Qt designer/rbuic</li>
+      </ul>
+    </li> 
+    
+    <li><b>Autres am&eacute;liorations et corrections de bogues</b>
+      <ul>
+	 <li>Le support pour le contr&ocirc;le de version a &eacute;t&eacute; refait. La plupart des caract&eacute;ristiques d'int&eacute;gration qui n'&eacute;taient pas disponibles dans KDevelop&nbsp; 3.1 sont de retour dans 3.2, avec un module externe Subversion am&eacute;lior&eacute;.</li>
+	      <li>L'am&eacute;lioration de la recherche dans les fichiers, du support Ctags et de la navigation dans l'historique permettent une navigation bien plus rapide dans le code</li>
+	<li>Plus de mod&egrave;les d'applications sont fournis</li>
+	<li>Surclassement des types biblioth&egrave;que</li>
+	<li>Veuillez voir la <a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">page du journal des changements</a> pour plus de d&eacute;tails</li>
+      </ul>
+    </li>
+    
+  </ul>
+  
+<?php module_tail();?>

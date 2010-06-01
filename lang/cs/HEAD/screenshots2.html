@@ -1,0 +1,56 @@
+<?php module_head("KDevelop $k_series_version snímky obrazovky, sekce 2");?>
+
+<table width="100%" cellspacing=2 cellpadding=2 border=0>
+  <tr>
+    <td align=center><a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots1.html">Snímky obrazovky, sekce 1</a>
+    <td align=center>Snímky obrazovky, sekce 2
+    <td align=center><a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots3.html">Snímky obrazovky, sekce 3</a>
+  </tr>
+</table>
+
+<table width="100%" cellspacing=2 cellpadding=2 border=0>
+  <tr>
+    <th class=header width="50%" align=center>Okna proměnných</th>
+    <th class=header width="50%" align=center>Hlavní popup menu</th>
+  </tr>
+  <tr>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/variables_window.png"><img border="0" src="graphics/screenshots/3.3/thumbs/variables_window.png" width="140" height="100" alt="Okna proměnných"/></a>
+<div align="justify"><ul><li>
+Jsou zobrazovány pouze lokální proměnné rámce, už neuvidíte matoucí výpis všech rámců a vláken.
+</li><li>
+Je zde nové tlačítko "Evaluate" (Vyhodnoť), které umožňuje vyhodnotit výraz bez nutnosti obnovovat ho v každém dalším kroku.
+</li><li>
+Pokud jde o proměnné "p1", nebo "p3" -- hodnota již neobsahuje typ jako prefix. V předchozích verzích zde bylo něco jako "(int*) 0x8049abc" jako hodnota.
+</li><li>
+Pokud jde o proměnné "p4" a "s" -- nyní je možné zobrazit statické položky tříd, bez toho, aniž byste si rozhodili zobrazení třídy QString
+</li></ul></div>
+    </td>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/main_popup.png"><img border="0" src="graphics/screenshots/3.3/thumbs/main_popup.png" width="140" height="100" alt="Hlavní popup menu"/></a>
+<div align="justify"><ul><li>
+Přidána položka "Run to cursor" (Jdi na kurzor) 
+</li><li>
+Přidána položka "Evaluate"
+</li><li>
+Pokud je aktivní debugger, deratizační příkazy jsou v menu jako první
+</li></ul></div>
+    </td>
+  </tr>
+  <tr>
+    <th class=header width="50%" align=center>Editace proměnné</th>
+    <th class=header width="50%" align=center>Vyskakovací okno proměnných</th>
+  </tr>
+  <tr>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/editing_variable.png"><img border="0" src="graphics/screenshots/3.3/thumbs/editing_variable.png" width="140" height="100" alt="Editace proměnné"/></a>
+<p>Proměnné se nyní dají změnit</p>
+    </td>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/variables_popup.png"><img border="0" src="graphics/screenshots/3.3/thumbs/variables_popup.png" width="140" height="100" alt="Vyskakovací okno proměnných"/></a>
+<p>Nový příkaz "Remember value" (Zapamatuj si hodnotu)</p>
+    </td>
+  </tr>
+</table>
+
+<?php module_tail();?>

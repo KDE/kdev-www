@@ -1,0 +1,40 @@
+<?php
+$l_online_un_subscribe='Online un/subscribe';
+$l_Mailinglists='邮件列表:';
+$l_kdevelop_users='KDevelop';
+$l_kdevelop_devel='KDevelop 开发';
+$l_kdevelop_bugs='KDevelop 缺陷报告';
+$l_default_email='您的email地址';
+$l_subscribe='订阅';
+$l_unsubscribe='取消订阅';
+$l_done='DONE!';
+
+require_once('inc/mailinglist.php');
+?>
+
+<?php module_head("Mailinglist for KDevelop users")?>
+
+自1999年2月，我们有了邮件列表<b>(kdevelop at kdevelop.org)</b> 大多数时间有600到700个订户。
+这个列表是用于一般性讨论翻译。
+  <blockquote>
+  邮件列表存档: <A HREF="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop/">barney.cs.uni-potsdam.de</A>
+  </blockquote>
+感谢Hank Leininger.<br>
+<br>
+
+<?php
+module_tail();
+module_head("Mailinglists for KDevelop developers");
+?>
+
+<p>
+此外,我们还有两个列表, <em>kdevelop-devel</em> 用于KDevelop的开发人员,
+<em>kdevelop-bugs</em> 用于来自bugs.kde.org的缺陷报告。您可以用本页顶部的表单订阅或者取消订阅这些列表。</p><p> 来自这些列表的消息可以参看
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-devel/">kdevelop-devel 邮件列表存档 </a>
+和
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-bugs/">kdevelop-bugs  邮件列表存档 </a>。
+</p>
+
+<p>您也许还可以 <a href="http://commitfilter.kde.org/">订阅KDevelop SVN 提交</a>。
+
+<?php module_tail(); ?>

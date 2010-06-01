@@ -1,0 +1,5 @@
+<?php module_head("KDevelop a besoin de vous");?>
+Le projet KDevelop recherche des traducteurs volontaires pour le site web.
+Si vous voulez participer, veuillez visiter la <a href="index.html?filename=website_translation_status.html&set_lang=fr">
+page du statut des traductions du site web</a>. Vous y trouverez toute l'information dont vous avez besoin.<br>
+<?php module_tail();?>

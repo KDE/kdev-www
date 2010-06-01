@@ -1,0 +1,196 @@
+<?php module_head("Tutorial sobre autoconf y KDevelop");?>
+<p>Remarco que el sistema KDevelop es el sistema GNU 
+<a href="http://www.gnu.org/software/autoconf/">autoconf</a>.
+<i>autoconf</i> es un conjunto de herramientas que genera programas
+Makefiles y scripts configure.  Es muy potente, flexible, y 
+casi completamente incomprensible, especialmente cuando la tarea es
+añadir una simple dependencia a un programa.</p>
+
+<p>El directorio <b>admin/</b> de KDE contiene algunos ficheros de
+configuración y scripts que intentan simplificar este proceso, 
+con un grado limitado de éxito. Los comandos más importante que 
+use cuando modifique las configuraciones de autoconf de KDevelop 
+son <b>make -f admin/Makefile.common</b>(y el venerable <b>rm config.guess</b> 
+si aun está usando KDevelop 2.x). Llamando a make con el Makefile administrativo 
+regenerará las configuraciones de autoconf, borrará el config.guess y 
+limpiará la cache de confié, como este, para cualquiera de las configuraciones 
+potencialmente caducas.</p>
+
+<p>Un escenario normal el cual requiere modificar estos ficheros de autoconf 
+es añadir una dependencia exterior a una biblioteca compartida que no es 
+parte de la GUI de KDevelop, como libxml2. Es fácil añadir los comandos
+<b>`xml2-config --cflags`</b> y <b>`xml2-config --libs`</b> a la sección
+CPPFLAGS y LDFLAGS de las opciones de KDevelop para el perfil con el que 
+estés compilando; sin embargo, estos valores sólo se utilizan cuando 
+está compilando dentro de KDevelop y se pierde cuando se crea la 
+distribución del fuente (.tar.gz).</p>
+
+<p>Añadir esta dependencia, entonces, es una tarea de autoconf.  Hay dos
+ficheros que se modificar en este escenario: <b>configure.in.in</b> y
+<b>Makefile.am</b>.  configure.in.in es una plantilla creada por KDevelop
+cuando se crea por primera vez el proyecto. KDevelop no sobrescribe 
+ninguno de los cambios realizados sobre el este fichero.  Makefile.am es
+también una plantilla, pero KDevelop 2.x puede sobrescribir partes
+del fichero.  Las secciones que serán sobrescritas están claramente 
+marcadas, y los cambios realizados fuera de esta sección están protegidos
+de forma segura. Esta limitación se ha quitado en KDevelop 3.x<p>
+
+<p>¿Así que qué podemos hacer con estos ficheros?</p>
+
+<p><b>configure.in.in</b> es un fichero que se parsee con
+<a href="http://www.gnu.org/software/m4/m4.html">m4</a>, el
+lenguaje de procesado de macro de GNU. Este es el mismo lenguaje
+de macro que se usa para generar los ficheros de configuración 
+para <i>sendmail</i>, así como para otras muchas cosas. Aunque sea una 
+cosa que vale la pena aprender, no se explicará aquí.  En vez de eso, lo
+listado más abajo es un recorte de código que se puede pegar dentro de 
+configure.in.in para activar una comprobación para libxml2:<p>
+
+<pre>
+dnl -----------------------------------------------------------------------
+dnl libxml2 check from http://websvn.kde.org/*checkout*/branches/KDE/3.5/kdelibs/kdoctools/configure.in.in
+
+KDE_FIND_PATH(xml2-config, XML_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxml2 anywhere, check ftp://xmlsoft.org/ for libxml >= 2.4.8.
+  HELP_SUBDIR=
+])
+
+if test -n "$XML_CONFIG"; then
+  vers=`$XML_CONFIG --version 2>/dev/null | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" &amp;&amp; test "$vers" -ge 2005000
+  then
+     LIBXML_LIBS="`$XML_CONFIG --libs`"
+     LIBXML_RPATH=
+     for args in $LIBXML_LIBS; do
+          case $args in
+            -L*)
+               LIBXML_RPATH="$LIBXML_RPATH $args"
+               ;;
+          esac
+     done
+     LIBXML_RPATH=`echo $LIBXML_RPATH | sed -e "s/-L/-R/g"`
+     LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
+  else
+     AC_MSG_WARN([You need at least libxml 2.5.0])
+     HELP_SUBDIR=
+  fi
+fi
+
+AC_SUBST(LIBXML_LIBS)
+AC_SUBST(LIBXML_CFLAGS)
+dnl -----------------------------------------------------------------------
+</pre>
+
+<p>Aquí hay alguna explicación:</p>
+
+<pre>
+KDE_FIND_PATH(xml2-config, XML_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxml2 anywhere, check ftp://xmlsoft.org/ for libxml >= 2.4.8.
+  HELP_SUBDIR=
+])
+</pre>
+
+<p>este segmento de código sencillamente buscar el programa <i>xml2-config</i> 
+en algunas rutas predefinidas.  La ruta del ejecutable esta grabada en la
+variable <b>XML_CONFIG</b>, el segundo parámetro.  Si no se puede encontrar el programa,
+esta variable permanece desasignada y se imprime un mensaje de error.</p>
+
+<pre>
+if test -n "$XML_CONFIG"; then
+  vers=`$XML_CONFIG --version 2>/dev/null | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" &amp;&amp; test "$vers" -ge 2005000
+  then
+</pre>
+<p>Si la variable XML_CONFIG esta asignada, especificando la ruta correcta, entonces pregunta 
+por la versión.  Este programa requiere una versión 2.5.0 o superior, así que 
+comprueba este valor aquí.</p>
+
+<pre>
+     LIBXML_LIBS="`$XML_CONFIG --libs`"
+     LIBXML_RPATH=
+     for args in $LIBXML_LIBS; do
+          case $args in
+            -L*)
+               LIBXML_RPATH="$LIBXML_RPATH $args"
+               ;;
+          esac
+     done
+     LIBXML_RPATH=`echo $LIBXML_RPATH | sed -e "s/-L/-R/g"`
+     LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
+</pre>
+
+<p>Si la correspondencia de versión fue correcta, ciertas variables se definirán 
+para que se puedan usar por otras partes del sistema autoconf.  Estas variables 
+serán <b>LIBXML_LIBS</b>, <b>LIBXML_RPATH</b>, y <b>LIBXML_CFLAGS</b>.</p>
+
+<pre>
+  else
+     AC_MSG_WARN([You need at least libxml 2.5.0])
+     HELP_SUBDIR=
+  fi
+</pre>
+
+<p>Si se encuentra libxml2, pero la versión es demasiado antigua, imprime un error aquí.</p>
+
+<pre>
+fi
+
+AC_SUBST(LIBXML_LIBS)
+AC_SUBST(LIBXML_CFLAGS)
+</pre>
+
+<p>Y finalmente, hace las variables <b>LIBXML_LIBS</b> y <b>LIBXML_CFLAGS</b>
+accesibles al resto del sistema.  <b>LIBXML_RPATH</b> no se utilizará, así 
+que no se lista aquí, pero esta disponible para exportar.
+</p>
+
+<p>Ahora que estas variables se han "exportado" al resto del autoconf, es
+el momento de insertarlas dentro del Makefiles. Afortunadamente, esto es 
+una tarea mucho más sencilla.</p>
+
+<p>Desde el subdirectorio que contiene los ficheros que necesita para 
+acceder a estas cabeceras y bibliotecas (este puede ser el subdirectorio
+del <i>proyecto/</i> dentro del <i>proyecto</i>, por ejemplo), hay un fichero
+llamado <b>Makefile.am</b>.  Reemplaza estas líneas:
+<pre>
+# asigna la ruta del include encontrado por configure
+INCLUDES= $(all_includes)
+
+# la ruta de búsqueda de la biblioteca.
+myAppName_LDFLAGS = $(all_libraries)
+</pre>
+
+con esto:
+
+<pre>
+# asigne la ruta del include encontrado por configure
+INCLUDES= $(all_includes) $(LIBXML_CFLAGS)
+
+# la ruta de búsqueda de la biblioteca.
+myAppName_LDFLAGS = $(all_libraries) $(LIBXML_LIBS)
+</pre>
+
+<p>De nuevo, tome nota del segmento que KDevelop sobrescribirá si 
+usa la versión 2.x. Si está usando la versión 3, puede asignar estas opciones
+con el administrador de automake o a mano (el administrador de automake 
+los cogerá cuando recoge el proyecto).</p>
+
+<p>El paso final requiere para completar esta integración simplemente debe 
+ejecutar <b>make</b>.  Dependiendo de la complejidad de las dependencias,
+sin embargo, puede que sea necesario ejecutar <b>make -f admin/Makefile.common</b>,
+lo que fuerza a autoconf a refrescar sus ficheros y hacer cualquier otra gestión
+ interna que KDevelop piense que es importante.  Si, por ejemplo, las comprobaciones 
+de versión han cambiado, también puede ser necesario borrar el fichero 
+config.cache y reejecutar configure.  En este punto, <b>make</b> verdaderamente 
+es el último paso.</p>
+
+<p>¡Enhorabuena!  Ahora tiene un comprobador libxml2 funcionando y
+un paquete de software que puede ser compilado dentro y fuera de KDevelop!</p>
+
+<p>Para una introducción más detallada, vea <a href="http://www.amath.washington.edu/~lf/tutorials/autoconf/toolsmanual_toc.html">
+este tutorial</a>.</p>
+
+<p align=right><tt>Autor: Christopher W. Curtis (ccurtis0 en yahoo punto com), último cambio: 03-11-2003</tt></p>
+<?php module_tail();?>
+
+

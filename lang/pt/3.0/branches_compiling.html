@@ -1,0 +1,142 @@
+<?php include_file("$k_base_version/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file() ?>
+
+<?php module_head("Instructions for a self-compiled version of KDevelop 3.0.x"); ?>
+Obtenha as fontes <b>KDE_3_2_BRANCH</b> como &eacute; explicado acima.
+<br>
+Antes de continuar verifique por favor se o seu computador tem o
+<a href="index.html?filename=3.0/requirements.html">software necess&aacute;rio</a> instalado.
+<br>
+Inicialize o sistema de compilação:
+<pre>
+       $ cd kdevelop
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+</pre>
+<?php
+  include_file("3.0/compiling.ihtml");
+  module_tail();
+  module_head("How to keep your version up to date");
+?>
+<br>
+Ap&oacute;s ter descarregado e compilado com sucesso um dos ramos CVS
+acima, ir&aacute; querer mant&ecirc;-lo actualizado  para obter todas as correc&ccedil;&otilde;es.
+De forma a evitar escrever todos os comandos que definem as necess&aacute;rias vari&aacute;veis de ambiente
+sempre que actualiza, &eacute; aconselh&aacute;vel defini-las no seu ficheiro .bashrc
+ou .cshrc.<br>
+
+Se utiliza o interpretador de comandos bash adicione as seguintes linhas:<br>
+
+<pre>
+export KDEDIR=/where/your/kde3/is
+export QTDIR=/where/your/qt3/is
+export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+</pre>
+
+Se usa tcsh adicione as seguintes linhas:<br>
+
+<pre>
+setenv KDEDIR /where/your/kde3/is
+setenv QTDIR /where/your/qt3/is
+setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+setenv PATH $QTDIR/bin:$KDEDIR/bin:$PATH
+</pre>
+
+<P>
+<b>Nota:</b> Por raz&otilde;es obvias deve editar as duas primeiras linhas de acordo com a sua configura&ccedil;&atilde;o! :)<br>
+</p>
+
+<br>
+
+De seguida na directoria onde colocou os ficheiros do <i>kdevelop do CVS</i> execute o seguinte comando:<br>
+
+<pre>
+ $ cd where_kde3src_is/kdevelop
+ $ cvs update -dP
+</pre>
+<br>
+O pr&oacute;ximo passo depende do resultado do comando anterior:<br>
+
+Se obteve algo parecido com isto:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;U /some_directory_path/Makefile.am<br>
+Deve fazer o seguinte:<br>
+
+<pre>
+ $ make -f Makefile.cvs
+</pre>
+
+e de seguida _TODOS_ os passos seguintes.<br>
+
+<br>
+Se obteve algo assim:<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;P /some_directory_path/Makefile.am<br>
+Deve fazer:<br>
+
+<pre>
+ $ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+</pre>
+e de seguida _TODOS_ os passos seguintes.<br><br>
+
+<pre>
+  $ make
+  $ make install (as root)
+</pre>
+Se por alguma raz&atilde;o o comando make falhou pode obrig&aacute;-lo a ignorar os erros
+utilizando a op&ccedil;&atilde;o -k. Dependendo da gravidade do erro pode acabar com uma vers&atilde;o
+a trabalhar ou n&atilde;o do KDevelop. Por isso ao executar "make -k install" est&aacute; por sua pr&oacute;pria conta!!!.
+ De qualquer forma estes erros normalmente desaparecem ao fim de algumas horas por isso
+pode tentar um "update" mais tarde antes do perigoso :) comando install.<br>
+
+<pre>
+ $ make -k
+ $ make -k install (como root)
+</pre>
+
+E &eacute; tudo! Voc&ecirc; tem agora a vers&atilde;o mais actualizada do KDevelop. Para o iniciar s&oacute; tem que fazer:<br>
+
+<pre>
+ $ kdevelop
+</pre>
+
+Tudo o que tem que fazer para o manter actualizado &eacute; repetir estes passos sempre
+que algu&eacute;m na lista de discuss&atilde;o <a href="index.html?filename=mailinglist.html">kdevelop-devel</a>
+ corriga um bug. <br>
+Por isso &eacute; fortemente aconselhado a se <a href="index.html?filename=mailinglist.html">juntar
+a esta lista de discuss&atilde;o</a>.<br><br><br>
+
+Voc&ecirc; deve reportar os bugs que encontra no <a
+href="http://bugs.kde.org/wizard.cgi">formul&aacute;rio de submiss&atilde;o de bugs</a>. Voc&ecirc; <b>n&atilde;o</b> deve reportar erros de compila&ccedil;&atilde;o na base de dados de bugs. Para erros de compila&ccedil;&atilde;o use antes a 
+<a href="index.html?filename=mailinglist.html">lista de discuss&atilde;o</a>.<br>
+<br>
+
+Pode consultar os bugs na <a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=map_components.name,bugs.bug_id">base de dados de bugs</a>.<br>
+
+<?php module_tail();
+module_head("How to compile on FreeBSD"); ?><br>
+
+Siga as instru&ccedil;&otilde;es normais, mas use antes o gmake inv&eacute;s do make e depois
+<pre>
+       $ gmake -f Makefile.cvs
+</pre>
+fa&ccedil;a:
+<pre>
+       $ export CXXFLAGS="-L/usr/X11R6/lib -I/usr/local/include/db41 -I/usr/local/include -L/usr/local/lib -I/usr/X11R6/include"
+</pre>
+Note que necessita da berkeley db 4.1 instalada, e se tiver outra vers&atilde;o,
+precisa de ajustar o caminho.<br>
+Mude a linha de "ac_cv_bdb=no" para "ac_cv_bdb=yes" no ficheiro de configura&ccedil;&atilde;o pois caso contr&aacute;rio o configure n&atilde;o conseguir&aacute; encontrar as bibliotecas db.<br>
+Para conhecer qual a vers&atilde;o que tem instalada use:
+<pre>
+       $ pkg_info | grep db41
+       db41-4.1.25_1       The Berkeley DB package, revision 4.1
+</pre>
+Os tipos do FreeBSD mudaram o nome de libdb.so para libdbxx.so. Logo substitua "-ldb" por "-ldb41" no ficheiro lib/catalog/Makefile.am<br>
+De seguida pode continuar com o processo normal:
+<pre>
+       $ ./configure --prefix=/blah --enable-debug=full
+</pre>
+
+<?php module_tail(); ?>

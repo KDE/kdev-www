@@ -1,0 +1,125 @@
+<?php include_file("$k_base_version/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file() ?>
+
+<?php module_head("Instruc&#x163;iuni pentru o versiune compilat&#259; automat a KDevelop 3.1.x"); ?>
+<ol>
+<li>&Icirc;nainde de a continua, v&#259; rug&#259;m s&#259; verifica&#x163;i c&#259; <a href="index.html?filename=3.1/requirements.html">software-ul necesar</a> s&#259; fie instalat &icirc;n computerul dvs.</li>
+<br>
+<li>Ob&#x163;ine&#x163;i sursele pentru branch-ul <b>KDE_3_3_BRANCH</b> urm&acirc;nd explica&#x163;iile de mai sus.</li>
+<br>
+<li>Ini&#x163;aliza&#x163;i sistemul de construire:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ make -f admin/Makefile.common cvs-clean</dd>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+</li>
+</ol>
+<?php
+  include_file("3.1/compiling.ihtml");
+  module_tail();
+  module_head("Cum s&#259; v&#259; men&#x163;ine&#x163;i versiunea actualizat&#259;");
+?>
+Dup&#259; ce a&#x163;i donwnload-at &#x15F;i compilat cu succes una din branch-urile CVS de mai sus, ve&#x163;i dori s&#259; o men&#x163;ine&#x163;i actualizat&#259; pentru a avea toate modific&#259;rile
+<ol><li>Pentru a evita tastarea de fiecare dat&#259; a comenzilor ce preg&#259;tesc mediul necesar, ar trebui s&#259; le seta&#x163;i &icirc;n fi&#x15F;ierul .bashrc
+sau .cshrc.
+<ul>
+<li>Dac&#259; utiliza&#x163;i shell-ul bash, atunci ad&#259;uga&#x163;i urm&#259;toarele linii:
+<dl>
+<dd class="code">export KDEDIR=/where/your/kde3/is</dd>
+<dd class="code">export QTDIR=/where/your/qt3/is</dd>
+<dd class="code">export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl></li>
+<li>Dac&#259; utiliza&#x163;i tcsh, atunci ad&#259;uga&#x163;i urm&#259;toarele linii:
+<dl>
+<dd class="code">setenv KDEDIR /where/your/kde3/is</dd>
+<dd class="code">setenv QTDIR /where/your/qt3/is</dd>
+<dd class="code">setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">setenv PATH $QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+</li></ul>
+<b>Note:</b> Din motive evidente va trebui s&#259; edita&#x163;i primele dou&#259; linii s&#259; corespund&#259; configura&#x163;iei dvs.! :)
+</li>
+
+<br>
+<br>
+
+<li>Schimba&#x163;i directorul la locul unde a&#x163;i pus fi&#x15F;ierele <i>kdevelop din CVS</i> &#x15F;i folosi&#x163;i comanda de actualizare:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ cvs update -dP</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>Urm&#259;torul pas depinde de rezultatul afi&#x15F;at de comanda de mai sus:
+
+<ul>
+<li>Dac&#259; a&#x163;i g&#259;sit o linie de genul:
+<dl>
+<dd class="code">U /o_cale_director/Makefile.am</dd>
+</dl>
+Va trebui s&#259; executa&#x163;i:
+<dl>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+urmat&#259; de pasul ./configure
+</li>
+
+<br>
+<br>
+
+<li>
+Dac&#259; a&#x163;i g&#259;sit o linie de genul:
+<dl>
+<dd class="code">P /o_cale_director/Makefile.am</dd>
+</dl>
+Ar trebui s&#259; executa&#x163;i:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+utiliz&acirc;nd op&#x163;iunile ./configure pe care le-a&#x163;i folosit la prima compilare.
+</li>
+</ul>
+</li>
+
+<br>
+<br>
+
+<li>Compila&#x163;i &#x15F;i instala&#x163;i kdevelop:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (ca root)</dd>
+</dl>
+Dac&#259; dintr-un motiv oarecare comanda "make" e&#x15F;ueaz&#259;, o pute&#x163;i fort_ma s&#259; ignore erorile prin ad&#259;ugarea unei op&#x163;iuni -k &icirc;n felul urm&#259;tor:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (ca root)</dd>
+</dl>
+Depinz&acirc;nd de gravitarea erorii, pute&#x163;i sf&acirc;r&#x15F;i prin a avea o versuine func&#x163;ional&#259; de kdevelop sau nu. Deci executa&#x163;i "make
+-k install" pe riscul propriu!!!. &Icirc;n orice caz, asemenea erori dispar dup&#259; c&acirc;teva ore, deci pute&#x163;i &icirc;ncerca o nou&#259; actualizare mai t&acirc;rziu, &icirc;nainte de comanda periculoas&#259; :) make install.
+</li></ol>
+
+<br>
+<br>
+
+Asta este! Acum ave&#x163;i cea mai recent&#259; versiune de KDevelop. Pentru a o porni, executa&#x163;i:
+<dl>
+<dd class="code">$ kdevelop</dd>
+</dl>
+
+<p>Tot ce ave&#x163;i de f&#259;cut ca s&#259; men&#x163;ine&#x163;i o copie actualizat&#259; este s&#259; repeta&#x163;i ace&#x15F;ti pa&#x15F;i c&acirc;nd cineva pe lista de mail  <a href="index.html?filename=mailinglist.html">kdevelop-devel</a> fixeaz&#259; o defec&#x163;iune.
+Deci v&#259; sf&#259;tuim s&#259; v&#259; <a href="index.html?filename=mailinglist.html">&icirc;nscrie&#x163;i la lista de email</a>.</p>
+
+<p>V&#259; rug&#259;m s&#259; trimite&#x163;i defec&#x163;iunile g&#259;site prin <a
+href="http://bugs.kde.org/wizard.cgi">pagina de ad&#259;ugare a defec&#x163;iunilor</a>. <b>Nu</b> ar trebui s&#259; raporta&#x163;i erorile de compilare &icirc;n baza de date a defec&#x163;iunilor. Pentru erorile de compilare, folosi&#x163;i <a href="index.html?filename=mailinglist.html">lista de email</a> &icirc;n loc.
+</p>
+
+<p>Pute&#x163;i vedea defec&#x163;iunile &icirc;n<a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=map_components.name,bugs.bug_id">baza de date a defec&#x163;iunilor</a>.</p>
+
+<?php module_tail(); ?>

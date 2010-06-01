@@ -1,0 +1,383 @@
+<?php module_head("KDevelop 3.0.x F.A.Q. (Najczęściej Zadawane Pytania)");?>
+<b>Pytania Ogólne</b><br>
+<ul>
+<li><a href="#36"> Skąd mogę pobrać KDevelop? I jak go zainstalować?
+</a></li>
+<li><a href="#37"> Czy mogę projektować komercyjne programy używając KDevelop?
+</a></li>
+<li><a href="#137"> Czy mogę projektować komercyjne wtyczki do KDevelop?
+</a></li>
+<li><a href="#45"> Skompilowałem i zainstalowałem KDevelop 3.0, ale jedyne co widzę to Plik i menu Pomoc
+</a></li>
+</ul>
+<b>Pytania dotyczące KDevelop IDE</b><br>
+<ul>
+<li><a href="#38">Jak mogę przełączać się pomiędzy otwartymi plikami za pomocą klawiatury?
+</a></li>
+<li><a href="#39">Jak mogę wpisać tekst podczas debuggingu aplikacji konsolowej?
+</a></li>
+<li><a href="#40">Jak mogę uaktywnić kompletowanie kodu dla zewnętrznych bibliotek?
+</a></li>
+</ul>
+<b>Kompilacja i problemy z budowaniem</b>
+<ul>
+<li>skrypt konfiguracyjny
+<br>
+<ul>
+<li><a href="#3"> Skrypt configure nie znajduje moich bibliotek Qt.
+</a></li>
+</ul>
+</li>
+<li>configure.in.in
+<br>
+<ul>
+<li><a href="#12"> Mój configure.in.in nie posiada żadnych wywołań AC_CHECK_COMPILERS(). Gdzie powinienem włożyć CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"
+   wymienione powyżej?
+</a></li>
+<li><a href="#25"> W pytaniu wyżej, zawszę widzę "configure.in(.in)". Posiadam oba pliki w projekcie. Które pliki powinienem łatać?
+</a></li>
+<li><a href="#21"> Dlaczego poprawianie configure.in(.in) z CXXFLAGS="$USE_EXCEPTIONS $CXXFLAGS" nie działa?
+</a></li>
+<li><a href="#22"> Używam CXXFLAGS="$USE_EXCEPTIONS" w configure.in(.in) i wszystko działa, dlaczego powinienem użyć waszego rozwiązania?
+</a></li>
+</ul>
+</li>
+<li>Makefile.am
+<br>
+<ul>
+<li><a href="#17"> Jaka jest różnica pomiędzy CPPFLAGS i CXXFLAGS?
+</a></li>
+<li><a href="#18"> Widziałem kilka rozwiązań jak łatanie Makefile.am używając
+     DEFS+=-DMYDEFINE
+   lub
+     CXXFLAGS+=-fsigned-char
+   lub
+     LD_FLAGS+=-L/usr/local/lib
+   Dlaczego tego nie zatwierdzacie?
+</a></li>
+<li><a href="#20"> Czy AM_CXXFLAGS (w Makefile.am) może zostać użyte dla flag -frtti lub
+   -fexceptions?
+</a></li>
+</ul>
+</li>
+<li>htdig
+<br>
+<ul>
+<li><a href="#29"> Zainstalowałem htdig, ale teraz dostępne jest htsearch?
+</a></li>
+<li><a href="#30"> Posiadam htdig, htmerge i htsearch ale dostaję wiadomość o błędzie, o tym że plik konfiguracyjny htdig nie może zostać znaleziony lub jest niepoprawny ?
+</a></li>
+</ul>
+</li>
+<li>automake, autoconf
+<br>
+<ul>
+<li><a href="#19"> Jaką mogę mieć pewność, że użytkownik mojego projektu zbuduje go z automake w wersji 1.4?
+</a></li>
+</ul>
+<ul>
+<li><a href="#59"> Dodałem istniejący podprojekt do mojego projektu i teraz nie chce się już zbudować.
+</a></li>
+</ul>
+</li>
+<li>rtti, informacje typu run-time
+<br>
+<ul>
+<li><a href="#13"> Rozwijam aplikację która potrzebuje miec wkompilowane w siebie run-time-type-info.
+   Jak mogę to zrobić?
+</a></li>
+</ul>
+</li>
+<li>Designer TrollTech i KDevelop
+<br>
+<ul>
+<li><a href="#28"> Czy istnieje jakiekolwiek HOWTO o tym jak w QT designer zrobić dialogi?
+</a></li>
+</ul>
+</li>
+<li>inne
+<br>
+<ul>
+<li><a href="#8"> Łatanie configure/Makefile/Makefile.in/config.h nie pomaga, po uruchomieniu autoconf/automake/autoheader moje zmiany zostają utracone.
+   Gdzie powinienem coś poprawić?
+</a></li>
+<li><a href="#9"> Rozwijam aplikację, gdze potrzebuje ustawić opcję -D do preprocesora. Jeśli dodam to do KDevelop do opcji mojego projektu, wszystko jest ok, ale kiedy dystrybuuje moją paczkę, opcja -D ustawiona w KDevelop nie jest używana. 
+Co powinienem zrobić, aby ta opcja działała?
+</a></li>
+<li><a href="#10"> Czy istnieje inna możliwość do opublikowania moich własnych definicji?
+</a></li>
+<li><a href="#11"> Rozwijam aplikację, która wymaga obsługę wyjątków. Jak mogę to zrobić?
+</a></li>
+<li><a href="#16"> Rozwiązania powyżej są miłe, ale potrzebuję tego tylko do oczywistych podkatalogów (n.p. statycznych lib mojego projektu)
+   Jak mogę tego dokonać?
+</a></li>
+<li><a href="#23"> Używam dodatkowych nagłówków i bibliotek dw moim projekcie KDE/QT. Dodanie do opcji kompilatora -I/usr/include/foo oraz -L/usr/lib/foo do opcji linkera nie dodaje ustawień do paczki tar.
+   Co mogę zrobić?
+</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<a name="36"><b> Skąd mogę pobrać KDevelop? I jak go zainstalować?</b></a><br>
+Drużyna KDevelop nie wydaje paczek binarnych KDevelop (RPMy).
+RPMy mogą być jednak znalezione na serwerze twojego dystrybutora lub w podkatalogach na <a href="ftp://ftp.kde.org/pub/">ftp.kde.org</a> lub na jednym z jego <a href="http://www.kde.org/ftpmirrors.html">mirrorów</a><br>
+Proszę sprawdź <a href="index.html?filename=3.0/download.html">nasz dział download </a> dla informacji o tym jak ściągnąć i skompilować kod źródłowy.<br>
+<br>
+<br>
+<a name="37"><b> Czy mogę projektować komercyjne programy używając KDevelop?</b></a><br>
+Wszyscy mogą używać za darmo KDevelop. Wygenerowany kod możesz umieścić pod jaką kolwiek licencją chcesz. Jakkolwiek, generator projektu posiada pola do którego możesz dodać włase prawa autorskie, ale żeby ułatwić tą czynność domyślnie generator dodaje licencję GPL. Więc możesz tam dodać także własną licencję.<br>
+
+Kiedy przychodzi do edytowania etc. twojego programu, używanie KDevelop jest tak samo legalne jak używająnie zwykłego edytora tekstu, program jest GPL który nie narzuca żadnych implikacji co do czego ma służyć. Możesz pisać komercyjne/zamknięte programy mimo faktu że KDevelop jest na licencji GPL.<br>
+
+Aby używać funkcji KDE lub innych rzeczy określanych jako free software, musisz obserwować licencję bibliotek, tych bibliotek których chesz użyć. Dla komercyjnego tworzenia programów pod KDE/QT potrzebujesz tylko licencji profesjonalnej Trolltechu. Biblioteki KDE są same w sobie LGPL, co oznacza, że możesz użyć wywołań funkcji i podlinkować swój program do bibliotek KDE.l To zalicza się do bibliotek kdelibs, biblioteki kdebase (konqueror i kcontrol etc) i biblioteki koffice (dla tworzenia aplikacji koffice).<br>
+Więcej informacji na <a href="1.3/doc/programming/index-16.html">
+KDevelop Licensing</a><br>
+<br>
+<br>
+<a name="137"><b> Czy mogę tworzyć komercyjne wtyczki do KDevelop?</b></a><br>
+KDevelop zawiera bibliotekę libkdeveloplgpl.so do umożliwiania rozwijania dla komercyjnych wtyczek. Ta biblioteka włącza interfejs KDevelop i pomocnicze funkcje wydane pod LGPL. Jeśli posiadasz profesjonalną licencję Trolltecha możesz podlinkować swój kod z libkdeveloplgpl i wydawać to pod inną licencją.
+<br>
+<br>
+<br>
+<a name="45"><b> Skompilowałem i zainstalowałem KDevelop 3.0 ale wszystko co widzę to Plik i menu Pomoc</b></a><br>
+Tak jak każda inna aplikacja KDE, musisz się upewnić czy wszystkie wtyczki zostały rozpoznane przez KDE. Jeśli nie zainstaluj je do katalogu KDE (configure --prefix=/opt/kde3 na przykład) lub dodaj ścieżkę KDevelop do twojej zmiennej środowiskowej KDEDIRS i ponownie uruchom "kbuildsycoca".
+Przykładowa komenda dla bash (zakładając, że KDevelop jest zainstalowany w  /home/harry/kdevelop):<br>
+<tt>export KDEDIRS=/home/harry/kdevelop:$KDEDIRS &amp;&amp; kbuildsycoca</tt><br>
+<br>
+<br>
+<a name = "38"><b> Jak mogę przełączać się pomiędzy otwartymi plikami za pomocą klawiatury?</b></a><br>
+Możesz użyć ALT-Left i ALT-Right aby dostać się do poprzedniego/następnego otwartego pliku. Te klawisze mogą zostać skonfigurowane w ustawieniach KDevelop. Jest także funkcja Quick Open (CTRL-SHIFT-O) do zaznaczania i otiwerania plików w projekcie i funkcja Switch To (CTRL-/) która pozwala na wpisanie pierwszych liter otwartego pliku aby móc sie do niego przełączyć.<br>
+<br>
+<br>
+<a name = "39"><b>Jak mogę wpisać tekst podczas debugowania aplikacji konsolowej?</b></a><br>
+Okno GDB pozwala na wpisywanie twoich komend.<br>
+<br>
+<br>
+<a name = "40"><b>Jak mogę włączyć kompletowanie kodu dla zewnętrznych bibliotek?</b></a><br>
+Kiedy masz otwart projekt C/C++, wejdź w menu <i>Project->Project Settings</i>, <i>W Project Options</i> wybierz <i>Specific C++ tab</i>, następnie etykieta <i>Code Completion</i>. Wciśnij przycisk <i> Add Persistant Class Store</i> i uzupełnij czarodzieja <i>New Persistant Class Store</i>. Po uzupełnieniu czarodzieja, upewnij się, że nowo stworzony magazyn klas jest zaznaczony na liście obecnych magazynów klas w zakładce <i>Code Completion</i>.
+<br>
+<br>
+<a name="3"><b> Skrypt configure nie może znaleść moich bibliotek Qt.</b></a><br>
+   Użyj opcji<br>
+     --with-qt-includes=path_to_your_qt_includes<br>
+   i<br>
+     --with-qt-libraries=path_to_your_qt_library<br>
+   lub ustaw zmienną środowiskową QTDIR wskazującą gdzie jest zainstalowany Qt<br>
+   ( "export QTDIR=/path/to/qt" ).<br>
+<br>
+<br>
+<a name="8"><b> Łatanie configure/Makefile/Makefile.in/config.h nie pomaga, po uruchomieniu autoconf/automake/autoheader moje zmiany zostają utracone.
+   Gdzie powinienem coś poprawić?</b></a><br>
+   Istnieje lista plików, gdzie można załatać rzeczy dla autonarzędzi.<br>
+   Makefile.am, configure.in.in, configure.in (tylko jeśli nie ma  configure.in.in)<br>
+   [rzadko używane: acconfig.h, configure.in.mid, configure.in.bot]<br>
+<br>
+<br>
+<a name="9"><b> Rozwijam aplikację, gdze potrzebuje ustawić opcję -D do preprocesora. Jeśli dodam tę opcję, do ustawień mojego projektu, wszystko jest ok, ale kiedy dystrybuuje moją paczkę, opcja -D ustawiona w KDevelop nie jest używana. 
+Co powinienem zrobić, aby ta opcja działała?</b></a><br>
+   Edytuj plik configure.in(.in) w głównym katalogu twoich źródeł. Musisz tam<br>
+   wpisać makro, które znajduje się po AC_CHECK_COMPILERS:<br>
+     CPPFLAGS="$CPPFLAGS -DMYDEFINE"<br>
+   po tym, musisz na nowo stworzyć "configure" poprzez wpisanie<br>
+   "make -f Makefile.dist" a następnie ponownie uruchomić skrypt configure.<br>
+<br>
+<br>
+<a name="10"><b> Czy istnieje inna możliwość publikowania moich definicji?</b></a><br>
+   Innym sposobem na dołaczanie twoich DEFINE do projektu jest dołączanie<br>
+   ich poprzez config.h.<br>
+   Aby to zrobić musisz załatać następujące pliki:<br>
+   Dodaj do acconfig.h w katalogu głównym źródeł następującą linię:<br>
+     #undef MYDEFINE<br>
+<br>
+   i wpisz w configure.in(.in), po makrze call <br>
+   AC_CONFIG_HEADER(config.h):<br>
+     AC_DEFINE_UNQUOTED(MYDEFINE)<br>
+<br>
+   (Co spowoduje zdefiniowanie tego w config.h po aktualizacji całej struktury używając<br>
+    "make -f Makefile.dist; configure [twoje opcje]".<br>
+<br>
+   Wymaganie dla tego rozwiązania:<br>
+     AC_CONFIG_HEADER(config.h)<br>
+   w środku configure.in(.in) oraz w kodzie źródłowym<br>
+     #ifdef HAVE_CONFIG_H<br>
+     #include &#060;config.h&#062;<br>
+     #endif<br>
+   przed dokonaniem innych dołaczeń (include)<br>
+   (zazwyczaj to jest już zrobione w naszych przykładach projektów).<br>
+<br>
+   BTW: Zaletą tego rozwiązaia jest stworzenie MYDEFINE zależnego od<br>
+        oczywistych sytuacji (tj. tworzenie opcji do configure).<br>
+        To wymaga oczywiście napisania własnej funkcji macro.<br>
+<br>
+<br>
+<a name="11"><b> Rozwiajm aplikację, która potrzebuje obsługi wątków.<br>
+   Jak mogę tego dokonać?</b></a><br>
+   Edytj plik configure.in(.in) w katalogu głównym źródeł. <br>Musisz tam wpisać makro, które występuje po AC_CHECK_COMPILERS():<br>
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"<br>
+   po tym musisz na nowo stworzyć skrypt "configure" wpisując<br>
+   "make -f Makefile.dist" w katalogu głównym źródeł, a następnie zrestartować skrypt configure.<br>
+<br>
+<br>
+<a name="12"><b> Mój configure.in.in nie ma żadnych wywołań AC_CHECK_COMPILERS().
+Gdzie powinienem wrzucić<br>
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"<br>
+   wymienione powyżej?</b></a><br>
+   Nowsze wersje configure.in.in zostały uproszczone tak, że możesz dodać linię<br>
+   po AM_INIT_AUTOMAKE(&#060;package-name&#062;,&#060;version&#062;).<br>
+<br>
+<br>
+<a name="13"><b> Rozwijam aplikację, która potrzebuje mieć wkompilowane w siebie run-time-type-info.<br>
+   Jak mogę to zrobić?</b></a><br>
+   Edytuj plik configure.in(.in) w katalogu głównym źródeł. <br>Musisz tam wpisać makro, które następuje po AC_CHECK_COMPILERS:<br>
+     CXXFLAGS="$CXXFLAGS $USE_RTTI"<br>
+   a potem musisz na nowo stworzyć skrypt "configure" wpisując<br>
+   "make -f Makefile.dist" w katalogu głównym źródeł, a następnie zrestartować<br> skrypt configure.<br>
+<br>
+<br>
+<a name="16"><b> Rozwiązania powyżej są dobre, ale chciałbym/chciałabym to zrobić na określonych podkatalogach<br>
+   (n.p. static lib mojego projektu)<br>
+   Jak mogę to zrobić?</b></a><br>
+   Edytuj plik Makefile.am w żądanym przez siebie katalogu. Musisz<br>
+   wpisać gdzieś poza specyficzną dla KDevelop częścią:<br>
+     KDE_CXXFLAGS=$(USE_EXCEPTIONS)<br>
+   Zauważ, że to działa tylko wtedy kiedy używasz w swoim projekcie am_edit.<br>
+   (Działa tylko z nowszymii acinclude.m4 &amp; am_edit, AFAWK muszą być młodsze od<br>
+     12-09-1999, formalnie były znane jako APPEND_CXXFLAGS -<br>
+    w tym wydaniu KDevelop znajdziesz poprawną wersję.)<br>
+<br>
+   Musisz zaktualizować swój Makefile-framework jak to zostało opisane powyżej<br>
+   (make -f Makefile.dist; ./configure [opcje]).<br>
+<br>
+<br>
+<a name="17"><b> Jaka jest różnica pomiędzy CPPFLAGS a CXXFLAGS?</b></a><br>
+   CPPFLAGS jest używane do definicji (to znaczy flag, których potrzebujesz tylko do kompilacji)<br>
+   CXXFLAGS jest używany dla przełączaniu kompilatora (np. -frtti), co działa także w <br>
+   procesie linkowania.<br>
+<br>
+<br>
+<a name="18"><b> Widziałem kilka rozwiązań tj. łatanie Makefile.am używając<br>
+     DEFS+=-DMYDEFINE<br>
+   lub<br>
+     CXXFLAGS+=-fsigned-char<br>
+   lub<br>
+     LD_FLAGS+=-L/usr/local/lib<br>
+   Dlaczgo tego nie zatwierdzicie?</b></a><br>
+   Istnieje błąd w automake 1.4, który nie dodaje flag do już istniejących.<br>
+   Z tą komendą wewnątrz Makefile.am, usuniesz istniejące<br>
+   ustawienia nazwanych flag.<br>
+   Jeśli potrzebujesz tych flag tyko dla podkatalogów projektu, użyj:<br>
+     AM_CPPFLAGS=-DMYDEFINE<br>
+   lub<br>
+     AM_CXXFLAGS=-fsigned-char<br>
+   lub<br>
+     AM_LDFLAGS=-L/usr/local/lib<br>
+<br>
+   Zauważ, że te flagi są dostępne tylko z automake w wersji 1.4.<br>
+<br>
+   Dla ustawienia jednej z tych flag dla całego projektu, proszę załataj<br>
+   configure.in(.in) w katalogu głównym źródeł zamiast powyższych operacji.<br>
+<br>
+<br>
+<a name="19"><b> Jak mogę mieć pewność, że użytkownik mojego projektu zbuduje go z automake<br>
+   w wersji 1.4?</b></a><br>
+   Dodaj do AUTOMAKE_OPTIONS zmienną w Makefile.am w katalogu<br>
+   głównym źródeł ciąg "1.4". Np.:<br>
+   AUTOMAKE_OPTIONS = foreign 1.4<br>
+<br>
+<br>
+<a name="59"><b> Dodałem istniejący podprojekt do mojego projektu i już się nie chce zbudować.</b></a><br>
+  Jedną z przyczyn tego zachowania jest, że builddir != topsrcdir. W tym wypadku uruchom make distclean przed dodaniem <br>
+podprojektu.<br>
+<br>
+<br>
+<a name="20"><b> Czy AM_CXXFLAGS (wewnątrz Makefile.am) może być użyty do flag typu -frtti lub <br>
+   -fexceptions?</b></a><br>
+   Nie! W tym wypadku istenieje problem porządkowania. Standardowa zmienna CXXFLAGS <br>
+   rozpowszechniana z acinclude.m4.in posiada już -fno-rtti (-fno_exceptions).<br>
+   Jeśli dodasz to do flagi AM_CXXFLAGS komedna kompilatora doda<br>
+   te flagi przed CXXFLAGS, przykład dla -frtti:<br>
+   gpp ... -frtti ... -fno-exceptions -fno-rtti ......<br>
+   Więc ostatnia flaga (w tym wypadku, nadal -fno-rtti) zostanie użyta.<br>
+   W zamian zostanie użyty KDE_CXXFLAGS, który znajdzie się po standardowym CXXFLAGS, więc to będzie<br>
+   wyglądało tak:<br>
+   gpp ..... -fno-exceptions -fno-rtti ...... -frtti...<br>
+   i voilŕ - działa dobrze.<br>
+<br>
+   Zauważ: KDE_CXXFLAGS jest używany jedynie z projektami, które używają am_edit<br>
+   i acinclude.m4.<br>
+<br>
+<br>
+<a name="21"><b>Dlaczego łatanie configure.in(.in) z CXXFLAGS="$USE_EXCEPTIONS $CXXFLAGS" nie działa?</b></a><br>
+   Zobacz odpowiedzi do pytania "Czy AM_CXXFLAGS (wewnątrz Makefile.am)<br>
+   może być użyty do flag typu -frtti lub -fexceptions?" ;-)<br>
+<br>
+<br>
+<a name="22"><b> Używam CXXFLAGS="$USE_EXCEPTIONS" wewnątrz configure.in(.in) i działa wszystko dobrze,<br>
+   dlaczego powinienem użyć waszego rozwiązania?</b></a><br>
+   Jeśli użyję waszej wersji przed AC_CHECK_COMPILERS() wywołanie<br>
+     CXXFLAGS="-pedantic" ./configure<br>
+   nie będzie działać poprawnie.<br>
+   Jeśli użyjesz tego po AC_CHECK_COMPILERS(), CXXFLAGS ustawione w<br>
+   AC_CHECK_COMPILERS() zostanie oczyszczone.<br>
+   (Na przykład w wywołaniu "configure --enable-debug" CXXFLAGS zostanie zmienione<br>
+    aby dołączać informacje typu debug do twojego kodu.)<br>
+   Więc prosimy używać CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" zamiast powyższego.<br>
+<br>
+<br>
+<a name="23"><b> Używam dodatkowych nagłówków i bibliotek w moim projekcie KDE/QT. Dołączając<br>
+   -I/usr/include/foo do opcji kompilera i -L/usr/lib/foo do<br>
+   opcji linkera nie dodaje ustawień do paczki tar.<br>
+   Co powinienem zrobić?</b></a><br>
+   To jest najtrudniejsza część do zrobienia aby wszystko chodziło jak należy.<br>
+   Łatwym, ale nie do końca poprawnym rozwiązaniem byłoby dodanie do configure.in(.in):<br>
+<br>
+   all_includes="$all_includes -I/usr/include/foo"<br>
+   all_libraries="$all_libraries -L/usr/lib/foo"<br>
+<br>
+   [najlepiej wrzucić to przed liniami:<br>
+    AC_ARG_PROGRAM<br>
+    AC_OUTPUT( ..... )<br>
+    na końcu pliku.]<br>
+<br>
+   Problemy:<br>
+   - Kto zagwarantuje, że includes (dołączane pliki) zawsze znajdować się będą w <br>
+     /usr/include/foo... może w niektórych systemach znajdują się one w /usr/local/foo/include<br>
+     (a może biblioteki będą w /usr/local/foo/lib)??<br>
+   - Może nie zainstalowałem czegoś-tam więc budowanie zawiedzie, ale i tak lepiej będzie<br>
+     jeśli configure wyrzuci pomocną wiadomość.<br>
+<br>
+   Więc aby działało to przywoicie dodaj funkcję makro do <br>
+   configure.in(.in), które czyni oczywiste testy i przeszukuje czy zainstalowany jest "coś".<br>
+<br>
+   Jeśli chcesz to zrobić, możemy dać ci tylko podpowiedź... spróbuj<br>
+   zrozumieć acinclude.m4.in lub stwórz projekt KDE-normal-ogl,<br>
+   tam znajdziesz plik zwany qgl.m4, który jest podobny do<br>
+   acinclude.m4 (zobacz "Makefile.dist"). To pokaże ci rozszerzony przykład<br>
+   poszukiwań QT-OpenGL-Lib, musisz tylko przepisać to i dostosować do swojego problemu.<br>
+<br>
+   Może masz szczęście i znalazłeś już rozwiązanie dla swojego problemu wewnątrz<br>
+   acinclude.m4.in, więc możesz użyć już stworzonej funkcji.<br>
+<br>
+<br>
+<a name="25"><b> W pytaniu wyżej, zawszę widzę "configure.in(.in)". Posiadam oba pliki w projekcie. Które pliki powinienem łatać?</b></a><br>
+   Jeśli występuje plik configure.in.in w katalogu głównym twojego projektu załataj go.<br>
+   Jeśli nie możesz znaleść pliku configure.in.in załataj configure.in.<br>
+<br>
+<br>
+<a name="28"><b> Czy istnieje jakiekolwiek HOWTO o tym jak w QT designer zrobić dialogi?</b></a><br>
+  Owszem, istnieje wspaniały przewodnik na <a href="http://women.kde.org/articles/tutorials/kdevelop3/index.html">http://women.kde.org/articles/tutorials/kdevelop3/index.html</a><br>
+<br>
+<br>
+<a name="29"><b> Zainstalowałem htdig, ale teraz dostępne jest htsearch?</b></a><br>
+   Na n.p. systemach typu RedHat binarka htsearch jest umieszczona w katalogu /cgi-bin apache.<br>
+   Możesz potworzyć symboliczne dowiązania w /usr/bin lub po prostu dodać tą ścieżkę do ~/.bashrc<br>
+<br>
+<br>
+<a name="30"><b> Posiadam htdig, htmerge i htsearch ale dostaję wiadomość o błędzie, o tym że plik konfiguracyjny htdig nie może zostać znaleziony lub jest niepoprawny?</b></a><br>
+   Przeczytaj README.htdig w drzewie katalogu ze źródłami i stwórz plik htdig.conf. Następnie skopiuj<br>
+   go do $KDEDIR/share/apps/kdevelop/tools. Teraz stwórz swój index przeszukiwań (search index) korzystając z menu ustawień kdevelop
+   <br>
+<br>
+<br>
+<?php module_tail(); ?>

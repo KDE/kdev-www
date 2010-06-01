@@ -1,0 +1,48 @@
+<?php module_head("KDevelop $k_series_version Features");?>
+
+Include tutte le
+<a href="index.html?filename=3.1/features.html">
+caratteristiche di KDevelop 3.1.x</a> oltre a:<br>
+<ul>
+
+<li><b>Codice di base riformattato</b>
+<ul>
+<li>L'insieme del codice di KDevelop &#233; stato riformattato con lo scopo di migliorare il riutilizzo del codice e la documentazione della libreria di base.
+Queste nuove classi sono alla base della nuova <em>piattaforma di KDevelop</em> e sono accompagnate da una API sintetica e ben documentata.</li>
+</ul>
+</li>
+
+<li><b>Nuovi strumenti per il RAD (<em>R</em>apid <em>A</em>pplication <em>D</em>evelopment)</b>
+<ul>
+<li>l'integrazione di KDevDesigner permette il design della GUI design all'interno di KDevelop stesso</li>
+<li>l'integrazione di KDevAssistent fornisce la possibilit&#224; di dare un'occhiata alla documentazione all'interno di KDevelop</li>
+<li>Il Wizard per le classi C++ pu&#242; ora essere usato per le classi facenti parte all'insieme persistente. Questo significa , ad esempio, che se il database per il Completamento del Codice per le Qt &#233; stato costruito, allora  &#233; resa possibile nel Wizard la creazione delle sottoclassi a partire da classi Qt</li>
+</ul>
+</li>
+
+<li><b>Supporto per Ruby notevolmente migliorato</b>
+<ul>
+<li>il nuovo debugger per Ruby e la vista migliorata dei metodi all'interno dei qtruby/korundum bindings, ora permettono di mostrare i metadata Qt::Object come propriet&#225; durante il debug</li>
+<li>Il browser delle classi ha un parser migliorato che mostra i segnali Qt e DCOP oltre agli slots, ai metodi attr_accessor e alla variabili d'istanza</li>
+<li>Nuovi template di progetto per lo schema di un'applicazione KDE, KConfig XT, DCOP server e
+applicazioni basate esclusivamente su Qt</li>
+<li>Completa integrazione del designer Qt/rbuic</li>
+</ul>
+</li>
+
+<li><b>Altri miglioramenti e bugfixes</b>
+<ul>
+<li>Il supporto per il Controllo di Versione &#233; stato riformattato. Gran parte delle features di integrazione che erano state disabilitate in KDevelop&nbsp;3.1 sono state riprese nella versione 3.2, insieme ad un plugin molto migliorato per Subversion.</li>
+<li>Migliorati "Trova nei files"e il supporto e navigazione della storia di Ctags, che ora forniscono una navigazione pi&#250; veloce del codice</li>
+<li>Sono forniti anche molte altri template per le applicazioni</li>
+<li>Sono disponibili nuovi template per applicazioni C/C++ basate su cmake e per le librerie</li>
+<li>Sono disponibili nuovi template per applicazioni kde basate su scons</li>
+<li>leggi la
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+pagina dei changelog</a> per ulteriori dettagli</li>
+</ul>
+</li>
+
+</ul>
+
+<?php module_tail();?>

@@ -1,0 +1,67 @@
+<ol start="4">
+<li>
+Для компиляции и установки KDevelop на вашей системе,
+введите команды (приведены команды оболочки bash) находясь в каталоге с исходным кодом.
+<dl>
+<dd class="code">$ export KDEDIR=/путь/к/kde3</dd>
+<dd class="code">$ export QTDIR=/путь/к/qt3</dd>
+<dd class="code">$ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">$ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">$ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+<b>Замечание:</b> Необходимо изменить первые две строки согласно вашей конфигурации!<br>
+В дистрибутивах Linux, основанных на RPM, расположение каталогов Qt3 и KDE3
+может быть найдено с помощью конфигурационных программ дистрибутивов или с помощью команд "rpm -ql qt3" и "rpm -ql kdebase3".
+<br>
+Если вы пользователь gentoo и хотите использовать ctags тогда вам надо выполнить:
+<dl>
+<dd class="code">ln -sf /usr/bin/exuberant-ctags /usr/bin/ctags</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>
+Следующий шаг - конфигурация.
+Для того, чтобы узнать больше про возможные параметры конфигурации, запустите:
+<dl>
+<dd class="code">$ ./configure --help</dd>
+</dl>
+
+Ниже приведен пример отладочной компиляции:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Ниже приведен пример компиляции релиза:
+<dl>
+<dd class="code">$ ./configure --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Некоторые компоненты KDevelop можно исключить из компиляции, например:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+--disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+--disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+--disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion</dd>
+</dl>
+</li>
+
+<li>
+Сборка и инсталляция:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (выполнять с правами root, используя либо "su", "kdesu" либо "sudo")</dd>
+</dl>
+Если по каким-либо причинам компиляция завершается с ошибками, можно попытаться их игнорировать:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (as root)</dd>
+</dl>
+В зависимости от степени серьезности ошибки можно получить либо работающую либо неработающую версию KDevelop. Так что используйте "make -k install" на свой собственный страх и риск!!!.
+</li></ol>
+
+<p>Ошибки должны сообщаться только в <a
+href="http://bugs.kde.org/wizard.cgi">специальной форме базы данных ошибок</a>. <b>Не сообщайте</b> ошибки компиляции в базу данных ошибок. Вместо этого спросите в
+<a href="index.html?filename=mailinglist.html">списках рассылки</a>.</p>

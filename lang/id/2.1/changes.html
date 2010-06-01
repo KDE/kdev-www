@@ -1,0 +1,87 @@
+<?php module_head("2.1.5 (2003-01-28)");?>
+<ul>
+  <li>Sedikit perbaikan untuk mengijinkan KDevelop 2.1 berjalan dengan baik dengan KDE 3.1
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.1.4 (2002-11-19)");?>
+<ul>
+  <li>perbaikan bug di keluaran tool-view untuk Linux Red Hat 8.0: fitur jump-to-error dapat bekerja kembali
+  <li>perbaikan bug yang lain di keluaran tool-view untuk SuSE 8.1 (terjemahan Jerman): fitur jump-to-error bekerja kembali
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.1.3 (2002-08-20)");?>
+<ul>
+  <li>juga behaviour yang baru dari Qt versi 3.0.5. (keluaran format teks)
+  <li>beberapa kebocoran memori telah diperbaiki
+  <li>mode tampilan TabPage mempunnyai close button (stabil backport dari HEAD)
+  <li>penyempurnaan indentasi editor
+  <li>compile diperbaiki untuk FreeBSD
+  <li>beberapa pembaharuan (updates) Debian-specific
+  <li>FYI: 'Add files to project' tidak rusak lagi karena telah diperbaiki dengan pustaka kdelibs:kdecore
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.1.2 (2002-07-04)");?>
+<ul>
+  <li>perbaikan masalah untuk keluaran toolview (newlines, scrolling, jump to error, line break), dapat bekerja untuk beberapa Qt bug</li>
+  <li>printing yang desempurnakan (WYSIWYG), ukuran font yang dicetak dapat diubah</li>
+  <li>memberikan kemungkinan untuk mengganti warna cetakan didalam kdeveloprc (BlackAndWhitePrinting=false)</li>
+  <li>CFLAGS dan CPPFLAGS jangan diubah saat proses build</li>
+  <li>indentasi yang disempurnakan dalam editor</li>
+  <li>typo telah diperbaiki di template aplikasi KDE MDI</li>
+  <li>perbaikan kesalahan kompilasi gcc-3.1</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.0.1 (2001-09-19)");?>
+<ul>
+  <li>bug di dalam trees telah diperbaiki
+  <li>crash di saat me-restart KDevelop dengan HTML views yang telah dibuka sebelumnya telah diperbaiki
+  <li>crash di saat DocViewMan::switchToFile(..) telah diperbaiki
+  <li>disabled accelerators (setelah menutup file) telah diperbaiki
+  <li>perbaikan kompilasi gcc 3.0
+  <li>beberapa perbaikan Qt 3
+  <li>beberapa perbaikan bug QextMDI, adalah versi final 2.0.0 sekarang
+  <li>kesalahan bahasa Jerman telah diperbaiki
+  <li>pencarian dialog untuk HTML telah diperbaiki, hasil pencarian telah ditandai
+  <li>beberapa perbaikan bug yang menarik, kami tidak dapat mengingatnya lagi
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.0 (2001-08-15)");?>
+<ul>
+  <li>tampilan penggunaan KDevelop's ditulis kembali dengan penggunan banyak arsitektur interface
+  dokumen, mengijinkan untuk melihat beberapa jendela sekaligus. Juga beberapa tampilan untuk
+  file yang sama dapat digunakan.
+  <li>Mode tampilan dapat diganti antara mode Childframe, mode Toplevel dan mode TabPage
+  <li>Pengaturan bookmark dan the debugger internal telah diadaptasikan ke GUI yang baru.
+  <li>Kedua fitur sangat memungkinkan karena sekarang kami menggunakan QextMDI, pustaka yang mendukung
+     MDI mutakhir untuk Qt dan KDE.
+  <li>Wizard konfigurasi baru (berdasarkan dari QWizard) menggantikan yang lama, berbasiskan messagebox.
+  <li>Sesi Proyek (.kdevses) telah diperkenalkan.
+  <li>Penggunaan Dockwidget telah diperluas untuk meng-dock/undock jendela tabulasi di
+  Treeview dan Outputview.
+  <li>Template baru untuk mengimplementasikan style pustaka KDE/Qt dan modul KControl telah
+  ditambahkan sama seperti untuk plugin Konqueror dan aplikasi Kicker.
+  <li>kde-common/admin copy (admin.tar.gz) telah diperbaharui ke versi terakhir di
+  KDE CVS. Pengguna versi pertama sampai 2.0 disarankan untuk memperbaharui direktori
+  proyek admin dengan itu akan mendukung versi baru dari autoconf dan automake.
+  <li>KDevelop sekarang menggunakan dialog tips untuk hari ini (tip of day) yang baru dari kdelibs.
+  <li>Petunjuk penggunaan telah diperluas ke layout GUI yang baru ditambah bagian untuk
+  penggunaan Qt Designer dengan proyek KDevelop.
+  <li>Penambahan pencarian database ctags-based yang baru memungkinkan "untuk pergi ke definition/declaration" dan
+  mengubah antara .h dan .cpp file. Yang memerlukan ctags-5.0.1.
+  <li>Keluaran compiler telah diberi warna.
+  <li>halaman petunjuk (Man pages) telah dapat diakses via browser bantuan KDevelop.
+  <li>Fungsi dari KDevelop telah dibagi ke beberapa pustaka.
+  <li>Event suara untuk KDevelop (sistem pemberitahuan dalam KDE's Control Center) telah didukung.
+  <li>Konfigurasi dari libs subprojects yang dipakai bersama telah disempurnakan.
+  <li>Sangat banyak dari perbaikan bug yang kecil da besar telah dibuat, terutama di bagian editor.
+  <li>Debugger internal untuk KDevelop telah mengenali string Qt-3.0.
+  <li>File .po dan .xpm telah dapat dibuka sebagai file ASCII.
+</ul>
+
+<b>Note:</b> KDevelop-2.0 berdasarkan source code dari versi rilis sebelum 1.4.1.
+<?php module_tail();?>

@@ -1,0 +1,40 @@
+<?php module_head("Defec&#x163;iuni &#x15F;i Dorin&#x163;e"); ?>
+<p>
+Pentru a ad&#259;uga o defec&#x163;iune (bug) sau a descrie o func&#x163;ionalitate dorit&#259;, vizita&#x163;i <a href="http://bugs.kde.org/wizard.cgi?package=kdevelop&amp;kbugreport=1">sistemul de raportare al defec&#x163;iunilor</a> din baza noastr&#259; de date <a href="http://www.bugzilla.org">bugzilla</a>.
+V&#259; rug&#259;m s&#259; <b>nu</b> raporta&#x163;i erori de compilare &icirc;n baza de date. Pentru erori de compilare, v&#259; rug&#259;m s&#259; folosi&#x163;i
+<a href="index.html?filename=mailinglist.html">listele de email</a>.
+</p>
+<p>
+Pentru a vedea un cuprins ce con&#x163;ine toate defec&#x163;iunile &#x15F;i dorin&#x163;ele &icirc;n KDevelop,
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.votes,bugs.delta_ts,map_components.name,bugs.bug_id" TARGET="_top">
+consulta&#x163;i baza de date</a>. Rapoartele sunt &icirc;mp&#259;r&#x163;ite &icirc;n componente, astfel put&acirc;nd ob&#x163;ine un <a href="http://bugs.kde.org/component-report.cgi?product=kdevelop">Raport clasificat peComponent &#x15F;i Severitate</a>.
+</p>
+Pentru a ob&#x163;ine un report detailat al problemelor, activati &quot;cookies&quot;, urma&#x163;i
+<a href="http://bugs.kde.org/colchange.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=kdevelop">pagina de configurare a coloanelor &icirc;n bugzilla</a> &#x15F;i selecta&#x163;i:<br>
+<ul>
+  <li>changeddate (data schimb&#259;rii)
+  <li>severity (severitate)
+  <li>priority (prioritate)
+  <li>reporter (persoana care a raportat)
+  <li>status   (situa&#x163;ia curent&#259;)
+  <li>component (componenta)
+  <li>version (versiunea)
+  <li>votes (voturi)
+  <li>Summary (sumar - primele 60 de caractere)
+</ul>
+<br>
+Asta este tot. Mai departe, toate cererile c&#259;tre baza de date vor con&#x163;ine toate detaliile cerute pentru KDevelop.<br>
+Succes la v&icirc;n&#259;toare! :)<br>
+<br>
+<?php
+module_tail();
+$l_bom='Bug-o-meter';
+$l_ob='Defec&#x163;iuni<br>active';
+$l_ow='Dorin&#x163;e<br>active';
+$l_ol7d='&Icirc;nchise &icirc;n<br>ultimele 7 zile';
+$l_cl7d='&Icirc;nchise &icirc;n<br>ultimele 7 zile';
+$l_c='Schimb&#259;';
+$l_rbg='Graficul problemelor rezolvate';
+$l_obwg='Graficul problemelor &#x15F;i dorin&#x163;elor active';
+return include('dynamic/weekly-bug-summary.html');
+?>

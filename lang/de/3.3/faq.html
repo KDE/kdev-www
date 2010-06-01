@@ -1,0 +1,840 @@
+<?php module_head("KDevelop $k_series_version F.A.Q. (Frequently Asked Questions)");?>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Inhalt</h2></div>
+<ul>
+<li><a href="#File_FAQs">1 Datei FAQ</a>
+<ul>
+<li><a
+href="#Where_is_the_Automake_manager_in_KDevelop.3F"><span
+class="tocnumber">1.1 Wo befindet sich der Automake-Manager in KDevelop?</a></li>
+<li><a
+href="#How_do_I_create_New_Files_in_a_Project.3F"><span
+class="tocnumber">1.2 Wie legt man neue Dateien in einem Projekt an?</a></li>
+<li><a
+href="#How_do_I_remove_a_File_from_a_Project.3F"><span
+class="tocnumber">1.3 Wie l&ouml;scht man
+Dateien aus einem Projekt?</a></li>
+<li><a
+href="#How_to_add_existing_files_to_a_project.3F"><span
+class="tocnumber">1.4 Wie f&uuml;gt man bestehende Dateien zu einem Projekt hinzu?</a></li>
+</ul>
+</li>
+<li><a href="#Projects_FAQs">2 Projekt FAQ</a>
+<ul>
+<li><a
+href="#How_to_convert_my_VC.2B.2B_project.3F"><span
+class="tocnumber">2.1 Wie konvertiert man ein VC++-Projekt?</a></li>
+<li><a
+href="#How_to_create_a_truly_empty_project.3F"><span
+class="tocnumber">2.2 Wie erstellt man ein v&ouml;llig leeres Projekt?</a></li>
+<li><a
+href="#How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F"><span
+class="tocnumber">2.3 Wie erstellt man
+ein einfaches Projekt nur mittels eines Makefiles (auch als Custom
+Project bekannt)?</a></li>
+<li><a
+href="#What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F"><span
+class="tocnumber">2.4 Was bedeuten die "build configurations" (Project Options-&gt;Configure Options)?</a></li>
+<li><a href="#What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F">2.5 Was tun, wenn sich das Projekt nach einem Wechsel zum/vom <em>Default Target</em> nicht
+mehr erstellen l&auml;sst?</a></li>
+<li><a href="#How_to_add_subprojects.3F"><span
+class="tocnumber">2.6 Wie f&uuml;gt man Unterprojekte ein?</a></li>
+<li><a href="#What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F">2.7 Was tun, wenn automake &amp; friends mit komischen Fehlermeldungen abbricht?</a></li>
+<li><a
+href="#I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F"><span
+class="tocnumber">2.8 Ich bekomme einen
+"Wrong autoconf version"-Fehler. Was kann ich machen?</a></li>
+<li><a
+href="#How_can_I_set_up_a_project_with_SCons.3F"><span
+class="tocnumber">2.9 Wie setzt man ein
+Projekt mit SCons auf?</a></li>
+</ul>
+</li>
+<li><a href="#Libraries_FAQ">3 Bibliotheks FAQ</a>
+<ul>
+<li><a href="#How_to_create_a_.so_library.3F">3.1 Wie erstellt man eine .so-Bibliothek?</a></li>
+<li><a href="#How_to_create_a_.a_library.3F">3.2 Wie erstellt man eine .a-Bibliothek?</a></li>
+<li><a href="#How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F">3.3 Wie erstellt man eine .la-Bibliothek (auch als libtool-Archiv bekannt)?</a></li>
+<li><a
+href="#How_to_add_an_external_include_path_to_a_project.3F"><span
+class="tocnumber">3.4 Wie f&uuml;gt man einen externen Include-Pfad zu einem Projekt hinzu?</a></li>
+<li><a
+href="#How_to_link_against_a_.so_library.3F"><span
+class="tocnumber">3.5 Wie linkt man gegen
+eine .so-Bibliothek?</a></li>
+<li><a href="#How_to_link_against_a_.a_library.3F">3.6 Wie linkt man gegen eine .a-Bibliothek?</a></li>
+<li><a href="#How_to_link_against_a_.la_library.3F">3.7 Wie linkt man gegen eine .la-Bibliothek?</a></li>
+</ul>
+</li>
+<li><a href="#Debug_FAQs">4 Debug FAQ</a>
+<ul>
+<li><a
+href="#Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F"><span
+class="tocnumber">4.1 Debuggen einer
+Konsolen-Anwendung&nbsp;: Wie kann man die Konsole anzeigen um Daten einzugeben?</a></li>
+<li><a
+href="#How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F"><span
+class="tocnumber">4.2 Wie debuggt man exec-Objekte mit libtool "temporary wrapper scripts"?</a></li>
+</ul>
+</li>
+<li><a href="#Code_Completion_FAQs"><span
+class="tocnumber">5 Code-Vervollst&auml;ndigungs FAQ</a>
+<ul>
+<li><a
+href="#How_can_I_enable_code_completion.3F"><span
+class="tocnumber">5.1 Wie kann man die Code-Vervollst&auml;ndigung einschalten?</a></li>
+<li><a
+href="#How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F"><span
+class="tocnumber">5.2 Wie kann man dem
+C/C++-Parser neue Macros beibringen?</a></li>
+<li><a
+href="#How_can_I_enable_code_completion_for_external_libraries.3F"><span
+class="tocnumber">5.3 Wie kann man die
+Code-Vervollst&auml;ndigung f&uuml;r externe Bibliotheken einschalten?</a></li>
+<li><a
+href="#Code_completion_still_doesn.27t_work"><span
+class="tocnumber">5.4 Code-Vervollst&auml;ndigung funktioniert immer noch nicht</a></li>
+<li><a href="#Why_doesn.27t_my_Qt4_Persistant_Class_Store_work_for_all_Qt4_classes.3F">5.5 Warum funktioniert mein <em>Qt4 Persistant Class Store</em> nicht mit allen Qt4-Klassen?</a></li>
+</ul>
+</li>
+<li><a href="#KDevelop_installation_FAQs">6 KDevelop Installations FAQ</a>
+<ul>
+<li><a
+href="#How_long_does_it_usually_take_to_compile_kdevelop.3F"><span
+class="tocnumber">6.1 Wie lange dauert es
+normalerweise, Kdevelop zu compilieren?</a></li>
+<li><a
+href="#I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F"><span
+class="tocnumber">6.2 Ich bekomme die
+Fehlermeldung "couldn't create a language plugin". Was stimmt nicht?</a></li>
+</ul>
+</li>
+<li><a href="#Legal_FAQs">7 Rechtliche FAQ</a>
+<ul>
+<li><a
+href="#Am_I_allowed_to_develop_commercial_applications_with_KDevelop.3F"><span
+class="tocnumber">7.1 Ist es erlaubt kommerzielle Anwendungen mit KDevelop zu entwickeln?</a></li>
+<li><a
+href="#Am_I_allowed_to_develop_commercial_plugins_to_KDevelop.3F"><span
+class="tocnumber">7.2 Ist es erlaubt
+kommerzielle Plugins mit KDevelop zu entwickeln?</a></li>
+</ul>
+</li>
+<li><a href="#Misc._FAQs">8 "Verschiedenes" FAQ</a>
+<ul>
+<li><a
+href="#I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F"><span
+class="tocnumber">8.1 Ich entwickle eine
+Anwendung, die <em>Exception Handling</em> ben&ouml;tigt. Wie kann ich das machen?</a></li>
+<li><a
+href="#My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F"><span
+class="tocnumber">8.2 Meine
+configure.in.in hat keinen AC_CHECK_COMPILERS() Aufruf. Wo kommen die
+zuvor erw&auml;hnten CXXFLAGS=&quot;$CXXFLAGS $USE_EXCEPTIONS&quot; hin?</a></li>
+<li><a
+href="#Is_there_any_HOWTO_available_on_how_to_work_with_QT_designer_made_dialogs_.3F"><span
+class="tocnumber">8.3 Gibt es irgendwo
+ein HOWTO zum Thema wie man mit im Qt-Designer erstellten Dialogen umgeht?</a></li>
+<li><a
+href="#Why_don.27t_I_see_the_compilation_error_messages.3F"><span
+class="tocnumber">8.4 Warum sehe ich die Compiler-Fehlermeldungen nicht?</a></li>
+<li><a
+href="#How_to_add_a_translation_to_a_KDE_program.3F"><span
+class="tocnumber">8.5 Wie f&uuml;gt man
+eine &Uuml;bersetzung zu einem KDE-Programm hinzu?</a></li>
+<li><a
+href="#How_to_add_icons_to_a_project.3F"><span
+class="tocnumber">8.6 Wie f&uuml;gt man
+Icons zu einem Projekt hinzu?</a></li>
+<li><a href="#How_to_use_the_SVN_plugin.3F"><span
+class="tocnumber">8.7 Wie nutzt man das SVN-Plugin?</a></li>
+<li><a
+href="#How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29"><span
+class="tocnumber">8.8 Wie setzt man einen
+anderen Compiler auf (Nativ- oder Cross-Compiler)?</a></li>
+<li><a
+href="#Working_with_Clearcase_views_and_KDE"><span
+class="tocnumber">8.9 Arbeiten mit Clearcase-Ansichten und KDE</a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="File_FAQs"></a><h2>Datei FAQ</h2>
+<a name="Where_is_the_Automake_manager_in_KDevelop.3F"></a><h3>Wo befindet sich der Automake-Manager in KDevelop?</h3>
+<p>Klicke auf den unteren Tab rechts in KDevelop.
+<a href="mediawiki/index.php/Image:Automake_manager.png" title="Image:Automake_manager.png"><img src="mediawiki/images/8/8e/Automake_manager.png" alt="Image:Automake_manager.png" width="216" height="427" longdesc="mediawiki/index.php/Image:Automake_manager.png"></a>
+</p><p><br>
+</p>
+<a name="How_do_I_create_New_Files_in_a_Project.3F"></a><h3>Wie legt man neue Dateien in einem Projekt an?</h3>
+<p>Das Unterprojekt in der oberen H&auml;lfte des Auto-Managers
+ausw&auml;hlen, dann Rechtsklick in der unteren H&auml;lfte auf den
+Titel der Gruppe zu der man die Dateien hinzuf&uuml;gen m&ouml;chte
+<!--FixMe -->
+und <em>Create New File</em> ausw&auml;hlen.</p><p><br>
+</p>
+<a name="How_do_I_remove_a_File_from_a_Project.3F"></a><h3>Wie l&ouml;scht man Dateien aus einem Projekt</h3>
+<p>Das Unterprojekt in der oberen H&auml;lfte des Auto Managers
+ausw&auml;hlen, dann in der unteren H&auml;lfte die Liste der Gruppe,
+von der man die Datei l&ouml;schen m&ouml;chte, &ouml;ffnen,
+<!--FixMe -->
+Rechtsklick auf die Datei in der Liste und <em>Remove</em> ausw&auml;hlen.
+</p><p><br>
+</p>
+<a name="How_to_add_existing_files_to_a_project.3F"></a><h3>Wie f&uuml;gt man bestehende Dateien zu einem Projekt hinzu?</h3>
+<p>Die Art und Weise wie man Dateien zu einem Projekt hinzuf&uuml;gt
+h&auml;ngt davon ab, welches Build-System f&uuml;r das Projekt gew&auml;hlt wurde.
+Unabh&auml;ngig davon welches Build-System gew&auml;hlt wurde muss man die
+bestehenden Quellen in das "src"-Verzeichnis des neuen KDevelop-Projekts kopieren.
+</p><p>Als n&auml;chstes:
+</p>
+<ul>
+<li>Hat man ein auf dem Automake-Manager basierendes Projekt gew&auml;hlt (siehe: <a
+href="#Where_is_the_Automake_manager_in_KDevelop.3F"
+title="FAQ">FAQ#Wo befindet sich der Automake-Manager in KDevelop?</a>),
+f&uuml;gt man einfach die bestehenden Dateien dem Projekt hinzu, indem man
+das Target ausw&auml;hlt dem man die Dateien hinzuf&uuml;gen m&ouml;chte, klickt mit
+der rechten Maustaste darauf um das Kontexmen&uuml; zu &ouml;ffnen und w&auml;hlt
+<!--FixMe -->
+<a
+href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html"
+title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html"
+>"Add Existing files...."</a>
+aus, im Unterprojekt in der oberen H&auml;lfte des Auto-Managers, dann
+Rechtsklick in der unteren H&auml;lfte auf den Titel der Gruppe der man
+<!--FixMe -->
+die Dateien hinzuf&uuml;gen m&ouml;chte und w&auml;hlt <em>Add Existing Files...</em>
+<li>Hat man ein auf dem QMake-Manager basierendes Projekt gew&auml;hlt, dann ist die
+Vorgehensweise &auml;hnlich der beim Automake-Manager.
+
+<li>Hat man ein auf einer Custom-Makefile basierendes Projekt gew&auml;hlt, dann muss
+man das Custom-Makefile von Hand editieren um Dateien zum Projekt hinzuzuf&uuml;gen.
+</ul>
+<p><br>
+</p>
+<a name="Projects_FAQs"></a><h2>Projekt FAQ</h2>
+<a name="How_to_convert_my_VC.2B.2B_project.3F"></a><h3>Wie konvertiert man ein VC++-Projekt?</h3>
+<p>KDevelop stellt keinen Weg zur Verf&uuml;gung VC++-Projekte
+automatisch zu importieren. Jedoch kann man das Projekt konvertieren,
+indem man ein neues KDevelop-Projekt erstellt und die neuen
+Projekt-Wizard-Vorlagen, wie die C++-&gt;"Simple Hello World"-Vorlage, verwendet.
+Dann kann man die Quelldateien (*.cpp und *.h) aus dem VC++-Projekt in
+das "src"-Verzeichnis des neuen KDevelop-Automake basierten Projekts
+kopieren.
+Danach ganz einfach den oben beschriebenen Anweisungen zum
+Hinzuf&uuml;gen von bestehenden Dateien in ein Projekt folgen.
+</p><p><br>
+</p>
+<a name="How_to_create_a_truly_empty_project.3F"></a><h3>Wie erstellt man ein v&ouml;llig leeres Projekt?</h3>
+<!--FixMe -->
+<ul><li>Man klicke auf <i>Projekt-&gt;New
+Project...-&gt;C++-&gt;Simple Hello World Template</i> und erstelle
+ein Projekt
+</li>
+<li><a
+href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html"
+title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html"
+>Das in dem Projekt bestehende Target l&ouml;schen</a>
+</li>
+<!--FixMe -->
+<li>Im sich &ouml;ffnenden Dialog w&auml;hlt man <em>remove also source files</em>
+</li></ul>
+<p><br>
+</p>
+<a
+name="How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F"></a><h3>Wie
+erstellt man ein einfaches Projekt nur mittels eines Makefiles (ebenso bekannt als Custom Project)?</h3>
+<p>Erzeugen eines Custom-Projekts. Es gibt keinen direkten Weg ein
+Custom-Projekt zu erzeugen (z.B. ein Projekt, dass sein eigenes
+makefile nutzt). Anstelle dessen nutzt man
+<!--FixMe -->
+-&gt; Import Existing Project.
+Dabei ist darauf zu achten, den entsprechenden Projekt Typ,
+der durch ein zus&auml;zliches Custom-Makefile gekennzeichnet ist, im
+Dialog zu setzen.
+<!--FixMe -->
+Nutzen Sie <em>Project Options Early</em>. Immer wenn man ein neues Projekt beginnt, sollte man nicht
+vergessen, die Projekt-Optionen entsprechend den eigenen Bed&uuml;rfnissen anzupassen.
+</p><p><br>
+</p>
+<a name="What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F"></a><h3>Was bedeuten die "build configurations" (Project Options-&gt;Configure Options)?</h3>
+<ul><li><b>debug</b>:
+<ul><li>Das separate Build-Verzeichnis ist auf "debug" zu setzen
+</li><li>Die Compiler-Schalter -g3 -O0 sind dazu da, ein Debugging
+ohne Probleme mit der Optimierung zu erm&ouml;glichen.
+</li></ul>
+</li><li><b>optimized</b>:
+<ul><li>Das "optimized" build Verzeichnis
+</li><li>Die -O2 -g0 Flags schalten die Debug-Informationen aus und die
+Optimierungen ein.
+</li></ul>
+</li><li><b>default</b>:
+<ul><li>Hat keine spezielle Bedeutung, keine Compiler-Schalter und
+Build-Verzeichnisse sind gesetzt
+</li><li>Bin&auml;rdateien und Bibliotheken befinden sich an der gleichen
+Stelle wie der Quellcode.
+</li><li><b>Achtung!</b> Niemals die "default"-Konfiguration zur
+gleichen Zeit wie "debug" und "optimized" nutzen. "debug" und
+"optimized" k&ouml;nnen jedoch ohne Probleme zusammen genutzt werden, da
+unterschiedliche Build-Verzeichnisse gesetzt sind.
+</li></ul>
+</li></ul>
+<p><br>
+</p>
+<a name="What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F"></a><h3>
+Was tun, wenn sich das Projekt nach einem Wechsel zum/vom <em>Default Target</em> nicht mehr erstellen l&auml;sst?</h3>
+<p>Es besteht ein Problem mit der automake/autoconf-Umgebung. Falls
+<!--FixMe -->
+<em>Project-&gt;Build Configuration</em> die M&ouml;glichkeit bietet aus drei Build
+Verzeichnissen zu w&auml;hlen (default, optimized, und debug), sollte man
+auf jeden Fall entweder "default" oder "debug"/"optimized" targets verwenden.
+</p>
+<ul><li>Sobald man sein Projekt als "default" konfiguriert hat,l&auml;sst es
+sich nicht mehr als "debug" oder "optimized" erstellen.
+</li><li>
+Sobald man sein Projekt als "debug" oder "optimized" konfiguriert hat, l&auml;sst es
+sich nicht mehr als "default" erstellen.
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_add_subprojects.3F"></a><h3>Wie f&uuml;gt man Unterprojekte ein?</h3>
+<p>Automake-Manager ausw&auml;hlen. In der oberen H&auml;lfte sieht man die
+Projekte. Um ein Unterprojekt hinzuzuf&uuml;gen, w&auml;hlt man das Projekt dem
+man ein Unterprojekt hinzuf&uuml;gen m&ouml;chte und klickt auf das Icon
+<!--FixMe -->
+"add subproject". Daraufhin wird ein neuer Ordner mit dem Namen des
+Unterprojekts erzeugt (Im Dateisystem und im Automake Manager).
+</p><p>Anschlie&szlig;end sollte man ein <em>libtool-Target</em> f&uuml;r das neue
+Unterprojekt erzeugen. Sobald man dies getan hat aktiviert man das
+Target und f&uuml;gt Dateien hinzu.
+</p><p>Das libtool-Target im Unterprojekt kann zum Haupt-Bin&auml;r-Target
+<!--FixMe -->
+hinzugelinkt werden, in dem man darauf rechtsklickt und "settings"
+<!--FixMe -->
+ausw&auml;hlt. Im Tab "libraries" w&auml;hlt man dann die passende
+Hilfe-Bibliothek (.la file).
+</p><p><br>
+</p>
+<a name="What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F"></a><h3>
+Was tun, wenn  <i>automake &amp; friends</i> mit komischen Fehlermeldungen abbricht?</h3>
+<p>Man &ouml;ffnet ein Konsolenfenster im root Verzeichnis des Projekts und
+gibt ein:
+</p>
+<pre>libtoolize --copy --force</pre>
+<p>Damit sollte der Konflikt zwischen unterschiedlichen Versionen der
+autotools von KDevelop und dem installierten Betriebssystem behoben
+werden k&ouml;nnen.
+</p><p><br>
+</p>
+<a name="I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F"></a><h3>Ich bekomme einen "Wrong autoconf version"-Fehler. Was kann ich machen?</h3>
+<p>Es gibt mehrere Fehlermeldungen bez&uuml;glich &auml;lterer Versionen von
+autoconf usw. die <em>configure</em> davon abhalten sauber zu arbeiten. Hierzu
+f&uuml;hrt man am besten autoreconf im Verzeichnisbaum aus, in dem die
+fraglichen configure.in-Dateien liegen. Dieses Kommando versucht
+die Informationen im GNU-Build-System auf den aktuellen Stand zu
+bringen. Mehr Informationen dazu finden sie in der Manpage zu autoreconf.
+</p><p><br>
+</p>
+<a name="How_can_I_set_up_a_project_with_SCons.3F"></a><h3>Wie setzt
+man ein Projekt mit SCons auf?</h3>
+<p><a href="http://www.scons.org"
+title="http://www.scons.org">SCons</a> ist ein
+Konstruktionswerkzeug f&uuml;r Software. KDevelop (in der Version 3.2.2)
+unterst&uuml;tzt SCons-Projekte nicht direkt. Jedoch besteht die
+M&ouml;glichkeit ein Projekt recht einfach mit Scons aufzusetzen, indem
+man ein "stub"-Makefile schreibt und den "CustomMakefiles"-Projekttyp
+benutzt. Ein Beispiel eines solchen einfachen "stub"-Makefiles
+sieht folgendermassen aus (man beachte, Zeilen nach Target-Namen
+sollten mit Tabs und nicht mit Leerzeichen einger&uuml;ckt werden):
+</p>
+<pre>project_name:
+        scons
+clean:
+        scons --clean
+</pre>
+<p>Dies wird die <em>"Build Project"</em>- und <em>"Clean Project"</em>-Aktionen aktivieren.
+</p><p><br>
+</p>
+<a name="Libraries_FAQ"></a><h2>Bibliotheken FAQ</h2>
+<a name="How_to_create_a_.so_library.3F"></a><h3>Wie erstellt man eine .so-Bibliothek?</h3>
+<ul><li><a
+href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html"
+title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html"
+>Man f&uuml;ge ein Target zu einem Projekt hinzu</a>
+<ul><li><i>primary:</i> program</li>
+<li><i>prefix:</i> bin</li>
+<li><i>file name:</i> libxxx</li>
+<li><i>Die Linker Flags-&gt;Other:</i> -shared -o libxxx.so
+<ul>
+<li> m&uuml;ssen m&ouml;glicherweise nachdem das Target erzeugt wurde
+hinzugef&uuml;gt werden.
+</li></ul>
+</li></ul>
+</li><li>M&ouml;chte man eine Version spezifizieren, f&uuml;gt man
+<code>-version-info 0:0:0</code> ein (dabei ersetzt man 0:0:0 mit der
+Versionsnummer die man braucht) <i>Target Options -&gt; Flags -&gt; Linker Flags (LDFLAGS) -&gt; Other:</i>
+</li></ul>
+<ul><li>Man f&uuml;ge die cpp/h Dateien zum Target hinzu
+</li><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">set <i>compiler flags for c++</i></a> -fPIC
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_create_a_.a_library.3F"></a><h3>Wie erstellt man eine .a-Bibliothek?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Man f&uuml;ge ein Target zu einem Projekt hinzu</a>
+<ul><li><i>primary:</i> Bibliothek</li>
+<li><i>prefix:</i> noinst</li>
+<li><i>file name:</i> your_lib</li>
+</ul>
+</li>
+<li>Man f&uuml;ge die cpp/h Dateien zum Target hinzu</li>
+</ul>
+<p><br>
+</p>
+<a
+name="How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F"></a><h3>Wie
+erstellt man eine .la-Bibliothek (auch als libtool Archiv bekannt)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Man f&uuml;ge ein Target zu einem Projekt hinzu</a>
+<ul><li><i>primary:</i> Libtool Bibliothek</li>
+<li><i>prefix:</i> noinst</li>
+<li><i>file name:</i> your_lib</li>
+</ul>
+</li>
+<li>Man f&uuml;ge die cpp/h Dateien zum Target hinzu</li>
+</ul>
+<p><br>
+</p>
+<a name="How_to_add_an_external_include_path_to_a_project.3F"></a><h3>Wie f&uuml;gt man einen externen Include-Pfad zu einem Projekt hinzu?</h3>
+<p>Wenn Ihr Projekt <em>GNU-Autotools</em> (<a
+href="http://www.gnu.org/software/autoconf/"
+title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a
+href="http://sources.redhat.com/automake/"
+title="http://sources.redhat.com/automake/">Automake</a>)
+basiert ist, nutzen Sie h&ouml;chstwahrscheinlich den KDevelop-Automake-Manager (siehe: <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Wo befindet sich der Automake-Manager in KDevelop?</a>).
+Um einen include Pfad zum Projekt hinzuzuf&uuml;gen macht man folgendes:
+</p>
+<ul><li> Man w&auml;hlt das <em>Unterprojekt</em> in der Top Ansicht des
+Automake-Managers, das man dem Pfad hinzuf&uuml;gen
+m&ouml;chte.</li>
+<!--FixMe -->
+<li>Man w&auml;hlt <em>Options...</em> mit der RMT oder man klickt
+auf das Schraubenschl&uuml;ssel Icon</li>
+<!--FixMe -->
+<li>im <em>Includes</em> Tab f&uuml;gt man den Pfad in der zweiten
+<!--FixMe -->
+Box ein (<em>Directories outside of project</em>).
+Danach einfach den Verzeichnis-Pfad nach dem <em>-I</em> eingeben
+(ohne Leerzeichen dazwischen).
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_link_against_a_.so_library.3F"></a><h3>Wie linkt man gegen eine .so-Bibliothek?</h3>
+<p>Wenn Ihr Projekt <em>GNU-Autotools</em> (<a
+href="http://www.gnu.org/software/autoconf/"
+title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a
+href="http://sources.redhat.com/automake/"
+title="http://sources.redhat.com/automake/">Automake</a>) basiert ist, nutzen Sie h&ouml;chstwahrscheinlich den KDevelop-Automake-Manager
+(see <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Wo befindet sich der Automake-Manager in KDevelop?</a>).
+Um ein Programm gegen eine Bibliothek zu linken, oder um eine
+Bibliothek hinzuzuf&uuml;gen macht man folgendes:
+</p>
+<ul><li>Man w&auml;hlt das <em>Unterprojekt</em> in der Top Ansicht des
+Automake Managers, dem man die Bibliothek hinzuf&uuml;gen m&ouml;chte.</li>
+<!--FixMe -->
+<li>Man w&auml;hlt <em>Options...</em> mit der RMT oder man klickt
+auf das Schraubenschlssel Icon</li>
+<li>im Bibliotheks Tab f&uuml;gt man die Bibliotheken in der zweiten
+<!--FixMe -->
+Box hinzu (<em>link libraries outside of project</em>). Danach einfach
+den Bibliotheksnamen ohne Bibliothekspr&auml;fix und dem <em>.a</em> oder
+<em>.so</em> oder <em>.la</em> oder welcher Endung auch immer, hinzuf&uuml;gen.
+<ul><li>Z.B. Ihre Detei sei <em>libsomelib.so</em>, dann f&uuml;gt man
+diese so hinzu: <em>-lsomelib</em>
+</li></ul>
+</li><li>Sollte die Bibliothek nicht Teil des systemweiten
+Bibliothekspfads sein, f&uuml;gt man
+<code>-Lpath/to/the/library/you/used</code> zum <code>LDFLAGS</code>
+<!--FixMe -->
+in der <em>Project-&gt;Project Options...-&gt;Configure
+Options-&gt;Linker Flags(LDFLAGS):</em> hinzu.
+</li></ul>
+<p>Nicht versgessen, die Angabe wo die .h Dateien der Bibliothek
+liegen dem Include-Pfad der Ausf&uuml;hrbaren Datei hinzuzuf&uuml;gen so wie es
+in <a
+href="#How_to_add_an_external_include_path_to_a_project.3F"
+title="FAQ">FAQ#How to add an external include path to a project?</a>
+erl&auml;utert ist.
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.a_library.3F"></a><h3>Wie linkt man gegen eine .a-Bibliothek?</h3>
+<p>Das ist &auml;hnlich wie <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#Wie linkt man gegen eine .so Bibliothek?</a>
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.la_library.3F"></a><h3>Wie linkt man gegen eine .la-Bibliothek?</h3>
+<p>Das ist &auml;hnlich wie <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#Wie linkt man gegen eine .so Bibliothek?</a>
+</p><p>Zusatz:
+Es gibt einen anderen, komfortableren Weg um <em>mybinary</em> gegen
+<em>somestuff.la</em> zu linken.
+Man legt <em>libsomestuff.la</em> in <em>$(somedir)</em>ab, dann,
+anstelle <code>-lsomestuff -L$(somedir)</code> hinzuzuf&uuml;gen, f&uuml;gt man
+einfach <code>$(somedir)/libsomestuff.la</code> hinzu.
+Das libtool-Dienstprogramm kann damit umgehen.
+</p><p>Der gesamte Prozess;(&uuml;bernommen von oben):
+</p>
+<ul><li> Man w&auml;hle das <em>Unterprojekt</em> in der Top Ansicht des
+Automake-Managers, dem man die Bibliothek hinzuf&uuml;gen m&ouml;chte.
+<!--FixMe -->
+</li><li> Man w&auml;hle <em>Options...</em> mit der RMT oder man klickt
+auf das Schraubenschl&uuml;ssel-Icon
+</li><li> im Bibliotheks-Tab, l&ouml;scht man das <code>-l</code> und f&uuml;gt
+<code>$(somedir)/libsomestuff.la</code> in der zweiten Box
+<!--FixMe -->
+(<em>link libraries outside of project</em>) hinzu.
+</li></ul>
+<p>Das ist der gleiche Prozess wie wenn man im gleichen
+Projekt die eingebauten Bibliotheken linkt, bei denen muss man nur die
+entsprechenden Bibliotheken in der Topbox ausw&auml;hlen.
+<!--FixMe -->
+(<em>Link convenience libraries inside project</em>).
+</p><p>Die unsch&ouml;nen Details:
+Die Bibliotheks-Eintr&auml;ge werden zu <code>mybinary_LDADD</code> im
+entsprechenden Makefile.am hinzugef&uuml;gt. Die LDADD-Variable kann mit
+<!--FixMe -->
+<em>libtool archives</em> von sich aus umgehen z.B. sie liest die Ablage der
+aktuellen Bibliotheken und f&uuml;gt diese entsprechend hinzu.
+</p><p><br>
+</p>
+<a name="Debug_FAQs"></a><h2>Debug FAQ</h2>
+<a
+name="Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F"></a><h3>Debuggen
+einer Konsolen-Anwendung: Wie kann man die Konsole anzeigen um Daten einzugeben?</h3>
+<!--FixMe -->
+<p>Man gehe im <em>Project Options Dialog</em>, zum Debugger-Tab und aktiviert <i>Enable separate terminal for application IO</i>
+</p>
+<a name="How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F"></a><h3> Wie debuggt man exec-Objekte mit libtool "temporary wrapper scripts"? </h3>
+<p>Wenn man <code>ltlibraries</code> baut und <em>exec</em> mit ihnen linkt,
+erzeugt libtool Wrapper um sie, aber gdb beschwert sich <i>not in executable format: File format not recognized</i>
+</p>
+Um das zum laufen zu bekommen geht man wie folgt vor:
+<pre>
+Project -&gt; Project Options -&gt; Debugger -&gt; Debugging shell -&gt; libtool --mode=execute </pre>
+<p><br>
+</p>
+<a name="Code_Completion_FAQs"></a><h2>Code-Vervollst&auml;ndigung FAQ</h2>
+<a name="How_can_I_enable_code_completion.3F"></a><h3>Wie kann man die Code-Vervollst&auml;ndigung einschalten?</h3>
+<p>
+In einem ge&ouml;ffneten C/C++-Projekt, unter Project-&gt;Project
+<!--FixMe -->
+Options, im <em>Project Options Dialog</em> den C++ spezifischen Tab und dann
+den Code-Vervollst&auml;ndigungs-Tab ausw&auml;hlen.
+<!--FixMe -->
+Dort dann die <em>Automatic Code Completion</em>-Checkbox und andere
+dazugeh&ouml;rige Einstellungen vornehmen.
+<!--FixMe -->
+Man kann zus&auml;tzlich im Settings-&gt;Configure KDevelop-&gt;C++ Parsing Dialog
+den <em>background parsing loop</em> aktivieren und ver&auml;ndern.
+</p><p><br>
+</p>
+<a name="How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F"></a><h3>Wie kann man dem
+C/C++-Parser neue Macros beibringen?</h3>
+<p>Der aktuelle Parser von KDevelop parst die Dateien nicht der Reihe
+nach. M&ouml;chte man dem C/C++-Parser neue Makros beibringen,
+besteht der beste Weg darin eine Pseudo-Datei die nur Makrodefinitionen
+enth&auml;lt vor den Quelldateien zu parsen. Hierzu dient der
+<!--FixMe -->
+<em>C++ Parser Settings</em>-Dialog.
+Der Inhalt dieser Pseudo-Datei ist der Text, den man im
+<!--FixMe -->
+<em>C++ Parser Settings</em>-Dialog eingibt, der jedesmal wenn man ein Projekt l&ouml;scht
+als erstes geparst wird.
+</p><p><br>
+</p>
+<a
+name="How_can_I_enable_code_completion_for_external_libraries.3F"></a><h3>Wie
+kann man die Code-Vervollst&auml;ndigung f&uuml;r externe Bibliotheken aktivieren?</h3>
+<p>In einem ge&ouml;ffneten C/C++-Projekt, unter
+<!--FixMe -->
+<em>Project-&gt;Project Options</em>, im <em>Project Options Dialog</em> den C++-spezifischen Tab und dann
+den Code-Vervollst&auml;ndigung-Tab ausw&auml;hlen. Dann auf den
+<!--FixMe -->
+<em>Add Persistant Class Store</em>-Knopf dr&uuml;cken und den
+<!--FixMe -->
+<em>New Persistant Class Store Wizard</em>
+vervollst&auml;ndigen. Nachdem der Wizard beendet wurde, ist
+<!--FixMe -->
+sicherzustellen, dass die neu erstellte <em>class store</em> in die Liste der
+<!--FixMe -->
+<em>persistant class stores</em> im Code-Vervollst&auml;ndigung-Tab aufgenommen wurde.
+</p><p><br>
+</p>
+<a name="Code_completion_still_doesn.27t_work"></a><h3>Code-Vervollst&auml;ndigung funktioniert immer noch nicht</h3>
+<p>Man sollte das Ausschalten des Abk&uuml;rzungsteils ausprobieren - es
+pr&auml;sentiert oft ein Popup bevor die completion engine eine M&ouml;glichkeit
+hat dies zu tun.
+</p><p><br>
+</p>
+<a
+name="Why_doesn.27t_my_Qt4_Persistant_Class_Store_work_for_all_Qt4_classes.3F"></a><h3>
+Warum funktioniert mein Qt4 Persistant Class Store nicht mit allen Qt4-Klassen?</h3>
+<p>Qt4 Include-Dateien sind mehrheitlich Einzeiler mit '#include
+"../../src/blah.h", die KDevelop nicht verarbeiten kann. Um dies zu
+umgehen, sollte man das Qt4 "src"-Verzeichnis ausprobieren wenn man die
+Vervollst&auml;ndigungs-Datenbank anlegt.
+</p><p><br>
+</p>
+<a name="KDevelop_installation_FAQs"></a><h2>KDevelop Installations FAQ</h2>
+<a
+name="How_long_does_it_usually_take_to_compile_kdevelop.3F"></a><h3>
+Wie lange dauert es normalerweise, Kdevelop zu kompilieren?</h3>
+<p>Das h&auml;ngt von der Geschwindigkeit des eingesetzten Rechners ab. Bei
+einem Entwickler mit einem P4 der mit 3GHz getaktet ist dauert es 40 Minuten
+um KDevelop zum ersten mal zu kompilieren. Nach einem Update aus SVN
+dauert es normalerweise weniger lang. Wir sch&auml;tzen dass die
+durchschnittliche Build-Zeit zwischen 1 bis 2 Stunden nach einem
+erstmaligen Download betr&auml;gt.
+</p><p>Es ist eine gute Idee gcc-4.0.1 zu benutzen. Dadurch wird sich
+die Zeit des Kompilierens drastisch verk&uuml;rzen. Kompilierungen zum Debuggen
+("./configure --enable-debug=full" with -g -O0 flags) werden um 45% beschleunigt
+und zum Releasen ("./configure --enable-debug=no" with -O2 flag) um 16%.
+Zum Beispiel ben&ouml;tigt ein AthlonXP1600 / 256Mb RAM f&uuml;r eine neue
+Debug-Kompilierung mit gcc-4 45 Minuten und mit gcc-3.3.1 81 Minuten.
+Um die Sache noch weiter zu beschleunigen kann das aktuellste libtool
+(vom CVS HEAD) ebenfalls genutzt werden.
+</p><p>
+Normalerweise ist es sicher den gcc-4 in /usr/local neben gcc-3.x in
+/usr installiert zu haben. Es ist m&ouml;glich KDevelop nur mit gcc-4 zu
+compilieren und den Rest (Qt, KDE, usw.) zu belassen.
+</p><p>Hinweis! Nicht den gcc-4.0.0 verwenden, da er den Code falsch compiliert.
+gcc-4.0.1 und sp&auml;tere Versionen haben dieses Problem nicht mehr.
+</p><p><br>
+</p>
+<a
+name="I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F"></a><h3>
+Ich bekomme eine Fehlermeldung "couldn't create a language plugin".
+Was stimmt nicht?</h3>
+<p>
+Wie in jeder anderen KDevelop Anwendung auch, muss man sicherstellen,
+dass die Plugins f&uuml;r KDevelop von KDE erkannt werden. Entweder
+installiert man sie im KDE-Verzeichnis (z.B. configure --prefix=/opt/kde3)
+oder man f&uuml;gt KDevelop dem Pfad der KDEDIRS-Umgebungsvariablen hinzu und
+wiederholt "kbuildsycoca".
+
+Beispiel f&uuml;r die Kommandozeile der bash (unter der Annahme KDevelop
+ist in /home/harry/kdevelop installiert):
+</p>
+<pre>export KDEDIRS=/home/harry/kdevelop:$KDEDIRS &amp;&amp; kbuildsycoca
+</pre>
+<p><br>
+</p>
+<a name="Legal_FAQs"></a><h2>Rechtliche FAQ</h2>
+<a name="Am_I_allowed_to_develop_commercial_applications_with_KDevelop.3F"></a><h3>Ist es erlaubt kommerzielle Anwendungen mit KDevelop zu entwickeln?</h3>
+<p>Jedermann und alle Institutionen sind frei darin, KDevelop zu
+nutzen. Der erzeugte Code kann von allen Lizenzen die man m&ouml;chte,
+gesch&uuml;tzt werden. Der Projektgenerator bietet Felder um den
+erzeugten Dateien einen eigenen Copyright-Hinweis hinzuzuf&uuml;gen. Um die
+Sache zu vereinfachen und als Beispiel ist als Voreinstellung
+ein GPL-Lizenz Hinweis eingestellt. Somit kann man seinen eigenen Hinweis dort angeben.
+Im Fall des Ver&auml;nderns des eigenen Programms mit KDevelop verh&auml;lt es
+sich so, als wr&uuml;de man irgendeinen Editor benutzen, da es ein Programm
+ist, dass der GPL unterliegt und was f&uuml;r die Nutzung gedacht ist ohne
+dabei zu ber&uuml;cksichtigen, f&uuml;r welchen Zweck man es einsetzt. Damit ist
+es also m&ouml;glich kommerzielle/geschlossene Software zu erstellen
+ungeachtet dessen, dass KDevelop selbst unter der GPL lizensiert ist.
+Hinsichtlich der Nutzung von KDE-Funktionen oder irgend einem anderen
+Teil freier Software, sind nur die Lizenzhinweise der Bibliotheken die
+man nutzt zu beachten. Das bedeutet f&uuml;r die kommerzielle Entwicklung
+von KDE/Qt Anwendungen, dass man nur eine professionelle Lizenz von
+Trolltech ben&ouml;tigt. Die KDE-Bibliotheken selbst sind unter der LGPL lizensiert.
+Das bedeutet
+dass man die Funktionsaufrufe nutzen kann und sein Programm mit den
+KDE-Bibliotheken linken kann. Das gilt f&uuml;r die kdelibs-Bibliotheken,
+die kdebase-Bibliotheken (konquerer und kcontrol etc.) und die koffice-Bibliotheken
+(f&uuml;r die Erstellung von koffice Anwendungen).
+<!--FixMe -->
+F&uuml;r weitergehende Informationen bitte auf <em>KDevelop Licensing</em> nachsehen.
+</p><p><br>
+</p>
+<a name="Am_I_allowed_to_develop_commercial_plugins_to_KDevelop.3F"></a><h3>
+Ist es erlaubt kommerzielle Plugins mit KDevelop zu entwickeln?</h3>
+<p>KDevelop enth&auml;lt eine libkdeveloplgpl.so-Bibliothek um die
+Entwicklung kommerzieller Plugins zu erm&ouml;glichen. Diese Bibliothek
+enth&auml;lt KDevelop-Schnittstellen und Utility-Funktionen die unter der
+LGPL freigegeben sind. Sollten Sie eine professionelle Lizenz von
+Trolltech besitzen, dann k&ouml;nnen Sie ihren Code mit libkdeveloplgpl
+linken und unter jeder Lizenz freigeben.
+</p><p><br>
+</p>
+<a name="Misc._FAQs"></a><h2>"Verschiedenes" FAQ</h2>
+<a name="I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F"></a><h3>
+Ich entwickle eine Anwendung, die <em>Exception Handling</em> ben&ouml;tigt. Wie kann ich das machen?</h3>
+<p>Editieren Sie die Datei configure.in(.in) in ihrem obersten
+Quellverzeichnis. Dort m&uuml;ssen Sie nach dem AC_CHECK_COMPILERS() macro eingeben:
+</p>
+<pre>CXXFLAGS=&quot;$CXXFLAGS $USE_EXCEPTIONS&quot;
+</pre>
+<p>und danach m&uuml;ssen Sie ihr ge&auml;ndertes "configure" neu erzeugen in dem Sie auf der obersten Quellverzeichnisebene
+</p>
+<pre>make -f Makefile.dist
+</pre>
+<p>aufrufen und dann das configure script erneut starten.
+</p><p><br>
+</p>
+<a
+name="My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F"></a><h3>Meine
+configure.in.in hat keinen AC_CHECK_COMPILERS() Aufruf. Wo kommen die
+zuvor erw&auml;hnten CXXFLAGS=&quot;$CXXFLAGS $USE_EXCEPTIONS&quot; hin?</h3>
+<p>Die neuen Versionen von configure.in.in wurden vereinfacht. Man
+kann nun die Zeile nach
+AM_INIT_AUTOMAKE(&lt;package-name&gt;,&lt;version&gt;) hinzuf&uuml;gen.
+</p><p><br>
+</p>
+<a name="Is_there_any_HOWTO_available_on_how_to_work_with_QT_designer_made_dialogs_.3F"></a><h3>
+Gibt es irgendwo ein HOWTO zum Thema wie man mit im Qt-Designer erstellten Dialogen umgeht?</h3>
+<p>Ja, es gibt ein gutes Tutorial auf <a href="http://women.kde.org/articles/tutorials/kdevelop3/index.html" title="http://women.kde.org/articles/tutorials/kdevelop3/index.html">http://women.kde.org/articles/tutorials/kdevelop3/index.html</a>
+</p><p><br>
+</p>
+<a name="Why_don.27t_I_see_the_compilation_error_messages.3F"></a><h3>Warum sehe ich die Compiler-Fehlermeldungen nicht?</h3>
+<p>Sollten Sie feststellen, dass einige wichtige Informationen im
+<em>Messages Output Fenster</em> w&auml;hrend des Kompiliervorgangs fehlen, k&ouml;nnte
+es sein, dass das Detaillevel der Botschaften zu niedrig eingestellt
+ist. Durch Rechtsklick im Fenster und Auswahl eines anderen
+Detaillevels im Kontextmen&uuml; kann man dies einstellen.
+</p><p><br>
+</p>
+<a name="How_to_add_a_translation_to_a_KDE_program.3F"></a><h3>Wie f&uuml;gt man eine &Uuml;bersetzung zu einem KDE-Programm hinzu?</h3>
+<p>Zuerst f&uuml;hrt man
+<!--FixMe -->
+<em>Build-&gt;Create Messages&amp;Merge</em>
+aus und danach f&uuml;gt man eine neue &Uuml;bersetzung mittels
+<!--FixMe -->
+<em>Project-&gt;Add Translation</em>
+hinzu. Das erzeugt eine po/$lang.po-Datei.
+Die $project.pot-Datei enth&auml;lt alle Strings.
+</p><p><br>
+</p>
+<a name="How_to_add_icons_to_a_project.3F"></a><h3>Wie f&uuml;gt man Icons zu einem Projekt hinzu?</h3>
+<p>Zuerst f&uuml;gt man ein neues Unterprojekt mit dem Automake-Manager hinzu,
+hier "pics". Nach einem Rechtsklick auf das neue Unterprojekt, w&auml;hlt man
+<!--FixMe -->
+<em>Settings</em> und dann <em>Prefix</em>.
+Einen neuen Pr&auml;fix f&uuml;gt man bspw. mit "mypics" als Name und dem
+Pfad <em>$(kde_datadir)/$project/pics</em> hinzu. Danach erzeugt man ein neues
+Target im "pics"-Unterprojekt und w&auml;hlt Data als Primary, "mypics" als
+Pr&auml;fix und f&uuml;gt einen dummy-Namen ein. Zum Schluss f&uuml;gt man die eigenen
+Icons dem neuen Target hinzu. Das Laden des Bildes kann durch
+Includierung der <em>kiconloader.h</em> Header-Datei und dem folgenden
+Code <em>button-&gt;setPixmap(UserIcon("config"))</em> bewerkstelligt werden,
+der eine Pixelkarte mit dem Namen "config" einem Knopf zuordnet.
+</p><p><br>
+</p>
+<a name="How_to_use_the_SVN_plugin.3F"></a><h3>Wie benutzt man das SVN-Plugin?</h3>
+<p>Man muss das Projekt und die Quelldateien manuell in ein Subversion
+Verzeichnis importieren. Dann muss man KDevelop neu starten und
+daraufhin sollte ein Subversion-Kontextmen&uuml; erscheinen sobald man auf
+eine Datei rechtsklickt. Intern schaut das Subversion-Modul nach dem
+Vorhandensein des <code>.svn</code>-Verzeichnisses im gleichen
+Verzeichnis welches die Datei enth&auml;lt auf die man geklickt hat.
+</p><p>F&uuml;r weitergehende Informationen lesen Sie diesen Thread: <a href="phorum5/read.php?2,23286" title="phorum5/read.php?2,23286">phorum5/read.php?2,23286</a>
+</p><p><br>
+</p>
+<a name="How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29"></a><h3>
+Wie setzt man einen anderen Compiler auf (Nativ- oder Cross-Compiler)?</h3>
+<p>Compiler Auswahl:
+</p>
+<ul>
+<!--FixMe -->
+<li><em>Project-&gt;Project Options-&gt;Configure Options</em> (Nur
+autotools basierte Projekte, custom projects haben diesen Tab nicht)</li>
+<!--FixMe -->
+<li>add a new configure name, e.g. <em>&lt;compilername&gt;-&lt;platform&gt;-debug</em></li>
+</ul>
+<p>Tab "General":
+</p>
+<ul>
+<li>Einstellen der configure-Argumente (z.B. --host und --build options beim Cross Compiling)</li>
+<li>Einstellen des build-Verzeichnisses, zur Vermeidung von
+Missverst&auml;ndnissen am besten den gleichen Namen wie den der Konfiguration verwenden</li>
+<li>Einstellen der entsprechenden Flags falls notwendig (LDFLAGS, ENV)</li>
+</ul>
+<p>Tab "C":
+</p>
+<ul>
+<li>Einstellen des Namens des verwendeten C-Compilers,
+e.g. CC, gcc, icc, kcc, ... (ebenso des Cross-Compilers!)</li>
+<li>Einstellen der entsprechenden Flags falls notwendig (CFLAGS)</li>
+</ul>
+<p>Tab "C++":
+</p>
+<ul>
+<li>Einstellen des Namens des verwendeten C++-Compilers,
+e.g. cc, g++, ... (ebenso des Cross-Compilers!)</li>
+<li>Einstellen der entsprechenden Flags falls notwendig (CXXFLAGS)</li>
+</ul>
+<p>Tab "Fortran":
+</p>
+<ul>
+<li>Einstellen des Namens des verwendeten Fortran-Compilers,
+e.g. g77, g90, gfortran, ... (ebenso des Cross-Compilers!)</li>
+<li>Einstellen der entsprechenden Flags falls notwendig (FFLAGS)</li>
+</ul>
+<p>Optionen schliessen, die eigene Konfiguration in
+<!--FixMe -->
+<em>Project-&gt;Build Configuration</em>
+ausw&auml;hlen, dann
+<!--FixMe -->
+<em>Automake &amp; Friends</em>, <em>configure</em> und <em>make</em>
+starten.
+</p><p>Zum Beispiel, um den sparc-sun-solaris2.9 Target Cross-Compiler
+einzustellen geht man wie folgt vor:
+</p>
+<ul>
+<!--FixMe -->
+<li>Project -&gt; Project Options -&gt; Configure Options</li>
+<li>Einen neuen Konfigurationsnamen hinzuf&uuml;gen, z.B. &quot;sparc-debug&quot;</li>
+<li>Configure Arguments:</li>
+</ul>
+<pre>--host=i686-pc-linux-gnu -- build=sparc-sun-solaris2.9</pre>
+<ul>
+<li>Build Verzeichnis:</li>
+</ul>
+<pre>sparc-debug</pre>
+<ul>
+<li>zum Tab C wechseln, den Namen des Cross-gcc eingeben, z.B. sun-solaris-sparc2.9-gcc</li>
+<li>zum Tab C++ wechseln, den Namen des Cross-g++ eingeben, e.g. sun-solaris-sparc2.9-g++</li>
+<li>Automake &amp; Friends</li>
+<li>configure</li>
+<li>make</li>
+</ul>
+<p>Zum Thema Cross debugging beachte man <a href="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote+debug+kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3" title="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote debug kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3">Remote debugging mit KDevelop 3.0 in comp.os.linux.embedded newsgroup</a> oder
+<a href="mediawiki/index.php/Cross_debugging" title="Cross debugging">Cross_debugging</a>.
+Im <a href="phorum5/read.php?2,23503"
+title="phorum5/read.php?2,23503">kdevelop.org forum</a> finden sich dazu ebenfalls Informationen
+</p><p>Stellen Sie sicher, dass die Bin&auml;rdateien und die Bibliotheken
+des (Cross-)Compilers in $PATH und $LD_LIBRARY_PATH stehen!
+</p><p>Es kann n&ouml;tig sein, einige autoconf/automake Macros
+in <i>configure.in</i> anzupassen um Ihren Compiler vollst&auml;ndig
+zu unterst&uuml;tzen -- man beachte hierzu auch die letzte Nachricht in
+diesem Thread <a href="phorum5/read.php?8,27808" title="phorum5/read.php?8,27808">kdevelop.org forum what to do to get <em>gfortran</em> (GNU F90 compiler) working</a>.
+</p><p><br>
+</p>
+<a name="Working_with_Clearcase_views_and_KDE"></a><h3>Arbeiten mit Clearcase-Ansichten und KDE</h3>
+<p>Clearcase Dateien werden typischerweise unter '/usr/vobs/...'
+abgelegt und Bin&auml;robjekte k&ouml;nnen Referenzen auf diesen Pfad enthalten.
+Sollte Ihr KDevelop-Projekt mit einem anderen Pfad (bspw. '/view/[view
+name]/usr/vobs') angelegt worden sein, k&ouml;nnten Sie in Probleme derart
+geraten, dass Dateien doppelt ge&ouml;ffnet werden, es zu verwirrendem
+Verhalten von Breakpoints kommt und dass das Editieren von Dateien nicht korrekt funktioniert.
+</p><p>Falls KDevelop aus einer Konsole innerhalb einer Clearcase
+Ansicht gestartet wird, wird der Pfad '/usr/vobs/...' immer noch nicht erreichbar
+sein, solange KDE selbst in einer Clearcase Ansicht gestarted wurde.
+Der folgende Ansatz l&ouml;st diese Probleme:
+</p><p><tt>cp /etc/X11/xinit/xinitrc ~/.xinitrc</tt><br>
+&Auml;ndern Sie die vorletzte Zeile von<br>
+<code>exec $WINDOWMANAGER</code><br>
+nach<br>
+<code>/opt/rational/clearcase/rhat_x86/bin/cleartool setview -exec $WINDOWMANAGER ViewName</code>
+</p><p>wobei <em>ViewName</em> der Name der Ansicht ist, die Sie
+benutzen m&ouml;chten.
+</p>
+<!-- Saved in parser cache with key kdevelop_db:pcache:idhash:735-0!1!0!0!!en!2 and timestamp 20060115102812 -->
+
+<?php module_tail(); ?>

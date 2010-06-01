@@ -1,0 +1,18 @@
+<?php module_head("Released versions");?>
+<br>
+Team KDevelop sudah mengeluarkan beberapa versi KDevelop. Berikut ini adalah versi-versi yang cocok untuk versi KDE dan Qt tertentu:
+<br><br>
+<table BORDER CELLPADDING="3">
+<tr>
+<th>versi</th>
+<th>dibutuhkan <A HREF="http://www.kde.org/mirrors/">paket KDE</A> "kdelibs"</th>
+<th>dibutuhkan <a href="http://www.trolltech.com/products/qt/">library Qt</a></th>
+<th>tanggal rilis (YYYY/MM/DD)</th>
+</tr>
+<?php include("versions.ihtml"); ?>
+</table>
+<br>
+<?php
+module_tail();
+return filemtime('versions.ihtml');
+?>

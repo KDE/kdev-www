@@ -1,0 +1,47 @@
+<?php module_head('SVN ág űrlap');?>
+<table BORDER CELLPADDING=2>
+  <tr>
+    <th><b>svn ág</b></th>
+    <th><b>célja</b></th>
+    <th><b>tervezett kiadás</b></th>
+    <th><b>kiadás ideje</b></th>
+  </tr>
+<?php include('svn_branches_table.inc'); ?>
+  <tr>
+    <td><a href="http://websvn.kde.org/branches/kdevelop/2/kdevelop/">kdevelop/2</a></td>
+    <td>stabil ág KDE-2 <b>és</b> KDE-3 sorozatokhoz.</td>
+    <td>2.0.0 kiadás a KDE-2.2.0-val együtt jelent meg<br>A <a href="index.html?filename=2.1/kdevelop.html">2.x kiadási sorozat</a> fejlesztése végleg befejeződött a 2.1.4 kiadással; a 2.1.5 kiadás csak egy átirat a KDE-3.1-hez.</td>
+    <td>kiadva 2001. augusztus 15.</td>
+  </tr>
+  <tr>
+    <td><a href="http://websvn.kde.org/branches/kdevelop/1.4/kdevelop/">kdevelop/1.4</a></td>
+    <td>stabil ág KDE-1 <b>és</b> KDE-2 sorozatokhoz.</td>
+    <td>Development of <a href="index.html?filename=1.3/kdevelop.html">1.x kiadások</a> fejlesztése végleg befejeződött.</td>
+    <td>kiadva 1999. december 6.</td>
+  </tr>
+</table>
+<br>
+<br>
+<h3>Forráskód kinyerése a fenti ágak egyikéből:</h3>
+<br>
+Hozz létre egy könyvtárat, melyben a forráskódot fogod tárolni<br>
+<dl>
+<dd class="code">$ mkdir kdevelop</dd>
+<dd class="code">$ cd kdevelop</dd>
+</dl>
+Töltsd le a "kdevelop" SVN modult az svn://anonsvn.kde.org/home/kde/ címről<br>
+<ul>
+  <li>parancssor a <b>HEAD</b> ághoz:<br>
+    <dl>
+    <dd class="code">$ svn co svn://anonsvn.kde.org/home/kde/trunk/KDE/kdevelop/ kdevelop</dd>
+    </dl>
+  </li>
+  <li>parancssor a(z) <b><?php echo $k_branch; ?></b> ághoz:<br>
+    <dl>
+    <dd class="code">$ svn co svn://anonsvn.kde.org/home/kde/<?php echo $k_branch_path; ?>/ kdevelop</dd>
+    </dl>
+  </li>
+</ul>
+Egyéb ág letöltéséhez cseréld ki a(z) <code><?php echo $k_branch; ?></code> címkét a neked megfelelőre.
+<br>
+<?php module_tail();

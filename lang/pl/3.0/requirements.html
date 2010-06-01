@@ -1,0 +1,114 @@
+<?php module_head("Wymagania KDevelop 3.0.x");?>
+Zanim zaczniesz kompilować swoją świeżo pobraną wersję KDevelop, upewnij sie, że posiadasz zainstalowane poniższe programy. Miej na uwadze to, iż brak lub stare wersje tych programoów moga powodować dziwne błędy.
+<br>Zazwyczaj możesz sprawdzić wersję oprogramowania wywołując program z parametrem -v lub --version. Na przykład aby sprawdzić którą wersję autoconf posiadasz wpisz:
+<pre>
+   autoconf --version
+</pre>
+<br>
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr align=left>
+    <th class=header align=left>Program/Biblioteka</th>
+    <th class=header align=left>Źródło</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd>KDE &gt= 3.0.2</td>
+    <td class=odd><a href="http://www.kde.org/" TARGET="_top">www.kde.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Qt &gt= 3.0.5</td>
+    <td class=even><a href="http://www.trolltech.com/products/qt/" TARGET="_top">www.trolltech.com/products/qt</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>g++ &gt= 2.95.3 (lub kompatybilne)</td>
+    <td class=odd><a href="http://gcc.gnu.org/" TARGET="_top">gcc.gnu.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>GNU make</td>
+    <td class=even><a href="http://www.gnu.org/software/make/" TARGET="_top">www.gnu.org/software/make</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>perl &gt= 5.004</td>
+    <td class=odd><a href="http://www.perl.com/" TARGET="_top">www.perl.com</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>autoconf &gt= 2.52</td>
+    <td class=even><a href="http://www.gnu.org/software/autoconf/" TARGET="_top">www.gnu.org/software/autoconf</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>automake &gt= 1.6</td>
+    <td class=odd><a href="http://www.gnu.org/software/automake/" TARGET="_top">www.gnu.org/software/automake</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>flex &gt= 2.5.4</td>
+    <td class=even><a href="http://www.gnu.org/software/flex/" TARGET="_top">www.gnu.org/software/flex</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Berkley DB &gt;= 3.0 and &lt;= 4.1</td>
+    <td class=odd><a href="http://www.sleepycat.com/" TARGET="_top">www.sleepycat.com</a></td>
+  </tr>
+</table>
+<br>
+<br>
+Możesz ominąć potrzebę posiadania autoconf &gt;= 2.52 i automake &gt;= 1.6 robiąc:
+<pre>
+      $  cd KDevelopSourceDirectory
+      $  rm -Rf admin
+      $  ln -s $KDEDIR/share/apps/kdelibs/admin admin
+</pre>
+Jeśli to nie zadziała, to musisz zaktualizować autoconf i automake.
+
+<?php module_tail();?>
+
+<?php module_head("Opcjonalne (zalecane) oprogramowanie");?>
+Te narzędzia są opcjonalne, co oznacza, że KDevelop powinien działać bez nich.
+Ale brak tych narzędzi spowoduje brak niektórych cech jak n.p. generowanie dokumentacji lub przeszukiwanie kilku plików naraz. Więc powinieneś sprawdzić czy posiadasz te programy.
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr valign=top>
+    <th class=header align=left>Program/Biblioteka</th>
+    <th class=header align=left>Źródło</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Qt designer<br>(czarodziej podklas)</td>
+    <td class=odd><a href="http://www.trolltech.com/products/qt/designer.html" TARGET="_top">www.trolltech.com/products/qt/designer.html</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>ht://Dig 3.1.6<br>(pełne przeszukiwanie tekstu w dokumentacji)</td>
+    <td class=even><a href="http://www.htdig.org/" TARGET="_top">www.htdig.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Valgrind 20030725<br>(sprawdzanie przecieków pamięci)</td>
+    <td class=odd><a href="http://developer.kde.org/~sewardj/" TARGET="_top">developer.kde.org/~sewardj</a></td>
+    </tr>
+  <tr valign=top>
+    <td class=even>GDB &gt;= 5.0<br>(dobrze działający wewnętrzny debugger)</td>
+    <td class=even><a href="http://www.gnu.org/software/gdb/" TARGET="_top">www.gnu.org/software/gdb</a></td>
+    </tr>
+  <tr valign=top>
+    <td class=odd>CVS &gt;= 1.10.6<br>(integracja z CVS)</td>
+    <td class=odd><a href="http://www.cvshome.org/" TARGET="_top">www.cvshome.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Perforce &gt;= 2003.1<br>(integracja z Perforce)</td>
+    <td class=even><a href="http://www.perforce.com/perforce/products.html" TARGET="_top">www.perforce.com/perforce/products.html</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Clearcase &gt;= 4.0<br>(integracja z Clearcase)</td>
+    <td class=odd><a href="http://www.rational.com/products/clearcase/index.jsp" TARGET="_top">www.rational.com/products/clearcase/index.jsp</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>CTags 5.x<br>(integracja z CTags)</td>
+    <td class=even><a href="http://ctags.sourceforge.net/" TARGET="_top">ctags.sourceforge.net</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Doxygen &gt;= 1.3.4<br>(generowanie api projektu)</td>
+    <td class=odd><a href="http://www.doxygen.org/" TARGET="_top">www.doxygen.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>dot &gt;= 1.8.7<br>(dziedziczenie klas i kolaboracja diagramów)</td>
+    <td class=even><a href="http://www.graphviz.org/" TARGET="_top">www.graphviz.org</a></td>
+  </tr>
+</table>
+
+<p>Proszę uwzględnij to, iż obsługa KDevelop dla języków tj. ada, pascal, java, etc. wymaga posiadania odpowiednich kompilatorów. KDevelop nie ogranicza cię co do wyboru kompilatora, ale oferuje te które do których zna opcje kompilowania. Obecnie dostępne wtyczki do kompilatorów to gcc, g++, f77, pghpf (Portland Group High Performance Fortran Compiler), pgf77 (Portland Group Fortran 77 Compiler), dcc (Borland Delphi Compiler) oraz fpc (Free Pascal Compiler).</p>
+
+<?php module_tail(); ?>

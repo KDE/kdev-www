@@ -1,0 +1,125 @@
+<?php include_file("$k_base_version/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file()
+module_head("Инструкции для сборки версии KDevelop 3.x"); ?>
+<ol>
+<li>Перед тем как продолжать, необходимо убедиться в наличии <a href="index.html?filename=3.1/requirements.html">необходимого ПО</a>.
+<br>
+<li>Получите исходники ветки <b>KDE_3_3_BRANCH</b> согласно вышеприведенной информации.</li>
+<br>
+<li>Инициализируйте систему сборки:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ make -f admin/Makefile.common cvs-clean</dd>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+</li>
+</ol>
+<?php
+  include_file("3.1/compiling.ihtml");
+  module_tail();
+  module_head("Как обновлять имеющуюся версию");
+?>
+После успешной загрузки и компиляции ветки CVS, можно поддерживать ее в обновленном состоянии чтобы всегда иметь возможность использовать последние исправления.
+<ol><li>Вместо набора инструкций можно устанавливать переменные окружения в файлах .bashrc или .cshrc.
+
+<ul>
+<li>При использовании оболочки bash:
+<dl>
+<dd class="code">export KDEDIR=/путь/к/kde3</dd>
+<dd class="code">export QTDIR=/путь/к/qt3</dd>
+<dd class="code">export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl></li>
+<li>при использовании оболочки tcsh:
+<dl>
+<dd class="code">setenv KDEDIR /путь/к/kde3</dd>
+<dd class="code">setenv QTDIR /путь/к/qt3</dd>
+<dd class="code">setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">setenv PATH $QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+</li></ul>
+<b>Заметка:</b> По очевидным причинам необходимо отредактировать первые две строки в соответствии с имеющейся конфигурацией! :)
+</li>
+<br>
+<br>
+
+<li>Перейдите в каталог с кодом <i>kdevelop из CVS</i> и выполните команды:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ cvs update -dP</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>Следующий шаг зависит от вывода предыдущей команды:
+
+<ul>
+<li>Если вы получили что-то вроде:
+<dl>
+<dd class="code">U /путь/Makefile.am</dd>
+</dl>
+необходимо выполнить:
+<dl>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+за которым должен следовать ./configure
+</li>
+
+<br>
+<br>
+
+<li>
+Если получено что-то вроде:
+<dl>
+<dd class="code">P /путь/Makefile.am</dd>
+</dl>
+необходимо выполнить:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+используя параметры ./configure которые использовались при первой компиляции.
+</li>
+</ul>
+</li>
+
+<br>
+<br>
+
+<li>Скомпилируйте и установите kdevelop:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (под root)</dd>
+</dl>
+If for some reason the make command fails you can force it to ignore
+errors by adding the -k option like this:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (as root)</dd>
+</dl>
+Если по какой-либо причине команда make завершается неудачно, то можно игнорировать ошибки указывая параметр -k. В зависимости от степени тяжести ошибки можно получить как работающую так и неработающую версию kdevelop. Так что, используйте "make -k install" на собственное усмотрение!!!. В любом случае такие ошибки обычно уходят через пару часов, так что можно попытаться обновиться попозже перед страшной :) командой make install.
+</li></ol>
+
+<br>
+<br>
+
+Это все! Теперь вы имеете наиболее свежую версию KDevelop. 
+Для запуска выполните:
+<dl>
+<dd class="code">$ kdevelop</dd>
+</dl>
+
+<p>Все, что необходимо делать для поддержки свежей версии - это повторять предыдущие шаги в случае если кто-либо в списке рассылки <a href="index.html?filename=mailinglist.html">kdevelop-devel@kdevelop.org</a>
+исправит ошибку. <br>
+Так что приглашаем <a href="index.html?filename=mailinglist.html">подписаться на список рассылки</a>.</p>
+
+<p>Ошибки следует сообщать с помощью <a
+href="http://bugs.kde.org/wizard.cgi">формы сообщений об ошибках</a>. <b>Не следует</b> сообщать там об ошибках компиляции. Для таких случаев необходимо использовать <a href="index.html?filename=mailinglist.html">список рассылки</a>.
+</p>
+
+<p>Взглянуть на ошибки можно в <a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&order=map_components.name,bugs.bug_id">базе данных об ошибках</a>.</p>
+
+<?php module_tail();

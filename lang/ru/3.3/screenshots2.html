@@ -1,0 +1,56 @@
+<?php module_head("KDevelop $k_series_version Снимки экрана, страница 2");?>
+
+<table width="100%" cellspacing=2 cellpadding=2 border=0>
+  <tr>
+    <td align=center><a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots1.html">Страница 1</a>
+    <td align=center>Страница 2
+    <td align=center><a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots3.html">Страница 3</a>
+  </tr>
+</table>
+
+<table width="100%" cellspacing=2 cellpadding=2 border=0>
+  <tr>
+    <th class=header width="50%" align=center>Просмотр переменных</th>
+    <th class=header width="50%" align=center>Контекстное меню</th>
+  </tr>
+  <tr>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/variables_window.png"><img border="0" src="graphics/screenshots/3.3/thumbs/variables_window.png" width="140" height="100" alt="Просмотр переменных"/></a>
+<div align="justify"><ul><li>
+Показываются только локальные переменные, что позволяет избежать путаницы с другими переменными и потоками
+</li><li>
+Новая кнопка "Вычислить", которая позволяет вычислять значение выражения без обновления его на каждом шаге.
+</li><li>
+Переменные p1 и p3 -- теперь значение не содержит префикс типа. В прошлой версии можно было видеть, что-то вроде, "(int*) 0x8049abc" в качестве значения
+</li><li>
+Переменные p4 и s -- теперь стало возможно отображение статических членов классов без проблем с выводом QString
+</li></ul></div>
+    </td>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/main_popup.png"><img border="0" src="graphics/screenshots/3.3/thumbs/main_popup.png" width="140" height="100" alt="Контекстное меню"/></a>
+<div align="justify"><ul><li>
+Добавлена команда "Выполнить до курсора"
+</li><li>
+Добавлена команда "Вычислить"
+</li><li>
+При запущеном отладчике, команды отладчика располагаются вверху
+</li></ul></div>
+    </td>
+  </tr>
+  <tr>
+    <th class=header width="50%" align=center>Редактирование переменных</th>
+    <th class=header width="50%" align=center>Команды окна редактирования переменных</th>
+  </tr>
+  <tr>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/editing_variable.png"><img border="0" src="graphics/screenshots/3.3/thumbs/editing_variable.png" width="140" height="100" alt="Редактирование переменных"/></a>
+<p>Переменные теперь можно редактировать</p>
+    </td>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/variables_popup.png"><img border="0" src="graphics/screenshots/3.3/thumbs/variables_popup.png" width="140" height="100" alt="Команды окна редактирования переменных"/></a>
+<p>Новая команда "Запомнить значение"</p>
+    </td>
+  </tr>
+</table>
+
+<?php module_tail();?>

@@ -1,0 +1,198 @@
+<?php module_head("KDevelop $k_series_version Szolg&aacute;ltat&aacute;sok");?>
+
+Tartalmaz minden
+<a href="index.html?filename=3.3/features.html">
+KDevelop 3.3.x szolg&aacute;ltat&aacute;st</a> plussz:<br>
+
+<ul><li><b>Tov&aacute;bbfejlesztett Qt 4 t&aacute;mogat&aacute;s</b>
+<ul><li>Új projekt l&eacute;trehoz&aacute;sakor megadhat&oacute; a Qt telep&iacute;t&eacute;s k&ouml;nyvt&aacute;ra
+</li><li>Megfelelő Designer megnyit&aacute;sa a .ui f&aacute;jlokhoz
+</li><li>qmake projektekben a megfelelő qmake h&iacute;v&aacute;sa
+</li><li>Qt4 st&iacute;lus include-ok haszn&aacute;lata
+</li><li>Új kapcsol&oacute;k Qt4-es v&aacute;ltoz&oacute;khoz a projek be&aacute;ll&iacute;t&aacute;sokban
+</li><li>Qt4 erőforr&aacute;sok (qrc) kezel&eacute;se a QMake kezelőben
+</li></ul>
+</li></ul>
+<ul><li><b>Tov&aacute;bbfejlesztett QMake kezelő</b>
+<ul><li>Új &eacute;rtelmező, mely nem cser&eacute;li ki a projektf&aacute;lok tartalm&aacute;t
+</li><li>Qt4 k&ouml;rnyezet helyes felder&iacute;t&eacute;se &eacute;s megjelen&iacute;t&eacute;se
+</li><li>Hat&oacute;k&ouml;r&ouml;k
+<ul><li>Az &aacute;ttekint&eacute;sben a hat&oacute;k&ouml;r&ouml;k megjelen&iacute;t&eacute;se fastruktúr&aacute;ban
+</li><li>Minden jelleg&utilde; hat&oacute;k&ouml;r hozz&aacute;ad&aacute;sa/elt&aacute;vol&iacute;t&aacute;sa (egyszer&utilde;, f&uuml;ggv&eacute;ny &eacute;s include-ok)
+</li><li>Hat&oacute;k&ouml;r&ouml;n bel&uuml;li f&aacute;jlok kihagy&aacute;sa l&eacute;nyegesen egyszer&utilde;bb
+</li><li>Hat&oacute;k&ouml;r&ouml;k&ouml;n bel&uuml;li alprojektek kihagy&aacute;s&aacute;nak t&aacute;mogat&aacute;sa, a GUI-n megfelelő megjelen&iacute;t&eacute;ssel
+</li></ul>
+</li><li>F&aacute;jlkezel&eacute;s
+<ul><li>Relat&iacute;v f&aacute;jlnevek t&aacute;mogat&aacute;sa
+</li><li>V&aacute;ltoz&oacute;kat tartalmaz&oacute; útvonalnevek t&aacute;mogat&aacute;sa
+</li></ul>
+</li><li>A projekt fők&ouml;nyvt&aacute;r&aacute;n k&iacute;v&uuml;li alprojektek t&aacute;mogat&aacute;sa
+</li><li>Minden dokument&aacute;lt &eacute;s n&eacute;h&aacute;ny nem dokument&aacute;lt QMake szolg&aacute;ltat&aacute;s t&aacute;mogat&aacute;sa
+<ul><li>T&aacute;mogatja a SUBDIRS = egyk&ouml;nyvt&aacute;r, egyk&ouml;nyvt&aacute;r.subdir = a_val&oacute;di_k&ouml;nyvt&aacute;r alakú kifejez&eacute;seket
+</li><li>T&aacute;mogatja a SUBDIRS = egyf&aacute;jl.pro alakú kifejez&eacute;seket
+</li></ul>
+</li><li>Új &eacute;s jav&iacute;tott "Build" opci&oacute;k
+<ul><li>qmake rekurz&iacute;v futtat&aacute;sa
+</li><li>"Dist-Clean"
+</li><li>"Build File"
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Tov&aacute;bbfejlesztett debugger</b>
+<ul><li>Vadonatúj mem&oacute;riafigyelő
+</li><li>A projekt automatikusan újraford&iacute;t&aacute;sra ker&uuml;l a debugger ind&iacute;t&aacute;sakor
+</li><li>V&aacute;ltoz&oacute;k ablak
+<ul><li>Megfelelő m&utilde;k&ouml;d&eacute;s "&aacute;rny&eacute;kolt" v&aacute;ltoz&oacute;k jelenl&eacute;t&eacute;ben
+</li><li>Új "form&aacute;z&aacute;s" men&uuml;, k&uuml;l&ouml;nleges "bin&aacute;ris" &eacute;s "karakter" form&aacute;tumok t&aacute;mogat&aacute;s&aacute;val, minden form&aacute;tumhoz k&uuml;l&ouml;n billenty&utilde;kombin&aacute;ci&oacute;val.
+</li><li>Billenty&utilde;zetkombin&aacute;ci&oacute; őrszemek t&ouml;rl&eacute;s&eacute;hez.
+</li></ul>
+</li><li>"Stack widget"
+<ul><li>Tartalma oszlopokra osztva
+</li><li>"Stack frame"-ek inkrement&aacute;lisan vannak kezelve, a v&eacute;gtelen rekurzi&oacute;ban fut&oacute; programok egyszer&utilde;bb debuggol&aacute;sa &eacute;rdek&eacute;ben.
+</li></ul>
+</li><li>T&ouml;r&eacute;spont fejleszt&eacute;sek
+<ul><li>T&ouml;r&eacute;spont-t&iacute;pusok az egy&eacute;rtelm&utilde;s&eacute;g kedv&eacute;&eacute;rt &aacute;tnevez&eacute;sre ker&uuml;ltek
+</li><li>Őrszemek mostant&oacute;l mindig c&iacute;mhez rendelődnek, nem kifejez&eacute;shez
+</li><li>Őrszem el&eacute;r&eacute;sekor dial&oacute;gusablak megjelen&iacute;t&eacute;se
+</li><li>T&ouml;r&eacute;spont felt&eacute;telek helyes visszat&ouml;lt&eacute;se a munkamenet f&aacute;jlb&oacute;l
+</li><li>Manu&aacute;lisan hozz&aacute;adott t&ouml;r&eacute;spontok a t&ouml;r&eacute;spont list&aacute;ban is l&aacute;tsz&oacute;dnak
+</li><li>C&iacute;mhez rendelt t&ouml;r&eacute;spontok m&utilde;k&ouml;dnek
+</li></ul>
+</li><li>GDB kimeneti ablakban sz&utilde;rhetők a "belső" parancsok.
+</li><li>"Hozz&aacute;csatol&aacute;s" ablak r&aacute;ncfelvarr&aacute;sa. Kereső sor hozz&aacute;adva.
+</li><li>Jav&iacute;t&aacute;sok
+<ul><li>"Megszak&iacute;t&aacute;s" esem&eacute;ny soha nem ker&uuml;l letilt&aacute;sra
+</li><li>gdb el&eacute;r&eacute;si útvonal&aacute;nak megad&aacute;sa teljes v&eacute;grehajthat&oacute; f&aacute;jln&eacute;vvel, nem csak útvonallal
+</li></ul>
+</li><li>GDB MI fel&uuml;let haszn&aacute;lata gyorsabb &eacute;s robusztusabb m&utilde;k&ouml;d&eacute;s &eacute;rdek&eacute;ben.
+</li></ul>
+</li></ul>
+<ul><li><b>Tov&aacute;bbfejlesztett Ctags t&aacute;mogat&aacute;s</b>
+<ul><li>Mostant&oacute;l lehetős&eacute;g van t&ouml;bb c&iacute;mke egyidej&utilde; aktiv&aacute;l&aacute;s&aacute;ra, lehetőv&eacute; t&eacute;ve a vill&aacute;mgyors keres&eacute;st k&uuml;lső forr&aacute;sokban.
+</li></ul>
+</li></ul>
+<ul><li><b>Tov&aacute;bbfejlesztett felhaszn&aacute;l&oacute;i fel&uuml;let</b>
+<ul><li>Az új alap&eacute;rtelmezett fel&uuml;let a "Simple IDEAl"
+<ul><li>Gyorsabb &eacute;s kevesebb hib&aacute;t tartalmaz
+</li><li>Kevesebb helyet foglal a k&eacute;pernyőn
+</li><li>A n&eacute;zett&eacute;r feloszthat&oacute;, ezzel lehetőv&eacute; t&eacute;ve a KDevelop sz&aacute;m&aacute;ra a f&aacute;jlok egym&aacute;s melletti megjelen&iacute;t&eacute;s&eacute;t.
+</li><li>IntelliJ IDEA - Eszk&ouml;zt&aacute;r-n&eacute;zet navig&aacute;ci&oacute; billenty&utilde;zettel (pl. &lt;alt+1&gt;, &lt;alt+2&gt;, stb.)
+</li><li>Jobb billenty&utilde;zetnavig&aacute;ci&oacute; &eacute;s f&oacute;kuszkezel&eacute;s
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Tov&aacute;bbfejlesztett k&oacute;dújraform&aacute;z&aacute;s</b>
+<ul><li>Kevesebb hiba (friss&iacute;tve AStyle 1.19-re)
+</li><li>Minden AStyle kapcsol&oacute; t&aacute;mogat&aacute;sa
+</li><li>Tov&aacute;bbfejlesztett kapcsol&oacute;be&aacute;ll&iacute;t&oacute; p&aacute;rbesz&eacute;dablak
+</li><li>Glob&aacute;lis &eacute;s projektenk&eacute;nti be&aacute;ll&iacute;t&aacute;sok
+</li><li>T&ouml;bb f&aacute;jl egyidej&utilde; form&aacute;z&aacute;sa
+</li></ul>
+</li></ul>
+<ul><li><b>C++ t&aacute;mogat&aacute;s</b>
+<ul><li> deklar&aacute;ci&oacute;/implement&aacute;ci&oacute; v&aacute;lt&aacute;s
+<ul><li> egyazon f&aacute;jlon bel&uuml;l m&utilde;k&ouml;dik
+</li><li> typedef-k&eacute;nt megadott visszat&eacute;r&eacute;si &eacute;rt&eacute;k&utilde; elj&aacute;r&aacute;sokkal is helyesen m&utilde;k&ouml;dik
+</li><li> konstans f&uuml;ggv&eacute;nyekkel is m&utilde;k&ouml;dik
+</li><li> n&eacute;vt&eacute;rbeli f&uuml;ggv&eacute;nyek lokaliz&aacute;l&aacute;s&aacute;n&aacute;l mellőzi a direkt&iacute;v&aacute;k haszn&aacute;lat&aacute;t
+</li></ul>
+</li><li> Perzisztens Oszt&aacute;ly T&aacute;rol&aacute;s (k&oacute;dkieg&eacute;sz&iacute;tő adab&aacute;zisok)
+<ul><li> KDE oszt&aacute;ly import&aacute;l&oacute; helyesen megtal&aacute;lja a kdelibs útvonal&aacute;t
+</li><li> Qt4 oszt&aacute;ly import&aacute;l&oacute; hozz&aacute;adva
+</li><li> automatikusan felismert útvonalak manu&aacute;lisan fel&uuml;lb&iacute;r&aacute;lhat&oacute;k
+</li></ul>
+</li><li> k&oacute;d tippek
+<ul><li> az &aacute;llapotsoron megtekinthető a kurzor alatti kifejez&eacute;s t&iacute;pusa
+</li></ul>
+</li><li> c++ elemző
+<ul><li> Elemző m&oacute;dos&iacute;t&aacute;sa úgy, hogy az kiemelje a megjegyz&eacute;seket a k&oacute;db&oacute;l &eacute;s hozz&aacute;csatolja a megfelelő elemekhez, valamint t&aacute;rolja őket az AST-ben
+</li><li> Hiba jav&iacute;t&aacute;sa, melynek sor&aacute;n a sok makr&oacute;t tartalmaz&oacute; f&aacute;jlok eset&eacute;n a cpp elemző mem&oacute;riahaszn&aacute;lata drasztikusan megnőtt.
+</li></ul>
+</li><li> k&oacute;d modell
+<ul><li> k&oacute;d modell &eacute;s t&aacute;r &aacute;talak&iacute;t&aacute;sa úgy, hogy az t&ouml;bb inform&aacute;ci&oacute;t t&aacute;roljon pl. sablonok &eacute;s megjegyz&eacute;sek, valamint megfelelően haszn&aacute;lhat&oacute;v&aacute; tegye azt.
+</li><li> a k&oacute;d modell teljesen m&utilde;k&ouml;dők&eacute;pes olyan be&aacute;gyazott oszt&aacute;lyok eset&eacute;n, melyek egyik f&aacute;jlban csak elődeklar&aacute;lva vannak, teljes deklar&aacute;ci&oacute;juk pedig egy m&aacute;sikban f&aacute;jlban tal&aacute;lhat&oacute; ( f&aacute;jl-csoportok kezel&eacute;se megoldva &eacute;s azon k&oacute;d-modell-elemek, melyek fizikailag egy f&aacute;jlb&oacute;l vannak, hozz&aacute;csatolhat&oacute;k egy m&aacute;sikhoz, emiatt n&eacute;h&aacute;ny kereső-funkci&oacute;t is tov&aacute;bb kellett fejleszteni).
+</li></ul>
+</li><li> k&oacute;dkieg&eacute;sz&iacute;t&aacute;s
+<ul><li> l&eacute;nyegesen megb&iacute;zhat&oacute;bb
+</li><li> nagyr&eacute;szt újra&iacute;r&oacute;dott
+</li><li> sablon oszt&aacute;lyokon bel&uuml;l is m&utilde;k&ouml;dik
+</li><li> using direkt&iacute;v&aacute;val import&aacute;lt oszt&aacute;lyok f&uuml;ggv&eacute;nyein bel&uuml;l is m&utilde;k&ouml;dik
+</li><li> sokkal &ouml;sszetettebb kifejez&eacute;seket is k&eacute;pes &eacute;rtelmezni &eacute;s egyszer&utilde;en kiterjeszthető tov&aacute;bbiak &eacute;rtelmez&eacute;s&eacute;re (egy absztrakt oper&aacute;tor oszt&aacute;ly haszn&aacute;lat&aacute;val)
+</li><li> oszt&aacute;ly-, f&uuml;ggv&eacute;ny-sablonok t&aacute;mogat&aacute;sa, sőt f&uuml;ggv&eacute;nysablonok implicit p&eacute;ld&aacute;nyos&iacute;t&aacute;s&aacute;t is t&aacute;mogatja
+</li><li> minden kieg&eacute;sz&iacute;t&eacute;s-listabeli t&iacute;pus ki&eacute;rt&eacute;kel&eacute;se &eacute;s a val&oacute;di t&iacute;pus mutat&aacute;sa
+</li><li> kieg&eacute;sz&iacute;t&eacute;slista a megfelelő megjegyz&eacute;seket is megjelen&iacute;ti
+</li><li> a kieg&eacute;sz&iacute;t&eacute;slista tagokat hozz&aacute;f&eacute;r&eacute;si jog szerint rendezve jelen&iacute;ti meg &eacute;s minden protected/private tag ut&aacute;n egy figyelmeztet&eacute;st tartalmaz
+</li><li> T&ouml;bb hiba mellett jav&iacute;tva az, melynek sor&aacute;n a KDvelop elsz&aacute;ll egy olyan oszt&aacute;ly kieg&eacute;sz&iacute;t&eacute;sekor, mely saj&aacute;t maga ősoszt&aacute;lya
+</li></ul>
+</li><li> új kontextus-men&uuml;k, melyek ki&eacute;rt&eacute;kelik a kurzor alatti kifejez&eacute;st &eacute;s lehetőv&eacute; teszik a k&oacute;d, valamint a k&oacute;d modell b&ouml;ng&eacute;sz&eacute;s&eacute;t minden t&iacute;pus &eacute;s v&aacute;ltoz&oacute; bevon&aacute;s&aacute;val
+</li><li> új oszt&aacute;ly var&aacute;zsl&oacute; 
+<ul><li> hibajav&iacute;t&aacute;sok
+</li><li> csak header f&aacute;jlok l&eacute;trehoz&aacute;sa
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li> <b>Oszt&aacute;ly n&eacute;zet &eacute;s B&ouml;ng&eacute;sző</b>
+<ul><li> f&uuml;ggv&eacute;nyn&eacute;v kiemel&eacute;s hozz&aacute;ad&aacute;sa az oszt&aacute;ly n&eacute;zethez &eacute;s b&ouml;ng&eacute;szőh&ouml;z
+</li><li> b&ouml;ng&eacute;sző saj&aacute;t KCompletition modullal, &iacute;gy lehets&eacute;ges hat&oacute;k&ouml;r n&eacute;lk&uuml;li f&uuml;ggv&eacute;nyneveket &iacute;rni &eacute;s kieg&eacute;sz&iacute;teni
+</li><li> Friss&iacute;t&eacute;s ut&aacute;n Oszt&aacute;lyb&ouml;ng&eacute;sző &aacute;llapot&aacute;nak vissza&aacute;ll&iacute;t&aacute;sa. Az oszt&aacute;lyb&ouml;ng&eacute;sző t&ouml;bb&eacute; nem z&aacute;r&oacute;dik be sikeres ford&iacute;t&aacute;s ut&aacute;n
+</li></ul>
+</li></ul>
+<ul><li> <b>Gyors megnyit&aacute;s</b>
+<ul><li> Hat&oacute;k&ouml;r k&uuml;l&ouml;n r&eacute;szei haszn&aacute;lhat&oacute;k sz&utilde;rők&eacute;nt oszt&aacute;lyok vagy f&uuml;ggv&eacute;nyek keres&eacute;s&eacute;re
+</li><li> Gyors megnyit&aacute;s oszt&aacute;ly rendelkezik egy k&uuml;l&ouml;n p&aacute;rbesz&eacute;dablakkal, arra az esetre, ha t&ouml;bb azonos nev&utilde; oszt&aacute;ly l&eacute;tezne
+</li></ul>
+</li></ul>
+<ul><li> <b>Ruby t&aacute;mogat&aacute;s</b>
+<ul><li> Rails alkalmaz&aacute;s sablon
+</li><li> Az elemző felismeri a modulokon bel&uuml;li oszt&aacute;lyokat
+</li><li> irb-t haszn&aacute;lja shell-k&eacute;nt
+</li><li> Rails &eacute;s QtRuby m&utilde;k&ouml;d&eacute;s&eacute;hez sz&uuml;ks&eacute;ges dokument&aacute;ci&oacute;beli TOC hivatkoz&aacute;sok jav&iacute;t&aacute;sa
+</li><li> Futtat&aacute;s men&uuml; haszn&aacute;lata a WEBrick ind&iacute;t&aacute;s&aacute;hoz.
+</li><li> az &eacute;rtelmező 
+<ul><li> felismeri a "self.method" h&iacute;v&aacute;st
+</li><li> nem ker&uuml;l v&eacute;gtelen ciklusba bizonyos esetekben
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li> <b>PHP t&aacute;mogat&aacute;s</b>
+<ul><li> New PHP elemző / k&oacute;d kieg&eacute;sz&iacute;tő
+</li><li> Jav&iacute;t&aacute;sok a php t&aacute;mogat&oacute; nyelvben, melyek &ouml;sszeoml&aacute;shoz vezettek
+</li></ul>
+</li></ul>
+<ul><li> <b>Konsole</b>
+<ul><li> T&ouml;bb&eacute; nem szinkroniz&aacute;l az aktu&aacute;lis dokumentumk&ouml;nyvt&aacute;rral
+</li></ul>
+</li></ul>
+<ul><li> <b>Grep (Keres&eacute;s f&aacute;jlokban)</b>
+<ul><li> T&ouml;bb kereshető f&aacute;jlt&iacute;pus deklar&aacute;l&aacute;sa (beker&uuml;lt pl. ruby)
+</li><li> minta enged&eacute;lyez&eacute;se regul&aacute;ris kifejez&eacute;sk&eacute;nt
+</li></ul>
+</li></ul>
+<ul><li> <b>Kimenetn&eacute;zetek</b>
+<ul><li> Intel Fortran Compiler &eacute;s Portland Group PGI Fortran ford&iacute;t&oacute;k (pgf90/pgf95) t&aacute;mogat&aacute;sa
+</li></ul>
+</li></ul>
+<ul><li> <b>Alkalmaz&aacute;svar&aacute;zsl&oacute;</b>
+<ul><li> utf8 haszn&aacute;lata a l&eacute;trehozott f&aacute;jlokban - t&ouml;bb&eacute; nincsenek k&oacute;dol&aacute;si probl&eacute;m&aacute;k
+</li></ul>
+</li></ul>
+<ul><li> <b>Valgrind integr&aacute;ci&oacute;</b>
+<ul><li> K&ouml;rnyezeti v&aacute;ltoz&oacute;k haszn&aacute;lata, ahogy azok a futtat&aacute;si opci&oacute;kban meg lettek adva
+</li></ul>
+</li></ul>
+<ul><li> <b>Egy&eacute;b</b>
+<ul><li> Eszk&ouml;zt&aacute;r bejegyz&eacute;s az "Utols&oacute; szerkeszt&eacute;s hely&eacute;re ugr&aacute;s" m&utilde;velethez
+</li><li> K&oacute;dol&aacute;s t&aacute;mogat&aacute;s tov&aacute;bbfejleszt&eacute;se
+<ul><li> A KDevelop ezentúl a f&aacute;jl megnyit&aacute;sa p&aacute;rbesz&eacute;dablakban megadott k&oacute;dol&aacute;snak fog engedelmeskedni
+</li><li> A "Megnyit&aacute;s m&aacute;ssal" modulban minden k&oacute;dol&aacute;s el&eacute;rhető, amit a "Megnyit&aacute;s mint..." k&iacute;n&aacute;l
+</li><li> Minden f&aacute;jl k&oacute;dol&aacute;sa elt&aacute;rol&oacute;dik a munkamenet f&aacute;jlban &eacute;s a projekt legk&ouml;zelebbi bet&ouml;lt&eacute;sekor innen ker&uuml;l alkalmaz&aacute;sra
+</li><li> Alap&eacute;rtelmezett k&oacute;dol&aacute;s projektenk&eacute;nt &aacute;ll&iacute;that&oacute; a "Projekt be&aacute;ll&iacute;t&aacute;sai"-ban - ez lesz az alap&eacute;rtelmezett egy f&aacute;jl megnyit&aacute;sakor
+</li><li> "Megnyit&aacute;s" alap&eacute;rtelmezett k&oacute;dol&aacute;sa ugyanaz lesz, mint a projekt be&aacute;ll&iacute;t&aacute;saiban
+</li></ul>
+</li><li> Bőv&iacute;tm&eacute;ny-v&aacute;laszt&oacute; kiker&uuml;lt a projekt be&aacute;ll&iacute;t&aacute;sai ablakb&oacute;l, helyette a fő men&uuml; "Be&aacute;ll&iacute;t&aacute;sok" pont&aacute;jban &eacute;rhető el &eacute;s profil-alapú lett
+</li><li> Profil motor haszn&aacute;lata újonnan l&eacute;trehozott vagy import&aacute;lt projektek alap&eacute;rtelmezett bőv&iacute;tm&eacute;ny&eacute;nek be&aacute;ll&iacute;t&aacute;s&aacute;ra
+</li><li> Fel&uuml;letszerkesztő be&aacute;gyaz&aacute;s be&aacute;ll&iacute;t&aacute;s&aacute;nak d&iacute;jaz&aacute;sa
+</li></ul>
+</li></ul>
+
+<?php module_tail();?>

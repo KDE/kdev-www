@@ -1,0 +1,188 @@
+<?php module_head("Tutorial about autoconf and KDevelop");?>
+<p>Unterhalb des KDevelop-Systems liegt das GNU
+<a href="http://www.gnu.org/software/autoconf/">Autoconf</a>
+System. <i>Autoconf</i> ist eine Reihe von Werkzeugen, die Makefiles
+und Konfigurationsskripe erstellen. Es ist mächtig, flexibel und fast
+komplett unverständlich, besonders wenn es die Aufgabe ist, eine einfache
+Abhängigkeit zu einem Programm hinzuzufügen.</p>
+
+<p>Das KDE <b>admin/</b> Verzeichnis enthält einige Konfigurationsdateien
+und -skripte, die diesen Prozess vereinfachen sollen, mit wenig Erfolg.
+Die wichtigsten Befehle, um die KDevelop Autoconf Einstellungen zu verändern, sind
+<b>make -f admin/Makefile.common</b> (und das verehrte <b>rm config.guess</b>
+wenn Sie noch KDevelop 2.x benutzen).
+Der Aufruf von <b>make</b> mit dem administrativen Makefile generiert die
+Autoconf-Einstellungen und Löschen von config.guess leert den Konfigurations-Cache,
+wie es bei jeder etwaigen festen Einstellung wäre.</p>
+
+<p>Ein bekanntes Szenario, das die Modifikation der Autoconf-Dateien erfordert, ist,
+eine externe Abhängigkeit zu einer Shared Library, die nicht Teil der KDevelop GUI ist,
+hinzuzufügen; z.B. libxml2. Es ist einfach, die Befehle <b>`xml2-config --cflags`</b>
+und <b>`xml2-config --libs`</b> zur CPPFLAGS- und LDFLAGS-Sektion der KDevelop-Optionen
+für das verwendete Profil hinzuzufügen. Wie auch immer, diese Werte werden nur benutzt,
+um in KDevelop zu kompilieren und gehen verloren, wenn man die Quellen abpackt (.tar.gz).</p>
+
+<p>Diese Abhängigkeit dann hinzuzufügen ist die Aufgabe von Autoconf.
+Zwei Dateien sind in diesem Szenario zu modifizieren: <b>configure.in.in</b>
+und <b>Makefile.am</b>. configure.in.in ist eine von KDevelop beim Erstellen
+eines neuen Projekts erstellte Vorlage. KDevelop überschreibt Änderungen an
+dieser Datei nicht. Makefile.am ist auch eine Vorlage, aber KDevelop 2.x könnte
+Teile der Datei überschreiben. Die Sektionen, die überschrieben werden könnten,
+sind klar markiert und die Änderungen außerhalb dieser Sektionen werden sicher
+beibehalten. Diese Einschränkung ist mit KDevelop 3.0 verschwunden.<p>
+
+<p>Also was bewirken diese Dateien?</p>
+
+<p><b>configure.in.in</b> ist eine von <a href="http://www.gnu.org/software/m4/m4.html">m4</a>,
+der GNU Makro Processing Sprache, verarbeitete Datei.
+Dieselbe Makrosprache wird benutzt, um die Konfigurationsdateien von <i>Sendmail</i>
+zu erstellen. Obwohl sie eine lernenswert Sprache ist, werden wir sie hier nicht erklären.
+Stattdessen ist unten ein Codeteil aufgelistet, den man in configure.in.in einfügen kann,
+um auf libxml2 zu prüfen:<p>
+
+<pre>
+dnl -----------------------------------------------------------------------
+dnl libxml2 check from http://websvn.kde.org/*checkout*/branches/KDE/3.5/kdelibs/kdoctools/configure.in.in
+
+KDE_FIND_PATH(xml2-config, XML_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxml2 anywhere, check ftp://xmlsoft.org/ for libxml >= 2.4.8.
+  HELP_SUBDIR=
+])
+
+if test -n "$XML_CONFIG"; then
+  vers=`$XML_CONFIG --version 2>/dev/null | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" &amp;&amp; test "$vers" -ge 2005000
+  then
+     LIBXML_LIBS="`$XML_CONFIG --libs`"
+     LIBXML_RPATH=
+     for args in $LIBXML_LIBS; do
+          case $args in
+            -L*)
+               LIBXML_RPATH="$LIBXML_RPATH $args"
+               ;;
+          esac
+     done
+     LIBXML_RPATH=`echo $LIBXML_RPATH | sed -e "s/-L/-R/g"`
+     LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
+  else
+     AC_MSG_WARN([You need at least libxml 2.5.0])
+     HELP_SUBDIR=
+  fi
+fi
+
+AC_SUBST(LIBXML_LIBS)
+AC_SUBST(LIBXML_CFLAGS)
+dnl -----------------------------------------------------------------------
+</pre>
+
+<p>Hier einige Eläuterungen:</p>
+
+<pre>
+KDE_FIND_PATH(xml2-config, XML_CONFIG, [${prefix}/bin ${exec_prefix}/bin /usr/local/bin /opt/local/bin], [
+  AC_MSG_WARN([Could not find libxml2 anywhere, check ftp://xmlsoft.org/ for libxml >= 2.4.8.
+  HELP_SUBDIR=
+])
+</pre>
+
+<p>Dieses Code-Segment sucht einfach nach dem <i>xml2-config</i> Programm in einigen
+vordefinierten Pfaden. Der Pfad zur Ausführbaren ist in der Variable <b>XML_CONFIG</b>,
+dem zweiten Parameter, gespeichert. Wenn das Programm nicht gefunden werden kann, bleibt
+die Variable leer und eine Fehlermeldung wird ausgedruckt.</p>
+
+<pre>
+if test -n "$XML_CONFIG"; then
+  vers=`$XML_CONFIG --version 2>/dev/null | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+  if test -n "$vers" &amp;&amp; test "$vers" -ge 2005000
+  then
+</pre>
+<p>Wenn die XML_CONFIG-Variable mit dem korrekten Pfad gesetzt ist, frage nach der Version.
+Dieses Programm braucht Version 2.5.0 oder neuer, also prüft es diesen Wert hier.</p>
+
+<pre>
+     LIBXML_LIBS="`$XML_CONFIG --libs`"
+     LIBXML_RPATH=
+     for args in $LIBXML_LIBS; do
+          case $args in
+            -L*)
+               LIBXML_RPATH="$LIBXML_RPATH $args"
+               ;;
+          esac
+     done
+     LIBXML_RPATH=`echo $LIBXML_RPATH | sed -e "s/-L/-R/g"`
+     LIBXML_CFLAGS="`$XML_CONFIG --cflags`"
+</pre>
+
+<p>Da die Versionsprüfung positiv war, werden gewisse Variablen, die von anderen
+Teilen des Autoconf-Systems genutzt werden, definiert. Diese Variablen sind
+<b>LIBXML_LIBS</b>, <b>LIBXML_RPATH</b> und <b>LIBXML_CFLAGS</b>.</p>
+
+<pre>
+  else
+     AC_MSG_WARN([You need at least libxml 2.5.0])
+     HELP_SUBDIR=
+  fi
+</pre>
+
+<p>Wenn libxml2 gefunden wurde aber die Version zu alt ist, drucke eine Fehlermeldung.</p>
+
+<pre>
+fi
+
+AC_SUBST(LIBXML_LIBS)
+AC_SUBST(LIBXML_CFLAGS)
+</pre>
+
+<p>Und mache die Variablen <b>LIBXML_LIBS</b> und <b>LIBXML_CFLAGS</b> für den
+Rest des Systems zugänglich. <b>LIBXML_RPATH</b> wird nicht benutzt, daher ist es
+nicht hier aufgeführt, aber verfügbar für den Export (export).</p>
+
+<p>Jetzt, da diese Variablen zum Rest von Autoconf "exportiert" sind, ist es Zeit,
+sie in die Makefiles einzufügen. Glücklicherweise ist das eine viel einfachere
+Aufgabe.</p>
+
+<p>Im Unterverzeichnis, das die Dateien zum Zugriff auf Headers und Bibliothekten
+enthält (das sollte das "project/" Unterverzeichnis in <i>project</i> sein),
+ist eine Datei namens <b>Makefile.am</b>. Ersetze diese Zeilen:
+<pre>
+# set the include path found by configure
+INCLUDES= $(all_includes)
+
+# the library search path.
+myAppName_LDFLAGS = $(all_libraries)
+</pre>
+
+durch diese:
+
+<pre>
+# set the include path found by configure
+INCLUDES= $(all_includes) $(LIBXML_CFLAGS)
+
+# the library search path.
+myAppName_LDFLAGS = $(all_libraries) $(LIBXML_LIBS)
+</pre>
+
+<p>Zu beachten ist wieder das Segment, das KDevelop überschreiben wird, wenn
+Sie Version 2.x benutzen. Wenn Sie Version 3 benutzen, können Sie diese Optionen
+entweder im Automake-Manager oder von Hand setzen (der Automake-Manager wird
+sie aufnehmen, wenn das Projekt neu geladen wird).</p>
+
+<p>Der letzte notwendige Schritt zur Integration besteht einfach darin, <b>make</b>
+aufzurufen. Abhängig von der Komplexität der Abhängigkeiten kann es
+trotzdem nötig sein, <b>make -f admin/Makefile.common</b> aufzurufen,
+was dafür sorgt, dass Autoconf seine Dateien erneuert und aufgeräumt wird,
+wo es KDevelop für nötig hält. Wenn zum Beispiel die Versionprüfungen
+verändert wurden, kann es notwendig sein, die Datei config.cache zu
+entfernen und configure nochmal aufzurufen. Ab hier ist <b>make</b> wirklich
+der letzte Schritt.</p>
+
+<p>Gratulation! Sie haben nun eine funktionierende libxml2-Prüfung und ein Softwarepaket,
+das damit innerhalb und außerhalb von KDevelop kompiliert werden kann!</p>
+
+<p>Für eine tiefergehende Einführung lesen Sie <a href="http://www.amath.washington.edu/~lf/tutorials/autoconf/toolsmanual_toc.html">
+diese Anleitung (englisch)</a>.</p>
+
+<p align=right>
+ <tt>Autor: Christopher W. Curtis (ccurtis0 at yahoo dot com) Letzte Änderung: 11.03.2003</tt>
+ <tt>Übersetzer: Chrstian Weickhmann (christian dot weickhmann at gmx dot de) Letzte Änderung: 03.07.2004</tt>
+</p>
+<?php module_tail();?>

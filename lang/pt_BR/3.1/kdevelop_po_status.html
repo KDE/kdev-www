@@ -1,0 +1,94 @@
+<?php
+  module_head("Estado da tradução da GUI do KDevelop 3.1.x");
+  include("inc/i18n_kde_org_translation_status.php");
+  $cvsbranch      = "KDE_3_3_BRANCH";
+  $lastupdate_msg = "&Uacute;ltima atualiza&ccedil;&atilde;o: ";
+  $almostdone_msg = "Quase completas (&#062;80&#037;): ";
+  $complete_msg   = "Completas: ";
+?>
+
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#8b898b" width="100%"><tr><td>
+<table cellspacing="1" cellpadding="2" border="0" width="100%">
+<tr bgcolor="#e0e0e0">
+  <td width="30%"><font size="2"><nobr><b>equipe de tradu&ccedil;&atilde;o</b></nobr></font></td>
+  <td width="10%"><font size="2"><b>arquivo</b></font></td>
+  <td><font size="2" color="#339933"><b>traduzido</b></font></td>
+  <td align="center"><font size="2" color="#339933"><b>%</b></font></td>
+  <td><font size="2" color="#333399"><b>confuso</b></font></td>
+  <td align="center"><font size="2" color="#333399"><b>%</b></font></td>
+  <td><font size="2" color="#dd3333"><nobr><b>n&atilde;o traduzido</b></nobr></font></td>
+  <td align="center"><font size="2" color="#dd3333"><b>%</b></font></td>
+  <td><font size="2"><b>total</b></font></td>
+  <td width="100%"><font size="2"><b>gr&aacute;fico</b></font></td>
+</tr>
+<?php
+  get_gui_trans_status($cvsbranch, ">kdevelop.po", $lastupdate_msg, $almostdone_msg, $complete_msg);
+?>
+</table>
+</td></tr>
+</table>
+<br>
+
+Para atualizar sua tradu&ccedil;&atilde;o da GUI baixe o arquivo kdevelop.po correspondente e fa&ccedil;a:<br>
+<pre>
+ $ msgfmt kdevelop.po -o kdevelop3.mo
+ $ cp kdevelop3.mo $KDEDIR/share/locale/[LANG_CODE]/LC_MESSAGES/kdevelop3.mo
+</pre>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#8b898b" width="100%"><tr><td>
+<table cellspacing="1" cellpadding="2" border="0" width="100%">
+<tr bgcolor="#e0e0e0">
+  <td width="30%"><font size="2"><nobr><b>equipe de tradu&ccedil;&atilde;o</b></nobr></font></td>
+  <td width="10%"><font size="2"><b>arquivo</b></font></td>
+  <td><font size="2" color="#339933"><b>traduzido</b></font></td>
+  <td align="center"><font size="2" color="#339933"><b>%</b></font></td>
+  <td><font size="2" color="#333399"><b>confuso</b></font></td>
+  <td align="center"><font size="2" color="#333399"><b>%</b></font></td>
+  <td><font size="2" color="#dd3333"><nobr><b>n&atilde;o traduzido</b></nobr></font></td>
+  <td align="center"><font size="2" color="#dd3333"><b>%</b></font></td>
+  <td><font size="2"><b>total</b></font></td>
+  <td width="100%"><font size="2"><b>gr&aacute;fico</b></font></td>
+</tr>
+<?php
+  get_gui_trans_status($cvsbranch, "desktop_kdevelop.po", $lastupdate_msg, $almostdone_msg, $complete_msg);
+?>
+</table>
+</td></tr>
+</table>
+
+
+<font size="2">
+<br>
+<b>Nota:</b><br>
+&nbsp;&nbsp;<b>1.</b> Apenas cat&aacute;logos PO que com arquivos POT correspondentes s&atilde;o inclu&iacute;dos na estat&iacute;stica.<br>
+&nbsp;&nbsp;<b>2.</b> Totais relativos ao n&uacute;mero de mensagens encontrados nos arquivos PO. Se por exemplo, devido a um erro, arquivos PO traduzidos tem um n&uacute;mero diferente de mensagens traduzidas do que o correspondente arquivo POT,
+ent&atilde;o pode aparecer uma discrep&acirc;ncia nestes n&uacute;meros.<br>
+&nbsp;&nbsp;<b>3.</b> Uma linha com o fundo vermelho indica que a equipe correspondente
+tem um arquivo PO com pelo menos um erro.<br>
+&nbsp;&nbsp;<b>4.</b> Uma linha com o fundo azul indica que o arquivo PO correspondente
+n&atilde;o tem um arquivo POT associado.<br>
+&nbsp;&nbsp;<b>5.</b> &Eacute; possiv&eacute;l que a soma das porcentagens de traduzido,
+confuso e n&atilde;o traduzido ultrapasse os 100% ou seja menor. Isto &eacute; normal devido
+a erros de arredondadmento porque os n&uacute;meros s&atilde;o truncados a 2 casas decimais.<br>
+
+
+<br>
+<b>Legenda:</b><br>
+&nbsp;&nbsp;<img src="graphics/stats/bar0.gif" height="15" width="30"> - mensagens traduzidas<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar4.gif" height="15" width="30"> - mensagens confusas<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar1.gif" height="15" width="30"> - mensagens n&atilde;o traduzidas<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar6.gif" height="15" width="30"> - informa&ccedil;&atilde;o n&atilde;o disponiv&eacute;l<br>
+<br>
+</font>
+
+<?php
+module_tail();
+$tdatetime = file('dynamic/'.$cvsbranch.'_po_status_lastupdate.ihtml');
+$tdatetime = explode(' ', $tdatetime[0]);
+$tdate = explode('-', $tdatetime[0]);
+$ttime = explode(':', $tdatetime[1]);
+return mktime($ttime[0], $ttime[1], 0, $tdate[1], $tdate[2], $tdate[0], 1 );
+?>

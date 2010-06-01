@@ -1,0 +1,73 @@
+<h2 align=center> 此页专注于 KDevelop <?php echo $k_series_version; ?> 系列的所有信息 </h2>
+
+<?php module_head("整体");?>
+<p>Version <?php echo $k_base_version; ?>.0 已随 KDE-<?php echo $k_kde_base_version; ?>.8 发布了.
+<a href="index.html?filename=versions.html">
+KDevelop <?php echo $k_base_version; ?>.x 修正版 </a> 将会
+<a href="http://techbase.kde.org/Schedules/KDE_<?php echo $k_kde_base_version; ?>_Release_Schedule">
+随 KDE-<?php echo $k_kde_base_version; ?>.x 一同发布 </a></p>
+
+<a href="index.html?filename=<?php echo $k_base_version; ?>/features.html">
+特性 </a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">
+需求 </a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/download.html">
+下载 </a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/branches_compiling.html">
+SVN 分支 与 编译 </a>, SVN分支的概要说明以及如何从SVN开始编译KDevelop.<br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+变更</a><br>
+<a name="Bugs">已知错误和问题:</a>
+<ul>
+  <li>没有更多的MDI接口模型, 有效模型只有 "simpleIDEAl"</li>
+  <li>Qeditor 和 yzis 不再支持了。 总是使用KATE。</li>
+  <li>Haskell语言不再支持了。</li>
+  <li><a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.bug_id">
+  bugzilla数据库中已报告的错误 </a></li>
+</ul>
+如果要报告新的错误， 可以通过KDevelop's 菜单 <em><u>H</u>elp -> <u>R</u>eport Bug...</em> 或 访问我们的
+<a href="index.html?filename=bugs.html">
+错误与期望页面 </a>.<br>
+<?php module_tail();?>
+
+<?php module_head("文档");?>
+<a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/">
+用户手册</a> (从SVN中每24小时生成一次docbook).<br>
+<a href="index.html?filename=tutorials.html">
+入门</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/faq.html">
+F.A.Q.</a>, 常见问题的解答.<br>
+<?php module_tail();?>
+
+<?php module_head("讲座和图片");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/announce-kdevelop-<?php echo $k_base_version; ?>.html">
+公共声明</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots.html">
+截图</a><br>
+<a href="index.html?filename=in_the_press.html">
+图书</a><br>
+<a href="index.html?filename=awards.html">
+得奖</a><br>
+<a href="index.html?filename=logos_banners.html">
+标志 与 广告</a><br>
+<a href="index.html?filename=splashscreens.html">
+截屏</a><br>
+<?php module_tail();?>
+
+<?php module_head("开发");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/ChangeLog.html">
+独立的SVN提交日志</a>.<br>
+<a href="http://lxr.kde.org/source/KDE/kdevelop/?v=<?php echo $k_kde_base_version; ?>-branch">
+访问代码</a>, LXR 生成页面.<br>
+<a href="http://websvn.kde.org/<?php echo $k_branch_path; ?>">
+Web SVN</a>, 访问SVN仓库中的代码.<br>
+<a href="http://l10n.kde.org/stats/doc/stable/package/kdevelop/">
+用户手册翻译状态</a><br>
+<?php module_tail();?>
+
+<?php module_head("其他");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/authors.html">
+感谢</a>, 作者.<br>
+<a href="index.html?filename=license.html">
+许可证</a>, GNU GPL license.<br>
+<?php module_tail();?>

@@ -1,0 +1,18 @@
+<?php module_head("Vydané verze");?>
+<br>
+KDevelop tým uvolnil několik verzí KDevelopu. Zde jsou všechny uvedeny s patřičnými verzemi KDE a Qt:
+<br><br>
+<table BORDER CELLPADDING="3">
+<tr>
+<th>verze</th>
+<th>potřebný <A HREF="http://www.kde.org/mirrors/">KDE balíček</A> "kdelibs"</th>
+<th>potřebná <a href="http://www.trolltech.com/products/qt/">Qt knihovna</a></th>
+<th>datum vydání (YYYY-MM-DD)</th>
+</tr>
+<?php include("versions.ihtml"); ?>
+</table>
+<br>
+<?php
+module_tail();
+return filemtime('versions.ihtml');
+?>

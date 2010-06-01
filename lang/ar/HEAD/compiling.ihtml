@@ -1,0 +1,67 @@
+﻿<ol start="4">
+<li>
+لتقوم بتفسير وتنصيب Kdevelop على نظامك قم بتنفيذ الأوامر التالية في المجلد الرئيسي الذي يحوي الشيفرة المصدرية.
+<dl>
+<dd class="code">$ export KDEDIR=/where/your/kde3/is</dd>
+<dd class="code">$ export QTDIR=/where/your/qt3/is</dd>
+<dd class="code">$ export KDEVELOPDIR=/where/kdevelop/will/be/installed</dd>
+<dd class="code">$ export KDEDIRS=$KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">$ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">$ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">$ export PATH=$KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+<b>ملاحظة:</b> من الواضح أنه عليك تعديل السطور الثلاثة الأول لتناسب الإعدادات الأخرى التي قمت بتجهيزها! <br>
+في توزيعات لينكس التي تعتمد على RPM، يمكن أن تجد مكان Qt3 و KDE3 باستخدام برنامج الإعدادات الخاص بتوزيعة لينكس أو باستخدام الأمر "rpm -ql qt3" و الأمر "rpm -ql kdebase3".
+<br>
+اذا كنت تستخدم توزيع جينتو وأردت استخدام ctags فعليك تنفيذ الأمر:
+<dl>
+<dd class="code">ln -sf /usr/bin/exuberant-ctags /usr/bin/ctags</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>
+الخطوة التالية هي تجهيز الاعدادات،
+لمعرفة جميع خيارات الإعدادات المتوفرة قم بتنفيذ:
+<dl>
+<dd class="code">$ ./configure --help</dd>
+</dl>
+
+فيما يلي مثال عن نسخة خالية من الأخطاء ومفسرة:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+فيما يلي مثال عن نسخة ( آخر إصدار مستقر ) ومفسرة:
+<dl>
+<dd class="code">$ ./configure --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+ليس من الضروري أن تقوم بتفسير جميع مكونات Kdevelop، على سبيل المثال يمكنك استخدام التعليمات التالية لترك بعض المكونات التي لا تحتاج إليها:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+--disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+--disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+--disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion</dd>
+</dl>
+</li>
+
+<li>
+أخيراً يمكنك القيام بما يلي لبناء البرنامج وتنصيبه:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (as root, using for example the "su" command)</dd>
+</dl>
+قد لا ينجح أمر make لسبب ما وبالتالي عليك اجباره على تجاهل الأخطاء بإضافة الخيار -k كما يلي:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (as root)</dd>
+</dl>
+يعتمد نجاح تخريج نسخة صالح من Kdevelop على الأخطاء التي قد تحدث أثناء الكومبايل، لذلك قم باستخدام تعليمة "make -k install" على مسؤوليتك!!!. غالباً ما يقوم مطورو Kdevelop بتفادي هذه الأخطاء بععد عدة ساعات من حدوثها لذلك قد ترغب بتحديث الشيفرة المصدرية مجدداً قبل استخدام التعليمة الخطيرة السابقة :)
+</li></ol>
+
+<p>يمكنك الإبلاغ عن الأخطاء التي تجدها من خلال <a
+href="http://bugs.kde.org/wizard.cgi">نموذج الإبلاغ عن الأخطاء</a>. عليك <b>ألا</b> تبلغ في هذه القائمة عن الأخطاء التي تحدث خلال عملية الكومبايل. للإبلاغ عن مثل هذه الأخطاء استخدم
+<a href="index.html?filename=mailinglist.html">هذه القائمة البريدية</a>.
+</p>

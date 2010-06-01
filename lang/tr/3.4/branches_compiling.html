@@ -1,0 +1,144 @@
+<?php include_file("$k_base_version/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file() ?>
+
+<?php module_head("KDevelop'un sisteme özgü derlenmiþ bir sürümüne ait açýklamalar  $k_series_version"); ?>
+<ol>
+<li>Devam etmeden önce lütfen bilgisayarýnýzýn <a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">gerekli yazýlýmlara</a> sahip olup olmadýðýný kontrol ediniz.</li>
+<br>
+<li> <b><?php echo $k_branch; ?></b> Bir dal (branþ) için kaynak kodlarýný yukarýda açýklandýðý gibi edinin.</li>
+<br>
+<li>Derleme için ön hazýrlýk :
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ make -f admin/Makefile.common cvs-clean</dd>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+</li>
+</ol>
+<?php
+  include_file("$k_base_version/compiling.ihtml");
+  module_tail();
+  module_head("Sürümünüzü nasýl güncel tutarsýnýz");
+?>
+Yukarýdaki SVN dallarýndan (branþlarýndan) birini indirip, baþarýyla derledikten sonra
+tüm yamalara sahip olmak için programý güncel tutmak isteyeceksiniz.
+<ol><li>Güncelleme iþlemlerinde kullandýðýnýz tüm komutlarýn ihtiyaç duyduðu gerekli çevresel deðiþkenleri her seferinde belirtmekten kurtulmak için onlarý .bashrc veya .cshrc dosyasýna girmelisiniz.
+<ul>
+<li>Eðer bash kabuðunu kullanýyorsanýz aþaðýdaki satýrlarý ekleyin:
+<dl>
+<dd class="code">export KDEDIR=/where/your/kde3/is</dd>
+<dd class="code">export QTDIR=/where/your/qt3/is</dd>
+<dd class="code">export KDEVELOPDIR=/where/kdevelop/will/be/installed</dd>
+<dd class="code">export KDEDIRS=$KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">export PATH=$KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl></li>
+<li>Eðer tcsh kabuðunu kullanýyorsanýz aþaðýdaki satýrlarý ekleyin:
+<dl>
+<dd class="code">setenv KDEDIR /where/your/kde3/is</dd>
+<dd class="code">setenv QTDIR /where/your/qt3/is</dd>
+<dd class="code">setenv KDEVELOPDIR /where/kdevelop/will/be/installed</dd>
+<dd class="code">setenv KDEDIRS $KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">setenv PATH $KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+</li></ul>
+<b>Not:</b> Ýlk iki satýrý sisteminizin ayarlarýna uygun olarak düzenlemeniz gerekmektedir!
+</li>
+
+<br>
+<br>
+
+<li><i>SVN'den aldýðýnýz kdevelop </i> dosyalarýnýn bulunduðu klasöre gidin ve update komutunu çalýþtýrýn:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ svn up</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>Sýradaki adým bir önceki komutun çýktýsýna baðlýdýr:
+
+<ul>
+<li>Eðer þöyle birþeyle karþýlaþtýysanýz:
+<dl>
+<dd class="code">U /some_directory_path/Makefile.am</dd>
+</dl>
+Yapmanýz gereken þey:
+<dl>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+ve bunu takiben ./configure adýmýdýr
+</li>
+
+<br>
+<br>
+
+<li>Eðer þöyle birþeyle karþýlaþtýysanýz:
+<dl>
+<dd class="code">P /some_directory_path/Makefile.am</dd>
+</dl>
+Yapmanýz gereken þey:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+þeklinde ./configure parametrelerini kullanarak derleme iþlemine hazýrlýk yapmaktýr.
+</li>
+</ul>
+</li>
+
+<br>
+<br>
+
+<li>Kdevelop'u derlemek ve yüklemek:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (root olarak)</dd>
+</dl>
+Birtakým nedenlerden dolayý make komutu hata verirse aþaðýdaki gibi -k özelliðini (parametresini)
+ekleyerek hatalarý görmezden gelmesini saðlayabilirsiniz:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (as root)</dd>
+</dl>
+Hatanýn ciddiyetine baðlý olarak 
+çalýþan veya çalýþmayan bir kdevelop sürümü ile karþýlaþabilirsiniz. Bu yüzden "make
+-k install" komutunu kullanmanýn doðuracaðý sonuçlar sizin mesuliyetinizdedir!!!. Herneyse, bu hatalar genellikle birkaç saat sonra yok olur. Bu yüzden tehlikeli make install komutunu :) vermeden önce tekrar bir güncelleþtirme giriþiminde bulunmak isteyebilirsiniz.
+</li></ol>
+
+<br>
+<br>
+
+Hepsi bu! Artýk KDevelop'un en güncel sürümüne sahipsiniz. Kdevelop'u baþlatmak için þunu yapýn:
+<dl>
+<dd class="code">$ kdevelop</dd>
+</dl>
+
+<p>Programý güncel tutmak için tüm yapmanýz gereken, birileri <a href="index.html?filename=mailinglist.html">kdevelop-devel</a> posta listesinde bir bug (hata)'u giderdiði zaman yukarýda anlatýlan adýmlarý tekrar etmektir.
+O nedenle <a href="index.html?filename=mailinglist.html">bu posta listesine katýlarak</a> çok büyük bir destek vermiþ olacaksýnýz.</p>
+
+<p>Bulduðunuz buglarý <a
+href="http://bugs.kde.org/wizard.cgi">bug (hata) bildirim formu</a> nu kullanarak rapor etmelisiniz. Derleme hatalarýný bug veritabanýna rapor <b>etmemelisiniz</b>. Bunun yerine derleme hatalarý için
+<a href="index.html?filename=mailinglist.html">posta listesini</a> kullanýn.
+</p>
+
+<p>Hatalara (buglara) <a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=map_components.name,bugs.bug_id">bug
+veritabanýndan</a> gözatabilirsiniz.</p>
+
+<?php
+module_tail();
+if ($lang == 'en') {
+  $ts1 = filemtime("$k_base_version/branches_compiling.html");
+  $ts2 = filemtime("cvsbranches.ihtml");
+  $ts3 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts1 = file_exists("lang/$lang/$k_base_version/branches_compiling.html")?filemtime("lang/$lang/$k_base_version/branches_compiling.html"):filemtime("$k_base_version/branches_compiling.html");
+  $ts2 = file_exists("lang/$lang/cvsbranches.ihtml")?filemtime("lang/$lang/cvsbranches.ihtml"):filemtime("cvsbranches.ihtml");    
+  $ts3 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts1,$ts2,$ts3));
+?>

@@ -1,0 +1,48 @@
+<?php module_head("Download do KDevelop 3.1.x");?>
+<br>
+<h3>Binários :</h3>
+<p>
+Alguns distribuidores de Linux/UNIX fornecem gentilmente pacotes compilados do
+KDevelop para algumas versões de suas distribuições, e em outros casos voluntários
+da comunidade também o fazem. Alguns destes pacotes estão disponíveis gratuitamente
+para download no site KDE ou nos espelhos FTP.
+
+</p>
+<?php
+  $l_architecture = "Arquitectura";
+  $l_distribution = "Distribui&ccedil;&atilde;o";
+  $l_distribution_version = "Vers&atilde;o da distribui&ccedil;&atilde;o";
+  include("3.1/download_binaries.ihtml");
+?>
+<br>
+<br><h3>Código fonte para KDE &gt;= 3.2 :</h3>
+<?php include("3.1/download_sources.ihtml"); ?>
+<br>
+<ol>
+<li>Antes de continuar verifique por favor se o seu computador tem o
+<a href="index.html?filename=3.1/requirements.html">software necessário</a> instalado.
+</li>
+<br>
+<li>Descomprima o ficheiro fonte e mude para a directoria base:
+<dl>
+<dd class="code">$ bunzip2 kdevelop-3.1.x.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop-3.1.x.tar</dd>
+<dd class="code">$ cd kdevelop-3.1.x</dd>
+</dl>
+</li>
+</ol>
+<?php include_file("3.1/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+$ts1 = filemtime('3.1/download_binaries.ihtml');
+$ts2 = filemtime('3.1/download_sources.ihtml');
+if ($lang == 'en') {
+  $ts3 = filemtime('3.1/download.html');
+  $ts4 = filemtime('3.1/compiling.ihtml');
+} else {
+  $ts3 = file_exists("lang/$lang/3.1/download.html")?filemtime("lang/$lang/3.1/download.html"):filemtime('3.1/download.html');
+  $ts4 = file_exists("lang/$lang/3.1/compiling.ihtml")?filemtime("lang/$lang/3.1/compiling.ihtml"):filemtime('3.1/compiling.ihtml');    
+}
+return (max($ts1,$ts2,$ts3,$ts4));
+?>

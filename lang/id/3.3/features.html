@@ -1,0 +1,31 @@
+<?php module_head("KDevelop $k_series_version Features");?>
+
+Termasuk semua yang terdapat dalam
+<a href="index.html?filename=3.2/features.html">
+fitur KDevelop 3.2.x </a> ditambah dengan:<br>
+<ul>
+  <li>Fitur baru dalam bagian KDevelop <a href="http://developer.kde.org/development-versions/kde-3.5-features.html">Rencana fitur tambahan dalam KDE 3.5</a></li>
+  <li>Anda sekarang dapat menggunakan CMAKE untuk meng-compile KDevelop</li>
+  <li>Dukungan terhadapa bahasa C++ yang diperbaharui:<ul>
+    <li>Dukungan untuk QT4, kode yang berbeda telah dibuat untuk proyek Qt3.x and Qt4.x</li>
+    <li>Penambahan tab baru dalam C++ dialog option untuk menyusun librari Qt yang digunakan. Anda dapat menyusun Qt yang dipergunakan, dengan versi utama dan dimana librari Qt telah di-instal.</li>
+  </ul></li>
+  <li>Pernyempurnaan debugger untuk C, C++ dan bahasa Ruby:<ul>
+    <li>Jendela breakpoint debugger membuat semakin mudah untuk digunakan</li>
+    <li>Memperlihatkan secara otomatis jendela variabel ketika aplikasi berhenti, dan menyembunyikan aplikasi ketika berhenti.</li>
+    <li>Implementasi ekspresi/variabel editing dalam jendela variabel.</li>
+    <li>Penyempurnaan cara kerja variabel</li>
+  </ul></li>
+  <li>Dukungan bahasa PHP5</li>
+  <li>Manajer proyek generik yang baru:<ul>
+    <li>Terbuat dari arsitektur platform kdevelop dimana manajemen proyek GUI adalah abstrak dari spesifik buildsystem. Buildsystem ditangani menggunakan plugin ("proyek importer, builder and editor")</li>
+    <li>Dukungan workspace telah tersedia</li>
+    <li>Proyek builder: make builder</li>
+    <li>Proyek importer: automake, custom makefiles, qmake</li>
+  </ul></li>
+  <li>lihat
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+  halaman perubahan log</a> untuk lebih jelas</li>
+</ul>
+
+<?php module_tail();?>

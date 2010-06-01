@@ -1,0 +1,83 @@
+<h2 align=center>Această pagină concentrează toate informaţiile despre seria de produse KDevelop <?php echo $k_series_version; ?></h2>
+
+<?php module_head("General");?>
+<p>Versiunea <?php echo $k_base_version; ?>.0 a fost publicată cu versiunea KDE-<?php echo $k_kde_base_version; ?>.6.
+<a href="index.html?filename=versions.html">
+Versiunile KDevelop <?php echo $k_base_version; ?>.x de rezolvare a problemelor</a> vor fi
+<a href="http://developer.kde.org/development-versions/kde-<?php echo $k_kde_base_version; ?>-release-plan.html">
+livrate împreună cu KDE-<?php echo $k_kde_base_version; ?>.x</a></p>
+
+<a href="index.html?filename=<?php echo $k_base_version; ?>/features.html">
+Facilităţi</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">
+Cerinţe</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/download.html">
+Download</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/branches_compiling.html">
+Ramurile SVN şi compilarea</a>, o sinteză a ramurilor SVN existente şi despre cum se compilează KDevelop din SVN.<br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+Modificări</a><br>
+<a name="Bugs">Probleme cunoscute şi bug-uri:</a>
+<ul>
+  <li>Nu mai există modul MDI de interfaţă, singurul mod disponibil este modul "simpleIDEAl"</li>
+  <li>Qeditor şi yzis nu mai sunt suportate. Este folosit tot timpul KATE.</li>
+  <li>Limbajul de programare Haskell nu mai este suportat.</li>
+  <li><a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.bug_id">
+  Bug-uri raportate în baza de date bugzilla</a></li>
+</ul>
+Pentru a raporta un nou bug folosiţi meniul KDevelop <em><u>H</u>elp -> <u>R</u>eport Bug...</em> sau navigăti la pagina de
+<a href="index.html?filename=bugs.html">
+Buguri şi Dorinţe</a>.<br>
+<?php module_tail();?>
+
+<?php module_head("Documentaţie");?>
+<a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/">
+Manualul de utilizare</a> (docbook generat din SVN la fiecare 24 de ore).<br>
+<a href="index.html?filename=tutorials.html">
+Tutoriale</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/faq.html">
+F.A.Q.</a>, răspunsul la cele mai frecvente întrebări.<br>
+<?php module_tail();?>
+
+<?php module_head("Prezentări şi Grafică");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/announce-kdevelop-<?php echo $k_base_version; ?>.html">
+Public announcement</a><br>
+<!--
+<a href="<?php echo $k_base_version; ?>/doc/promo/presentation.kpr">
+KDevelop presentation</a> (255Kb
+<a href="http://www.koffice.org/kpresenter/">
+KPresenter</a> file)<br>
+-->
+<a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots1.html">
+Screenshoturi&nbsp;1</a>,
+<a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots2.html">
+screenshoturi&nbsp;2</a>,
+<a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots3.html">
+screenshoturi&nbsp;3</a>.<br>
+<a href="index.html?filename=in_the_press.html">
+În presă</a><br>
+<a href="index.html?filename=awards.html">
+Premii</a><br>
+<a href="index.html?filename=logos_banners.html">
+Logo şi bannere</a><br>
+<a href="index.html?filename=splashscreens.html">
+Splashscreen</a><br>
+<?php module_tail();?>
+
+<?php module_head("Dezvoltare");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/ChangeLog.html">
+Lista modificărilor individuale în SVN</a>.<br>
+<a href="http://lxr.kde.org/source/KDE/kdevelop/?v=<?php echo $k_latest_version; ?>">
+Răsfoiţi prin cod</a>, pagini generate cu LXR.<br>
+<a href="http://websvn.kde.org/<?php echo $k_branch_path; ?>">
+Web SVN</a>, răsfoiţi prin cod în depozitul SVN.<br>
+<a href="http://l10n.kde.org/stats/doc/stable/package/kdevelop/">
+Situaţia traducerii manualului de utilizare</a><br>
+<?php module_tail();?>
+
+<?php module_head("Misc");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/authors.html">
+Credite</a>, autorii.<br>
+<a href="index.html?filename=license.html">
+Licenţa</a>, licenţa GNU GPL.<br>
+<?php module_tail();?>

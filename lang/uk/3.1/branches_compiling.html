@@ -1,0 +1,127 @@
+<?php include_file("$k_base_version/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file() ?>
+
+<?php module_head("Інструкції для встановлення власноруч скомпільованої версії KDevelop 3.1.x"); ?>
+<ol>
+<li>Перед встановленням перевірте наявність 
+<a href="index.html?filename=3.1/requirements.html">необхідного програмного забезпечення</a>.
+</li>
+<br>
+<li>Отримайте вихідний код з гілки <b>KDE_3_3_BRANCH</b>.</li>
+<br>
+<li>Встановіть систему збирання:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ make -f admin/Makefile.common cvs-clean</dd>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+</li>
+</ol>
+<?php
+  include_file("3.1/compiling.ihtml");
+  module_tail();
+  module_head("Як отримувати оновлення");
+?>
+Після успішної установки вашої версії, її можна периодично оновлювати аби отримувати всі
+останні віправлення.
+<ol><li>Аби уникнути набору всіх необхідних команд для встановлення змінних режиму кожний раз при оновленні, встановіть їх в файлах .bashrc або .cshrc.
+<ul>
+<li>Якщо використовується оболонка bash:
+<dl>
+<dd class="code">export KDEDIR=/місцезнаходження/kde3</dd>
+<dd class="code">export QTDIR=/місцезнаходження/qt3</dd>
+<dd class="code">export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl></li>
+<li>Якщо використовується tcsh:
+<dl>
+<dd class="code">setenv KDEDIR /місцезнаходження/kde3</dd>
+<dd class="code">setenv QTDIR /місцезнаходження/qt3</dd>
+<dd class="code">setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">setenv PATH $QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+</li></ul>
+<b>Примітка:</b> Ви повинні виправити перші дві строки так, аби вони відповідали параметрам вашої системи!
+</li>
+
+<br>
+<br>
+
+<li>Пердіть до директорії, в якої знаходяться файли <i>kdevelop з CVS</i> і виконайте команди:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ cvs update -dP</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>Наступний крок залежить від результатів роботи попередньої команди:
+
+<ul>
+<li>Якщо отримано щось на зразок:
+<dl>
+<dd class="code">U /путь/Makefile.am</dd>
+</dl>
+Треба виконати:
+<dl>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+а за цим ./configure
+</li>
+
+<br>
+<br>
+
+<li>
+Якщо отримано щось на зразок:
+<dl>
+<dd class="code">P /путь/Makefile.am</dd>
+</dl>
+Треба виконати:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+використовуючи параметри ./configure які використовувались при першій компіляції.
+</li>
+</ul>
+</li>
+
+<br>
+<br>
+
+<li>Зберіть та встановіть KDevelop:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (з правами root)</dd>
+</dl>
+Якщо за деяких причин make виконується з помилками, можна змусити завершити компіляцію та знехтувати помилками додаючи параметр -k:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (з правами root)</dd>
+</dl>
+В залежності від ступеня важливості проблеми ви можете отримати як працюючу, так і не працюючу версію kdevelop. Тобто використовуйте "make -k install" з увагою!!!.
+</li></ol>
+
+<br>
+<br>
+
+Це все! Найновіша версія KDevelop встановлена. Для запуску виконайте команду:
+<dl>
+<dd class="code">$ kdevelop</dd>
+</dl>
+
+<p>Все, що ви повинні зробити це виконувати вищевказані кроки кожний час, як хто-небудь
+зі списку <a href="index.html?filename=mailinglist.html">kdevelop-devel</a>
+виправляє помилку.
+Таким чином рекомендується <a href="index.html?filename=mailinglist.html">приєднатисядо списку розсилки</a>.</p>
+
+<p>Звіти про помилки можна заповнити в <a
+href="http://bugs.kde.org/wizard.cgi">формі</a>. <b>Не повідомлюйте</b> про помилки компіляції в базі даних помилок. Використовуйте <a href="index.html?filename=mailinglist.html">списки розсилки</a>.</p>
+
+<p>Передивитися на помилки можна в <a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=map_components.name,bugs.bug_id">базі даних  помилок</a>.</p>
+
+<?php module_tail(); ?>

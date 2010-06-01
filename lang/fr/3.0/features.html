@@ -1,0 +1,117 @@
+<?php module_head("Caractéristiques de KDevelop 3.0.x");?>
+
+
+<ul>
+
+<li><b>Architecture bas&eacute;e sur des modules externes</b>
+<ul>
+<li>Des fonctionalit&eacute;s peuvent &ecirc;tre modifi&eacute;es, ajout&eacute;es ou supprim&eacute;es sans changer le code source fondamental.</li>
+<li>La licence des biblioth&egrave;ques permet d'&eacute;crire des modules commerciaux et libres pour l'IDE.</li>
+<li>Support pour les profils qui d&eacute;terminent un ensemble de modules externes qui seront charg&eacute;s. Ceci est sp&eacute;cialement utile dans le cas d'environnements restreints ou pour des configurations personnalis&eacute;es.</li>
+</ul>
+</li>
+
+<li><b>Gestionnaire de projet</b>
+<ul>
+<li>Support natif pour <b>automake</b> et <b>qmake</b>. Des modifications manuelles sont permises et reconnues par l'IDE, des projets existants ainsi que leurs sous-projets peuvent aussi facilement &ecirc;tre import&eacute;s.</li>
+<li>Vous pouvez personnaliser vos makefiles pour compiler le projet.</li>
+<li>Support pour <b>ant</b> - outil de compilation pour les projets java.</li>
+<li>Support pour des types de projets tels pascal, haskell, ada et des projets de scripts.</li>
+<li>Cadre pour ajouter le suppport pour tout syst&egrave;me de compilation en cr&eacute;ant des modules externes de syst&egrave;mes de compilationpour le gestionnaire de projet standard.</li>
+<li>Nouvel assistant de fichier pour g&eacute;rer les squelettes de fichiers et cr&eacute;er de nouveaux fichiers dans le projet depuis des squelettes.</li>
+<li>Les modules externes du compilateur d&eacute;finissent les options du compilateurs dans des dialogues pratiques.</li>
+<li>Profils de configuration avec la capacit&eacute; de sp&eacute;cifier des compilateurs diff&eacute;rents, des drapeaux de compilation, les r&eacute;pertoires de compilation, l'architecture cible, etc.</li>
+<li>La documentation des projets est facilit&eacute;e avec par exemple le support de <b>doxygen</b> pour cr&eacute;er une documentation API automatique (dans les formats html, tex et man) pour un projet avec une r&eacute;f&eacute;rence crois&eacute;e des biblioth&egrave;ques.</li>
+<li>Support pour l'internationalisation, permettant aux traducteurs d'ajouter leur langue cible facilement dans un projet, incluant le support pour <a href="http://l10n.kde.org/tools/kbabel/" target="main">KBabel</a>.</li>
+<li>Support pour les projets Qt/Embedded (pour le <a href="http://developer.sharpsec.com/" target="_top">Zaurus</a> et les plates-formes <a href="http://www.compaq.com/products/iPAQ/" target="_top">iPAQ</a>.</li>
+</ul>
+</li>
+
+<li><b>Support de languages</b>
+<ul>
+<li>15 languages support&eacute;s incluant Ada, C, C++, Objective-C (via support C), SQL, Fortran, Haskell,
+Java, PHP, Pascal, Perl, Python, Ruby, Bash, XUL (non officiellement).</li>
+<li>Rapporteur de probl&egrave;mes qui rapporte divers probl&egrave;mes avec le code source pendant que vous tapez. Ces probl&egrave;mes incluent les erreurs de syntaxe, les TODO et FIXME.</li>
+<li>Navigateur de classes qui affiche la hi&eacute;rarchie des classes et autres symboles du projet.</li>
+<li>Analyseurs de language pour le navigateur de classes et rapporteur de probl&egrave;mes.</li>
+<li>Assistant de classe, de m&eacute;thode et d'attribut pour les langugaes orient&eacute;s object (OO).</li>
+<li>Compl&eacute;tion de code automatique et suggestion pour les variables de classe, les m&eacute;thodes, les arguments des fonctions et plus.</li>
+<li>Formatage des sources, surbrillance syntaxique et d&eacute;ploiement du code.</li>
+<li>Caract&eacute;ristiques sp&eacute;cifiques &agrave; C++ telles que
+<ul>
+<li>"cr&eacute;er un membre" - cr&eacute;er la d&eacute;finition des m&eacute;thodes dans le fichier source en se basant sur la d&eacute;claration de la m&eacute;thode dans le fichier en-t&ecirc;te;</li>
+<li>"extraire l'interface"- extraire l'interface (d&eacute;clarations des m&eacute;thodes) et cr&eacute;er une classe de base avec cette interface;</li>
+<li>"surclasser" - cr&eacute;ation automatis&eacute;e du surclassement et de l'implentation des slots des formes de Qt Designer.</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><b>D&eacute;bogueur int&eacute;gr&eacute;</b>
+<ul>
+<li>Interfaces pour les d&eacute;bogueurs GDB et Java .</li>
+<li>Console GDB int&eacute;gr&eacute;e.</li>
+<li>Breakpoints et watchpoints pour des lignes, addresses et m&eacute;thodes.</li>
+<li>Points de rupture conditionnels.</li>
+<li>D&eacute;sassembleur et vue du stack.</li>
+<li>Arborescence pour suivre une variable.</li>
+<li>Visualiseur de la m&eacute;moire, des registres et des biblioth&egrave;ques.</li>
+<li>Support du d&eacute;bogueur shell (libtool).</li>
+<li>D&eacute;boguage &agrave; distance.</li>
+</ul>
+</li>
+
+<li><b>&Eacute;dition du code</b>
+<ul>
+<li>Tout &eacute;diteur qui utilise l'interface KTextEditor de KDE peut &ecirc;tre utilis&eacute; avec KDevelop.</li>
+<li>Les &eacute;diteurs actuellement disponibles sont  <a href="http://kate.kde.org/" target="main">Kate</a>, QEditor (bas&eacute; sur l'&eacute;diteur de Qt Designer) et KVim.</li>
+<li>Les signets du projets sont sauvegard&eacute;s dans le fichier du projet.</li>
+<li>Visualiseur de diff&eacute;rence entre le texte dans l'&eacute;diteur et celui sur le disque dur.</li>
+<li>Visualiseur de diff&eacute;rence pour les fichiers patch.</li>
+<li>Int&eacute;gration de grep - recherche d'expression r&eacute;guli&egrave;res dans le projet.</li>
+<li>Outil de recherche et de remplacement dans tout le projet.</li>
+</ul>
+</li>
+
+<li><b>Syst&egrave;me de contr&ocirc;le de version</b>
+<ul>
+<li>API commune pour inclure le support VCS dans KDevelop.</li>
+<li>Les syst&egrave;mes VCS support&eacute;s&nbsp;: CVS, Perforce, Subversion et Clearcase.</li>
+</ul>
+</li>
+
+<li><b>Assistant d'application</b>
+<ul>
+<li>L'assistant d'application g&eacute;n&egrave;re des applications examples toutes pr&ecirc;tes.</li>
+<li>Des squelettes existent pour chaque language support&eacute; et chaque compilateur.</li>
+<li>Possibilit&eacute; d'utiliser des squelettes d;application personnelles non inclus dans la distribution.</li>
+<li>Des squelettes de projets reli&eacute;s &agrave; KDE (applications KPart, simple applications KDE, modules de KControl, applets Kicker (panneau), parts KOffice, KIOSlaves, modules externes <a href="http://www.konqueror.org/" target="main">Konqueror</a>, Noatun et Kate et styles).</li>
+</ul>
+</li>
+
+<li><b>Visualiseur de documentation</b>
+<ul>
+<li>Interface unifi&eacute;e pour naviguer dans la documentation.</li>
+<li>Possibilit&eacute; de TOC, index et recherche dans tout le texte (avec htdig).</li>
+<li>Autod&eacute;tection et inclusion de la documentation Qt, KDE Libset DevHelp.</li>
+<li>Support pour des ensembles de documentation personnelle (format KDevelopTOC).</li>
+<li>Possibilit&eacute; d'ouvrir de la documentation locale, &agrave; distance ou encore compress&eacute;e (en utilisant tout protocole support&eacute; par Konqueror - http, ftp, sftp, tar, zip, etc.).</li>
+<li>Possibilit&eacute; d'ouvrir divers formats de documentation (html, text, ps, pdf, chm, etc.).</li>
+</ul>
+</li>
+
+<li><b>Autres caract&eacute;ristiques</b></li>
+<ul>
+<li>L'interface utilisateur est totalement configurable, elle permet la navigation dans les classes &agrave; la vol&eacute;e dans les modes MDI comme toplevel, childframe et le nouveau mode IDEAl qui permet des vues "gliss&eacute;es".</li>
+<li>Console int&eacute;gr&eacute;e.</li>
+<li>S&eacute;lectionneur de fichiers, arborescence de fichiers et groupements de fichiers suppriment le besoin d'un gestionnaire de fichiers externe.</li>
+<li>Inclusion de tout autre programme dont vous avez besoin pour le d&eacute;veloppement en l'ajoutant au menu Outils selon vos besoins personnels.</li>
+<li>Test d'expressions r&eacute;guli&egrave;res.</li>
+<li>Int&eacute;gration de Valgrind pour d&eacute;pister les fuites de m&eacute;moire dans les programmes.</li>
+<li>Distribution du projet et outil d'empaquetage pour cr&eacute;er automatiquement les paquetages sources et binaires.</li>
+<li>Int&eacute;gration de CTags.</li>
+<li>Une part explorer pour questionner tous les services disponibles de KDE.</li>
+</ul>
+</ul>
+
+<?php module_tail();?>

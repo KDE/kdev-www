@@ -1,0 +1,60 @@
+<ol start="4">
+<li>
+Pentru a compila &#x15F;i instala KDevelop, tasta&#x163;i comanda (presupunem c&#259; ave&#x163;i bash shell) de mai jos &icirc;n directorul surs&#259;.
+<dl>
+<dd class="code">$ export KDEDIR=/where/your/kde3/is</dd>
+<dd class="code">$ export QTDIR=/where/your/qt3/is</dd>
+<dd class="code">$ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">$ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">$ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+<b>Note:</b> Din motive evidente, trebuie s&#259; edita&#x163;i primele dou&#259; linii pentru a corespunde configura&#x163;iei dumneavoastr&#259;.<br>
+&Icirc;n cazul distrbu&#x163;iilor Linux RPM, pute&#x163;i g&#259;si loca&#x163;ia directoarelor Qt3 &#x15F;i KDE3 folosind programul de configurare al distribu&#x163;iei Linux pe care o de&#x163;ine&#x163;i sau tast&acirc;nd "rpm -ql qt3" &#x15F;i "rpm -ql kdebase3".
+</li>
+
+<br>
+<br>
+
+<li>
+Urm&#259;torul pas const&#259; &icirc;n configurarea mediului KDevelop, pentru a afla mai multe despre configura&#x163;iile disponibile introduce&#x163;i:
+<dl>
+<dd class="code">$ ./configure --help</dd>
+</dl>
+
+Aici este un exemplu a unei versiuni debug-compiled:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Aici este un exemplu a unei versiuni release-compiled:
+<dl>
+<dd class="code">$ ./configure --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Componentele KDevelop care nu sunt necesare pot s&#259; nu fie compilate, de exemplu, eu folosesc urmatoarea comand&#259; de configurare:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+--disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+--disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+--disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion</dd>
+</dl>
+</li>
+
+<li>
+La sf&acirc;r&#x15F;it po&#x163;i executa "build" iar apoi pentru instalare:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (cu drept de root, folosind de exemplu comanda "su")</dd>
+</dl>
+Dac&#259; din anumite motive comanda make nu este executat&#259;, se poate for&#x163;a ignorarea erorilor adaug&acirc;nd op&#x163;iunea -k:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (cu drept de root)</dd>
+</dl>
+In func&#x163;ie de gravitatea erorii s-ar putea s&#259; ob&#x163;ine&#x163;i o versiune instabil&#259; a KDevelop. Deci, executarea comenzii "make
+-k install" se face pe riscul t&#259;u!!!.
+</li></ol>
+
+<p>Bug-urile intalnite pot fi descrise &icirc;n <a
+href="http://bugs.kde.org/wizard.cgi">formularul de &icirc;nscriere al bug-urilor</a>. Ar trebui s&#259; <b>ni</b> raporta&#x163;i erorile de compilare
+&icirc;n baza de date destinat&#259; bug-urilor. Pentru erori de compilare folosi&#x163;i <a href="index.html?filename=mailinglist.html">lista de email</a>.</p>

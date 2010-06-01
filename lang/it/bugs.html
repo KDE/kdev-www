@@ -1,0 +1,40 @@
+<?php module_head("Bugs &amp; Richieste"); ?>
+<p>
+Per sottomettere un nuovo bug report o per fare nuove richieste visita il
+<a href="http://bugs.kde.org/wizard.cgi?package=kdevelop&amp;kbugreport=1">bug report wizard</a> del nostro database <a href="http://www.bugzilla.org">bugzilla</a>.
+<b>NON</b> riportare errori di compilazione nel database dei bug. Per gli errori di compilazione usa invece la <a href="index.html?filename=mailinglist.html">mailing list</a>.
+</p>
+<p>
+Per un report completo sui bugs e sulle richieste attuali di KDevelop
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.votes,bugs.delta_ts,map_components.name,bugs.bug_id" TARGET="_top">
+ricerca nel database dei bug</a>. I reports sono separati in componenti, cos&igrave; puoi anche ottener un<a href="http://bugs.kde.org/component-report.cgi?product=kdevelop">Conteggio dei Report per Componente e Gravit&agrave;</a>.
+</p>
+Per avere una vista dettagliata dei bugs abilita i cookies sul tuo browser e vai nella
+<a href="http://bugs.kde.org/colchange.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=kdevelop">pagina di configurazione delle colonne di bugzilla</a> e seleziona:<br>
+<ul>
+  <li>changeddate (data di modifica)
+  <li>severity (gravit&agrave;)
+  <li>priority (priorit&agrave;)
+  <li>reporter 
+  <li>status
+  <li>component
+  <li>version
+  <li>votes
+  <li>Summary (primi 60 caratteri)
+</ul>
+<br>
+E' tutto, da ora in avanti tutte le tue ricerche sui bug avranno tutti i dettagli che ti servono per KDevelop.<br>
+Buona caccia al bug! :)<br>
+<br>
+<?php
+module_tail();
+$l_bom='Bug-o-meter';
+$l_ob='Open<br>bugs';
+$l_ow='Open<br>wishes';
+$l_ol7d='Opened in<br>last 7 days';
+$l_cl7d='Closed in<br>last 7 days';
+$l_c='Change';
+$l_rbg='Resolved bugs graph';
+$l_obwg='Opened bugs and wishes graph';
+return include('dynamic/weekly-bug-summary.html');
+?>

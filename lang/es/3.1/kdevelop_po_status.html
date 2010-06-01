@@ -1,0 +1,96 @@
+<?php
+  module_head("Estado de la traducción de la GUI de KDevelop 3.1.x");
+  include("inc/i18n_kde_org_translation_status.php");
+  $cvsbranch      = "KDE_3_3_BRANCH";
+  $lastupdate_msg = "Última actualización: ";
+  $almostdone_msg = "Medio hecho (&#062;80&#037;): ";
+  $complete_msg   = "Completo: ";
+?>
+
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#8b898b" width="100%"><tr><td>
+<table cellspacing="1" cellpadding="2" border="0" width="100%">
+<tr bgcolor="#e0e0e0">
+  <td width="30%"><font size="2"><nobr><b>Equipo del idioma</b></nobr></font></td>
+  <td width="10%"><font size="2"><b>fichero</b></font></td>
+  <td><font size="2" color="#339933"><b>traducido</b></font></td>
+  <td align="center"><font size="2" color="#339933"><b>%</b></font></td>
+  <td><font size="2" color="#333399"><b>en borrador</b></font></td>
+  <td align="center"><font size="2" color="#333399"><b>%</b></font></td>
+  <td><font size="2" color="#dd3333"><b>no traducido</b></font></td>
+  <td align="center"><font size="2" color="#dd3333"><b>%</b></font></td>
+  <td><font size="2"><b>total</b></font></td>
+  <td width="100%"><font size="2"><b>gráfico</b></font></td>
+</tr>
+<?php
+  get_gui_trans_status($cvsbranch, ">kdevelop.po", $lastupdate_msg, $almostdone_msg, $complete_msg);
+?>
+</table>
+</td></tr>
+</table>
+<br>
+
+Para actualizar su traducción de la GUI descárguese el correspondiente fichero kdevelop.po y haga:<br>
+<pre>
+ $ msgfmt kdevelop.po -o kdevelop3.mo
+ $ cp kdevelop3.mo $KDEDIR/share/locale/[LANG_CODE]/LC_MESSAGES/kdevelop3.mo
+</pre>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#8b898b" width="100%"><tr><td>
+<table cellspacing="1" cellpadding="2" border="0" width="100%">
+<tr bgcolor="#e0e0e0">
+  <td width="30%"><font size="2"><nobr><b>Equipo del idioma</b></nobr></font></td>
+  <td width="10%"><font size="2"><b>fichero</b></font></td>
+  <td><font size="2" color="#339933"><b>traducido</b></font></td>
+  <td align="center"><font size="2" color="#339933"><b>%</b></font></td>
+  <td><font size="2" color="#333399"><b>en borrador</b></font></td>
+  <td align="center"><font size="2" color="#333399"><b>%</b></font></td>
+  <td><font size="2" color="#dd3333"><b>no traducido</b></font></td>
+  <td align="center"><font size="2" color="#dd3333"><b>%</b></font></td>
+  <td><font size="2"><b>total</b></font></td>
+  <td width="100%"><font size="2"><b>gráfico</b></font></td>
+</tr>
+<?php
+  get_gui_trans_status($cvsbranch, "desktop_kdevelop.po", $lastupdate_msg, $almostdone_msg, $complete_msg);
+?>
+</table>
+</td></tr>
+</table>
+
+
+<font size="2">
+<br>
+<b>Nota:</b><br>
+&nbsp;&nbsp;<b>1.</b> Solo los catálogos PO que tiene el correspondiente fichero POT se han incluido en las estadísticas.<br>
+&nbsp;&nbsp;<b>2.</b> Número total sobre el número de mensajes encontrados en los ficheros PO. Por ejemplo, si 
+por error, al traducir los POs hay un número distinto de mensajes para el correspondiente POT,
+entonces se deberá observar diferencias.<br>
+&nbsp;&nbsp;<b>3.</b> La fila con el fondo en rojo indica que el correspondiente
+equipo tiene un fichero PO que contiene al menos un error.<br>
+&nbsp;&nbsp;<b>4.</b> La fila con el fondo azul indica que el correspondiente
+equipo tiene un fichero que no tiene un fichero POT asociado.<br>
+&nbsp;&nbsp;<b>5.</b> Es posible que al sumar los porcentajes para lo traducido,
+en borrador y no traducido sea más del 100% o sea inferior. Esto normalmente se debe a 
+los errores de redondeo producidos cuando se truncan las cifras a dos decimales.<br>
+
+
+
+<br>
+<b>Leyenda:</b><br>
+&nbsp;&nbsp;<img src="graphics/stats/bar0.gif" height="15" width="30"> - mensajes traducidos<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar4.gif" height="15" width="30"> - mensajes en borrador<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar1.gif" height="15" width="30"> - mensajes no traducidos<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar6.gif" height="15" width="30"> - información no disponible<br>
+<br>
+</font>
+
+<?php
+module_tail();
+$tdatetime = file('dynamic/'.$cvsbranch.'_po_status_lastupdate.ihtml');
+$tdatetime = explode(' ', $tdatetime[0]);
+$tdate = explode('-', $tdatetime[0]);
+$ttime = explode(':', $tdatetime[1]);
+return mktime($ttime[0], $ttime[1], 0, $tdate[1], $tdate[2], $tdate[0], 1 );
+?>

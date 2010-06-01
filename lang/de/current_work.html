@@ -1,0 +1,704 @@
+<?php module_head("TODO list");?>
+<h5><u>High priority tasks!</u></h5>
+Please pick up any of the ones listed below and help us to fix it! Any help is highly appreciated.
+If everything is fixed, then it's time to release the final 3.0. ;-)
+<ol>
+
+<li><b>Fixing major/annoying bugs</b>
+
+<ul>
+<li>konsole part<ul>
+     <li>cd's when selecting a file, but doesn't when selecting a dir, desired: a menu option to "cd" to that directory</li>
+</ul></li>
+<li>automake part<ul>
+     <li>Should be able to DND files from other targets / file list / konq to add to targets.</li>
+     <li>Doesn't always get lib path relative to $top_buildir correct. (projectDirectory() != $(top_builddir) in general)</li>
+</ul></li>
+<li>UI bugs<ul>
+     <li>editor options dialog missing when all views are closed</li>
+     <li>If you click an error in the output view, "Next Error"/"Previous Error" should then start from that point.</li>
+     <li>Messages in status bar would look nicer if they appeared with the same border as other items.</li>
+     <li>Browser tool bar should truncate long menu entries so it doesn't take so much space.</li>
+     <li>Open last open panel in the sidebars on startup, if possible (should be stored in project session file, not globally)</li>
+     <li>Tag file creation fails silently if ctags is not installed</li>
+</ul></li>
+<li>misc<ul>
+     <li>Project name should be able to contain spaces</li>
+</ul></li>
+<li>code completion<ul>
+     <li>remove the annoying conflict from automatic word completion(abbrevpart) and language specific code completion(like the one in cppsupport)</li>
+</ul></li>
+</ul>
+</li>
+
+<li><b>KDevelop 2 compatibility</b><br>
+(These are things that must be accomplished before we can say that
+gideon >= kdevelop 2.x UI-wise and functionality-wise!)
+
+<ul>
+<li>general UI issues:<ul>
+    <li>toplevel UI mode broken concerning to the accels</li>
+    <li>[Modified] missing in mainframe caption</li>
+    <li>captions missing for toolbar buttons</li>
+</ul></li>
+<li>doctreeview:<ul>
+    <li>use kdoc to update Qt/KDE docs</li>
+</ul></li>
+<li>editing:<ul>
+    <li>RMB on qeditor doesn't have the 'Switch to declaration/definition' functionality</li>
+</ul></li>
+<li>build/configuration:<ul>
+    <li>cross-compiling feature missing</li>
+    <li>make "MIN_VERSION" configurable on new project creation</li>
+</ul></li>
+<li>interoperability:<ul>
+    <li>import/export 2.1-projects<-->Gideon-projects</li>
+    <li>version control: integration with Cervisia?</li>
+</ul></li>
+<li>classview:<ul>
+    <li>delete method/class menu items</li>
+</ul></li>
+</ul>
+
+</li>
+
+<li><b>Missing UIs (other than 2)</b><br>
+UIs that intuitively ought to be there
+
+<ul>
+<li>automakemanager:<ul>
+    <li>install, etc. targets besides "build" for subproject menus & toolbar</li>
+</ul></li>
+<li>IDEAl UI-mode:<ul>
+    <li>Extend KDevPlugin-API in order to have a preferred border for at least the selection parts (Automake Manager, Class Browser, File Groups, etc...)</li>
+</ul></li>
+</ul>
+
+</li>
+
+<li><b>New features</b>
+
+<ul>
+<li>short-term:<ul>
+    <li>improve documentation browsing</li>
+</ul></li>
+<li>mid-term:<ul>
+    <li>use mimetype to determine code files, not extension</li>
+</ul></li>
+<li>long-term:<ul>
+    <li>write a lot more plugins ;) ideas here for which ones</li>
+    <li>sourcenav database and navigation tools</li>
+</ul></li>
+</ul>
+
+</li>
+
+<li><b>Code refactoring/improvements</b>
+
+<ul>
+<li>architecture:<ul>
+    <li>implement multiple-views per document</li>
+</ul></li>
+<li>modularity:<ul>
+    <li>make sure all lib interfaces are available via DCOP</li>
+</ul></li>
+<li>improvement:<ul>
+    <li>find a nicer way to remove dynamic menu entries from context menus</li>
+    <li>make all functions using filenames use KURLs instead</li>
+</ul></li>
+<li>optimization:<ul>
+</ul></li>
+<li>Import existing directory: Should be named "Import existing project" and more intuitive (wizard-like)<ul>
+    <li>Question from the wizard: "I have found C++ files in your project directory. Should C++ be the primary language of your project?" User: [Yes/No] => Next Step...</li>
+    <li>Something intuitive for the binary/-ies (for debugger and execution of program), libtool ([Yes/No] for the debugger), build tool (qmake, automake,...?), etc.., too.</li>
+</ul></li>
+</ul>
+
+</li>
+
+<li><b>Misc.</b>
+
+<ul>
+    <li>Update configure.in when sub projects are added and the project doesn't use am_edit</li>
+    <li>Implement removing sub projects.</li>
+    <li>Implement Add Plugin</li>
+    <li>Show .po files in project management</li>
+    <li>Distinguish vanilla c++ support from c++ + Qt extensions and show signals/slots in the class view only with Qt.</li>
+    <li>Perhaps use konsole part for the application frontend</li>
+    <li>Check if a man page exists before offering the context menu item 'Goto manpage'</li>
+    <li>Show intro page on startup</li>
+</ul>
+
+</li>
+</ol>
+<?php module_tail(); ?>
+
+<?php module_head("Activities within the last 3 months");?>
+Anmerkung: Diese Seite wird nicht &uuml;bersetzt, da der Inhalt sich zu oft &auml;ndert.<br><br>
+
+The tables below show the work made in the last 3 months ordered by topic and time.
+It should help you to find out
+<ul>
+<li>what is going on</li>
+<li>what the current main tasks are</li>
+<li>if someone already works on your wished feature or fixes a certain bug</li>
+<li>and which people you can contact if you want to contribute</li>
+</ul><br><br>
+Note: Only entries registered in the ChangeLog can be listed here. The real number of cvs commits is much higher.<br><br>
+<ul><li><h3>general framework of KDevelop 3</h3></li></ul>
+<b>summary:</b> some interface extensions and addons of functionality<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-26</td>
+<td>Roberto Raggi</td>
+<td>improved the plugin framework</td>
+</tr>
+<tr>
+<td>2003-02-13</td>
+<td>Eray Ozkural</td>
+<td>lib/structure: Trie_Impl apply() fixed</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Eray Ozkural</td>
+<td>lib/structure: Trie enhanced</td>
+</tr>
+<tr>
+<td>2003-02-09</td>
+<td>F@lk Brettschneider</td>
+<td>KDevPlugin interface extended to enable raising of messages view on 'Build'</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>F@lk Brettschneider</td>
+<td>renaming (toplevel() --&gt; mainWindow())</td>
+</tr>
+<tr>
+<td>2003-01-30</td>
+<td>Julian Rockey</td>
+<td>Make CreateFile interface available globally</td>
+</tr>
+<tr>
+<td>2003-01-10</td>
+<td>Julian Rockey</td>
+<td>lib/util/filetemplate: look in global directory for templates if not found in project directory</td>
+</tr>
+<tr>
+<td>2003-01-09</td>
+<td>Eray Ozkural</td>
+<td>revived lib/structure (working Trie class, added KDict</td>
+</tr>
+<tr>
+<td>2003-01-08</td>
+<td>Julian Rockey</td>
+<td>lib/util: added urlutil, general URL manipulation utilities</td>
+</tr>
+<tr>
+<td>2003-01-06</td>
+<td>Hamish Rodda</td>
+<td>partcontroller: bugfix for more stable editDocument(..)</td>
+</tr>
+</table>
+
+<ul><li><h3>User interface, GUI modes, tool-views</h3></li></ul>
+<b>summary:</b> 'File New' feature added, QextMDI UI mode session saving/restoring implemented, IDEAl UI mode fixes, new grepview layout, bugfixes<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-29</td>
+<td>Amilcar Lucas</td>
+<td>implemented intelegent bottom tool-view autohide</td>
+</tr>
+<tr>
+<td>2003-03-18</td>
+<td>Caleb Tennis</td>
+<td>IDEAl UI mode: panel layouts improved</td>
+</tr>
+<tr>
+<td>2003-03-15</td>
+<td>Jens Zurheide</td>
+<td>bugfixes</td>
+</tr>
+<tr>
+<td>2003-03-11</td>
+<td>Julian Rockey</td>
+<td>File New' dialog improved</td>
+</tr>
+<tr>
+<td>2003-03-06</td>
+<td>Stephane Ancelot</td>
+<td>grepview: enhanced; there is no need to display the filename in each line</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Eray Ozkural</td>
+<td>File New' plugin: fix: Add cpp and h types by default when there is no template dir in project</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Eray Ozkural</td>
+<td>File New' plugin: GUI for both global and project level configuration added</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>F@lk Brettschneider</td>
+<td>Childframe UI mode: proper work of session restoring of maximized views; bugfixes</td>
+</tr>
+<tr>
+<td>2003-02-03</td>
+<td>F@lk Brettschneider</td>
+<td>Childframe UI mode: full filename in view caption, proper view icon size</td>
+</tr>
+<tr>
+<td>2003-01-15</td>
+<td>Mickael Marchand</td>
+<td>IDEAl UI mode: 'Close Others' (tabs)</td>
+</tr>
+<tr>
+<td>2003-01-15</td>
+<td>Julian Rockey</td>
+<td>File New' plugin: added "New" option into Gideon's "File" menu</td>
+</tr>
+<tr>
+<td>2003-01-12</td>
+<td>Julian Rockey</td>
+<td>File New' plugin: prettier file creation widget, support for global file templates</td>
+</tr>
+<tr>
+<td>2003-01-11</td>
+<td>F@lk Brettschneider</td>
+<td>view on the project directory: directories now sorted above the files</td>
+</tr>
+<tr>
+<td>2003-01-10</td>
+<td>Julian Rockey</td>
+<td>'File New' plugin: add some global file templates to be stored in $datadir/kdevfilecreate/file-templates</td>
+</tr>
+<tr>
+<td>2003-01-08</td>
+<td>Julian Rockey</td>
+<td>'File New' plugin: initially added</td>
+</tr>
+<tr>
+<td>2003-01-05</td>
+<td>F@lk Brettschneider</td>
+<td>MDI taskbar back as Viewbar (TODO: read on/off config on startup), QextMDI UI mode switch now immediately and properly via Options dialog</td>
+</tr>
+<tr>
+<td>2003-01-01</td>
+<td>Caleb Tennis</td>
+<td>Add linebreaks for data being copied from make output window to clipboard</td>
+</tr>
+</table>
+
+<ul><li><h3>Editors</h3></li></ul>
+<b>summary:</b> file navigation improved, QEditor usuability improved, Perl support improved, better text autoexpansion, bugfixes<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-13</td>
+<td>Julian Rockey</td>
+<td>CTRL-/ does buffer switching like in Emacs</td>
+</tr>
+<tr>
+<td>2003-02-19</td>
+<td>F@lk Brettschneider</td>
+<td>QEditor: find dialog improved (loop to begin at end of file, use text selection as search string)</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>F@lk Brettschneider & Jens Zurheide</td>
+<td>ALT+Up/Down for switching between views (last accessed order), Holding ALT pressed and repeated Up/Down cycles</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>Roberto Raggi</td>
+<td>QEditor: added text hints support</td>
+</tr>
+<tr>
+<td>2003-01-27</td>
+<td>F@lk Brettschneider</td>
+<td>QEditor: Ctrl+Left, Ctrl+Right, Ctrl+Del and Ctrl+Backspace much more better now</td>
+</tr>
+<tr>
+<td>2003-01-24</td>
+<td>Harald Fernengel</td>
+<td>default keys to move to next/prev window are now ALT-Right / ALT-Left (as in kate)</td>
+</tr>
+<tr>
+<td>2003-01-05</td>
+<td>F@lk Brettschneider</td>
+<td>accept perl scripts for the loading in the text editor</td>
+</tr>
+<tr>
+<td>2003-01-01</td>
+<td>Roberto Raggi</td>
+<td>added Auto Expand mode</td>
+</tr>
+</table>
+
+<ul><li><h3>Documentation</h3></li></ul>
+<b>summary:</b> more documentation added, navigation buttons added, configuration improved, bugfixes<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-13</td>
+<td>Alexander Dymo</td>
+<td>DevHelp support, all collections for GNU/GNOME developers (http://lidn.sourceforge.net)</td>
+</tr>
+<tr>
+<td>2003-03-09</td>
+<td>Roberto Raggi</td>
+<td>added back/forward actions for browser</td>
+</tr>
+<tr>
+<td>2003-03-07</td>
+<td>Alexander Dymo</td>
+<td>New configuration options, now capable of using any doxygen and kdoc, not only kdelibs</td>
+</tr>
+<tr>
+<td>2003-03-05</td>
+<td>Alexander Dymo</td>
+<td>now able to handle all Qt documentation including custom *.xml documentation, and some bugfixes, added W3C TR tocs</td>
+</tr>
+<tr>
+<td>2003-02-03</td>
+<td>F@lk Brettschneider</td>
+<td>env vars now possible for URL of documentation views, means Qt docu works now</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Eray Ozkural</td>
+<td>improve library doc dialog</td>
+</tr>
+</table>
+
+<ul><li><h3>programming language support</h3></li></ul>
+<b>summary:</b> mainly C++ support improved: new class parser!, that's why better code completion and classview, improved 'Add method/attribute/class' dialog, make outputview with new layout, Java and Fortran support woken up to new life<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-29</td>
+<td>Luc Willems</td>
+<td>Perl</td>
+<td>class tool-view for Perl projects improved</td>
+</tr>
+<tr>
+<td>2003-03-26</td>
+<td>Roland Krause</td>
+<td>Fortran</td>
+<td>usuability improved, example app template</td>
+</tr>
+<tr>
+<td>2003-03-21</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>better support for namespace and inner classes</td>
+</tr>
+<tr>
+<td>2003-03-20</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>improved code completion</td>
+</tr>
+<tr>
+<td>2003-03-18</td>
+<td>John Firebaugh</td>
+<td>C++</td>
+<td>make-output view: completely restructered, still needs fixing</td>
+</tr>
+<tr>
+<td>2003-03-18</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>new "Add Methods" wizard, new "Add Attributes" wizard</td>
+</tr>
+<tr>
+<td>2003-03-07</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>make-output view: added 'very short compiler output' mode, mode switch without loss of content</td>
+</tr>
+<tr>
+<td>2003-03-02</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>make-output view: completed new behaviour (configuration via contextmenu or dialog)</td>
+</tr>
+<tr>
+<td>2003-02-28</td>
+<td>Roberto Raggi</td>
+<td>Java</td>
+<td>reenabled java support</td>
+</tr>
+<tr>
+<td>2003-02-27</td>
+<td>Victor R&ouml;der</td>
+<td>C++</td>
+<td>made the "C++ new class dialog" a little bit nicer</td>
+</tr>
+<tr>
+<td>2003-02-26</td>
+<td>Eray Ozkural</td>
+<td>C++</td>
+<td>fixed nasty inner class bug (class/struct problem)</td>
+</tr>
+<tr>
+<td>2003-02-25</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>make-output view: scrolling during compiling possible without immediate auto-scrolling to the bottom</td>
+</tr>
+<tr>
+<td>2003-02-24</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>improved the background parser, better syncronization background parser &lt;-&gt; cppsupport part</td>
+</tr>
+<tr>
+<td>2003-02-23</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>use the new c++ parser to fill the class browser</td>
+</tr>
+<tr>
+<td>2003-02-21</td>
+<td>Alexander Dymo</td>
+<td>C++</td>
+<td>Iterative subclassing for existing subclasses</td>
+</tr>
+<tr>
+<td>2003-02-20</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>Added Make-member feature, added Realtime class browser</td>
+</tr>
+<tr>
+<td>2003-02-17</td>
+<td>Hamish Rodda</td>
+<td>C++</td>
+<td>make-output view: added detection of k_lineinfo output</td>
+</tr>
+<tr>
+<td>2003-02-09</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>classview now alphabetically sorted again</td>
+</tr>
+<tr>
+<td>2003-02-01</td>
+<td>Alexander Dymo</td>
+<td>C++</td>
+<td>New Class" dialog: Advanced Inheritance feature; Class is O_OBJECT option; Generate GTK class option</td>
+</tr>
+<tr>
+<td>2003-01-18</td>
+<td>Alexander Dymo</td>
+<td>C++</td>
+<td>improved new class dialog: multiple inheritance, cosmetic improvements</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Eray Ozkural</td>
+<td>C++</td>
+<td>improved new class dialog</td>
+</tr>
+<tr>
+<td>2003-01-04</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>problem reporter accepts import/export macro in class declaration</td>
+</tr>
+</table>
+
+<ul><li><h3>debugger frontend</h3></li></ul>
+<b>summary:</b> bugfixes<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-21</td>
+<td>John Birch & Andras Mantia</td>
+<td>C++</td>
+<td>Sliding breakpoint bug solved</td>
+</tr>
+<tr>
+<td>2003-02-26</td>
+<td>John Birch</td>
+<td>C++</td>
+<td>Fixed display of function parameters</td>
+</tr>
+<tr>
+<td>2003-02-12</td>
+<td>John Birch</td>
+<td>C++</td>
+<td>Sync source with thread patch in kdevelop2.1.x; fixed display of local vars; fixed 'source not found' problem</td>
+</tr>
+</table>
+
+<ul><li><h3>user project managment</h3></li></ul>
+<b>summary:</b> various project templates added to classwizard, many fixes and improvements for QMake (e.g. subclassing) and autotools projects (still needs fixing)<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-11</td>
+<td>Caleb Tennis</td>
+<td>QMake</td>
+<td>added library version number support</td>
+</tr>
+<tr>
+<td>2003-03-10</td>
+<td>Caleb Tennis</td>
+<td>QMake</td>
+<td>added 'staticlib' support</td>
+</tr>
+<tr>
+<td>2003-03-06</td>
+<td>Roberto Raggi</td>
+<td>TMake</td>
+<td>initially added, added template for QTopia 1.6</td>
+</tr>
+<tr>
+<td>2003-03-01</td>
+<td>Roberto Raggi</td>
+<td>Java</td>
+<td>added javahello template to appwizard</td>
+</tr>
+<tr>
+<td>2003-02-28</td>
+<td>Roberto Raggi</td>
+<td>Java</td>
+<td>removed obsolete kdevelop java plugin template</td>
+</tr>
+<tr>
+<td>2003-02-27</td>
+<td>Victor R&ouml;der</td>
+<td>autoconf/automake</td>
+<td>started to restructure it</td>
+</tr>
+<tr>
+<td>2003-02-21</td>
+<td>Alexander Dymo</td>
+<td>autoconf/automake</td>
+<td>Subclassing widgets based on ui-files here too</td>
+</tr>
+<tr>
+<td>2003-02-09</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>dialog for subclassing widgets based on ui-files now works iteratively</td>
+</tr>
+<tr>
+<td>2003-01-30</td>
+<td>Julian Rockey</td>
+<td>autoconf/automake</td>
+<td>Use CreateFile interface if available for creating new files</td>
+</tr>
+<tr>
+<td>2003-01-14</td>
+<td>Harald Fernengel</td>
+<td>autoconf/automake</td>
+<td>added KDE simple application template (khello); bugfix</td>
+</tr>
+<tr>
+<td>2003-01-10</td>
+<td>Julian Rockey</td>
+<td>autoconf/automake</td>
+<td>smarter when adding files to directories that have only one target; nicer to files in the project root directory</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>Append to libpath in subproject configuration dialog</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Julian Rockey</td>
+<td>Python</td>
+<td>Added PyQT project template (QT application framework for Python) to appwizard</td>
+</tr>
+<tr>
+<td>2003-01-06</td>
+<td>Victor R&ouml;der</td>
+<td>autoconf/automake</td>
+<td>bugfixes</td>
+</tr>
+<tr>
+<td>2003-01-04</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>UI-subclassing finnished (activate by rightclicking on a ui-file)</td>
+</tr>
+</table>
+
+<ul><li><h3>version control support</h3></li></ul>
+<b>summary:</b> SVN support improved, fixes for CVS support<br><br>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-02-11</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>added an output view; bugfixes</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>update to subversion 0.17, minor API changes</td>
+</tr>
+<tr>
+<td>2003-01-17</td>
+<td>Harald Fernengel</td>
+<td>CVS</td>
+<td>made CVS shell configurable, you can now use CVS via ssh (password-less login only)</td>
+</tr>
+<tr>
+<td>2003-01-14</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>repaired; added svn diff support (trough the diff viewer)</td>
+</tr>
+</table>
+
+<ul><li><h3>tools</h3></li></ul>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>2003-03-26</td>
+<td>Roberto Raggi</td>
+<td>KNotes plugin added</td>
+</tr>
+</table>
+
+<ul><li><h3>KDevelop web site content</h3></li></ul>
+<table BORDER CELLPADDING=2 NOSAVE >
+<tr>
+<td>Falk Brettschneider, Caleb Tennis, Harry Fernengel, Anne-Marie Mahfouf</td>
+<td>KDevelop 3 alpha announcements, this page updated, French and German translation</td>
+</tr>
+</table>
+<?php module_tail(); ?>
+
+<?php module_head("The active team members of the last 3 months");?>
+<ul>
+<li><a href="mailto:a.lucas at tu-bs.de">Amilcar Lucas</a></li>
+<li><a href="mailto:roberto at kdevelop.org">Roberto Raggi</a></li>
+<li><a href="mailto:jbb at kdevelop.org">John Birch</a></li>
+<li><a href="mailto:amantia at freemail.hu">Andras Mantia</a></li>
+<li><a href="mailto:caleb at aei-tech.com">Caleb Tennis</a></li>
+<li><a href="mailto:cloudtemple at mksat.net">Alexander Dymo</a></li>
+<li><a href="mailto:linux at jrockey.com">Julian Rockey</a></li>
+<li><a href="mailto:falkbr at kdevelop.org">F@lk Brettschneider</a></li>
+<li><a href="mailto:victor_roeder at gmx.de">Victor R&ouml;der</a></li>
+<li><a href="mailto:erayo at cs.bilkent.edu.tr">Eray Ozkural</a></li>
+<li><a href="mailto:meddie at yoyo.its.monash.edu.au">Hamish Rodda</a></li>
+<li><a href="mailto:marchand at kde.org">Mickael Marchand</a></li>
+<li><a href="mailto:jsgaarde at tdcspace.dk">Jakob Simon-Gaarde</a></li>
+<li><a href="mailto:harry at kdevelop.org">Harald Fernengel</a></li>
+<li><a href="mailto:roland at ca.wai.com">Roland Krause</a></li>
+<li><a href="mailto:jfirebaugh at kde.org">John Firebaugh</a></li>
+<li><a href="mailto:Yann.Hodique at lifl.fr">Yann Hodique</a></li>
+</ul>
+<?php module_tail(); ?>
+
+<?php module_head("People who contributed patches within the last 3 months");?>
+<ul>
+<li><a href="mailto:Willems.luc at pandora.be">Luc Willems</a></li>
+<li><a href="mailto:jens.zurheide at gmx.de">Jens Zurheide</a></li>
+<li><a href="mailto:sancelot at free.fr">Stephane Ancelot</a></li>
+<li><a href="mailto:montel at kde.org">Laurent Montel</a></li>
+</ul>
+<?php module_tail(); ?>

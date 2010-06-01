@@ -1,0 +1,31 @@
+<?php module_head("Caract&eacute;ristiques de KDevelop $k_series_version");?>
+
+Il comprend toutes les
+<a href="index.html?filename=3.2/features.html">
+caract&eacute;ristiques de KDevelop 3.2.x</a> plus&nbsp;:<br>
+<ul>
+  <li>Nouvelles caract&eacute;ristiques dans la section KDevelop du <a href="http://developer.kde.org/development-versions/kde-3.5-features.html">plan de caract&eacute;ristiques de KDE 3.5</a></li>
+  <li>Vous pouvez maintenant utiliser CMAKE pour compiler KDevelop</li>
+  <li>Am&eacute;lioration du support du language C++&nbsp;:<ul>
+    <li>support pour QT4, du code diff&eacute;rent est g&eacute;n&eacute;r&eacute; pour des projets Qt3.x et Qt4.x</li>
+    <li>Ajout d'un nouvel onglet dans le dialogue des options C++ pour configurer l'utilisation de la biblioth&egrave;que Qt. Vous pouvez choisir quel Qt est utilis&eacute;, quelle version et d&eacute;terminer le chemin vers le r&eacute;pertoire d'installation.</li>
+  </ul></li>
+   <li>Am&eacute;lioration du d&eacute;bogueur pour les languages C, C++ et Ruby&nbsp;:<ul>
+    <li>La fen&ecirc;tre des points d'arr&ecirc;t du d&eacute;bogueur est plus facile &agrave; utiliser</li>
+    <li>Affiche automatiquement la fen&ecirc;tre des variables quand l'application stoppe et la cacher lorsque l'application se termine.</li>
+    <li>Impl&eacute;mente l'&eacute;dition des valeurs des expressions/variables dans la fen&ecirc;tre des variables.</li>
+    <li>Am&eacute;lioration de la vue des variables</li>
+  </ul></li>
+  <li>Support du language PHP5</li>
+  <li>Nouveau gestionnaire de projet g&eacute;n&eacute;rique&nbsp;:<ul>
+    <li>Il est bas&eacute; sur l'architecture de la plate-forme kdevelop dans laquelle l'interface graphique du gestionnaire de projet est adapt&eacute;e &agrave; un syst&egrave;me de construction sp&eacute;cifique. Les syst&egrave;mes de construction sont g&eacute;r&eacute;s par des modules externes ("importateurs de projets, constructeurs et &eacute;diteurs")</li>
+    <li>Support pour espace de travail disponible</li>
+    <li>Constructeur de projet&nbsp;: make</li>
+    <li>Importateurs de projets&nbsp;: automake, makefiles personnalis&eacute;es, qmake</li>
+  </ul></li>
+  <li>Veuillez voir la
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+  page du journal des changements</a> pour plus de d&eacute;tails.</li>
+</ul>
+
+<?php module_tail();?>

@@ -1,0 +1,40 @@
+<?php module_head("Bugs &amp; Sugest&otilde;es"); ?>
+<p>
+Para reportar um bug ou uma sugest&atilde;o para uma nova funcionalidade, visite o <a href="http://bugs.kde.org/wizard.cgi?package=kdevelop&amp;kbugreport=1">assistente para relat&oacute;rio de bugs</a> da nossa base de dados <a href="http://www.bugzilla.org">bugzilla</a>.
+<b>N&atilde;o deve</b> reportar erros de compila&ccedil;&atilde;o na base de dados de bugs. Para esse efeito utilize antes a
+<a href="index.html?filename=mailinglist.html">lista de discuss&atilde;o</a>.
+</p>
+<p>
+Para obter a lista completa dos correntes bugs e sugest&otilde;es 
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.votes,bugs.delta_ts,map_components.name,bugs.bug_id" TARGET="_top">
+pesquise na base de dados de bugs</a>. Os relat&oacute;rios est&atilde;o organizados por componentes, permitindo obter uma <a href="http://bugs.kde.org/component-report.cgi?product=kdevelop">listagem por componente e sua gravidade</a>.
+</p>
+Para obter uma descri&ccedil;&atilde;o detalhada dos bugs, active os cookies no seu browser e vá de seguida &aacute;
+<a href="http://bugs.kde.org/colchange.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=kdevelop">p&aacute;gina de configura&ccedil;&atilde;o do bugzilla</a> e seleccione:<br>
+<ul>
+  <li>changeddate
+  <li>severity
+  <li>priority
+  <li>reporter
+  <li>status
+  <li>component
+  <li>version
+  <li>votes
+  <li>Summary (first 60 caracters)
+</ul>
+<br>
+E &eacute; tudo, a partir de agora todas as suas consultas de bugs ir&atilde;o apresentar todos os detalhes que precisa para o KDevelop.<br>
+Boa ca&ccedil;ada! :)<br>
+<br>
+<?php
+module_tail();
+$l_bom='Bugómetro';
+$l_ob='Bugs em<br>aberto';
+$l_ow='Sugest&otilde;es<br>em aberto';
+$l_ol7d='Abertos nos<br>&uacute;ltimos 7 dias';
+$l_cl7d='Fechados nos<br>&uacute;ltimos 7 dias';
+$l_c='Altara&ccedil;&atilde;o';
+$l_rbg='gráfico bugs resolvidos';
+$l_obwg='gráfico bugs e sugestões em aberto';
+return include('dynamic/weekly-bug-summary.html');
+?>

@@ -1,0 +1,8 @@
+<?php module_head("Proiectul KDevelop");?>
+
+Proiectul KDevelop a fost început in 1998 pentru a construi o modalitate uşoară de a folosi IDE (Integrated Development Environment) pentru <a href="http://www.kde.org/">KDE</a>. De atunci, KDevelop IDE este disponibil public sub licenţă <a href="index.html?filename=license.html">GPL</a>
+şi suportă <a href="HEAD/doc/api/html/LangSupportStatus.html">multe limbaje de programare</a>.<br>
+Vă rugăm să ne contactaţi pentru sponsorizări sau oferte de ajutor.<br>
+<!--Va rugam vizitati <a href="index.html?filename=donate.html">pagina pentru donaţii, sponsorizari sau oferte de ajutor</a>.-->
+
+<?php module_tail();?>

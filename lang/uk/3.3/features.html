@@ -1,0 +1,32 @@
+<?php module_head("KDevelop $k_series_version Features");?>
+
+Має зміт можливостей
+<a href="index.html?filename=3.2/features.html">
+KDevelop 3.2.x </a> plus:<br>
+<ul>
+  <li>Нові можливості у секції KDevelop на <a href="http://developer.kde.org/development-versions/kde-3.5-features.html">KDE 3.5 Feature Plan</a></li>
+  <li>Як використовувати CMAKE для компіляції KDevelop</li>
+  <li>Improved C++ language support:<ul>
+    <li>підтримка QT4, інший код генерується для Qt3.x та Qt4.x проектів</li>
+    <li>Added new tab у діалог опцій C++ для конфігурації використання Qt бібліотеки. Ви можете конфігурувати, якщо Qt використовується, which major version і де бібліотека Qt інстальвана.</li>
+  </ul></li>
+  <li>Improved debugger для мов C, C++ та Ruby:<ul>
+    <li>Debugger  breakpoints window made easier to use</li>
+    <li>Автоматично показує вікно з змінними коли програма stop, і скриває, коли програма закінчується .</li>
+    <li>Implement editing expression/variable values in variables window.</li>
+    <li>Improved the variables view</li>
+  </ul></li>
+  <li>PHP5 підтримує</li>
+  <li>Новий менеджер проєктівr:<ul>
+    <li>Він базується на архітектурі платформи kdevelop де GUI проекту абстрактний
+     від системи. Система використовує плагіни("project importers, builders and editors")</li>
+    <li>Підтримка Workspace</li>
+    <li>Project builders: make builder</li>
+    <li>Project importers: automake, custom makefiles, qmake</li>
+  </ul></li>
+  <li>Дивись
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+  сторінку changelog </a> для деталей</li>
+</ul>
+
+<?php module_tail();?>

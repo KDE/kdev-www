@@ -1,0 +1,18 @@
+<?php module_head("Versões lançadas ao público");?>
+<br>
+A equipa KDevelop lançou várias versões do KDevelop. Aqui está informação sobre cada uma delas de acordo com a versão KDE e Qt utilizada:
+<br><br>
+<table BORDER CELLPADDING="3">
+<tr>
+<th>versão</th>
+<th>requer <A HREF="http://www.kde.org/mirrors/">pacote KDE</A> "kdelibs"</th>
+<th>requer <a href="http://www.trolltech.com/products/qt/">biblioteca Qt</a></th>
+<th>data de lançamento (AAAA/MM/DD)</th>
+</tr>
+<?php include("versions.ihtml"); ?>
+</table>
+<br>
+<?php
+module_tail();
+return filemtime('versions.ihtml');
+?>

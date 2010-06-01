@@ -1,0 +1,8 @@
+<?php module_head("Projekt KDevelop");?>
+
+Projekt KDevelop został założony w 1998 roku aby zbudować łatwe w użyciu Zintegrowane Środowisko Programistyczne (ang. IDE - Integrated
+Development Environment) dla <a href="http://www.kde.org/">KDE</a>. Od tamtego momentu KDevelop IDE jest publicznie dostępny pod ochroną licencji <a href="index.html?filename=license.html">GPL</a> i obsługuje <a href="HEAD/doc/api/html/LangSupportStatus.html">wiele języków programowania</a>.<br>
+Prosimy o kontakt w sprawie sponsoringu lub ofert pomocy.<br>
+<!--Proszę odwiedź naszą <a href="index.html?filename=donate.html">stronę dla dotacji, sponsoringu lub ofert pomocy</a>.-->
+
+<?php module_tail();?>

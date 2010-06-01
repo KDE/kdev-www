@@ -1,0 +1,56 @@
+<?php module_head("KDevelop $k_series_version Screenshots Section 2");?>
+
+<table width="100%" cellspacing=2 cellpadding=2 border=0>
+  <tr>
+    <td align=center><a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots1.html">截屏 1</a>
+    <td align=center>截屏 2
+    <td align=center><a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots3.html">截屏 3</a>
+  </tr>
+</table>
+
+<table width="100%" cellspacing=2 cellpadding=2 border=0>
+  <tr>
+    <th class=header width="50%" align=center>变量窗口</th>
+    <th class=header width="50%" align=center>主弹出菜单</th>
+  </tr>
+  <tr>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/variables_window.png"><img border="0" src="graphics/screenshots/3.3/thumbs/variables_window.png" width="140" height="100" alt="Variables windows"/></a>
+<div align="justify"><ul><li>
+只显示前当栈框(Frame)中local变量, 不必再受所有栈框(Frame)上或者曾经访问过的线程上的变量困扰。
+</li><li>
+一个新的"Evaluate"按钮，可以用来在每一步估算表达式的值而不必更新它。
+</li><li>
+注意变量"p1", 或者变量"p3" -- 值不会再包含表示类型的前缀. 而在以前会有类似 "(int*) 0x8049abc" 。
+</li><li>
+注意变量 "p4" 和 "s" -- 现在可以显示一个类的静态成员，而不必分开显示QString
+</li></ul></div>
+    </td>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/main_popup.png"><img border="0" src="graphics/screenshots/3.3/thumbs/main_popup.png" width="140" height="100" alt="Main popup menu"/></a>
+<div align="justify"><ul><li>
+加入了"Run to cursor" 
+</li><li>
+加入了"Evaluate"
+</li><li>
+调试器激活时，调试命令在最顶端
+</li></ul></div>
+    </td>
+  </tr>
+  <tr>
+    <th class=header width="50%" align=center>修改变量</th>
+    <th class=header width="50%" align=center>弹出变量窗口</th>
+  </tr>
+  <tr>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/editing_variable.png"><img border="0" src="graphics/screenshots/3.3/thumbs/editing_variable.png" width="140" height="100" alt="Editing variable"/></a>
+<p>变量现在可以编辑了</p>
+    </td>
+    <td class=odd width="50%" align=center>
+      <a href="graphics/screenshots/3.3/variables_popup.png"><img border="0" src="graphics/screenshots/3.3/thumbs/variables_popup.png" width="140" height="100" alt="Variables window popup"/></a>
+<p>新的 "Remember value" 命令</p>
+    </td>
+  </tr>
+</table>
+
+<?php module_tail();?>

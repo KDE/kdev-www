@@ -1,0 +1,118 @@
+<?php module_head("KDevelop 3.0.x Features");?>
+
+
+<ul>
+
+<li><b>Arsitektur yang berbasis Plugin</b>
+<ul>
+<li>Fungsi-fungsi bisa ditambahkan, diganti, atau dihapus tanpa merubah kode inti (core source code).</li>
+<li>Libraries license (LGPL) memperbolehkan pembuatan IDE plugins komersial ataupun yang gratis.</li>
+<li>Dukungan profiles yang akan menentukan seperangkat plugins yang akan dibuka. Fitur ini terutama berguna ketika dipakai di lingkungan yang dibatasi (restricted environments) atau setup pribadi (custom setups).</li>
+</ul>
+</li>
+
+<li><b>Pengelolaan Proyek (Project Management)</b>
+<ul>
+<li>Dukungan asal (bukan tambahan) untuk <b>automake</b> dan <b>qmake</b>. Modifikasi diperbolehkan dan diakui oleh IDE. Proyek dan sub-proyek yang sudah ada juga bisa dengan mudahnya di-import.</li>
+<li>Kemampuan untuk memakai makefiles pribadi (custom makefiles) untuk membuat proyek.</li>
+<li>Dukungan untuk <b>ant</b> - ant adalah alat pengembangan untuk proyek java.</li>
+<li>Dukungan untuk tipe-tipe proyek tambahan (extra project types) seperti pascal, haskell, "ada" dan scripting projects.</li>
+<li>Rangka (Framework) untuk menambahkan dukungan (support) untuk sistem pembangunan apa saja dengan membuat plugins ke sistem pembangunan untuk generic project manager.</li>
+<li>File wizard baru untuk menangani file templates dan untuk membuat file baru di proyek dari templates yang tersedia.</li>
+<li>Plugins Kompiler (Compiler plugins) untuk menegaskan pilihan-pilihan kompiler di convenient dialogs.</li>
+<li>Susunan profile (Configuration profiles) dengan kemampuan mengkhususkan kompiler-kompiler berbeda, compiler flags, build directories, target architecture, dll.</li>
+<li>Fasilitas dokumentasi proyek seperti <b>doxygen</b> untuk membuat dokumentasi API otomatis (dengan bentuk html, tex dan man) untuk proyek dengan cross-references ke librari-librari yang dipakai.</li>
+<li>Dukungan translasi memperbolehkan penerjemah menambahkan bahasa tujuan kedalam proyek dengan mudah, dan juga dukungan <a href="http://l10n.kde.org/tools/kbabel/" target="main">KBabel</a>.</li>
+<li>Dukungan  proyek Qt/Embedded projects (untuk platform <a href="http://developer.sharpsec.com/" target="_top">Zaurus</a> dan <a href="http://www.compaq.com/products/iPAQ/" target="_top">iPAQ</a>).</li>
+</ul>
+</li>
+
+<li><b>Dukungan ke berbagai Bahasa Pemrograman</b>
+<ul>
+<li>Ada 15 bahasa pemrograman yang didukung, termasuk Ada, C, C++, Objective-C (melalui C support), SQL, Fortran, Haskell,
+Java, PHP, Pascal, Perl, Python, Ruby, Bash, XUL (tidak resmi).</li>
+<li>Pelapor masalah yang bisa melaporkan berbagai "masalah" di kode sewaktu anda mengetik. Masalah-masalah tersebut termasuk language syntax errors, TODO's dan FIXME's.</li>
+<li>Class browser untuk menampilkan hirarki kelas (hierarchy of classes) dan simbol-simbol lain di proyek.</li>
+<li>Language parsers to feed class browser and problem reporter.</li>
+<li>Class, method and attribute wizards untuk bahasa-bahasa yang berorientasi object (object-oriented languages).</li>
+<li>Pelengkap kode otomatis (automatic code completion) dan code hinting for class variables, methods, function arguments dan  lainnya.</li>
+<li>Source formatting, penggaris bawahan syntax dan code folding.</li>
+<li>Fitur khusus C++, seperti:
+<ul>
+<li>"make member" - creating method definition in source file basing on the method declaration in header file;</li>
+<li>"extract interface"- extracting interface (method declarations) and creating abstract base class with that interface;</li>
+<li>"subclassing" - automated subclass creating and slot implementing for Qt Designer forms.</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><b>Integrated Debugger</b>
+<ul>
+<li>GDB dan Java debugger frontends.</li>
+<li>Integrated GDB console.</li>
+<li>Line, address, method breakpoints and watchpoints.</li>
+<li>Conditional breakpoints.</li>
+<li>Disassembler and frame stack viewer.</li>
+<li>Variable watch tree.</li>
+<li>Memory, registers and libraries viewers.</li>
+<li>Debugger shell (libtool) support.</li>
+<li>Remote debugging.</li>
+</ul>
+</li>
+
+<li><b>Code Editing</b>
+<ul>
+<li>Editor apa saja yang menjalankan interface KDE KTextEditor bisa dipakai dengan KDevelop.</li>
+<li>Editor-editor yang saat ini tersedia adalah <a href="http://kate.kde.org/" target="main">Kate</a>, QEditor (berbasiskan Qt Designer editor) dan KVim.</li>
+<li>Wide bookmarks proyek yang disimpan didalam file proyek</li>
+<li>Difference viewer (pencari perbedaan) antara teks yang sekarang ini di edit dan teks yang ada di dalam disk.</li>
+<li>Difference viewer (pencari perbedaan) untuk patch files.</li>
+<li>Grep integration - pencari regular expression di proyek.</li>
+<li>Project wide find and replace tool.</li>
+</ul>
+</li>
+
+<li><b>Version Control System</b>
+<ul>
+<li>A common API akan memasukkan dukungan VCS (Version Control System) di KDevelop.</li>
+<li>VCS systems yang didukung: CVS, Perforce, Subversion and Clearcase.</li>
+</ul>
+</li>
+
+<li><b>Application Wizard</b>
+<ul>
+<li>Application wizard menghasilkan aplikasi contoh yang lengkap dan siap dipakai.</li>
+<li>Mempunyai templates untuk setiap bahasa pemrograman dan sistem pembangunan yang didukung.</li>
+<li>Kemampuan untuk memakai custom application templates yang tidak diikutkan di distribution.</li>
+<li>Serangkaian proyek templates yang berhubungan dengan KDE (KPart applications, simple KDE applications, KControl modules, Kicker (panel) applets, KOffice parts, KIOSlaves, <a href="http://www.konqueror.org/" target="main">Konqueror</a>, Noatun and Kate plugins and desktop styles).</li>
+</ul>
+</li>
+
+<li><b>Documentation Viewer (Alat untuk membaca dokumentasi)</b>
+<ul>
+<li>Interface yang sudah disatukan untuk membaca dokumentasi.</li>
+<li>Kemampuan TOC, index, dan full text search dengan htdig (mencari teks penuh).</li>
+<li>Deteksi otomatis dan penyertaan Qt, KDE Libs dan DevHelp documentation.</li>
+<li>Dukungan untuk koleksi dokumentasi pribadi (KDevelopTOC format).</li>
+<li>Kemampuan untuk membuka dokumen lokal, di tempat lain (remote), ataupun yang di kompres (menggunakan protokol apasaja yang didukung Konqueror - http, ftp, sftp, tar, zip, dll.).</li>
+<li>Kemampuan untuk membuka berbagai format dokumentasi (html, text, ps, pdf, chm, etc.).</li>
+</ul>
+</li>
+
+<li><b>Fitur-fitur lain</b>
+<ul>
+<li>Interface pengguna bisa sepenuhnya dibentuk (configurable). Fitur ini memperbolehkan penggantian antara MDI modes klasik (seperti toplevel, childframe) dan IDEAl mode baru (dengan fitur sliding tool-views) dengan mudah.</li>
+<li>Embedded console.</li>
+<li>Fasility file selector, file tree dan file groups menyingkirkan kebutuhan file manager external.</li>
+<li>Penyertaan program lain yang anda perlukan untuk pengembangan dengan menambahkan program tersebut ke "tools" menu sesuai dengan keinginan anda.</li>
+<li>Regular expression tester.</li>
+<li>Integrasi Valgrind untuk mencari kebocoran memory (memory leaks) di program.</li>
+<li>Alat distribusi proyek dan pemaketan untuk pembuatan paket source dan binary otomatis.</li>
+<li>CTags integration.</li>
+<li>Part explorer to query available KDE services.</li>
+</ul>
+</li>
+</ul>
+
+<?php module_tail();?>

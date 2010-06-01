@@ -1,0 +1,12 @@
+<?php module_head("KDevelop Projesi");?>
+
+KDevelop projesinin temelleri 1998 ylnda <a href="http://www.kde.org/">KDE</a> i�n
+kullanm kolay bir IDE (Tmleik yazlm gelitirme ortam) gelitirmek amacyla atld.
+O gnden beri, KDevelop IDE <a href="index.html?filename=license.html">GPL</a> lisans altnda
+herkezin kullanmna a�ktr ve <a href="HEAD/doc/api/html/LangSupportStatus.html">bir�k programlama dilini</a>
+destekler.<br>
+Sponsorluk ve yardmlarnz i�n ltfen bizimle irtibata ge�n.<br>
+<!--Ltfen <a href="index.html?filename=donate.html">ba�lar, sponsorluk veya yardmlar i�n sayfamz
+ziyaret edin</a>.-->
+
+<?php module_tail();?>

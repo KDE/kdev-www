@@ -1,0 +1,41 @@
+<?php
+$l_online_un_subscribe='Online не/зареєстрованих';
+$l_Mailinglists='Листи розсилки:';
+$l_kdevelop_users='KDevelop';
+$l_kdevelop_devel='KDevelop Development';
+$l_kdevelop_bugs='KDevelop Bug reports';
+$l_default_email='ваш email адреса';
+$l_subscribe='Підписатися';
+$l_unsubscribe='Відмовитися від підписки';
+$l_done='ЗРОБЛЕНО';
+
+require_once('inc/mailinglist.php');
+?>
+
+<?php module_head("Листи розсилки для користувачів KDevelop")?>
+
+З Feb 1999 ми мали листи розсилки <b>(kdevelop at kdevelop.org)</b> і найбільше 600-700 підписаних
+Цей лист для докланого обміркування і перекладу.
+  <blockquote>
+  Архіви листів розсилки: <A HREF="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop/">barney.cs.uni-potsdam.de</A>
+  </blockquote>
+Дякуюячи Hank Leininger.<br>
+<br>
+
+<?php
+module_tail();
+module_head("Листи розсилки для розроботчиків KDevelop");
+?>
+
+<p>
+Ми ще маємо два інших листи, <em>kdevelop-devel</em> лист до розроботчиків KDevelop, та
+<em>kdevelop-bugs</em> для попередження про bug з bugs.kde.org. Ви можете підписатися і відмовитись
+від цих листів на цій сторінці.</p><p> Повідомлення цих листів можна знайти на
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-devel/">kdevelop-devel mailinglist archive</a>
+та
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-bugs/">kdevelop-bugs mailing list archive</a>.
+</p>
+
+<p>Це можливо для <a href="http://commitfilter.kde.org/">subscribe to the list of KDevelop SVN commits</a>.
+
+<?php module_tail(); ?>

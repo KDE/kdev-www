@@ -1,0 +1,9 @@
+<?php module_head("O Projeto KDevelop");?>
+
+O projeto KDevelop foi iniciado em 1998 no intuito de se construir um IDE (Integrated
+Development Enviroment - Ambiente de Desenvolvimento Integrado) f&aacute;cil
+de usar para o <a href="http://www.kde.org/">KDE</a>.  Desde ent&atilde;o, o IDE KDevelop est&aacute; dispon&iacute;vel publicamente sob a licen&ccedil;a GPL (<a href="index.html?filename=license.html">Gnu Public License - Licen&ccedil;a P&uacute;blica Gnu</a>)
+e suporta <a href="HEAD/doc/api/html/LangSupportStatus.html">v&aacute;rias linguagens de programa&ccedil;&atilde;o</a>.<br>
+Por favor nos contacte para ofertas de ajuda ou patroc&iacute;nio.<br>
+<br/>
+<?php module_tail();?>

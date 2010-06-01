@@ -1,0 +1,34 @@
+<?php module_head("KDevelop 3.0.x downloads");?>
+<br>
+<h3>二进制版本：</h3>
+<p>
+一些Linux/UNIX OS发行商为他们的发行版本提供了KDevelop的二进制包，此外，社区的志愿者也作了相同的工作。
+一些二进制包可以在KDE的网站或者FTP镜像上下载。
+</p>
+<?php
+  $l_architecture = "Architecture";
+  $l_distribution = "Distribution";
+  $l_distribution_version = "Distribution version";
+  include("3.0/download_binaries.ihtml");
+?>
+<br>
+<br><h3>用于KDE &gt;= 3.0上的源代码 :</h3>
+<?php include("3.0/download_sources.ihtml"); ?>
+<br>
+在继续之前请确保您的计算机已经安装了
+<a href="index.html?filename=3.0/requirements.html">必须的软件</a> 。<br>
+<br>
+解压缩源代码并切换到基目录：
+<pre>
+       $ bunzip2 kdevelop-3.0.x.tar.bz2
+       $ tar -xf kdevelop-3.0.x.tar
+       $ cd kdevelop-3.0.x
+</pre>
+<?php include_file("3.0/compiling.ihtml"); ?>
+<br>
+<?php module_tail(); ?>
+
+<?php module_head("KDevelop 3.0.x on Windows (Cygwin)");?>
+<br><b>KDE 3.1.4 和 KDevelop 3.0.0的二进制发行包：</b>
+<br><a href="http://kde-cygwin.sourceforge.net/kde3/installation.php">Cygwin下的KDE安装</a>
+<?php module_tail(); ?>

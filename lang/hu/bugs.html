@@ -1,0 +1,40 @@
+<?php module_head("Hib&aacute;k &amp; K&iacute;v&aacute;ns&aacute;gok"); ?>
+<p>
+&uacute;j hiba vagy szolg&aacute;ltat&aacute;s ig&eacute;ny bejelent&eacute;s&eacute;hez l&aacute;togass el <a href="http://bugs.kde.org/wizard.cgi?package=kdevelop&amp;kbugreport=1">hibajelent&eacute;s var&aacute;zsl&oacute;</a> oldalra <a href="http://www.bugzilla.org">bugzilla</a> adatb&aacute;zisunkban.
+<b>Ne</b> jelents ford&iacute;t&aacute;si hib&aacute;kat az adatb&aacute;zisba! Ezen hib&aacute;k jelent&eacute;s&eacute;re haszn&aacute;ld 
+<a href="index.html?filename=mailinglist.html">levelez&eacute;si list&aacute;nkat</a>.
+</p>
+<p>
+A KDevelop aktu&aacute;lis hib&aacute;inak &eacute;s k&iacute;v&aacute;ns&aacute;glist&aacute;j&aacute;nak megtekint&eacute;s&eacute;hez
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.votes,bugs.delta_ts,map_components.name,bugs.bug_id" TARGET="_top">
+tekintsd meg az adatb&aacute;zist</a>. A jelent&eacute;sek komponensekre vannak bontva, &iacute;gy megtekintheted <a href="http://bugs.kde.org/component-report.cgi?product=kdevelop">komponensek &eacute;s s&uacute;lyoss&aacute;g szerint taglalva</a>.
+</p>
+A hib&aacute;k r&eacute;szletes megtekint&eacute;s&eacute;hez enged&eacute;lyezd a b&ouml;ng&eacute;sz&otilde;dben a cookie-kat &eacute;s l&aacute;togass el a 
+<a href="http://bugs.kde.org/colchange.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=kdevelop">bugzilla oszlopbe&aacute;ll&iacute;t&oacute; oldara</a> majd v&aacute;lassz az al&aacute;bbi lehet&otilde;s&eacute;gekb&otilde;l:<br>
+<ul>
+  <li>v&aacute;ltoz&aacute;s d&aacute;tuma
+  <li>s&uacute;lyoss&aacute;g
+  <li>priorit&aacute;s
+  <li>bejelent&otilde;
+  <li>&aacute;llapot
+  <li>komponens
+  <li>vezri&oacute;
+  <li>szavazatok
+  <li>Le&iacute;r&aacute;s (els&otilde; 60 karakter)
+</ul>
+<br>
+Ennyi az eg&eacute;sz! Mostant&oacute;l minden KDevelop-ot &eacute;rint&otilde; hibalek&eacute;rdez&eacute;sed a sz&aacute;modra sz&uuml;ks&eacute;ges adatokat fogja tartalmazni.<br>
+J&oacute; hibavad&aacute;szatot! :)<br>
+<br>
+<?php
+module_tail();
+$l_bom='Bug-o-meter';
+$l_ob='Nyitott<br>hib&aacute;k';
+$l_ow='Nyitott<br>k&iacute;v&aacute;ns&aacute;gok';
+$l_ol7d='Megnyitva az<br>utols&oacute; 7 napban';
+$l_cl7d='Lez&aacute;rva az<br>utols&oacute; 7 napban';
+$l_c='V&aacute;ltoz&aacute;s';
+$l_rbg='Jav&iacute;tott hib&aacute;k grafikon';
+$l_obwg='Megnyitott hib&aacute;k &eacute;s k&iacute;v&aacute;ns&aacute;gok grafikon';
+return include('dynamic/weekly-bug-summary.html');
+?>

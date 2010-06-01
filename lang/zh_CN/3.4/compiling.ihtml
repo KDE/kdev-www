@@ -1,0 +1,69 @@
+<ol start="4">
+<li>
+要在您的系统编译和安装 KDevelop，
+请在基目录下输入下列命令(我们假定您使用的是 bash)。
+<dl>
+<dd class="code">$ export KDEDIR=/where/your/kde3/is</dd>
+<dd class="code">$ export QTDIR=/where/your/qt3/is</dd>
+<dd class="code">$ export KDEVELOPDIR=/where/kdevelop/will/be/installed</dd>
+<dd class="code">$ export KDEDIRS=$KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">$ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">$ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">$ export PATH=$KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+<b>注意：</b>显而易见，您应该根据您的配置编辑头两行！<br>
+对于基于 RPM 包管理的 linux 发行，您可以通过您 linux 发行的配置程序找到您系统中 Qt3 和 KDE3 的目录，
+或者只是简单地输入"rpm -ql qt3" 和 "rpm -ql kdebase3"。
+<br>
+如果您是 gentoo 用户并且想使用 ctags 那么需要：
+<dl>
+<dd class="code">ln -sf /usr/bin/exuberant-ctags /usr/bin/ctags</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>
+下一步是配置，要获得更多的配置选项，键入：
+<dl>
+<dd class="code">$ ./configure --help</dd>
+</dl>
+
+以下是一个调试版本的编译例子：
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+以下是一个发行版本的编译例子：
+<dl>
+<dd class="code">$ ./configure --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+您也可以不编译那些您不需要的 KDevelop 组件，比如，作者本人采用以下的配置：
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+--disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+--disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+--disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion</dd>
+</dl>
+</li>
+
+<li>
+最后您需要编译并安装：
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (as root, using for example the "su" command)</dd>
+</dl>
+如果由于某种原因编译失败，您可以加入 -k 选项强迫它忽略这些错误，如下：<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (as root)</dd>
+</dl>
+根据错误的严重程度，
+您可以得到可用或者不可用的 kdevelop 版本。所以您自己要承担"make
+-k install" 的风险！！
+</li></ol>
+
+<p>您可以通过<a
+href="http://bugs.kde.org/wizard.cgi">缺陷提交表格</a>来报告缺陷。您<b>不能</b>向该缺陷数据库报告任何编译错误。对于编译错误，请使用
+<a href="index.html?filename=mailinglist.html">邮件列表</a>。</p>

@@ -1,0 +1,33 @@
+<?php module_head("KDevelop HEAD Ýndirilecekler");?>
+<br><h3>KDE &gt;= <?php echo $k_min_required_kde_version; ?> için Kdevelop kaynak dosyalarý:</h3>
+<a href="http://download.kde.org/download.php?url=unstable/snapshots/kdevelop.tar.bz2">en son geliþtirme sürümüdür, ve bu yüzden <b>kararsýzdýr</b>, snapshot (tar.bz2)</a><br>
+<br>
+<ol>
+<li>Devam etmeden önce lütfen bilgisayarýnýzýn
+<a href="index.html?filename=HEAD/requirements.html">gereken yazýlýmlara</a> sahip olup olmadýðýný kontrol edin.
+</li>
+<br>
+<li>tar.bz2 kaynak dosyasýný indirin.
+</li>
+<br>
+<li>Kaynak dosyasýný açýn ve ana dizininizi deðiþtirin:
+<dl>
+<dd class="code">$ bunzip2 kdevelop.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop.tar</dd>
+<dd class="code">$ cd kdevelop</dd>
+</dl>
+</li>
+</ol>
+<?php include_file("HEAD/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+if ($lang == 'en') {
+  $ts3 = filemtime("$k_base_version/download.html");
+  $ts4 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts3 = file_exists("lang/$lang/$k_base_version/download.html")?filemtime("lang/$lang/$k_base_version/download.html"):filemtime("$k_base_version/download.html");
+  $ts4 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts3,$ts4));
+?>

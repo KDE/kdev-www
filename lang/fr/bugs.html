@@ -1,0 +1,41 @@
+<?php module_head("Bogues &amp;  liste de voeux"); ?>
+<p>
+Pour entrer un nouveau rapport de bogues ou un souhait, veuillez aller &agrave; <a href="http://bugs.kde.org/wizard.cgi?package=kdevelop&amp;kbugreport=1">l'assistant de rapport de bogue</a> de notre base de donn&eacute;es <a href="http://www.bugzilla.org">bugzilla</a>.
+Vous ne devez <b>pas</b> rapporter des erreurs de compilation dans la base de donn&eacute;es des bogues. Pour les erreurs de compilation, veuillez plut&ocirc;t utiliser la
+<a href="index.html?filename=mailinglist.html">liste de diffusion</a>.
+</p>
+<p>
+Pour la liste compl&egrave;te des bogues et des voeux pour KDevelop, veuillez voir la
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.votes,bugs.delta_ts,map_components.name,bugs.bug_id" TARGET="_top">
+base de donn&eacute;es des bogues de KDevelop</a>.
+Les rapports sont s&eacute;par&eacute;s en plusieurs cat&eacute;gories aussi pouvez-vous obtenir un <a href="http://bugs.kde.org/component-report.cgi?product=kdevelop">rapport par cat&eacute;gorie et s&eacute;v&eacute;rit&eacute;</a>.
+</p>
+Pour avoir une vue d&eacute;taill&eacute;e des bogues, veuillez donner &agrave; votre navigateur la permission de recevoir des cookies puis allez
+<a href="http://bugs.kde.org/colchange.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=kdevelop">ici</a> et s&eacute;lectionnez&nbsp;:<br>
+<ul>
+  <li>changeddate
+  <li>severity
+  <li>priority
+  <li>reporter
+  <li>status
+  <li>component
+  <li>version
+  <li>votes
+  <li>Summary (les 60 premi&egrave;res lettres)
+</ul>
+<br>
+C'est tout, &agrave; partir de maintenant toutes vos demandes concernant des bogues vont avoir toutes les informations dont vous avez besoin pour KDevelop.<br>
+Bonne chasse de bogues&nbsp;! :)<br>
+<br>
+<?php
+module_tail();
+$l_bom='Bogue-o-m&egrave;tre';
+$l_ob='Ouvert<br>bugs';
+$l_ow='Open<br>wishes';
+$l_ol7d='Ouvert in<br>last 7 days';
+$l_cl7d='Closed in<br>last 7 days';
+$l_c='Change';
+$l_rbg='Resolved bugs graph';
+$l_obwg='Opened bugs and wishes graph';
+return include('dynamic/weekly-bug-summary.html');
+?>

@@ -1,0 +1,45 @@
+<?php module_head("T&eacute;l&eacute;chargements de KDevelop $k_series_version");?>
+<br>
+<h3>Ex&eacute;cutables :</h3>
+<p>
+Certains vendeurs de distributions Linux/UNIX fournissent des paquetages ex&eacute;cutables de KDevelop pour certaines versions de leur distribution et dans d'autres cas, des volontaires le font aussi.
+Certains de ces paquetages binaires sont disponibles en t&eacute;l&eacute;chargement libre depuis les mirroirs KDE http ou FTP.
+</p>
+<?php
+  $l_architecture = "Architecture";
+  $l_distribution = "Distribution";
+  $l_distribution_version = "Version de la distribution";
+  include("$k_base_version/download_binaries.ihtml");
+?>
+<br>
+<br><h3>Sources pour KDE &gt;= <?php echo $k_min_required_kde_version; ?> :</h3>
+<?php include("$k_base_version/download_sources.ihtml"); ?>
+<br>
+<ol>
+<li>Avant de continuer, veuillez v&eacute;rifier si votre ordinateur poss&egrave;de 
+<a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">les logiciels requis</a> insall&eacute;s.
+</li>
+<br>
+<li>D&eacute;compressez le fichier source et allez dans le r&eacute;pertoire de base :
+<dl>
+<dd class="code">$ bunzip2 kdevelop-<?php echo $k_latest_version; ?>.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop-<?php echo $k_latest_version; ?>.tar</dd>
+<dd class="code">$ cd kdevelop-<?php echo $k_latest_version; ?></dd>
+</dl>
+</li>
+</ol>
+<?php include_file("$k_base_version/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+$ts1 = filemtime("$k_base_version/download_binaries.ihtml");
+$ts2 = filemtime("$k_base_version/download_sources.ihtml");
+if ($lang == 'en') {
+  $ts3 = filemtime("$k_base_version/download.html");
+  $ts4 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts3 = file_exists("lang/$lang/$k_base_version/download.html")?filemtime("lang/$lang/$k_base_version/download.html"):filemtime("$k_base_version/download.html");
+  $ts4 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts1,$ts2,$ts3,$ts4));
+?>

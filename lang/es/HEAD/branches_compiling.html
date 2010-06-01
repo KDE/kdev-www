@@ -1,0 +1,152 @@
+<?php include_file("$lsv/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file() ?>
+
+<?php module_head("Instrucciones para compilar el KDevelop $k_series_version"); ?>
+<ol>
+<li>Antes de continuar por favor comprueba si su computador tiene instalado el <a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">software requerido</a>.</li>
+<br>
+<li>Obtén los fuentes para el <b><?php echo $k_branch; ?></b> como se explica arriba.</li>
+<br>
+<li>Inicie el sistema de construcción:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ make -f admin/Makefile.common cvs-clean</dd>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+</li>
+<?php
+  include_file("$k_base_version/compiling.ihtml");
+  module_tail();
+  module_head("Como mantener su versión actualizada");
+?>
+Después de descargar y compilar con éxito una de las ramas de SVN
+de mas arriba, querrá mantenerlo actualizado obteniendo todos los parches.
+<ol><li>Para evitar escribir en todas sentencias que definen las variables de
+entorno necesarias cada vez que actualice, debe definir las en su fichero 
+.bashrc o .cshrc.
+<ul>
+<li>Si usa el intérprete de comandos bash añada las siguientes líneas:
+<dl>
+<dd class="code">export KDEDIR=/donde_esté_su/kde3/</dd>
+<dd class="code">export QTDIR=/donde_esté_su/qt3/</dd>
+<dd class="code">export KDEVELOPDIR=/where/kdevelop/will/be/installed</dd>
+<dd class="code">export KDEDIRS=$KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">export PATH=$KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl></li>
+<li>Si usa el intérprete de comandos tcsh añada las siguientes líneas:
+<dl>
+<dd class="code">setenv KDEDIR /donde_esté_su/kde3/</dd>
+<dd class="code">setenv QTDIR /donde_esté_su/qt3/</dd>
+<dd class="code">setenv KDEVELOPDIR /where/kdevelop/will/be/installed</dd>
+<dd class="code">setenv KDEDIRS $KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">setenv PATH $KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+</li></ul>
+<b>Nota:</b> por razones obvias debe editar las primeras tres líneas para adecuarlas a su configuración! :)
+</li>
+
+<br>
+<br>
+
+<li>Vaya al directorio donde a puesto los ficheros de <i>kdevelop de SVN</i> y ejecute el comando update:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ svn up</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>El paso siguiente depende del resultado del comando anterior:
+
+<ul>
+<li>Si obtuvo algo parecida a:
+<dl>
+<dd class="code">U /some_directory_path/Makefile.am</dd>
+</dl>
+Debe hacer:
+<dl>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+seguido por el siguiente paso ./configure
+</li>
+
+<br>
+<br>
+
+<li>
+Si obtuvo algo parecida a:<br>
+<dl>
+<dd class="code">P /some_directory_path/Makefile.am</dd>
+</dl>
+Debe hacer:<br>
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+usando las opciones de ./configure que usó la primera vez que lo compiló.
+</li>
+</ul>
+</li>
+
+<br>
+<br>
+
+<li>Compile kdevelop e instálelo:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (como root)</dd>
+</dl>
+Si por alguna razón el comando make falla puede forzarlo para que
+ignore los errores añadiendo la opción -k como aquí:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (as root)</dd>
+</dl>
+Dependiendo de la gravedad del error podría acabar con una versión de kdevelop
+que funcione o no funcione.¡¡¡Así que utilice "make-k install" bajo su propio
+riesgo!!!. De todos modos estos errores normalmente desaparecen después de un
+par de horas así que podría querer intentar una actualización otra vez más tarde
+antes que el peligroso :) comando make install.
+</li></ol>
+
+<br>
+<br>
+
+¡Esto es todo! Ahora tiene una versión superior de KDevelop. Para comenzar haga:
+<dl>
+<dd class="code">$ kdevelop</dd>
+</dl>
+
+<p>Todo lo que tiene que hacer para mantenerse al día es repetir estos pasos cuando
+alguien en la lista de correo <a href="index.html?filename=mailinglist.html">kdevelop-devel</a>
+corrige un bug.
+Por lo tanto le recomendamos encarecidamente que <a href="index.html?filename=mailinglist.html"> se una
+a esta lista de correo</a>.</p>
+
+<p>Debe informar de los bugs que encuentre con el <a
+href="http://bugs.kde.org/wizard.cgi">formulario de envío de bug</a>. <b>No</b> debe informar
+de errores de compilación en la base de datos de bug. en lugar de eso, para los errores de compilación
+use la <a href="index.html?filename=mailinglist.html">lista de correo</a>.
+</p>
+
+<p>Puede echar un vistazo de los bugs en la <a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.component,bugs.bug_id">
+base de datos de bug</a>.</p>
+
+<?php
+module_tail();
+if ($lang == 'en') {
+  $ts1 = filemtime("$k_base_version/branches_compiling.html");
+  $ts2 = filemtime("cvsbranches.ihtml");
+  $ts3 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts1 = file_exists("lang/$lang/$k_base_version/branches_compiling.html")?filemtime("lang/$lang/$k_base_version/branches_compiling.html"):filemtime("$k_base_version/branches_compiling.html");
+  $ts2 = file_exists("lang/$lang/cvsbranches.ihtml")?filemtime("lang/$lang/cvsbranches.ihtml"):filemtime("cvsbranches.ihtml");    
+  $ts3 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts1,$ts2,$ts3));
+?>

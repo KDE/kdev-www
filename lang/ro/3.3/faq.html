@@ -1,0 +1,509 @@
+<?php module_head("KDevelop $k_series_version F.A.Q. (Întrebări frecvente)");?>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Cuprins</h2></div>
+<ul>
+<li><a href="#File_FAQs">1 Întrebări despre fişiere</a>
+<ul>
+<li><a href="#Where_is_the_Automake_manager_in_KDevelop.3F">1.1 Unde se află managerul Automake în KDevelop?</a></li>
+<li><a href="#How_do_I_create_New_Files_in_a_Project.3F">1.2 Cum creez noi fişiere într-un proiect?</a></li>
+<li><a href="#How_do_I_remove_a_File_from_a_Project.3F">1.3 Cum şterg un fişier dintr-un proiect?</a></li>
+<li><a href="#How_to_add_existing_files_to_a_project.3F">1.4 Cum adaug fişiere preexistente într-un proiect?</a></li>
+</ul>
+</li>
+<li><a href="#Projects_FAQs">2 Întrebări despre proiecte</a>
+<ul>
+<li><a href="#How_to_convert_my_VC.2B.2B_project.3F">2.1 Cum fac conversia dintr-un proiect VC++?</a></li>
+<li><a href="#How_to_create_a_truly_empty_project.3F">2.2 Cum creez un proiect cu adevărat gol?</a></li>
+<li><a href="#How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F">2.3 Cum creez un proiect simplu cu doar un Makefile (Proiect Custom)?</a></li>
+<li><a href="#How_to_create_a_simple_Automake_project_with_a_directory_hierarchy_.3F">2.4 Cum creez un simplu proiect Automake cu o ierarhie de directoare?</a></li>
+<li><a href="#What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F">2.5 Ce înseamnă "configuraţii de construcţie" (Opţiuni Proiect-&gt;Configurare Opţiuni)?</a></li>
+<li><a href="#What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F">2.6 Ce se întîmplă dacă proiectul nu se mai construieşte după schimbarea la/de la ţinta implicită?</a></li>
+<li><a href="#How_to_add_subprojects.3F">2.7 Cum adaug subproiecte?</a></li>
+<li><a href="#What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F">2.8 Ce trebuie făcut cînd automake şi prietenii eşuează cu erori stranii?</a></li>
+<li><a href="#I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F">2.9 Am primit eroarea "Wrong autoconf version" etc. . Ce pot face?</a></li>
+<li><a href="#How_can_I_develop_with_Qt4_and_KDevelop-3.3.x.3F">2.10 Cum pot să folosesc Qt4 cu KDevelop-3.3.x?</a></li>
+<li><a href="#How_can_I_set_up_a_project_with_SCons.3F">2.11 Cum creez un proiect cu SCons?</a></li>
+</ul>
+</li>
+<li><a href="#Libraries_FAQ">3 Întrebări legate de biblioteci</a>
+<ul>
+<li><a href="#How_to_create_a_.so_library.3F">3.1 Cum să creez o bibliotecă .so (dinamică)?</a></li>
+<li><a href="#How_to_create_a_.a_library.3F">3.2 Cum să creez o bibliotecă .a (statică)?</a></li>
+<li><a href="#How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F">3.3 Cum să creez o bibliotecă .la (arhivă libtool)?</a></li>
+<li><a href="#How_to_add_an_external_include_path_to_a_project.3F">3.4 Cum adaug căi de incluziune externe la proiect?</a></li>
+<li><a href="#How_to_link_against_a_.so_library.3F">3.5 Cum se leagă proiectul la o bibliotecă .so?</a></li>
+<li><a href="#How_to_link_against_a_.a_library.3F">3.6 Cum se leagă proiectul la o bibliotecă .a?</a></li>
+<li><a href="#How_to_link_against_a_.la_library.3F">3.7 Cum se leagă proiectul la o bibliotecă .la?</a></li>
+</ul>
+</li>
+<li><a href="#Debug_FAQs">4 Întrebări despre depanator</a>
+<ul>
+<li><a href="#Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F">4.1 Depanarea într-o aplicaţie consolă&nbsp;: Cum fac pentru a obţine consola în care pot introduce date?</a></li>
+<li><a href="#How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F">4.2 Cum depanez obiecte executabile cu "scriptul înfăşurător temporar" libtool?</a></li>
+</ul>
+</li>
+<li><a href="#Code_Completion_FAQs">5 Întrebări despre completarea automată a codului</a>
+<ul>
+<li><a href="#How_can_I_enable_code_completion.3F">5.1 Cum activez completarea automată a codului?</a></li>
+<li><a href="#How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F">5.2 Cum adaug noi macro-uri pentru parser-ul C/C++?</a></li>
+<li><a href="#How_can_I_enable_code_completion_for_external_libraries.3F">5.3 Cum activez completarea automată a codului pentru biblioteci externe?</a></li>
+<li><a href="#Code_completion_still_doesn.27t_work">5.4 Completarea automată a codului tot nu funcţionează</a></li>
+<li><a href="#Why_doesn.27t_my_Qt4_Persistent_Class_Store_work_for_all_Qt4_classes.3F">5.5 De ce persistenţa claselor Qt4 nu funcţionează corect pentru toate clasele Qt4?</a></li>
+</ul>
+</li>
+<li><a href="#KDevelop_installation_FAQs">6 Întrebări despre instalarea KDevelop</a>
+<ul>
+<li><a href="#How_long_does_it_usually_take_to_compile_kdevelop.3F">6.1 Cît durează de obicei să compilez kdevelop?</a></li>
+<li class="toclevel-2'><a href="#I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F">6.2 Primesc mesajul de eroare "couldn"t create a language plugin" ("nu pot crea un plugin de limbaj de programare"). Ce e greşit?</a></li>
+</ul>
+</li>
+<li><a href="#Legal_FAQs">7 Întrebări despre legalitate</a>
+<ul>
+<li><a href="#Am_I_allowed_to_develop_commercial_applications_with_KDevelop.3F">7.1 Îmi este permis să dezvolt aplicaţii comerciale folosind KDevelop?</a></li>
+<li><a href="#Am_I_allowed_to_develop_commercial_plugins_to_KDevelop.3F">7.2 Îmi este permis să dezvolt module (plugin-uri) comerciale pentru KDevelop?</a></li>
+</ul>
+</li>
+<li><a href="#Misc._FAQs">8 Diverse</a>
+<ul>
+<li><a href="#I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F">8.1 Dezvolt o aplicaţie care are nevoie de tratarea excepţiilor. Cum pot să realizez acest lucru?</a></li>
+<li><a href="#My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F">8.2 Fişierul configure.in.in nu are nici un apel AC_CHECK_COMPILERS(). Unde ar trebui să pun linia CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" menţionată anterior?</a></li>
+<li><a href="#Is_there_any_HOWTO_available_on_how_to_work_with_QT_designer_made_dialogs_.3F">8.3 Există un HOWTO disponibil despre cum să lucrez cu Qt Designer pentru a crea un dialog?</a></li>
+<li><a href="#Why_don.27t_I_see_the_compilation_error_messages.3F">8.4 De ce nu văd mesajele de eroare de la compilare?</a></li>
+<li><a href="#How_to_add_a_translation_to_a_KDE_program.3F">8.5 Cum adaug o traducere la un program KDE?</a></li>
+<li><a href="#How_to_add_icons_to_a_project.3F">8.6 Cum adaug iconiţe la un proiect?</a></li>
+<li><a href="#How_to_use_the_SVN_plugin.3F">8.7 Cum folosesc modului de SVN?</a></li>
+<li><a href="#How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29">8.8 Cum să integrez un alt compilator (nativ, sau folosit pentru compilare încrucişată)?</a></li>
+<li><a href="#Working_with_Clearcase_views_and_KDE">8.9 Cum se lucrează cu vizualizarea Clearcase şi KDE?</a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="File_FAQs"></a><h2>Întrebări despre fişiere</h2>
+<a name="Where_is_the_Automake_manager_in_KDevelop.3F"></a><h3>Unde se află managerul Automake în KDevelop?</h3>
+<p>Daţi click pe tabulatorul din dreapta jos al KDevelop.
+<a href="mediawiki/index.php/Image:Automake_manager.png" title="Image:Automake_manager.png"><img src="mediawiki/images/8/8e/Automake_manager.png" alt="Image:Automake_manager.png" width="216" height="427" longdesc="mediawiki/index.php/Image:Automake_manager.png"></a>
+</p><p><br>
+</p>
+<a name="How_do_I_create_New_Files_in_a_Project.3F"></a><h3>Cum creez noi fişiere într-un proiect?</h3>
+<p>Selectaţi sub-proiectul din jumătatea superioară a manager-ului Automake, apoi daţi click drept în jumătatea inferioară pe titlul de grup în care doriţi să adăugaţi fişierul şi selectaţi 'Creare fişier nou...' ('Create new file...') 
+</p><p><br>
+</p>
+<a name="How_do_I_remove_a_File_from_a_Project.3F"></a><h3>Cum şterg un fişier dintr-un proiect?</h3>
+<p>Selectaţi sub-proiectul din jumătatea superioară a manager-ului Automake, apoi daţi click drept în jumătatea inferioară pe titlul de grup în care doriţi să adăugaţi fişierul şi selectaţi 'Ştergere' ('Remove').
+</p><p><br>
+</p>
+<a name="How_to_add_existing_files_to_a_project.3F"></a><h3>Cum adaug fişiere preexistente într-un proiect?</h3>
+<p>Felul în care se adaugă un fişier preexistent în proiect este dat de tipul sistemului de construcţie pe care l-aţi ales pentru proiect. Oricum ar fi, în primul rînd trebuie să copiaţi sursa existentă în directorul <code>src/</code> al proiectului KDevelop.
+</p><p>Apoi:
+</p>
+<ul>
+<li>Dacă aţi ales un proiect Automake (vedeţi: <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Unde se află managerul Automake în KDevelop?</a>) atunci adăugaţi fişierele existente în proiect selectînd subproiectul, apoi dînd click drept în jumătatea inferioară pe grupul dorit şi în meniul contextual selectaţi <a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">"Add Existing files...." ("Adaugă fişiere existente...")</a>
+
+<li>Dacă aţi ales un proiect QMake atunci lucrurile se desfăşoară similar cu proiectul Automake.
+
+<li>Dacă aţi ales un proiect simplu bazat pe Makefile-uri, atunci trebuie să editaţi fişierul Makefile manual.
+</ul>
+<p><br>
+</p>
+<a name="Projects_FAQs"></a><h2>Întrebări despre proiecte</h2>
+<a name="How_to_convert_my_VC.2B.2B_project.3F"></a><h3>Cum fac conversia dintr-un proiect VC++?</h3>
+<p>KDevelop nu oferă o cale de a importa automat proiectele VC++. Puteţi însă converti proiectul creînd un nou proiect folosind la şabloanele wizard-ului de proiect nou un şablon precum "C++ - Aplicaţie simplă Hello World". Apoi puteţi copia fişierele sursă (*.cpp, *.h) din proiectul VC++ în directorul <code>src/</code>al proiectului KDevelop. După aceea urmaţi instrucţiunile de mai sus pentru a adăuga fişiere existente în proiect.
+</p><p><br>
+</p>
+<a name="How_to_create_a_truly_empty_project.3F"></a><h3>Cum creez un proiect cu adevărat gol?</h3>
+<ul><li>Mergeţi la <i>Proiect-&gt;Proiect nou...-&gt;C++-&gt;Aplicaţie simplă Hello World</i> şi creaţi un proiect
+</li><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Ştergeţi singurul fişier existent în proiect</a>
+</li><li>Selectaţi <i>ştergeţi şi fişierele sursă</i> în dialogul care va apărea.
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F"></a><h3>Cum creez un proiect simplu cu doar un Makefile (Proiect Custom)?</h3>
+<p>Nu există nici o cale directă pentru a crea un proiect special (care foloseşte propriile fişiere pentru construcţie). Folosiţi în schimb Proiect-&gt;Importă proiect existent . Nu uitaţi să folosiţi Tipul Proiectului corespunzător (Makefile-uri personale) în dialog. Folosiţi devreme Opţiunile de Proiect. De fiecare dată cînd porniţi un nou proiect nu uitaţi să selectaţi opţiunile aşa care vă trebuie.
+</p><p><br>
+</p>
+<a name="How_to_create_a_simple_Automake_project_with_a_directory_hierarchy_.3F"></a><h3>Cum creez un simplu proiect Automake cu o ierarhie de directoare?</h3>
+<p>Dacă doreşti să creezi un proiect cu o ierarhie de directoare, în care fiecare director conţine grupuri de fişiere cpp/h din care ar trebui să rezulte un singur fişier executabil.
+</p>
+<pre>Exemplu:
+  src
+  src/gui
+  src/gui/components
+  src/logic
+  src/logic/algorithms
+  src/logic/sublogic
+</pre>
+<p><br>
+Acest lucru poate fi obţinut folosind biblioteci intermediare. Pentru fiecare subdirector se va compila şi link-edita într-o singură bibliotecă libtoo, după care toate bibliotecile libtool vor fi legate împreună într-un singur executabil.
+</p>
+<ul><li><b>Pasul 1</b>: 
+<ul><li>În managerul Automake adăugaţi pentru fiecare subdirector:
+</li><li>Managerul Automake -&gt; [click drept pe subdirector] -&gt; Adaugă Subproiect
+</li></ul>
+</li></ul>
+<ul><li><b>Pasul 2</b>:
+<ul><li>Adăugaţi o ţintă libtool pentru fiecare subproiect şi populează aceste biblioteci cu fişierele .cpp din subdirector:
+<ul><li>Managerul Automake -&gt; [click drept pe subdirector] -&gt; Adaugă ţintă nouă
+</li><li> Primar: Bibliotecă Libtool
+</li><li> Prefix: noinst
+</li><li> Nume fişier: &lt;numele dorit&gt;.la 
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Pasul 3</b>: 
+<ul><li>Adăugaţi bibliotecile la executabilul dumneavoastră:
+<ul><li>Managerul Automake -&gt; [click drept pe subdirector] -&gt; Opţiuni -&gt; Biblioteci
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Pasul 4</b>:
+<ul><li>Adăugaţi dependenţele bibliotecii pentru fiecare dintre subproiecte:
+</li><li>Dacă, de exemplu, <i>libalgo.la</i> depinde de clasele din <i>libbase.la</i>:
+<ul><li>Managerul Automake -&gt; [click drept pe libalgo] -&gt; Opţiuni -&gt; Biblioteci (selectaţi libbase.la)
+</li></ul>
+</li></ul>
+</li></ul>
+<pre>Ex:
+ src/logic/base [libbase.la]
+ src/logic/algorithm [libalgo.la]
+</pre>
+<p><b>Notă</b>: Dacă aţi uitat de o dependenţă, adăugaţi dependenţa corectă, curăţaţi subproiectul şi recompilaţi întreg proiectul.
+</p><p><br>
+</p>
+<a name="What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F"></a><h3>Ce înseamnă "configuraţii de construcţie" (Opţiuni Proiect-&gt;Configurare Opţiuni)?</h3>
+<ul><li><b>depanare (debug)</b>: 
+<ul><li>directorul separat de construcţie se numeşte "debug"
+</li><li>sunt folosite opţiunile de compilare -g3 -O0 pentru a putea depana fără probleme cauzate de optimizări
+</li></ul>
+</li><li><b>optimizat (optimized)</b>: 
+<ul><li>directorul separat de construcţie se numeşte "optimized"
+</li><li>sunt folosite opţiunile de compilare -O2 -g0 pentru a activa optimizările şi a dezactiva depanarea.
+</li></ul>
+</li><li><b>implicit (default)</b>:
+<ul><li>fără un înţeles special, fără opţiuni speciale de compilare sau director diferit
+</li><li>binarele şi bibliotecile vor fi localizate lîngă codul sursă.
+</li><li><b>Important!</b> Nu folosiţi configuraţia implicită în conjuncţie cu "depanare" sau "optimizat". "Depanare" şi "optimizat" pot fi folosite împreună datorită directoarelor de construcţie diferite.
+</li></ul>
+</li></ul>
+<p><br>
+</p>
+<a name="What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F"></a><h3>Ce se întîmplă dacă proiectul nu se mai construieşte după schimbarea la/de la ţinta implicită?</h3>
+<p>Există o problemă cu lanţul automake/autoconf. Dacă Proiect-&gt;Configuraţie de Construcţie (Build Configuration) oferă posibilitatea selecţiei din trei directoare de construcţie: "default", "optimized" şi "debug", rămîneţi fie numai cu ţinta implicită ("default") fie cu depanare/optimizare ("debug"/"optimized").
+</p>
+<ul><li> Dacă v-aţi configurat proiectul cu ţinta implicită nu se va mai putea construi corect "debug" şi "optimized".
+</li><li> Odată ce aţi configurat proiectul cu "debug" sau "optimized" nu se va mai putea construi corect "default".
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_add_subprojects.3F"></a><h3>Cum adaug subproiecte?</h3>
+<p>Selectaţi manager-ul automake. În jumătoatea superioară veţi vedea proiectele. Pentru a adăuga un subproiect selectaţi proiectul la care doriţi să-l adăugaţi, şi apăsaţi pe iconiţa "adaugă subproiect". Se creează un nou subdirector cu numele subproiectului (în sistemul de fişiere şi în managerul automake).
+</p><p>Ar trebui să creaţi o ţintă pentru noul subproiect. Dacă aţi făcut acest lucru, puteţi selecta această ţintă ca activă şi să adăugaţi fişiere la ea.
+</p><p>Ţinta libtool în subproiect poate fi legată în ţinta principală făcînd click dreapta şi selectînd "setări". Sub tabulatorul "biblioteci" selectaţi tipul de bibliotecă ajutătoare corespunzător (fişier .la).
+</p><p><br>
+</p>
+<a name="What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F"></a><h3>Ce trebuie făcut cînd automake şi prietenii eşuează cu erori stranii?</h3>
+<p>Deschideţi o consolă în directorul rădăcină al proiectului şi scrieţi comanda: 
+</p>
+<pre>libtoolize --copy --force</pre>
+<p>Acest procedeu ar trebui să rezolve problema versiunilor de autotools din sistem şi din KDevelop care intră în conflict.
+</p><p><br>
+</p>
+<a name="I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F"></a><h3>Am primit eroarea "Wrong autoconf version" etc... Ce pot face?</h3>
+<p>Există mai multe mesaje de eroare care privesc versiuni prea vechi de autoconf, prevenind scriptul configure să funcţioneze corect. Rulaţi autoreconf în directorul rădăcină al proiectului unde se află fişierele configure.in respective. Comanda va încerca să actualizeze informaţiile în sistemul de construcţie GNU. Citiţi pagina de manual autoreconf pentru mai multe detalii (man autoreconf).
+</p><p><br>
+</p>
+<a name="How_can_I_develop_with_Qt4_and_KDevelop-3.3.x.3F"></a><h3>Cum pot să folosesc Qt4 cu KDevelop-3.3.x? </h3>
+<ul><li>Dacă folosiţi qmake, kdevelop rulează qmake din PATH, aşadar qmake din Qt4 trebuie să fie primul în PATH (<a href="http://bugs.kde.org/show_bug.cgi?id=119107" title="http://bugs.kde.org/show bug.cgi?id=119107">http://bugs.kde.org/show_bug.cgi?id=119107</a>). Pentru aceasta nu rulaţi direct KDevelop, ci folosiţi scriptul de mai jos:
+</li></ul>
+<pre>#!/bin/sh
+export QTDIR=/devel/kde/src/4/qt-copy
+export PATH=$QTDIR/bin:$PATH
+exec kdevelop $*
+</pre>
+<ul><li>A doua problemă este Qt designerul integrat care este cel din Qt3. Doi paşi sunt necesari pentru a folosi designer-ul de Qt4:
+</li></ul>
+<p>Deschideţi ~/.kde/share/config/kdeveloprc, găsiţi grupul [General Options] (nu [General]!), şi adăugaţi linia:
+</p>
+<pre>Embed KDevDesigner=false
+</pre>
+<p>Creaţi ~/.kde/share/applnk/.hidden/designer.desktop cu următorul conţinut (ajustaţi calea către Qt4)
+</p>
+<pre>[Desktop Entry]
+Type=Application
+Exec=/devel/kde/src/4/qt-copy/bin/designer
+Name=Qt Designer
+GenericName=Interface Designer
+MimeType=application/x-designer
+Icon=designer
+</pre>
+<p>Calea completă către designer e necesară, chiar dacă PATH este corect în KDevelop. Acest lucru se întîmplă pentru că de fapt KDevelop nu porneşte direct designer-ul ci îi cere kdeinit-ului...
+</p>
+<ul><li>Folosiţi "Hello World" cînd creaţi un proiect nou, nu "Aplicaţie", altfel primul dumneavoastră proiect Qt4 va fi un proiect de portare Qt3-&gt;Qt4 &nbsp;:)
+</li></ul>
+<p><br>
+</p>
+<a name="How_can_I_set_up_a_project_with_SCons.3F"></a><h3>Cum creez un proiect cu SCons?</h3>
+<p><a href="http://www.scons.org" title="http://www.scons.org">SCons</a> este o unealtă pentru construcţia software-ului. KDevelop (la versiunea 3.2.2) nu suportă proiecte SCons direct. În orice caz, e posibil să puneţi foarte uşor pe picioare un proiect SCons folosind un Makefile şi folosind proiectul "Custom Makefiles". Un exemplu de astfel de Makefile este următorul (liniile de după ţinte trebuie aliniate cu caracter 'TAB' nu cu spaţii):
+</p>
+<pre>project_name:
+        scons
+clean:
+        scons --clean
+</pre>
+<p>Acestea vor activa <i>Cosntrucţie Proiect</i> şi <i>Curăţă Proiect</i>.
+</p><p><br>
+</p>
+<a name="Libraries_FAQ"></a><h2>Întrebări legate de biblioteci</h2>
+<a name="How_to_create_a_.so_library.3F"></a><h3>Cum să creez o bibliotecă .so (dinamică)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Adăugaţi o ţintă nouă la proiect</a>
+<ul><li><i>primar:</i> program
+</li><li><i>prefix:</i> bin
+</li><li><i>nume fişier:</i> libxxx
+</li><li><i>Indicatori Linker-&gt;Altele:</i> -shared -Wl,-soname,libxxx.so.1 -o libxxx.so.1.0.1
+</li></ul>
+</li></ul>
+<ul><li>Adăugaţi fişierele cpp/h la ţintă
+</li><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">setaţi<i> opţiunile de compilare pentru c++</i></a> -fPIC
+</li></ul>
+<p>Există şi o metodă libtool:
+</p>
+<ul><li>Adăugaţi un subproiect "libxxx" 
+</li><li>Adăugaţi o ţintă
+</li><li>Alegeţi "Library (libtool)" 
+</li><li>Alegeţi "lib" 
+</li><li>Puneţi numele bibliotecii "xxx" 
+</li><li>Adăugaţi fişiere
+</li><li>Construiţi proiectul (folosind intrarea din meniu sau F8).
+</li></ul>
+<p>Acum ar trebui să aveţi o bibliotecă nouă numită libxxx.so.0.0.0
+</p><p><br>
+</p>
+<a name="How_to_create_a_.a_library.3F"></a><h3>Cum să creez o bibliotecă .a (statică)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Adăugaţi o ţintă nouă la proiect</a>
+<ul><li><i>primar:</i> Bibliotecă
+</li><li><i>prefix:</i> noinst
+</li><li><i>nume fişier:</i> biblioteca_dvs
+</li></ul>
+</li><li>Adăugaţi fişierele cpp/h la ţintă
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F"></a><h3>Cum să creez o bibliotecă .la (arhivă libtool)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Adăugaţi o ţintă nouă la proiect</a>
+<ul><li><i>primar:</i> Bibliotecă libtool
+</li><li><i>prefix:</i> noinst
+</li><li><i>nume fişier:</i> biblioteca_dvs
+</li></ul>
+</li><li>Adăugaţi fişierele cpp/h la ţintă
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_add_an_external_include_path_to_a_project.3F"></a><h3>Cum adaug căi de incluziune externe la proiect?</h3>
+<p>Cînd proiectul foloseşte <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">Automake</a>) atunci probabil folosiţi managerul automake integrat (vedeţi <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Unde se află managerul Automake în KDevelop?</a>).
+Pentru a adăuga o cale de incluziune:
+</p>
+<ul><li> selectaţi <em>subproiectul</em> dorit în jumătatea superioară a managerului automake.
+</li><li> selectaţi <em>Opţiuni...</em> din meniul contextual (click drept) sau apăsaţi pe simbolul cu cheie franceză.
+</li><li> la pagina <em>Include</em> adăugaţi cala dumneavoastră în al doilea spaţiu (<em>Directoare în afara proiectului</em>). Introduceţi calea către director după <em>-I</em> (fără spaţii intermediare).
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_link_against_a_.so_library.3F"></a><h3>Cum se leagă proiectul la o bibliotecă .so?</h3>
+<p>Cînd proiectul dumneavoastră foloseşte <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">Automake</a>) atunci probabil folosiţi managerul automake integrat (vedeţi <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Unde se află managerul Automake în KDevelop?</a>).
+Pentru a vă lega la o bibliotecă sau pentru a adăuga o bibliotecă:
+</p>
+<ul><li> selectaţi <em>subproiectul</em> la care doriţi să adăugaţi biblioteca în jumătatea superioară a managerului Automake.
+</li><li> selectaţi <em>Opţiuni...</em> din meniul contextual (click drept) sau apăsaţi pe simbolul cu cheie franceză.
+</li><li> La pagina cu bibliotecile ("compiler") se adaugă în al doilea spaţiu (<em>leagă biblioteci în afara proiectului</em>). Introduceţi numele bibliotecii fără prefixul 'lib' şi sufixele <em>.a</em> sau <em>.so</em> sau <em>.la</em>.
+<ul><li> de exemplu dacă biblioteca se numeşte <em>libsomelib.so</em>, atunci adăugaţi <em>-lsomelib</em>
+</li></ul>
+</li><li> Dacă biblioteca nu este parte din directoarele de biblioteci ale sistemului, adăugaţi <code>-Lcale/către/directorul/ce/conţine/biblioteca</code> la capitolul <code>LDFLAGS</code> în <em>Proiect-&gt;Opţiuni proiect...-&gt;Opţiuni de configurare-&gt;Opţiuni Linker(LDFLAGS):</em>.
+</li></ul>
+<p>Nu uitaţi să adăugaţi locaţia fişierului .h la calea de incluziune a executabilului aşa cum e explicat în <a href="#How_to_add_an_external_include_path_to_a_project.3F" title="FAQ">FAQ#Cum adaug căi de incluziune externe la proiect?</a>
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.a_library.3F"></a><h3>Cum se leagă proiectul la o bibliotecă .a?</h3>
+<p>Este similar cu <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#Cum se leagă proiectul la o bibliotecă .so?</a>
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.la_library.3F"></a><h3>Cum se leagă proiectul la o bibliotecă .la?</h3>
+<p>Este similar cu <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#Cum se leagă proiectul la o bibliotecă .so?</a>
+</p><p>În plus:
+Există o cale mai convenabilă pentru a lega <em>binarulmeu</em> la  <em>somestuff.la</em>. Dacă <em>libsomestuff.la</em> stă în <em>$(undirector)</em>, atunci în loc să adăugaţi <code>-lsomestuff -L$(undirector)</code>, pur şi simplu adăugaţi <code>$(undirector)/libsomestuff.la</code>. Utilitarul libtool poate folosi aceasta.
+</p><p>Procesul complet (adaptat de mai sus):
+</p>
+<ul><li> selectaţi <em>subproiectul</em> la care doriţi să adăugaţi biblioteca în jumătatea superioară a managerului Automake.
+</li><li> selectaţi <em>Opţiuni...</em> din meniul contextual (click drept) sau apăsaţi pe simbolul cu cheie franceză.
+</li><li> pe pagina de biblioteci ştergeţi <code>-l</code> şi adăugaţi <code>$(undirector)/libsomestuff.la</code> în a doua zonă (<em>leagă biblioteci în afara proiectului</em>).
+</li></ul>
+<p>Este exact acelaşi comportament ca atunci cînd se leagă contra diverselor biblioteci din interiorul proiectului. Acolo trebuie doar bifate bibliotecile potrivite din spaţiul superior (<em>leagă bibliotecile ajutătoare în proiect</em>).
+</p><p>Detaliile "murdare":
+Bibliotecile sunt adăugate la <code>mybinary_LDADD</code> în fişierul Makefile.am corespunzător. Variabila LDADD poate folosi arhivele libtool nativ, citind locaţia bibliotecilor şi adăugîndu-le corespunzător.
+</p><p><br>
+</p>
+<a name="Debug_FAQs"></a><h2>Întrebări despre depanator</h2>
+<a name="Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F"></a><h3>Depanarea într-o aplicaţie consolă : Cum fac pentru a obţine consola în care pot introduce date?</h3>
+<p>În dialogul de opţiuni al proiectului, în pagina 'Depanator' controlaţi <i>Activează terminal separat pentru ieşirea aplicaţiei</i>
+</p><p><br>
+</p>
+<a name="How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F"></a><h3> Cum depanez obiecte executabile cu "scriptul înfăşurător temporar" libtool? </h3>
+<p>Cînd se construiesc <code>ltlibraries</code> (biblioteci libtool) şi se leagă la ele, libtool crează un wrapper pentru ele, dar gdb pune mesajul de eroare: <i>not in executable format: File format not recognized</i>
+</p>
+Pentru a functiona trebuie să mergeţi la:<pre>
+Project -&gt; Project Options -&gt; Debugger -&gt; Debugging shell -&gt; libtool --mode=execute </pre>
+<p><br>
+</p>
+<a name="Code_Completion_FAQs"></a><h2>Întrebări despre completarea automată a codului</h2>
+<a name="How_can_I_enable_code_completion.3F"></a><h3>Cum activez completarea automată a codului?</h3>
+<p>Cînd aveţi orice proiect C/C++ deschis, mergeţi în meniu la Project-&gt;Project Options, în pagina de C++ Specific, subpagina de Code Completion. Selectaţi "Automatic Code Completion" şi alte setări dorite.  De asemenea, în dialogul  Settings-&gt;Configure KDevelop-&gt;C++ Parsing puteţi activa şi schimba detalii ale firului de execuţie ce pregăteşte în fundal datele.
+</p><p><br>
+</p>
+<a name="How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F"></a><h3>Cum adaug noi macro-uri pentru parser-ul C/C++?</h3>
+<p>Parserul curent al KDevelop nu parcurge fişierele în ordine. Dacă doriţi să îl învăţaţi cu noi macrouri, cea mai bună cale este de a interpreta un fişier fals care conţine numai definiţiile macro dinaintea interpretării fişierelor. Acest lucru e realizat de dialogul <em>C++ Parser Settings</em>. Conţinutul acestui fişier fals este textul pe care îl editaţi în dialogul <em>C++ Parser Settings </em>, care va fi interpretat primul de fiecare dată cînd încărcaţi un proiect.
+</p><p><br>
+</p>
+<a name="How_can_I_enable_code_completion_for_external_libraries.3F"></a><h3>Cum activez completarea automată a codului pentru biblioteci externe?</h3>
+<p>Cînd aveţi orice proiect C/C++ deschis, mergeţi la Project-&gt;Project Settings, în dialogul Project Options alegeţi pagina C++ Specific, apoi Code Completion. Apăsaţi butonul Add Persistent Class Store şi completaţi wizard-ul New Persistent Class Store. După completarea wizard-ului, asiguraţivă că nou-creata clasă de stocare este adăugată în lista claselor de stocare ale paginii de Code Completion.
+</p><p><br>
+</p>
+<a name="Code_completion_still_doesn.27t_work"></a><h3>Completarea automată a codului tot nu funcţionează</h3>
+<p>Încercaţi să dezafectaţi partea de abrevieri - de obicei prezintă o fereastră popup înainte ca motorul de completare automată a codului să aibă vreo şansă să intervină.
+</p><p><br>
+</p>
+<a name="Why_doesn.27t_my_Qt4_Persistent_Class_Store_work_for_all_Qt4_classes.3F"></a><h3>De ce persistenţa claselor Qt4 nu funcţionează corect pentru toate clasele Qt4?</h3>
+<p>Fişierele de incluziune ale Qt4 sunt de obicei într-o singură linie cu '#include "../../src/blah.h", pe care KDevelop nu ştie să o trateze. Pentru a trece peste acest impediment încercaţi să folosiţi directorul src al Qt4 cînd creaţi baza de date de autocompletare.
+</p><p><br>
+</p>
+<a name="KDevelop_installation_FAQs"></a><h2>Întrebări despre instalarea KDevelop</h2>
+<a name="How_long_does_it_usually_take_to_compile_kdevelop.3F"></a><h3>Cît timp ia de obicei să compilez KDevelop?</h3>
+<p>Acest lucru depinde de puterea de calcul a maşinii. Un developer care are P4 şi rulează la 3GHz va compila KDevelop în circa 40 de minute la prima compilare. După actualizarea de pe CVS/SVN, de obicei ia mult mai mult timp. Timpul mediu de construcţie este de 1-2 ore după download-ul iniţial.
+</p><p>O idee bună este să se folosească gcc-4.0.1. Acest fapt reduce timpul de compilare. Compilările în mod 'depanare' ("./configure --enable-debug=full" cu -g -O0) sunt mai rapide cu 45% iar variantele 'release' ("./configure --enable-debug=no" cu -O2) - cu 16%. De exemplu, pe un AthlonXP1600 / 256Mb RAM, compilarea în varianta 'debug' ia 45 de minute cu gcc-4 şi 81 de minute cu gcc-3.3.1. Pentru a mări viteza şi mai mult, cea mai recentă versiune de libtool (de pe CVS - HEAD) poate fi folosită.
+</p><p>De obicei nu sunt probleme dacă gcc-4 e instalt în /usr/local laolaltă cu gcc-3.x în /usr. Este deasemenea posibil să se compileze doar KDevelop cu gcc-4 şi să se lase restul (Qt, KDE, etc.) fără recompilare.
+</p><p>Atenţie! Nu folosiţi gcc-4.0.0 pentru că acesta compilează greşit codul. gcc-4.0.1 sau mai noi nu sunt vulnerabile la această problemă.
+</p><p><br>
+</p>
+<a name="I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F"></a><h3>Primesc mesajul de eroare "couldn't create a language plugin" ("nu pot crea un plugin de limbaj de programare"). Ce e greşit?</h3>
+<p>La fel ca orice aplicaţie KDE, trebuie să vă asiguraţi că plugin-urile KDevelop sunt recunoscute de KDE. Fie instalaţi-l în directorul KDE (configure --prefix=/opt/kde3 de examplu) sau adăugaţi calea KDevelop în variabila de mediu KDEDIRS şi rulaţi din nou "kbuildsycoca". Un exemplu de linie de comandă pentru bash (presupunînd că aţi instalat KDevelop în directorul /home/user/kdevelop):
+</p>
+<pre>export KDEDIRS=/home/user/kdevelop:$KDEDIRS &amp;&amp; kbuildsycoca
+</pre>
+<p><br>
+</p>
+<a name="Legal_FAQs"></a><h2>Întrebări despre legalitate</h2>
+<a name="Am_I_allowed_to_develop_commercial_applications_with_KDevelop.3F"></a><h3>Îmi este permis să dezvolt aplicaţii comerciale folosind KDevelop?</h3>
+<p>Oricine şi orice entitate poate folosi liber KDevelop. Codul generat poate fi pus sub orice licenţă doriţi. În consecinţă, generatorul de proiect are un cîmp pentru adăugarea propriei dumneavoastră informaţii de copyright în fişerele generate, dar şi pentru a face lucrurile mai simple şi pentru a avea, de exemplu, informaţia despre licenţa GPL implicită. Puteti să vă adăugaţi licenţa acolo.
+Cînd vine vorba de editarea programelor dumneavoastră, folosind KDevelop e similar folosirii oricărui alt editor, e un program care este sub licenţa GPL pentru a fi folosit şi asta nu are consecinţe asupra scopului în care îl folosiţi. Puteţi scrie, deci, soft comercial/închis cu el în ciuda faptului că IDE KDevelop însuşi este GPL.
+Dacă folosiţi funcţii KDE sau orice altceva din free software, citiţi informaţiile de licenţiere din bibliotecile pe care le folosiţi. Pentru dezvoltarea comercială de aplicaţii KDE/Qt trebuie sa citiţi doar licenţa 'professional' de la Trolltech. Bibliotecile KDE sunt LGPL, ceea ce înseamnă că puteţi folosi apelurile de funcţii şi linkedita programul dumneavoastră cu bibliotecile KDE. Acest lucru e important pentru bibliotecile kdelibs, kdebase (konqueror şi kcontrol, etc.) şi bibliotecile koffice (pentru a crea aplicaţii koffice).
+Pentru mai multe informaţii vizitaţi "KDevelop Licensing"
+</p><p><br> 
+</p>
+<a name="Am_I_allowed_to_develop_commercial_plugins_to_KDevelop.3F"></a><h3>Îmi este permis să dezvolt module (plugin-uri) comerciale pentru KDevelop?</h3>
+<p>KDevelop include o bibliotecă libkdeveloplgpl.so ce permite dezvoltarea de plugin-uri comerciale. Această bibliotecă include interfeţele KDevelop şi funcţiile utilitare sub LGPL. Dacă aveţi licenţa profesională de la Trolltech puteti lega codul dumneavoastră de libkdeveloplgpl şi să o publicati sub orice licenţă alegeţi. 
+</p><p><br> 
+</p>
+<a name="Misc._FAQs"></a><h2>Diverse</h2>
+<a name="I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F"></a><h3>Dezvolt o aplicaţie care are nevoie de tratarea excepţiilor. Cum pot să realizez acest lucru?</h3>
+<p>Editaţi fişierul configure.in(.in) din directorul rădăcină al proiectului. Aici va trebui să introduceţi după macro-ul AC_CHECK_COMPILERS():
+</p>
+<pre>CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"
+</pre>
+<p>şi apoi să recreaţi noul "configure" chemînd
+</p>
+<pre>make -f Makefile.dist
+</pre>
+<p>în acelaşi director, apoi rechemînd script-ul "configure".
+</p><p><br> 
+</p>
+<a name="My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F"></a><h3>Fişierul configure.in.in nu are nici un apel AC_CHECK_COMPILERS(). Unde ar trebui să pun linia CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" menţionată anterior?</h3>
+<p>Noile versiuni ale configure.in.in au fost simplificate şi puteţi adăuga linia după apelul AM_INIT_AUTOMAKE(&lt;package-name&gt;,&lt;version&gt;).
+</p><p><br> 
+</p>
+<a name="Is_there_any_HOWTO_available_on_how_to_work_with_QT_designer_made_dialogs_.3F"></a><h3>Există un HOWTO disponibil despre cum să lucrez cu Qt Designer pentru a crea un dialog?</h3>
+<p>Da, există un tutorial excelent la adresa <a href="http://women.kde.org/articles/tutorials/kdevelop3/index.html" title="http://women.kde.org/articles/tutorials/kdevelop3/index.html">http://women.kde.org/articles/tutorials/kdevelop3/index.html</a>
+</p><p><br> 
+</p>
+<a name="Why_don.27t_I_see_the_compilation_error_messages.3F"></a><h3>De ce nu văd mesajele de eroare de la compilare?</h3>
+<p>Dacă în timpul compilării observaţi că informaţii importante lipsesc în fereastra de vizualizare, s-ar putea ca nivelul de detaliere al mesajelor să fie prea scăzut. Daţi click dreapta în fereastră şi selectaţi alt nivel de detaliere din meniul contextual.
+</p><p><br>
+</p>
+<a name="How_to_add_a_translation_to_a_KDE_program.3F"></a><h3>Cum adaug o traducere la un program KDE?</h3>
+<p>Prima oară executaţi <i>Build-&gt;Create Messages&amp;Merge</i> apoi adăugaţi noua traducere via <i>Project-&gt;Add Translation</i>. Această acţiune crează un fişier po/$lang.po.
+Fişierul $project.pot are toate textele în el.
+</p><p><br>
+</p>
+<a name="How_to_add_icons_to_a_project.3F"></a><h3>Cum adaug iconiţe la un proiect?</h3>
+<p>În primul rînd adăugaţi un nou subproiect prin manager-ul automake, pe care să-l numiţi 'pics'. Daţi apoi click drept pe subproiect, alegeţi <i>Settings</i> şi apoi <i>Prefix</i>. Adăugaţi noul prefix cu, să zicem, numele mypics şi calea  <i>$(kde_datadir)/$project/pics</i>. Dupa ce creaţi noua ţintă în subproiectul pics şi alegeţi Date ca Primar, şi mypics ca Prefix, apoi adăugaţi un nume la întîmplare. Apoi adăugaţi iconiţele dumneavoastră la noua ţintă. Încărcarea imaginii poate fi realizată incluzînd fişierul header <i>kiconloader.h</i> şi următorul cod care adaugă pixmapul cu numele "config" la un buton: <i>button-&gt;setPixmap(UserIcon("config"))</i>
+</p><p><br>
+</p>
+<a name="How_to_use_the_SVN_plugin.3F"></a><h3>Cum folosesc modului de SVN?</h3>
+<p>Aveţi nevoie să importaţi manual proiectul şi fişierel sursă în depozitul subversion. Apoi reporniţi KDevelop, şi va apărea un meniu contextual 'subversion' cînd daţi click drept pe fişiere. Intern, modulul de subversion se uită după prezenţa directorului <code>.svn</code> în acelaşi director care conţine fişierul pe care dati click.
+</p><p>Pentru mai multe informaţii citiţi: <a href="phorum5/read.php?2,23286" title="phorum5/read.php?2,23286">phorum5/read.php?2,23286</a>
+</p><p><br>
+</p>
+<a name="How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29"></a><h3>Cum să integrez un alt compilator (nativ, sau folosit pentru compilare încrucişată)?</h3>
+<p>Compilatoarele sunt selectate pentru un proiect:
+</p>
+<ul><li> <i>Project-&gt;Project Options-&gt;Configure Options</i> (proiecte bazate pe autotools, proiectele fără autotools nu au această opţiune)
+</li><li> adăugaţi un nou nume de configuraţie, de exemplu <i>&lt;compilator&gt;-&lt;platformă&gt;-debug</i>
+</li></ul>
+<p>Pagina "General":
+</p>
+<ul><li> selectaţi argumentul pentru configuraţie (de exemplu --host şi --build dacă faceţi cross-compiling)
+</li><li> selectati directorul de construcţie pentru a evita confuzia dacă folosiţi acelaşi nume precum şi configuraţia
+</li><li> selectaţi variabilele de mediu necesare, dacă e cazul (LDFLAGS, ENV)
+</li></ul>
+<p>Pagina "C":
+</p>
+<ul><li> selectaţi numele compilatorului (binar): CC, gcc, icc, kcc, ... (chiar şi compilator-cross!!!)
+</li><li> selectaţi valorile pentru variabilele necesare (CFLAGS)
+</li></ul>
+<p>Pagina "C++":
+</p>
+<ul><li> Selectaţi numele compilatorului C++ (binar) cc, g++, ... (chiar şi compilator-cross!!!)
+</li><li> selectaţi valorile pentru variabilele necesare (CXXFLAGS)
+</li></ul>
+<p>Pagina "Fortran":
+</p>
+<ul><li> selectaţi numele compilatorului Fortran: g77, g90, gfortran, ... (chiar şi compilator-cross!!!)
+</li><li> selectaţi valorile pentru variabilele necesare (FFLAGS)
+</li></ul>
+<p>Închideţi pagina de opţiuni, selectaţi configuraţia în <i>Project-&gt;Build Configuration</i>, apoi rulaţi  <i>Automake &amp; Friends</i>, <i>configure</i> şi <i>make</i>.
+</p><p>De exemplu pentru un compilator pentru sparc-sun-solaris2.9:
+</p>
+<ul><li> Project -&gt; Project Options -&gt; Configure Options
+</li><li> Adăugaţi un nume nou de configuraţie, de exemplu "sparc-debug""
+</li><li> Argumente pentru configure:
+</li></ul>
+<pre>--host=i686-pc-linux-gnu -- build=sparc-sun-solaris2.9
+</pre>
+<ul><li> Director de construcţie:
+</li></ul>
+<pre>sparc-debug
+</pre>
+<ul><li> La pagina C, adăugaţi numele compilatorului gcc: sun-solaris-sparc2.9-gcc
+</li><li> La pagina C++,  adăugaţi numele compilatorului g++: sun-solaris-sparc2.9-g++
+</li><li> Automake &amp; Friens
+</li><li> configure
+</li><li> make
+</li></ul>
+<p>Pentru cross-debugging vedeţi <a href="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote+debug+kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3" title="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote debug kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3">Depanare la distanţă folosind KDevelop 3.0 pe grupul de ştiri comp.os.linux.embedded</a> sau
+<a href="mediawiki/index.php/Cross_debugging" title="Cross debugging">Cross_debugging</a>.
+<a href="phorum5/read.php?2,23503" title="phorum5/read.php?2,23503">Forumul kdevelop.org</a> conţine de asemenea informatii pe această temă.
+</p><p>Asiguraţi-vă că binarele şi bibliotecile compilatorului sunt disponibile în $PATH şi $LD_LIBRARY_PATH!
+</p><p>Ar putea fi necesar să schimbaţi macrouri autoconf/automake în <i>configure.in</i> pentru a suporta complet compilatorul: vedeţi ultimul mesaj din acest fir de discuţie de pe <a href="phorum5/read.php?8,27808" title="phorum5/read.php?8,27808">forumul kdevelop.org</a> Ce să faci pentru a face să funcţioneze compilatorul <i>gfortran</i> (compilatorul GNU F90).
+</p><p><br>
+</p>
+<a name="Working_with_Clearcase_views_and_KDE"></a><h3>Cum se lucrează cu vizualizarea Clearcase şi KDE?</h3>
+<p>Fişierele Clearcase sunt de obicei stocate sub '/usr/vobs/...' iar obiectele binare pot conţine referinţe la această cale. Dacă proiectul KDevelop a fost definit pentru a utiliza o altă cale (de exemplu '/view/[view name]/usr/vobs'), puteti avea probleme cu fişiere deschise de două ori, comportament confuz al punctelor de întrerupere şi editări în fişiere de natură să creeze confuzii.
+</p><p>Dacă veţi porni KDevelop dintr-un shell din interiorul view-ului clearcase, tot nu veţi putea vedea '/usr/vobs/...' dacă însuşi KDE nu a fost pornit într-un view clearcase.
+O soluţie posibilă e următoarea:
+</p><p><tt>cp /etc/X11/xinit/xinitrc ~/.xinitrc</tt><br>
+schimbaţi penultima linie din<br>
+<tt>exec $WINDOWMANAGER</tt><br>
+în<br>
+<tt>/opt/rational/clearcase/rhat_x86/bin/cleartool setview -exec $WINDOWMANAGER ViewName</tt>
+</p><p>unde <tt>ViewName</tt> este numele view-ului pe care doriţi să îl folosiţi.
+</p><p>Din nefericire e posibil ca anumite aplicatii non-KDE să aibă de suferit (Firefox, de exemplu) şi să blocheze maşina. O altă alternativă e să folosiţi GNOME.
+</p>
+<!-- Saved in parser cache with key kdevelop_db:pcache:idhash:735-0!1!0!0!!en!2 and timestamp 20060420175206 -->
+<?php module_tail(); ?>

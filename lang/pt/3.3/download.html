@@ -1,0 +1,46 @@
+<?php module_head("Downloads do KDevelop $k_series_version");?>
+<br>
+<h3>Binários :</h3>
+<p>
+Alguns distribuidores de sistemas Linux/UNIX doaram generosamente pacotes binários do KDevelop
+para algumas versões das suas distribuições, e noutros casos voluntários da comunidade KDE fizeram-no.
+Alguns desses pacotes binários estão disponíveis gratuitamente por FTP ou http em <i>mirrors</i> KDE.
+</p>
+<?php
+  $l_architecture = "Arquitectura";
+  $l_distribution = "Distribui&ccedil;&atilde;o";
+  $l_distribution_version = "Vers&atilde;o da distribui&ccedil;&atilde;o";
+  include("$k_base_version/download_binaries.ihtml");
+?>
+<br>
+<br><h3>Código fonte para KDE &gt;= <?php echo $k_min_required_kde_version; ?> :</h3>
+<?php include("$k_base_version/download_sources.ihtml"); ?>
+<br>
+<ol>
+<li>Antes de continuar verifique por favor se o seu computador tem o
+<a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">software necessário</a> instalado.
+</li>
+<br>
+<li>Descomprima o ficheiro fonte e mude para a directoria base:
+<dl>
+<dd class="code">$ bunzip2 kdevelop-<?php echo $k_latest_version; ?>.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop-<?php echo $k_latest_version; ?>.tar</dd>
+<dd class="code">$ cd kdevelop-<?php echo $k_latest_version; ?></dd>
+</dl>
+</li>
+</ol>
+<?php include_file("$k_base_version/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+$ts1 = filemtime("$k_base_version/download_binaries.ihtml");
+$ts2 = filemtime("$k_base_version/download_sources.ihtml");
+if ($lang == 'en') {
+  $ts3 = filemtime("$k_base_version/download.html");
+  $ts4 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts3 = file_exists("lang/$lang/$k_base_version/download.html")?filemtime("lang/$lang/$k_base_version/download.html"):filemtime("$k_base_version/download.html");
+  $ts4 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts1,$ts2,$ts3,$ts4));
+?>

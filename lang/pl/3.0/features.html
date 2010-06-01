@@ -1,0 +1,118 @@
+<?php module_head("Cechy KDevelop 3.0.x");?>
+
+
+<ul>
+
+<li><b>Architektura oparta o Wtyczki (ang. plugin)</b>
+<ul>
+<li>Nowe funkcjonalności mogą być dodawane, podmieniane lub usuwane bez nadruszania głównego kodu. </li>
+<li>Licencja na biblioteki (LGPL) pozwala na tworzenie komercyjnych oraz otwartych wtyczek IDE. </li>
+<li>Obsługa profilów która ogranicza zestaw pluginów do załadowania. Ta funkcja jest przydatna przy środowisk z ograniczeniami lub własnych ustawień.</li>
+</ul>
+</li>
+
+<li><b>Zarządzanie Projektem</b>
+<ul>
+<li>Obsługa biernych nie narzucających się <b>automake</b>i <b>qmake</b>. Dopuszczalne są ręcznie robione modyfikacje i rozpoznawane przez IDE, także istniejące projekty i podprojekty mogą być z łatwością importowane. </li>
+<li>Możliwość używania własnych plików makefile do budowania projektu.</li>
+<li>Obsługa <b>ant</b> - narzędzia do budowania projektów java.</li>
+<li>Obsługa projektów o extra typach, tj. pascal, haskell, ada i języków skryptowych.</li>
+<li>Struktura dla dodawania obsługi dla każdego systemu budowania poprzez tworzenie wtyczek do budowania systemu w podstawowym menadżerze projektu.</li>
+<li>Nowy czarodziej plików do zarządzania przykładami plików i tworzenia nowych plików w projekcie.</li>
+<li>Wtyczki do kompilera do definiowania opcji kompilera w wygodnych dialogach.</li>
+<li>Profile konfiguracyjne z możliwością zdefiniowania różnych kompilerów, flag kompilatora, zbudowania katalogów, docelowa architektura, etc.</li>
+<li>Ułatwienia przy tworzeniu dokumentacji tj. <b>doxygen</b> obłsuga tworzenia automatycznej dokumentacji API (w html, tex i formacie man) dla projektu z cross-referencjami do używanych bibliotek.</li>
+<li>Obsługa internacjonalizacji, pozwala tłumaczom łatwo dodawać ich języki ojczyste do projektu włączając obsługę <a href="http://l10n.kde.org/tools/kbabel/" target="main">KBabel</a>.</li>
+<li>Obsługa dla projektów Qt/Embedded (dla platform<a href="http://developer.sharpsec.com/" target="_top">Zaurus</a> i <a href="http://www.compaq.com/products/iPAQ/" target="_top">iPAQ</a>).</li>
+</ul>
+</li>
+
+<li><b>Obsługa języków</b>
+<ul>
+<li>15 obsługiwanych języków min: Ada, C, C++, Objective-C (poprzez obsługę C), SQL, Fortran, Haskell,
+Java, PHP, Pascal, Perl, Python, Ruby, Bash, XUL (nieoficjalnie).</li>
+<li>Raporter Problemów który zgłasza różne "problemy" z kodem źródłowym który napiszesz. Do problemów zaliczamy błędy składniowe, TODO i FIXME.</li>
+<li>Przeglądarka Klas do wyświetlania hierarchii klas i innych symboli w projekcie.</li>
+<li>Parsery językowe do "karmienia" przeglądarki klas i raportera problemów.</li>
+<li>Czarodzieje klas, metod i atrybutów dla obiektowo-zorientowanych języków.</li>
+<li>Automatyczna kompletacja kodu i wskazówki dot. kodu dla zmiennych klas, metod, argumentów funkcji i więcej.</li>
+<li>Formatowanie źródeł, podświetlanie błędów i składanie kodu.</li>
+<li>Specjalne cechy dla C++, takie jak
+<ul>
+<li>"make member" - tworzy definicje metod w pliku źródłowym opierając sie o deklaracje metod w pliku nagłówkowym;</li>
+<li>"extract interface"- rozpakowywuje interfejs (deklaracje metod) i tworzy abstrakcyjną podstawę klas z tym interfejsem;</li>
+<li>"subclassing" - zautomatyzowane tworzenie podklas i implementacji slotów dla twórców form Qt.</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><b>Zintegrowany Debugger</b>
+<ul>
+<li>Interfejs debugerów GDB i Java.</li>
+<li>Zintegrowana konsola GDB.</li>
+<li>Linie, adresy, punkty załamań metod ora punkty obserwacyjne.</li>
+<li>Kondycyjne punkty załamań.</li>
+<li>Deasembler i przeglądarka stosu ramkowego.</li>
+<li>Możliwość obserwacji drzewa zmiennych.</li>
+<li>Przeglądarki pamięci, rejestrów i bibliotek.</li>
+<li>Obsługa konsoli Debuggera (libtool).</li>
+<li>Zdalne debugowanie.</li>
+</ul>
+</li>
+
+<li><b>Edycja Kodu</b>
+<ul>
+<li>Każdy edytor który implementuje interfejs KDE KTextEditor może zostać użyty w  KDevelop.</li>
+<li>Obecnie dostępne są edytory <a href="http://kate.kde.org/" target="main">Kate</a>, QEditor (oparty o edytor Qt Designer) i KVim.</li>
+<li>Szerokie zakładki projektu, które są przetrzymywane w pliku projektu.</li>
+<li>Przeglądarka różnic pomiędzy obecnie edytowanym tekstem a tekstem na dysku.</li>
+<li>Przeglądarka różnic dla plików patch.</li>
+<li>Integracja z Grep - przeszukiwanie regularnych wyrażeń w projekcie.</li>
+<li>Narzędzie do przeszukiwania projektu i zastępowania.</li>
+</ul>
+</li>
+
+<li><b>System Kontroli Wersji</b>
+<ul>
+<li>Wspólne API do dołączenia obsługi VCS (Version Control System) w KDevelop.</li>
+<li>Obsługiwane typy systemów VCS: CVS, Perforce, Subversion i Clearcase.</li>
+</ul>
+</li>
+
+<li><b>Czarodzieje Aplikacji</b>
+<ul>
+<li>Czarodzieje aplikacji generują kompletne, gotowe-do-użycia przykładowe aplikacje.</li>
+<li>Istnieją przykłady dla każdego z obsługiwanych języków i systemów budowania.</li>
+<li>Możliwość użycia własnych przykładów aplikacji nie dołączonych do dystrybucji.</li>
+<li>Wiele przykładów aplikacji powiązanych z KDE (aplikacje KPart, proste aplikacje KDE, moduły KControl, aplety Kicker (panel), części KOffice, KIOSlaves, <a href="http://www.konqueror.org/" target="main">Konqueror</a>, wtyczki do Noatun i Kate oraz style pulpitu).</li>
+</ul>
+</li>
+
+<li><b>Przeglądarka Dokumentacji</b>
+<ul>
+<li>Ujednolicony interfejs do przeglądania dokumentacji.</li>
+<li>TOC, index oraz pełne przeszukiwanie tekstu (wraz z htdig).</li>
+<li>Autodetekcja i włączenie Qt, KDE Libs i dokumentacji DevHelp.</li>
+<li>Obsługa własnych kolekcji dokumentacji (format KDevelopTOC).</li>
+<li>Możliwosć otwarcia lokalnych, zdalnych lub nawet skompresowanych dokumentacji (używając któregoś z obsługiwanych przez Konquerora protokołu - http, ftp, sftp, tar, zip, etc.).</li>
+<li>Możliwość otwarcia różnych formatów dokumentacji (html, text, ps, pdf, chm, etc.).</li>
+</ul>
+</li>
+
+<li><b>Inne cechy</b>
+<ul>
+<li>Interfejs użytkownika jest w pełni konfigurowalny, pozwala na przełączanie sie pomiędzy klasycznym trybem MDI takim jak toplevel, childframe oraz nowy tryb IDEAl pozwalający na ślizgany widok narzędzi.</li>
+<li>Konsola Embedded.</li>
+<li>Selektor plików, drzewo plików i obsługę grup plików, które wyklucza potrzebe posiadania zewnętrznego menadżera plików.</li>
+<li>Możliwość dołączenia innych programów, których potrzebujesz do rozwijania, poprzez dodanie ich do menu "Narzędzia" - zależnie od twoich potrzeb.</li>
+<li>Tester wyrażeń regularnych.</li>
+<li>Integracja z Valgrind do przeszukiwania przecieków pamięci w programach.</li>
+<li>Dystrybucja projektu i narzędzie do paczkowania dla zautomatyzowanego tworzenia paczek źródeł i binariów.</li>
+<li>Integracja z CTags.</li>
+<li>Explorator części do sprawdzenia dostępnych usług KDE.</li>
+</ul>
+</li>
+</ul>
+
+<?php module_tail();?>

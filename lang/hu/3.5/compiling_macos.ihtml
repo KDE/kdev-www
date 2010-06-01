@@ -1,0 +1,18 @@
+﻿<p>A legkönnyebb mód a KDevelop MacOSX/X11-en való felállítására <a href="index.html?filename=3.5/requirements.html">az összes szükséges csomag</a> telepítése
+<a href="http://fink.sourceforge.net/">Fink</a> vagy <a href="http://darwinports.opendarwin.org/">Darwin Ports</a> által, majd a
+KDevelop fordítása a fentebb leírtak szerint a következő konfiguráló parancs futtatásával:</p>
+<dl>
+<dd class="code">
+CXXFLAGS="-DMACOSX" ./configure --prefix=$KDEDIR --with-db-includedir=$BERKELEY_DB_INCLUDE_DIR --with-db-libdir=$BERKELEY_DB_LIBRARY_DIR
+--without-arts --with-extra-includes=$FINK_OR_DARWINPORTS_INCLUDE_DIR --with-extra-libs=$FINK_OR_DARWINPORTS_LIBRARY_DIR
+--with-qt-includes=$QTDIR --with-qt-libs=$QTDIR --disable-ada --disable-pascal
+</dd>
+</dl>
+Pár megjegyzés:
+<ul>
+<li>A -DMACOSX fordítási opció és a --disable-ada --disable-pascal fontosak, mert aktiválják a MacOS-féle kódot, valamint kikapcsolnak két lefordíthatatlan bővítményt (plugint).</li>
+<li>Általában a Fink telepítési könyvtára vagy a /sw vagy a /usr/local, a DarwinPorts-é pedig a /opt/local.</li>
+<li>A DarwinPorts által telepített Berkeley DB 4.4 a /opt/local/include/db44/ könyvtárban (include fájlok) valamint a /opt/local/lib/db44/ könyvtárban (könyvtárfájlok-libraries) van.</li>
+<li>A KDE a DarwinPortsból ugyanabba a /opt/local könyvtárba lesz telepítve.</li>
+<li>A Qt DarwinPortsos könyvtárai a /opt/local -ban a /opt/local/include/qt3/ valamint a /opt/local/lib/qt3 lennének.</li>
+</ul>

@@ -1,0 +1,86 @@
+<?php module_head("CVS KDE_3_3_BRANCH (today)");?>
+这是一个 <b>开发</b> 分支。它将成为未来的KDevelop 3.1.3(还未发布。<br>
+它支持<b>KDE >= 3.2</b>。<br>
+<ul>
+  <li>修复      - 一些小的修复</li>
+</ul>
+以下是一个缺陷修复的 
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-12-01&amp;chfieldto=Now&amp;order=Bug+Number&amp;cmdtype=doit">
+交互版本</a> 。<br>
+更详细的变动列表请查看
+<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1143.2.7&amp;r2=1.1143.2.1">
+CVS 变动日志</a>。
+<?php module_tail();?>
+
+<?php module_head("KDevelop 3.1.2 (2004-12-08)");?>
+It supports <b>KDE &gt;= 3.2.x</b>. Was tagged on 2004-12-01 and released on 2004-12-08.
+<ul>
+  <li>FIXED    - Many project templates</li>
+  <li>IMPROVED - <em>custommakefiles</em> don't insert targets twice into the menu, sort the targets alphabetically (this time it works)</li>  
+  <li>FIXED    - the bug "the kdevelop3 custom makefile based project files do not work with cmake out-of-source builds"</li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=90446">Bug 90446</a>: Don't overwrite existing files</li>
+  <li>FIXED    - <a href="http://bugs.kde.org/show_bug.cgi?id=90334">Bug 90334</a>: Fix the forkbomb created by KDevAssistant when it was told to use KDevAssistant to remotely open documentation...</li>  
+  <li>FIXED    - mem leak</li>
+  <li>FIXED    - amd64 crash</li>  
+  <li>IMPROVED - <em>Perl parser</em> Don't require a whitespace between function name and the opening bracket</li>  
+  <li>IMPROVED - make the incremental qlistview search work in the filelist part</li>
+</ul>
+Here is an
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-10-03&amp;chfieldto=2004-12-01&amp;order=Bug+Number&amp;cmdtype=doit">
+interactive version</a> of the fixed bugs.<br>
+For a more detailed list of changes visit the
+<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1143.2.1&amp;r2=1.1143">
+CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("KDevelop 3.1.1 (2004-10-12)");?>
+它支持<b>KDE &gt;= 3.2.x</b>。 标签于2004年10月3日，发布于2004年10月12日。
+<ul>
+  <li>改善 - <em>定制makefiles</em> 不会在菜单内插入编译目标两次，对编译目标进行字母排序</li>  
+  <li>改善 - 升级到Automake 1.9版本及以上</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=86816">Bug 86816</a>: 保存写保护的文件时，忘记修改文件状态</li>
+  <li>修复    - kompare/kdiff3 差别浏览</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=86552">Bug 86552</a>: 拼写错误：错误的关闭标签</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=86551">Bug 86551</a>: 拼写错误：错误的关闭标签</li>
+  <li>改善 - 确保我们嵌入的文本编辑器(kate)用于文本编辑</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=86781">Bug 86781</a>: "On External Changes"的设置无法保存</li>
+  <li>修复    - <em>项目发布</em> 在顶级目录下没有生成压缩文件</li>
+  <li>修复    - 在autoproject和Qmake文件列表中，不是所有的文件都可以输出</li>
+  <li>修复    - 一些项目模板</li>
+</ul>
+以下是一个缺陷修复的 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-08-13&amp;chfieldto=2004-10-03&amp;order=Bug+Number&amp;cmdtype=doit">交互版本</a>。<br>
+更详细的变动列表请查看 <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1144&amp;r2=1.1143">CVS 变动日志</a>。
+<?php module_tail();?>
+
+<?php module_head("KDevelop 3.1 (2004-08-19)");?>
+它支持 <b>KDE &gt;= 3.2.x</b>。 标签于2004年10月3日，发布于2004年10月12日。
+它包含了 <a href="index.html?filename=3.1/features.html">KDevelop 3.1.x的新特色</a> 以及以下的变动:
+<ul>
+  <li>新增      - classview 工具条组合框</li>
+  <li>新增      - 插件配置文件</li>
+  <li>新增      - CTAGS插件</li>
+  <li>新增      - 当文件被外部程序修改，可选的自动重载</li>
+  <li>新增      - 项目模板机制／改善的向导 </li>
+  <li>新增      - GTK, GNOME 和 Bonobo 应用程序模板</li>
+  <li>修复      - 上下文菜单导航的问题</li>
+  <li>新增      - Qt Designer集成</li>
+  <li>改善 - Ruby的支持</li>
+  <li>改善 - 在所有的模板替换中采用KMacroExpander</li>
+  <li>改善 - 美化NewFile组件，Make &quot;file_new&quot; action a KToolBarPopupMenu</li>
+  <li>改善 - Distpart</li>
+  <li>改善 - 代码历史导航</li>
+  <li>新增      - KDevAssistant应用程序 - 一个独立的 API 文档查看器</li>
+  <li>新增      - KDevLicense 界面</li>
+  <li>新增      - 文本编辑器上下文菜单增加复制／粘贴</li>
+  <li>新增      - FileList 插件</li>
+  <li>改善 - 可以配置某些KMDI 特性</li>
+  <li>新增      - Code Snippet组件</li>
+  <li>新增      - Doxygen预览和自动注释</li>
+  <li>新增      - 基于插件的文档浏览器</li>
+  <li>改善 - 调试器监视变量</li>
+  <li>改善 - QuickOpen插件，现在也支持方法／函数</li>
+  <li>改善 - 启动速度</li>
+</ul>
+以下是一个缺陷修复的 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-01-19&amp;chfieldto=2004-08-13&amp;order=Bug+Number&amp;cmdtype=doit"> 交互版本</a>。<br>
+更详细的变动列表请查看 <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1143&amp;r2=1.1101">CVS 变动日志</a>。
+<?php module_tail();?>

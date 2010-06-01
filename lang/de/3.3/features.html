@@ -1,0 +1,32 @@
+<?php module_head("KDevelop $k_series_version Features");?>
+
+Basierend auf
+<a href="index.html?filename=3.2/features.html">
+KDevelop 3.2.x</a> wurden folgende Verbesserungen implementiert<br>
+<ul>
+  <li>Zuk&uuml;nftig geplante Verbesserungen finden Sie auf dem <a href="http://developer.kde.org/development-versions/kde-3.5-features.html">Eigenschaftenplan von KDE 3.5 (Zukunftsplan)</a></li>
+  <li>Sie k&ouml;nnen jetzt CMAKE benutzen, um KDevelop zu kompilieren.</li>
+  <li>Die Unterst&uuml;tzung f&uuml;r C++ wurde verbessert:<ul>
+    <li>QT4 wird unterst&uuml;tzt, f&uuml;r Qt3.x- und Qt4.x-Projekte wird unterschiedlicher Code generiert.</li>
+    <li>Im Optionsdialog von C++ wurde ein neuer Reiter (Tab) hinzugef&uuml;gt, in dem die Qt-Bibliothek konfiguriert werden kann. Sie k&ouml;nnen einstellen ob und in welcher Version Qt genutzt werden soll. Au&szlig;rdem kann der Installationspfad der Qt-Bibliothek eingestellt werden.</li>
+  </ul></li>
+  <li>Der Debugger f&uuml;r C, C++ und Ruby wurde verbessert:<ul>
+    <li>Das Haltepunkt-Fenster des Debuggers ist einfacher zu benutzen</li>
+    <li>Wenn die Anwendung angehalten ist, wird automatisch das Variablen-Fenster angezeigt. Es wird automatisch ausgeblendet sobald die Anwendung beendet wird.</li>
+
+    <li>Es ist jetzt m&ouml;lich die Werte von Ausdr&uuml;cken und Variablen im Variablenfenster zu &auml;dern.</li>
+    <li>Die Variablenansicht wurde verbessert.</li>
+  </ul></li>
+  <li>PHP5 wird unterst&uuml;tzt.</li>
+  <li>Der Projektassistent wurde verbessert:<ul>
+    <li>Er basiert auf der KDelevop-Plattformarchitektur, wo die Projektmanagement-GUI von einem speziellen Buildsystem getrennt ist. Das Buildsystem ist f&uuml;r den Einsatz von Plugins vorbereitet ("Importassistenten, Builder und Editoren")</li>
+    <li>Arbeitsplatz-Unterst&uuml;tzung ist verf&uuml;gbar</li>
+    <li>Der Projektassistent kann Builder erstellen</li>
+    <li>Importassistenten f&uuml;r: automake, qmake und eigene makefiles</li>
+  </ul></li>
+  <li>Bitte lesen Sie die
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+  changelog-Seite (Liste der &Auml;nderungen)</a> f&uuml;r mehr Details</li>
+</ul>
+
+<?php module_tail();?>

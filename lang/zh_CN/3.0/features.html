@@ -1,0 +1,118 @@
+<?php module_head("KDevelop 3.0.x Features");?>
+
+
+<ul>
+
+<li><b>基于插件的架构</b>
+<ul>
+<li>无须变动核心源代码，就可以添加，替换和删除功能。</li>
+<li>库许可证(LGPL)允许创建商业和自由的IDE插件。</li>
+<li>支持描述文件，载入特定的插件。这对于受限环境和客户自定义安装格外有用。</li>
+</ul>
+</li>
+
+<li><b>项目管理</b>
+<ul>
+<li>原生的<b>automake</b>和<b>qmake</b>支持。IDE可以识别用户对项目的的手动修改，同时也支持现有的项目和子项目的导入。</li>
+<li>可以使用自定的makefile编译项目。</li>
+<li>支持<b>ant</b> - java项目的编译工具</li>
+<li>支持其他的项目类型，如pascal, haskell, ada和脚本语言。</li>
+<li>提供了支持任何编译系统的框架，只需要为通用的项目管理器添加该编译系统的插件即可。</li>
+<li>“新建文件”向导可以通过文件模板向项目中添加文件。</li>
+<li>编译器插件通过对话框可以很方便的定义编译选项。</li>
+<li>配置描述文件可以选择不同的编译器，编译选项, 编译目录,目标目录等。</li>
+<li>项目文档管理工具，比如<b>doxygen</b>支持自动产生API文档(html, tex和man格式)，并可以和调用的库交叉引用。</li>
+<li>国际化管理，允许翻译者很方便地为项目添加目标语言包括对<a href="http://l10n.kde.org/tools/kbabel/" target="main">KBabel</a>的支持。</li>
+<li>支持Qt/Embedded项目(<a href="http://developer.sharpsec.com/" target="_top">Zaurus</a> 和<a href="http://www.compaq.com/products/iPAQ/" target="_top">iPAQ</a> 平台)。</li>
+</ul>
+</li>
+
+<li><b>编程语言支持</b>
+<ul>
+<li>支持15种语言，包括Ada, C, C++, Objective-C (通过支持C), SQL, Fortran, Haskell,
+Java, PHP, Pascal, Perl, Python, Ruby, Bash, XUL (非官方).</li>
+<li>在您输入源代码的时候，问题报告器可以报告多种“问题”，包括语法错误，TODO和FIXME。</li>
+<li>类浏览器可以显示类的继承关系以及项目中的其他的符号。</li>
+<li>语言解析器为类浏览器和问题报告器提供输入。</li>
+<li>为面向对象语言提供了类，方法和属性向导</li>
+<li>为类变量，方法和函数参数等提供代码自动补全和代码提示。</li>
+<li>代码格式化，语法高亮和代码折叠</li>
+<li>C++ 特有的功能，比如
+<ul>
+<li>"创建成员" - 根据头文件的声明，在原文件产生方法的定义；</li>
+<li>"提取接口"- 提取接口(方法的声明)并通过该接口产生虚基类。</li>
+<li>"子类化" - 自动产生子类，并为Qt Designer的表单实现槽(slot)。</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><b>集成的调试器</b>
+<ul>
+<li>GDB和Java调试器前端。</li>
+<li>集成的GDB控制台。</li>
+<li>行，地址，方法断点和监测点。</li>
+<li>条件断点。</li>
+<li>反编译器和栈察看器</li>
+<li>变量树形察看器</li>
+<li>内存，寄存器和库察看器。</li>
+<li>调试器shell(libtool)支持。</li>
+<li>远程调试。</li>
+</ul>
+</li>
+
+<li><b>代码编辑</b>
+<ul>
+<li>任何实现了KDE KTextEditor接口的编辑器都可以用于KDevelop.</li>
+<li>目前可用的编辑器包括<a href="http://kate.kde.org/" target="main">Kate</a>, QEditor (基于Qt Designer编辑器)和 KVim.</li>
+<li>项目级书签管理，书签储存于项目文件中。</li>
+<li>差别察看器可以分析当前编辑的文本和磁盘上的文本之间的差异。</li>
+<li>差别察看器可以分析补丁。</li>
+<li>Grep集成 - 在项目中可以用正则表达式搜索。</li>
+<li>项目级查找和替换。</li>
+</ul>
+</li>
+
+<li><b>版本控制系统</b>
+<ul>
+<li>包括对于VCS支持的通用API。</li>
+<li>支持VCS系统： CVS, Perforce, Subversion和Clearcase。</li>
+</ul>
+</li>
+
+<li><b>应用程序向导</b>
+<ul>
+<li>应用程序向导可以产生完整的，马上可以运行的例程。</li>
+<li>所有支持的语言和编译系统都有相应的模板。</li>
+<li>可以使用未包括在发行版中用户自定义的程序模板。</li>
+<li>一系列KDE相关的项目模板(KPart applications, simple KDE applications, KControl modules, Kicker (panel) applets, KOffice parts, KIOSlaves, <a href="http://www.konqueror.org/" target="main">Konqueror</a>, Noatun 和Kate plugins以及 desktop styles)。</li>
+</ul>
+</li>
+
+<li><b>文档察看器</b>
+<ul>
+<li>统一的浏览文档界面。</li>
+<li>TOC,索引和全文搜索(需要 htdig)功能。</li>
+<li>自动检测Qt,KDE库和DevHelp文档。</li>
+<li>支持定制的文档集(KDevelopTOC 格式)。</li>
+<li>可以打开本地，远程，甚至压缩的文档(任何Konqueror支持的协议 - http, ftp, sftp, tar, zip等)。</li>
+<li>可以打开多种文档格式 (html, text, ps, pdf, chm等)。</li>
+</ul>
+</li>
+
+<li><b>其他特色</b>
+<ul>
+<li>用户界面可以完全定制，允许运行时在传统的顶层,子窗口这样的MDI模式和新的，有滑动工具视图的IDEAl模式之间切换。</li>
+<li>嵌入的控制台。</li>
+<li>文件选择器，文件树形试图和文件分类方便使用，无须外置的文件管理器。</li>
+<li>您可以将开发中需要用的任何其他程序放到"工具"菜单。</li>
+<li>正则表达式测试。</li>
+<li>Valgrind集成，便于发现程序中的内存泄漏。</li>
+<li>项目发布和打包工具可以自动产生源代码和二进制发行包。</li>
+<li>CTags集成。</li>
+<li>Part管理器可以用来查询可以的KDE服务。</li>
+</ul>
+</li>
+</ul>
+
+<?php module_tail();?>

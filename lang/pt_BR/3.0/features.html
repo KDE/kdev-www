@@ -1,0 +1,118 @@
+<?php module_head("Funcionalidades do KDevelop 3.0.x");?>
+
+
+<ul>
+
+<li><b>Arquitetura baseada em Plugins</b>
+<ul>
+<li>Functionalidades podem ser adicionadas, substitu&iacute;das e removidas sem alterar o c&oacute;digo fonte central.</li>
+<li>A licen&ccedil;a das bibliotecas (LGPL) permite criar plugins da IDE comerciais e livres.</li>
+<li>Suporte a perfis que determinam qual conjunto de plugins ser&atilde;o carregados. Isto &eacute; especialmente &uacute;til para ambiente restristos ou configura&ccedil;&otilde;es personalizadas..</li>
+</ul>
+</li>
+
+<li><b>Gerenciamento de Projetos</b>
+<ul>
+<li>Suporte n&atilde;o intrusivo nativo ao <b>automake</b> e o <b>qmake</b>. Modifica&ccedil;&otilde;es feitas &agrave; m&atilde;o s&atilde;o permitidas pela IDE, al&eacute;m de projetos e subprojetos serem facilmente importados.</li>
+<li>Habidade em usar <i>makefiles</i> personalizados para construir o projeto.</li>
+<li>Apoio a ferramenta de constru&ccedil;&atilde;o <b>ant</b> - para projetos em java.</li>
+<li>Apoio a outros tipos de projetos como para pascal, haskell, ada e projetos de scripts.</li>
+<li>Um <i>framework</i> para adicionar suporte a qualquer sistema de constru&ccedil;&atilde;o com a cria&ccedil;&atilde;o de plugins para o gerenciador gen&eacute;rico de projetos.</li>
+<li>Novo assistente para gerenciar os modelos de arquivos e criar novos arquivos no projeto a partir dos modelos.</li>
+<li>Plugins de compiladores para definir as op&ccedil;&otilde;es de compila&ccedil;&atilde;o em di&aacute;logos convenientes.</li>
+<li>Perfis de configura&ccedil;&atilde;o com a habilidade de especificar diferentes compiladores, flags de compila&ccedil;&atilde;o, diret&oacute;rios de constru&ccedil;&atilde;o, arquitetura de alvos, etc.</li>
+<li>Facilidades para documenta&ccedil;&atilde;o de projetos como suporte ao <b>doxygen</b> na cria&ccedil;&atilde;o automica de documenta&ccedil;&atilde;o de API (nos formatos html, tex e man) para projetos com refer&ecirc;ncias cruzadas &agrave;s bibliotecas utilizdas.</li>
+<li>Suporte a internationaliza&ccedil;&atilde;p, permitindo os tradutores adicionarem a sua linguagem padr&atilde;o ao projeto facilmente, incluindo suporte ao <a href="http://l10n.kde.org/tools/kbabel/" target="main">KBabel</a>.</li>
+<li>Suporte a projetos Qt/Embedded (para as plataformas <a href="http://developer.sharpsec.com/" target="_top">Zaurus</a> e <a href="http://www.compaq.com/products/iPAQ/" target="_top">iPAQ</a> platforms).</li>
+</ul>
+</li>
+
+<li><b>Suporte a Linguagens</b>
+<ul>
+<li>15 linguagens suportadas incluindo Ada, C, C++, Objective-C (via apoio C), SQL, Fortran, Haskell,
+Java, PHP, Pascal, Perl, Python, Ruby, Bash, XUL (n&atilde;o oficialmente).</li>
+<li>Relator de Problemas - que relata varios "ploblemas" com o c&oacute;digo fonte no momento da digita&ccedil;&atilde;o. Erros incluindo erros de sintaxe da linguagem, afazeres (TODO) e "conserte-me" (FIXME).</li>
+<li>Navegador de classes que mostra a hierarquia das classes e outros s&iacute;mbolos no projeto.</li>
+<li>Interpretador de linguagem que alimenta o navegador de classes e o relator de problemas.</li>
+<li>Assistentes de classe, m&eacute;todo e atributos para linguagens orientadas a objeto.</li>
+<li>Completa&ccedil;&atilde;o de c&oacute;digo autom&aacute;tica e dicas de c&oacute;digo para vari&aacute;veis de classe, m&eacute;todos, argumentos de fun&ccedil;&otilde;es e mais.</li>
+<li>Formata&ccedil;&atilde;o do c&oacute;digo-fonte, destaque de sintaxe e "code folding".</li>
+<li>Funcionalidades espec&iacute;ficas de C++, como
+<ul>
+<li>"make member" - cria defini&ccedil;&atilde;o de m&eacute;todos no fonte baseado na declara&ccedil;&atilde;o do cabe&ccedil;alho;</li>
+<li>"extract interface"- extrai a interface (declara&ccedil;&atilde;o de m&eacute;todos) e cria uma classe base abstrata com esta interface;</li>
+<li>"subclassing" - cria&ccedil;&atilde;o de subclasses automatizada com implementa&ccedil;&atilde;o de "slots" para formul&aacute;rios do Qt Designer.</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><b>Depurador Integrado</b>
+<ul>
+<li>Front-end para o GDB e o depurador Java.</li>
+<li>Console integrado com o GDB.</li>
+<li>Breakpoits e watchpoints para linha, endere&ccedil;o e m&eacute;todos.</li>
+<li>Breakpoints condicionais.</li>
+<li>Disassembler e visualizador do quadro de pilha.</li>
+<li>&Aacute;rvore de acompanhamento de vari&aacute;veis.</li>
+<li>Visualizadores de mem&oacute;ria, registradores e bibliotecas.</li>
+<li>Suporte a shell de depura&ccedil;&atilde;o (libtool).</li>
+<li>Depura&ccedil;&atilde;o remota.</li>
+</ul>
+</li>
+
+<li><b>Edi&ccedil;&atilde;p de C&oacute;digo</b>
+<ul>
+<li>Qualquer editor que implemente  a interface do KDE KTextEditor, pode ser utilizado com o KDevelop.</li>
+<li>Atualmente os editores dispon&iacute;veis s&atilde;o <a href="http://kate.kde.org/" target="main">Kate</a>, QEditor (baseado no editor do Qt Designer) e KVim.</li>
+<li>Bookmarks com abrang&ecirc;ncia de projeto que s&atilde;o armazenados no arquivo de projectos.</li>
+<li>Visualizador de diferen&ccedil;as entre o texto editado no momento e o texto no disco.</li>
+<li>Visualizador de diferen&ccedil;as para os arquivos de "patch".</li>
+<li>Integra&ccedil;&atilde;o com o Grep - busca com express&otilde;es regulares.</li>
+<li>Ferramenta de pesquisa e substitui&ccedil;&atilde;o com abrang&ecirc;ncia de projeto.</li>
+</ul>
+</li>
+
+<li><b>Sistemas de Controle de Vers&otilde;es</b>
+<ul>
+<li>Uma API comum para incluir apoio a SCV no KDevelop.</li>
+<li>Sistemas SCV suportadoss: CVS, Perforce, Subversion e Clearcase.</li>
+</ul>
+</li>
+
+<li><b>Assistente de Aplica&ccedil;&otilde;es</b>
+<ul>
+<li>Assistente de Aplica&ccedil;&otilde;es geram aplica&ccedil;&otilde;es amostrais completas e prontas para usar.</li>
+<li>Modelos para cada linguagem suportada e sistema de constru&ccedil;&atilde;o existentes.</li>
+<li>Habilidade de utilizar modelos de aplica&ccedil;&atilde;o personalizados n&atilde;o inclu&iacute;dos na distribui&ccedil;&atilde;o.</li>
+<li>Muitos modelos de projetos relacionados ao KDE (aplica&ccedil;&otilde;es KPart, aplica&ccedil;&otilde;es KDE simples, m&oacute;dulos KControl, applets Kicker(panel), partes do KOffice, KIOSlaves, <a href="http://www.konqueror.org/" target="main">Konqueror</a>, plugins Noatun e Kate e Estilos de Desktop).</li>
+</ul>
+</li>
+
+<li><b>Visualizador de Documenta&ccedil;&atilde;o</b>
+<ul>
+<li>Uma interface unificada para navega&ccedil;&atilde;o na documenta&ccedil;&atilde;o.</li>
+<li>Sum&aacute;rio, &iacute;ndice e pesquisa integral no texto (com htdig).</li>
+<li>Auto-detec&ccedil;&atilde;o e inclus&atilde;o de documenta&ccedil;&atilde;o de bibliotecas Qt, KDE e DevHelp.</li>
+<li>Apoio a cole&ccedil;&otilde;es de documenta&ccedil;&atilde;o personalizadas (formato KDevelopTOC).</li>
+<li>Habilidade de abrir documenta&ccedil;&atilde;o local, remota e at&eacute; comprimida (usando qualquer protocolo suportado pelo Konqueror - http, ftp, sftp, tar, zip, etc.).</li>
+<li>Habilidade de abrir v&aacute;rios formatos de documenta&ccedil;&atilde;o (html, text, ps, pdf, chm, etc.).</li>
+</ul>
+</li>
+
+<li><b>Outras Funcionalidades</b>
+<ul>
+<li>A interface com o usu&aacute;rio &eacute; completamente configur&aacute;vel, o que permite mudan&ccedil;as "on the fly" do modo cl&aacute;ssico MDI entre o toplevel, childframe e o novo modo IDEAl que apresenta vis&otilde;es da ferramenta em janelas laterais deslizantes.</li>
+<li>Console imbutido.</li>
+<li>Seletor de arquivos, &aacute;rvore de arquivos e grupos de arquivos File selector, facilidades que tornam desnecess&aacute;rio a utiliza&ccedil;&atilde;o de um gerenciador externo de arquivos.</li>
+<li>A inclus&atilde;o de qualquer outro programa que voc&ecirc; precise para desenvolver, adicionando-o ao menu "Ferramentas" de acordo com suas necessidades individuais.</li>
+<li>Testador de express&otilde;es regulares.</li>
+<li>Integra&ccedil;&atilde;o com o Valgrind para encrontrar vazamentos de mem&oacute;ria no programa.</li>
+<li>Ferramenta de distribui&ccedil;&atilde;o e empacotamento de projetos para a cria&ccedil;&atilde;o autom&aacute;tica de pacotes bin&aacute;rios e fontes.</li>
+<li>Integra&ccedil;&atilde;o com CTags.</li>
+<li>Explorador de "Parts" para consultar servi&ccedil;os do KDE dispon&iacute;veis.</li>
+</ul>
+</li>
+</ul>
+
+<?php module_tail();?>

@@ -1,0 +1,725 @@
+<?php module_head("Foire aux questions (FAQ)");?>
+<b>Questions générales</b><br>
+<ul>
+<li><a href="#36"> Où puis-je trouver KDevelop&nbsp;? Comment l'installer&nbsp;?
+</a></li>
+<li><a href="#37"> Puis-je développer des applications commerciales avec KDevelop&nbsp;?
+</a></li>
+<li><a href="#45"> J'ai compil&eacute; et install&eacute; gideon mais je ne vois seulement qu'un menu Fichier et un menu Aide
+</a></li>
+</ul>
+<b>Problèmes pour faire fonctionner KDevelop</b><br>
+<ul>
+<li><a href="#1"> J'ai SuSE 7.3 et les nouveaux projets ne se compilent pas
+</a></li>
+<li><a href="#2"> J'ai Red Hat 7.x et j'ai des caractères bizarres dans la vue de sortie
+</a></li>
+<li><a href="#35"> Ouvrir un fichier met un temps fou
+</a></li>
+<li><a href="#38"> Comment puis-je naviguer depuis le clavier dans des fichiers ouverts&nbsp;?
+</a></li>
+<li><a href="#39"> Comment puis-je entrer du texte pendant que je débogue une application en console&nbsp;?
+</a></li>
+<li><a href="#40"> KDevelop 2.x essaie d'ouvrir un fichier incorrect quand je clique sur un message d'erreur
+</a></li>
+<li><a href="#41"> Après avoir créé un nouveau projet, KDevelop crash
+</a></li>
+</ul>
+<b>Problèmes de compilation</b>
+<ul>
+<li>script de configuration
+<br>
+<ul>
+<li><a href="#3"> Le script de configuration ne trouve pas ma bibliothèque Qt.
+</a></li>
+<li><a href="#6"> Que dois-je faire si configure dit que j'ai besoin de giflib23.
+</a></li>
+<li><a href="#7"> Configure se plaint de ne pas pouvoir compiler une petite
+   application KDE. En examinant le fichier config.log on voit qu'il ne trouve
+ pas la bibliothèque libXext.
+</a></li>
+<li><a href="#32"> J'ai changé mon projet comme indiqué ci-dessus pour développer pour une autre
+ version de KDE/QT, mais configure utilise toujours les mauvais répertoires pour kde, que puis je faire&nbsp;?
+</a></li>
+<li><a href="#34"> J'ai fait cela mais l'appel de configure utilise toujours le mauvais
+ répertoire.
+</a></li>
+<li><a href="#27"> J'utilise RedHat Linux avec KDevelop et j'ai essayé de recompiler la
+ bibliothèque QT avec l'option with -kde pour utiliser designer avec le support des widgets KDE mais durant configure,
+ il dit que $KDEDIR ne contient pas un installation de KDE valable&nbsp;?
+</a></li>
+<li><a href="#33"> J'ai deux versions de KDE sur mon système. Si j'essaie de créer un projet KDE
+ 2 avec KDevelop 2.1 (compilé pour KDE 2) un appel de configure sans paramètre utilise toujours /opt/kde3 (ou
+ /opt/kde) au lieu de /opt/kde2.
+   Qu'est ce qui ne va pas&nbsp;?
+</a></li>
+</ul>
+</li>
+<li>configure.in.in
+<br>
+<ul>
+<li><a href="#12"> Mon fichier configure.in.in n'a aucun appel AC_CHECK_COMPILERS(). Où dois-je
+ mettre les
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"
+   mentionnés ci-dessus&nbsp;?
+</a></li>
+<li><a href="#25"> Dans les questions ci-dessus, je vois toujours "configure.in(.in)". J'ai les
+ deux fichiers dans mon projet. Quel fichier dois-je patcher&nbsp;?
+</a></li>
+<li><a href="#21"> Pourquoi le patch de configure.in(.in) avec CXXFLAGS="$USE_EXCEPTIONS
+ $CXXFLAGS" ne fonctionne-t-il pas&nbsp;?
+</a></li>
+<li><a href="#22"> J'utilise CXXFLAGS="$USE_EXCEPTIONS" dans configure.in(.in) et cela
+ fonctionne bien,  pourquoi devrais-je utiliser votre solution&nbsp;?
+</a></li>
+</ul>
+</li>
+<li>Makefile.am
+<br>
+<ul>
+<li><a href="#17"> Quelle est la différence entre CPPFLAGS et CXXFLAGS&nbsp;?
+</a></li>
+<li><a href="#18"> J'ai vu certaines solutions comme de patcher le fichier Makefile.am avec
+     DEFS+=-DMYDEFINE
+   ou
+     CXXFLAGS+=-fsigned-char
+   ou
+     LD_FLAGS+=-L/usr/local/lib
+   POurquoi ne proposez-vous pas cela&nbsp;?
+</a></li>
+<li><a href="#20"> Est-ce que AM_CXXFLAGS (dans un Makefile.am) peut être utilisé comme drapeau
+ comme -frtti ou  -fexceptions&nbsp;?
+</a></li>
+<li><a href="#24"> Dans une application de terminal C/C++, $all_includes et $all_libraries ne
+ sont pas utilisés.
+   Comment puis je utiliser la solution pour ce type de projet&nbsp;?
+</a></li>
+</ul>
+</li>
+<li>htdig, glimpse
+<br>
+<ul>
+<li><a href="#29"> J'ai bien installé htdig mais htsearch n'est pas disponible.
+</a></li>
+<li><a href="#30"> J'ai htdig, htmerge et htsearch dans mon système mais je reçois un message
+ d'erreur disant que le fichier de configuration de htdig n'est pas trouvé ou n'est pas valable&nbsp;?
+</a></li>
+</ul>
+</li>
+<li>automake, autoconf
+<br>
+<ul>
+<li><a href="#5"> make[2]: Entering directory `/usr/local/src/kdevelop/po'
+   cd .. && automake --gnu --include-deps po/Makefile
+   aclocal.m4: 2709: `AM_PROG_INSTALL' is obsolete; use `AC_PROG_INSTALL'
+   make[2]: *** [Makefile.in] Error 1
+</a></li>
+<li><a href="#19"> Comment puis je garantir qu'un utilisateur de mon projet va le compiler avec
+ automake version 1.4&nbsp;?
+</a></li>
+</ul>
+</li>
+<li>rtti, run-time type information
+<br>
+<ul>
+<li><a href="#13"> Je développe une application qui nécessite d'être compilée avec
+ run-time-type-info.
+    Comment puis-je faire&nbsp;?
+</a></li>
+<li><a href="#14"> Pourquoi $USE_RTTI n'est-il plus utilisé&nbsp;?
+</a></li>
+<li><a href="#15"> Y a-t-il des problèmes si on utilise rtti&nbsp;?
+</a></li>
+</ul>
+</li>
+<li>Designer de TrollTech et KDevelop
+<br>
+<ul>
+<li><a href="#28"> Y a-t-il un HOWTO disponible sur comment intégrer QT designer pour faire des
+ dialogues avec KDevelop ?
+</a></li>
+<li><a href="#26"> J'ai téléchargé les paquetages QT-2.2.x depuis ftp.kde.org et il existe
+ maintenant des widgets KDE disponibles dans designer. Comment puis je les obtenir&nbsp;?
+</a></li>
+</ul>
+</li>
+<li>others
+<br>
+<ul>
+<li><a href="#4"> Je reçois le message: "Wrong JPEG library version: library is 61, caller
+ expects 62 "
+</a></li>
+</a></li>
+<li><a href="#8"> Même en patchant configure/Makefile/Makefile.in/config.h, après avoir lancé
+   autoconf/automake/autoheader mes modifications sont perdues.
+   Où dois-je patcher&nbsp;?
+</a></li>
+<li><a href="#9">Je développe une application où j'ai besoin de l'option -D pour le
+ préprocesseur. Si j'ajoute cela dans KDevelop dans les options de mon projet, tout marche
+ bien, mais lorsque je distribue mon paquetage, les options -D fixées dans KDevelop ne sont pas
+ utilisées. Que dois-je faire pour que cela fonctionne&nbsp;?
+</a></li>
+<li><a href="#10"> Y a-t-il une autre possibilité pour publier mes propres "define"&nbsp;?
+</a></li>
+<li><a href="#11"> Je développe une application qui nécessite une exception.
+    Comment puis-je faire&nbsp;?
+</a></li>
+<li><a href="#16"> Les solutions ci-dessus sont bien, mais je voudrais cela seulement pour un
+ certain sous-répertoire (par exemple une bibliothèque statique de mon projet) Comment puis-je faire cela&nbsp;?
+</a></li>
+<li><a href="#23"> J'utilise des en-têtes et des bibliothèques supplémentaires dans mon
+ projet KDE/Qt. Si je mets -I/usr/include/foo dans les options de compilation et -L/usr/lib/foo dans les
+ options de lien, cela ne va pas fixer cette configuration dans le paquetage.
+   Que dois-je faire&nbsp;?
+</a></li>
+<li><a href="#31"> Comment dois-je changer le cadre de travail de mon projet (c'est à dire les
+ fichiers autotool) pour le compiler pour KDE/QT version 3
+  après la création du projet&nbsp;?
+</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<a name="37"><b>Puis-je développer des applications commerciales avec KDevelop&nbsp;?</b><br>
+Chacun et toute entité est libre d'utiliser KDevelop. Le code généré par KDevelop
+peut être mis sous toute license que vous voulez. Ainsi, le générateur de projet
+possède des champs pour ajouter votre propre copyright aux fichiers générés,
+mais, pour rendre les choses plus simples et pour donner un exemple, l'option par défaut est
+une notification de license GPL. Vous pouvez donc ajouter votre notification de license là.<br>
+
+Pour ce qui est d'éditer etc. votre programme, utiliser KDevelop est simplement comme utiliser
+tout autre éditeur, c'est un programme qui est GPL pour ses
+utilisateurs et cela n'a aucune implication sur pourquoi vous voulez l'utiliser.
+Vous pouvez ainsi écrire des logiciles commerciaux/fermés avec, en dépit du fait que
+KDevelop lui-même est GPL.<br>
+
+Pour ce qui est d'utiliser les bibliothèques KDE ou toute autre partie d'un logiciel libre, il
+vous faut seulement regarder les informations sur la license des bibliothèques que vous allez
+utiliser. Ainsi, pour une utilisation commerciale d'applications KDE/Qt, vous n'avez besoin que
+d'une license professionnelle de Trolltech. Les bibliothèques KDE en elles-mêmes sont LGPL
+ce qui signifie que vous pouvez utiliser les appels de fonctions et lier vos programmes aux
+bibliothèques KDE. Ceci est valable pour les bibliothques kdelibs, les bibliothèques kdebase
+(konqueror et kcontrol etc.) et les bibliothèques koffice (pour créer des applications koffice).<br>
+Pour plus d' information, veuillez voir <a href="lang/fr/1.3/doc/programming/index-16.html">
+license de KDevelop</a>
+<br>
+<br>
+<a name="36"><b> Où puis-je trouver KDevelop&nbsp;? Comment l'installer&nbsp;?</b><br>
+</b> L'équipe KDevelop ne fournit pas versions binaires de KDevelop (RPMs).
+Les RPMs peuvent être trouvés sur le serveur de votre distribution ou dans les sous-répertoires correspondants
+de <a href="ftp://ftp.kde.org/pub/">ftp.kde.org</a> ou l'un de ses <a href="http://www.kde.org/ftpmirrors.html">miroirs</a><br>
+Veuillez regarder <a href="index.html?filename=2.1/kdevelop.html#Downloads">KDevelop 2.x téléchargements</a> pour plus d'information sur
+comment télécharger et compiler le code source.<br>
+<br>
+<br>
+<a name="45"><b> J'ai compil&eacute; et install&eacute; gideon mais je ne vois seulement qu'un menu Fichier et un menu Aide </b><br>
+Comme pour toute autre application KDE, vous devez &ecirc;tre sur que les plugins de KDevelop sont reconnus
+par KDE. Installez-le soit dans votre r&eacute;pertoire KDE (configure --prefix=/opt/kde3 par exemple) ou
+ajouter le chemin vers gideon &agrave; votre variable d'environnement KDEDIRS et relancez "kbuildsycoca".
+Un exemple de commande pour bash (en supposant que gideon est install&eacute; dans /home/harry/gideon):<br>
+<tt>export KDEDIRS=/home/harry/gideon:$KDEDIRS &amp;&amp; kbuildsycoca</tt>
+<br>
+<br>
+<a name="1"><b> J'ai SuSE 7.3 et les nouveaux projets ne se compilent pas<br>
+</b> La version de autoconf qui est livrée avec SuSE 7.3 ne fonctionne pas avec<br>
+   KDevelop 2.0. Soit faites une mise à jour de KDevelop ou revenez à une<br>
+ version plus ancienne de autoconf<br>
+   en suivant ce qui est indiqué dans<br>
+ <a href="http://sdb.suse.de/en/sdb/html/kdevelop_autoconf_73.html">http://sdb.suse.de/en/sdb/html/kdevelop_autoconf_73.html</a><br>
+<br>
+<br>
+<a name="2"><b> J'ai Red Hat 7.x et j'ai des caractères bizarres dans la vue de sortie<br>
+</b> Ceci est une erreur des paquetages Red Hat, faites une mise à jour de<br>
+ KDevelop pour une version plus récente.<br>
+ <br>
+<br>
+<a name="35"><b> Ouvrir un fichier prend un temps fou</b><br>
+Ceci est un problème connu avec le presse-papier de KDE. Certains utilisateurs ont dit que de fermer Klipper, l'outil presse-papier arrange les choses.
+Malheureusement, nous n'avons pas d'autre solution que d'installer KDE3.<br>
+<br>
+<br>
+<a name ="38"><b> Comment puis-je naviguer depuis le clavier dans des fichiers ouverts&nbsp;?</b><br>
+Vous pouvez utiliser soit de CTRL-1 jusqu'à CTRL-0 pour naviguer entre les dix premiers fichiers soit ALT-PageUp et ALT-PageDown pour aller au prochain/précédent fichier ouvert. Ces touches peuvent être configurées dans l'écran de configuration de KDevelop.<br>
+<br>
+<br>
+<a name ="39"><b> Comment puis-je entrer du texte pendant que je débogue une application en console&nbsp;? </b><br>
+La fenêtre de sortie StdOut Window est en lecture seule, vous devez ouvrir une autre console en mettant une croix dans <i>Options-&gt;Configure KDevelop -&gt;Débogueur-&gt;Permet un terminal séparé pour entrées-sorties.</i><br>
+<br>
+<br>
+<a name="40"><b> KDevelop 2.x essaie d'ouvrir un fichier incorrect quand je clique sur un message d'erreur</b><br>
+Veuillez prendre Anglais comme langue pour votre système ou installer KDevelop version 2.1.1 ou plus grand<br>
+Solution rapide (pour les utilisateurs de bash)&nbsp;: <i>export LANG=C && kdevelop</i><br>
+<br>
+<br>
+<a name="41"><b> Après avoir créé un nouveau projet, KDevelop crash</b><br>
+Si la backtrace contient <i>in QCommonStyle::drawControl ()</i> veuillez installer Qt version supérieure
+ou utiliser le style par défaut de KDE.<br>
+<br>
+<br>
+<a name="3"><b> Le script de configuration ne trouve pas ma bibliothèque Qt.<br>
+</b> Utilisez les options<br>
+     --with-qt-includes=chemin_vers_vos_includes_qt<br>
+   et<br>
+     --with-qt-libraries=chemin_vers_votre_bibliothèque_qt<br>
+   ou fixez la variable d'environnement QTDIR au chemin où Qt est installé<br>
+   ( "export QTDIR=/chemin/vers/qt" ).<br>
+<br>
+<br>
+<a name="4"><b> Je reçois le message: "Wrong JPEG library version: library is 61, caller<br>
+ expects 62 "<br>
+</b> Il existe 2 solutions.<br>
+<br>
+   1: Quand les kdelibs sont installées, cela installe les fichiers en-tête pour
+ la bibliothèque jpeg, qui est la version 61. Cependant, la plupart des
+ distributions (Redhat) utilisent la version 62. Pour corriger cela, supprimer simplement<br>
+ jpeglib.h<br>
+      de /opt/kde/include. Le fichier pour la version 62 devrait ainsi être choisi.<br>
+      Cependant, il se peut que cela ne marche pas. Assurez-vous que vous n'avez<br>
+      qu'une seule version du fichier en-tête et de la bibliothèque et que les<br>
+      deux sont la même version.<br>
+<br>
+      Il est pratique d'utiliser la commande locate pour vérifier que vous avez la version correcte de la bibliothèque et du
+      fichier en-tête c'est à dire<br>
+      updatedb<br>
+      locate libjpeg<br>
+      locate jpeglib<br>
+<br>
+   2: Vous devez recompiler kdesupport sans la bibliothèque jpeg<br>
+       (configure --with-libjpeg --with-libgif).<br>
+<br>
+<br>
+<a name="5"><b> make[2]: Entering directory `/usr/local/src/kdevelop/po'<br>
+   cd .. && automake --gnu --include-deps po/Makefile<br>
+   aclocal.m4: 2709: `AM_PROG_INSTALL' is obsolete; use `AC_PROG_INSTALL'<br>
+   make[2]: *** [Makefile.in] Error 1<br>
+</b> Solution pour les utilisateurs automake-1.4/automake-2.13&nbsp;: lancez<br>
+   "aclocal" manuellement et la compilation se fera.<br>
+<br>
+<br>
+<a name="6"><b> Que dois-je faire si configure dit que j'ai besoin de giflib23.<br>
+</b> Essayez d'installer une version de développement plus récente de kdesupport,<br>
+    ou peut-être avez-vous un autre giflib installé&nbsp;?<br>
+<br>
+<br>
+<a name="7"><b> Configure se plaint de ne pas pouvoir compiler une petite application KDE. En examinant le fichier config.log on
+voit qu'il ne trouve pas la<br>
+   bibliothèque libXext.<br>
+</b> Installez le paquetage xdevel<br>
+<br>
+<br>
+<a name="8"><b> Même en patchant configure/Makefile/Makefile.in/config.h, après avoir lancé<br>
+   autoconf/automake/autoheader mes modifications sont perdues.<br>
+   Où dois-je patcher&nbsp;?<br>
+</b> Voici une liste des fichiers que vous pouvez patcher pour les autotools.<br>
+   Makefile.am, configure.in.in, configure.in (seulement s'il n'y a pas de<br>
+ configure.in.in)<br>
+   [utilisées rarement&nbsp;: acconfig.h, configure.in.mid, configure.in.bot]<br>
+<br>
+<br>
+<a name="9"><b>Je développe une application où j'ai besoin de l'option -D pour le<br>
+ préprocesseur.<br>
+   Si j'ajoute cela dans KDevelop dans les options de mon projet, tout marche<br>
+ bien, mais lorsque je<br>
+   distribue mon paquetage, les options -D fixées dans KDevelop ne sont pas<br>
+ utilisées. Que dois-je faire<br>
+   pour que cela fonctionne&nbsp;?<br>
+</b> &Eacute;ditez le fichier configure.in(.in) du répertoire source supérieur de<br>
+ votre projet. Vous devez<br>
+   ajouter ici après la macro AC_CHECK_COMPILERS&nbsp;:<br>
+     CPPFLAGS="$CPPFLAGS -DMYDEFINE"<br>
+   Ensuite, vous devez recréer votre nouveau "configure" en lançant<br>
+   "make -f Makefile.dist" puis relancer le script de configuration<br>
+   (ou, sous KDevelop utilisez "Build/Autoconf and Automake" et<br>
+ "Build/Configure...").<br>
+<br>
+<br>
+<a name="10"><b> Y a-t-il une autre possibilité pour publier mes propres "define"&nbsp;?<br>
+</b> Une possibilité pour inclure DEFINEs dans votre projet est de les publier<br>
+   avec config.h.<br>
+   Pour cela, vous devez patcher les fichiers suivants&nbsp;:<br>
+   ajouter au fichier acconfig.h du répertoire principal de votre projet la<br>
+ ligne suivante&nbsp;:<br>
+     #undef MYDEFINE<br>
+<br>
+   et insérer dans le fichier configure.in(.in), après l'appel de la macro<br>
+   AC_CONFIG_HEADER(config.h):<br>
+     AC_DEFINE_UNQUOTED(MYDEFINE)<br>
+<br>
+   (Il sera ainsi défini dans in config.h après la mise à jour de votre cadre de<br>
+ travail avec<br>
+    "make -f Makefile.dist; configure [vos options]"<br>
+    ou bien dans KDevelop en utilisant "Build/Autoconf and Automake" et<br>
+ "Build/Configure...").<br>
+<br>
+   Sont nécessaires pour cette solution&nbsp;:<br>
+     AC_CONFIG_HEADER(config.h)<br>
+   dans configure.in(.in) et dans le code source un<br>
+     #ifdef HAVE_CONFIG_H<br>
+     #include <config.h><br>
+     #endif<br>
+   avant que les autres en-têtes soient mentionnés<br>
+   (ceci est normalement déjà inscrit dans les squelettes du projet).<br>
+<br>
+  NOTE&nbsp;: Un avantage de cette solution est de rendre MYDEFINE dépendant de<br>
+        certaines situations (comme créer une option pour configure).<br>
+        Cela nécessite bien sûr d'écrire sa propre fonction macro.<br>
+<br>
+<br>
+<a name="11"><b> Je développe une application qui nécessite une exception.<br>
+    Comment puis-je faire&nbsp;?<br>
+</b> &Eacute;ditez le fichier configure.in(.in) dans le répertoire principal de<br>
+ votre projet. Vous<br>
+   devez ajouter après la macro AC_CHECK_COMPILERS()&nbsp;:<br>
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"<br>
+   puis vous devez rebâtir votre "configure" en lançant<br>
+   "make -f Makefile.dist" dans le répertoire principal de votre projet puis<br>
+ relancer le script<br>
+  configure<br>
+   (ou bien dans KDevelop utilisez "Build/Autoconf and Automake" et<br>
+ "Build/Configure...").<br>
+<br>
+<br>
+<a name="12"><b> Mon fichier configure.in.in n'a aucun appel AC_CHECK_COMPILERS(). Où dois-je<br>
+ mettre les<br>
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"<br>
+   mentionnés ci-dessus&nbsp;?<br>
+</b> La nouvelle version de configure.in.in a été simplifiée et vous pouvez<br>
+ maintenant ajouter la ligne<br>
+   après AM_INIT_AUTOMAKE(<package-name>,<version>).<br>
+<br>
+<br>
+<a name="13"><b> Je développe une application qui nécessite d'être compilée avec<br>
+ run-time-type-info.<br>
+    Comment puis-je faire&nbsp;?<br>
+</b> *** OBSOLETE pour les nouveaux squelettes de projets ***<br>
+   &Eacute;ditez le fichier configure.in(.in) dans le répertoire principal de<br>
+ votre projet. Ici, vous<br>
+      devez ajouter après la macro AC_CHECK_COMPILERS&nbsp;:<br>
+     CXXFLAGS="$CXXFLAGS $USE_RTTI"<br>
+   puis vous devez créer à nouveau votre "configure" en lançant<br>
+   "make -f Makefile.dist" dans la répertoire source principal de votre projet<br>
+ puis relancer<br>
+   le script configure<br>
+   (ou bien dans KDevelop en utilisant "Build/Autoconf and Automake" et<br>
+ "Build/Configure...").<br>
+<br>
+<br>
+<a name="14"><b> Pourquoi $USE_RTTI n'est-il plus utilisé&nbsp;?<br>
+</b> Dans les nouveaux squelettes, -frtti est activé par défaut.<br>
+<br>
+<br>
+<a name="15"><b> Y a-t-il des problèmes si on utilise rtti&nbsp;?<br>
+</b> Il existe certains problèmes en utilisant dlopening pour un module et rtti<br>
+ pour les<br>
+   objets définis dans ce module.<br>
+<br>
+<br>
+<a name="16"><b> Les solutions ci-dessus sont bien, mais je voudrais cela seulement pour un<br>
+ certain sous-répertoire<br>
+   (par exemple une bibliothèque statique de mon projet)<br>
+   Comment puis-je faire cela&nbsp;?<br>
+</b> &Eacute;ditez le fichier Makefile.am du répertoire source concerné. Vous<br>
+ devez<br>
+   ajouter ceci hors de la partie spécifique de KDevelop&nbsp;:<br>
+     KDE_CXXFLAGS=$(USE_EXCEPTIONS)<br>
+   Faites attention&nbsp;: ceci ne fonctionne que si votre projet utilise<br>
+ am_edit.<br>
+   (cela ne fonctionne que pour les nouveaux acinclude.m4 & am_edit, c'est à<br>
+ dire<br>
+    plus récents que 12-09-1999, avant, cela avait pour nom APPEND_CXXFLAGS -<br>
+    dans cette version de KDevelop vous trouverez celui qu'il vous faut.)<br>
+<br>
+   Vous devez mettre à jour votre Makefile comme indiqué ci-dessus c'est à dire<br>
+   (make -f Makefile.dist; ./configure [options] ou<br>
+    dans KDevelop en utilisant "Build/Autoconf and Automake" et<br>
+ "Build/Configure...").<br>
+<br>
+<br>
+<a name="17"><b> Quelle est la différence entre CPPFLAGS et CXXFLAGS&nbsp;?<br>
+</b> CPPFLAGS est utilisé pour les defines (pour des drapeaux nécessaires<br>
+ seulement pour la compilation)<br>
+   CXXFLAGS est utilisé pour des interrupteurs de compilateur (par exemple<br>
+ -frtti), ce qui s'applique aussi<br>
+   au processus de lien.<br>
+<br>
+<br>
+<a name="18"><b> J'ai vu certaines solutions comme de patcher le fichier Makefile.am avec<br>
+     DEFS+=-DMYDEFINE<br>
+   ou<br>
+     CXXFLAGS+=-fsigned-char<br>
+   ou<br>
+     LD_FLAGS+=-L/usr/local/lib<br>
+   POurquoi ne proposez-vous pas cela&nbsp;?<br>
+</b> Il y a un bogue dans automake 1.4, qui n'ajoute pas de drapeaux à ceux qui<br>
+ existent déjà.<br>
+   Si vous utilisez cette commande dans Makefile.am, vous supprimeriez la<br>
+ configuration du drapeau<br>
+   existant.<br>
+   Si vous voulez ces drapeaux uniquement pour le sous-répertoire du projet,<br>
+ utilisez&nbsp;:<br>
+     AM_CPPFLAGS=-DMYDEFINE<br>
+   ou<br>
+     AM_CXXFLAGS=-fsigned-char<br>
+   ou<br>
+     AM_LDFLAGS=-L/usr/local/lib<br>
+<br>
+   Faites attention, ces drapeaux sont uniquement disponibles avec automake<br>
+ version 1.4.<br>
+<br>
+   Pour configurer l'un de ces drapeaux pour le projet entier, veuillez patcher<br>
+ le fichier<br>
+   configure.in(.in) dans le répertoire principal de votre projet.<br>
+<br>
+<br>
+<a name="19"><b> Comment puis je garantir qu'un utilisateur de mon projet va le compiler avec<br>
+ automake<br>
+   version 1.4?<br>
+</b> Ajouter la variable AUTOMAKE_OPTIONS dans le fichier Makefile.am du<br>
+ répertoire<br>
+    source de votre projet avec la chaîne "1.4". Par exemple&nbsp;:<br>
+   AUTOMAKE_OPTIONS = foreign 1.4<br>
+<br>
+<br>
+<a name="20"><b> Est-ce que AM_CXXFLAGS (dans un Makefile.am) peut être utilisé comme drapeau<br>
+ comme -frtti ou<br>
+   -fexceptions&nbsp;?<br>
+</b> Non&nbsp;! Dans ces cas, il y a un problème d'ordre. La variable standard<br>
+ CXXFLAGS publiée<br>
+   par acinclude.m4.in contient déjà un -fno-rtti (-fno_exceptions).<br>
+   Si vous l'appliquez à AM_CXXFLAGS la commande du compilateur voudrait insérer<br>
+ ces<br>
+   drapeaux avant CXXFLAGS, c'est à dire ici pour -frtti:<br>
+   gpp ... -frtti ... -fno-exceptions -fno-rtti ......<br>
+   Ainsi le dernier drapeau (dans ce cas, toujours -fno-rtti) serait utilisé.<br>
+   KDE_CXXFLAGS au contraire sera inséré après le CXXFLAGS standard, et il<br>
+ ressemblera à&nbsp;:<br>
+   gpp ..... -fno-exceptions -fno-rtti ...... -frtti...<br>
+   et cela marche bien.<br>
+<br>
+   Faites attention&nbsp;: KDE_CXXFLAGS ne sont publiés que pour les projets qui<br>
+ utilisent am_edit<br>
+   et acinclude.m4.<br>
+<br>
+<br>
+<a name="21"><b> Pourquoi le patch de configure.in(.in) avec CXXFLAGS="$USE_EXCEPTIONS<br>
+ $CXXFLAGS" ne fonctionne-t-il pas&nbsp;?<br>
+</b> Regardez la réponse à la question "Est-ce que AM_CXXFLAGS (dans Makefile.am)<br>
+   peut être utilisé comme drapeau comme  -frtti ou -fexceptions?" ;-)<br>
+<br>
+<br>
+<a name="22"><b> J'utilise CXXFLAGS="$USE_EXCEPTIONS" dans configure.in(.in) et cela<br>
+ fonctionne bien,<br>
+   pourquoi devrais-je utiliser votre solution&nbsp;?<br>
+</b> Si vous utilisiez votre version avant AC_CHECK_COMPILERS() un appel comme<br>
+     CXXFLAGS="-pedantic" ./configure<br>
+   ne fonctionnerait pas bien.<br>
+   Si vous l'utilisiez après AC_CHECK_COMPILERS() le CXXFLAGS configuré dans<br>
+   AC_CHECK_COMPILERS() serait annulé.<br>
+   (Par exemple dans un appel à "configure --enable-debug", CXXFLAGS serait<br>
+    changé pour aussi insérer des informations de déboguage dans votre code.)<br>
+   Veuillez donc utiliser CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" à la place.<br>
+<br>
+<br>
+<a name="23"><b> J'utilise des en-têtes et des bibliothèques supplémentaires dans mon<br>
+ projet KDE/Qt. Si je mets<br>
+   -I/usr/include/foo dans les options de compilation et -L/usr/lib/foo dans les<br>
+ options de lien, cela ne va pas<br>
+   fixer cetrte configuration dans le paquetage.<br>
+   Que dois-je faire&nbsp;?<br>
+</b> C'est la chose la plus difficile à faire correctement.<br>
+   Une solution facile mais incorrecte serait d'ajouter dans le fichier<br>
+ configure.in(.in):<br>
+<br>
+   all_includes="$all_includes -I/usr/include/foo"<br>
+   all_libraries="$all_libraries -L/usr/lib/foo"<br>
+<br>
+   [le meilleur endroit pour cela est avant les lignes&nbsp;:<br>
+    AC_ARG_PROGRAM<br>
+    AC_OUTPUT( ..... )<br>
+    à la fin du fichier.]<br>
+<br>
+   Les problèmes sont&nbsp;:<br>
+   - Qui peut garantir que les en-têtes seront topujours dans<br>
+     /usr/include/foo... Peut-être que dans certains systèmes ils seront dans<br>
+ /usr/local/foo/include<br>
+     (et peut-être que les bibliothèques seront dans /usr/local/foo/lib)&nbsp;?<br>
+   - Peut-être que foo n'est pas installé et la compilation va échouer mais ce<br>
+ serait mieux si<br>
+     configure échouait déjà avec un message d'aide plus indicatif.<br>
+<br>
+   Aussi prenez la peine de faire cela correctement si vous devez ajouter une<br>
+ fonction macro à<br>
+   configure.in(.in), qui effectue certains tests et cherche si "foo" est<br>
+ installé et où.<br>
+<br>
+   Si vous voulez faire ainsi, nous ne pouvons que vous donner quelques pistes<br>
+ ici... essayez de comprendre<br>
+  le fichier acinclude.m4.in ou créez un projet KDE-ogl normal.<br>
+  Vous trouverez un fichier appelé qgl.m4, qui sera transformé en<br>
+   acinclude.m4 (voir "Makefile.dist"). Ceci vous montre un exemple de recherche<br>
+ de<br>
+   QT-OpenGL-Lib, vous devrez donc le récrire pour votre cas particulier.<br>
+<br>
+   Vous aurez peut-être de la chance et trouverez une solution à votre problème<br>
+ dans<br>
+   acinclude.m4.in, et vous pourrez utiliser une fonction déjà créée.<br>
+<br>
+<br>
+<a name="24"><b> Dans une application de terminal C/C++, $all_includes et $all_libraries ne<br>
+ sont pas utilisés.<br>
+   Comment puis je utiliser la solution pour ce type de projet&nbsp;?<br>
+</b> *** OBSOLETE pour les nouveaux squlettes de projets***<br>
+   La meilleure façon serait d'utiliser le même concept aussi pour votre projet<br>
+ en terminal.<br>
+   La seule chose que vous pouvez faire est de patcher configure.in(.in):<br>
+<br>
+   all_includes="$all_includes -I/usr/include/foo"<br>
+   all_libraries="$all_libraries -L/usr/lib/foo"<br>
+   AC_SUBST(all_includes)<br>
+   AC_SUBST(all_libraries)<br>
+<br>
+   et ajouter es lignes suivantes dans le fichier Makefile.am du répertoire<br>
+ source<br>
+   (par exemple pour le projet "test_cpp"cela serait<br>
+ "test_cpp/test_cpp/Makefile.am"):<br>
+<br>
+   --- snip ---<br>
+   # the include search path.<br>
+   INCLUDES= $(all_includes)<br>
+   # the library search path.<br>
+   <binary_name>_LDFLAGS = $(all_libraries)<br>
+   --- snap ---<br>
+   (Substituez <binary_name> avec le nom réel (par exemple test_cpp) et<br>
+    les lignes ajoutées doivent l'être hors de la section spécifique à KDevelop<br>
+ dans Makefile.am.)<br>
+<br>
+   Après cela, n'oubliez pas de mettre à jour configure et tous les Makefiles.<br>
+   (dans KDevelop en utilisant "Build/Autoconf and Automake" et<br>
+ "Build/Configure...").<br>
+<br>
+<br>
+<a name="25"><b> Dans les questions ci-dessus, je vois toujours "configure.in(.in)". J'ai les<br>
+ deux fichiers<br>
+   dans mon projet. Quel fichier dois-je patcher&nbsp;?<br>
+</b> S'il y a un configure.in.in dans le répertoire principal de votre projet,<br>
+ patcher celui-ci.<br>
+   Si vous ne trouvez pas de configure.in.in, patchez configure.in.<br>
+<br>
+<br>
+<a name="26"><b> J'ai téléchargé les paquetages QT-2.2.x depuis ftp.kde.org et il existe<br>
+ maintenant des widgets KDE<br>
+    disponibles dans designer. Comment puis je les obtenir&nbsp;?<br>
+</b> Vous devez recompiler QT avec l'option additionnelle ./configure -kde.<br>
+ Rappellez-vous de fixer<br>
+   $KDEDIR et $QTDIR pointant sur les bons répertoires. Lorsque vous avez fini,<br>
+ vous avez une option<br>
+   KDE dans le menu outils de designer.<br>
+<br>
+<br>
+<a name="27"><b> J'utilise RedHat Linux avec KDevelop et j'ai essayé de recompiler la<br>
+ bibliothèque QT avec l'option with -kde<br>
+   pour utiliser designer avec le support des widgets KDE mais durant configure,<br>
+ il dit que $KDEDIR<br>
+   ne contient pas un installation de KDE valable&nbsp;?<br>
+</b> RedHat utilise un répertoire de configuration non-standard pour KDE. Dans le<br>
+ cas normal, les bibliothèques<br>
+   devraient être dans $KDEDIR/lib, les exécutables dans $KDEDIR/bin et les<br>
+ en-têtes dans $KDEDIR/include.<br>
+   RedHat utilise /usr comme $KDEDIR mais $KDEDIR/include/kde comme répertoires<br>
+ pour les en-têtes.<br>
+   C'est pour cela que configure de QT ne détecte pas les répertoires corrects.<br>
+ Il cherche dcopserver<br>
+   dans le répertoire des exécutables et les en-têtes dans leur répertoire. Donc<br>
+ si vous choisissez $KDEDIR comme<br>
+   étant /usr, configure ne peut trouver les en-têtes. Une solution possible<br>
+ pour cela est de créer un répertoire /usr/local/kde<br>
+   et de mettre des liens symboliques vers /usr/bin et /usr/include/kdedans ce<br>
+ "pseudo" répertoire kde.<br>
+   Puis export KDEDIR=/usr/local/kde et lancez le ./configure -kde. Après avoir<br>
+ compilé QT vous avez les<br>
+   entrées KDE dans le menu Outils de QT designer.<br>
+<br>
+<br>
+<a name="28"><b> Y a-t-il un HOWTO disponible sur comment intégrer QT designer pour faire des<br>
+ dialogues avec KDevelop ?<br>
+</b> Oui, il y a un bon tutoriel à <a href="http://women.kde.org/articles/tutorials.php">http://women.kde.org/articles/tutorials.php</a><br>
+<br>
+<br>
+<a name="29"><b> J'ai bien installé htdig mais htsearch n'est pas disponible.<br>
+</b>  Sur les systèmes basés sur RedHat, l'exécutable htsearch est placé dans le<br>
+ répertoire /cgi-bin de apache.<br>
+   Vous pouvez créer des liens symboliques dans /usr/bin ou plus simplement<br>
+ ajouter ce chemin dans ~/.bashrc<br>
+<br>
+<br>
+<a name="30"><b> J'ai htdig, htmerge et htsearch dans mon système mais je reçois un message<br>
+ d'erreur disant que le fichier<br>
+   de configuration de htdig n'est pas trouvé ou n'est pas valable&nbsp;?<br>
+</b> Lisez le fichier README.htdig dans le répertoire source et créez un fichier<br>
+ htdig.conf. Puis copiez-le<br>
+   dans $KDEDIR/share/apps/kdevelop/tools. Créez maintenant votre index de<br>
+ recherche avec le menu de configuration<br>
+   de kdevelop.<br>
+<br>
+<br>
+<a name="31"><b> Comment dois-je changer le cadre de travail de mon projet (c'est à dire les<br>
+ fichiers autotool) pour le compiler pour KDE/QT version 3<br>
+  après la création du projet&nbsp;?<br>
+</b> Avec le contenu actuel de admin/, il est possible de sélectionner la version<br>
+ de kde en changeant une ligne dans le fichier<br>
+   configure.in.in:<br>
+   #MIN_CONFIG<br>
+  pour la récente version qt/kde<br>
+   #MIN_CONFIG(3)<br>
+   pour la récente version qt/kde 3<br>
+   #MIN_CONFIG(2)<br>
+   pour la drenière version connue qt/kde 2 (i.e. QT 2.2.2)<br>
+   #MIN_CONFIG(2.2)<br>
+   pour au moins kde/qt version 2.2<br>
+   #MIN_CONFIG(2.0)<br>
+   pour au moins kde/qt version 2.0.2<br>
+<br>
+   Pour des projets QT, cela peut se faire en cherchant la ligne&nbsp;:<br>
+   KDE_USE_QT(2) dans configure.in et en la changeant en<br>
+   KDE_USE_QT ou en la commentant pour utiliser QT 3.x.<br>
+<br>
+<br>
+<a name="32"><b> J'ai changé mon projet comme indiqué ci-dessus pour développer pour une autre<br>
+ version de KDE/QT, mais configure utilise<br>
+   toujours les mauvais répertoires pour kde, que puis je faire&nbsp;?<br>
+</b> Si vous voulez développer pour une autre version kde/qt, vous devez donner à<br>
+ configure les chemins corrects,<br>
+   comme par exemple&nbsp;:<br>
+   ./configure --with-qt-dir=/usr/lib/qt3<br>
+   ./configure --prefix=/opt/kde2 --with-qt-dir=/usr/local/qt2<br>
+   Vous devez bien sûr avoir la version qt/kde souhaitée sur votre système.<br>
+<br>
+<br>
+<a name="33"><b> J'ai deux versions de KDE sur mon système. Si j'essaie de créer un projet KDE<br>
+ 2 avec KDevelop 2.1 (compilé pour<br>
+   KDE 2) un appel de configure sans paramètre utilise toujours /opt/kde3 (ou<br>
+ /opt/kde) au lieu de /opt/kde2.<br>
+   Qu'est ce qui ne va pas&nbsp;?<br>
+</b> Veuillez d'abord vérifier votre variable d'environnement actuelle KDEDIR. Il<br>
+ se peut qu'elle pointe sur le mauvais<br>
+    répertoire (par example ~/.profile, ~/.bashrc, /etc/profile).<br>
+   Veuillez aussi vérifier le script de démarrage de KDE (c'est à dire<br>
+ "/opt/kde2/bin/startkde"), car certaines distributions<br>
+   (comme SuSE) exportent un autre KDEDIR.<br>
+   [le premier appel de configure dans la création d'un projet d'application<br>
+ (après avoir cliqué "Create") vous montre les<br>
+    valeurs des variables d'environnement KDEDIR et QTDIR]<br>
+   Une autre solution est de toujours utiliser l'option --prefix= dans l'appel<br>
+ de configure. Cela peut être fixé dans<br>
+   KDevelop avec "Options->KDevelop Setup->Path->KDE/QT Pathes"<br>
+   (ou Project->Project Options->Compiler Options/Configure").<br>
+<br>
+<br>
+<a name="34"><b> J'ai fait cela mais l'appel de configure utilise toujours le mauvais<br>
+ répertoire.<br>
+</b> Vous devez maintenant exécuter "DistClean" (soit avec "Project->DistClean" du<br>
+ menu de KDevelop ou<br>
+   "make distclean" depuis la console).<br>
+
+<?php module_tail(); ?>

@@ -1,0 +1,113 @@
+<?php module_head("KDevelop 3.0.x requirements");?>
+Sebelum anda mulai meng-kompile versi KDevelop baru anda, pastikan anda sudah meng-install program-program berikut ini. Perhatikan kalau anda bisa mendapatkan error-error aneh kalau anda menggunakan versi yang lama.
+<br>Biasanya, anda bisa melihat versi software yang di-install di komputer anda dengan cara memanggil program tersebut diikuti dengan argumen "--version". Contohnya, untuk mencari tahu versi autoconf apa yang ter-install di komputer anda, ketik:
+<pre>
+   autoconf --version
+</pre>
+<br>
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr align=left>
+    <th class=header align=left>Program/Library</th>
+    <th class=header align=left>Asal (Source)</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd>KDE &gt= 3.0.2</td>
+    <td class=odd><a href="http://www.kde.org/" TARGET="_top">www.kde.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Qt &gt= 3.0.5</td>
+    <td class=even><a href="http://www.trolltech.com/products/qt/" TARGET="_top">www.trolltech.com/products/qt</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>g++ &gt= 2.95.3 (atau yg cocok)</td>
+    <td class=odd><a href="http://gcc.gnu.org/" TARGET="_top">gcc.gnu.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>GNU make</td>
+    <td class=even><a href="http://www.gnu.org/software/make/" TARGET="_top">www.gnu.org/software/make</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>perl &gt= 5.004</td>
+    <td class=odd><a href="http://www.perl.com/" TARGET="_top">www.perl.com</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>autoconf &gt= 2.52</td>
+    <td class=even><a href="http://www.gnu.org/software/autoconf/" TARGET="_top">www.gnu.org/software/autoconf</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>automake &gt= 1.6</td>
+    <td class=odd><a href="http://www.gnu.org/software/automake/" TARGET="_top">www.gnu.org/software/automake</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>flex &gt= 2.5.4</td>
+    <td class=even><a href="http://www.gnu.org/software/flex/" TARGET="_top">www.gnu.org/software/flex</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Berkley DB &gt;= 3.0 and &lt;= 4.1</td>
+    <td class=odd><a href="http://www.sleepycat.com/" TARGET="_top">www.sleepycat.com</a></td>
+  </tr>
+</table>
+<br>
+<br>
+Anda bisa mematahkan kebutuhan KDevelop terhadap autoconf &gt;= 2.52 dan automake &gt;= 1.6 dengan melakukan:
+<pre>
+      $  cd KDevelopSourceDirectory
+      $  rm -Rf admin
+      $  ln -s $KDEDIR/share/apps/kdelibs/admin admin
+</pre>
+Kalau yang dijelaskan diatas tidak berjalan, maka anda benar-benar harus melakukan update ke autoconf dan automake.
+
+<?php module_tail();?>
+
+<?php module_head("Optional (recomended) software");?>
+Alat-alat berikut ini tidak diharuskan (optional), yang berarti KDevelop akan tetap berjalan tanpa mereka. Tetapi KDevelop akan kekurangan beberapa fungsi-fungsi seperti menghasilkan dokumentasi (documentation generation) atau pencarian files (searching over several files). Maka dari itu, anda seharusnya memeriksa kalau sistem anda mempunyai program-program ini.
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr valign=top>
+    <th class=header align=left>Program/Library</th>
+    <th class=header align=left>Asal (Source)</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Qt designer<br>(subclassing wizard)</td>
+    <td class=odd><a href="http://www.trolltech.com/products/qt/designer.html" TARGET="_top">www.trolltech.com/products/qt/designer.html</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>ht://Dig 3.1.6<br>(mencari teks di dokumentasi)</td>
+    <td class=even><a href="http://www.htdig.org/" TARGET="_top">www.htdig.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Valgrind 20030725<br>(memeriksa kebocoran memory (memory leak))</td>
+    <td class=odd><a href="http://developer.kde.org/~sewardj/" TARGET="_top">developer.kde.org/~sewardj</a></td>
+    </tr>
+  <tr valign=top>
+    <td class=even>GDB &gt;= 5.0<br>(internal debugger yang berjalan dengan baik)</td>
+    <td class=even><a href="http://www.gnu.org/software/gdb/" TARGET="_top">www.gnu.org/software/gdb</a></td>
+    </tr>
+  <tr valign=top>
+    <td class=odd>CVS &gt;= 1.10.6<br>(penggabungan (integration) CVS)</td>
+    <td class=odd><a href="http://www.cvshome.org/" TARGET="_top">www.cvshome.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Perforce &gt;= 2003.1<br>(penggabungan Perforce)</td>
+    <td class=even><a href="http://www.perforce.com/perforce/products.html" TARGET="_top">www.perforce.com/perforce/products.html</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Clearcase &gt;= 4.0<br>(Penggabungan Clearcase)</td>
+    <td class=odd><a href="http://www.rational.com/products/clearcase/index.jsp" TARGET="_top">www.rational.com/products/clearcase/index.jsp</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>CTags 5.x<br>(Penggabungan CTags)</td>
+    <td class=even><a href="http://ctags.sourceforge.net/" TARGET="_top">ctags.sourceforge.net</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Doxygen &gt;= 1.3.4<br>(project api generation)</td>
+    <td class=odd><a href="http://www.doxygen.org/" TARGET="_top">www.doxygen.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>dot &gt;= 1.8.7<br>(class inheritance and collaboration diagrams)</td>
+    <td class=even><a href="http://www.graphviz.org/" TARGET="_top">www.graphviz.org</a></td>
+  </tr>
+</table>
+
+<p>Perhatikan bila anda ingin menggunakan Kdevelop dengan dukungan (support) bahasa pemrograman ada, pascal, java, dll... anda memerlukan kompiler bahasa pemrograman yang sesuai. KDevelop tidak membatasi kompiler apa saja yang seharusnya anda pakai, tetapi KDevelop menawarkan dialog pilihan (options dialogs) untuk beberapa bahasa pemrograman tersebut. Plugins kompiler yang sekarang ini tersedia adalah gcc, g++, f77, pghpf (Portland Group High Performance Fortran Compiler), pgf77 (Portland Group Fortran 77 Compiler), dcc (Borland Delphi Compiler) and fpc (Free Pascal Compiler).</p>
+
+<?php module_tail(); ?>

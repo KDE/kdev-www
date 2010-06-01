@@ -1,0 +1,89 @@
+<?php
+  module_head("Statutul traducerilor pentru interfa&#x163;a utilizator a KDevelop HEAD");
+  include("inc/i18n_kde_org_translation_status.php");
+  $cvsbranch      = "KDE_3_3_BRANCH";
+  $lastupdate_msg = "Ultima actualizare: ";
+  $almostdone_msg = "Aproape gata (&#062;80&#037;): ";
+  $complete_msg   = "Completat: ";
+?>
+
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#8b898b" width="100%"><tr><td>
+<table cellspacing="1" cellpadding="2" border="0" width="100%">
+<tr bgcolor="#e0e0e0">
+  <td width="30%"><font size="2"><nobr><b>Echipa limbii</b></nobr></font></td>
+  <td width="10%"><font size="2"><b>Fi&#x15F;ier</b></font></td>
+  <td><font size="2" color="#339933"><b>tradus</b></font></td>
+  <td align="center"><font size="2" color="#339933"><b>%</b></font></td>
+  <td><font size="2" color="#333399"><b>neclar</b></font></td>
+  <td align="center"><font size="2" color="#333399"><b>%</b></font></td>
+  <td><font size="2" color="#dd3333"><b>netradus</b></font></td>
+  <td align="center"><font size="2" color="#dd3333"><b>%</b></font></td>
+  <td><font size="2"><b>total</b></font></td>
+  <td width="100%"><font size="2"><b>grafic</b></font></td>
+</tr>
+<?php
+  get_gui_trans_status($cvsbranch, ">kdevelop.po", $lastupdate_msg, $almostdone_msg, $complete_msg);
+?>
+</table>
+</td></tr>
+</table>
+<br>
+
+Pentru a actualiza traducerea pentru GUI, transfera&#x163;i fi&#x15F;ierul kdevelop.po corespondent &#x15F;i executa&#x163;i:<br>
+<pre>
+ $ msgfmt kdevelop.po -o kdevelop3.mo
+ $ cp kdevelop3.mo $KDEDIR/share/locale/[LANG_CODE]/LC_MESSAGES/kdevelop3.mo
+</pre>
+
+<br>
+<br>
+
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#8b898b" width="100%"><tr><td>
+<table cellspacing="1" cellpadding="2" border="0" width="100%">
+<tr bgcolor="#e0e0e0">
+  <td width="30%"><font size="2"><nobr><b>Echipa limbii</b></nobr></font></td>
+  <td width="10%"><font size="2"><b>File</b></font></td>
+  <td><font size="2" color="#339933"><b>tradus</b></font></td>
+  <td align="center"><font size="2" color="#339933"><b>%</b></font></td>
+  <td><font size="2" color="#333399"><b>neclar</b></font></td>
+  <td align="center"><font size="2" color="#333399"><b>%</b></font></td>
+  <td><font size="2" color="#dd3333"><b>netradus</b></font></td>
+  <td align="center"><font size="2" color="#dd3333"><b>%</b></font></td>
+  <td><font size="2"><b>total</b></font></td>
+  <td width="100%"><font size="2"><b>grafic</b></font></td>
+</tr>
+<?php
+  get_gui_trans_status($cvsbranch, "desktop_kdevelop.po", $lastupdate_msg, $almostdone_msg, $complete_msg);
+?>
+</table>
+</td></tr>
+</table>
+
+
+<font size="2">
+<br>
+<b>Note:</b><br>
+&nbsp;&nbsp;<b>1.</b> Doar cataloage PO cu fi&#x15F;iere POT corespondente sunt incluse &icirc;n statistici.<br>
+&nbsp;&nbsp;<b>2.</b> Num&#259;rul total se refer&#259; la num&#259;rul de mesaje g&#259;site &icirc;n fi&#x15F;ierele PO. De exemplu dac&#259;, &icirc;n mod eronat, PO-urile traduse au un num&#259;r diferit de mesaje de POT-ul corespondent, atunci ve&#x163;i observa diferen&#x163;e.<br>
+&nbsp;&nbsp;<b>3.</b> O linie cu fundal ro&#x15F;u &icirc;nseamn&#259; c&#259; echipa corespondent~ are un fi&#x15F;ier PO ce con&#x163;ine cel pu&#x163;in o eroare.<br>
+&nbsp;&nbsp;<b>4.</b> O linie cu fundal albastru ilustreaz&#259; faptul c&#259; fi&#x15F;ierul PO nu are nici un fi&#x15F;ier POT asociat.<br>
+&nbsp;&nbsp;<b>5.</b> Este posibil ca adun&acirc;nd procenetele pentru traduse, neclare &#x15F;i netraduse, suma s&#259; dep&#259;&#x15F;easc&#259; 100% sau s&#259; fie mai mic&#259;. Este normal s&#259; se &icirc;nt&acirc;mple a&#x15F;a din causa rotunjirilor c&acirc;nd numerele sunt scurtate la dou&#259; zecimale.<br>
+
+
+<br>
+<b>Legend:</b><br>
+&nbsp;&nbsp;<img src="graphics/stats/bar0.gif" height="15" width="30"> - mesaje traduse<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar4.gif" height="15" width="30"> - mesaje neclare<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar1.gif" height="15" width="30"> - mesaje netraduse<br>
+&nbsp;&nbsp;<img src="graphics/stats/bar6.gif" height="15" width="30"> - informa&#x163;ie indisponibil&#259;<br>
+<br>
+</font>
+
+<?php
+module_tail();
+$tdatetime = file('dynamic/'.$cvsbranch.'_po_status_lastupdate.ihtml');
+$tdatetime = explode(' ', $tdatetime[0]);
+$tdate = explode('-', $tdatetime[0]);
+$ttime = explode(':', $tdatetime[1]);
+return mktime($ttime[0], $ttime[1], 0, $tdate[1], $tdate[2], $tdate[0], 1 );
+?>

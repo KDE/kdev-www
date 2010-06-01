@@ -1,0 +1,42 @@
+Um KDevelop auf Ihrem System zu kompilieren und zu installieren, tippen Sie bitte die folgenden Kommandos 
+von Ihrem Quellcode-Wurzelverzeichnis ein (wir nehmen an, dass Sie eine Bash Shell benutzen)..<br>
+<pre>
+       $ export KDEDIR=/wo/ihr/kde3/ist
+       $ export QTDIR=/wo/ihr/qt3/ist
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+</pre>
+<b>Anmerkdung:</b> Logischerweise sollten Sie die ersten zwei Zeilen zuerst Ihren Bed&uuml;rfnissen anpassen. :-)<br>
+<br>
+Der n&auml;chste Schritt ist KDevelop zu konfigurieren, Sie k&ouml;nnen mehr &uuml;ber die m&ouml;glichen 
+Optionen erfahren wenn Sie folgenden Befehl aufrufen:
+<pre>
+       $ ./configure --help
+</pre>
+Hier ein Beispiel f&uuml;r eine mit Debuginformationen kompilierte Version:
+<pre>
+       $ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+</pre>
+Hier ein Beispiel f&uuml;r eine f&uuml;r die Ver&ouml;ffentlichung kompilierte Version:
+<pre>
+       $ ./configure --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+</pre>
+Sie k&ouml;nnen verhindern dass bestimmte von Ihnen nicht ben&ouml;tigte KDevelop Komponenten nicht kompiliert werden, indem Sie beispielsweise configure mit den folgenden Optionen aufrufen:
+<pre>
+       $ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+          --disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+          --disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+          --disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion
+</pre>
+Auf KDE 3.0.x Systemen (nur f&uuml;r KDE &lt; 3.1) sollten Sie also die folgenden Kommandos ausf&uuml;hren:
+<pre>
+       $ ln -s $KDEDIR/share/apps/ksgmltools2/customization/dtd doc/kdevelop/dtd
+       $ ln -s $KDEDIR/share/apps/ksgmltools2/customization/dtd doc/kde_app_devel/dtd
+       $ ln -s $KDEDIR/share/apps/ksgmltools2/customization/dtd doc/kdearch/dtd
+</pre>
+Letztendlich k&ouml;nnen sie KDevelop &uuml;bersetzen und installieren:
+<pre>
+       $ make
+       $ make install (als root)
+</pre>

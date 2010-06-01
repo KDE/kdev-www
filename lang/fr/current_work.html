@@ -1,0 +1,906 @@
+<?php module_head("Statut du support des languages de programmation");?>
+Veuillez regarder <a href="HEAD/doc/api/html/LangSupportStatus.html">
+la page du statut du support des languages de programmation</a> pour savoir
+quels languages sont actuellement support&eacute;s dans KDevelop ainsi que les
+caract&eacute;ristiques sp&eacute;cifiques &agrave; chaque language . Cette page
+est automatiquement synchronis&eacute;e avec la derni&egrave;re version du CVS
+toutes les 24H.
+<?php module_tail(); ?>
+
+<?php module_head("Liste &agrave; faire");?>
+Veuillez regarder <a href="HEAD/doc/api/html/index.html#PlannedTasks">
+la section de planification des t&acirc;ches</a> dans la documentation de l'API pour conna&icirc;tre les plans que nous avons pour le futur de KDevelop.
+Cette page est automatiquement synchronis&eacute;e avec la derni&egrave;re version du CVS chaque 24H.
+<?php module_tail(); ?>
+
+<?php module_head("Activit&eacute;s durant la derni&egrave;re ann&eacute;e");?>
+Les tableaux suivants montrent le travail effectu&eacute; durant les 5 derniers mois, class&eacute; par sujet et date.
+Cela devrait vous aider &agrave; trouver
+<ul>
+<li>ce qui est en train de se faire</li>
+<li>quelles sont les t&acirc;ches actuelles</li>
+<li>si quelqu'un travaille d&eacute;j&agrave; sur une fonctionalit&eacute; manquante ou corrige certaines bogues</li>
+<li>et quelle personne vous pouvez contacter si vous voulez contribuer aux travaux</li>
+</ul><br><br>
+Note&nbsp;: seuls les &eacute;l&eacute;ments figurant dans le journal des changements peuvent &ecirc;tre mentionn&eacute;s ici. Le nombre r&eacute;el de commits au cvs est bien plus &eacute;lev&eacute;.<br><br>
+<ul><li><h3>cadre g&eacute;n&eacute;ral de KDevelop-3</h3></li></ul>
+<b>r&eacute;sum&eacute;&nbsp;:</b> restructuration cvs, extensions de certaines interfaces et ajout de fonctionalit&eacute;, changement de language &agrave; la vol&eacute;e<br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-10-02</td>
+<td>Amilcar Lucas</td>
+<td>A nomm&eacute; l'ex&eacute;cutable de  KDevelop de gideon &agrave; kdevelop.<br>
+A restructur&eacute; les r&eacute;pertoires selon la documentation API<br>
+buildtools -> a l'ancien gestionnaire de Project managers<br>
+languages -> support des languages (includes app_templates, file_templates, compilerplugin, pcsimporter et d&eacute;bogueur)<br>
+&eacute;diteurs ->support des &eacute;diteurs<br>
+vcs -> Version control systems (clearcase, cvs, perforce, svn, cvsservice et cervisia)</td>
+</tr>
+<tr>
+<td>2003-08-27</td>
+<td>Harald Fernengel</td>
+<td>Ajout du support de languages &agrave; la vol&eacute;e - you can switch to SQL mode from a CPP project, or to Perl if you have scripts</td>
+</tr>
+<tr>
+<td>2003-05-17</td>
+<td>F@lk Brettschneider</td>
+<td>a renomm&eacute; les fichiers et les classes QextMdi en KMdi</td>
+</tr>
+<tr>
+<td>2003-05-16</td>
+<td>Alexander Dymo</td>
+<td>a ajout&eacute; la m&eacute;thode sourceFormatter() &agrave; l'interface KDevPluginet a corrig&eacute; AStylePart pour que ce soit la partie par d&eacute;faut de formatage des sources</td>
+</tr>
+<tr>
+<td>2003-05-14</td>
+<td>Mario Scalas</td>
+<td>a fusion&eacute; KDevGlobalVersionControl dans KDevGlobalVersionControl et a supprim&eacute; KDevGlobalVersion</td>
+</tr>
+<tr>
+<td>2003-05-12</td>
+<td>Roberto Raggi</td>
+<td>a remplac&eacute; KDevLanguageSupport::fileFilters() avec KDevLanguageSupport::mimeTypes()</td>
+</tr>
+<tr>
+<td>2003-04-30</td>
+<td>Jens Dagerbo</td>
+<td>ajout de l'alternative du module externe "Core"</td>
+</tr>
+<tr>
+<td>2003-03-26</td>
+<td>Roberto Raggi</td>
+<td>am&eacute;lioration du cadre des modules externes</td>
+</tr>
+<tr>
+<td>2003-02-13</td>
+<td>Eray Ozkural</td>
+<td>lib/structure&nbsp;: correction de Trie_Impl apply()</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Eray Ozkural</td>
+<td>lib/structure : essai d'am&eacute;lioration</td>
+</tr>
+<tr>
+<td>2003-02-09</td>
+<td>F@lk Brettschneider</td>
+<td>interface de KDevPlugin &eacute;tendue pour permettre d'afficher la vue des messages lors de la compilation</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>F@lk Brettschneider</td>
+<td>changement de nom (toplevel() --&gt; mainWindow())</td>
+</tr>
+<tr>
+<td>2003-01-30</td>
+<td>Julian Rockey</td>
+<td>Fait que l'interface de cr&eacute;ation de fichier soit disponible globallement</td>
+</tr>
+<tr>
+<td>2003-01-10</td>
+<td>Julian Rockey</td>
+<td>lib/util/filetemplate&nbsp;: regarde dans le r&eacute;pertoire global pour trouver des squelettes s'ils ne sont pas trouv&eacute;s dans le r&eacute;pertoire local</td>
+</tr>
+<tr>
+<td>2003-01-09</td>
+<td>Eray Ozkural</td>
+<td>fait revivre lib/structure (la classe Trie fonctionne, ajout de KDict)</td>
+</tr>
+<tr>
+<td>2003-01-08</td>
+<td>Julian Rockey</td>
+<td>lib/util&nbsp;: ajout de urlutil, utilitaires g&eacute;n&eacute;raux de manipulation URL</td>
+</tr>
+<tr>
+<td>2003-01-06</td>
+<td>Hamish Rodda</td>
+<td>partcontroller&nbsp;: correction de bogue pour un editDocument(..) plus stable</td>
+</tr>
+</table>
+
+<ul><li><h3>Interface utilisateur, modes GUI, outil-vues</h3></li></ul>
+<b>r&eacute;sum&eacute;&nbsp;:</b> s&eacute;lecteur de fichiers de Kate est port&eacute;, les supports pour les modes profils et plein &eacute;cran est ajout&eacute;, caract&eacute;ristique 'Nouveau Fichier' ajout&eacute;e, implantation de sauvegarde/restaure du  mode session interface QextMDI, corrections dans le mode interface IDEAl, nouvelle gestion de grepview, corrections de bogues<br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-05-24</td>
+<td>Roberto Raggi</td>
+<td>Ajout du support du mode plein &eacute;cran</td>
+</tr>
+<tr>
+<td>2003-05-21</td>
+<td>Roberto Raggi</td>
+<td>Implantation du support pour les  profils, a port&eacute; le s&eacute;lecteur de fichiers de Kate &agrave; kdevelop</td>
+</tr>
+<tr>
+<td>2003-04-15</td>
+<td>Harald Fernengel</td>
+<td>Le bouton stop est maintenant capable de stopper des parties uniques gr&acirc;ce &agrave; un menu d&eacute;roulant</td>
+</tr>
+<tr>
+<td>2003-03-29</td>
+<td>Amilcar Lucas</td>
+<td>Implante une vue-outil intelligente qui auto dispara&icirc;t</td>
+</tr>
+<tr>
+<td>2003-03-18</td>
+<td>Caleb Tennis</td>
+<td>Mode interface IDEAl&nbsp;: gestion des panneaux am&eacute;lior&eacute;e</td>
+</tr>
+<tr>
+<td>2003-03-15</td>
+<td>Jens Zurheide</td>
+<td>Corrections de bogues</td>
+</tr>
+<tr>
+<td>2003-03-11</td>
+<td>Julian Rockey</td>
+<td>Dialogue Nouveau Fichier am&eacute;lior&eacute;</td>
+</tr>
+<tr>
+<td>2003-03-06</td>
+<td>Stephane Ancelot</td>
+<td>Grepview&nbsp;: am&eacute;lior&eacute;, il n'y a plus besoin d'afficher le nom de fichier dans chaque ligne</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Eray Ozkural</td>
+<td>Module externe pour 'Nouveau Fichier'&nbsp;: correction&nbsp;: Ajout des types cpp et h par d&eacute;faut quand il n'y a pas de r&eacute;pertoire squelette dans le projet</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Eray Ozkural</td>
+<td>Module externe pour 'Nouveau Fichier'&nbsp;: ajout de GUI pour la configuration globale et au niveau du projet</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>F@lk Brettschneider</td>
+<td>Mode interface Childframe&nbsp;: la restauration des sessions de vues maximales est correcte; corrections de bogues</td>
+</tr>
+<tr>
+<td>2003-02-03</td>
+<td>F@lk Brettschneider</td>
+<td> Mode interface Childframe&nbsp;: nom de fichier entier dans la vue de titre, vue correcte de la taille des ic&ocirc;nes</td>
+</tr>
+<tr>
+<td>2003-01-15</td>
+<td>Mickael Marchand</td>
+<td>Mode interface IDEAl&nbsp;: 'Ferme les autres' (onglets)</td>
+</tr>
+<tr>
+<td>2003-01-15</td>
+<td>Julian Rockey</td>
+<td>Module externe pour 'Nouveau Fichier'&nbsp;: ajout de l'option "Nouveau" dans le menu "Fichier" de Gideon</td>
+</tr>
+<tr>
+<td>2003-01-12</td>
+<td>Julian Rockey</td>
+<td>Module externe pour 'Nouveau Fichier'&nbsp;: widget de cr&eacute;ation de fichier plus joli, support pour les squelettes de fichiers globaux</td>
+</tr>
+<tr>
+<td>2003-01-11</td>
+<td>F@lk Brettschneider</td>
+<td>Vue du r&eacute;pertoire du projet&nbsp;: les r&eacute;pertoires sont maintenant class&eacute;s au-dessus des fichiers</td>
+</tr>
+<tr>
+<td>2003-01-10</td>
+<td>Julian Rockey</td>
+<td>Module externe de nouveau fichier&nbsp;: ajout de squelettes de fichiers globaux  pour qu'ils soient inclus dans les squelettes $datadir/kdevfilecreate/file</td>
+</tr>
+<tr>
+<td>2003-01-08</td>
+<td>Julian Rockey</td>
+<td>Module externe de nouveau fichier&nbsp;: premi&egrave;re addition</td>
+</tr>
+<tr>
+<td>2003-01-05</td>
+<td>F@lk Brettschneider</td>
+<td>la barre des t&acirc;ches MDI est de retour pour Viewbar (&Agrave; FAIRE&nbsp;: lire la configuration au d&eacute;marrage), passe maintenant au mode QextMDI UI imm&eacute;diatement et correctement gr&acirc;ce au dialogue Options</td>
+</tr>
+<tr>
+<td>2003-01-01</td>
+<td>Caleb Tennis</td>
+<td>ajout de coupures de ligne lorsque des donn&eacute;ees sont copi&eacute;es depuis la fen&ecirc;tre de sortie make dans le clipboard</td>
+</tr>
+</table>
+
+<ul><li><h3>&Eacute;diteurs</h3></li></ul>
+<b>r&eacute;sum&eacute;&nbsp;:</b> am&eacute;lioration de la navigation dans les fichiers, am&eacute;lioration de l'utilisation de QEditor, du support Perl, meilleure auto-expansion du texte, corrections de bogues<br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-07-19</td>
+<td>Harald Fernengel</td>
+<td>QEditor peut maintenat charger des fichiers &agrave; nouveau</td>
+</tr>
+<tr>
+<td>2003-07-19</td>
+<td>Andras Mantia</td>
+<td>appliquer la configuration de l'&eacute;diteur aux fichiers ouverts</td>
+</tr>
+<tr>
+<td>2003-05-02</td>
+<td>Oliver Kellogg</td>
+<td>surbrillance syntaxique pour ada et indentation dans qeditor</td>
+</tr>
+<tr>
+<td>2003-04-18</td>
+<td>Alexander Dymo</td>
+<td>surbrillance syntaxique pour pascal et indentation dans qeditor</td>
+</tr>
+<tr>
+<tr>
+<td>2003-03-13</td>
+<td>Julian Rockey</td>
+<td>CTRL-/ change de buffer comme dans Emacs</td>
+</tr>
+<tr>
+<td>2003-02-19</td>
+<td>F@lk Brettschneider</td>
+<td>QEditor&nbsp;:dialogue de recherche am&eacute;lior&eacute; (boucle pour commencer &agrave; la fin du fichier, utilise la s&eacute;lection de texte comme cha&icirc;ne de recherche)</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>F@lk Brettschneider &amp; Jens Zurheide</td>
+<td>ALT+Up/Down pour naviguer entre les vues (par ordre de la derni&egrave;re acc&eacute;d&eacute;e), tenir ALT enfonc&eacute; et presser Up/Down permet la navigation</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>Roberto Raggi</td>
+<td>QEditor&nbsp;: ajout du support pour des indices de texte</td>
+</tr>
+<tr>
+<td>2003-01-27</td>
+<td>F@lk Brettschneider</td>
+<td>QEditor&nbsp;: Ctrl+Left, Ctrl+Right, Ctrl+Del et Ctrl+Backspace fonctionnent vraiment mieux maintenant</td>
+</tr>
+<tr>
+<td>2003-01-24</td>
+<td>Harald Fernengel</td>
+<td>les touches par d&eacute;faut pour aller &agrave; la fen&ecirc;tre suivante/pr&eacute;c&eacute;dente sont maintenant ALT-Droit/ ALT-Gauche (comme dans Kate)</td>
+</tr>
+<tr>
+<td>2003-01-05</td>
+<td>F@lk Brettschneider</td>
+<td>accepte les scripts Perl pour charger dans l'&eacute;diteur de texte</td>
+</tr>
+<tr>
+<td>2003-01-01</td>
+<td>Roberto Raggi</td>
+<td>addition du mode 'Auto Expand'</td>
+</tr>
+</table>
+
+<ul><li><h3>Documentation</h3></li></ul>
+<b>r&eacute;sum&eacute;:</b> l'index pour la documentation est disponible, ajout de plus de documentation, addition des boutons de navigation, am&eacute;lioration de la configuration,ajout de la mise &agrave; jour automatique de la documentation API, corrections de bogues<br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-10-04</td>
+<td>Amilcar Lucas</td>
+<td>En ligne, automatiquement mise &agrave; jour toutes 24H, la documentation API de kdevelop peut &ecirc;tre visualis&eacute;e dans l'arborescence de vue.</td>
+</tr>
+<tr>
+<td>2003-07-04</td>
+<td>Andras Mantia</td>
+<td>Remet la fonction de recherche dans la documentation</td>
+</tr>
+<tr>
+<td>2003-05-16</td>
+<td>Marcel Turino &amp; Alexander Dymo</td>
+<td>Ajout d'un syst&egrave;me d'indexation</td>
+</tr>
+<tr>
+<td>2003-03-13</td>
+<td>Alexander Dymo</td>
+<td>Support DevHelp, toute la collection pour les d&eacute;velopeurs GNU/GNOME (http://lidn.sourceforge.net)</td>
+</tr>
+<tr>
+<td>2003-03-09</td>
+<td>Roberto Raggi</td>
+<td>Addition d'action avant/arri&egrave;re pour le navigateur</td>
+</tr>
+<tr>
+<td>2003-03-07</td>
+<td>Alexander Dymo</td>
+<td>Nouvelles options de configuration, est maintenant capable d'utiliser soit doxygen soit kdoc, pas seulement kdelibs</td>
+</tr>
+<tr>
+<td>2003-03-05</td>
+<td>Alexander Dymo</td>
+<td>Est maintenant capable de s'occuper de toute la documentation de Qt, y compris la documentation personnelle *.xml et quelques corrections de bogues, ajout des tables des mati&egrave;res W3C TR</td>
+</tr>
+<tr>
+<td>2003-02-03</td>
+<td>F@lk Brettschneider</td>
+<td>Les variables d'environnement sont maintenant possibles pour les vues de la documentation, ce qui signifie que la documentation Qt fonctionne maintenant</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Eray Ozkural</td>
+<td>Am&eacute;liore le dialogue de documentation des biblioth&egrave;ques</td>
+</tr>
+</table>
+
+<ul><li><h3>support des languages de programmation</h3></li></ul>
+<b>r&eacute;sum&eacute;&nbsp;:</b>  support ajout&eacute; pour les languages Ada, Pascal, Ruby et  SQL, support C++ am&eacute;lior&eacute;&nbsp;: nouveau parseur de classe&nbsp;! meilleures compl&eacute;tion de code et vue de classes, dialogue am&eacute;lior&eacute; pour l'ajout de m&eacute;thode/attribut/classe, la vue de sortie de make a une nouvelle disposition, les supports Java et Fortran ont ressurgi<br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-10-29</td>
+<td>Alexander Dymo</td>
+<td>Pascal</td>
+<td>Import d'un analyseur de Pascal mis &agrave; jour, il n'est plus maintenant restreint &agrave; pascal-78. La plupart des extensions objet pascal/delphi sont support&eacute;es.</td>
+</tr>
+<tr>
+<td>2003-09-10</td>
+<td>Alexander Dymo</td>
+<td>C++</td>
+<td>Addition de l'interface graphique pour cr&eacute;er des bases de donn&eacute;es personnalis&eacute;es de compl&eacute;tion de code bas&eacute;es sur des r&eacute;pertoires s&eacute;lectionn&eacute;s.</td>
+</tr>
+<tr>
+<td>2003-09-08</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>Addition de l'interface graphique pour cr&eacute;er les bases de donn&eacute;es de compl&eacute;tion de code pour les biblioth&egrave;ques externes comme  Qt et KDE</td>
+</tr>
+<tr>
+<td>2003-08-28</td>
+<td>Harald Fernengel</td>
+<td>SQL</td>
+<td>le support SQL affiche maintenant les tables et les champs dans le navigateur de classe</td>
+</tr>
+<tr>
+<td>2003-05-26</td>
+<td>Roberto Raggi</td>
+<td>Java</td>
+<td>Nouveau support Java</td>
+</tr>
+<tr>
+<td>2003-05-21</td>
+<td>Roberto Raggi &amp; Jonas B. Jacobi</td>
+<td>C++</td>
+<td>Ajout des indices pour la documentation &agrave; la compl&eacute;tion de code</td>
+</tr>
+<tr>
+<td>2003-04-18</td>
+<td>Oliver Kellogg</td>
+<td>Ada</td>
+<td>Support pour language Ada, incluant une partie adaproject, des squelettes de cr&eacute;ation de fichiers, un squelette d'assistant d'application</td>
+</tr>
+<tr>
+<td>2003-04-23</td>
+<td>Harald Fernengel</td>
+<td>SQL</td>
+<td>Partie pour support SQL, incluant le support pour de multiples connexions,
+pour envoyer des demandes et naviguer dans les r&eacute;sultats</td>
+</tr>
+<tr>
+<td>2003-04-18</td>
+<td>Alexander Dymo</td>
+<td>Pascal</td>
+<td>Support pour le language Pascal, incluant une partie pascalproject, des squelettes de cr&eacute;ation de fichiers, un squelette d'assistant d'application, des modules externes de compilation pour le compilateur Free Pascal</td>
+</tr>
+<tr>
+<td>2003-04-15</td>
+<td>C++</td>
+<td>Roberto Raggi</td>
+<td>Nouvellenew persistant class store</td>
+</tr>
+<tr>
+<td>2003-04-11</td>
+<td>Marek Janukowicz</td>
+<td>Ruby</td>
+<td>Partie de support Ruby, incluant des squelettes d'assistant d'application et de cr&eacute;ation de fichiers</td>
+</tr>
+<tr>
+<td>2003-03-29</td>
+<td>Luc Willems</td>
+<td>Perl</td>
+<td>am&eacute;lioration de la vue-outil de classe pour les projets Perl</td>
+</tr>
+<tr>
+<td>2003-03-26</td>
+<td>Roland Krause</td>
+<td>Fortran</td>
+<td>am&eacute;lioration de l'utilisabilit&eacute;, squelette d'une application de base</td>
+</tr>
+<tr>
+<td>2003-03-21</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>meilleur support pour les espaces de nom et les classes internes</td>
+</tr>
+<tr>
+<td>2003-03-20</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>compl&eacute;tion de code am&eacute;lior&eacute;e</td>
+</tr>
+<tr>
+<td>2003-03-18</td>
+<td>John Firebaugh</td>
+<td>C++</td>
+<td>La vue de sortie de make est compl&egrave;tement restructur&eacute;e, a encore besoin d'&ecirc;tre travaill&eacute;e</td>
+</tr>
+<tr>
+<td>2003-03-18</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>Nouvel assistant "Ajouter une m&eacute;thode", nouvel assistant "Ajouter des attributs"</td>
+</tr>
+<tr>
+<td>2003-03-07</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>Vue de sortie de make : ajout d'un mode 'tr&egrave;s br&egrave;ve sortie de compilation', changement de mode sans perte de contenu</td>
+</tr>
+<tr>
+<td>2003-03-02</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>Vue de sortie de make : comportement totalement nouveau (configuration via des menus contextuels ou des dialogues)</td>
+</tr>
+<tr>
+<td>2003-02-28</td>
+<td>Roberto Raggi</td>
+<td>Java</td>
+<td>Le support Java est &agrave; nouveau pr&eacute;sent</td>
+</tr>
+<tr>
+<td>2003-02-27</td>
+<td>Victor R&ouml;der</td>
+<td>C++</td>
+<td>Rend le "nouveau dialogue de classe C++" un peu plus joli</td>
+</tr>
+<tr>
+<td>2003-02-26</td>
+<td>Eray Ozkural</td>
+<td>C++</td>
+<td>Correction d'une m&eacute;chante bogue de classe (probl&egrave;me class/struct)</td>
+</tr>
+<tr>
+<td>2003-02-25</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>Vue de sortie de make : le d&eacute;roulement durant la compilation est possible sans revenir imm&eacute;diatement &agrave; la fin</td>
+</tr>
+<tr>
+<td>2003-02-24</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>Le parseur de fond est am&eacute;lior&eacute;, milleure synchronisation parseur de fond &lt;-&gt; part cppsupport</td>
+</tr>
+<tr>
+<td>2003-02-23</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>Utilisation du nouveau parseur c++ pour le navigateur de classes</td>
+</tr>
+<tr>
+<td>2003-02-21</td>
+<td>Alexander Dymo</td>
+<td>C++</td>
+<td>Sous-classement it&eacute;ratif pour les sous-classes existantes</td>
+</tr>
+<tr>
+<td>2003-02-20</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>Ajout de la caract&eacute;ristique Make-member, addition de la navigation de classe Realtime</td>
+</tr>
+<tr>
+<td>2003-02-17</td>
+<td>Hamish Rodda</td>
+<td>C++</td>
+<td>Vue de sortie make&nbsp;: ajout de la d&eacute;tection de la sortie de k_lineinfo</td>
+</tr>
+<tr>
+<td>2003-02-09</td>
+<td>F@lk Brettschneider</td>
+<td>C++</td>
+<td>La vue des classes est &agrave; nouveau class&eacute;e par ordre alphab&eacute;tique</td>
+</tr>
+<tr>
+<td>2003-02-01</td>
+<td>Alexander Dymo</td>
+<td>C++</td>
+<td>Dialogue pour les nouvelles classes&nbsp;: cract&eacute;ristique d'h&eacute;ritage avanc&eacute;; option O_OBJECT pour la classe; otion de g&eacute;n&eacute;ration de classe GTK</td>
+</tr>
+<tr>
+<td>2003-01-18</td>
+<td>Alexander Dymo</td>
+<td>C++</td>
+<td>Am&eacute;lioration du dialogue de cr&eacute;ation de nouvelle classe&nbsp;: h&eacute;ritage multiple, am&eacute;liorations visuelles</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Eray Ozkural</td>
+<td>C++</td>
+<td>Am&eacute;lioration du dialogue de cr&eacute;ation de nouvelle classe</td>
+</tr>
+<tr>
+<td>2003-01-04</td>
+<td>Roberto Raggi</td>
+<td>C++</td>
+<td>Le rapport de probl&egrave;mes accepte les macros import/export macro dans la d&eacute;claration de classe</td>
+</tr>
+</table>
+
+<ul><li><h3>interface d&eacute;bogueur</h3></li></ul>
+<b>r&eacute;sum&eacute;&nbsp;:</b>support de d&eacute;boguage &agrave; distance,  corrections de bogues<br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-08-10</td>
+<td>John Birch & Roger Larsson</td>
+<td>C++</td>
+<td>d&eacute;boguage &agrave; distance</td>
+</tr>
+<tr>
+<td>2003-08-03</td>
+<td>John Birch</td>
+<td>C++</td>
+<td>corrections pour les probl&egrave;mes de d&eacute;marrage du d&eacute;bogueur, correction pour l'arr&ecirc;t du d&eacute;bogueur : un nombre significatif de changements dans ce correctif est que nous n'essayons plus de fermer gdb depuis l'informationque donne gdb, cela doit &ecirc;tre fait par l'utilisateur gr&acirc;ce au bouton Arr&ecirc;t.</td>
+</tr>
+<tr>
+<td>2003-04-29</td>
+<td>Amilcar Lucas</td>
+<td>C++</td>
+<td>A rendu le r&eacute;pertoire de travail de l'ex&eacute;cutable d&eacute;bogu&eacute; configurable
+(l'application peut maintenant &ecirc;tre lanc&eacute;e depuis ce r&eacute;pertoire, au lieu de $HOME)</td>
+</tr>
+<tr>
+<td>2003-03-21</td>
+<td>John Birch & Andras Mantia</td>
+<td>C++</td>
+<td>La bogue du "point d'arr&ecirc;t fuyant" a &eacute;t&eacute; corrig&eacute;e</td>
+</tr>
+<tr>
+<td>2003-02-26</td>
+<td>John Birch</td>
+<td>C++</td>
+<td>Correction de l'affichage des param&egrave;tres de fonction</td>
+</tr>
+<tr>
+<td>2003-02-12</td>
+<td>John Birch</td>
+<td>C++</td>
+<td>Synchronisation des sources avec le correctif thread de kdevelop2.1.x; correction de l'affichage des variables locales; correction du probl&egrave;me 'source non trouv&eacute;e'</td>
+</tr>
+</table>
+
+<ul><li><h3>gestion des projets de l'utilisateur</h3></li></ul>
+<b>r&eacute;sum&eacute;&nbsp;:</b> d&eacute;but du travail sur le gestionnaire de projets, divers squelettes de projets ont &eacute;t&eacute; ajout&eacute;s &agrave; l'assistant de classe, beaucoup de corrections et d'am&eacute;lioratons pour QMake (par exemple le sous-classement) et pour les projets autotools<br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-09-26</td>
+<td>Amilcar Lucas</td>
+<td>autoconf/automake</td>
+<td>Addition par cible des arguments de lancement dans le gestionnaire automake. Ces arguments sont utilis&eacute;s lorsqu'il n'y a pas de programme principal (Options du projet...-> Ex&eacute;cute les options) est s&eacute;lestionn&eacute; et les arguments du programme (ptions du projet...-> Ex&eacute;cute les options) sont vides.</td>
+</tr>
+<tr>
+<td>2003-08-29</td>
+<td>Alexander Dymo & Roberto Raggi</td>
+<td>G&eacute;n&eacute;ric</td>
+<td>Addition de la version initiale du gestionnaire de projets g&eacute;n&eacute;rique. C'est le remplacement des gestionnaires de projet script/custom/pascal/ada/haskell/etc. Il est extensible wavec des modules externes.</td>
+</tr>
+<tr>
+<td>2003-07-25</td>
+<td>Alexander Dymo</td>
+<td>autoconf/automake</td>
+<td>Addition des actions "Force Reedit", "Installe" et "Installe (comme utilisateur root)" dans le menu du sous-projet pour le gestionnaire Automake. Force Reedit n'est disponible que pour les projets KDE.</td>
+</tr>
+<tr>
+<td>2003-07-14</td>
+<td>Amilcar Lucas</td>
+<td>autoconf/automake</td>
+<td>Si aucun Programme Principal n'est s&eacute;lectionn&eacute; dans Projet Options...-> Ex&eacute;cute les options, utiliser alors la cible actuelle s&eacute;lectionn&eacute;e. Ceci est valable pour l'ex&eacute;cution et le d&eacute;boguage.</td>
+</tr>
+<tr>
+<td>2003-07-04</td>
+<td>Amilcar Lucas</td>
+<td>tout</td>
+<td>Addition des configurations d&eacute;bogu&eacute;es et optimis&eacute;es pour tous les squelettes bas&eacute;s sur des projets C et C++</td>
+</tr>
+<tr>
+<td>2003-06-14</td>
+<td>Hamish Rodda</td>
+<td>autoconf/automake</td>
+<td>Fait que automake fonctionnne avec METASOURCES=AUTO</td>
+</tr>
+<tr>
+<td>2003-06-12</td>
+<td>Mario Scalas</td>
+<td>QMake</td>
+<td>Fixe les variables d'environnement de l'ex&eacute;cution et les arguments de programme </td>
+</tr>
+<tr>
+<td>2003-06-12</td>
+<td>Alexander Dymo</td>
+<td>QMake</td>
+<td>Les fichiers existants peuvent &ecirc;tre ajout&eacute;s dans un projet avec un chemin relatif ou ils peuvent avoir un lien symbolique au lieu de simplement les copier</td>
+</tr>
+<tr>
+<td>2003-05-18</td>
+<td>Alexander Dymo</td>
+<td>QMake</td>
+<td>Support de l'option MAKEFILE, utilisation du dialogue des options de make</td>
+</tr>
+<tr>
+<td>2003-05-16</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>Support pour des groupes d'installation personnels ou des objets d'installation qmake</td>
+</tr>
+<tr>
+<td>2003-05-14</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>R&eacute;implantation du chemin de la cible</td>
+</tr>
+<tr>
+<td>2003-05-11</td>
+<td>Roberto Raggi</td>
+<td>autoconf/automake</td>
+<td>Supprime la caract&eacute;ristique de sous-projet, am&eacute;liore l'ajout de sous-projets, cr&eacute;e une cible (d&eacute;faut) noinst_HEADERS</td>
+</tr>
+<tr>
+<td>2003-03-11</td>
+<td>Caleb Tennis</td>
+<td>QMake</td>
+<td>Addition du support pour le num&eacute;ro de version des biblioth&egrave;ques</td>
+</tr>
+<tr>
+<td>2003-03-10</td>
+<td>Caleb Tennis</td>
+<td>QMake</td>
+<td>Addition du support 'staticlib'</td>
+</tr>
+<tr>
+<td>2003-03-06</td>
+<td>Roberto Raggi</td>
+<td>TMake</td>
+<td>Nouveau squelette pour QTopia 1.6</td>
+</tr>
+<tr>
+<td>2003-03-01</td>
+<td>Roberto Raggi</td>
+<td>Java</td>
+<td>Additon du squelette javahello &agrave; l'assistant d'applications</td>
+</tr>
+<tr>
+<td>2003-02-28</td>
+<td>Roberto Raggi</td>
+<td>Java</td>
+<td>Supprime les squelettes inutiles de java</td>
+</tr>
+<tr>
+<td>2003-02-27</td>
+<td>Victor R&ouml;der</td>
+<td>autoconf/automake</td>
+<td>D&eacute;but de restructuration</td>
+</tr>
+<tr>
+<td>2003-02-21</td>
+<td>Alexander Dymo</td>
+<td>autoconf/automake</td>
+<td>Le sous-classement des widgets est aussi bas&eacute; sur les fichiers .ui ici</td>
+</tr>
+<tr>
+<td>2003-02-09</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>Le dialogue pour le sous-classement des widgets bas&eacute; sur les fichiers .ui fonctionne maintenant it&eacute;rativement</td>
+</tr>
+<tr>
+<td>2003-01-30</td>
+<td>Julian Rockey</td>
+<td>autoconf/automake</td>
+<td>Utilise l'interface de cr&eacute;ation de fichiers si disponible pour cr&eacute;er de nouveaux fichiers</td>
+</tr>
+<tr>
+<td>2003-01-14</td>
+<td>Harald Fernengel</td>
+<td>autoconf/automake</td>
+<td>Ai ajout&eacute; un squelette de simple application KDE (khello); corrections de bogues</td>
+</tr>
+<tr>
+<td>2003-01-10</td>
+<td>Julian Rockey</td>
+<td>autoconf/automake</td>
+<td>Est plus intelligent lorsqu'il ajoute des fichiers aux r&eacute;pertoires qui n'ont qu'une cible; est aussi plus intelligent avec les fichiers dans le r&eacute;pertoire racine du projet</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>A joint libpath dans le dialogue de configuration des sous-projets</td>
+</tr>
+<tr>
+<td>2003-01-07</td>
+<td>Julian Rockey</td>
+<td>Python</td>
+<td>Ajout du squelette de projet PyQT (cadre d'application QT pour Python) &agrave; l'assistant d'application</td>
+</tr>
+<tr>
+<td>2003-01-06</td>
+<td>Victor R&ouml;der</td>
+<td>autoconf/automake</td>
+<td>Corrections de bogues</td>
+</tr>
+<tr>
+<td>2003-01-04</td>
+<td>Jakob Simon-Gaarde</td>
+<td>QMake</td>
+<td>A termin&eacute; l'interface de sous-classement (activ&eacute;e en cliquant avec le bouton droit sur un fichier .ui)</td>
+</tr>
+</table>
+
+<ul><li><h3>support du contr&ocirc;le de version</h3></li></ul>
+<b>r&eacute;sum&eacute;&nbsp;:</b> support SVN am&eacute;lior&eacute;, corrections pour le support CVS <br><br>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-10-12</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>Nouvelle partie subversion ajout&eacute;e pour remplacer l'ancienne svn</td>
+</tr>
+<tr>
+<td>2003-05-14</td>
+<td>Mario Scalas</td>
+<td>CVS</td>
+<td>Int&eacute;gration de GlobalCvs dans CvsPart, changement du code pour trouver les VCS dans l'assistant d'application</td>
+</tr>
+<tr>
+<td>2003-04-09</td>
+<td>Ajay Guleria & Harald Fernengel</td>
+<td>ClearCase</td>
+<td>Partie ClearCase</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>Ajout d'une vue de sortie; corrections de bogues</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>Mise &agrave; jour vers la sous-version 0.17, quelques changements mineurs d'API</td>
+</tr>
+<tr>
+<td>2003-01-17</td>
+<td>Harald Fernengel</td>
+<td>CVS</td>
+<td>Le shell CVS est configurable, vous pouvez maintenat utiliser CVS via ssh (connexion sans mot de passe seulement)</td>
+</tr>
+<tr>
+<td>2003-02-11</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>Ajout d'un visualiseur de sortie; corrections de bogues</td>
+</tr>
+<tr>
+<td>2003-02-04</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>mise &agrave; jour vers la version 0.17, changements mineurs API</td>
+</tr>
+<tr>
+<td>2003-01-17</td>
+<td>Harald Fernengel</td>
+<td>CVS</td>
+<td>Ai rendu le shell CVS configurable, vous pouvez maintenant utiliser CVS via ssh (sans connexion de mot de passe seulement)</td>
+</tr>
+<tr>
+<td>2003-01-14</td>
+<td>Mickael Marchand</td>
+<td>SVN</td>
+<td>R&eacute;paration et ajout du support diff svn (utilisant le visualiseur diff)</td>
+</tr>
+</table>
+
+<ul><li><h3>outils</h3></li></ul>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>2003-05-14</td>
+<td>Jens Dagerbo</td>
+<td>Ajout de la partie BookmarksPart</td>
+</tr>
+<tr>
+<td>2003-04-14</td>
+<td>Jens Dagerbo</td>
+<td>Remplace de partie am&eacute;lior&eacute; et corrections de bogues&nbsp;: aide contextuelle, r&eacute;ponse de la validation regexp, couleurs et interface am&eacute;lior&eacute;es</td>
+</tr>
+<tr>
+<td>2003-04-14</td>
+<td>Harald Fernengel</td>
+<td>La partie Diff est maintenant capable d'utiliser toute kpart qui peut afficher 'text/x-diff'</td>
+</tr>
+<tr>
+<td>2003-04-14</td>
+<td>Amilcar Lucas</td>
+<td>Mise &agrave; jour de Doxywizard (configuration de Doxygen) vers la version 1.3</td>
+</tr>
+<tr>
+<td>2003-03-26</td>
+<td>Roberto Raggi</td>
+<td>Ajout du module externe KNotes</td>
+</tr>
+</table>
+
+<ul><li><h3>Contenu du site web KDevelop</h3></li></ul>
+<table BORDER CELLPADDING=2>
+<tr>
+<td>Falk Brettschneider, Caleb Tennis, Harry Fernengel, Anne-Marie Mahfouf, Alexander Dymo</td>
+<td>Annonces de KDevelop-3 alpha, mise &agrave; jour du site web, traductions fran&ccedil;aise, allemande et russe.</td>
+</tr>
+<tr>
+<td>Amilcar Lucas</td>
+<td>Documentation API KDevelop et mises &agrave; jour du site web.</td>
+</tr>
+</table>
+<?php module_tail(); ?>
+
+<?php module_head("Les membres actifs de l'&eacute;quipe durant l'ann&eacute;e pr&eacute;c&eacute;dente");?>
+<ul>
+<li><a href="mailto:a.lucas at tu-bs.de">Amilcar Lucas</a></li>
+<li><a href="mailto:roberto at kdevelop.org">Roberto Raggi</a></li>
+<li><a href="mailto:jbb at kdevelop.org">John Birch</a></li>
+<li><a href="mailto:amantia at freemail.hu">Andras Mantia</a></li>
+<li><a href="mailto:caleb at aei-tech.com">Caleb Tennis</a></li>
+<li><a href="mailto:cloudtemple at mksat.net">Alexander Dymo</a></li>
+<li><a href="mailto:linux at jrockey.com">Julian Rockey</a></li>
+<li><a href="mailto:falkbr at kdevelop.org">F@lk Brettschneider</a></li>
+<li><a href="mailto:victor_roeder at gmx.de">Victor R&ouml;der</a></li>
+<li><a href="mailto:erayo at cs.bilkent.edu.tr">Eray Ozkural</a></li>
+<li><a href="mailto:meddie at yoyo.its.monash.edu.au">Hamish Rodda</a></li>
+<li><a href="mailto:marchand at kde.org">Mickael Marchand</a></li>
+<li><a href="mailto:jsgaarde at tdcspace.dk">Jakob Simon-Gaarde</a></li>
+<li><a href="mailto:harry at kdevelop.org">Harald Fernengel</a></li>
+<li><a href="mailto:roland at ca.wai.com">Roland Krause</a></li>
+<li><a href="mailto:jfirebaugh at kde.org">John Firebaugh</a></li>
+<li><a href="mailto:Yann.Hodique at lifl.fr">Yann Hodique</a></li>
+<li><a href="mailto:mario.scalas at libero.it">Mario Scalas</a></li>
+<li><a href="mailto:jens.dagerbo at swipnet.se">Jens Dagerbo</a></li>
+<li><a href="mailto:okellogg at users.sourceforge.net">Oliver Kellogg</a></li>
+<li><a href="mailto:amantia at freemail.hu">Andras Mantia</a></li>
+</ul>
+<?php module_tail(); ?>
+
+<?php module_head("Personnes ayant envoy&eacute;es des correctifs durant l'ann&eacute;e pr&eacute;c&eacute;dente");?>
+<ul>
+<li><a href="mailto:Willems.luc at pandora.be">Luc Willems</a></li>
+<li><a href="mailto:jens.zurheide at gmx.de">Jens Zurheide</a></li>
+<li><a href="mailto:sancelot at free.fr">Stephane Ancelot</a></li>
+<li><a href="mailto:montel at kde.org">Laurent Montel</a></li>
+<li><a href="mailto:Ajay.Guleria at synopsys.com">Ajay Guleria</a></li>
+<li><a href="mailto:child at t17.ds.pwr.wroc.pl">Marek Janukowicz</a></li>
+<li><a href="mailto:M.Turino at gmx.de">Marcel Turino</a></li>
+<li><a href="mailto:jonas.jacobi at web.de">Jonas B. Jacobi</a></li>
+<li><a href="mailto:mail at SaCu.DE">Sascha Cunz</a></li>
+<li><a href="mailto:dhdev at gmx.de">Dominik Haumann</a></li>
+<li><a href="mailto:koepfle at ti.uni-mannheim.de">Andreas Koepfle</a></li>
+<li><a href="mailto:tobi.web at gmx.de">Tobias Gl&auml;&szlig;er</a></li>
+<li><a href="mailto:aragorn in tiscali.nl">Frans Pop</a></li>
+</ul>
+<?php module_tail(); ?>
+
+

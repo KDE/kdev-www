@@ -1,0 +1,21 @@
+<p>Der einfachste Weg, KDevelop auf einem MacOSX/X11-System zu installieren, ist
+<a href="index.html?filename=3.4/requirements.html">alle ben&ouml;tigten Pakete</a>
+&uuml;ber <a href="http://fink.sourceforge.net/">Fink<a/> oder
+<a href="http://darwinports.opendarwin.org/">Darwin Ports</a> zu installieren, und
+KDevelop dann wie oben beschrieben mit dem folgenden configure-Aufruf zu kompilieren:</p>
+<dl>
+<dd class="code">
+CXXFLAGS="-DMACOSX" ./configure --prefix=$KDEDIR --with-db-includedir=$BERKELEY_DB_INCLUDE_DIR --with-db-libdir=$BERKELEY_DB_LIBRARY_DIR
+--without-arts --with-extra-includes=$FINK_OR_DARWINPORTS_INCLUDE_DIR --with-extra-libs=$FINK_OR_DARWINPORTS_LIBRARY_DIR
+--with-qt-includes=$QTDIR --with-qt-libs=$QTDIR --disable-ada --disable-pascal
+</dd>
+</dl>
+Hinweise und Beispiele:
+<ul>
+<li>Das Kompiler-Flag -DMACOSX und --disable-ada --disable-pascal sind wichtig, da sie
+Code f&uuml;r MacOSX aktivieren, bzw. zwei Module deaktivieren, die nicht kompiliert werden k&ouml;nnen.</li>
+<li>Das Fink-Installationsverzeichnis ist entweder /sw oder /usr/local, das DarwinPorts-Installationsverzeichnis ist /opt/local.</li>
+<li>Die Version 4.4 der Berkeley DB aus den DarwinPorts ist /opt/local/include/db44/ f&uuml;r Includes und /opt/local/lib/db44/ f&uuml;r Bibliotheken.</li>
+<li>KDE aus den DarwinPorts wird in das gleiche /opt/local-Verzeichnis installiert.</li>
+<li>Qt-Verzeichnisse der DarwinPorts-Installation in /opt/local sind /opt/local/include/qt3/ f&uuml;r Includes und /opt/local/lib/qt3 f&uuml;r Bibliotheken.</li>
+</ul>

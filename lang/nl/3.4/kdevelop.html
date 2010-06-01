@@ -1,0 +1,83 @@
+<h2 align=center>Deze pagina bevat alle informatie over de KDevelop <?php echo $k_series_version; ?> serie</h2>
+
+<?php module_head("Algemeen");?>
+<p>Versie <?php echo $k_base_version; ?>.0 is uitgebracht met KDE-<?php echo $k_kde_base_version; ?>.6.
+<a href="index.html?filename=versions.html">
+KDevelop <?php echo $k_base_version; ?>.x bugfix versies</a> zullen
+<a href="http://developer.kde.org/development-versions/kde-<?php echo $k_kde_base_version; ?>-release-plan.html">
+samen uitgebracht worden met KDE-<?php echo $k_kde_base_version; ?>.x</a></p>
+
+<a href="index.html?filename=<?php echo $k_base_version; ?>/features.html">
+Features</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">
+Systeemeisen</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/download.html">
+Downloads</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/branches_compiling.html">
+SVN branches &amp; compilen</a>, een overzicht van de bestaande SVN branches en hoe je KDevelop van SVN compileert.<br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+ChangeLog</a><br>
+<a name="Bugs">Bekende bugs en problemen:</a>
+<ul>
+  <li>Geen MDI interface modes meer, de enige beschikbare mode is "simpleIDEAl"</li>
+  <li>Qeditor en yzis zijn niet langer ondersteund. KATE wordt altijd gebruikt.</li>
+  <li>De Haskell programmeertaal is niet langer ondersteund.</li>
+  <li><a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.bug_id">
+  Geraporteerde bugs in de bugzilla database</a></li>
+</ul>
+Om een nieuwe bug te rapporteren gebruik het KDevelop-menu <em><u>H</u>elp -> <u>R</u>eporteer Bug...</em> of ga naar onze
+<a href="index.html?filename=bugs.html">
+Bugs &amp; Wensen page</a>.<br>
+<?php module_tail();?>
+
+<?php module_head("Documentatie");?>
+<a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/">
+Gebruikershandleiding</a> (docbook, iedere dag gegenereerd van SVN).<br>
+<a href="index.html?filename=tutorials.html">
+Tutorials</a><br>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/faq.html">
+F.A.Q.</a>, De antwoorden op de meest gestelde vragen.<br>
+<?php module_tail();?>
+
+<?php module_head("Presentatie en Afbeeldingen");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/announce-kdevelop-<?php echo $k_base_version; ?>.html">
+Publieke aankondiging</a><br>
+<!--
+<a href="<?php echo $k_base_version; ?>/doc/promo/presentation.kpr">
+KDevelop presentation</a> (255Kb
+<a href="http://www.koffice.org/kpresenter/">
+KPresenter</a> file)<br>
+-->
+<a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots1.html">
+Screenshots&nbsp;1</a>,
+<a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots2.html">
+screenshots&nbsp;2</a>,
+<a href="index.html?filename=<?php echo $k_base_version; ?>/screenshots3.html">
+screenshots&nbsp;3</a>.<br>
+<a href="index.html?filename=in_the_press.html">
+In de Pers</a><br>
+<a href="index.html?filename=awards.html">
+Prijzen</a><br>
+<a href="index.html?filename=logos_banners.html">
+Logos &amp; Banners</a><br>
+<a href="index.html?filename=splashscreens.html">
+Splashscreens</a><br>
+<?php module_tail();?>
+
+<?php module_head("Ontwikkeling");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/ChangeLog.html">
+Induviduele SVN commit logs</a>.<br>
+<a href="http://lxr.kde.org/source/KDE/kdevelop/?v=<?php echo $k_latest_version; ?>">
+Blader door de code</a>, LXR gegenereerde pagina's.<br>
+<a href="http://websvn.kde.org/<?php echo $k_branch_path; ?>">
+Web SVN</a>, blader door de code in de SVN-repository.<br>
+<a href="http://l10n.kde.org/stats/doc/stable/package/kdevelop/">
+Status gebruikershandleiding</a><br>
+<?php module_tail();?>
+
+<?php module_head("Overig");?>
+<a href="index.html?filename=<?php echo $k_base_version; ?>/authors.html">
+Credits</a>, De auteurs.<br>
+<a href="index.html?filename=license.html">
+Licentie</a>, GNU GPL license.<br>
+<?php module_tail();?>

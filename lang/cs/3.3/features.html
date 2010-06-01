@@ -1,0 +1,31 @@
+<?php module_head("KDevelop $k_series_version vlastnosti");?>
+
+Obsahuje všechny 
+<a href="index.html?filename=3.2/features.html">
+vlastnosti KDevelop 3.2.x</a> plus:<br>
+<ul>
+  <li>Nové vlastnosti v sekci KDevelopu v <a href="http://developer.kde.org/development-versions/kde-3.5-features.html">plánovaných vlastnostech KDE 3.5</a></li>
+  <li>Nyní můžete použít CMAKE ke kompilaci KDevelopu</li>
+  <li>Vylepšená podpora jazyka C++:<ul>
+    <li>podpora pro QT4, pro projekty Qt3.x a Qt4.x je generován jiný kód</li>
+    <li>Přidána záložka v dialogu nastavení C++, kde se konfiguruje použitá Qt knihovna. Můžete nastavit, jestli je Qt použito, ve které verzi a kde je Qt nainstalováno.</li>
+  </ul></li>
+  <li>Vylepšený debugger pro jazyky C, C++ a Ruby:<ul>
+    <li>Snadněji použitelné okno pro breakpointy debuggeru</li>
+    <li>Automaticky se ukazuje okno s proměnnými, pokud se aplikace zastaví a schová, pokud běh aplikace skončí.</li>
+    <li>Implementována editace výrazů/proměnných v okně proměnných.</li>
+    <li>Vylepšeno prohlížení proměnných</li>
+  </ul></li>
+  <li>Podpora PHP5</li>
+  <li>Nový základní projectmanager:<ul>
+    <li>Je založen na architektuře platformy KDevelop, kdy je GUI projektového managementu odděleno od specifického sestavovacího systému. Sestavovací systémy jsou obslouženy použitím pluginů ("project importers, builders and editors")</li>
+    <li>Je přítomna podpora pracovní plochy</li>
+    <li>Project builders: make builder</li>
+    <li>Project importers: automake, uživatelské makefiles, qmake</li>
+  </ul></li>
+  <li>více detailů viz.
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+  soubor změn</a></li>
+</ul>
+
+<?php module_tail();?>

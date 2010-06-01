@@ -1,0 +1,153 @@
+<?php include_file("$k_base_version/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file() ?>
+
+<?php module_head("Anleitung f&uuml;r eine selbst kompilierte Version von KDevelop $k_series_version"); ?>
+<ol>
+<li>Bevor Sie fortfahren, pr&uuml;fen Sie bitte, ob auf Ihrem Computer die <a href="index.html?filename=<?php echo $k_base_version; ?>/requirements.html">ben&ouml;tigte Software</a> installiert ist.</li>
+<br>
+<li>Holen Sie die Quellen des <b><?php echo $k_branch; ?></b>-Zweiges wie es oben erkl&auml;rt ist.</li>
+<br>
+<li>Initialisieren Sie das Build-System:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+</li>
+</ol>
+<?php
+  include_file("$k_base_version/compiling.ihtml");
+  module_tail();
+  module_head("Hinweise zum Kompilieren unter MacOSX/X11");
+  include_file("$k_base_version/compiling_macos.ihtml");
+  module_tail();
+  module_head("Wie Sie Ihre Version aktuell halten");
+?>
+Nachdem Sie einen der SVN-Zweige heruntergeladen und erfolgreich kompiliert haben,
+wollen Sie sicher auf den neuesten Stand bleiben, um alle Patches zu bekommen.
+<ol><li>Um alle Befehle f&uuml;r die n&ouml;tigen Umgebungsvariablen nicht jedesmal neu
+eintippen zu m&uuml;ssen, sollten Sie sie in Ihre ~/.bashrc oder ~/.cshrc eintragen.
+<ul>
+<li>Wenn sie die Bash verwenden, f&uuml;gen Sie die folgenden Zeilen ein:
+<dl>
+<dd class="code">export KDEDIR=/pfad/zu/kde3</dd>
+<dd class="code">export QTDIR=/pfad/zu/qt3</dd>
+<dd class="code">export KDEVELOPDIR=/where/kdevelop/will/be/installed</dd>
+<dd class="code">export KDEDIRS=$KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">export PATH=$KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl></li>
+<li>Wenn sie tcsh verwenden, f&uuml;gen Sie die folgenden Zeilen ein:
+<dl>
+<dd class="code">setenv KDEDIR /pfad/zu/kde3</dd>
+<dd class="code">setenv QTDIR /pfad/zu/qt3</dd>
+<dd class="code">setenv KDEVELOPDIR /where/kdevelop/will/be/installed</dd>
+<dd class="code">setenv KDEDIRS $KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">setenv PATH $KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+</li></ul>
+<b>Hinweis:</b> Sie sollten die jeweils ersten drei Zeilen <u>Ihrer</u> Konfiguration anpassen! :)
+</li>
+
+<br>
+<br>
+
+<li>Gehen Sie in das Verzeichnis, wo sie die Dateien f&uuml;r <i>kdevelop von SVN</i> gespeichert haben und f&uuml;hren Sie das Update-Kommando aus:
+<dl>
+<dd class="code">$ cd kdevelop</dd>
+<dd class="code">$ svn up</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>Der n&auml;chste Schritt h&auml;ngt von der Ausgabe des vorigen Kommandos ab:
+
+<ul>
+<li>Wenn Sie so etwas bekommen:
+<dl>
+<dd class="code">U /some_directory_path/Makefile.am</dd>
+</dl>
+Sollten Sie:
+<dl>
+<dd class="code">$ make -f Makefile.cvs</dd>
+</dl>
+gefolgt vom n&auml;chsten ./configure-Schritt.
+</li>
+
+<br>
+<br>
+
+<li>
+Wenn Sie so etwas bekommen:
+<dl>
+<dd class="code">P /some_directory_path/Makefile.am</dd>
+</dl>
+Sollten Sie:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+mit den ./configure-Optionen, die sie beim ersten Kompilieren benutzt haben, ausf&uuml;hren.
+</li>
+</ul>
+</li>
+
+<br>
+<br>
+
+<li>Kompilieren und Installieren von KDevlop:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (als root)</dd>
+</dl>
+Sollte make aus irgendeinem Grund fehlschlagen, k&ouml;nnen Sie es s&auml;mtliche
+Fehler mit der Option -k ignorieren lassen:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (als root)</dd>
+</dl>
+Abh&auml;ngig von der Schwere der Fehler, haben Sie am Ende eine funktionierende
+oder eine nicht funktionierende Version von KDevelop. Benutzen Sie das
+"make -k install" Kommando auf Ihre Verantwortung!!!
+In jedem Fall sollten diese Fehler nach einigen Stunden weggehen, so dass
+Sie vielleicht ein neues Update probieren sollten, bevor Sie zu "make -k" greifen.
+</li></ol>
+
+<br>
+<br>
+Das war's! Sie haben jetzt die neueste Version von KDevelop. Um sie zu starten tippen Sie:
+<dl>
+<dd class="code">$ kdevelop</dd>
+</dl>
+
+<p>Alles, was Sie tun m&uuml;ssen, damit sie auf dem neusten Stand bleiben, ist, diese
+Schritte zu wiederholen, wenn jemand auf der
+<a href="index.html?filename=mailinglist.html">kdevelop-devel</a>-Mailingliste
+einen behobenen Bug meldet. Es ist also sehr empfehlenswert, dieser Liste
+<a href="index.html?filename=mailinglist.html">beizutreten</a>.</p>
+
+<p>
+Bitte melden Sie alle Bugs, die Sie finden, mit dem <a
+href="http://bugs.kde.org/wizard.cgi">Bug-Meldeformular</a>. Melden Sie
+jedoch <b>keine</b> Kompilationsfehler an die Bugdatenbank. Benutzen Sie daf&uuml;r bitte die
+<a href="index.html?filename=mailinglist.html">Mailingliste</a>.
+</p>
+
+<p>Sie k&ouml;nnen sich die Bugs in der <a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=map_components.name,bugs.bug_id">Bug-Datenbank</a> ansehen.</p>
+
+<?php
+module_tail();
+if ($lang == 'en') {
+  $ts1 = filemtime("$k_base_version/branches_compiling.html");
+  $ts2 = filemtime("cvsbranches.ihtml");
+  $ts3 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts1 = file_exists("lang/$lang/$k_base_version/branches_compiling.html")?filemtime("lang/$lang/$k_base_version/branches_compiling.html"):filemtime("$k_base_version/branches_compiling.html");
+  $ts2 = file_exists("lang/$lang/cvsbranches.ihtml")?filemtime("lang/$lang/cvsbranches.ihtml"):filemtime("cvsbranches.ihtml");
+  $ts3 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");
+}
+return (max($ts1,$ts2,$ts3));
+?>

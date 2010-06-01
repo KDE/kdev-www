@@ -1,0 +1,379 @@
+<?php module_head("KDevelop 3.0.x F.A.Q. (Frequently Asked Questions)");?>
+<b>一般性问题</b><br>
+<ul>
+<li><a href="#36"> 从哪里可以得到KDevelop？ 怎么安装？
+</a></li>
+<li><a href="#37"> 我可以用KDevelop开发商用程序吗?
+</a></li>
+<li><a href="#137"> 我可以为KDevelop开发商用的插件吗?
+</a></li>
+<li><a href="#45"> 我编译和安装了KDevelop 3.0，但是我看到的只有File和Help菜单
+</a></li>
+</ul>
+<b>关于KDevelop IDE的问题</b><br>
+<ul>
+<li><a href="#38">我怎样通过键盘来切换打开的文件？
+</a></li>
+<li><a href="#39">在调试控制台程序的时候，我怎样才能输入文字？
+</a></li>
+<li><a href="#40">对于外部库，如何打开代码补齐？
+</a></li>
+</ul>
+<b>编译的问题</b>
+<ul>
+<li>configure脚本
+<br>
+<ul>
+<li><a href="#3"> configure脚本找不到我的Qt库
+</a></li>
+</ul>
+</li>
+<li>configure.in.in
+<br>
+<ul>
+<li><a href="#12"> 我的configure.in.in没有任何AC_CHECK_COMPILERS()调用。我应该在哪里放置上面提到的
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" ?
+   
+</a></li>
+<li><a href="#25"> 上述问题中，我总是看到"configure.in(.in)"。在我的项目中，两个文件都有，哪一个文件应该打补丁？
+</a></li>
+<li><a href="#21"> 为什么打了CXXFLAGS="$USE_EXCEPTIONS $CXXFLAGS"补丁的configure.in(.in)没有用？
+</a></li>
+<li><a href="#22"> 我在configure.in(.in)加入CXXFLAGS="$USE_EXCEPTIONS"，一切都工作正常，为什么我需要用你们建议的方案？
+</a></li>
+</ul>
+</li>
+<li>Makefile.am
+<br>
+<ul>
+<li><a href="#17"> CPPFLAGS和CXXFLAGS有什么区别？
+</a></li>
+<li><a href="#18">我看到有的方法通过对Makefile.am打上下面的补丁
+     DEFS+=-DMYDEFINE
+   或
+     CXXFLAGS+=-fsigned-char
+   或
+     LD_FLAGS+=-L/usr/local/lib
+   为什么你们不考虑这个方法？
+</a></li>
+<li><a href="#20"> AM_CXXFLAGS (在Makefile.am中)可以用-frtti或
+   -fexceptions这样的标志吗?
+</a></li>
+</ul>
+</li>
+<li>htdig
+<br>
+<ul>
+<li><a href="#29"> 我已经安装了htdig，但是htsearch不能用？
+</a></li>
+<li><a href="#30"> htdig, htmerge和htsearch都安装了，但是我得到的错误信息说htdig的配置文件找不到或者不可用？
+</a></li>
+</ul>
+</li>
+<li>automake, autoconf
+<br>
+<ul>
+<li><a href="#19"> 我怎么保证我的项目用户使用automake 1.4来编译?
+</a></li>
+</ul>
+<ul>
+<li><a href="#59"> 我在项目中加入了一个现存的子项目，但是它并没有编译。
+</a></li>
+</ul>
+</li>
+<li>rtti, 运行时类型信息
+<br>
+<ul>
+<li><a href="#13"> 我开发了一个应用程序，需要使用运行时类型信息，我应该怎么做？
+</a></li>
+</ul>
+</li>
+<li>TrollTech的Designer和KDevelop
+<br>
+<ul>
+<li><a href="#28"> 有什么关于QT designer创建对话框的HOWTO吗？
+</a></li>
+</ul>
+</li>
+<li>其他
+<br>
+<ul>
+<li><a href="#8"> 为configure/Makefile/Makefile.in/config.h打补丁没有用，运行了
+   autoconf/automake/autoheader我的修改全丢失了。
+   我应该怎样打补丁？
+</a></li>
+<li><a href="#9"> 我在开发应用的时候，需要定义在预编译头中定义 -D选项
+   如果我把它加入到KDevelop的项目选项中，没有任何问题。但是当我发布我的包的时候，-D选项没有使用，我还要做些什么？
+   
+</a></li>
+<li><a href="#10"> 有其他方式来发布我的定义吗？
+</a></li>
+<li><a href="#11"> 我在开发的一个程序需要异常处理，我应该怎么做？
+</a></li>
+<li><a href="#16"> 上述的方案很好，但是我仅需要运用到某些子目录（比如项目中的静态库），我应该怎么做？
+</a></li>
+<li><a href="#23"> 我在我的KDE/QT项目中使用了额外的头文件和库，将
+   -I/usr/include/foo加入编译选项，-L/usr/lib/foo加入链接选项，并没有把这个配置加入tar包。
+   我应该怎么做？
+</a></li>
+</ul>
+</li>
+</ul>
+<br>
+
+<a name="36"><b> 从哪里可以得到KDevelop？ 怎么安装？</b></a><br>
+KDevelop没有发布任何二进制版本的KDevelop (RPMs).
+RPMs可以在发行商的服务器上或在下面相应的子目录中找到
+ <a href="ftp://ftp.kde.org/pub/">ftp.kde.org</a> 或它的<a href="http://www.kde.org/ftpmirrors.html">镜像</a><br>
+请看看 <a href="index.html?filename=3.0/download.html">我们的下载站点</a> for 获得如何下载和编译源代码的更多信息<br>
+<br>
+<br>
+<a name="37"><b> 我可以用KDevelop开发商用程序吗?</b></a><br>
+任何个人和组织可以自由地使用KDevelop。生成的代码可以使用您所希望的任何许可证。所以项目生成器有一个加入您的版权通告的域，使其用于生成的文件；缺省的GPL许可证通告只是是为了提供实例，同时简化您的工作。所以您可以在此加入您的版权通告。<br>
+
+当编辑您的程序的时候，使用KDevelop和使用其他任何编辑器一样，它只是一个使用了GPL的程序，对于您使用它的目的，没有任何的暗示。所以您可以开发商用/封闭代码的软件，尽管KDevelop本身是GPL的。<br>
+
+对于使用KDE功能和其他自由软件，您只需要注意您使用的库的许可证。
+所以开发商用的KDE/Qt应用，您所需要的只是从Trolltech获取专业版许可证。 KDE库是LGPL的，这意味着您可以使用函数调用，并把您的程序连接到KDE库。这包括了kdelibs库，kdebase库(konqueror和kcontrol等)和koffice库(用于创建koffice 应用)。<br>
+更多信息，请访问 <a href="1.3/doc/programming/index-16.html">
+KDevelop 许可证</a><br>
+<br>
+<br>
+<a name="137"><b> 我可以为KDevelop开发商用的插件吗?</b></a><br>
+KDevelop包含了libkdeveloplgpl.so用于开发商用的插件。这个库包括了KDevelop 界面和实用工具，并且采用LGPL发布。如果从Trolltech获取了专业版许可证，你可以把您的代码连接到libkdeveloplgpl，以任何许可证方式发表。
+<br>
+<br>
+<br>
+<a name="45"><b> 我编译和安装了KDevelop 3.0，但是我看到的只有File和Help菜单</b></a><br>
+和所有其他的KDE应用一样，您必须保证KDevelop的插件可以被
+KDE感知。您可以把它安装到您的KDE目录(比如configure --prefix=/opt/kde3 )
+或者把KDevelop路径加入到KDEDIRS环境变量中，并再次运行"kbuildsycoca"。
+bash命令行的例子(假设 KDevelop安装在/home/harry/kdevelop):<br>
+<tt>export KDEDIRS=/home/harry/kdevelop:$KDEDIRS &amp;&amp; kbuildsycoca</tt><br>
+<br>
+<br>
+<a name = "38"><b> 我怎样通过键盘来切换打开的文件？</b></a><br>
+您可以使用ALT-Left和ALT-Right来切换打开的文件。这些键可以在KDevelop setup中配置。还有一个Quick Open (CTRL-SHIFT-O) 来选中和打开项目中的文件；Switch To (CTRL-/) 允许您输入打开的文件的头几个字母进行切换。<br>
+<br>
+<br>
+<a name = "39"><b>在调试控制台程序的时候，我怎样才能输入文字？</b></a><br>
+GDB允许您输入自己的命令。<br>
+<br>
+<br>
+<a name = "40"><b>对于外部库，如何打开代码补齐？</b></a><br>
+当您打开任何C/C++项目的时候，进入菜单<i>Project->Project Settings</i>, <i>在 Project Options</i> 对话框中选择<i>C++ Specific tab</i>, 然后选择 <i>Code Completion</i> 标签。 点击 <i>Add Persistant Class Store</i> 按钮,完成<i>New Persistant Class Store</i>向导。 最后，确定在<i>Code Completion</i> 标签页中的永久类存储列表，选取新产生的类存储。
+<br>
+<br>
+<a name="3"><b> configure脚本找不到我的Qt库。</b></a><br>
+   使用选项<br>
+     --with-qt-includes=path_to_your_qt_includes<br>
+   和<br>
+     --with-qt-libraries=path_to_your_qt_library<br>
+   或者设置环境变量QTDIR指向Qt安装路径<br>
+   ( "export QTDIR=/path/to/qt" ).<br>
+<br>
+<br>
+<a name="8"><b> 为configure/Makefile/Makefile.in/config.h打补丁没有用，运行了
+   autoconf/automake/autoheader我的修改全丢失了。
+   我应该怎样打补丁？</b></a><br>
+   这个文件列表指明了您应该在哪里使用autotools打补丁。<br>
+   Makefile.am, configure.in.in, configure.in (仅当configure.in.in不存在)<br>
+   [很少使用: acconfig.h, configure.in.mid, configure.in.bot]<br>
+<br>
+<br>
+<a name="9"><b> 我在开发应用的时候，需要定义在预编译头中定义 -D选项
+   如果我把它加入到KDevelop的项目选项中，没有任何问题。但是当我发布我的包的时候，-D选项没有使用，我还要做些什么？</b></a><br>
+   编辑最顶层源文件目录下的configure.in(.in)文件。 在AC_CHECK_COMPILERS宏以后加入：<br>
+     CPPFLAGS="$CPPFLAGS -DMYDEFINE"<br>
+   然后您必须通过<br>
+   "make -f Makefile.dist" 重新生成"configure"然后回到configure脚本。<br>
+<br>
+<br>
+<a name="10"><b> 有其他方式来发布我的定义吗？</b></a><br>
+   另外一个在您的项目中包含DEFINE的方法是使用config.h.<br>
+   您必须为下列文件打补丁：<br>
+   在项目所在的最高层目录的acconfig.h加入下列行：<br>
+     #undef MYDEFINE<br>
+<br>
+   然后在configure.in(.in)文件中，在宏<br>
+   AC_CONFIG_HEADER(config.h)之后加入：<br>
+     AC_DEFINE_UNQUOTED(MYDEFINE)<br>
+<br>
+   (当您运行下列命令来更新项目，它就会在config.h中定义<br>
+    "make -f Makefile.dist; configure [your options]".<br>
+<br>
+   这个解决方案的条件是：<br>
+     AC_CONFIG_HEADER(config.h)<br>
+   在configure.in(.in)和源代码中所有的其他包含文件之前有下列块<br>
+     #ifdef HAVE_CONFIG_H<br>
+     #include &#060;config.h&#062;<br>
+     #endif<br>
+      (通常我们的项目模板已经作了相应设置)。<br>
+<br>
+   此外：这种方案的另外一个优点是使得MYDEFINE仅依赖于<br>
+        特定的条件（为configure设置一个选项）。<br>
+        这适合于写一个您自己的宏函数。<br>
+<br>
+<br>
+<a name="11"><b> 我在开发的一个程序需要异常处理，我应该怎么做？</b></a><br>
+   编辑最顶层源文件目录下的configure.in(.in)文件。 在AC_CHECK_COMPILERS宏以后加入：<br>
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"<br>
+   然后您必须在最顶层源文件目录下通过<br>
+   "make -f Makefile.dist" 重新生成"configure"， 然后重新启动configure脚本。<br>
+<br>
+<br>
+<a name="12"><b> 我的configure.in.in没有任何AC_CHECK_COMPILERS()调用。我应该在哪里放置上面提到的
+     CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" ?</b></a><br>
+   新版本的configure.in.in已经作了简化，您可以在<br>
+   AM_INIT_AUTOMAKE(&#060;package-name&#062;,&#060;version&#062;)<br> 之后加入该行。<br>
+<br>
+<br>
+<a name="13"><b> 我开发了一个应用程序，需要使用运行时类型信息，<br>
+我应该怎么做？</b></a><br>
+   编辑最顶层源文件目录下的configure.in(.in)文件。 在AC_CHECK_COMPILERS宏以后加入：
+   <br>
+     CXXFLAGS="$CXXFLAGS $USE_RTTI"<br>
+   然后您必须在最顶层源文件目录下通过<br>
+   "make -f Makefile.dist" 重新生成"configure"， 然后重新启动configure脚本。<br>
+<br>
+<br>
+<br>
+<a name="16"><b> 上述的方案很好，但是我仅需要运用到某些子目录（比如项目中的静态库），<br>
+我应该怎么做？</b></a><br>
+   编辑您希望的源代码目录中的Makefile.am文件。这里，您<br>
+   需要在KDevelop特定部分以外的什么地方输入：<br>
+     KDE_CXXFLAGS=$(USE_EXCEPTIONS)<br>
+   请注意，只有您的项目使用am_edit才会奏效。<br>
+   (它需要较新版本的acinclude.m4 &amp; am_edit, AFAWK 它们必须<br>
+    发布于12-09-1999之后，以前的版本被称为APPEND_CXXFLAGS -<br>
+    在KDevelop的发行版中，您可以找到一个合适的版本。)<br>
+<br>
+   您需要如上所述更新Makefile<br>
+   (make -f Makefile.dist; ./configure [选项]).<br>
+<br>
+<br>
+<a name="17"><b> CPPFLAGS和CXXFLAGS有什么区别？</b></a><br>
+   CPPFLAGS用于定义(即这个标志仅仅用于编译)<br>
+   CXXFLAGS用于编译器开关(比如 -frtti),它同时作用于<br>
+   链接过程。<br>
+<br>
+<br>
+<a name="18"><b> 我看到一些方案使用给Makefile.am打补丁的方法，<br>
+     DEFS+=-DMYDEFINE<br>
+   或<br>
+     CXXFLAGS+=-fsigned-char<br>
+   或<br>
+     LD_FLAGS+=-L/usr/local/lib<br>
+   为什么你们不考虑这样？</b></a><br>
+   在automake 1.4存在着一个缺陷，它不能为已经存在的标志加入新的标志。<br>
+   在Makefile.am中使用以上命令，您会删除现存的标志。<br>
+   如果您只希望将这些标志应用于项目的子目录：<br>
+     AM_CPPFLAGS=-DMYDEFINE<br>
+   或<br>
+     AM_CXXFLAGS=-fsigned-char<br>
+   或<br>
+     AM_LDFLAGS=-L/usr/local/lib<br>
+<br>
+   请注意这些标志只有在automake1.4版本以上才会奏效。<br>
+<br>
+   要为整个项目设置标志，请为最高级源代码目录下的<br>
+   configure.in(.in)文件打补丁。<br>
+<br>
+<br>
+<a name="19"><b> 我怎么保证我的项目的用户使用automake 1.4来编译?</b></a><br>
+   在最顶层源文件目录下的Makefile.am文件中加入AUTOMAKE_OPTIONS变量，其值为字符串"1.4"。比如：<br>
+   AUTOMAKE_OPTIONS = foreign 1.4<br>
+<br>
+<br>
+<a name="59"><b> 我在项目中加入了一个现存的子项目，但是它并没有编译。</b></a><br>
+  如果builddir != topsrcdir，会发生这种情况。您可以在加入子项目之前运行make distclean。<br>
+<br>
+<br>
+<a name="20"><b> AM_CXXFLAGS (在Makefile.am中) 可以使用-frtti 或<br>
+   -fexceptions这样的标志吗？</b></a><br>
+   不行！这种情况下存在一个顺序的问题。标准的CXXFLAGS变量<br>
+   是通过acinclude.m4输出的，它已经包含了-fno-rtti (-fno_exceptions)。<br>
+   如果您将它加入AM_CXXFLAGS编译器将会把这些标志在<br>
+   CXXFLAGS之前插入。比如 -frtti:<br>
+   gpp ... -frtti ... -fno-exceptions -fno-rtti ......<br>
+   所以最后的标志(本例中，-fno-rtti)将会起作用。<br>
+   KDE_CXXFLAGS会在标准的CXXFLAGS之后插入，所以它就会是这样：<br>
+   gpp ..... -fno-exceptions -fno-rtti ...... -frtti...<br>
+   它可以很好的工作。<br>
+<br>
+   请注意： KDE_CXXFLAGS只能通过项目发布，它使用am_edit<br>
+   和acinclude.m4.<br>
+<br>
+<br>
+<a name="21"><b> 为什么打了CXXFLAGS="$USE_EXCEPTIONS $CXXFLAGS"补丁的configure.in(.in)没有用？</b></a><br>
+   请参见 "AM_CXXFLAGS (在Makefile.am中)可以用-frtti或 -fexceptions这样的标志吗? "问题的答案 ;-)<br>
+<br>
+<br>
+<a name="22"><b> 我在configure.in(.in)中加入CXXFLAGS="$USE_EXCEPTIONS"，一切都工作正常，<br>
+   为什么我需要用你们建议的方案？</b></a><br>
+   如果您是在AC_CHECK_COMPILERS()之前这样做，<br>
+     CXXFLAGS="-pedantic" ./configure<br>
+   将不会正常的工作。<br>
+   如果您是在AC_CHECK_COMPILERS()之后这样做，在<br>
+   AC_CHECK_COMPILERS()中设置的 CXXFLAGS将会被清除。<br>
+   (比如"configure --enable-debug"，CXXFLAGS将会<br>
+    把调试信息加入到您的代码中)。<br>
+   所以请用 CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" 。<br>
+<br>
+<br>
+<a name="23"><b> 我在我的KDE/QT项目中使用了额外的头文件和库，将<br>
+   -I/usr/include/foo加入编译选项，-L/usr/lib/foo加入链接选项，并没有把这个配置加入tar包。<br>
+   我应该怎么做？</b></a><br>
+   最难的部分就在于如何正确处理的这个问题。<br>
+   一个简单，但是并非正确的方案是在configure.in(.in)加入：<br>
+<br>
+   all_includes="$all_includes -I/usr/include/foo"<br>
+   all_libraries="$all_libraries -L/usr/lib/foo"<br>
+<br>
+   [最好的加入上述语句的位置是在文件的末尾，:<br>
+    AC_ARG_PROGRAM<br>
+    AC_OUTPUT( ..... )<br>
+    语句之前]<br>
+<br>
+   存在的问题：<br>
+   - 谁能够保证所有的包含文件总是在<br>
+     /usr/include/foo...也许在某些系统中，它在/usr/local/foo/include<br>
+     (也许库在 /usr/local/foo/lib)??<br>
+   - 也许我没有安装foo之类的东西，编译失败了，但是也许<br>
+     configure失败，并提供有用的错误信息会更好。<br>
+<br>
+   所以，您也许需要在configure.in(.in)中加入一个宏函数，<br>
+    它将作一些测试，并搜索是否安装了"foo"。<br>
+<br>
+   如果您要这样做的话，我们在这里给您一些提示：<br>
+   试图理解acinclude.m4.in或者产生一个KDE-normal-ogl项目，<br>
+   这次您会找到一个qgl.m4文件，他将和acinclude.m4连接在一起(请参考 "Makefile.dist")。 <br>
+   它是一个用来搜索QT-OpenGL-Lib的很好的例子<br>
+   您可以在此基础上重写来解决您的问题。<br>
+<br>
+   如果您的运气好的话，您可以在acinclude.m4.in中找到问题的解决方案，<br>
+   这样您就可以用已经产生的函数。<br>
+<br>
+<br>
+<a name="25"><b> 上述问题中，我总是看到"configure.in(.in)"。在我的项目中，两个文件都有，<br>
+   哪一个文件应该打补丁？</b></a><br>
+   如果在最顶层源文件目录下有configure.in.in，就为这个文件打补丁。<br>
+   如果没有configure.in.in，就用configure.in。<br>
+<br>
+<br>
+<a name="28"><b> 有什么关于QT designer创建对话框的HOWTO吗？</b></a><br>
+  这里有一个很好的入门 <a href="http://women.kde.org/articles/tutorials/kdevelop3/index.html">http://women.kde.org/articles/tutorials/kdevelop3/index.html</a><br>
+<br>
+<br>
+<a name="29"><b> 我已经安装了htdig，但是htsearch不能用？</b></a><br>
+   在诸如RedHat这样的系统，htsearch可执行文件放在apache的/cgi-bin目录下，<br>
+   您可以在/usr/bin创建一个符号连接，把上述路径加入到 ~/.bashrc也可以。<br>
+<br>
+<br>
+<a name="30"><b> htdig, htmerge和htsearch都安装了，但是我得到的错误信息说htdig的配置文件找不到或者不可用？</b></a><br>
+   请阅读源代码树的README.htdig文件，然后产生一个htdig.conf文件，把它<br>
+   拷贝到$KDEDIR/share/apps/kdevelop/tools。现在您就可以用kdevelop的setup菜单产生您的搜索索引。<br>
+
+<br>
+<br>
+<?php module_tail(); ?>

@@ -1,0 +1,87 @@
+<?php module_head("2.1.5 (28-01-2003)"); ?>
+<ul>
+  <li>Corrections mineures pour permettre &agrave; KDevelop 2.1 de fonctionner correctement avec KDE 3.1
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.1.4 (19-11-2002)");?>
+<ul>
+  <li>Correction de bogue dans la vue des outils pour Linux Red Hat 8.0&nbsp;: la caract&eacute;ristique "aller aux erreurs" fonctionne &agrave; nouveau
+  <li>Une autre correction de bogue dans la vue des outils pour SuSE 8.1 (traduction en allemand)&nbsp;: la caract&eacute;ristique "aller aux erreurs" fonctionne &agrave; nouveau
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.1.3 (20-08-2002)");?>
+<ul>
+  <li>Prend aussi en compte le nouveau comportement de Qt version 3.0.5. (formattage du texte correct dans la vue de sortie)
+  <li>Quelques fuites de m&eacute;moire ont été corrigées
+  <li>Le mode interface utilisateur TabPage a un bouton de fermeture (portage stable depuis HEAD)
+  <li>Le mode indentation dans l'éditeur a été amélioré
+  <li>Correction dans la compilation pour FreeBSD
+  <li>Quelques mises à jour spécifiques pour Debian
+  <li>FYI&nbsp;: 'Ajouter des fichiers au projet' ne se bloque plus à cause d'une correction dans la dernière bibliothèque kdelibs:kdecore
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.1.2 (04-07-2002)");?>
+<ul>
+  <li>Correction des probl&egrave;mes dans l'outil de vue de sortie (nouvelles lignes, d&eacute;filement, aller &agrave; une erreur, cassure de ligne), corrections de quelques bogues Qt</li>
+  <li>Am&eacute;lioration de l'impression (WYSIWYG), adjustement de la taille des polices d'impression</li>
+  <li>Donner la possibilit&eacute; d'utiliser l'impression couleur dans kdeveloprc (BlackAndWhitePrinting=false)</li>
+  <li>CFLAGS et CPPFLAGS n'interf&egrave;rent plus dans le processus de construction</li>
+  <li>Am&eacute;lioration de l'indentation de l'&eacute;diteur</li>
+  <li>Correction d'une erreur typographique dans le squelette de l'application KDE MDI</li>
+  <li>Correction des erreurs de compilation de gcc-3.1</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.0.1 (19-09-2001)");?>
+<ul>
+  <li>La bogue qui faisait s'écrouler l'arborescence est corrigée
+  <li>le crash quand KDevelop redémarre avec des visualisations HTML ouvertes précédemment est corrigé
+  <li>le crash de DocViewMan::switchToFile(..) est corrigé
+  <li>les accélérateurs qui disparaissaient (après la fermeture d'un fichier)&nbsp;: corrigé
+  <li>compilation avec gcc 3.0 corrigées
+  <li>quelques corrections relatives à Qt 3
+  <li>quelques corrections QextMDI, est maintenant en version finale 2.0.0
+  <li>des erreurs d'orthographe en Allemand sont corrigées
+  <li>le dialogue de recherche des vues HTML est corrigé, surbrillance du résultat de la recherche
+  <li>d'autres corrections cool dont nous ne nous rappellons plus...
+</ul>
+<?php module_tail();?>
+
+<?php module_head("2.0 (15-08-2001)");?>
+<ul>
+  <li>L'interface utilisateur de KDevelopa été re-écrire avec l'utilisation de l'architecture d'interface de 
+plusieurs documents, permettant de visualiser plusieurs fenêtres. Plusieurs visualisations du même fichier
+  peuvent être utilisées.
+<li>Le mode de visualisation peut être basculé entre le mode Childframe, le mode Toplevel et le mode TabPage.
+  <li>La gestion des signets et le d&eacute;bogueur interne ont &eacute;t&eacute; adapt&eacute;s &agrave; la nouvelle interface.
+  <li>Ces deux caractéristiques sont possibles car nous sommes basés maintenant sur QextMDI, une bibliothèque qui supporte
+     le MDI avancé pour Qt et KDE.
+  <li>Un nouvel assistant de configuration (basé sur QWizard) remplace l'ancien, basé sur une messagebox.
+  <li>Des sessions de projet (.kdevses) ont été introduites.
+  <li>L'utilisation du Dockwidget a été etendue pour amarrer/désamarrer les fenêtres de tabulation dans les
+  arborescences de vue et la visualisation des sorties.
+  <li>De nouveaux squelettes pour implanter une bibliothèque de style KDE/Qt et des modules de KControl modules ont été
+  ajoutés ainsi que des squlettes pour des modules externes de Konqueror et des applications Kicker.
+  <li>La copie du r&eacute;pertoire kde-common/admin copy (admin.tar.gz) a &eacute;t&eacute; mise &agrave; jour vers la derni&egrave;re version de
+  KDE CVS. Les utilisateurs de versions ant&eacute;rieures &agrave; 2.0 sont avis&eacute;s qu'ils doivent mettre &agrave; jour le r&eacute;pertoire admin
+  dans leur projet pour le support des nouvelles versions de autoconf et automake.
+  <li>KDevelop utilise maintenant le dialogue de l'astuce du jour de kdelibs.
+  <li>Le manuel utilisateur a &eacute;t&eacute; &eacute;tendu pour d&eacute;crire la nouvelle interface utilisateur et un chapitre a &eacute;t&eacute; ajout&eacute; pour utiliser 
+  Qt Designer avec des projets KDevelop.
+  <li>Une base de donn&eacute;es nouvellement ajout&eacute;e bas&eacute;e sur ctags permet "Goto definition/declaration" et
+  la navigation entre les fichiers .h et .cpp. Cela n&eacute;cessite ctags-5.0.1.
+  <li>La sortie du compilateur s'affiche en couleur.
+  <li>Les pages sont accessibles via le navigateur d'aide de KDevelop.
+  <li>La fonctionalit&eacute; de KDevelop a &eacute;t&eacute; s&eacute;par&eacute;e en biblioth&egrave;ques partag&eacute;es.
+  <li>Les sons pour les &eacute;v&egrave;nements de KDevelop (les notifications syst&egrave;me dans le Centre de Contr&ocirc;le de KDE) sont support&eacute;s.
+  <li>La configuration de sous-projets de biblioth&egrave;ques partag&eacute;es est am&eacute;lior&eacute;e.
+  <li>Beaucoup de corrections de bogues, grosses ou petites, sont faites, en particulier dans l'&eacute;diteur.
+  <li>Le d&eacute;bogueur interne de KDevelop reconna&icirc;t maintenant les cha&icirc;nes de Qt-3.0.
+  <li>Les fichiers .po et .xpm peuvent &ecirc;tre ouverts comme fichiers ASCII.
+</ul>
+
+<b>Note&nbsp;:</b> KDevelop-2.0 se base sur le code source de la version pr&eacute;c&eacute;dente qui &eacute;tait 1.4.1.
+<?php module_tail();?>

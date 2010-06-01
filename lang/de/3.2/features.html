@@ -1,0 +1,53 @@
+<?php module_head("KDevelop $k_series_version Features");?>
+
+Beinhaltet alle
+<a href="index.html?filename=3.1/features.html">
+KDevelop 3.1.x Features</a> plus:<br>
+<ul>
+
+<li><b>Neue überarbeitete Code-Basis</b>
+<ul>
+<li>Die KDevelop Code-Basis wurde &uuml;berarbeitet mit dem Ziel die Code-Wiederverwendbarkeit zu verbessern und die Basis-Bibliotheksklassen aus denen
+KDevelop besteht zu dokumentieren. Diese Basisklassen bilden die neue <em>KDevelop Plattform</em> und stellen eine &uuml;bersichtliche und gut dokumentierte API dar</li>
+</ul>
+</li>
+
+<li><b>Neue RAD (<em>R</em>apid <em>A</em>pplication <em>D</em>evelopment - Schnelle Anwendungsentwicklung) Werkzeuge</b>
+<ul>
+<li>KDevDesigner Integration macht GUI Design direkt aus KDevelop m&ouml;glich</li>
+<li>KDevAssistent Integration liefert einen vielf&auml;ltigen Dokumentationsbetrachter direkt in KDevelop</li>
+<li>Der C++ Klassen Wizard kann nun f&uuml;r Klassen im ständigen Klassenspeicher benutzt werden. Das bedeutet z.B.,
+dass, wenn die Code-Completion Datenbank f&uuml;r Qt erstellt wird, ein Subclassing von Qt-Klassen im Wizard m&ouml;glich ist</li>
+</ul>
+</li>
+
+<li><b>Deutlich verbesserte Ruby Sprachunterst&uuml;tzung</b>
+<ul>
+<li>Neuer Ruby Debugger, kombiniert mit verbesserten Untersuchungsmethoden in den
+qtruby/korundum Bindings, um Qt::Object Metadaten, wie Eigenschaften, 
+w&auml;hrend des Debuggens anzuzeigen</li>
+<li>Der Kassenbrowser hat einen verbesseren Parser, der Qt und DCOP Signale und 
+Slots, attr_accessor Methoden und Instanzvariablen anzeigt</li>
+<li>Neue Projekt-Templates f&uuml;r ein KDE Anwendungsframework, KConfig XT, DCOP Server und 
+reine Qt Anwendungen</li>
+<li>Volle Qt Designer/rbuic Integration</li>
+</ul>
+</li> 
+
+<li><b>Andere Verbesserungen und Bugfixes</b>
+<ul>
+<li>Die Versionskontrollunterstützung wurde überarbeitet. Die Meisten der Integrationsfeatures die in KDevelop&nbsp;3.1 abgeschaltet waren
+sind in 3.2 zur&uuml;ck, zusammen mit einem deutlich verbesserten Subversion plugin.</li>
+<li>Verbessertes "Suchen in Dateien", Ctags unterst&uuml;tzung und History-Navigation erm&ouml;glichen schnelleres navigieren im Code</li>
+<li>Es stehen mehr Anwendungstemplates zur verf&uuml;gung</li>
+<li>Neue Templates f&uuml;r cmake basierte C/C++ Anwendungen und Bibliotheken</li>
+<li>Neue Templates f&uuml;r scons basierte KDE Anwendungen</li>
+<li>Mehr Details finden sie auf der
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+Change-Log Seite</a></li>
+</ul>
+</li>
+
+</ul>
+
+<?php module_tail();?>

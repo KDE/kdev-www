@@ -1,0 +1,362 @@
+<?php if (!isset($filename)) { header('HTTP/1.1 301 Moved Permanently'); header('Location: /index.html?filename=2.1/kdevelop.html'); } ?>
+<h2 align=center>Esta página concentra toda la información sobre las series de revisiones de KDevelop 2.x</h2>
+
+<?php module_head("General");?>
+El desarrollo se <b>paró</b> el 19 Noviembre 2002 con la revisión KDevelop 2.1.4 para KDE 3.0, y no se planean futuras revisiones de 2.x.
+KDevelop 2.1.5 fue una excepción, liberada el 28 Enero 2003, como una actualización para los usuarios de la versión KDE 3.1. El desarrollo se
+movió al nuevo código base de KDevelop.
+Más del 80 por ciento de los informes de bugs de KDevlop 2.x
+<a href="http://bugs.kde.org/buglist.cgi?short_desc_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;product=kdevelop&amp;version=0.1&amp;version=0.2&amp;version=0.2.2&amp;version=1.0.2&amp;version=1.2&amp;version=1.4&amp;version=1.4-beta2&amp;version=1.4.1&amp;version=1.9.3b&amp;version=1.9.8&amp;version=2.0&amp;version=2.0.1&amp;version=2.0.2&amp;version=2.01&amp;version=2.0pre&amp;version=2.1&amp;version=2.1-beta&amp;version=2.1-beta2&amp;version=2.1-rc2&amp;version=2.1.1&amp;version=2.1.2&amp;version=2.1.3&amp;version=2.1.4&amp;version=2.1.5&amp;version=2.1_beta2&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2002-11-12&amp;chfieldto=Now&amp;order=Bug+Number&amp;cmdtype=doit">se han resuelto en KDevelop&nbsp;3.0</a>.
+
+<h3>Funcionalidades</h3>
+Esta página le da un resumen general sobre las <a href="index.html?filename=2.1/features.html">funcionalidades de KDevelop&nbsp;2.x</a>.<br>
+
+<h3><a name="Requirements">Requisitos</a></h3>
+Antes de comenzar a compilar su reciente versión de KDevelop, tenga en cuenta
+que tiene instalado los siguientes programas. Piense que puede obtener errores extraños,
+si usa versiones antiguas.
+<table border=0 cellspacing=2 cellpadding=2>
+  <tr>
+    <th class=header>Programa/Biblioteca</th>
+    <th class=header>Fuente</th>
+  </tr>
+  <tr>
+    <td class=odd>KDE 2.2.2 o KDE 3.0.x</td>
+    <td class=odd><a href="http://www.kde.org/">www.kde.org</a></td>
+  </tr>
+  <tr>
+    <td class=even>g++ &gt; 2.8/ egcs &gt; 1.0.3 (o compatible)</td>
+    <td class=even><a href="http://gcc.gnu.org/">gcc.gnu.org</a></td>
+  </tr>
+  <tr>
+    <td class=odd>GNU make</td>
+    <td class=odd><a href="http://www.gnu.org/software/make/">www.gnu.org/software/make</a></td>
+  </tr>
+  <tr>
+    <td class=even>perl 5.004</td>
+    <td class=even><a href="http://www.perl.com/">www.perl.com</a></td>
+  </tr>
+  <tr>
+    <td class=odd>autoconf 2.13</td>
+    <td class=odd><a href="http://www.gnu.org/software/autoconf/">www.gnu.org/software/autoconf</a></td>
+  </tr>
+  <tr>
+    <td class=even>automake 1.4</td>
+    <td class=even><a href="http://www.gnu.org/software/automake/">www.gnu.org/software/automake</a></td>
+  </tr>
+  <tr>
+    <td class=odd>flex 2.5.4</td>
+    <td class=odd><a href="http://www.gnu.org/software/flex/">www.gnu.org/software/flex</a></td>
+  </tr>
+</table>
+<br>
+Estas herramientas son opcionales, esto significa que KDevelop funciona sin ellas.
+Pero perderá algunas de las funcionalidades como generación de documentación o búsqueda sobre varios ficheros.
+Así que probablemente debería comprobar estos programas en su sistema.
+<table border=0 cellspacing=2 cellpadding=2>
+  <tr>
+    <th class=header>Programa/Biblioteca</th>
+    <th class=header>Fuente</th>
+  </tr>
+  <tr>
+    <td class=odd>sgmltools 1.0</td>
+    <td class=odd><a href="http://www.sgmltools.org/">www.sgmltools.org</a></td>
+  </tr>
+  <tr>
+    <td class=even>Glimpse 4.1</td>
+    <td class=even><a href="http://glimpse.cs.arizona.edu/">glimpse.cs.arizona.edu</a></td>
+  </tr>
+  <tr>
+    <td class=odd>kdoc</td>
+    <td class=odd><a href="http://www.kde.org/">www.kde.org</a></td>
+  </tr>
+  <tr>
+    <td class=even>a2ps 4.11</td>
+    <td class=even><a href="http://www.gnu.org/software/a2ps/">www.gnu.org/software/a2ps</a></td>
+  </tr>
+  <tr>
+    <td class=odd>enscript</td>
+    <td class=odd><a href="http://www.gnu.org/software/enscript/">www.gnu.org/software/enscript</a></td>
+  </tr>
+  <tr>
+    <td class=even>KDbg</td>
+    <td class=even><a href="http://members.nextra.at/johsixt//kdbg.html">members.nextra.at/johsixt//kdbg.html</a></td>
+    </tr>
+  <tr>
+    <td class=odd>gdb 5.0 (para un buen funcionamiento del depurador interno)</td>
+    <td class=odd><a href="http://www.gnu.org/software/gdb/">www.gnu.org/software/gdb</a></td>
+    </tr>
+  <tr>
+    <td class=even>KIconEdit</td>
+    <td class=even><a href="http://w1.1358.telia.com/~u135800018/prog.html">w1.1358.telia.com/~u135800018/prog.html</a></td>
+  </tr>
+  <tr>
+    <td class=odd>Gv, Ghostview o KGhostview</td>
+    <td class=odd><a href="http://www.gnu.org/software/ghostview/">www.gnu.org/software/ghostview</a></td>
+  </tr>
+  <tr>
+    <td class=even>cvs 1.10.6</td>
+    <td class=even><a href="http://www.cvshome.org/">www.cvshome.org</a></td>
+  </tr>
+  <tr>
+    <td class=odd>ctags 5.x</td>
+    <td class=odd><a href="http://ctags.sourceforge.net/">ctags.sourceforge.net</a></td>
+  </tr>
+  <tr>
+    <td class=even>Doxygen 1.x</td>
+    <td class=even><a href="http://www.doxygen.org/">www.doxygen.org</a></td>
+  </tr>
+  <tr>
+    <td class=odd>dot</td>
+    <td class=odd><a href="http://www.graphviz.org/">www.graphviz.org</a></td>
+  </tr>
+</table>
+<br>
+
+<h3><a name="Downloads">Descargas</a></h3>
+<br>
+El Equipo de libera muchas de versiones de KDevelop. Aquí están las 2.x,
+apropiadas para ciertas versiones de KDE y Qt:
+<br><br>
+<center>
+<table BORDER CELLPADDING=2>
+  <tr>
+    <td><b>versión</b></td>
+    <td><b>versión requerida del <A HREF="http://www.kde.org/mirrors/">paquete de KDE</A> "kdelibs"</b></td>
+    <td><b>versión requerida de la biblioteca Qt</b></td>
+  </tr>
+  <tr>
+    <td>KDevelop-2.1.5</td>
+    <td>KDE 3.1</td>
+    <td>Qt 3.1</td>
+  </tr>
+  <tr>
+    <td>KDevelop-2.1.4</td>
+    <td>KDE 2.2.2 o KDE 3.0.x</td>
+    <td>Qt-2.3.1 o Qt-3.0.3</td>
+  </tr>
+</table>
+</center>
+<br>
+<br><b>Fuentes</b>
+<br><a href="http://download.kde.org/download.php?url=stable/kdevelop-2.1.5/src">fuente de KDevelop-2.1.5 para KDE-3.1</a>. <b>La versión 2.1.5 es una actualización sólo para KDE-3.1</b>
+<br><a href="http://download.kde.org/download.php?url=Attic/3.0.5/src">fuente de KDevelop-2.1.4 para KDE-3.0</a>
+<br><a href="http://download.kde.org/download.php?url=Attic/3.0.5/src">fuente de KDevelop-2.1.4 para KDE-2.2</a>
+<br>
+<br><b>Binarios</b>
+<br><a href="ftp://ftp.kdevelop.org/pub/kdevelop/binaries">antiguos binarios de KDevelop para varias distribuciones</a>
+<br>
+<br><b>Referencias de C/C++ para KDevelop 2.x</b>
+<br>
+<br><a href="2.1/doc/c_cpp_reference-2.0.2.tar.bz2">referencias de C/C++ (tar.bz2)</a>
+<br><a href="2.1/doc/c_cpp_reference-2.0.2.tar.gz">referencias de C/C++ (tar.gz)</a>
+
+
+<h3><a name="Installing">Como Instalar KDevelop 2.1.5</a></h3>
+Las instrucciones se pueden encontrar en <a href="2.1/doc/HowToInstallKdevelopOnSuSE.txt">Como Instalar KDevelop 2.1.5 en Suse 8.2</a> (28KB .txt).
+También se explica como instalar las Referencias de C/C++.<br>
+<br>
+
+
+<h3><a name="Compiling">Compilar la versión 2.1.5 desde el repositorio de CVS</a></h3>
+Para obtener el KDevelop&nbsp;2.1.5 auto-compilado desde los fuentes de cvs, regístrese
+en el módulo de CVS "kdevelop" en :pserver:anonymous@anoncvs.kde.org:/home/kde
+usando la rama de CVS de corrección de bugs KDE_2_2_BRANCH<br>
+También necesitará registrarse en kde-common desde cvs.kde.org para obtener el directorio admin si está ejecutando KDE&nbsp;3.<br>
+Ponga atención sobre las diferentes ramas de cvs que requiere ciertas versiones de KDE&nbsp;3:<br>
+<ul>
+  <li>KDE-3.0.x requiere la etiqueta KDE_3_0_BRANCH,
+  <li>KDE-3.1.x requiere la etiqueta KDE_3_1_BRANCH,
+  <li>solo el HEAD de cvs no necesita la etiqueta de cvs para kde-common,
+</ul>
+Esto pasa por que en este caso no se usa la opción '-r tagName_seeAbove'.<br>
+<br>
+Líneas de comando si está ejecutando KDE 3:<br>
+<pre>
+       $ mkdir kde3src
+       $ cd kde3src
+       $ cvs -z3 -d :pserver:anonymous@anoncvs.kde.org:/home/kde co -r tagName_seeAbove kde-common
+       $ cvs -z3 -d :pserver:anonymous@anoncvs.kde.org:/home/kde co -r KDE_2_2_BRANCH kdevelop
+       $ cd kdevelop
+       $ rm -rf admin
+       $ ln -s ../kde-common/admin admin
+</pre>
+<br>
+Líneas de comando si está ejecutando KDE 2.2:<br>
+<pre>
+       $ mkdir kde2src
+       $ cd kde2src
+       $ cvs -z3 -d :pserver:anonymous@anoncvs.kde.org:/home/kde co -r KDE_2_2_BRANCH kdevelop
+       $ cd kdevelop
+</pre>
+<br>
+In order to compile and install KDevelop (CVS-version) on your system,<br>
+type the commands from below in the base directory of the KDevelop distribution:<br>
+<br>
+una versión comilada para ser liberada:
+<pre>
+       $ export KDEDIR=/where/your/kde2/or/kde3/is
+       $ export QTDIR=/where/qt-2.3.1/or/qt-3.0.x/is
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+       $ ./configure --prefix=$KDEDIR
+       $ make
+       $ make install (como root)
+</pre>
+<br>
+una versión compilada para depurar:
+<pre>
+       $ export KDEDIR=/where/your/kde2/or/kde3/is
+       $ export QTDIR=/where/qt-2.3.1/or/qt-3.0.x/is
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+
+       $ export CXXFLAGS="-g3 -O0"
+
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+       $ ./configure --enable-debug --prefix=$KDEDIR
+       $ make
+       $ make install (como root)
+</pre>
+<b>Nota:</b> Para KDE 3 necesita como mínimo Qt &gt; 3.0.3 (mejor qt-copy de KDE), para KDE 2.2.x necesita Qt 2.3.x<br>
+Evite enlazarse a ambas versiones de Qt, Qt2 y Qt3! De otro modo al inicio de KDevelop fallará con un misterioso informe de error...<br><br>
+
+<h3><a name="Patches">Plugins y parches</a></h3>
+Debido a diferentes razones (principalmente la estabilidad), algunos grandes parches no se han aplicado
+a la versión actual. Pero ofrecen grandes mejoras, así puede descargarselos aquí.<br>
+Recuerde que estos son parches de fuentes, así que tiene que dercargarse un paquete
+de fuentes compatible , parchearlo y recompilarlo.<br>
+Diviertase...
+<table width="100%" border=0 cellspacing=2 cellpadding=2>
+  <tr>
+    <th class=header width="18%">Nombre/Funcionalidad</th>
+    <th class=header width="15%">Autor</th>
+    <th class=header width="15%">versión de KDevelop</th>
+    <th class=header>Descripción</th>
+  </tr>
+  <tr>
+    <td class=odd><a HREF="2.1/patches/classview.patch.gz">parche Classparser</a></td>
+    <td class=odd>August Hoerandl + corrección del bug por joerg.pauly en psystems.org</td>
+    <td class=odd>2.1 and its bugfix versions (2.1.x)</td>
+    <td class=odd>this patch lets the classparser also parse the base libraries (Qt, KDE), Advantage: more code-completion, more survey about base classes- Disadvantage: Startup will take much longer because of the parsing.</td>
+  </tr>
+  <tr>
+    <td class=even><a HREF="2.1/patches/ClassPropsByBrezel.tar.gz">Class property patch</a></td>
+    <td class=even>Serge Lussier (aka Bretzel) + bugfix by joerg.pauly at psystems.org</td>
+    <td class=even>2.1 and its bugfix versions (2.1.x), but only for KDE-3</td>
+    <td class=even>this patch applies several improvements to the class property dialog. Serge said they aren't bugfixes but changes, so it didn't go in the bugfix releases of KDevelop-2.1.</td>
+  </tr>
+  <tr>
+    <td class=odd><a HREF="2.1/patches/crossplatform.patch.tgz">
+      Cross-platform development support improvement +<br>
+      event handling of the Message, Breakpoint and Watch windows (important for KDE/QT-3.0.x) patch</a></td>
+    <td class=odd>Iztok (I (in) siol .. net)</td>
+    <td class=odd>2.1 and its bugfix versions (2.1.x), but only for KDE-3</td>
+    <td class=odd>the original KDevelop-2.1.5 (KDE_2_2_BRANCH) has not finished business in the build configurations
+      for C++ console projects. The builds have not been performed in appropriate subdirectories, the build configurations could not be
+      removed and the debugging on those did not work at all. This patch solves this. I am maintaining and still developing huge amount of
+      projects targeting ix86 and arm processors. The work with this patch goes smoothly for at least half of year already. The configuration
+      starts with the Options-&gt;KDevelop Setup-&gt;Compiler where appropriate compiler paths should be configured. I must say that I
+      prefere KDevelop2 build configurations handling over the KDevelop3's one since it keeps the compiler information separated from the project
+      settings, switchable accross the host switch.
+    </td>
+  </tr>
+  <tr>
+    <td class=even><a HREF="2.1/patches/kdevelop-2.1.5-diff-2004-03-03-16-06-51.tgz">
+      Cross-platform development support improvement +<br>
+      event handling of the Message, Breakpoint and Watch windows (important for KDE/QT-3.0.x) +<br>
+      separation of the data resources from the KDevelop3's patch</a></td>
+    <td class=even>Iztok (I (in) siol .. net)</td>
+    <td class=even>2.1 and its bugfix versions (2.1.x), but only for KDE-3</td>
+    <td class=even>Since Gideon (KDevelop3) has been renamed to KDevelop, its data resources has been clashing with the KDevelop2's. This patch resolves following:<br>
+      <ul>
+        <li>kdevelop binary is renamed to kdevelop2</li>
+        <li><a href="2.1/patches/kdevelop2.desktop">kdevelop2.desktop</a> and <a href="2.1/patches/kdevelop2-setup.desktop">kdevelop2-setup.desktop</a> files are added to the kdevelop/ directory</li>
+        <li>$KDEDIR/share/..../kdevelop directories are renamed to kdevelop2</li>
+        <li>$HOME/.kde/share/..../kdevelop directory is renamed to kdevelop2</li>
+        <li>Codebase is changed for kdevelop2 is searching for its data resources in appropriate directories</li>
+        <li>KDevelop2 can be built using the KDE_3_1_BRANCH and KDE_3_2_BRANCH, clearly when using appropriate admin directory</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h3>Change Log</h3>
+This page gives you the <a href="index.html?filename=2.1/changes.html">KDevelop&nbsp;2.x change log</a>.<br>
+
+<h3><a name="Bugs">Known bugs</a></h3>
+Because development on this release series has stopped, there are around 124 known but unfixed bugs.
+More than 80 percent of these bugs (more than 100) are <a href="http://bugs.kde.org/buglist.cgi?short_desc_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;product=kdevelop&amp;version=0.1&amp;version=0.2&amp;version=0.2.2&amp;version=1.0.2&amp;version=1.2&amp;version=1.4&amp;version=1.4-beta2&amp;version=1.4.1&amp;version=1.9.3b&amp;version=1.9.8&amp;version=2.0&amp;version=2.0.1&amp;version=2.0.2&amp;version=2.01&amp;version=2.0pre&amp;version=2.1&amp;version=2.1-beta&amp;version=2.1-beta2&amp;version=2.1-rc2&amp;version=2.1.1&amp;version=2.1.2&amp;version=2.1.3&amp;version=2.1.4&amp;version=2.1.5&amp;version=2.1_beta2&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2002-11-12&amp;chfieldto=Now&amp;order=Bug+Number&amp;cmdtype=doit">solved in KDevelop 3.0</a>.
+So please consider using version 3.0 instead.
+<?php module_tail();?>
+
+<?php module_head("Documentation");?>
+      <h3>User Manual</h3>
+      <a href="1.3/doc/manual/index.html">The User Manual to KDevelop</a> - The Reference Guide to the KDevelop Integrated Development Environment for Unix Systems, Version 1.1 (it's actually the old KDevelop 1.x manual)<br>
+
+      <h3><a name="Tutorials">Tutorials</a></h3>
+      <table border=0 cellspacing=2 cellpadding=2>
+        <tr>
+          <td class=even><a href="1.3/doc/index.html">Welcome To KDevelop</a></td>
+          <td class=even>The KDevelop 1.x welcome and introduction</td>
+        </tr>
+        <tr>
+          <td class=odd><a href="1.3/doc/programming/index.html">The KDevelop Programming Handbook</a></td>
+          <td class=odd>The User Guide to C++ Application Design for KDE with the KDevelop IDE, Version 1.0<br>It's actually the old KDevelop 1.x handbook.</td>
+        </tr>
+        <tr>
+          <td class=even><a href="1.3/doc/tutorial/index.html">KDE Application Tutorials</a></td>
+          <td class=even>The KDE Application Tutorials Handbook for the KDevelop Integrated Development Environment<br>This is for KDE-1.x and KDE-2.x</td>
+        </tr>
+        <tr>
+          <td class=odd><a href="1.3/doc/kde_libref/index.html">The KDE Library Reference Guide</a></td>
+          <td class=odd>The Reference Guide to C++ Application Design for the K Desktop Environment (KDE).<br>This is for KDE-1.x</td>
+        </tr>
+        <tr>
+          <td class=even><a href="http://arfa.komnas.com/~jeffry_johar/linuxlaht1/t1.html">linuxlah KDevelop &amp; QT Designer Tutorial Pt.1</a></td>
+          <td class=even>a good tutorial for KDevelop 2.1</td>
+        </tr>
+        <tr>
+          <td class=odd><a HREF="http://www.caldera.com/skunkware/kde/kdevelop_tutorial/">La Guía del Principiante Absoluto de KDevelop</a></td>
+          <td class=odd>tutorial muy claro hecho por Petr Sorfa (en ingl&eacute;s)</td>
+        </tr>
+        <tr>
+          <td class=even><a HREF="http://www.kde.gr.jp/~kom/kdetut2/kdetut_ja.html">La Guía del Principiante Absoluto de KDevelop</a></td>
+          <td class=even>tutorial muy claro hecho por Petr Sorfa (en japon&eacute;s)</td>
+        </tr>
+        <tr>
+          <td class=odd><a HREF="http://www.geekcomix.com/snh/files/docs/sdl-kdev/sdl-kdev-mini-how2.html">usando SDL con KDevelop</a></td>
+          <td class=odd>documentos SDL y C&oacute;mo ("Howto") por Kokido (en ingl&eacute;s)</td>
+        </tr>
+      </table>
+
+      <h3>F.A.Q.</h3>
+      This page gives you the answers to the most <a href="index.html?filename=2.1/faq.html">frequently asked questions on KDevelop&nbsp;2.x</a>.<br>
+<?php module_tail();?>
+
+<?php module_head("Presentations and Graphics");?>
+      <a href="index.html?filename=2.1/announce-kdevelop-2.0.html">Public announcement</a><br>
+      <a href="index.html?filename=2.1/screenshots1.html">Screenshots&nbsp;1</a>,
+      <a href="index.html?filename=2.1/screenshots2.html">screenshots&nbsp;2</a>,
+      <a href="index.html?filename=2.1/screenshots3.html">screenshots&nbsp;3</a><br>
+      <a href="index.html?filename=in_the_press.html">In the Press</a><br>
+      <a href="index.html?filename=awards.html">Awards</a><br>
+      <a href="index.html?filename=logos_banners.html">Logos &amp; Banners</a><br>
+      <a href="index.html?filename=splashscreens.html">Splashscreens</a><br>
+      <a href="index.html?filename=events.html">Events</a><br>
+<?php module_tail();?>
+
+<?php module_head("Development");?>
+      <a href="http://websvn.kde.org/branches/KDE/2.2/kdevelop/">Web CVS</a>, browse the code in the CVS repository.<br>
+<?php module_tail();?>
+
+<?php module_head("Misc");?>
+      <a href="index.html?filename=2.1/authors.html">Credits</a>, the authors.<br>
+      <a href="index.html?filename=license.html">License</a>, GNU GPL license.<br>
+<?php module_tail();?>

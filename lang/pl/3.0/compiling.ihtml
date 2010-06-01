@@ -1,0 +1,41 @@
+Aby skompilować i zainstalować KDevelop na swoim systemie, wpisz komendy poniżej katalogu głównego (zakładamy że nasz shell basha)<br>
+<pre>
+       $ export KDEDIR=/where/your/kde3/is
+       $ export QTDIR=/where/your/qt3/is
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+</pre>
+<b>Uwaga:</b> Z wiadomych powodów powinieneś edytować dwie pierwsze linijki aby przystosować się do twojej konfiguracji! :)<br>
+<br>
+Następnym krokiem jest konfiguracja,
+aby dowiedzieć się więcej o opcjach konfiguracji wpisz:
+<pre>
+       $ ./configure --help
+</pre>
+Oto przykład wersji z włączoną obsługą debugowania:
+<pre>
+       $ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+</pre>
+A tutaj jest przykład wersji kompilowanej pod wydanie:
+<pre>
+       $ ./configure --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+</pre>
+Możesz uniknąć kompilowania komponentów KDevelop których nie potrzebujesz, np. ja użyłem poniżej komendy konfiguracyjnej:
+<pre>
+       $ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+          --disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+          --disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+          --disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion
+</pre>
+Na systemie KDE 3.0.x (tylko dla KDE &lt; 3.1) powienienś także dodać poniższe komendy:
+<pre>
+       $ ln -s $KDEDIR/share/apps/ksgmltools2/customization/dtd doc/kdevelop/dtd
+       $ ln -s $KDEDIR/share/apps/ksgmltools2/customization/dtd doc/kde_app_devel/dtd
+       $ ln -s $KDEDIR/share/apps/ksgmltools2/customization/dtd doc/kdearch/dtd
+</pre>
+Po konfiguracji możesz zbudować go i zainstalować:
+<pre>
+       $ make
+       $ make install (jako root)
+</pre>

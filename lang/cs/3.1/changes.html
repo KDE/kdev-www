@@ -1,0 +1,87 @@
+<?php module_head("CVS KDE_3_3_BRANCH (dnes)");?>
+Toto je <b>vývojová</b> větev. Bude to budoucí KDevelop verze 3.1.3 (zatím nevydaný).<br>
+Podporuje <b>KDE >= 3.2</b>.<br>
+<ul>
+  <li>FIX      - drobné opravy</li>
+</ul>
+Zde najdete
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-12-01&amp;chfieldto=Now&amp;order=Bug+Number&amp;cmdtype=doit">
+interaktivní verzi</a> seznamu dosud opravených chyb.<br>
+Pokud chcete detailnější popis změn, navštivte 
+<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1143.2.7&amp;r2=1.1143.2.1">
+CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("KDevelop 3.1.2 (2004-12-08)");?>
+It supports <b>KDE &gt;= 3.2.x</b>. Was tagged on 2004-12-01 and released on 2004-12-08.
+<ul>
+  <li>OPRAVENO  - Mnoho projektových šablon</li>
+  <li>VYLEPŠENO - <em>custommakefiles</em> neinsertuje cíle do menu dvakrát, třídí cíle podle abecedy (tentokrát to funguje)</li>  
+  <li>OPRAVENO  - chyba "the kdevelop3 custom makefile based project files do not work with cmake out-of-source builds"</li>
+  <li>OPRAVENO  - <a href="http://bugs.kde.org/show_bug.cgi?id=90446">Bug 90446</a>: Nepřepisovat existující soubory</li>
+  <li>OPRAVENO  - <a href="http://bugs.kde.org/show_bug.cgi?id=90334">Bug 90334</a>: Opravená forkbomba
+   vyrobená KDevAssistantem pokud používáte KDevAssistant ke čtení vzdálené dokumentace...</li>  
+  <li>OPRAVENO  - špatné uvolňování paměti</li>
+  <li>OPRAVENO  - amd64 crash</li>  
+  <li>VYLEPŠENO - <em>Perl parser</em> Nevyžadovat mezeru mezi jménem funkce a první závorkou</li>  
+  <li>VYLEPŠENO - zajistit fungování inkrementálního vyhledávání v filelistech</li>
+</ul>
+Zde najdete
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-10-03&amp;chfieldto=2004-12-01&amp;order=Bug+Number&amp;cmdtype=doit">
+interaktivní verzi</a> seznamu dosud opravených chyb.<br>
+Pokud chcete detailnější popis změn navštivte
+<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1143.2.1&amp;r2=1.1143">
+CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("KDevelop 3.1.1 (2004-10-12)");?>
+Podporuje <b>KDE &gt;= 3.2.x</b>. Tato verze byla označena (CVS tag) 3.10.2004 a vydána 12.10.2004.
+<ul>
+  <li>VYLEPŠENO - <em>custommakefiles</em> neinsertuje cíle do menu dvakrát, třídí cíle podle abecedy</li>  
+  <li>VYLEPŠENO - updatováno na Automake 1.9 a vyšší</li>
+  <li>OPRAVENO  - <a href="http://bugs.kde.org/show_bug.cgi?id=86816">Bug 86816</a>: ukládání s ochranou proti zápisu nenastavuje atribut změny souboru</li>
+  <li>OPRAVENO  - kompare/kdiff3 prohlížeče změn</li>
+  <li>OPRAVENO  - <a href="http://bugs.kde.org/show_bug.cgi?id=86552">Bug 86552</a>: překlep: chybná uzavírací značka</li>
+  <li>OPRAVENO  - <a href="http://bugs.kde.org/show_bug.cgi?id=86551">Bug 86551</a>: překlep: chybná uzavírací značka</li>
+  <li>VYLEPŠENO - Ujistit se, že vkládáme texteditorparts (kate) jako texteditors</li>
+  <li>OPRAVENO  - <a href="http://bugs.kde.org/show_bug.cgi?id=86781">Bug 86781</a>: Nastavení "On External Changes" není uloženo</li>
+  <li>OPRAVENO  - <em>Distribuce projektu</em> nevytváří soubory v archivu na nejvyšší úrovni</li>
+  <li>OPRAVENO  - ne všechny soubory ze seznamů autoprojektu a Qmake jsou exportovány</li>
+  <li>OPRAVENO  - některé šablony projektů</li>
+</ul>
+Zde najdete <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-08-13&amp;chfieldto=2004-10-03&amp;order=Bug+Number&amp;cmdtype=doit">interaktivní verzi</a> seznamu dosud opravených chyb.<br>
+Pokud chcete detailnější popis změn navštivte <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1144&amp;r2=1.1143">CVS ChangeLog</a>.
+<?php module_tail();?>
+
+<?php module_head("KDevelop 3.1 (2004-08-19)");?>
+Podporuje <b>KDE &gt;= 3.2.x</b>. Tato verze byla označena (CVS tag) 13.8.2004 a vydána 19.8.2004.
+Obsahuje <a href="index.html?filename=3.1/features.html">nové vlastnosti KDevelop 3.1.x</a> plus další změny:
+<ul>
+  <li>NOVÉ      - combo box v nástrojové liště se seznamem funkcí v objektu či v souboru</li>
+  <li>NOVÉ      - profily pluginů</li>
+  <li>NOVÉ      - CTAGS plugin</li>
+  <li>NOVÉ      - volitelný automatický reload souboru, jestliže byl změněn jiným programem</li>
+  <li>NOVÉ      - mechanismus projektových šablon / vylepšený AppWizard</li>
+  <li>NOVÉ      - projektové šablony pro GTK, GNOME a Bonobo aplikace</li>
+  <li>OPRAVENO  - potíže s navigací v kontextových menu</li>
+  <li>NOVÉ      - integrace Qt Designeru</li>
+  <li>VYLEPŠENO - podpora Ruby</li>
+  <li>VYLEPŠENO - použití KMacroExpander ve všech nahrazených šablonách</li>
+  <li>VYLEPŠENO - zkrášlen modul NewFile, akce &quot;file_new&quot; je nyní KToolBarPopupMenu</li>
+  <li>VYLEPŠENO - Distpart</li>
+  <li>VYLEPŠENO - navigace historií zdroje</li>
+  <li>NOVÉ      - aplikace KDevAssistant - samostatný prohlížeč API dokumentace</li>
+  <li>NOVÉ      - interface KDevLicense</li>
+  <li>NOVÉ      - Copy/Paste v kontextovém menu editoru</li>
+  <li>NOVÉ      - plugin FileList</li>
+  <li>VYLEPŠENO - Zajistit, aby se některé vlastnosti KMDI daly nakonfigurovat</li>
+  <li>NOVÉ      - plugin Code Snippet</li>
+  <li>NOVÉ      - náhled a autokomentování Doxygenu</li>
+  <li>NOVÉ      - prohlížeč dokumentace založený na pluginech</li>
+  <li>VYLEPŠENO - Debugger - sledování proměnných</li>
+  <li>VYLEPŠENO - plugin QuickOpen plugin, nyní má podporu také pro metody/funkce</li>
+  <li>VYLEPŠENO - rychlost startování</li>
+</ul>
+Zde najdete <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2004-01-19&amp;chfieldto=2004-08-13&amp;order=Bug+Number&amp;cmdtype=doit">interaktivní verzi</a> seznamu opravených chyb.<br>
+Pokud chcete detailnější popis změn navštivte <a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1143&amp;r2=1.1101">CVS ChangeLog</a>.
+<?php module_tail();?>

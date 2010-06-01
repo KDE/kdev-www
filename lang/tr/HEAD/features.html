@@ -1,0 +1,53 @@
+<?php module_head("KDevelop $k_series_version Özellikleri");?>
+
+<a href="index.html?filename=3.1/features.html">
+KDevelop 3.1.x'in tüm özelliklerini</a> barýndýrmasýna ek olarak:<br>
+<ul>
+
+<li><b>Yeni üretilen kod tabaný</b>
+<ul>
+<li>KDevelop kod tabaný, kodun yeniden kullaným özelliðini ve Kdevelop'u meydana getiren sýnýflarýn temel kitaplýk dökümanlarýný geliþtirmek amacý ile yeniden oluþturuldu.
+Bu temel sýnýf formu yeni <em>KDevelop platformunu</em> tanýmlamakta ve <a href="HEAD/doc/platform/html/">
+iyi hazýrlanmýþ bir API dökümaný</a> sunmaktadýr</li>
+</ul>
+</li>
+
+<li><b>Yeni RAD (<em>H</em>ýzlý <em>U</em>ygulama <em>G</em>eliþtirme) araçlarý</b>
+<ul>
+<li>KDevDesigner entegrasyonu KDevelop içinden GUI hazýrlamaya imkan verir</li>
+<li>KDevAssistent entegrasyonu KDevelop içinden zengin döküman içeriðine eriþmeye imkan verir</li>
+<li>C++ sýnýf sihirbazý artýk sürekli geliþen sýnýf deposundaki sýnýflar için de kullanýlabilir. Örneðin; eðer
+Kod tamamlama veritabýný Qt için yapýlandýrýlmýþsa ozaman Qt sýnýflarýnýn alt sýnýflandýrýlmasý sihirbaz içinden yapýlabilmektedir</li>
+</ul>
+</li>
+
+<li><b>Ýleri ruby dil desteði</b>
+<ul>
+<li>Yeni ruby hata ayýklayýcýsý, qtruby/korundum ikilisine, hata ayýklama sýrasýnda Qt::Object özellikleri gibi metadata'larý gözlemlemek için geniþletilmiþ inceleme metodu ile birlikte entegre edilmiþtir</li>
+<li>Sýnýf gezgini, Qt ve DCOP signal'leri ve slot'larý, attr_accessor metodlarý ve türetilmiþ deðiþkenleri gösteren geniþletilmiþ bir parser (ayrýþtýrýcý)'a sahiptir</li>
+<li>KDE uygulama çatýsý, KConfig XT, DCOP sunucu ve sadece Qt tabanlý uygulamalar için yeni proje þablonlarý</li>
+<li>Qt designer/rbuic entegrasyonu</li>
+</ul>
+</li> 
+
+<li><b>Diðer geliþmeler ve hata onarýmlarý (bugfixes)</b>
+<ul>
+<li>Sürüm kontrol desteði yeniden oluþturuldu. KDevelop&nbsp;3.1'de iptal edilen bir çok entegrasyon özellikleri 3.2 ile yeniden hayata geçirilmekle beraber, daha geliþmiþ bir alt sürüm eklentiside eklendi.</li>
+<li>Geniþletilmiþ "dosyalarda ara", Ctags desteði ve geçmiþi inceleme ile daha fýzlý kod inceleme</li>
+<li>Daha fazla uygulama þablonu eklendi</li>
+<li>cmake tabanlý yeni C/C++ uygulamalarý ve kitaplýklarý þablonu</li>
+<li>scons tabanlý kde uygulamalarý için yeni þablon</li>
+<li>daha fazla detay için
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+deðiþiklikler listesi</a> sayfasýna bakýnýz</li>
+</ul>
+</li>
+
+</ul>
+
+KDevelop'un birçok özelliðine cvs'den otomatik olarak güncellenen :
+<a href="HEAD/doc/api/html/features.html">
+Doxygen tabanlý özellikler sayfasýndan</a> ulaþabilirsiniz
+(bu bilgiler KDevelop'un kaynak kodundan elde edilir).
+
+<?php module_tail();?>

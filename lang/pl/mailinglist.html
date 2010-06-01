@@ -1,0 +1,41 @@
+<?php
+$l_online_un_subscribe='Online un/subscribe';
+$l_Mailinglists='Listy Mailingowe:';
+$l_kdevelop_users='KDevelop';
+$l_kdevelop_devel='Rozwijanie KDevelop';
+$l_kdevelop_bugs='Zgłaszanie błędów KDevelop';
+$l_default_email='your emailaddress';
+$l_subscribe='Subscribe';
+$l_unsubscribe='Unsubscribe';
+$l_done='Zrobione!';
+
+require_once('inc/mailinglist.php');
+?>
+
+<?php module_head("Listy Mailingowe dla Użytkowników KDevelop")?>
+
+Od lutego 1999 posiadamy swoje listy mailingowe <b>(kdevelop at kdevelop.org)</b> do tej pory posiadamy około 600-700 subskrybentów.
+Ta lista służy do ogólnej dyskusji i tłumaczeń.
+  <blockquote>
+  Archiwum Listy Mailingowej: <A HREF="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop/">barney.cs.uni-potsdam.de</A>
+  </blockquote>
+Podziękowania dla Hanka Leiningera.<br>
+<br>
+
+<?php
+module_tail();
+module_head("Listy Mailingowe dla developerów KDevelop");
+?>
+
+<p>
+Posiadamy także dwie inne listy, lista <em>kdevelop-devel</em> dla developerów KDevelop jako takich,
+i lista <em>kdevelop-bugs</em> dla raportowania błędów z bugs.kde.org. Możesz się zapisać lub wypisać na te/z tych
+list(y) korzystając z formularza na początku tej strony.</p><p> Wiadomości z tych list można znaleść w
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-devel/">archiwum listy mailingowej kdevelop-devel</a>
+i
+<a href="http://barney.cs.uni-potsdam.de/mailman/private/kdevelop-bugs/">archiwum listy mailingowej kdevelop-bugs</a>.
+</p>
+
+<p>Istnieje także możliwość <a href="http://commitfilter.kde.org/">zapisania się do listy zgłoszeń SVN KDevelop</a>.
+
+<?php module_tail(); ?>

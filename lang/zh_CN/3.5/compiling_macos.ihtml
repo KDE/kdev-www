@@ -1,0 +1,18 @@
+<p>在 MacOSX/X11 上安装KDevelop，最简单的方法是通过<a href="http://fink.sourceforge.net/">Fink</a> 或者 <a href="http://darwinports.opendarwin.org/">Darwin Ports</a>安装<a href="index.html?filename=3.5/requirements.html">所有必要的软件</a>。
+之后，按照上面所述的步骤，并使用下面的选项编译KDevelop：
+</p>
+<dl>
+<dd class="code">
+CXXFLAGS="-DMACOSX" ./configure --prefix=$KDEDIR --with-db-includedir=$BERKELEY_DB_INCLUDE_DIR --with-db-libdir=$BERKELEY_DB_LIBRARY_DIR
+--without-arts --with-extra-includes=$FINK_OR_DARWINPORTS_INCLUDE_DIR --with-extra-libs=$FINK_OR_DARWINPORTS_LIBRARY_DIR
+--with-qt-includes=$QTDIR --with-qt-libs=$QTDIR --disable-ada --disable-pascal
+</dd>
+</dl>
+提示及示范：
+<ul>
+<li>-DMACOSX 编译器标志以及 --disable-ada --disable-pascal 是非常重要的。 通过它们，可以启用MacOS专用的代码，并且会禁用两个无法编译的插件。</li>
+<li>通常情况下，Fink的安装目录为/sw 或者 /usr/local; DarwingPorts 的安装目录为/opt/local 。</li>
+<li>通过DarwinPorts安装的Berkeley DB version 4.4，头文件将会被安装在 /opt/local/include/db44/ ，库文件将会被安装在/opt/local/lib/db44/ 。</li>
+<li>通过DarwinPorts安装的KDE将会被安装在/opt/local文件夹内。</li>
+<li>通过DarwinPorts安装的Qt将会被安装在/opt/local文件夹内。头文件将被安装在/opt/local/include/qt3/，库文件将被安装在/opt/local/lib/qt3/ 。</li>
+</ul>

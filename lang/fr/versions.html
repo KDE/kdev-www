@@ -1,0 +1,19 @@
+<?php module_head("Derni&egrave;res versions");?>
+<br>
+L'&eacute;quipe KDevelop produit plusieurs versions de KDevelop. Les voici,
+avec les versions courespondantes de KDE et Qt&nbsp;:
+<br><br>
+<table BORDER CELLPADDING="3">
+<tr>
+<th>version</th>
+<th>version requise du <a HREF="http://www.kde.org/mirrors/">paquetage KDE</a> "kdelibs"</th>
+<th>version requise de la <a href="http://www.trolltech.com/products/qt/">biblioth&egrave;que Qt</a></th>
+<th>date de sortie (AAAA/MM/JJ)</th>
+</tr>
+<?php include("versions.ihtml"); ?>
+</table>
+<br>
+<?php
+module_tail();
+return filemtime('versions.ihtml');
+?>

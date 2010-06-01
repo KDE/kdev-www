@@ -1,0 +1,353 @@
+<?php if (!isset($filename)) { header('HTTP/1.1 301 Moved Permanently'); header('Location: /index.html?filename=2.1/kdevelop.html'); } ?>
+<h2 align=center>本页主要提供KDevelop 2.x 系列的所有主要信息</h2>
+
+<?php module_head("General");?>
+开发已于2002年11月19日<b>中止</b>，最后一个版本是随KDE 3.0发布的KDevelop2.1.4，我们不打算再继续2.x系列的开发。
+KDevelop 2.1.5作为KDE 3.1用户的升级是一个例外，发布于2003年1月28日。开发转移到新的KDevelop&nbsp;3.0的代码基础上。
+80%以上的报告的KDevlop 2.x的缺陷
+<a href="http://bugs.kde.org/buglist.cgi?short_desc_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;product=kdevelop&amp;version=0.1&amp;version=0.2&amp;version=0.2.2&amp;version=1.0.2&amp;version=1.2&amp;version=1.4&amp;version=1.4-beta2&amp;version=1.4.1&amp;version=1.9.3b&amp;version=1.9.8&amp;version=2.0&amp;version=2.0.1&amp;version=2.0.2&amp;version=2.01&amp;version=2.0pre&amp;version=2.1&amp;version=2.1-beta&amp;version=2.1-beta2&amp;version=2.1-rc2&amp;version=2.1.1&amp;version=2.1.2&amp;version=2.1.3&amp;version=2.1.4&amp;version=2.1.5&amp;version=2.1_beta2&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2002-11-12&amp;chfieldto=Now&amp;order=Bug+Number&amp;cmdtype=doit">KDevelop&nbsp;3.0得到解决</a>。
+
+<h3>特性</h3>
+本页向您简介 <a href="index.html?filename=2.1/features.html">KDevelop&nbsp;2.x 的特性</a>。<br>
+
+<h3><a name="Requirements">依赖</a></h3>
+在您开始编译下载的最新的KDevelop版本之前，请确定您已经安装了下列应用程序。如果您使用较老的版本，您
+也许会碰到一些很奇怪的问题。
+<table border=0 cellspacing=2 cellpadding=2>
+  <tr>
+    <th class=header>程序/库</th>
+    <th class=header>源代码</th>
+  </tr>
+  <tr>
+    <td class=odd>KDE 2.2.2 或 KDE 3.0.x</td>
+    <td class=odd><a href="http://www.kde.org/">www.kde.org</a></td>
+  </tr>
+  <tr>
+    <td class=even>g++ &gt; 2.8/ egcs &gt; 1.0.3 (或兼容的编译器)</td>
+    <td class=even><a href="http://gcc.gnu.org/">gcc.gnu.org</a></td>
+  </tr>
+  <tr>
+    <td class=odd>GNU make</td>
+    <td class=odd><a href="http://www.gnu.org/software/make/">www.gnu.org/software/make</a></td>
+  </tr>
+  <tr>
+    <td class=even>perl 5.004</td>
+    <td class=even><a href="http://www.perl.com/">www.perl.com</a></td>
+  </tr>
+  <tr>
+    <td class=odd>autoconf 2.13</td>
+    <td class=odd><a href="http://www.gnu.org/software/autoconf/">www.gnu.org/software/autoconf</a></td>
+  </tr>
+  <tr>
+    <td class=even>automake 1.4</td>
+    <td class=even><a href="http://www.gnu.org/software/automake/">www.gnu.org/software/automake</a></td>
+  </tr>
+  <tr>
+    <td class=odd>flex 2.5.4</td>
+    <td class=odd><a href="http://www.gnu.org/software/flex/">www.gnu.org/software/flex</a></td>
+  </tr>
+</table>
+<br>
+以下的工具是可选的，这意味着KDevelop没有它们也可以正常工作。
+但会缺少某些特性，比如文档生成，多文件搜索。
+所以您也许需要确保您的系统安装了下列程序。
+<table border=0 cellspacing=2 cellpadding=2>
+  <tr>
+    <th class=header>程序/库</th>
+    <th class=header>源代码</th>
+  </tr>
+  <tr>
+    <td class=odd>sgmltools 1.0</td>
+    <td class=odd><a href="http://www.sgmltools.org/">www.sgmltools.org</a></td>
+  </tr>
+  <tr>
+    <td class=even>Glimpse 4.1</td>
+    <td class=even><a href="http://glimpse.cs.arizona.edu/">glimpse.cs.arizona.edu</a></td>
+  </tr>
+  <tr>
+    <td class=odd>kdoc</td>
+    <td class=odd><a href="http://www.kde.org/">www.kde.org</a></td>
+  </tr>
+  <tr>
+    <td class=even>a2ps 4.11</td>
+    <td class=even><a href="http://www.gnu.org/software/a2ps/">www.gnu.org/software/a2ps</a></td>
+  </tr>
+  <tr>
+    <td class=odd>enscript</td>
+    <td class=odd><a href="http://www.gnu.org/software/enscript/">www.gnu.org/software/enscript</a></td>
+  </tr>
+  <tr>
+    <td class=even>KDbg</td>
+    <td class=even><a href="http://members.nextra.at/johsixt//kdbg.html">members.nextra.at/johsixt//kdbg.html</a></td>
+    </tr>
+  <tr>
+    <td class=odd>gdb 5.0 (一个很好的内置编译器)</td>
+    <td class=odd><a href="http://www.gnu.org/software/gdb/">www.gnu.org/software/gdb</a></td>
+    </tr>
+  <tr>
+    <td class=even>KIconEdit</td>
+    <td class=even><a href="http://w1.1358.telia.com/~u135800018/prog.html">w1.1358.telia.com/~u135800018/prog.html</a></td>
+  </tr>
+  <tr>
+    <td class=odd>Gv, Ghostview 或 KGhostview</td>
+    <td class=odd><a href="http://www.gnu.org/software/ghostview/">www.gnu.org/software/ghostview</a></td>
+  </tr>
+  <tr>
+    <td class=even>cvs 1.10.6</td>
+    <td class=even><a href="http://www.cvshome.org/">www.cvshome.org</a></td>
+  </tr>
+  <tr>
+    <td class=odd>ctags 5.x</td>
+    <td class=odd><a href="http://ctags.sourceforge.net/">ctags.sourceforge.net</a></td>
+  </tr>
+  <tr>
+    <td class=even>Doxygen 1.x</td>
+    <td class=even><a href="http://www.doxygen.org/">www.doxygen.org</a></td>
+  </tr>
+  <tr>
+    <td class=odd>dot</td>
+    <td class=odd><a href="http://www.graphviz.org/">www.graphviz.org</a></td>
+  </tr>
+</table>
+<br>
+
+<h3><a name="Downloads">下载</a></h3>
+<br>
+KDevelop
+发布了多个版本的KDevelop。以下是2.x系列，
+和对应的KDE和Qt版本：
+<br><br>
+<center>
+<table BORDER CELLPADDING=2>
+  <tr>
+    <td><b>版本</b></td>
+    <td><b>所需的<A HREF="http://www.kde.org/mirrors/">KDE包</A> "kdelibs"</b></td>
+    <td><b>所需的 Qt 库的版本</b></td>
+  </tr>
+  <tr>
+    <td>KDevelop-2.1.5</td>
+    <td>KDE 3.1</td>
+    <td>Qt 3.1</td>
+  </tr>
+  <tr>
+    <td>KDevelop-2.1.4</td>
+    <td>KDE 2.2.2 或 KDE 3.0.x</td>
+    <td>Qt-2.3.1 或 Qt-3.0.3</td>
+  </tr>
+</table>
+</center>
+<br>
+<br><b>源代码</b>
+<br><a href="http://download.kde.org/download.php?url=stable/kdevelop-2.1.5/src">KDE-3.1下的KDevelop-2.1.5源代码</a>. <b>2.1.5版是为KDE-3.1提供的升级版</b>
+<br><a href="http://download.kde.org/download.php?url=Attic/3.0.5/src">KDE-3.0下的KDevelop-2.1.4源代码</a>
+<br><a href="http://download.kde.org/download.php?url=Attic/3.0.5/src">KDE-2.2下的KDevelop-2.1.4源代码</a>
+<br>
+<br><b>二进制发行包</b>
+<br><a href="ftp://ftp.kdevelop.org/pub/kdevelop/binaries">为不同的发行商提供的旧的KDevelop二进制包</a>
+<br>
+<br><b>KDevelop 2.x的C/C++参考</b>
+<br>
+<br><a href="2.1/doc/c_cpp_reference-2.0.2.tar.bz2">C/C++ 参考 (tar.bz2)</a>
+<br><a href="2.1/doc/c_cpp_reference-2.0.2.tar.gz">C/C++ 参考 (tar.gz)</a>
+
+
+<h3><a name="Installing">如何安装 KDevelop 2.1.5</a></h3>
+详细的指南可以在<a href="2.1/doc/HowToInstallKdevelopOnSuSE.txt">如何在Suse 8.2下安装KDevelop 2.1.5</a> (28KB .txt)找到。
+其中也包括如何安装C/C++参考。<br>
+<br>
+
+
+<h3><a name="Compiling">从CVS编译2.1.5版本</a></h3>
+要从cvs获得可以自行编译的KDevelop&nbsp;2.1.5，从
+:pserver:anonymous@anoncvs.kde.org:/home/kde
+获取CVS模块"kdevelop"，选择缺陷修复的CVS分支 KDE_2_2_BRANCH<br>
+如果您运行KDE&nbsp;3的话，您还需要
+从cvs.kde.org获取kde-common，来获得admin目录下的内容。<br>
+请注意不同的KDE&nbsp;3的版本需要不同的cvs分支 ：<br>
+<ul>
+  <li>KDE-3.0.x 需要 KDE_3_0_BRANCH,
+  <li>KDE-3.1.x 需要 KDE_3_1_BRANCH,
+  <li>只有cvs HEAD不需要kde-common的cvs标签,
+</ul>
+这也是为什么我们不使用 '-r tagName_seeAbove'选项的原因。<br>
+<br>
+如果您运行KDE 3，命令行为:<br>
+<pre>
+       $ mkdir kde3src
+       $ cd kde3src
+       $ cvs -z3 -d :pserver:anonymous@anoncvs.kde.org:/home/kde co -r tagName_seeAbove kde-common
+       $ cvs -z3 -d :pserver:anonymous@anoncvs.kde.org:/home/kde co -r KDE_2_2_BRANCH kdevelop
+       $ cd kdevelop
+       $ rm -rf admin
+       $ ln -s ../kde-common/admin admin
+</pre>
+<br>
+如果您运行KDE 2.2，命令行为:<br>
+<pre>
+       $ mkdir kde2src
+       $ cd kde2src
+       $ cvs -z3 -d :pserver:anonymous@anoncvs.kde.org:/home/kde co -r KDE_2_2_BRANCH kdevelop
+       $ cd kdevelop
+</pre>
+<br>
+要在您的系统编译和安装KDevelop (CVS版本)，<br>
+在KDevelop发行的基目录下输入下列命令：<br>
+<br>
+一个发行编译版本：
+<pre>
+       $ export KDEDIR=/where/your/kde2/or/kde3/is
+       $ export QTDIR=/where/qt-2.3.1/or/qt-3.0.x/is
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+       $ ./configure --prefix=$KDEDIR
+       $ make
+       $ make install (as root)
+</pre>
+<br>
+一个调试编译版本：
+<pre>
+       $ export KDEDIR=/where/your/kde2/or/kde3/is
+       $ export QTDIR=/where/qt-2.3.1/or/qt-3.0.x/is
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+
+       $ export CXXFLAGS="-g3 -O0"
+
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+       $ ./configure --enable-debug --prefix=$KDEDIR
+       $ make
+       $ make install (as root)
+</pre>
+<b>注意：</b>对于KDE 3您至少需要Qt &gt; 3.0.3 (最好是KDE的qt版本), 对于KDE 2.2.x您需要Qt 2.3.x<br>
+避免同时编译两个Qt版本，Qt2和Qt3!否则，KDevelop会启动 失败，产生一个莫名其妙的崩溃报告...<br><br>
+
+<h3><a name="Patches">插件和补丁</a></h3>
+由于多种原因(主要是稳定性), 一些大的补丁没有应用到现在的版本上。 但是它们提供了很大的改善，您可以在这里下载它们。<br>
+请记住这些是源代码补丁，所以您必须下载兼容的源代码包，打补丁并重新编译。<br>
+玩的开心...
+<table width="100%" border=0 cellspacing=2 cellpadding=2>
+  <tr>
+    <th class=header width="18%">名字/特性</th>
+    <th class=header width="15%">作者</th>
+    <th class=header width="15%">KDevelop 版本</th>
+    <th class=header>描述</th>
+  </tr>
+  <tr>
+    <td class=odd><a HREF="2.1/patches/classview.patch.gz">类解析器补丁 </a></td>
+    <td class=odd>August Hoerandl + joerg.pauly at psystems.org提供的缺陷修复</td>
+    <td class=odd>2.1和它的代码修复版 (2.1.x)</td>
+    <td class=odd>这个补丁将使得类解析器也解析基础库(Qt, KDE), 优点：更多的代码补全，对于基类提供更多的信息- 缺点：由于解析，启动需要更多的时间。</td>
+  </tr>
+  <tr>
+    <td class=even><a HREF="2.1/patches/ClassPropsByBrezel.tar.gz">类属性补丁</a></td>
+    <td class=even>Serge Lussier (即 Bretzel) + joerg.pauly at psystems.org提供的缺陷修复</td>
+    <td class=even>2.1和它的代码修复版 (2.1.x),但是仅适用于 KDE-3</td>
+    <td class=even>这个补丁应用于类属性对话框，Serge说它们不是缺陷修复，而是修改，所以不能用于KDevelop-2.1的缺陷修复版。</td>
+  </tr>
+  <tr>
+    <td class=odd><a HREF="2.1/patches/crossplatform.patch.tgz">
+      跨平台开发支持的提高+<br>
+      消息处理,断点和监视窗口(对KDE/QT-3.0.x很重要) 的补丁</a></td>
+    <td class=odd>Iztok (I (in) siol .. net)</td>
+    <td class=odd>2.1和它的代码修复版 (2.1.x),但是仅适用于 KDE-3</td>
+    <td class=odd>原始的KDevelop-2.1.5 (KDE_2_2_BRANCH)在C++控制台项目的编译配置不能很好的完成任务。编译不能在正确的子目录下进行，无法删除编译的配置，更没有办法对编译进行调试。本补丁解决了这个问题。我现在继续维护和开发大量的面向ix86 和arm处理器的项目。这个补丁至少已经稳定的工作了半年。配置Options-&gt;KDevelop Setup-&gt;Compiler指向正确的编译器路径。我必须承认，和KDevelop3相比，我更加喜欢KDevelop2的编译配置，因为它将编译器的信息和项目设置分开，可以在主机配置中切换。
+    </td>
+  </tr>
+  <tr>
+    <td class=even><a HREF="2.1/patches/kdevelop-2.1.5-diff-2004-03-03-16-06-51.tgz">
+      跨平台开发支持的提高+<br>
+      消息处理,断点和监视窗口(对KDE/QT-3.0.x很重要) +<br>
+      与KDevelop3数据资源分离的补丁</a></td>
+    <td class=even>Iztok (I (in) siol .. net)</td>
+    <td class=even>2.1和它的代码修复版 (2.1.x),但是仅适用于 KDE-3</td>
+    <td class=even>自从Gideon (KDevelop3)改名为 KDevelop，它的数据资源和KDevelop2的会发生冲突。本补丁解决了下列的问题:<br>
+      <ul>
+        <li>kdevelop二进制执行文件重命名为kdevelop2</li>
+        <li><a href="2.1/patches/kdevelop2.desktop">kdevelop2.desktop</a> 和 <a href="2.1/patches/kdevelop2-setup.desktop">kdevelop2-setup.desktop</a> 文件加入到kdevelop/ 目录</li>
+        <li>$KDEDIR/share/..../kdevelop 目录重命名为kdevelop2</li>
+        <li>$HOME/.kde/share/..../kdevelop 目录重命名为kdevelop2</li>
+        <li>修改基代码，使得kdevelop2在正确的目录下搜索它的数据资源</li>
+        <li>采用正确的admin目录，KDevelop2可以用KDE_3_1_BRANCH和KDE_3_2_BRANCH干净的编译</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<h3>变动日志</h3>
+本页给您<a href="index.html?filename=2.1/changes.html">KDevelop&nbsp;2.x 变动日志</a>.<br>
+
+<h3><a name="Bugs">已知的缺陷</a></h3>
+由于这个发行系列的开发已经终止，现在还有大概124个已知的，但还没有修复的缺陷。
+超过百分之八十的缺陷(超过100个)已经<a href="http://bugs.kde.org/buglist.cgi?short_desc_type=allwordssubstr&amp;long_desc_type=allwordssubstr&amp;product=kdevelop&amp;version=0.1&amp;version=0.2&amp;version=0.2.2&amp;version=1.0.2&amp;version=1.2&amp;version=1.4&amp;version=1.4-beta2&amp;version=1.4.1&amp;version=1.9.3b&amp;version=1.9.8&amp;version=2.0&amp;version=2.0.1&amp;version=2.0.2&amp;version=2.01&amp;version=2.0pre&amp;version=2.1&amp;version=2.1-beta&amp;version=2.1-beta2&amp;version=2.1-rc2&amp;version=2.1.1&amp;version=2.1.2&amp;version=2.1.3&amp;version=2.1.4&amp;version=2.1.5&amp;version=2.1_beta2&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2002-11-12&amp;chfieldto=Now&amp;order=Bug+Number&amp;cmdtype=doit">在KDevelop 3.0中得到解决</a>。
+所以请考虑使用3.0版本。
+<?php module_tail();?>
+
+<?php module_head("Documentation");?>
+      <h3>用户手册</h3>
+      <a href="1.3/doc/manual/index.html">KDevelop的用户手册</a> - Unix系统KDevelop集成开发环境参考手册 1.1版 (实际上它是旧的KDevelop 1.x 手册)<br>
+      <h3><a name="Tutorials">入门</a></h3>
+      <table border=0 cellspacing=2 cellpadding=2>
+        <tr>
+          <td class=even><a href="1.3/doc/index.html">欢迎使用KDevelop</a></td>
+          <td class=even>KDevelop 1.x欢迎和介绍</td>
+        </tr>
+        <tr>
+          <td class=odd><a href="1.3/doc/programming/index.html">KDevelop 编程手册</a></td>
+          <td class=odd>使用KDevelop IDE为KDE开发C++应用程序用户手册，1.0版<br>实际上它是旧的KDevelop 1.x 手册。</td>
+        </tr>
+        <tr>
+          <td class=even><a href="1.3/doc/tutorial/index.html">KDE应用入门</a></td>
+          <td class=even>KDevelop集成开发环境的KDE应用指南手册<br>它是为KDE-1.x和KDE-2.x准备的</td>
+        </tr>
+        <tr>
+          <td class=odd><a href="1.3/doc/kde_libref/index.html">KDE库参考指南</a></td>
+          <td class=odd>本指南用于K桌面环境 (KDE)的 C++程序设计。<br>它是为KDE-1.x准备的</td>
+        </tr>
+        <tr>
+          <td class=even><a href="http://arfa.komnas.com/~jeffry_johar/linuxlaht1/t1.html">linuxlah KDevelop 和 QT Designer 入门 第1部</a></td>
+          <td class=even>一个很好的KDevelop 2.1的入门</td>
+        </tr>
+        <tr>
+          <td class=odd><a HREF="http://www.caldera.com/skunkware/kde/kdevelop_tutorial/">Kdevelop绝对新手入门 </a></td>
+          <td class=odd>Petr Sorfa提供的很酷的入门 (英文版)</td>
+        </tr>
+        <tr>
+          <td class=even><a HREF="http://www.kde.gr.jp/~kom/kdetut2/kdetut_ja.html">Kdevelop绝对新手入门</a></td>
+          <td class=even>Petr Sorfa提供的很酷的入门 (日文版)</td>
+        </tr>
+        <tr>
+          <td class=odd><a HREF="http://www.geekcomix.com/snh/files/docs/sdl-kdev/sdl-kdev-mini-how2.html">在KDevelop中使用SDL</a></td>
+          <td class=odd>SDL文档和Howto</td>
+        </tr>
+      </table>
+
+      <h3>常问问题</h3>
+      本页给您<a href="index.html?filename=2.1/faq.html">KDevelop&nbsp;2.x常问问题的答案</a>。<br>
+<?php module_tail();?>
+
+<?php module_head("Presentations and Graphics");?>
+      <a href="index.html?filename=2.1/announce-kdevelop-2.0.html">公告</a><br>
+      <a href="index.html?filename=2.1/screenshots1.html">截屏1</a>,
+      <a href="index.html?filename=2.1/screenshots2.html">截屏2</a>,
+      <a href="index.html?filename=2.1/screenshots3.html">截屏3</a><br>
+      <a href="index.html?filename=in_the_press.html">报导</a><br>
+      <a href="index.html?filename=awards.html">奖项</a><br>
+      <a href="index.html?filename=logos_banners.html">图标和旗标</a><br>
+      <a href="index.html?filename=splashscreens.html">溅屏</a><br>
+      <a href="index.html?filename=events.html">事件</a><br>
+<?php module_tail();?>
+
+<?php module_head("Development");?>
+      <a href="http://websvn.kde.org/branches/KDE/2.2/kdevelop/">Web CVS</a>, 在CVS仓库中浏览代码<br>
+<?php module_tail();?>
+
+<?php module_head("Misc");?>
+      <a href="index.html?filename=2.1/authors.html">感谢</a>, 作者。<br>
+      <a href="index.html?filename=license.html">许可证</a>, GNU 许可证。<br>
+<?php module_tail();?>

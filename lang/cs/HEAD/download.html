@@ -1,0 +1,33 @@
+<?php module_head("Stažení KDevelop HEAD");?>
+<br><h3>Zdrojáky pro KDE &gt;= <?php echo $k_min_required_kde_version; ?> :</h3>
+<a href="http://download.kde.org/download.php?url=unstable/snapshots/kdevelop.tar.bz2">Nejnovější vyvojový, tedy <b>nestabilní</b>, archiv (tar.bz2)</a><br>
+<br>
+<ol>
+<li>Před pokračováním prosím zkontrolujte, zda máte nainstalovány
+<a href="index.html?filename=HEAD/requirements.html">požadované</a> programy.
+</li>
+<br>
+<li>Stáhnout zdrojový tar.bz2 soubor.
+</li>
+<br>
+<li>Dekomprimovat zdrojový soubor a změnit pracovní adresář:
+<dl>
+<dd class="code">$ bunzip2 kdevelop.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop.tar</dd>
+<dd class="code">$ cd kdevelop</dd>
+</dl>
+</li>
+</ol>
+<?php include_file("HEAD/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+if ($lang == 'en') {
+  $ts3 = filemtime("$k_base_version/download.html");
+  $ts4 = filemtime("$k_base_version/compiling.ihtml");
+} else {
+  $ts3 = file_exists("lang/$lang/$k_base_version/download.html")?filemtime("lang/$lang/$k_base_version/download.html"):filemtime("$k_base_version/download.html");
+  $ts4 = file_exists("lang/$lang/$k_base_version/compiling.ihtml")?filemtime("lang/$lang/$k_base_version/compiling.ihtml"):filemtime("$k_base_version/compiling.ihtml");    
+}
+return (max($ts3,$ts4));
+?>

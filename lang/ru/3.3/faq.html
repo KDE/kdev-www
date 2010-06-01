@@ -1,0 +1,518 @@
+<?php module_head("KDevelop $k_series_version F.A.Q. (Вопросы и ответы)");?>
+<!--
+<p><i>Перевод на русский: Evgeniy Ivanov &lt;green-lord на mail точка development/ru&gt;</i>
+<br><i>Редактирование перевода: Nick Shaforostoff &lt;shafff на ukr точка net&gt;</i></p>
+-->
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Содержание</h2></div>
+<ul>
+<li><a href="#.D0.A0.D0.B0.D0.B1.D0.BE.D1.82.D0.B0_.D1.81_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D0.BC.D0.B8">1 Работа с файлами</a>
+<ul>
+<li><a href="#.D0.93.D0.B4.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82.D1.81.D1.8F_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_Automake_.D0.B2_KDevelop.3F">1.1 Где находится менеджер Automake в KDevelop?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D1.82.D1.8C_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B5.3F">1.2 Как создавать новые файлы в проекте?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.83.D0.B4.D0.B0.D0.BB.D1.8F.D1.82.D1.8C_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.B8.D0.B7_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B0.3F">1.3 Как удалять файлы из проекта?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D1.81.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F">1.4 Как добавить существующие файлы в проект?</a></li>
+</ul>
+</li>
+<li><a href="#.D0.A0.D0.B0.D0.B1.D0.BE.D1.82.D0.B0_.D1.81_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B0.D0.BC.D0.B8">2 Работа с проектами</a>
+<ul>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.BA.D0.BE.D0.BD.D0.B2.D0.B5.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D0.BC.D0.BE.D0.B9_VC.2B.2B_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F">2.1 Как конвертировать мой VC++ проект?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.81.D1.82.D1.8C.D1.8E_.D0.BF.D1.83.D1.81.D1.82.D0.BE.D0.B9_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F">2.2 Как создать полностью пустой проект?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D0.BE.D0.B9_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D1.81_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D0.BC.D0.B8_Makefile.2C_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B6.D0.B4.D0.B0.D1.8E.D1.89.D0.B8.D0.BC.D0.B8.D1.81.D1.8F_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.28Custom_Makefiles_Project.29.3F">2.3 Как создать простой проект с файлами Makefile, сопровождающимися вручную (Custom Makefiles Project)?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D0.BE.D0.B9_Automake_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D1.81_.D0.B8.D0.B5.D1.80.D0.B0.D1.80.D1.85.D0.B8.D0.B5.D0.B9_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.3F">2.4 Как создать простой Automake проект с иерархией каталогов?</a></li>
+<li><a href="#.D0.94.D0.BB.D1.8F_.D1.87.D0.B5.D0.B3.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BD.D0.B0.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D1.8B_.22.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B8.22_.28.22build_configurations.22.29.3F">2.5 Для чего предназначены "конфигурации сборки" ("build configurations")?</a></li>
+<li><a href="#.D0.A7.D1.82.D0.BE_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.2C_.D0.B5.D1.81.D0.BB.D0.B8_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.BD.D0.BE_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B0.2F.D0.BE.D1.82_.D1.86.D0.B5.D0.BB.D0.B8_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E.3F">2.6 Что делать, если проект не собирается повторно после переключения на/от цели по умолчанию?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.B4.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F">2.7 Как добавить подпроект?</a></li>
+<li><a href="#.D0.A7.D1.82.D0.BE_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.2C_.D0.B5.D1.81.D0.BB.D0.B8_automake_.D0.B8_.D0.B4.D1.80._.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81.D0.BE_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B0.D0.BC.D0.B8.3F">2.8 Что делать, если automake и др. завершается со странными ошибками?</a></li>
+<li><a href="#.D0.A3_.D0.BC.D0.B5.D0.BD.D1.8F_.D0.BF.D0.BE.D1.8F.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.22Wrong_autoconf_version.22_.D0.B8.D0.BB.D0.B8_.D0.BF.D0.BE.D1.85.D0.BE.D0.B6.D0.B5.D0.B5._.D0.A7.D1.82.D0.BE_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.3F">2.9 У меня появляется сообщение "Wrong autoconf version" или похожее. Что делать?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D0.B8.D1.81.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_.D0.B4.D0.BB.D1.8F_Qt4_.D0.B2_KDevelop-3.4.x.3F">2.10 Как можно писать программы для Qt4 в KDevelop-3.4.x?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D0.B8.D1.81.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_.D0.B4.D0.BB.D1.8F_Qt4_.D0.B2_KDevelop-3.3.x.3F">2.11 Как можно писать программы для Qt4 в KDevelop-3.3.x?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_SCons_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B5.3F">2.12 Как можно использовать SCons в проекте?</a></li>
+</ul>
+</li>
+<li><a href="#.D0.91.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8">3 Библиотеки</a>
+<ul>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.B4.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D1.83.D1.8E_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D1.83_.28.so.29.3F">3.1 Как создать динамическую библиотеку (.so)?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D1.83.D1.8E_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D1.83_.28.a.29.3F">3.2 Как создать статическую библиотеку (.a)?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D1.83_.la_.28.22.D0.B0.D1.80.D1.85.D0.B8.D0.B2_libtool.22.29.3F">3.3 Как создать библиотеку .la ("архив libtool")?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B9_.D0.BF.D1.83.D1.82.D1.8C_.D0.BA_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D1.87.D0.BD.D1.8B.D0.BC_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D0.BC.3F">3.4 Как добавить в проект внешний путь к заголовочным файлам?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81_.D0.B4.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.28.so.29.3F">3.5 Как связать программу с динамической библиотекой (.so)?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81.D0.BE_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.28.a.29.3F">3.6 Как связать программу со статической библиотекой (.a)?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.2A.la.3F">3.7 Как связать программу с библиотекой *.la?</a></li>
+</ul>
+</li>
+<li><a href="#.D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0">4 Отладка</a>
+<ul>
+<li><a href="#.D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F:_.D0.9A.D0.B0.D0.BA_.D1.81.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.2C_.D1.87.D1.82.D0.BE.D0.B1.D1.8B_.D0.BF.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D0.BB.D0.B0.D1.81.D1.8C_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.2C_.D0.B4.D0.BB.D1.8F_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85.3F">4.1 Отладка консольного приложения: Как сделать, чтобы показывалась консоль, для ввода данных?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.BE.D1.82.D0.BB.D0.B0.D0.B6.D0.B8.D0.B2.D0.B0.D1.82.D1.8C_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D0.BD.D1.8F.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BE.D0.B1.D1.8A.D0.B5.D0.BA.D1.82.D1.8B_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.22.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D1.81.D1.86.D0.B5.D0.BD.D0.B0.D1.80.D0.B8.D0.B5.D0.B2-.D0.BF.D0.BE.D1.81.D1.80.D0.B5.D0.B4.D0.BD.D0.B8.D0.BA.D0.BE.D0.B2.22_libtool.3F">4.2 Как отлаживать исполняемые объекты с помощью "временных сценариев-посредников" libtool?</a></li>
+</ul>
+</li>
+<li><a href="#.D0.90.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.B4.D0.B0">5 Автодополнение кода</a>
+<ul>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B0.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.B4.D0.B0.3F">5.1 Как включить автодополнение кода?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.B8.D1.82.D1.8C_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.82.D0.BE.D1.80_.D0.BE.D0.B1_.D0.BE.D0.B1.D1.8A.D1.8F.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B8_.D0.BC.D0.B0.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.A1.2F.D0.A1.2B.2B.3F">5.2 Как уведомить анализатор об объявлении макрокоманды для С/С++?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B0.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BB.D1.8F_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D1.85_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.3F">5.3 Как включить автодополнение для внешних библиотек?</a></li>
+<li><a href="#.D0.90.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.B4.D0.B0_.D0.BF.D0.BE-.D0.BF.D1.80.D0.B5.D0.B6.D0.BD.D0.B5.D0.BC.D1.83_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82">5.4 Автодополнение кода по-прежнему не работает</a></li>
+<li><a href="#.D0.9F.D0.BE.D1.87.D0.B5.D0.BC.D1.83_.D1.85.D1.80.D0.B0.D0.BD.D0.B8.D0.BB.D0.B8.D1.89.D0.B5_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_Qt4_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.B4.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2.3F">5.5 Почему хранилище классов Qt4 не работает для всех классов?</a></li>
+</ul>
+</li>
+<li><a href="#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_KDevelop">6 Установка KDevelop</a>
+<ul>
+<li><a href="#.D0.A1.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8_.D0.B7.D0.B0.D0.BD.D0.B8.D0.BC.D0.B0.D0.B5.D1.82_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F_kdevelop.3F">6.1 Сколько времени занимает компиляция kdevelop?</a></li>
+<li><a href="#.D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.B2.D1.8B.D0.B4.D0.B0.D1.91.D1.82_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D1.83_.22couldn.27t_create_a_language_plugin_.28.D0.BD.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.8F.D0.B7.D1.8B.D0.BA.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F.29.22._.D0.A7.D1.82.D0.BE_.D0.BD.D0.B5_.D1.82.D0.B0.D0.BA.3F">6.2 Система выдат ошибку "couldn't create a language plugin (не удалось создать языкового модуля)". Что не так?</a></li>
+<li><a href="#.D0.AF_.D0.BF.D0.BE.D0.BB.D1.83.D1.87.D0.B0.D1.8E_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.22error:_qassistantclient.h:_No_such_file_or_directory.22._.D0.9A.D0.B0.D0.BA_.D0.B5.D0.B3.D0.BE_.D1.83.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.82.D1.8C.3F">6.3 Я получаю сообщение об ошибке "error: qassistantclient.h: No such file or directory". Как его устранить?</a></li>
+</ul>
+</li>
+<li><a href="#.D0.9B.D0.B8.D1.86.D0.B5.D0.BD.D0.B7.D0.B8.D0.B8">7 Лицензии</a>
+<ul>
+<li><a href="#.D0.9C.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BB.D0.B8_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BA.D0.BE.D0.BC.D0.BC.D0.B5.D1.80.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.2C_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_KDevelop.3F">7.1 Можно ли разрабатывать коммерческие приложения, используя KDevelop?</a></li>
+<li><a href="#.D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.BE_.D0.BB.D0.B8_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D1.82.D1.8C_.D0.BA.D0.BE.D0.BC.D0.BC.D0.B5.D1.80.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B8_.D0.B4.D0.BB.D1.8F_KDevelop.3F">7.2 Разрешено ли создавать коммерческие модули для KDevelop?</a></li>
+</ul>
+</li>
+<li><a href="#.D0.9F.D1.80.D0.BE.D1.87.D0.B5.D0.B5">8 Прочее</a>
+<ul>
+<li><a href="#.D0.AF_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D1.8E_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2C_.D0.BD.D1.83.D0.B6.D0.B4.D0.B0.D1.8E.D1.89.D0.B5.D0.B5.D1.81.D1.8F_.D0.B2_.D0.BE.D0.B1.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B5_.D0.B8.D1.81.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B9._.D0.9A.D0.B0.D0.BA_.D0.BC.D0.BD.D0.B5_.D1.8D.D1.82.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C.3F">8.1 Я разрабатываю приложение, нуждающееся в обработке исключений. Как мне это реализовать?</a></li>
+<li><a href="#.D0.92_configure.in.in_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D0.B2.D1.8B.D0.B7.D0.BE.D0.B2_AC_CHECK_COMPILERS.28.29._.D0.9A.D1.83.D0.B4.D0.B0_.D1.81.D0.BB.D0.B5.D0.B4.D1.83.D0.B5.D1.82_.D0.BF.D0.BE.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D1.82.D1.8C_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22.2C_.D1.83.D0.BF.D0.BE.D0.BC.D1.8F.D0.BD.D1.83.D1.82.D1.8B.D0.B9_.D0.B2.D1.8B.D1.88.D0.B5.3F">8.2 В configure.in.in отсутствует вызов AC_CHECK_COMPILERS(). Куда следует поместить CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS", упомянутый выше?</a></li>
+<li><a href="#.D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D0.BB.D0.B8_HOWTO_.D0.BF.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5_.D1.81_.D0.BE.D0.BA.D0.BD.D0.B0.D0.BC.D0.B8.2C_.D0.B3.D0.B5.D0.BD.D0.B5.D1.80.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D1.8B.D0.BC.D0.B8_QT_designer.3F">8.3 Существует ли HOWTO по работе с окнами, генерируемыми QT designer?</a></li>
+<li><a href="#.D0.9F.D0.BE.D1.87.D0.B5.D0.BC.D1.83_.D0.BD.D0.B5_.D0.B2.D0.B8.D0.B4.D0.BD.D0.BE_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_.D0.BF.D1.80.D0.B8_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D0.B8.3F">8.4 Почему не видно ошибок при компиляции?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B2.D0.BE.D0.B4_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_KDE.3F">8.5 Как добавить перевод для программы KDE?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D0.B7.D0.BD.D0.B0.D1.87.D0.BA.D0.B8.3F">8.6 Как добавить в проект значки?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8C_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_SVN.3F">8.7 Как использовать модуль поддержки SVN?</a></li>
+<li><a href="#.D0.9A.D0.B0.D0.BA_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D1.8B_.28.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.BA.D1.80.D0.BE.D1.81.D1.81-.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D1.8B.29">8.8 Как использовать различные компиляторы (системные или кросс-компиляторы)</a></li>
+<li><a href="#.D0.A0.D0.B0.D0.B1.D0.BE.D1.82.D0.B0_.D1.81_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.BE.D0.B2_.28.D0.BF.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.B8.29_Clearcase_.D0.B2_KDE">8.9 Работа с системой видов (представлениями информации) Clearcase в KDE</a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name=".D0.A0.D0.B0.D0.B1.D0.BE.D1.82.D0.B0_.D1.81_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D0.BC.D0.B8"></a><h2>Работа с файлами</h2>
+<a name=".D0.93.D0.B4.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82.D1.81.D1.8F_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_Automake_.D0.B2_KDevelop.3F"></a><h3>Где находится менеджер Automake в KDevelop?</h3>
+<p>Откройте вкладку в правой части окна KDevelop.
+<a href="mediawiki/index.php/Image:Automake_manager.png" title="Image:Automake_manager.png"><img src="mediawiki/images/8/8e/Automake_manager.png" alt="Image:Automake_manager.png" width="216" height="427" longdesc="mediawiki/index.php/Image:Automake_manager.png"></a>
+</p><p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D1.82.D1.8C_.D0.BD.D0.BE.D0.B2.D1.8B.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B5.3F"></a><h3>Как создавать новые файлы в проекте?</h3>
+<p>Выберите подпроект в верхней части области менеджера Automake, затем щлкните правой кнопкой мыши в нижней части на названии группы, в которую требуется добавить файлы и выберите Создать новый Файл...
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.83.D0.B4.D0.B0.D0.BB.D1.8F.D1.82.D1.8C_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.B8.D0.B7_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B0.3F"></a><h3>Как удалять файлы из проекта?</h3>
+<p>Выберите подпроект в верхней части области менеджера Automake, затем в нижней части окна откройте список файлов группы с ненужным файлом, затем щлкните правой кнопкой мыши на файле и выберите Удалить... 
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D1.81.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B8.D0.B5_.D1.84.D0.B0.D0.B9.D0.BB.D1.8B_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F"></a><h3>Как добавить существующие файлы в проект?</h3>
+<p>Способ добавления в проект уже существующих файлов зависит используемой системы сборки, но в любом случае добавляемые файлы необходимо предварительно поместить в каталог <code>src/</code> проекта KDevelop.
+</p><p>Затем:
+</p>
+<ul><li>Если проект использует Automake (смотрите: <a href="#.D0.93.D0.B4.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82.D1.81.D1.8F_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_Automake_.D0.B2_KDevelop.3F" title="FAQ">FAQ#Где находится менеджер Automake в KDevelop?</a>), то добавить существующие файлы можно просто выбрав подпроект в верхней части менеджера Automake и группу, в которую нужно добавить файлы, в нижней, а затем щёлкнув правой кнопкой мыши и выбрав в контекстном меню <a href="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html">"Добавить существующие файлы..."</a>
+</li><li>Если проект использует Qmake, действия по добавлению файлов в проект аналогичны действиям для Automake.
+</li><li>Если для сборки проекта используются файлы Makefile, создаваемые вручную, то для добавления файлов в проект требуется самостоятельная правка файлов Makefile.
+</li></ul>
+<p><br>
+</p>
+<a name=".D0.A0.D0.B0.D0.B1.D0.BE.D1.82.D0.B0_.D1.81_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B0.D0.BC.D0.B8"></a><h2>Работа с проектами</h2>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.BA.D0.BE.D0.BD.D0.B2.D0.B5.D1.80.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D0.BC.D0.BE.D0.B9_VC.2B.2B_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F"></a><h3>Как конвертировать мой VC++ проект?</h3>
+<p>KDevelop не предоставляет возможности автоматического импорта проектов VC++. Однако, вы можете конвертировать проект, создав новый проект KDevelop на основе шаблонов Мастера новых проектов, таких как шаблон <i>C++-&gt;Простая программа Hello world</i>. Затем скопируйте исходные файлы (*.cpp и *.h) из проекта VC++ в папку <code>src/</code> нового проекта Automake. Наконец, проследуйте приведенным выше инструкциям по добавлению существующих файлов в проект.
+</p><p>Частичным решением проблемы может стать использование скрипта <code>dsw2make</code>. Ему передатся на вход файл проекта VC++ (*.dsw) и сопутствующие ему файлы dsp, после чего он создат Makefile для каждого из них. Хотя это работает, могут возникать некоторые несоответствия, обычно связанные с путями в файловых системах, регистром и концами строк (CR/LF). Для решение последней прооблемы используйте приложения наподобие <code>dos2unix</code> или <code>d2u</code>. Теперь вы должны иметь обычный проект, основанный на наборе файлов Makefile. Импортируйте проект, как уже существующий проект.
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.BF.D0.BE.D0.BB.D0.BD.D0.BE.D1.81.D1.82.D1.8C.D1.8E_.D0.BF.D1.83.D1.81.D1.82.D0.BE.D0.B9_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F"></a><h3>Как создать полностью пустой проект?</h3>
+<ul><li>Выберите <i>Проект-&gt;Новый проект...-&gt;C++-&gt;Простая программа Hello world</i> и далее в мастере
+</li><li><a href="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html">Удалите из проекта единственную цель сборки</a>
+</li><li>Отметьте <i>Удалить также исходные файлы</i> в появившемся диалоге
+</li></ul>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D0.BE.D0.B9_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D1.81_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D0.BC.D0.B8_Makefile.2C_.D1.81.D0.BE.D0.BF.D1.80.D0.BE.D0.B2.D0.BE.D0.B6.D0.B4.D0.B0.D1.8E.D1.89.D0.B8.D0.BC.D0.B8.D1.81.D1.8F_.D0.B2.D1.80.D1.83.D1.87.D0.BD.D1.83.D1.8E_.28Custom_Makefiles_Project.29.3F"></a><h3>Как создать простой проект с файлами Makefile, сопровождающимися вручную (Custom Makefiles Project)?</h3>
+<p>Создание простого проекта. Нет прямого пути, чтобы создать простой проект (использующий собственные Makefile). Вместо этого используйте <i>Проект-&gt;Импортировать существующий проект</i>. Не забудьте выставить соответствующий Тип проекта "Custom Makefiles" в диалоге. Всегда, создавая новый проект, не забывайте делать ревизию настроек в <i>Проект-&gt;Параметры проекта...</i>
+</p><p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D1.81.D1.82.D0.BE.D0.B9_Automake_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D1.81_.D0.B8.D0.B5.D1.80.D0.B0.D1.80.D1.85.D0.B8.D0.B5.D0.B9_.D0.BA.D0.B0.D1.82.D0.B0.D0.BB.D0.BE.D0.B3.D0.BE.D0.B2.3F"></a><h3>Как создать простой Automake проект с иерархией каталогов?</h3>
+<p>В проекте с иерархией каталогов каждая папка содержит группы cpp/h файлов, которые должны быть собраны в один исполняемый двоичный файл.
+</p><p><br>
+</p>
+<pre>Пример иерархии:
+  src
+  src/gui
+  src/gui/components
+  src/logic
+  src/logic/algorithms
+  src/logic/sublogic
+</pre>
+<p>Это можно сделать, используя вспомогательные библиотеки. Файлы каждой поддиректории будут компилироваться и компоноваться в архивы libtool, после чего они будут компоноваться в единый исполняемый файл и связываться с используемыми общими библиотеками.
+</p>
+<ul><li><b>Шаг 1</b>: 
+<ul><li>В менеджере Automake добавьте подпроект для каждой подпапки:
+</li><li>Automake Manager -&gt; [щелчок правой кнопкой мыши на папке] -&gt; Добавить подпроект
+</li></ul>
+</li></ul>
+<ul><li><b>Шаг 2</b>:
+<ul><li>Добавьте цель Libtool в каждом подпроекте и свяжите е с .cpp файлами в соответствующем подкаталоге:
+<ul><li> Automake Manager -&gt; [щелчок правой кнопкой мыши на папке] -&gt; Добавить цель...
+</li><li> Первичная: Библиотека Libtool
+</li><li> Префикс: noinst
+</li><li> Имя файла: &lt;имя файла&gt;.la
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Шаг 3</b>: 
+<ul><li>Добавьте архивы в исполняемый файл
+<ul><li>Automake Manager -&gt; [щелчок правой кнопкой мыши на исполняемом файле] -&gt; Параметры -&gt; Библиотеки
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Шаг 4</b>: 
+<ul><li>Добавьте зависимости для каждого подпроекта
+</li><li>Если "labalgo.la" зависит от классов в "libbase.la":
+<ul><li>Automake Manager -&gt; [щелчок правой кнопкой мыши на libalgo] -&gt; Параметры -&gt; Библиотеки (отметьте флажок рядом с libbase.la) 
+</li></ul>
+</li></ul>
+</li></ul>
+<pre>Пример:
+ src/logic/base [libbase.la]
+ src/logic/algorithm [libalgo.la]
+</pre>
+<p><b>Примечание</b>: Если вы забыли указать зависимости, добавьте их зависимости, выполните make clean для подпроекта и перекомпилируйте весь проект (F8).
+</p><p><br>
+</p>
+<a name=".D0.94.D0.BB.D1.8F_.D1.87.D0.B5.D0.B3.D0.BE_.D0.BF.D1.80.D0.B5.D0.B4.D0.BD.D0.B0.D0.B7.D0.BD.D0.B0.D1.87.D0.B5.D0.BD.D1.8B_.22.D0.BA.D0.BE.D0.BD.D1.84.D0.B8.D0.B3.D1.83.D1.80.D0.B0.D1.86.D0.B8.D0.B8_.D1.81.D0.B1.D0.BE.D1.80.D0.BA.D0.B8.22_.28.22build_configurations.22.29.3F"></a><h3>Для чего предназначены "конфигурации сборки" ("build configurations")?</h3>
+<ul><li><b>debug</b>:
+<ul><li>для объектных и исполняемых файлов создатся отдельная папка debug
+</li><li>ключи компилятора -g3 -O0 включают отладочную информацию в объектные файлы и отключают оптимизацию
+</li></ul>
+</li><li><b>optimized</b>:
+<ul><li>для объектных и исполняемых файлов создатся отдельная папка "optimized"
+</li><li>Ключи -O2 -g0 включают оптимизацию и выключают добавление отладочной информации
+</li></ul>
+</li><li><b>default</b>:
+<ul><li>Не устанавливаются никакие дополнительные ключи компилятора и каталоги сборки 
+</li><li>Библиотеки и бинарные файлы будут находится среди исходных файлов
+</li><li><b>Важно!</b> Не используйте "default"(конфигурацию по умолчанию) одновременно с "debug" и "optimized". "debug" и "optimized" могут использоваться совместно без проблем, так как для них используются различные папки сборки.
+</li></ul>
+</li></ul>
+<a name=".D0.A7.D1.82.D0.BE_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.2C_.D0.B5.D1.81.D0.BB.D0.B8_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D0.BD.D0.B5_.D1.81.D0.BE.D0.B1.D0.B8.D1.80.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D0.BF.D0.BE.D0.B2.D1.82.D0.BE.D1.80.D0.BD.D0.BE_.D0.BF.D0.BE.D1.81.D0.BB.D0.B5_.D0.BF.D0.B5.D1.80.D0.B5.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D1.8F_.D0.BD.D0.B0.2F.D0.BE.D1.82_.D1.86.D0.B5.D0.BB.D0.B8_.D0.BF.D0.BE_.D1.83.D0.BC.D0.BE.D0.BB.D1.87.D0.B0.D0.BD.D0.B8.D1.8E.3F"></a><h3>Что делать, если проект не собирается повторно после переключения на/от цели по умолчанию?</h3>
+<p>Это проблема связана с automake/autoconf. Если Проект-&gt;Конфигурация сборки позволяет выбрать все три варианта: default, optimized и debug, используйте всегда либо default, либо debug/optimized.
+</p>
+<ul><li> После выбора конфигурации default конфигурации debug и optimized перестают быть доступными.
+</li><li> После выбора конфигурации debug или optimized конфигурация default становится недоступной.
+</li></ul>
+<p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.BF.D0.BE.D0.B4.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.3F"></a><h3>Как добавить подпроект?</h3>
+<p>Выберите automake-менеджер. В верхней части находятся проекты. Чтобы добавить подпроект, выберите проект, куда его следует добавить, затем щлкните на значке "Добавить подпроект". В файловой системе и менеджере Automake будет создана новая папка с именем подпроекта.
+</p><p>Теперь вам нужно создать цель libtool для нового подпроекта. Если это уже сделано, сделайте цель активной и добавьте в не файлы.
+</p><p>Цель libtool в подпроекте может быть связана с главным исполняемым файлом (binary-target): щлкните правой кнопкой мыши на нм и выберите Параметры. На вкладке "Библиотеки" выберите соответствующую вспомогательную  библиотеку (файл .la)
+</p><p><br>
+</p>
+<a name=".D0.A7.D1.82.D0.BE_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.2C_.D0.B5.D1.81.D0.BB.D0.B8_automake_.D0.B8_.D0.B4.D1.80._.D0.B7.D0.B0.D0.B2.D0.B5.D1.80.D1.88.D0.B0.D0.B5.D1.82.D1.81.D1.8F_.D1.81.D0.BE_.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.BD.D1.8B.D0.BC.D0.B8_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B0.D0.BC.D0.B8.3F"></a><h3>Что делать, если <i>automake и др.</i> завершается со странными ошибками?</h3>
+<p>Откройте консоль в корневой папку проекта и выполните:
+</p>
+<pre>libtoolize --copy --force</pre>
+<p>Это должно решить проблему конфликта версий autotools KDevelop и системной.
+</p><p><br>
+</p>
+<a name=".D0.A3_.D0.BC.D0.B5.D0.BD.D1.8F_.D0.BF.D0.BE.D1.8F.D0.B2.D0.BB.D1.8F.D0.B5.D1.82.D1.81.D1.8F_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.22Wrong_autoconf_version.22_.D0.B8.D0.BB.D0.B8_.D0.BF.D0.BE.D1.85.D0.BE.D0.B6.D0.B5.D0.B5._.D0.A7.D1.82.D0.BE_.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.3F"></a><h3>У меня появляется сообщение "Wrong autoconf version" или похожее. Что делать?</h3>
+<p>Есть несколько ошибок о старых версиях autoconf и т.п. Запустите autoreconf в папке, где находятся файлы configure.in, для которых появляются ошибки. Это команда обновит информацию о системных сборочных файлах GNU. Смотрите man autoreconf для подробной информации.
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D0.B8.D1.81.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_.D0.B4.D0.BB.D1.8F_Qt4_.D0.B2_KDevelop-3.4.x.3F"></a><h3>Как можно писать программы для Qt4 в KDevelop-3.4.x? </h3>
+<ul><li> Откройте <i>Проект -&gt; Параметры проекта -&gt; Поддержка C++</i>. Перейдите на вкладку Qt и отметьте флажок Qt4. Затем укажите главную папку установки Qt4, например:
+</li></ul>
+<pre>/usr/share/qt4 (на Debian Unstable)
+</pre>
+<ul><li> Если для сборки проекта используется qmake, переключить версию библиотеки Qt можно в менеджере qmake. Откройте его и в контекстном меню какого-либо каталога выюерите Параметры. На странице Конфигурация будут показаны разные библиотеки Qt4, которые вам и нужно выбрать
+</li></ul>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BF.D0.B8.D1.81.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_.D0.B4.D0.BB.D1.8F_Qt4_.D0.B2_KDevelop-3.3.x.3F"></a><h3>Как можно писать программы для Qt4 в KDevelop-3.3.x? </h3>
+<ul><li>Если вы используете qmake, KDevelop запускает qmake из переменной окружения PATH, так что qmake из qt4 должен быть первым в PATH (<a href="http://bugs.kde.org/show_bug.cgi?id=119107" title="http://bugs.kde.org/show bug.cgi?id=119107">http://bugs.kde.org/show_bug.cgi?id=119107</a>). Поэтому для запуска kdevelop используйте сценарий:
+</li></ul>
+<pre>#!/bin/sh
+export QTDIR=/devel/kde/src/4/qt-copy
+export PATH=$QTDIR/bin:$PATH
+exec kdevelop $*
+</pre>
+<ul><li>Вторая сложность состоит в том, что встроенный Qt designer является копией designer из Qt3, тогда как для .ui файлов нужно использовать Qt4 designer:
+</li></ul>
+<ul><li><ul><li>Откройте ~/.kde/share/config/kdeveloprc, в секции [General Параметры] (не  [General]!), добавьте строку:
+</li></ul>
+</li></ul>
+<pre>Embed KDevDesigner=false
+</pre>
+<ul><li><ul><li>Создайте ~/.kde/share/applnk/.hidden/designer.desktop со следующим содержанием (измените путь к Qt4 в соответствии с вашим дистрибутивом)
+</li></ul>
+</li></ul>
+<pre>[Desktop Entry]
+Type=Application
+Exec=/devel/kde/src/4/qt-copy/bin/designer
+Name=Qt Designer
+GenericName=Interface Designer
+MimeType=application/x-designer
+Icon=designer
+</pre>
+<p>Полный путь к Qt дизайнеру необходим там, даже если он корректно указан в PATH в KDevelop. Это связано с тем, что KDevelop запускает Qt designer не напрямую, а через kdeinit.
+</p>
+<ul><li>Используйте "Hello World" для создания нового проекта вместо "Application", иначе ваш первый Qt4 проект будет проектом по портированию Qt3-&gt;Qt4&nbsp;:)
+</li></ul>
+<p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.BC.D0.BE.D0.B6.D0.BD.D0.BE_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_SCons_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82.D0.B5.3F"></a><h3>Как можно использовать SCons в проекте? </h3>
+<p><a href="http://www.scons.org" title="http://www.scons.org">SCons</a> - программа сборки приложений.  KDevelop (на момент версии 3.2.2) не поддерживает SCons напрямую. Однако, это легко обойти, создав  Makefile-заглушки и создав проект "Custom Makefiles".  Вот пример такого Makefile (учтите, что строки после задания имени цели должны начинаться с табуляции, а не пробелов):
+</p>
+<pre>project_name:
+        scons
+clean:
+        scons --clean
+</pre>
+<p>После этого заработают действия <i>Собрать проект</i> и <i>Очистить проект</i>
+</p><p><br>
+</p>
+<a name=".D0.91.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.B8"></a><h2>Библиотеки</h2>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.B4.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D1.83.D1.8E_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D1.83_.28.so.29.3F"></a><h3>Как создать динамическую библиотеку (.so)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html">Добавьте цель в проект</a>
+<ul><li><i>Первичная:</i> program
+</li><li><i>Префикс:</i> bin
+</li><li><i>Имя файла:</i> libxxx
+</li><li><i>Параметры компоновщика-&gt;Другие:</i> <code>-shared -Wl,-soname,libxxx.so.1 -o libxxx.so.1.0.1</code>
+</li></ul>
+<dl><dd>Однако, на некоторых системах это может привести к следующей ошибке при компиляции: 
+</dd><dd><code>-soname command not recognized</code>. 
+</dd><dd>В этом случае укажите только  <code>-shared -o libxxx.so</code>
+</dd></dl>
+</li><li>Добавьте cpp/h файлы для данной цели
+</li><li><a href="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html">Задайте такие <i>флаги компилятора для c++</i></a>: -fPIC
+</li></ul>
+<p>Также есть способ, при котором задействуется libtool:
+</p>
+<ul><li>Добавьте подпроект "libxxx" 
+</li><li>Добавьте цель
+</li><li>Выберите "Библиотека (libtool)" 
+</li><li>Выберите "lib".
+</li><li>Впишите имя библиотеки "xxx"
+</li><li>Добавьте файлы
+</li><li>Соберите проект (командой 'Собрать проект' или F8)
+</li></ul>
+<p>Теперь у вас должна быть новая библиотека с именем libxxx.so.0.0.0
+</p><p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D1.83.D1.8E_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D1.83_.28.a.29.3F"></a><h3>Как создать статическую библиотеку (.a)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html">Добавьте цель в проект</a>
+<ul><li><i>Первичная:</i> program
+</li><li><i>Префикс:</i> noinst
+</li><li><i>Имя файла:</i> имя_библиотеки
+</li></ul>
+</li><li>Добавьте файлы cpp/h в цель
+</li></ul>
+<p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D1.83_.la_.28.22.D0.B0.D1.80.D1.85.D0.B8.D0.B2_libtool.22.29.3F"></a><h3>Как создать библиотеку .la ("архив libtool")?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/ru/kdevelop/kdevelop/automake-manager-operation.html">Добавьте цели в проект</a>
+<ul><li><i>primary:</i> Библиотека Libtool
+</li><li><i>prefix:</i> noinst
+</li><li><i>file name:</i> имя_библиотеки
+</li></ul>
+</li><li>Добавьте файлы cpp/h для цели
+</li></ul>
+<p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B9_.D0.BF.D1.83.D1.82.D1.8C_.D0.BA_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D1.87.D0.BD.D1.8B.D0.BC_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D0.BC.3F"></a><h3>Как добавить в проект внешний путь к заголовочным файлам?</h3>
+<p>Если проект использует <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">Automake</a>), вы наверняка используете KDevelop Automake manager (см. <a href="#.D0.93.D0.B4.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82.D1.81.D1.8F_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_Automake_.D0.B2_KDevelop.3F" title="FAQ">FAQ#Где находится менеджер Automake  в KDevelop?</a>). Чтобы добавить путь к заголовкам:
+</p>
+<ul><li>выберите <em>подпроект</em>, куда следует добавить путь(в верхней часть AutoMake менеджера)
+</li><li>выберите <em>Параметры...</em>, щлкнув правой кнопкой мыши или нажав на значке с гаечным ключом
+</li><li>в вкладке  <em>Заголовочные файлы</em> добавьте нужный путь во второе окно (<em>Каталоги вне проекта</em>). Введите путь после <em>-I</em> (без промежуточного пробела).
+</li></ul>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81_.D0.B4.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.28.so.29.3F"></a><h3>Как связать программу с динамической библиотекой (.so)?</h3>
+<p>Если ваш проект использует  <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">Automake</a>), вы наверняка используете KDevelop Automake manager (см. <a href="#.D0.93.D0.B4.D0.B5_.D0.BD.D0.B0.D1.85.D0.BE.D0.B4.D0.B8.D1.82.D1.81.D1.8F_.D0.BC.D0.B5.D0.BD.D0.B5.D0.B4.D0.B6.D0.B5.D1.80_Automake_.D0.B2_KDevelop.3F" title="FAQ">FAQ#Где находится менеджер Automake  в KDevelop?</a>). Чтобы связать программу с библиотекой или добавить библиотеку:
+</p>
+<ul><li>выберите <em>подпроект</em>, в верхней часть AutoMake менеджера
+</li><li>выберите <em>Параметры...</em>, щлкнув правой или левой кнопкой мыши на значке с гаечным ключом
+</li><li>На вкладке "Компилятор" добавьте библиотеку во второе поле (<em>Компоновать с библиотеками вне проекта</em>).  Введите имя библиотеки без префикса lib и без расширений <em>.a</em>, <em>.so</em> или <em>.la</em>.
+<ul><li>Например, если вам надо добавить <em>libsomelib.so</em>, введите <em>-lsomelib</em>.
+</li></ul>
+</li><li> Если эта библиотека находится не в стандартном каталоге для системных библиотек, добавьте <code>-L/некоторый/путь</code> в <code>LDFLAGS</code> в <em>Проект-&gt;Параметры проекта...-&gt;Параметры configure-&gt;Параметры компоновщика (LDFLAGS):</em>.
+</li></ul>
+<p>Не забудьте добавить месторасположение заголовочных файлов *.h библиотеки: <a href="#.D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D0.B9_.D0.BF.D1.83.D1.82.D1.8C_.D0.BA_.D0.B7.D0.B0.D0.B3.D0.BE.D0.BB.D0.BE.D0.B2.D0.BE.D1.87.D0.BD.D1.8B.D0.BC_.D1.84.D0.B0.D0.B9.D0.BB.D0.B0.D0.BC.3F" title="FAQ">FAQ#Как добавить в проект внешний путь к заголовочным файлам?</a>
+</p><p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81.D0.BE_.D1.81.D1.82.D0.B0.D1.82.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.28.a.29.3F"></a><h3>Как связать программу со статической библиотекой (.a)?</h3>
+<p>Аналогично <a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81_.D0.B4.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.28.so.29.3F" title="FAQ">FAQ#Как связать программу с динамической библиотекой (.so)?</a>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.2A.la.3F"></a><h3>Как связать программу с библиотекой *.la?</h3>
+<p>Аналогично <a href="#.D0.9A.D0.B0.D0.BA_.D1.81.D0.B2.D1.8F.D0.B7.D0.B0.D1.82.D1.8C_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.83_.D1.81_.D0.B4.D0.B8.D0.BD.D0.B0.D0.BC.D0.B8.D1.87.D0.B5.D1.81.D0.BA.D0.BE.D0.B9_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.D0.BE.D0.B9_.28.so.29.3F" title="FAQ">FAQ#Как связать программу с динамической библиотекой (.so)?</a>
+</p><p>Дополнение:
+Есть другой, более удобный, способ компоновки <em>mybinary</em> с <em>somestuff.la</em>. Допустим, что <em>libsomestuff.la</em> находится в <em>$(somedir)</em>, тогда вместо <code>-lsomestuff -L$(somedir)</code> можно просто добавить <code>$(somedir)/libsomestuff.la</code>. Тогда они будет обработана libtool.
+</p><p>Вот полный процесс (по аналогии с инструкциями выше):
+</p>
+<ul><li>Выберите <em>подпроект</em>, в который следует добавить путь (в верхней часть Automake manager)
+</li><li>Выберите <em>Параметры...</em>, щлкнув правой или левой кнопкой мыши на значке с гаечным ключом.
+</li><li>НА вкладке "Компилятор" замените <code>-l</code> на <code>$(somedir)/libsomestuff.la</code> во втором поле (<em>Компоновать с библиотеками вне проекта</em>).
+</li></ul>
+<p>Это идентично компоновке вспомогательных библиотек в пределах проекта, только при этом отмечается флажок (<em>Компоновать с библиотеками в проекте</em>).
+</p><p>Нюанс:
+Библиотеки добавляются в <code>mybinary_LDADD</code> в соответствующем Makefile.am. Переменная LDADD может обрабатывать архивы libtool напрямую, читая расположение нужной библиотеки и соответственно добавляя е.
+</p><p><br>
+</p>
+<a name=".D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0"></a><h2>Отладка</h2>
+<a name=".D0.9E.D1.82.D0.BB.D0.B0.D0.B4.D0.BA.D0.B0_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.D0.BD.D0.BE.D0.B3.D0.BE_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F:_.D0.9A.D0.B0.D0.BA_.D1.81.D0.B4.D0.B5.D0.BB.D0.B0.D1.82.D1.8C.2C_.D1.87.D1.82.D0.BE.D0.B1.D1.8B_.D0.BF.D0.BE.D0.BA.D0.B0.D0.B7.D1.8B.D0.B2.D0.B0.D0.BB.D0.B0.D1.81.D1.8C_.D0.BA.D0.BE.D0.BD.D1.81.D0.BE.D0.BB.D1.8C.2C_.D0.B4.D0.BB.D1.8F_.D0.B2.D0.B2.D0.BE.D0.B4.D0.B0_.D0.B4.D0.B0.D0.BD.D0.BD.D1.8B.D1.85.3F"></a><h3>Отладка консольного приложения: Как сделать, чтобы показывалась консоль, для ввода данных?</h3>
+<p>В параметрах проекта, во вкладке Отладка, выберите <i>Включить отдельный терминал для ввода/вывода приложения</i>
+</p><p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.BE.D1.82.D0.BB.D0.B0.D0.B6.D0.B8.D0.B2.D0.B0.D1.82.D1.8C_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D0.BD.D1.8F.D0.B5.D0.BC.D1.8B.D0.B5_.D0.BE.D0.B1.D1.8A.D0.B5.D0.BA.D1.82.D1.8B_.D1.81_.D0.BF.D0.BE.D0.BC.D0.BE.D1.89.D1.8C.D1.8E_.22.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.BD.D1.8B.D1.85_.D1.81.D1.86.D0.B5.D0.BD.D0.B0.D1.80.D0.B8.D0.B5.D0.B2-.D0.BF.D0.BE.D1.81.D1.80.D0.B5.D0.B4.D0.BD.D0.B8.D0.BA.D0.BE.D0.B2.22_libtool.3F"></a><h3> Как отлаживать исполняемые объекты с помощью "временных сценариев-посредников" libtool? </h3>
+<p>При сборке библиотек libtool и связи их с исполняемым файлом libtool создат сценарии-посредники для них, но gdb пишет "not in executable format: File format not recognized (неисполняемый формат: тип файла не распознан") 
+</p>
+Для того чтобы вс заработало:<pre>
+Проект -&gt; Параметры проекта -&gt; Отладчик -&gt; Отладочная оболочка -&gt; libtool --mode=execute </pre>
+<p><br>
+</p>
+<a name=".D0.90.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.B4.D0.B0"></a><h2>Автодополнение кода</h2>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B0.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.B4.D0.B0.3F"></a><h3>Как включить автодополнение кода?</h3>
+<p>Откройте проект C/C++, зайдите в меню Проект-&gt;Параметры проекта, выберите вкладку CПоддержка C++, затем вкладку Авто-дополнение кода. Отметьте <i>Автоматическое дополнение кода</i> и другие параметры. Также в Настройка-&gt;Настроить KDevelop-&gt;Анализ C++ можно подключить и настроить анализатор, работающий в фоновом режиме.
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D1.83.D0.B2.D0.B5.D0.B4.D0.BE.D0.BC.D0.B8.D1.82.D1.8C_.D0.B0.D0.BD.D0.B0.D0.BB.D0.B8.D0.B7.D0.B0.D1.82.D0.BE.D1.80_.D0.BE.D0.B1_.D0.BE.D0.B1.D1.8A.D1.8F.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D0.B8_.D0.BC.D0.B0.D0.BA.D1.80.D0.BE.D0.BA.D0.BE.D0.BC.D0.B0.D0.BD.D0.B4.D1.8B_.D0.B4.D0.BB.D1.8F_.D0.A1.2F.D0.A1.2B.2B.3F"></a><h3>Как уведомить анализатор об объявлении макрокоманды для С/С++?</h3>
+<p>В настоящее время анализатор KDevelop обрабатывает файлы не по порядку. (Прим. перев.: Очевидно, имеется в виду, что он не отслеживает зависимости между файлами). Поэтому, для гарантирования того, что анализатору будут известны все макрокоманды, они должны помещаться их в отдельный специальный файл, который будет анализироваться для данного проекта всегда первым. Его содержимое задатся в окне <em>Параметры анализатора C++</em>.
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B2.D0.BA.D0.BB.D1.8E.D1.87.D0.B8.D1.82.D1.8C_.D0.B0.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.B4.D0.BB.D1.8F_.D0.B2.D0.BD.D0.B5.D1.88.D0.BD.D0.B8.D1.85_.D0.B1.D0.B8.D0.B1.D0.BB.D0.B8.D0.BE.D1.82.D0.B5.D0.BA.3F"></a><h3>Как включить автодополнение для внешних библиотек?</h3>
+<p>Если у вас открыт С/С++ проект, откройте в Проект-&gt;Параметры проекта, перейдите на вкладку Поддержка C++, затем <i>Авто-дополнение кода</i>. Затем нажмите "Добавить...", после чего следуйте указанием утилиты создания хранилища классов. После завершения настройки убедитесь, что только что созданный класс выбран в списке "хранилища классов" на вкладке <i>Авто-дополнение кода</i>.
+</p>
+<a name=".D0.90.D0.B2.D1.82.D0.BE.D0.B4.D0.BE.D0.BF.D0.BE.D0.BB.D0.BD.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BA.D0.BE.D0.B4.D0.B0_.D0.BF.D0.BE-.D0.BF.D1.80.D0.B5.D0.B6.D0.BD.D0.B5.D0.BC.D1.83_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82"></a><h3>Автодополнение кода по-прежнему не работает</h3>
+<p>Попробуйте отключить компонент "Автозамена", он обычно опережает и отменяет действия по авто-дополнению.
+</p>
+<a name=".D0.9F.D0.BE.D1.87.D0.B5.D0.BC.D1.83_.D1.85.D1.80.D0.B0.D0.BD.D0.B8.D0.BB.D0.B8.D1.89.D0.B5_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2_Qt4_.D0.BD.D0.B5_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B0.D0.B5.D1.82_.D0.B4.D0.BB.D1.8F_.D0.B2.D1.81.D0.B5.D1.85_.D0.BA.D0.BB.D0.B0.D1.81.D1.81.D0.BE.D0.B2.3F"></a><h3>Почему хранилище классов Qt4 не работает для всех классов?</h3>
+<p>Большинство заголовочных файлов Qt4 являются посредниками и содержат в себе что-то вроде '#include "../../src/blah.h", что KDevelop не может обработать. Укажите реальный каталог заголовочных файлов при создании базы данных автодополнения.
+</p><p><br>
+</p>
+<a name=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0_KDevelop"></a><h2>Установка KDevelop</h2>
+<a name=".D0.A1.D0.BA.D0.BE.D0.BB.D1.8C.D0.BA.D0.BE_.D0.B2.D1.80.D0.B5.D0.BC.D0.B5.D0.BD.D0.B8_.D0.B7.D0.B0.D0.BD.D0.B8.D0.BC.D0.B0.D0.B5.D1.82_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D1.8F_kdevelop.3F"></a><h3>Сколько времени занимает компиляция kdevelop?</h3>
+<p>Это зависит от производительности вашей машины. На P4 3GHz компиляция занимает 40 минут в первый раз. После обновления через CVS, обычно время сборки сокращается. Мы предполагаем, что время сборки может быть от 1 часа до двух после первой загрузки кода приложения.
+</p><p>Используйте gcc-4.0.1 или выше. Это может значительно уменьшить время компиляции. Компиляция с включнной отладкой ("./configure --enable-debug=full" с -g -O0) выполняется быстрее на 45%, а окончательная компиляция ("./configure --enable-debug=no" с -O2) - на 16% по сравнению с предыдущими версиями. Например, на Athlon XP 1600 / 256Mb RAM новая сборка с отладкой занимает 45 минут при использовании gcc-4 и 81 минуту с gcc-3.3.1. Чтобы ещ сильнее ускорить сборку можно использовать самый свежий пакет libtool (из CVS HEAD)
+</p><p>Обычно удобно устанавливать gcc-4 в /usr/local, а gcc-3.x в /usr. Кроме того, KDevelop возможно собрать с gcc-4 не пересобирая остальное ПО (Qt, KDE...).
+</p><p>Замечание! Не используйте gcc-4.0.0, так как он может некорректно компилировать код! gcc-4.0.1 и более поздние версии лишены этой неполадки.
+</p><p><br>
+</p>
+<a name=".D0.A1.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.B0_.D0.B2.D1.8B.D0.B4.D0.B0.D1.91.D1.82_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D1.83_.22couldn.27t_create_a_language_plugin_.28.D0.BD.D0.B5_.D1.83.D0.B4.D0.B0.D0.BB.D0.BE.D1.81.D1.8C_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D1.82.D1.8C_.D1.8F.D0.B7.D1.8B.D0.BA.D0.BE.D0.B2.D0.BE.D0.B3.D0.BE_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8F.29.22._.D0.A7.D1.82.D0.BE_.D0.BD.D0.B5_.D1.82.D0.B0.D0.BA.3F"></a><h3>Система выдат ошибку "couldn't create a language plugin (не удалось создать языкового модуля)". Что не так?</h3>
+<p>Как и для любого другого приложения KDE, следует проверить, распознал ли KDE модули KDevelop. Либо установите их в каталог KDE (например, ./configure --prefix=/opt/kde3), либо добавьте путь для KDevelop в переменную KDEDIRS и запустите "kbuildsycoca". Пример команды в консоли (для случая, когда KDevelop установлен в /home/harry/kdevelop):
+</p>
+<pre>export KDEDIRS=/home/harry/kdevelop:$KDEDIRS &amp;&amp; kbuildsycoca
+</pre>
+<p><br>
+</p><p><br>
+</p>
+<a name=".D0.AF_.D0.BF.D0.BE.D0.BB.D1.83.D1.87.D0.B0.D1.8E_.D1.81.D0.BE.D0.BE.D0.B1.D1.89.D0.B5.D0.BD.D0.B8.D0.B5_.D0.BE.D0.B1_.D0.BE.D1.88.D0.B8.D0.B1.D0.BA.D0.B5_.22error:_qassistantclient.h:_No_such_file_or_directory.22._.D0.9A.D0.B0.D0.BA_.D0.B5.D0.B3.D0.BE_.D1.83.D1.81.D1.82.D1.80.D0.B0.D0.BD.D0.B8.D1.82.D1.8C.3F"></a><h3>Я получаю сообщение об ошибке "error: qassistantclient.h: No such file or directory". Как его устранить?</h3>
+<p>В вашем дистрибутиве (SUSE, Mandriva, Fedora, Ubuntu, ...) Qt 3 разделена на несколько пакетов. Установите пакет с заголовочными файлами. Он может называться, например, так: 
+</p>
+<ul><li> <code>qt3-apps-dev</code>
+</li><li> <code>qt3-devel-doc</code> 
+</li><li> <code>qt3-doc-devel</code>
+</li></ul>
+<a name=".D0.9B.D0.B8.D1.86.D0.B5.D0.BD.D0.B7.D0.B8.D0.B8"></a><h2>Лицензии</h2>
+<p><br>
+</p>
+<a name=".D0.9C.D0.BE.D0.B6.D0.BD.D0.BE_.D0.BB.D0.B8_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D1.82.D1.8C_.D0.BA.D0.BE.D0.BC.D0.BC.D0.B5.D1.80.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D1.8F.2C_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_KDevelop.3F"></a><h3>Можно ли разрабатывать коммерческие приложения, используя KDevelop?</h3>
+<p>Любой человек может использовать KDevelop по своему усмотрению. Сгенерированный код может распространяться под любыми лицензиями, в генератор даже добавлена возможность вставлять свои копирайты в генерируемые файлы, но лицензией по умолчанию выбирается GPL. Вместо не вы можете добавить свою лицензию.
+Для редактирования и прочих нужд KDevelop использует другие GPL программы, не делая акцента на том, что использует. Вы можете писать коммерческие/закрытые программы.
+Используя библиотеки KDE или любые другие свободные библиотеки, нужно следить только за лицензионными соглашениями сторонних библиотек. Для разработки коммерческих приложений с использованием KDE/Qt вам нужна коммерческая лицензия от Trolltech. Библиотеки KDE используют LGPL, что позволяет использовать библиотечные вызовы, компоновать программу с библиотеками KDE. Это относится к библиотекам kdelibs, kdebase (konqueror, kcontrol и т.д.), koffice (для создания приложений koffice).
+Для дополнительной информации посетите KDevelop Licensing.
+</p><p><br>
+</p>
+<a name=".D0.A0.D0.B0.D0.B7.D1.80.D0.B5.D1.88.D0.B5.D0.BD.D0.BE_.D0.BB.D0.B8_.D1.81.D0.BE.D0.B7.D0.B4.D0.B0.D0.B2.D0.B0.D1.82.D1.8C_.D0.BA.D0.BE.D0.BC.D0.BC.D0.B5.D1.80.D1.87.D0.B5.D1.81.D0.BA.D0.B8.D0.B5_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D0.B8_.D0.B4.D0.BB.D1.8F_KDevelop.3F"></a><h3>Разрешено ли создавать коммерческие модули для KDevelop?</h3>
+<p>KDevelop поставляется с библиотекой libkdeveloplgpl.so для создания коммерческих модулей. Она предоставляет интерфейсы и утилиты по лицензии LGPL. Если у вас есть коммерческая лицензия от Trolltech, вы можете компоноваться код с libkdeveloplgpl и выпускать программу под любой лицензией.
+</p><p><br>
+</p>
+<a name=".D0.9F.D1.80.D0.BE.D1.87.D0.B5.D0.B5"></a><h2>Прочее</h2>
+<a name=".D0.AF_.D1.80.D0.B0.D0.B7.D1.80.D0.B0.D0.B1.D0.B0.D1.82.D1.8B.D0.B2.D0.B0.D1.8E_.D0.BF.D1.80.D0.B8.D0.BB.D0.BE.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5.2C_.D0.BD.D1.83.D0.B6.D0.B4.D0.B0.D1.8E.D1.89.D0.B5.D0.B5.D1.81.D1.8F_.D0.B2_.D0.BE.D0.B1.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.BA.D0.B5_.D0.B8.D1.81.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.BD.D0.B8.D0.B9._.D0.9A.D0.B0.D0.BA_.D0.BC.D0.BD.D0.B5_.D1.8D.D1.82.D0.BE_.D1.80.D0.B5.D0.B0.D0.BB.D0.B8.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C.3F"></a><h3>Я разрабатываю приложение, нуждающееся в обработке исключений. Как мне это реализовать?</h3>
+<p>Отредактируйте файл configure.in(.in) в корневой папке исходных кодов и создайте в нм макрокоманду AC_CHECK_COMPILERS():
+</p>
+<pre>CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"
+</pre>
+<p>после этого пересоздайте сценарий "configure", выполнив
+</p>
+<pre>make -f Makefile.dist
+</pre>
+<p>в корневой папке исходников и запустите ./configure.
+</p><p><br>
+</p>
+<a name=".D0.92_configure.in.in_.D0.BE.D1.82.D1.81.D1.83.D1.82.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D0.B2.D1.8B.D0.B7.D0.BE.D0.B2_AC_CHECK_COMPILERS.28.29._.D0.9A.D1.83.D0.B4.D0.B0_.D1.81.D0.BB.D0.B5.D0.B4.D1.83.D0.B5.D1.82_.D0.BF.D0.BE.D0.BC.D0.B5.D1.81.D1.82.D0.B8.D1.82.D1.8C_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22.2C_.D1.83.D0.BF.D0.BE.D0.BC.D1.8F.D0.BD.D1.83.D1.82.D1.8B.D0.B9_.D0.B2.D1.8B.D1.88.D0.B5.3F"></a><h3>В configure.in.in отсутствует вызов AC_CHECK_COMPILERS(). Куда следует поместить CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS", упомянутый выше?</h3>
+<p>Новые версии configure.in.in были упрощены, теперь возможно добавить эту макрокоманду после AM_INIT_AUTOMAKE(&lt;package-name&gt;,&lt;version&gt;).
+</p><p><br>
+</p>
+<a name=".D0.A1.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D0.B5.D1.82_.D0.BB.D0.B8_HOWTO_.D0.BF.D0.BE_.D1.80.D0.B0.D0.B1.D0.BE.D1.82.D0.B5_.D1.81_.D0.BE.D0.BA.D0.BD.D0.B0.D0.BC.D0.B8.2C_.D0.B3.D0.B5.D0.BD.D0.B5.D1.80.D0.B8.D1.80.D1.83.D0.B5.D0.BC.D1.8B.D0.BC.D0.B8_QT_designer.3F"></a><h3>Существует ли HOWTO по работе с окнами, генерируемыми QT designer?</h3>
+<p>Да: <a href="http://women.kde.org/articles/tutorials/kdevelop3/index.html" title="http://women.kde.org/articles/tutorials/kdevelop3/index.html">http://women.kde.org/articles/tutorials/kdevelop3/index.html</a>
+</p><p><br>
+</p>
+<a name=".D0.9F.D0.BE.D1.87.D0.B5.D0.BC.D1.83_.D0.BD.D0.B5_.D0.B2.D0.B8.D0.B4.D0.BD.D0.BE_.D0.BE.D1.88.D0.B8.D0.B1.D0.BE.D0.BA_.D0.BF.D1.80.D0.B8_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.86.D0.B8.D0.B8.3F"></a><h3>Почему не видно ошибок при компиляции?</h3>
+<p>Если во время компиляции вы заметили, что некоторая важная информация отсутствует в области Вывод сообщений, возможно, уровень подробности сообщений слишком низок. Выберите другой уровень в контекстном меню области.
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.BF.D0.B5.D1.80.D0.B5.D0.B2.D0.BE.D0.B4_.D0.B4.D0.BB.D1.8F_.D0.BF.D1.80.D0.BE.D0.B3.D1.80.D0.B0.D0.BC.D0.BC.D1.8B_KDE.3F"></a><h3>Как добавить перевод для программы KDE?</h3>
+<p>Сначала выполните "Сборка-&gt;Создать и объединить сообщения", затем добавьте новый перевод через <i>Проект-&gt;Добавить перевод</i>. Это создаст файл po/$lang.po. Файл $project.pot содержит все строки.
+</p><p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B4.D0.BE.D0.B1.D0.B0.D0.B2.D0.B8.D1.82.D1.8C_.D0.B2_.D0.BF.D1.80.D0.BE.D0.B5.D0.BA.D1.82_.D0.B7.D0.BD.D0.B0.D1.87.D0.BA.D0.B8.3F"></a><h3>Как добавить в проект значки?</h3>
+<p>Сначала добавьте новый подпроект automake с именем pics, затем в его контекстном меню выберите <i>Параметры" -&gt; </i>Префиксы". Добавьте новый префикс, например, mypics и путь <i>$(kde_datadir)/$project/pics</i>. После этого создайте новую цель в подпроекте pics и выберите в качестве первичной цели данные, в качестве префикса - mypics и любое подходящее имя. Затем добавьте значки для новой цели. Загрузка изображений в программе может быть реализована включением заголовочного файла <i>kiconloader.h</i> и определнного кода. Например, для добавления изображения с именем config на кнопку:  <i>button-&gt;setPixmap(UserIcon("config"))</i>.
+</p><p><br>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D0.BC.D0.BE.D0.B4.D1.83.D0.BB.D1.8C_.D0.BF.D0.BE.D0.B4.D0.B4.D0.B5.D1.80.D0.B6.D0.BA.D0.B8_SVN.3F"></a><h3>Как использовать модуль поддержки SVN?</h3>
+<p>Нужно вручную импортировать проект и исходные файлы в SVN репозиторий, затем перезапустить KDevelop, после чего в контекстном меню файлов должны появиться команды SVN. Модуль SVN проверяет наличие <code>.svn</code> в той же папки, где находится файл.
+</p><p>Чтобы получить более подробную информацию, посетите: <a href="phorum5/read.php?2,23286" title="phorum5/read.php?2,23286">phorum5/read.php?2,23286</a>
+</p>
+<a name=".D0.9A.D0.B0.D0.BA_.D0.B8.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D1.82.D1.8C_.D1.80.D0.B0.D0.B7.D0.BB.D0.B8.D1.87.D0.BD.D1.8B.D0.B5_.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D1.8B_.28.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BD.D1.8B.D0.B5_.D0.B8.D0.BB.D0.B8_.D0.BA.D1.80.D0.BE.D1.81.D1.81-.D0.BA.D0.BE.D0.BC.D0.BF.D0.B8.D0.BB.D1.8F.D1.82.D0.BE.D1.80.D1.8B.29"></a><h3>Как использовать различные компиляторы (системные или кросс-компиляторы)</h3>
+<p>Компиляторы выбираются для проекта в:
+</p>
+<ul><li> <i>Проект-&gt;Параметры проекта-&gt;Параметры Configure</i> (только для проектов autotools, для других проектов такой вкладки нет)
+</li><li> Добавьте новое имя для конфигурации, например, "&lt;имя компилятора&gt;-&lt;платформа&gt;-debug(отладка)"
+</li></ul>
+<p>Вкладка "Общие":
+</p>
+<ul><li> задайте ключи configure (например, ключи --host и --build для кросс-компиляции)
+</li><li> задайте папку сборки, для избежания проблем используйте то же имя, что и для configure.
+</li><li> задайте нужные переменные (LDFLAGS, ENV)
+</li></ul>
+<p>Вкладка "C":
+</p>
+<ul><li> задайте имя компилятора C, например, CC, gcc, icc, kcc, ... (в т.ч. и кросс-компиляторы!)
+</li><li> укажите подходящие флаги (CFLAGS)
+</li></ul>
+<p>Вкладка "C++":
+</p>
+<ul><li> задайте имя компилятора C++, например, cc, g++, ... (в т.ч. и кросс-компиляторы!)
+</li><li> укажите подходящие флаги (CXXFLAGS)
+</li></ul>
+<p>Вкладка "Fortran":
+</p>
+<ul><li> задайте имя компилятора Fortran, например, g77, g90, gfortran, ...  (в т.ч. и кросс-компиляторы!)
+</li><li> укажите подходящие флаги (FFLAGS)
+</li></ul>
+<p>Закройте меню опций, выберите конфигурацию сборки в <i>Проект-&gt;Конфигурация сборки</i>, затем запустите <i>Automake и др.</i>, <i>configure</i> и <i>make</i>.
+</p><p>Например, для того чтобы создать конфигурацию кросс-компилирования для sparc-sun-solaris2.9:
+</p>
+<ul><li> Проект -&gt; Параметры проекта -&gt; Параметры configure 
+</li><li> Добавьте новое имя конфигурации, например, "sparc-debug""
+</li><li> Аргументы для сборки:
+</li></ul>
+<pre>--host=i686-pc-linux-gnu -- build=sparc-sun-solaris2.9
+</pre>
+<ul><li> Папка сборки:
+</li></ul>
+<pre>sparc-debug
+</pre>
+<ul><li> На вкладке С измените имя компилятора на кросс-компилятор, например, sun-solaris-sparc2.9-gcc
+</li><li> На вкладке С++ измените имя компилятора на кросс-компилятор, например, sun-solaris-sparc2.9-g++
+</li><li> Automake и др.
+</li><li> configure
+</li><li> make
+</li></ul>
+<p>Информация по кросс-отладке: 
+<a href="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote+debug+kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3" title="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote debug kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3">Remote debugging using KDevelop 3.0 in comp.os.linux.embedded newsgroup</a> или
+<a href="mediawiki/index.php/Cross_debugging" title="Cross debugging">Cross_debugging</a>.
+<a href="phorum5/read.php?2,23503" title="phorum5/read.php?2,23503">forum</a> также содержит немного информации.
+</p><p>Убедитесь, что исполняемые файлы и библиотеки для кросс компилятора доступны через переменные $PATH and $LD_LIBRARY_PATH!
+</p><p>Бывает необходимо поменять некоторые макрокоманды autoconf/automake в <i>configure.in</i> для полной поддержки компилятора -- почитайте последнее сообщение в этом документе
+</p>
+<pre><a href="phorum5/read.php?8,27808" title="phorum5/read.php?8,27808">forum</a> как заставить <i>gfortran</i> (компилятор GNU F90) работать.
+</pre>
+<p><br>
+</p>
+<a name=".D0.A0.D0.B0.D0.B1.D0.BE.D1.82.D0.B0_.D1.81_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D0.BE.D0.B9_.D0.B2.D0.B8.D0.B4.D0.BE.D0.B2_.28.D0.BF.D1.80.D0.B5.D0.B4.D1.81.D1.82.D0.B0.D0.B2.D0.BB.D0.B5.D0.BD.D0.B8.D1.8F.D0.BC.D0.B8_.D0.B8.D0.BD.D1.84.D0.BE.D1.80.D0.BC.D0.B0.D1.86.D0.B8.D0.B8.29_Clearcase_.D0.B2_KDE"></a><h3>Работа с системой видов (представлениями информации) Clearcase в KDE</h3>
+<p>Файлы Clearcase обычно находятся в '/usr/vobs/...', исполняемые файлы могут содержать на них ссылки. Если ваш проект KDevelop использует другой путь (например, '/view/[имя снимка]/usr/vobs'), возможны некоторые проблемы с двойным открытием файлов, создаёт проблемы с точками останова и редактированием.
+</p><p>Если kdevelop запускается из консоли в представлении clearcase, но KDE - нет, '/usr/vobs/...' всё-равно будет недоступно. Это можно решить таким образом:
+</p><p><tt>cp /etc/X11/xinit/xinitrc ~/.xinitrc</tt><br>
+замените предпоследнюю строчку с <br>
+<tt>exec $WINDOWMANAGER</tt><br>
+на<br>
+<tt>/opt/rational/clearcase/rhat_x86/bin/cleartool setview -exec $WINDOWMANAGER ViewName</tt>
+</p><p>где <tt>ViewName</tt> - имя вида, который используется.
+</p><p>К сожалению, это может создать проблемы для не-KDE приложений (например, firefox) и привести к сбою всей системы. В таком случае попробуйте использовать другой графический менеджер, такой как Gnome.
+
+</p>
+<?php module_tail(); ?>

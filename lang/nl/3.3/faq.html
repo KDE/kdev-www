@@ -1,0 +1,528 @@
+<?php module_head("KDevelop $k_series_version F.A.Q. (Veelgestelde vragen)");?>
+<table id="toc" class="toc"><tr><td><div id="toctitle"><h2>Inhoud</h2></div>
+<ul>
+<li><a href="#File_FAQs">1 Bestands FAQ</a>
+<ul>
+<li><a href="#Where_is_the_Automake_manager_in_KDevelop.3F">1.1 Waar is de AutoMake manager in KDevelop?</a></li>
+<li><a href="#How_do_I_create_New_Files_in_a_Project.3F">1.2 Hoe cre&euml;er ik bestanden in een project?</a></li>
+<li><a href="#How_do_I_remove_a_File_from_a_Project.3F">1.3 Hoe verwijder ik een bestand uit een project?</a></li>
+<li><a href="#How_to_add_existing_files_to_a_project.3F">1.4 Hoe voeg ik bestaande bestanden aan een project toe?</a></li>
+</ul>
+</li>
+<li><a href="#Projects_FAQs">2 Project FAQ</a>
+<ul>
+<li><a href="#How_to_convert_my_VC.2B.2B_project.3F">2.1 Hoe converteer ik mijn VC++ project?</a></li>
+<li><a href="#How_to_create_a_truly_empty_project.3F">2.2 Hoe cre&euml;er ik een totaal leeg project?</a></li>
+<li><a href="#How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F">2.3 Hoe cre&euml;er je een simpel project met alleen een makefile (ook bekend als een custom project)&nbsp;?</a></li>
+<li><a href="#How_to_create_a_simple_Automake_project_with_a_directory_hierarchy_.3F">2.4 Hoe cre&euml;er je een simpel AutoMake project met een mappen hi&euml;rarchie&nbsp;?</a></li>
+<li><a href="#What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F">2.5 Wat betekend de "build configurations" (Project Options-&gt;Configure Options)?</a></li>
+<li><a href="#What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F">2.6 Wat moet ik doen als het programma niet meer compileerd na het wisselen van/naar de standaard compileerdoel?</a></li>
+<li><a href="#How_do_I_add_subprojects.3F">2.7 Hoe kan ik subprojecten toevoegen?</a></li>
+<li><a href="#What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F">2.8 Wat moet ik doen als automake &amp; friends breken op rare foutmeldingen?</a></li>
+<li><a href="#I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F">2.9 Ik krijg "Wrong autoconf version" etc. Error. Wat kan ik doen?</a></li>
+<li><a href="#How_can_I_develop_with_Qt4_and_KDevelop-3.4.x.3F">2.10 Hoe kan ik ontwikkelen met Qt4 en Kdevelop-3.4.x?</a></li>
+<li><a href="#How_can_I_develop_with_Qt4_and_KDevelop-3.3.x.3F">2.11 How can I develop with Qt4 and KDevelop-3.3.x?</a></li>
+<li><a href="#How_can_I_set_up_a_project_with_SCons.3F">2.12 Hoe zet ik een project op met SCons?</a></li>
+</ul>
+</li>
+<li><a href="#Libraries_FAQ">3 bibliotheken FAQ</a>
+<ul>
+<li><a href="#How_to_create_a_.so_library.3F">3.1 Hoe maak ik een .so-bibliotheek?</a></li>
+<li><a href="#How_to_create_a_.a_library.3F">3.2 Hoe maak ik een .a-bibliotheek?</a></li>
+<li><a href="#How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F">3.3 Hoe maak ik een .la-bibliotheek (ook bekend als een libtool-archief)?</a></li>
+<li><a href="#How_to_add_an_external_include_path_to_a_project.3F">3.4 Hoe voeg ik een extern include-pad to aan een project?</a></li>
+<li><a href="#How_to_link_against_a_.so_library.3F">3.5 Hoe link ik tegen een .so-bibliotheek aan?</a></li>
+<li><a href="#How_to_link_against_a_.a_library.3F">3.6 Hoe link ik tegen een .a-bibliotheek aan?</a></li>
+<li><a href="#How_to_link_against_a_.la_library.3F">3.7 Hoe link ik tegen een .la-bibliotheek aan?</a></li>
+</ul>
+</li>
+<li><a href="#Debug_FAQs">4 Debug FAQ</a>
+<ul>
+<li><a href="#Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F">4.1 Het debuggen van een console-applicatie&nbsp;: Hoe kan ik de console zien zodat ik data kan invoeren?</a></li>
+<li><a href="#How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F">4.2 Hoe debug je exec-objecten met libtool "temporary wrapper scripts"?</a></li>
+</ul>
+</li>
+<li><a href="#Code_Completion_FAQs">5 Code Completion FAQ</a>
+<ul>
+<li><a href="#How_can_I_enable_code_completion.3F">5.1 Hoe activeer ik code completion?</a></li>
+<li class="toclevel-2'><a href="#How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F">5.2 Hoe leer ik de C/C++ parser nieuwe macro"s?</a></li>
+<li><a href="#How_can_I_enable_code_completion_for_external_libraries.3F">5.3 Hoe activeer ik code completion voor externe bibliotheken?</a></li>
+<li><a href="#Code_completion_still_doesn.27t_work">5.4 Code completion werkt nog steeds niet</a></li>
+<li><a href="#Why_doesn.27t_my_Qt4_Persistant_Class_Store_work_for_all_Qt4_classes.3F">5.5 Waarom werkt mijn Qt4 Persistent Class Store niet voor alle Qt4 klassen?</a></li>
+</ul>
+</li>
+<li><a href="#KDevelop_installation_FAQs">6 KDevelop installatie FAQ</a>
+<ul>
+<li><a href="#How_long_does_it_usually_take_to_compile_kdevelop.3F">6.1 Hoe lang duurt het compileren van KDevelop normalieter?</a></li>
+<li class="toclevel-2'><a href="#I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F">6.2 Ik krijg de foutmelding "couldn"t create a language plugin". Wat is er fout?</a></li>
+</ul>
+</li>
+<li><a href="#Legal_FAQs">7 Licentie FAQ</a>
+<ul>
+<li><a href="#Am_I_allowed_to_develop_commercial_applications_with_KDevelop.3F">7.1 Ben ik bevoegd om commerci&euml;le applicaties te ontwikkelen met KDevelop?</a></li>
+<li><a href="#Am_I_allowed_to_develop_commercial_plugins_to_KDevelop.3F">7.2 Ben ik bevoegd om commerci&euml;le plugins te maken voor KDevelop?</a></li>
+</ul>
+</li>
+<li><a href="#Misc._FAQs">8 Overige FAQ</a>
+<ul>
+<li><a href="#I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F">8.1 Ik ben een applicatie aan het maken die foutafhandeling nodig heeft. Hoe kan ik die maken?</a></li>
+<li><a href="#My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F">8.2 Mijn configure.in.in heeft geen AC_CHECK_COMPILERS() aanroep. Waar moet ik de CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" die hierboven is gegeven invoeren?</a></li>
+<li><a href="#Is_there_any_HOWTO_available_on_how_to_woBestands FAQrk_with_QT_designer_made_dialogs_.3F">8.3 Is er een HOWTO beschikbaar over het werken met QT designer gemaakte dialogen&nbsp;?</a></li>
+<li><a href="#Why_don.27t_I_see_the_compilation_error_messages.3F">8.4 Waarom zie ik geen compilatie foutmeldingen?</a></li>
+<li><a href="#How_to_add_a_translation_to_a_KDE_program.3F">8.5 Hoe voeg ik een vertaling toe aan een KDE-programma?</a></li>
+<li><a href="#How_to_add_icons_to_a_project.3F">8.6 Hoe voeg ik iconen toe aan een project?</a></li>
+<li><a href="#How_to_use_the_SVN_plugin.3F">8.7 Hoe kan ik de SVN plugin gebruiken?</a></li>
+<li><a href="#How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29">8.8 Hoe gebruik ik een andere compiler (native of cross compilers)?</a></li>
+<li><a href="#Working_with_Clearcase_views_and_KDE">8.9 Werken met Clearcase schermen en KDE</a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<p>
+</p>
+<a name="File_FAQs"></a><h2>Bestands FAQ</h2>
+<a name="Where_is_the_Automake_manager_in_KDevelop.3F"></a><h3>Waar is de AutoMake manager in KDevelop?</h3>
+<p>Klik op de onderste tab aan de rechterkant van KDevelop.
+<a href="mediawiki/index.php/Image:Automake_manager.png" title="Image:Automake_manager.png"><img src="mediawiki/images/8/8e/Automake_manager.png" alt="Image:Automake_manager.png" width="216" height="427" longdesc="mediawiki/index.php/Image:Automake_manager.png"></a>
+</p><p><br>
+</p>
+<a name="How_do_I_create_New_Files_in_a_Project.3F"></a><h3>Hoe cre&euml;er ik bestanden in een project?</h3>
+<p>Selecteer het sub-project in de bovenste helft van de AutoMake manager, rechts-klik dan in de onderste helft op de groepstitel waar je het bestand wil toevoegen en selecteer Create New File.... 
+</p><p><br>
+</p>
+<a name="How_do_I_remove_a_File_from_a_Project.3F"></a><h3>Hoe verwijder ik een bestand uit een project?</h3>
+<p>Selecteer het sub-project in de bovenste helft van de AutoMake manager, open dan in de onderste helft de groeplijst waar je een bestand van wil verwijderen, rechts-klik dan op de file in deze lijst en selecteer Remove. 
+</p><p><br>
+</p>
+<a name="How_to_add_existing_files_to_a_project.3F"></a><h3>Hoe voeg ik bestaande bestanden aan een project toe?</h3>
+<p>De manier waarop je bestaande bestanden toevoegd aan een project is afhankelijk van het bouwsysteem dat je gekozen hebt voor je project. Echter zal je, ongeacht welk bouwsysteem je ook gekozen hebt, de bestaande code-bestanden in de <code>src/</code> map van je nieuwe KDevelop project moeten zetten.
+</p><p>Next:
+</p>
+<ul>
+<li>Als je hebt gekozen voor een AutoMake manager gebaseed project (zie: <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Waar is de AutoMake manager in KDevelop?</a>) dan voeg je bestaande bestanden toe aan je project door het goede sub-project, in de bovenste helft van de AutoMake manager, te selecteren. Dan in de onderste helft de groep aanklikken van het doel waar je de bestanden aan wil toevoegen. Rechts-klik erop voor het context menu en selecteer <a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">"Add Existing files...."</a>
+
+<li>Als je hebt gekozen voor een QMake manager gebaseerd project dan is je taak hetzelfde als bij de AutoMake manager.
+
+<li>Als je hebt gekozen voor een op een eigengemaakte Makefile gebaseerd project dan moet je je Makefile zelf bewerken om de bestanden toe te voegen aan je project.
+</ul>
+<p><br>
+</p>
+<a name="Projects_FAQs"></a><h2>Project FAQ</h2>
+<a name="How_to_convert_my_VC.2B.2B_project.3F"></a><h3>Hoe converteer ik mijn VC++ project?</h3>
+<p>KDevelop heeft geen manier om je VC++ project automatisch te importeren. Je kan echter wel je project converteren door een nieuw KDevelop project via de voorbeelden van de "New Project" wizard te maken, zoals het C++-&gt;Simple Hello World voorbeeld. Dan kan je de code bestanden (*.cpp en *.h) kopie&euml;ren van je VC++ project naar de <code>src</code> map van je nieuwe KDevelop AutoMake gebaseerde project. Volg als laatste de instructies hierboven voor het toevoegen van bestaande bestanden aan een project.
+</p><p>Een mindere oplossing kan door het gebruik van de <code>dsw2make</code> script, Deze pakt een VC++ project bestand (*.dsw) met zijn onderliggende dsp bestanden en proceduceerd een Makefile voor iedere dsp. Controleer of het werkt want  fouten kunnen regelmatig optreden. Deze hebben vaak te maken met de paden naar de bestanden, hoofdlettergevoeligheid en CR/LF. Als een CR/LF probleem ontstaat gebruik applicaties als <code>dos2unix</code> of <code>d2u</code> om deze problemen op te lossen. Hierna zou je een normaal project moeten hebben gebaseerd op een makefile-ketting. Import het project als een bestaand project.
+</p>
+<a name="How_to_create_a_truly_empty_project.3F"></a><h3>Hoe cre&euml;er ik een totaal leeg project?</h3>
+<ul><li>Ga naar <i>Project-&gt;New Project...-&gt;C++-&gt;Simple Hello World program</i> en cre&euml;er een project
+</li><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Verwijder het enige bestaande doel in het project</a>
+</li><li>Selecteer <i>remove also source files</i> in het dialoog dat tevoorschijn komt.
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_create_a_simple_project_with_just_a_Makefile_.28also_known_as_Custom_Project.29_.3F"></a><h3>Hoe cre&euml;er je een simpel project met alleen een makefile (ook bekend als een custom project)&nbsp;?</h3>
+<p>Cre&euml;er een custom project. Er is geen direkte manier om een custom project te maken (d.w.z. een project dat zijn eigen makefiles gebruikt). Gebruik Project-&gt;Import Existing Project daarvoor. Vergeet niet om het goede projecttype te zetten, gelabeled door een extra (Custom Makefiles) in het dialoog. Gebruik Project Options vroeg in het project. Wanneer je start met een nieuw project vergeet niet om de Project-&gt;Project Options... te zetten zoals je hem dan weer nodig hebt.
+</p><p><br>
+</p>
+
+<a name="How_to_create_a_simple_Automake_project_with_a_directory_hierarchy_.3F"></a><h3>Hoe cre&euml;er je een simpel AutoMake project met een mappen hi&euml;rarchie&nbsp;?</h3>
+<p>Als je een project wil cre&euml;eren met een mappen hi&euml;rarchie, waar iedere map een groep van cpp/h bestanden bevat die moeten worden gecompileerd naar een enkele binair bestand.
+</p>
+<pre>Ex:
+  src
+  src/gui
+  src/gui/components
+  src/logic
+  src/logic/algorithms
+  src/logic/sublogic
+</pre>
+<p><br>
+Dit kan voor elkaar gekregen worden door het gebruik van bibliotheken. Iedere subdirectory zal worden gecompileerd en gelinked tot een libtool-bibliotheek, hierna worden alle libtool-bibliotheken gelinked tot een executable.
+</p>
+<ul><li><b>Stap 1</b>: 
+<ul><li>Voeg in de AutoMake manager een subproject toe voor ieder submap:
+</li><li>AutoMake manager -&gt; [rechts-klik op submap] -&gt; Voeg Subproject toe
+</li></ul>
+</li></ul>
+<ul><li><b>Stap 2</b>:
+<ul><li> Voeg een Libtool doel voor ieder project toe, en vul deze bibliotheken met de .cpp bestanden in de submap:
+<ul><li> AutoMake manager -&gt; [rechts-klik op submap] -&gt; Voeg doel toe
+</li><li> Primary: Libtool Library
+</li><li> Prefix: noinst
+</li><li> File name: &lt;je naam&gt;.la 
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Stap 3</b>: 
+<ul><li>Voeg de bibliotheken to aan je executable:
+<ul><li>AutoMake manager -&gt; [rechts-klik op binair] -&gt; Options -&gt; Libraries 
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Stap 4</b>: 
+<ul><li>Voeg de afhankelijkheden van de bibliotheken toe voor ieder subproject:
+</li><li>Als <i>libalgo.la</i> afhankelijk is van klasses in <i>libbase.la</i>:
+<ul><li>AutoMake manager -&gt; [rechts-klik op libalgo] -&gt; Options -&gt; Libraries (vink de box voor libbase.la aan)
+</li></ul>
+</li></ul>
+</li></ul>
+<pre>Ex:
+ src/logic/base [libbase.la]
+ src/logic/algorithm [libalgo.la]
+</pre>
+<p><b>Let op</b>: Als je een afhankelijkheid vergeet, voeg de afhankelijkheid toe, clean je subproject, en hercompileer het gehele project (F8).
+</p><p><br>
+</p>
+
+<a name="What_do_the_.22build_configurations.22_.28Project_Options-.3EConfigure_Options.29_mean.3F"></a><h3>Wat betekend de "build configurations" (Project Options-&gt;Configure Options)?</h3>
+<ul><li><b>debug</b>: 
+<ul><li>De aparte bouwmap is "debug"
+</li><li>-g3 -O0 compiler opties worden gebruikt om debuggen mogelijk te maken zonder problemen met optimalizatie
+</li></ul>
+</li><li><b>optimized</b>: 
+<ul><li>De aparte bouwmap is "optimized"
+</li><li>-O2 -g0 flags om debuggen af te zetten en optimalizatie aan te zetten
+</li></ul>
+</li><li><b>default</b>:
+<ul><li>Geen speciale bedoeling, geen compilervlaggen en bouwmap
+</li><li>gecompileerde programma's en bibliotheken worden bij de code bestanden neergezet
+</li><li><b>Belangrijk!</b> Gebruik niet de "default" configuratie samen met "debug" en "optimized". Maar "debug" en "optimized" kunnen samen wel gebruikt worden zonder problemen omdat er verschillende bouwmappen gebruikt worden.
+</li></ul>
+</li></ul>
+<p><br>
+</p>
+<a name="What_to_do_if_project_does_not_build_again_after_switching_to.2Ffrom_default_target.3F"></a><h3>Wat moet ik doen als het programma niet meer compileerd na het wisselen van/naar de standaard compileertype?</h3>
+<p>Er is een probleem met de automake/autoconf programma's. De Project-&gt;Build Configuration geeft de mogelijkheid om uit drie verschillende bouwmappen te kiezen: default, optimized, en debug, zorg dat je of default of debug/optimized doelen kiest. 
+</p>
+<ul><li> Wanneer je je project op default hebt geconfigureerd zal hij niet meer met debug of optimized kunnen bouwen. 
+</li><li> Wanneer je je project op debug of optimized hebt geconfigureerd zal hij niet meer met default kunnen bouwen.
+</li></ul>
+<p><br>
+</p>
+<a name="How_do_I_add_subprojects.3F"></a><h3>Hoe kan ik subprojecten toevoegen?</h3>
+<p>Selecteer de AutoMake manager. In de bovenste helft zie je de projecten. Om een subproject toe te voegen selecteer het project aan welke je een subproject wil toevoegen en klik op het icoon "add subproject". Een nieuwe map is gecre&euml;erd met de naam van het subproject (in het bestandssysteem en in de AutoMake manager).
+</p><p>Je moet nu een libtool-doel cre&euml;eren voor het nieuwe subproject. Als je dit hebt gedaan maak deze actief en voeg er bestanden aan toe.
+</p><p>Het libtool-doel in het subproject kan worden gelinked aan je hoofd binair doel door rechts-klikken op dit doel en selecteer "settings". Onder de tab "libraries" kan je het goede hulpbibliotheek (.la bestand) selecteren.
+
+</p>
+<a name="What_to_do_when_automake_.26_friends_fails_with_strange_error_messages.3F"></a><h3>Wat moet ik doen als <i>automake &amp; friends</i> breken op rare foutmeldingen?</h3>
+<p>Open een consolescherm in je project root-map en typ:
+</p>
+<pre>libtoolize --copy --force</pre>
+<p>Dit zou het probleem van conflicterende autotool-versies tussen KDevelop en die op je systeem geinstalleerde moeten oplossen.
+</p><p><br>
+</p>
+<a name="I_get_.22Wrong_autoconf_version.22_etc._Error._What_can_I_do.3F"></a><h3>Ik krijg "Wrong autoconf version" etc. Error. Wat kan ik doen? </h3>
+<p>Er zijn verschillende foutmeldingen over te oude versies van autoconf e.d. die ervoor zorgen dat configure niet goed werkt. Start autoreconf in de mappenstructuur waar de configure.in bestanden in staan, waarop de foutmeldingen worden gegeven. Dit commando zal probleren de informatie in de "GNU Build System"-bestanden te updaten. Zie man autoreconf voor meer informatie.
+</p><p><br>
+</p>
+<a name="How_can_I_develop_with_Qt4_and_KDevelop-3.4.x.3F"></a><h3>Hoe kan ik ontwikkelen met Qt4 en Kdevelop-3.4.x? </h3>
+<ul><li> Ga naar de Project Opties (in het Project menu) en selecteer de C++ Support. Open de Qt tab en
+</li></ul>
+<p>controleer of de Qt4 checkbox aangevinkt is. Kies dan de basisdirectory van jou Qt4 installatie, bijvoorbeeld:
+</p>
+<pre>/usr/share/qt4 (op een Debian Unstable Systeem)
+</pre>
+<ul><li> Als je qmake gebruikt, kan je de benodigde Qt bibliotheken voor je project kiezen via de qmake manager. Open deze en rechts-klik op een subdirectory of de basisdirectory en kies opties van het contextmenu. Op de Configuratiepagina zie je de verschillende Qt4 bibliotheken en je kan degene kiezen die je nodig hebt
+</li></ul>
+<p><br>
+</p>
+
+<a name="How_can_I_develop_with_Qt4_and_KDevelop-3.3.x.3F"></a><h3>Hoe kan ik ontwikkelen met Qt4 en Kdevelop-3.3.x? </h3>
+<ul><li>Wanneer je qmake gebruikt, gebruikt KDevelop qmake van het PATH, dus de qmake van Qt4 moet eerst in het PATH gezet worden (<a href="http://bugs.kde.org/show_bug.cgi?id=119107" title="http://bugs.kde.org/show bug.cgi?id=119107">http://bugs.kde.org/show_bug.cgi?id=119107</a>). Om dit te doen moet je KDevelop niet zoals normaal opstarten, maar het volgende shellscript gebruiken:
+</li></ul>
+<pre>#!/bin/sh
+export QTDIR=/devel/kde/src/4/qt-copy
+export PATH=$QTDIR/bin:$PATH
+exec kdevelop $*
+</pre>
+<ul><li>Het tweede probleem is dat de ingebouwde Qt designer is die van Qt3. Inplaats hiervan willen we de Qt4 designer starten voor de .ui-bestanden. Hier zijn twee stappen voor nodig:
+</li></ul>
+<p>Open ~/.kde/share/config/kdeveloprc en zoek de [General Options] groep (niet [General]!), en voeg de volgende lijn toe:
+</p>
+<pre>Embed KDevDesigner=false
+</pre>
+<p>Cre&euml;er ~/.kde/share/applnk/.hidden/designer.desktop met de volgende inhoud (verander het pad naar Qt4)
+</p>
+<pre>[Desktop Entry]
+Type=Application
+Exec=/devel/kde/src/4/qt-copy/bin/designer
+Name=Qt Designer
+GenericName=Interface Designer
+MimeType=application/x-designer
+Icon=designer
+</pre>
+<p>Het volledige pad naar de designer is hier nodig, zelfs alhoewel het PATH is correct in KDevelop. Dit is zo omdat KDevelop de designer niet direct start, het vraagt KDEinit om dit te doen...
+</p>
+<ul><li>Gebruik het "Hello World"-project wanneer je een nieuw project maakt, niet "Application", anders zal je eerste Qt4 project een Qt3-&gt;Qt4 porteer project zijn&nbsp;:)
+</li></ul>
+<p><br>
+</p>
+<a name="How_can_I_set_up_a_project_with_SCons.3F"></a><h3>Hoe zet ik een project op met SCons?</h3>
+<p><a href="http://www.scons.org" title="http://www.scons.org">SCons</a> is een software constructie hulpmiddel.  KDevelop (vanaf versie 3.2.2) ondersteund SCons-projecten direct.  Het is echter mogelijk om een project op te zetten die gebruik maakt van SCons door een "stub" Makefile te maken en gebruik te maken van de "Custom Makefiles" project type. Een voorbeeld van een simpele stub Makefile is het volgende (Let op dat de regels achter de target-namen met tabs begonnen moeten worden, niet met spaties):
+</p>
+<pre>project_name:
+        scons
+clean:
+        scons --clean
+</pre>
+<p>Dit zorgt dat de <i>Build Project</i> en <i>Clean Project</i> acties werken.
+</p><p><br>
+</p>
+<a name="Libraries_FAQ"></a><h2>Libraries FAQ</h2>
+<a name="How_to_create_a_.so_library.3F"></a><h3>Hoe maak ik een .so-bibliotheek?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Voeg een doel toe aan het project</a>
+<ul><li><i>primary:</i> program
+</li><li><i>prefix:</i> bin
+</li><li><i>file name:</i> libxxx
+</li><li><i>Linker flags-&gt;Other:</i> -shared -Wl,-soname,libxxx.so.1 -o libxxx.so.1.0.1
+</li></ul>
+</li></ul>
+<ul><li>Voeg de cpp/h bestanden naar dit doel
+</li><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">zet de <i>compiler vlaggen voor c++</i></a> -fPIC
+</li></ul>
+<p>Er is ook een libtool gebaseerde methode:
+</p>
+<ul><li>Voeg een sub-project "libxxx" toe
+</li><li>Voeg een doel toe
+</li><li>kies "Library (libtool)" 
+</li><li>kies "lib" 
+</li><li>Zet als bibliotheeknaam "xxx"
+</li><li>Voeg je bestanden toe
+</li><li>Compileer het project (Gebruik 'Build project' of F8).
+</li></ul>
+<p>Nu zou je een nieuwe bibliotheek moeten hebben genaamd libxxx.so.0.0.0
+</p><p><br>
+<p><br>
+</p>
+<a name="How_to_create_a_.a_library.3F"></a><h3>Hoe maak ik een .a-bibliotheek?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Voeg een doel toe aan het project</a>
+<ul><li><i>primary:</i> Library
+</li><li><i>prefix:</i> noinst
+</li><li><i>file name:</i> jouw_bibliotheek
+</li></ul>
+</li><li>Voeg de cpp/h bestanden aan dit doel
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_create_a_.la_library_.28a.k.a._a_libtool_archive.29.3F"></a><h3>Hoe maak ik een .la-bibliotheek (ook bekend als een libtool-archief)?</h3>
+<ul><li><a href="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html" title="http://docs.kde.org/kde3/en/kdevelop/kdevelop/automake-manager-operation.html">Voeg een doel toe aan het project</a>
+<ul><li><i>primary:</i> Libtool Library
+</li><li><i>prefix:</i> noinst
+</li><li><i>file name:</i> jouw_bibliotheek
+</li></ul>
+</li><li>Voeg de cpp/h bestanden aan dit doel
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_add_an_external_include_path_to_a_project.3F"></a><h3>Hoe voeg ik een extern include-pad to aan een project?</h3>
+<p>Wanneer je project gebaseerd op <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">AutoMake</a>) dan gebruik je waarschijnlijk de KDevelop AutoMake manager (zie <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Waar is de AutoMake manager in KDevelop?</a>).
+Om een include-pad toe te voegen aan je project doe je:
+</p>
+<ul><li> selecteer het <em>subproject</em> waar je het pad aan toe wil voegen in de bovenste helft van de AutoMake manager.
+</li><li> rechts-klik op <em>Options...</em> of klik op het sleutel-icoon
+</li><li> in de <em>Includes</em> tab voeg je het pad toe in de tweede box (<em>Directories outside of project</em>). Voeg het pad toe na de <em>-I</em> (zonder een spatie ertussen).
+</li></ul>
+<p><br>
+</p>
+<a name="How_to_link_against_a_.so_library.3F"></a><h3>Hoe link ik tegen een .so-bibliotheek aan?</h3>
+<p>Wanneer je project gebaseerd op <em>GNU Autotools</em> (<a href="http://www.gnu.org/software/autoconf/" title="http://www.gnu.org/software/autoconf/">Autoconf</a>/<a href="http://sources.redhat.com/automake/" title="http://sources.redhat.com/automake/">AutoMake</a>) dan gebruik je waarschijnlijk de KDevelop AutoMake manager (zie <a href="#Where_is_the_Automake_manager_in_KDevelop.3F" title="FAQ">FAQ#Waar is de AutoMake manager in KDevelop?</a>).
+Om te linken tegen een bibliotheek, of een bibliotheek toe te voegen doe je&nbsp;:
+</p>
+<ul><li> selecteer het <em>subproject</em> waar je de bibliotheek wil toevoegen in de bovenste helft van de AutoMake manager.
+</li><li> Rechts-klik op <em>Options...</em> of klik op het sleutel-icoon
+</li><li> in de libraries ("compiler") tab voeg je de bibliotheek toe in de tweede box (<em>link libraries outside of project</em>). Voer de bibliotheeknaam, zonder de prefix en de <em>.a</em> of <em>.so</em> of <em>.la</em> of waarop het ook eindigd
+<ul><li> d.w.z. als je bibliotheek <em>libsomelib.so</em> heet, dan moet je toevoegen: <em>-lsomelib</em>
+</li></ul>
+</li><li> Als de bibliotheek geen onderdeel is van het bibliothekenpad van je systeem dan voeg je <code>-Lpad/naar/de/bibliotheek/dat/je/gebruikt</code> toe aan <code>LDFLAGS</code> in je <em>Project-&gt;Project Options...-&gt;Configure Options-&gt;Linker Flags(LDFLAGS):</em>.
+</li></ul>
+<p>Vergeet niet om de locatie van de bibliotheek zijn .h-bestand aan de includepad van je gecompileerde programma zoals is uitgelegd in <a href="#How_to_add_an_external_include_path_to_a_project.3F" title="FAQ">FAQ#Hoe voeg ik een extern include-pad to aan een project?</a>
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.a_library.3F"></a><h3>Hoe link ik tegen een .a-bibliotheek aan?</h3>
+<p>Dit is hetzelfde als <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#Hoe link ik aan een .so-bibliotheek?</a>
+</p><p><br>
+</p>
+<a name="How_to_link_against_a_.la_library.3F"></a><h3>Hoe link ik tegen een .la-bibliotheek aan?</h3>
+<p>Dit is hetzelfde als <a href="#How_to_link_against_a_.so_library.3F" title="FAQ">FAQ#Hoe link ik aan een .so-bibliotheek?</a>
+</p><p>Toevoeging:
+Er is een andere, meer voor de hand liggende, manier om <em>mijnbinaire</em> tegen <em>eenbibliotheek.la</em> te linken. Zet <em>eenbibliotheek.la</em> in <em>$(bepaaldedir)</em>, dan, in plaats van <code>-lsomestuff -L$(somedir)</code> toe te voegen, voeg <code>$(bepaaldedir)/eenbibliotheek.la</code> toe. Het libtool programma kan hiermee omgaan.
+</p><p>Het volledige proces (zoals uitgelegd hierboven):
+</p>
+<ul><li> selecteer het <em>subproject</em> waar je de bibliotheek wil toevoegen in de bovenste helft van de AutoMake manager.
+</li><li> Rechts-klik op <em>Options...</em> of klik op het sleutel-icoon
+</li><li> in de <em>libraries<em> tab, verwijder de <code>-l</code> en voeg <code>$(bepaaldedir)/eenbibliotheek.la</code> toe in de tweede box (<em>link libraries outside of project</em>).
+</li></ul>
+<p>Dit is hetzelfde proces/behandeling als linken tegen bibliotheken binnen hetzelfde project, je moet de goede bibliotheken in de bovenste box (<em>Link convenience libraries inside project</em>) invoeren.
+</p><p>Enkele details:
+De bibliotheekfuncties zijn toegevoegd aan <code>mijnbinaire_LDADD</code> in de goede Makefile.am. De LDADD variabele kan libtool archieven afhandelen, d.w.z. het leest de locaties van de actuele bibliotheken en voegt ze toe.
+</p><p><br>
+</p>
+<a name="Debug_FAQs"></a><h2>Debug FAQ</h2>
+</p><p><br>
+<a name="Debugging_a_console_application_:_How_do_I_get_the_console_to_show_so_I_can_enter_data.3F"></a><h3> Het debuggen van een console-applicatie&nbsp;: Hoe kan ik de console zien zodat ik data kan invoeren?</h3>
+<p>Ga in het Project Options dialoog naar de debugger tab en controleer <i>Enable separate terminal for application IO</i>
+</p>
+<a name="How_to_debug_exec_objects_with_libtool_.22temporary_wrapper_scripts.22.3F"></a><h3> Hoe debug je exec-objecten met libtool "temporary wrapper scripts"? </h3>
+<p>Bij het bouwen van <code>ltlibraries</code> en het linken van de exec met hen, cre&euml;ert libtool warppers om hen heen, maar gdb geeft <i>not in executable format: File format not recognized</i>
+</p>
+Om het werkende te maken doe:<pre>
+Project -&gt; Project Options -&gt; Debugger -&gt; Debugging shell -&gt; libtool --mode=execute </pre>
+<p><br>
+</p>
+<a name="Code_Completion_FAQs"></a><h2>Code Completion FAQ</h2>
+<a name="How_can_I_enable_code_completion.3F"></a><h3>Hoe activeer ik code completion?</h3>
+<p>Wanneer je een C/C++ project opent, ga naar menu Project-&gt;Project Options, in de Project Options dialoog kies C++ Specific tab, dan de Code Completion tab. Vink de Automatic Code Completion vinkbox aan en andere gerelateerde instellingen. Ook in de Settings-&gt;Configure KDevelop-&gt;C++ Parsing dialoog kan je dit aanzetten en de parsing loop aanpassen.
+</p><p><br>
+</p>
+<a name="How_to_teach_new_macros_to_the_C.2FC.2B.2B_parser.3F"></a><h3>Hoe leer ik de C/C++ parser nieuwe macro's?</h3>
+<p>KDevelop's huidige parser parsed de bestanden niet in een bepaalde volgorde. Als je nieuwe marco's aan de C/C++ parser wil leren kan je dit het beste doen door een bestand dat alleen marco-definities bevat parsen voor de code-bestanden. Dit is waar de <em>C++ Parser Settings</em> dialoog voor is. De inhoud van dit bestand is de tekst dat je bewerkt in de <em>C++ Parser Settings </em> dialoog, die als eerste wordt geparsed wanneer je een project laad.
+</p><p><br>
+</p>
+<a name="How_can_I_enable_code_completion_for_external_libraries.3F"></a><h3>Hoe activeer ik code completion voor externe bibliotheken?</h3>
+<p>Wanneer je een C/C++ project hebt geopend, ga je naar het menu Project-&gt;Project Settings, in de Project Options dialoog en kiest de C++ Specific tab, dan de Code Completion tab. Druk op de Add Persistent Class Store knop en maak de New Persistent Class Store wizard af. Als je hiermee klaar bent zorg dan dat de nieuwe class store is aangevinked in de lijst van Persistent class stores in de Code Completion tab.
+</p><p><br>
+</p>
+<a name="Code_completion_still_doesn.27t_work"></a><h3>Code completion werkt nog steeds niet</h3>
+<p>Probeer het deactiveren van het afkortingen gedeelte - deze presenteerd soms een completion pupop voor de completion engine een kans krijgt om dat te doen.
+</p><p><br>
+</p>
+<a name="Why_doesn.27t_my_Qt4_Persistant_Class_Store_work_for_all_Qt4_classes.3F"></a><h3>Waarom werkt mijn Qt4 Persistent Class Store niet voor alle Qt4 klassen?</h3>
+<p>Wanneer je KDevelop 3.3.x of lager gebruikt, de persistent class store zal niet correct werken wanneer je
+Qt4's include directories importeerd. Qt4's includes zijn over het algemeen one-liners met '#include "../../src/blah.h", welke KDevelop niet kan behandelen. Om hier omheen te werken, probeer de QT4's src directory te gebruiken wanneer je de completion database maakt.
+</p><p><br>
+</p>
+<a name="KDevelop_installation_FAQs"></a><h2>KDevelop installatie FAQ</h2>
+<a name="How_long_does_it_usually_take_to_compile_kdevelop.3F"></a><h3>Hoe lang duurt het compileren van KDevelop normalieter?</h3>
+<p>Dit hangt af van de snelheid van je computer. Een ontwikkelaar met een 3GHZ P4 doet er omgeveer 40 minuten om KDevelop te compileren voor de eerste keer. Na het updaten van CVS duurt het meestal minder lang. Wij gokken dat het gemiddeld tussen 1 en 2 uur duurt om te compileren na de eerste download.
+</p><p>Het is een goed idee om gcc-4.01 te gebruiken. Dit zal de compileertijd drastisch verminderen. Debug compilaties ("./configure --enable-debug=full" met -g -O0 vlaggen) zijn 45% sneller en release ("./configure --enable-debug=no" met -O2 vlag) - zijn 16% sneller. Bijvoorbeeld, op een AthlonXP1600 / 256Mb RAM systeem een nieuwe debug compilatie duurt 45 minuten met gcc-4 en 81 minuten met gcc-3-3-1. Om het allemaal nog sneller te maken kan ook de meest recente libtool (van CVS HEAD) worden gebruikt.
+</p><p>Het is normaal veilig om gcc-4 ge&iuml;nstalleerd te hebben in /usr/local samen met gcc-3.x in /usr. Het is ook mogelijk om alleen KDevelop met gcc-4 te compileren en de rest (KDE/Qt4) niet.
+</p><p>Let op! Gebruik geen gcc-4.0.0 want deze compileerd de code verkeerd. gcc-4.0.1 en latere versies hebben dit probleem niet.
+</p><p><br>
+</p>
+<a name="I_get_an_error_message_.22couldn.27t_create_a_language_plugin.22._What_is_wrong.3F"></a><h3>Ik krijg de foutmelding "couldn't create a language plugin". Wat is er fout?</h3>
+<p>Net zoals ieder andere KDE applicatie moet je er zeker van zijn dat KDevelop's plugins herkent worden door KDE. Of installeer het in je KDE directory (configure --prefix=/opt/kde3 for example) of voeg het KDevelop pad toe aan je KDEDIRS omgevingvariabele en herstart "kbuildsycoca". Een voorbeeld voor het commando in bash (ervanuitgaand dat Kdevelop is ge&iuml;nstalleerd in /home/harry/kdevelop):
+</p>
+<pre>export KDEDIRS=/home/harry/kdevelop:$KDEDIRS &amp;&amp; kbuildsycoca
+</pre>
+<p><br>
+</p>
+<a name="Legal_FAQs"></a><h2>Licentie FAQ</h2>
+<a name="Am_I_allowed_to_develop_commercial_applications_with_KDevelop.3F"></a><h3>Ben ik bevoegd om commerci&euml;le applicaties te ontwikkelen met KDevelop?</h3>
+<p>Iedereen en alle entiteiten zijn vrij om KDevelop te gebruiken. De gegenereerde Code kan onder alle licenties die je wil worden ondergebracht. Daarom heeft de projectgenerator velden om je eigen copyright notice aan de gegenereerde bestanden toe te voegen, maar om het simpeler te maken en om een voorbeeld te hebben is er standaard de GPL licentie. Dus je kan daar je eigen licentie neerzetten.
+Als het gaat om het eigenlijke bewerken etc. van je programma is KDevelop net zoals een andere editor, het is een programma dat GPL is en geen implicaties heeft op waar je het voor gebruikt. Dus kan je er commerciële/gesloten software mee schrijven ondanks het feit dat KDevelop zelf GPL is.
+Voor het gebruiken van KDE functies of andere vrije software dingen, moet je alleen letten op de licentievoorwaarden op de bibliotheken die je gaat gebruiken. Dus voor commerciële ontwikkeling van KDE/Qt applicaties heb je alleen een professionele licentie nodig van Trolltech. De KDE bibliotheken zijn zelf LGPL wat betekent dat je de function calls kunt gebruiken en je programma mag linken aan de KDE bibliotheken. Dit telt voor de kdelibs bibliotheken (konqueror en kcontrol etc.) en de koffice bibliotheken (om koffice applicaties te maken).
+Voor meer informatie, kijk op KDevelop Licensing.
+</p><p><br> 
+</p>
+<a name="Am_I_allowed_to_develop_commercial_plugins_to_KDevelop.3F"></a><h3>Ben ik bevoegd om commerci&euml;le plugins te maken voor KDevelop?</h3>
+<p>Bij KDevelop zit een libkdeveloplgpl.so bibliotheek om ontwikkeling van commerciële plugins toe te laten. In deze bibliotheek zitten KDevelop interfaces en voorzieningsfuncties onder de LGPL. Als je een professionele licentie van Trolltech hebt kun je je code linken met libkdeveloplgpl en het onder elke licentie maken. 
+</p><p><br> 
+</p>
+<a name="Misc._FAQs"></a><h2>Overige FAQ</h2>
+<a name="I_am_developing_an_application_which_needs_exception_handling._How_can_I_make_it.3F"></a><h3>Ik ben een applicatie aan het maken die foutafhandeling nodig heeft. Hoe kan ik die maken?</h3>
+<p>Bewerk het configure.in(.in) bestand in je primaire code map. Hier moet
+je achter de AC_CHECK_COMPILERS() marco hetvolgende invoeren:
+</p>
+<pre>CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS"
+</pre>
+<p>en hierna moet je je "configure" opnieuw maken door het volgende uit te voeren
+</p>
+<pre>make -f Makefile.dist
+</pre>
+<p>in je primaire code map en dan het configurescript opnieuw uitvoeren.
+</p><p><br> 
+</p>
+<a name="My_configure.in.in_hasn.27t_any_AC_CHECK_COMPILERS.28.29_call._Where_should_I_put_the_CXXFLAGS.3D.22.24CXXFLAGS_.24USE_EXCEPTIONS.22_mentioned_above.3F"></a><h3>Mijn configure.in.in heeft geen AC_CHECK_COMPILERS() aanroep. Waar moet ik de CXXFLAGS="$CXXFLAGS $USE_EXCEPTIONS" die hierboven is gegeven invoeren?</h3>
+<p>De nieuwe versies van configure.in.in is versimpeld. Je kan nu de regel toevoegen na de AM_INIT_AUTOMAKE(&lt;pakketnaam&gt;,&lt;versie&gt;).
+</p><p><br> 
+</p>
+<a name="Is_there_any_HOWTO_available_on_how_to_work_with_QT_designer_made_dialogs_.3F"></a><h3>Is er een HOWTO beschikbaar over het werken met QT designer gemaakte dialogen&nbsp;?</h3>
+<p>Ja, er is een goede HOWTO op <a href="http://women.kde.org/articles/tutorials/kdevelop3/index.html" title="http://women.kde.org/articles/tutorials/kdevelop3/index.html">http://women.kde.org/articles/tutorials/kdevelop3/index.html</a>
+</p><p><br> 
+</p>
+<a name="Why_don.27t_I_see_the_compilation_error_messages.3F"></a><h3>Waarom zie ik geen compilatie foutmeldingen?</h3>
+<p>Als je tijdens het compileren merkt dat sommige belangrijke informatie niet gemeld wordt in de Messages Output View scherm, het kan zijn dat het niveau van berichtendetails te laag is. Rechts-klikken in het scherm en selecteer een ander detail niveau van het context menu.
+</p><p><br>
+</p>
+<a name="How_to_add_a_translation_to_a_KDE_program.3F"></a><h3>Hoe voeg ik een vertaling toe aan een KDE-programma?</h3>
+<p>Executeer eerst<i>Build-&gt;Create Messages&amp;Merge</i> en voeg hierna een nieuwe vertaling toe via het <i>Project-&gt;Add Translation</i>. Dit cre&euml;erd een po/$lang.po bestand.
+Het $project.pot bestand heeft alle regels in zich.
+</p><p><br>
+</p>
+<a name="How_to_add_icons_to_a_project.3F"></a><h3>Hoe voeg ik iconen toe aan een project?</h3>
+<p>Voeg eerst een nieuw subproject toe via de automake manager genaamd pics. Dan rechts-klik op dat nieuw subproject, kies <i>Settings</i> en dan <i>Prefix</i>. Voeg een nieuwe prefix toe met bijvoorbeeld mijnpics als naam en het pad <i>$(kde_datadir)/$project/pics</i>. Cre&euml;er hierna een nieuw doel in het pics subproject en kies Data als Primary, mypics als Prefix en voeg een nepnaam toe. Als laatste voeg je je Iconen toe aan het nieuwe doel. Het laden van het plaatje kan worden gedaan door het invoegen van het <i>kiconloader.h</i> header bestand en door de volgende code dat de pixmap toevoegd met de naam config aan een knop: <i>button-&gt;setPixmap(UserIcon("config"))</i>
+</p><p><br>
+</p>
+<a name="How_to_use_the_SVN_plugin.3F"></a><h3>Hoe kan ik de SVN plugin gebruiken?</h3>
+<p>Je moet handmatig het project en de code importeren in een subversion repository. Herstart dan KDevelop en een subversion context menu zou moeten verschijnen wanneer je rechts-klikt op bestanden. Intern zoekt de subversion module voor de aanwezigheid van de <code>.svn</code> map in dezelfde map als de file staat waar je op klikt.
+</p><p>Voor meer informatie lees deze thread: <a href="phorum5/read.php?2,23286" title="phorum5/read.php?2,23286">phorum5/read.php?2,23286</a>
+</p><p><br>
+</p>
+<a name="How_to_set_up_a_different_compiler_.28native_or_cross_compilers.29"></a><h3>Hoe gebruik ik een andere compiler (native of cross compilers)?</h3>
+<p>Compilers die gezet zijn voor een project:
+</p>
+<ul><li> <i>Project-&gt;Project Options-&gt;Configure Options</i> (alleen autotools gebaseerde projecten, custom projecten hebben zo'n tabblad niet)
+</li><li> voeg een nieuwe configurenaam in, b.v. <i>&lt;compilernaam&gt;-&lt;platform&gt;-debug</i>
+</li></ul>
+<p>Tab "General":
+</p>
+<ul><li> zet de configure argumenten (b.v. --host en --build opties bij cross-compiling)
+</li><li> zet de bouwmap, dit om onduidelijkheid in de configuraties met dezelfde naam te voorkomen
+</li><li> zet de vlaggen die nodig zijn (LDFLAGS, ENV)
+</li></ul>
+<p>Tab "C":
+</p>
+<ul><li> zet de naam voor je C-compiler binary b.v. CC, gcc, icc, kcc, ... (cross-compilers ook!)
+</li><li> zet de vlaggen die nodig zijn (CFLAGS)
+</li></ul>
+<p>Tab "C++":
+</p>
+<ul><li> zet de naam voor je C++-compiler binary, b.v. cc, g++, ... (cross-compilers ook!)
+</li><li> zet de vlaggen die nodig zijn (CXXFLAGS)
+</li></ul>
+<p>Tab "Fortran":
+</p>
+<ul><li> zet de naam voor je Fortran-compiler binary, b.v. g77, g90, gfortran, ... (cross-compilers ook!)
+</li><li> zet de vlaggen die nodig zijn (FFLAGS)
+</li></ul>
+<p>Sluit de opties, selecteer je configuratie in <i>Project-&gt;Build Configuration</i>, start dan <i>AutoMake &amp; Friends</i>, <i>configure</i> en <i>make</i>.
+</p><p>Bijvoorbeeld, om een cross-compiler voor sparc-sun-solaris2.9 op te zetten:
+</p>
+<ul><li> Project -&gt; Project Options -&gt; Configure Options
+</li><li> Voeg een nieuwe configuratienaam, b.v. "sparc-debug""
+</li><li> Configure Argumenten:
+</li></ul>
+<pre>--host=i686-pc-linux-gnu -- build=sparc-sun-solaris2.9
+</pre>
+<ul><li> Bouwmap:
+</li></ul>
+<pre>sparc-debug
+</pre>
+<ul><li> ga naar Tab C, voeg de naam van de cross gcc, b.v. sun-solaris-sparc2.9-gcc, in
+</li><li> ga naar Tab C++, voeg de naam van de cross g++, b.v. sun-solaris-sparc2.9-g++, in
+</li><li> AutoMake &amp; Friens
+</li><li> configure
+</li><li> make
+</li></ul>
+<p>Voor cross debuggen zie <a href="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote+debug+kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3" title="http://groups.google.com/group/comp.os.linux.embedded/msg/c3245a344f01fe1f?q=remote debug kdevelop&amp;hl=en&amp;lr=&amp;ie=UTF-8&amp;rnum=3">Op afstand debugging gebruik makend van KDevelop 3.0 in comp.os.linux.embedded newsgroep</a> of 
+<a href="mediawiki/index.php/Cross_debugging" title="Cross debugging">Cross_debugging</a>.
+Het <a href="phorum5/read.php?2,23503" title="phorum5/read.php?2,23503">kdevelop.org forum</a> heeft er ook informatie over.
+</p><p>Zorg ervoor dat de binaire bestanden en bibliotheken van de (cross-)compiler beschikbaar zijn in $PATH en $LD_LIBRARY_PATH!
+</p><p>Het kan nodig zijn om sommige autoconf/automake macros in <i>configure.in</i> te veranderen om de compiler volledig te ondersteunen -- bekijk hiervoor het laatste bericht in deze thread op <a href="phorum5/read.php?8,27808" title="phorum5/read.php?8,27808">kdevelop.org forum</a> om te kijken wat je moet doen om de  <i>gfortran</i> (GNU F90 compiler) werkend te krijgen.
+</p><p><br>
+</p>
+<a name="Working_with_Clearcase_views_and_KDE"></a><h3>Werken met Clearcase schermen en KDE</h3>
+<p>Clearcase bestanden zijn normaal opgeslagen onder '/usr/vobs/...' en binaire objecten mogen referenties naar dit pad bevatten. Als jou KDevelop project gedefinieerd was met een ander pad (b.v. '/view/[view name]/usr/vobs'), kan je problemen ondervinden met bestanden die twee keer geopend worden, vreemd breekpuntgedrag en misleidende bestandsbewerking.
+</p><p>Als KDevelop is gestart van een shell in de clearcase scherm zal het nog steeds niet '/usr/vobs/...' zien behalve als KDE zelf was gestart in een clearcase scherm.
+De volgende aanpak lost deze problemen op:
+</p><p><tt>cp /etc/X11/xinit/xinitrc ~/.xinitrc</tt><br>
+Verander de voorlaatste regel van<br>
+<tt>exec $WINDOWMANAGER</tt><br>
+naar<br>
+<tt>/opt/rational/clearcase/rhat_x86/bin/cleartool setview -exec $WINDOWMANAGER ViewName</tt>
+</p><p>Waar <tt>ViewName</tt> is de naam van het scherm dat je wil gebruiken
+</p><p>Jammergenoeg geeft dit schijnbaar problemen met niet-KDE applicaties (b.v. Firefox) en heeft mijn machine laten crashen. Een ander alternatief is om een andere windowmanager te gebruiken zoals GNOME.
+</p>
+<!-- Saved in parser cache with key kdevelop_db:pcache:idhash:735-0!1!0!0!!en!2 and timestamp 20060819095706 -->
+
+<?php module_tail(); ?>

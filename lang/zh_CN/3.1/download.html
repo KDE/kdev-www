@@ -1,0 +1,45 @@
+<?php module_head("KDevelop 3.1.x downloads");?>
+<br>
+<h3>二进制版本：</h3>
+<p>
+一些Linux/UNIX OS发行商为他们的发行版本提供了KDevelop的二进制包，此外，社区的志愿者也作了相同的工作。
+一些二进制包可以在KDE的网站或者FTP镜像上下载。
+</p>
+<?php
+  $l_architecture = "架构";
+  $l_distribution = "发行";
+  $l_distribution_version = "发行版本";
+  include("3.1/download_binaries.ihtml");
+?>
+<br>
+<br><h3>用于KDE &gt;= 3.2上的源代码 :</h3>
+<?php include("3.1/download_sources.ihtml"); ?>
+<br>
+<ol>
+<li>在继续之前请确保您的计算机已经安装了
+<a href="index.html?filename=3.1/requirements.html">必须的软件</a> 。
+</li>
+<br>
+<li>解压缩源代码并切换到基目录：
+<dl>
+<dd class="code">$ bunzip2 kdevelop-3.1.x.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop-3.1.x.tar</dd>
+<dd class="code">$ cd kdevelop-3.1.x</dd>
+</dl>
+</li>
+</ol>
+<?php include_file("3.1/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+$ts1 = filemtime('3.1/download_binaries.ihtml');
+$ts2 = filemtime('3.1/download_sources.ihtml');
+if ($lang == 'en') {
+  $ts3 = filemtime('3.1/download.html');
+  $ts4 = filemtime('3.1/compiling.ihtml');
+} else {
+  $ts3 = file_exists("lang/$lang/3.1/download.html")?filemtime("lang/$lang/3.1/download.html"):filemtime('3.1/download.html');
+  $ts4 = file_exists("lang/$lang/3.1/compiling.ihtml")?filemtime("lang/$lang/3.1/compiling.ihtml"):filemtime('3.1/compiling.ihtml');    
+}
+return (max($ts1,$ts2,$ts3,$ts4));
+?>

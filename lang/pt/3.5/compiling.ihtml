@@ -1,0 +1,72 @@
+<ol start="4">
+<li>
+De forma a compilar e instalar o KDevelop no seu sistema,
+escreva os comandos (assumimos que tem o interpretador de comandos bash) abaixo na directoria base.
+<dl>
+<dd class="code">$ export KDEDIR=/onde/está/o/seu/kde3/</dd>
+<dd class="code">$ export QTDIR=/onde/está/o/seu/qt3/</dd>
+<dd class="code">$ export KDEVELOPDIR=/where/kdevelop/will/be/installed</dd>
+<dd class="code">$ export KDEDIRS=$KDEVELOPDIR:$KDEDIR</dd>
+<dd class="code">$ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">$ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">$ export PATH=$KDEVELOPDIR/bin:$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+<b>Nota:</b> Por raz&otilde;es obvias deve editar as tr&ecirc;s primeiras linhas de acordo com a sua configura&ccedil;&atilde;o!<br>
+Em distribuições linux baseadas em RPM, pode descobrir a localização das suas directorias Qt3 e KDE3
+utilizando o programa de configuração da sua distribuição linux ou simplesmente usando o comando "rpm -ql qt3" e "rpm -ql kdebase3".
+<br>
+Se é utilizador de gentoo e deseja usar ctags então necessita de executar:
+<dl>
+<dd class="code">ln -sf /usr/bin/exuberant-ctags /usr/bin/ctags</dd>
+</dl>
+</li>
+
+<br>
+<br>
+
+<li>
+O próximo passo é configurá-lo,
+para descobrir quais são as possíveis opções de configuração faça:
+<dl>
+<dd class="code">$ ./configure --help</dd>
+</dl>
+
+Aqui está um exemplo de uma versão configurada para ter informação de debug:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Aqui está um exemplo de uma versão configurada sem informação de debug e com algumas optimizações:
+<dl>
+<dd class="code">$ ./configure --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Voçê pode evitar compilar algumas partes do KDevelop que não necessite, por examplo, eu uso o seguinte comando de configuração:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEVELOPDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+--disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+--disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+--disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion</dd>
+</dl>
+</li>
+
+<li>
+Finalmente pode compilá-lo e instalá-lo:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (como root, usando por exemplo o comando "su")</dd>
+</dl>
+Se por alguma raz&atilde;o o comando make falhou pode obrig&aacute;-lo a ignorar os erros
+utilizando adicionando a op&ccedil;&atilde;o -k assim:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (como root)</dd>
+</dl>
+Dependendo da gravidade do erro pode acabar com uma vers&atilde;o
+a trabalhar ou n&atilde;o do KDevelop. Por isso ao executar "make -k install" est&aacute; por sua pr&oacute;pria conta e risco!!!.
+</li></ol>
+
+<p>Voc&ecirc; deve reportar os bugs que encontrar no <a
+href="http://bugs.kde.org/wizard.cgi">formul&aacute;rio de submiss&atilde;o de bugs</a>. Voc&ecirc; <b>n&atilde;o</b> deve reportar
+erros de compila&ccedil;&atilde;o na base de dados de bugs. Para erros de compila&ccedil;&atilde;o use antes a 
+<a href="index.html?filename=mailinglist.html">lista de discuss&atilde;o</a>.</p>

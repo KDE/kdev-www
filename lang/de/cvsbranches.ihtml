@@ -1,0 +1,48 @@
+<?php module_head('SVN-Zweige');?>
+<table border="1" cellpadding="2">
+  <tr>
+    <th><b>SVN-Zweig</b></th>
+    <th><b>Nutzen</b></th>
+    <th><b>Geplante Versionen</b></th>
+    <th><b>Ver&ouml;ffentlichungsdatum</b></th>
+  </tr>
+<?php include('svn_branches_table.inc'); ?>
+  <tr>
+    <td><a href="http://websvn.kde.org/branches/kdevelop/2/kdevelop/">kdevelop/2</a></td>
+    <td>stabil f&uuml;r KDE 2 <b>und</b> KDE 3.</td>
+    <td>Version 2.0.0 <?php echo $l_was_released_with; ?> KDE 2.2.0 ver&ouml;ffentlicht.<br>Die Entwicklung der <a href="index.html?filename=2.1/kdevelop.html">2.x Versionen</a> wurde mit 2.1.4 komplett aufgegeben, Version 2.1.5 ist nur eine Anpassung an KDE 3.1.</td>
+    <td>ver&ouml;ffentlicht am 15. August 2001</td>
+  </tr>
+  <tr>
+    <td><a href="http://websvn.kde.org/branches/kdevelop/1.4/kdevelop/">kdevelop/1.4</a></td>
+    <td>stabil f&uuml;r KDE 1 <b>und</b> KDE 2.</td>
+    <td>Die Entwicklung der <a href="index.html?filename=1.3/kdevelop.html">1.x Versionen</a> wurde komplett aufgegeben.</td>
+    <td>ver&ouml;ffentlicht am 6. Dezember 1999</td>
+  </tr>
+</table>
+<br>
+
+<br>
+<h3>Folgen Sie diesen Schritten um den aktuellen Quellcode aus einem der Zweige zu erhalten:</h3>
+<br>
+Erstellen Sie ein Verzeichnis f&uuml;r die Quelltexte<br>
+<dl>
+<dd class="code">$ mkdir kdevelop</dd>
+<dd class="code">$ cd kdevelop</dd>
+</dl>
+Holen Sie sich das SVN-Modul "kdevelop" unter svn://anonsvn.kde.org/home/kde/<br>
+<ul>
+  <li>Kommandozeile f&uuml;r den <b>HEAD</b>-Zweig:<br>
+    <dl>
+    <dd class="code">$ svn co svn://anonsvn.kde.org/home/kde/trunk/KDE/kdevelop/ kdevelop</dd>
+    </dl>
+  </li>
+  <li>Kommandozeile f&uuml;r den <b><?php echo $k_branch; ?></b>-Zweig:<br>
+    <dl>
+    <dd class="code">$ svn co svn://anonsvn.kde.org/home/kde/<?php echo $k_branch_path; ?>/ kdevelop</dd>
+    </dl>
+  </li>
+</ul>
+Um einen anderen Zweig zu erhalten, ersetzen Sie <code><?php echo $k_branch; ?></code> mit dem Namen des Zweigs den Sie ben&ouml;tigen.
+<br>
+<?php module_tail();

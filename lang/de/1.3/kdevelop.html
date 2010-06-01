@@ -1,0 +1,248 @@
+<h2 align=center>Diese Seite fasst alle Informationen &uuml;ber die KDevelop 1.x Serie zusammen</h2>
+
+<?php module_head("Allgemeines");?>
+Die Entwicklung f&uuml;r KDE 1.x wurde am 11. Dezember 2000 mit der Ver&ouml;ffentlichung von KDevelop 1.3 <b>aufgegeben</b>, und keine weiteren KDevelop 1.x Versionen sind f&uuml;r KDE 1.x geplant.<br>
+KDevelop 1.4 ist f&uuml;r KDE 2.x und Qt 2.x, aber bitte nutzen Sie stattdessen KDevelop 2.1.5 falls Sie KDevelop f&uuml;r KDE 2.x ben&ouml;tigen.<br>
+Zur Zeit verbleiben nur vier W&uuml;nsche in KDevelop 3.0 (f&uuml;r KDE 3.0, Qt 3.0) von den vielen Fehlern und W&uuml;nschen von KDevelop 1.3.
+
+<h3>Funktionen</h3>
+<a href="index.html?filename=1.3/features.html">Diese Seite gibt Ihnen eine &Uuml;bersicht &uuml;ber die M&ouml;glichkeiten von KDevelop 1.x </a><br>
+
+<h3><a name="Requirements">Voraussetzungen</a></h3>
+Bevor Sie beginnen Ihre frisch heruntergeladene KDevelop-Version zu kompilieren, stellen Sie bitte sicher, 
+dass Sie die folgenden Programme installiert haben. Sie k&ouml;nnen seltsame Fehlermeldungen erhalten, 
+falls Sie &auml;ltere Versionen verwenden!
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr align=left>
+    <th class=header align=left>Programm/Bibliothek</th>
+    <th class=header align=left>Quelle</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd>g++2.8/egcs 1.0.3 (oder kompatibel)</td>
+    <td class=odd><a href="http://gcc.gnu.org/" TARGET="_top">gcc.gnu.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>GNU make</td>
+    <td class=even><a href="http://www.gnu.org/software/make/" TARGET="_top">www.gnu.org/software/make</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>perl 5.004</td>
+    <td class=odd><a href="http://www.perl.com/" TARGET="_top">www.perl.com</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Qt 1.44, <b>NOT Qt 2.0</b></td>
+    <td class=even><a href="http://www.trolltech.com/products/qt/" TARGET="_top">www.trolltech.com/products/qt</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>KDE 1.1.x (libs und base)</td>
+    <td class=odd><a href="http://www.kde.org/" TARGET="_top">www.kde.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>autoconf 2.13</td>
+    <td class=even><a href="http://www.gnu.org/software/autoconf/" TARGET="_top">www.gnu.org/software/autoconf</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>automake 1.4 </td>
+    <td class=odd><a href="http://www.gnu.org/software/automake/" TARGET="_top">www.gnu.org/software/automake</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>flex 2.5.4</td>
+    <td class=even><a href="http://www.gnu.org/software/flex/" TARGET="_top">www.gnu.org/software/flex</a></td>
+  </tr>
+</table>
+<br>
+Diese Werkzeuge sind zus&auml;tzlich, d.h. KDevelop funktioniert auch ohne sie. Jedoch werden einige 
+Funktionen nicht zur Verf&uuml;gung stehen, wie die automatische Dokumentationserzeugung oder die 
+datei&uuml;bergreifende Suche. Deshalb ist es empfehlenswert, auch die folgenden Programme zu installieren.
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr valign=top>
+    <th class=header align=left>Programm/Bibliothek</th>
+    <th class=header align=left>Quelle</th>
+  </tr>
+  <tr valign=top>
+    <td class=even>kdoc</td>
+    <td class=even><a href="http://www.kde.org/" TARGET="_top">www.kde.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>sgmltools 1.0</td>
+    <td class=odd><a href="http://www.sgmltools.org/" TARGET="_top">www.sgmltools.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Glimpse 4.1</td>
+    <td class=even><a href="http://glimpse.cs.arizona.edu/" TARGET="_top">glimpse.cs.arizona.edu</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>a2ps 4.11</td>
+    <td class=odd><a href="http://www.gnu.org/software/a2ps/" TARGET="_top">www.gnu.org/software/a2ps</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>enscript</td>
+    <td class=even><a href="http://www.gnu.org/software/enscript/" TARGET="_top">www.gnu.org/software/enscript</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>KDbg</td>
+    <td class=odd><a href="http://members.nextra.at/johsixt//kdbg.html" TARGET="_top">members.nextra.at/johsixt//kdbg.html</a></td>
+    </tr>
+  <tr valign=top>
+    <td class=even>KIconEdit</td>
+    <td class=even><a href="http://w1.1358.telia.com/~u135800018/prog.html" TARGET="_top">w1.1358.telia.com/~u135800018/prog.html</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Gv, Ghostview oder KGhostview</td>
+    <td class=odd><a href="http://www.gnu.org/software/ghostview/" TARGET="_top">www.gnu.org/software/ghostview</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>cvs 1.10.6</td>
+    <td class=even><a href="http://www.cvshome.org/" TARGET="_top">www.cvshome.org</a></td>
+  </tr>
+</table>
+<br>
+
+<h3><a name="Downloads">Downloads</a></h3>
+<br>
+Die letzte stabile KDevelop 1.x Version (f&uuml;r KDE 1.x) ist <b>1.3</b><br>
+<ul>
+<li><A HREF="ftp://ftp.kdevelop.org/pub/kdevelop/kdevelop-1.3.tar.gz" TARGET="_top">kdevelop-1.3.tar.gz (7,0 MB)</A></li>
+<li><A HREF="ftp://ftp.kdevelop.org/pub/kdevelop/kdevelop-1.3.tar.bz2" TARGET="_top">kdevelop-1.3.tar.bz2 (5,4 MB)</A></li>
+<li><A HREF="ftp://ftp.kdevelop.org/pub/kdevelop/kdevelop-1.3-linux-i386.tar.gz" TARGET="_top">kdevelop-1.3-linux-i386.tar.gz (8,2 MB)</A></li>
+<li><A HREF="ftp://ftp.kdevelop.org/pub/kdevelop/kdevelop-1.3-linux-i386.tar.bz2" TARGET="_top">kdevelop-1.3-linux-i386.tar.bz2 (7,2 MB)</A></li>
+</ul>
+<br>
+Rod Roark hat eine vollst&auml;ndige <a href="http://www.sunsetsystems.com/tip-kdevelop.php3" TARGET="_top">Einf&uuml;hrung</a>, wie KDevelop unter RedHat 6.0 installiert wird, geschrieben.
+<br>
+
+<h3><a name="Patches">Plugins und Patches</a></h3>
+Wegen verschiedener Gr&uuml;nde (haupts&auml;chlich Stabilit&auml;t) k&ouml;nnen folgende gr&ouml;szlig;eren Patches nicht zur aktuellen Version hinzugef&uuml;gt werden. Dennoch bieten Sie hervorragende Erg&auml;nzungen, sodass Sie sie hier herunterladen k&ouml;nnen.<br>
+Bitte beachten Sie, dass es sich um Quelltextpatches handelt, sodass Sie ein kompatibles Quelltextpaket herunterladen, dieses patchen und neu kompilieren m&uuml;ssen.<br>
+Viel Spa&szlig;!
+<table width="100%" border=0 cellspacing=2 cellpadding=2>
+  <tr align=left>
+    <th class=header>Name/Funktion</th>
+    <th class=header>Autor</th>
+    <th class=header>KDevelop Version</th>
+    <th class=header>Beschreibung</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd><a HREF="http://homepages.ihug.co.nz/~jbb/" TARGET="_top">Debugger</a></td>
+    <td class=odd>John Birch</td>
+    <td class=odd>1Beta4 und h&ouml;her</td>
+    <td class=odd>dieser Patch f&uuml;gt einen integrierten Debugger zur KDevelop IDE hinzu</td>
+  </tr>
+  <tr valign=top>
+    <td class=even><a HREF="ftp://ftp.kdevelop.org/incoming/kdkobjc-0.2.tar.gz" TARGET="_top">Objective C Unterst&uuml;tzung</a></td>
+    <td class=even>Richard Dale</td>
+    <td class=even>1.2</td>
+    <td class=even>f&uuml;gt komplette Objective-C Unterst&uuml;tzung zu KDevelop hinzu</td>
+  </tr>
+  <tr valign=top>
+    <td class=odd><a HREF="1.3/patches/commentfeature.diff" TARGET="_top">Uncomment/Comment</a></td>
+    <td class=odd>Christian Couder</td>
+    <td class=odd>1Beta4 und h&ouml;her</td>
+    <td class=odd>f&uuml;gt die Funktion "Kommentiere/Entkommentiere Quelltextbl&ouml;cke" hinzu</td>
+  </tr>
+</table>
+
+<h3><a name="Compiling">Version 1.3 vom CVS Verzeichnis kompilieren</a></h3>
+Um ein selbstkompiliertes KDevelop&nbsp;1.3 aus den CVS Quelltexten zu erhalten, besorgen Sie sich 
+den Zweig KDEVELOP_1_0 des CVS Moduls "kdevelop" unter :pserver:anonymous@anoncvs.kde.org:/home/kde<br>
+<br>
+Kommandozeile falls Sie KDE 1.x benutzen:<br>
+<pre>
+       $ mkdir kdesrc
+       $ cd kdesrc
+       $ cvs -z3 -d :pserver:anonymous@anoncvs.kde.org:/home/kde co -r KDEVELOP_1_0 kdevelop
+       $ cd kdevelop
+</pre>
+<br>
+
+Um KDevelop (CVS Version) auf Ihrem System zu kompilieren und zu installieren, 
+f&uuml;hren Sie folgende Befehle im Wurzelverzeichnis Ihrer KDevelop Distribution aus:<br>
+<br>
+eine f&uuml;r die Ver&ouml;ffentlichung kompilierte Version:
+<pre>
+       $ export KDEDIR=/wo/Ihr/KDE1/ist
+       $ export QTDIR=/wo/Ihr/qt-1/ist
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+       $ ./configure --prefix=$KDEDIR
+       $ make
+       $ make install (as root)
+</pre>
+<br>
+eine mit Debuginformationen kompilierte Version:
+<pre>
+       $ export KDEDIR=/wo/Ihr/KDE1/ist
+       $ export QTDIR=/wo/Ihr/qt-1/ist
+       $ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+       $ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+       $ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+
+       $ export CXXFLAGS="-g3 -O0"
+
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+       $ ./configure --enable-debug --prefix=$KDEDIR
+       $ make
+       $ make install (as root)
+</pre>
+
+<h3>&Auml;nderungen</h3>
+<a href="index.html?filename=1.3/changes.html">Diese Seite enth&auml;lt eine &Uuml;bersicht der &Auml;nderungen in KDevelop&nbsp;1.x.</a><br>
+
+<h3><a name="Bugs">Bekannte Fehler</a></h3>
+Da die Entwicklung dieser Ver&ouml;ffentlichungsserie eingestellt wurde, gibt es sehr viele bekannte, aber nicht ausgebesserte Fehler. Jedoch sind alle diese Fehler in KDevelop 3.0 behoben. Wir bitten Sie deshalb nach M&ouml;glichkeit KDevelop 3.x einzusetzen.
+<?php module_tail();?>
+
+<?php module_head("Dokumentation");?>
+      <h3>Benutzerhandbuch</h3>
+      <a href="1.3/doc/manual/index.html">Das Benutzerhandbuch zu KDevelop</a> - Das Referenzhandbuch der KDevelop Integrierten Entwicklungsumgebung (IDE) f&uuml;r UNIX Systeme, Version 1.1<br>
+
+      <h3><a name="Tutorials">Anleitungen</a></h3>
+      <table align=center border=0 cellspacing=2 cellpadding=2>
+        <tr>
+          <td class=even><a href="1.3/doc/index.html">Willkommen in KDevelop</a></td>
+          <td class=even>Die KDevelop 1.x Begr&uuml;&szlig;ung und Einf&uuml;hrung</td>
+        </tr>
+        <tr>
+          <td class=odd><a href="1.3/doc/programming/index.html">Das KDevelop Programmierhandbuch</a></td>
+          <td class=odd>Das Handbuch f&uuml;r die C++ Anwendungsgestaltung f&uuml;r die K Desktop Environment (KDE) mit Hilfe der KDevelop IDE, Version 1.0</td>
+        </tr>
+        <tr>
+          <td class=even><a href="1.3/doc/tutorial/index.html">KDE Anwendungsanleitungen</a></td>
+          <td class=even>Das KDE Anwendungshandbuch f&uuml;r die KDevelop IDE</td>
+        </tr>
+        <tr>
+          <td class=odd><a href="1.3/doc/kde_libref/index.html">Das KDE Bibliotheksreferenzhandbuch</a></td>
+          <td class=odd>Das Referenzhandbuch f&uuml;r die C++ Anwendungsgestaltung f&uuml;r die K Desktop Environment (KDE).</td>
+        </tr>
+      </table>
+
+      <h3>Gedruckte B&uuml;cher</h3>
+      <table><tr><td>
+      <center><a href="javascript:referMe()">
+                    <img src="graphics/cover02front.jpg" alt="Buch Abbild" border=0>
+                  </a></center>
+      </td> <td valign=top> Dieses Buch (in englisch) enth&auml;lt alle KDevelop Dokumentation im gedruckten Format zusammen mit einem inoffiziellen Redhat 6.1 und KDevelop 1.0. 40 % des Gewinns flie&szlig;en an das KDevelop-Projekt zur&uuml;ck um die Entwicklung weiter voranzutreiben.<br><a href="http://www.linuxports.com">Linuxports.com</a> nimmt jetzt <a href="javascript:referMe()">Bestellungen</a> f&uuml;r "Developing Linux Applications: KDE Edition".</td></tr></table>
+<?php module_tail();?>
+
+<?php module_head("Pr&auml;sentationen und Grafiken");?>
+      <a href="index.html?filename=1.3/pressrelease1.0.html">Pressemitteilung 1.0</a><br>
+      <a href="index.html?filename=1.3/pressrelease1.1.html">Pressemitteilung 1.1</a><br>
+      <a href="index.html?filename=1.3/announce-kdevelop-1.3.html">Pressemitteilung 1.3</a><br>
+      <a href="index.html?filename=1.3/screenshots1.html">Bildschirmfotos (Seite&nbsp;1)</a>,
+      <a href="index.html?filename=1.3/screenshots2.html">Bildschirmfotos (Seite&nbsp;2)</a>,
+      <a href="index.html?filename=1.3/screenshots3.html">Bildschirmfotos (Seite&nbsp;3)</a><br>
+      <a href="index.html?filename=in_the_press.html">In der Presse</a><br>
+      <a href="index.html?filename=awards.html">Auszeichnungen</a><br>
+      <a href="index.html?filename=logos_banners.html">Logos &amp; Banner</a><br>
+      <a href="index.html?filename=splashscreens.html">Startbildschirme</a><br>
+<?php module_tail();?>
+
+<?php module_head("Vermischtes");?>
+      <a href="index.html?filename=1.3/authors.html">Danksagungen</a>, die Autoren.<br>
+      <a href="index.html?filename=license.html">Lizenz</a>, GNU GPL Lizenz.<br>
+<?php module_tail();?>

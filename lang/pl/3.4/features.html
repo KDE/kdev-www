@@ -1,0 +1,199 @@
+<?php module_head("Cechy KDevelop $k_series_version");?>
+
+Zawiera wszystkie
+<a href="index.html?filename=3.3/features.html">
+cechy KDevelop 3.3.x</a> plus:<br>
+
+<ul><li><b>Ulepszone wsparcie dla Qt4</b>
+<ul><li>Możliwość podania katalogu instalacji biblioteki Qt podczas tworzenia projektu
+</li><li>Otwieranie właściwego projektanta dla plików .ui
+</li><li>Użycie właściwego qmake w projektach qmake
+</li><li>Użycie plików nagłówkowych Qt4
+</li><li>Nowe opcje dla zmiennej QT biblioteki Qt4 w konfiguracji projektu
+</li><li>Obsługa plików zasobów Qt4 w QMake Manager
+</li></ul>
+</li></ul>
+<ul><li><b>Ulepszony QMake Manager</b>
+<ul><li>Nowy parser który nie zastępuje zawartości pliku projektu
+</li><li>Właściwe parsowanie i wyświetlanie systemu budowania Qt4
+</li><li>Zakresy
+<ul><li>Wyświetlanie zakresów jako węzłów drzewa w kontrolce przeglądu
+</li><li>Dodawanie/Usuwanie wszystkich typów zakresów (prostych, funkcyjnych oraz dla włączanych plików)
+</li><li>Wyłączanie plików z zakresu jest dużo prostsze
+</li><li>Wsparcie dla wyłączania podprojektów wewnątrz zakresów, włączając w to właściwie pokazywanie tych informacji w interfejscie użytkownika
+</li></ul>
+</li><li>Obsługa plików
+<ul><li>Wsparcie dla relatywnych nazw plików
+</li><li>Wsparcie dla ścieżek zawierających zmienne
+</li></ul>
+</li><li>Wsparcie dla podprojektów spoza katalogu najwyższego projektu
+</li><li>Wsparcie dla wszystkich udokumentowanych oraz kilku nieudokumentowanych funkcji QMake
+<ul><li>Wsparcie dla SUBDIRS = jakaśnazwa, jakaśnazwa.podkatalog = prawdziwy_katalog
+</li><li>Wsparcie dla SUBDIRS = jakiśplik.pro
+</li></ul>
+</li><li>Nowe i poprawione opcje budowania
+<ul><li>Uruchom qmake rekursywnie
+</li><li>Czyść dystrybucję
+</li><li>Buduj plik
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Ulepszony debuger</b>
+<ul><li>Całkiem nowy podgląd zwartości pamięci
+</li><li>Projekt jest automatycznie przebudowywany podczas uruchamiania debugera
+</li><li>Kontrolka zmiennych
+<ul><li>Niezawodne działanie dla przesłoniętych zmiennych
+</li><li>Nowe menu wyboru formatu, wspierające formaty "dane binarne" oraz "znak", ze skrótami klawiszowymi dla każdego formatu.
+</li><li>Skróty klawiszowe dla kasowania obserwowanych zmiennych.
+</li></ul>
+</li><li>Kontrolka stosu
+<ul><li>Zawartość została podzielona na kolumny
+</li><li>Ramki stosu są pobierane przyrostowo, umożliwiając debugowanie programów uwięzionych w nieskończonej rekursji.
+</li></ul>
+</li><li>Ulepszenia dla punktów wstrzymania
+<ul><li>Zmienione nazwy typy punktów zatrzymania dla przejrzystości
+</li><li>Obserwacja zmiennych ustawiana na adres, nie wyrażenie
+</li><li>Przy trafieniu dla obserwowanej zmiennej wyświetlany jest komunikat okienkowy
+</li><li>Warunki dla punktów wstrzymania są poprawnie ładowane z pliku sesji
+</li><li>Ręcznie dodane punkty wstrzymania są pokazywanie na liście punktów wstrzymania
+</li><li>Adresowe punkty wstrzymania już działają
+</li></ul>
+</li><li>Okienko wyjścia GDB pozwala na filtrowanie "wewnętrznych" komend.
+</li><li>Odświeżony dialog "dołączania". Teraz ma opcje wyszukiwania.
+</li><li>Poprawki
+<ul><li>Akcja "Przerwij" nigdy nie jest wyłączana.
+</li><li>Podawanie lokacji gdb przez pełną nazwę, a nie tylko katalog.
+</li></ul>
+</li><li>Użycie interfejsu GDB MI dla szybszego i solidniejszego działania.
+</li></ul>
+</li></ul>
+<ul><li><b>Ulepszone wsparcie dla Ctags</b>
+<ul><li>Obecnie możliwe jest posiadanie wielu aktywnych plików ze znacznikami w tym samym czasie pozwalając na bardzo szybkie wyszukiwanie w zewnętrznych źródłach.
+</li></ul>
+</li></ul>
+<ul><li><b>Ulepszony interfejs użytkownika</b>
+<ul><li>Prosty tryb IDEAL jest teraz trybem domyślnym
+<ul><li>Szybszy i z mniejszą ilością błedów
+</li><li>Zabiera mniej ekranu
+</li><li>Widoczna przestrzeń może zostać podzielona, pozwalając KDevelop na pokazywanie plików obok siebie.
+</li><li>IntelliJ IDEA - nawigacja wzorowana na widoku narzędzi (przy użyciu &lt;alt+1&gt;, &lt;alt+2&gt;, itp.)
+</li><li>Lepsza nawigacja za pomocą klawiatury i przełączanie aktywnego elementu
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li><b>Ulepszone reformatowanie kodu</b>
+<ul><li>Mniej błedów (uaktualnione do AStyle 1.19)
+</li><li>Wsparcie dla wszystkich opcji AStyle
+</li><li>Ulepszone okno ustawień
+</li><li>Ustawienia globalne oraz dla projektu
+</li><li>Formatowanie wielu plików na raz
+</li></ul>
+</li></ul>
+<ul><li><b>Wsparcie dla języka C++</b>
+<ul><li> Przełączanie nagłowek/implementacja 
+<ul><li> Działa wewnątrz jednego pliku
+</li><li> Działa poprawnie dla metod z wartością zwrotną zdefiniowaną przez typedef
+</li><li> Działa z funkcjami stałymi
+</li><li> Bierze pod uwagę dyrektywy 'using' podczas lokalizowania funkcji z przestrzeni nazw 
+</li></ul>
+</li><li> Magazyn Trwałych Klas (baza danych dla uzupełniania kodu)
+<ul><li> Importer klas KDE poprawnie odnajduje położenie kdelibs 
+</li><li> Dodany importer dla klas Qt4
+</li><li> Automatycznie wykryte ścieżki są teraz nadpisywalne
+</li></ul>
+</li><li> Podpowiadanie kodu
+<ul><li> Pasek status informuje o typie wyrażenia pod kursorem
+</li></ul>
+</li><li> Parser c++
+<ul><li> Modyfikacja parsera aby wyciągać z kodu komentarze, dołączyć je do odpowiednich elementów i zachować w AST
+</li><li> Poprawiony przypadek, kiedy parser C++ zjadał całą pamięc RAM w przypadku plików ze skomplikowanymi makrami
+</li></ul>
+</li><li> Model kodu
+<ul><li> Rozbudowa modelu kodu i repozytorium o zachowywanie większej ilości informacji takich jak szablony i komentarze, i dostarczenie ich.
+</li><li> Model kodu teraz całkowicie działa dla zagnieżdżonych klas, które zostały wstępnie zadeklarowane w jednym pliku, i kompletnie zadeklarowane w innym
+(dodano zarządzanie dla grup plików, elementy modelu kodu z jednego fizycznego pliku mogą zostać dołączone do innego pliku - co powoduje, że kilka z funkcji wyszukiwania musi zostać rozbudowanych).
+</li></ul>
+</li><li> Uzupełnianie kodu 
+<ul><li> Dużo bardziej niezawodne
+</li><li> W dużej części przepisane
+</li><li> Działa z klasami opartymi o szablony
+</li><li> Działa wewnątrz funkcji z klas, które zostały zaimportowane dyrektywą 'using'
+</li><li> Potrafi parsować dużo bardziej skomplikowane wyrażenia i może zostać łatwo rozszerzone o rozumienie dodatkowych operatorów (przy użyciu abstrakcyjnej klasy operatora)
+</li><li> Wspiera szablony klas, szablony funkcji a nawet niejawne instancjonowanie szablonów dla szablonów funkcyjnych
+</li><li> Szacuje wszystkie typy w liście uzupełnień i pokazuje ich prawdziwe typy dla szablonów
+</li><li> Podpowiedzi dla wywołań i lista uzupełnień pokazują odpowiadające sobie komentarze
+</li><li> Lista uzupełnień pokazuje elementy posortowane po prawach dostępu oraz pokazuje informacje przy elementach chronionych/prywatnych
+</li><li> Poprawia błąd padu KDevelop podczas uzupełniania kodu dla klasy, która miała siebie samą jako klase bazową oraz kilka innych małych błędów
+</li></ul>
+</li><li> Nowe menu kontekstowe obliczające wartość wyrażenia pod kursorem i pozwalające na nawigację po kodzie i modelu kodu przy uzyciou wszystkich typów i zmiennych, których wyrażenie dotyczy
+</li><li> Nowy kreator klas
+<ul><li> Poprawki błedów
+</li><li> Tworzenie wyłącznie plików nagłówkowych
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li> <b>Widok klas i Nawigator</b>
+<ul><li> Dodane podświetlania nazwy funkcji w widoku klasy i nawigatorze
+</li><li> Nawigator dostarcza swój własny komponent KCompletion co umozliwia pisanie nazw funkcji bez zakresu i a nastepnie ich uzupełnienie
+</li><li> Przywracanie widoku klas po odswieżeniu. Widok klas nie zamyka się już po każdym poprawnym budowaniu
+</li></ul>
+</li></ul>
+<ul><li> <b>Szybkie otwieranie</b>
+<ul><li> Dowolne części zakresu mogą być teraz uzyte jako filtr podczas wyszukiwania klas lub funkcji
+</li><li> Szybkie otwieranie ma dodatkowe okno selekcji w przypadku, kiedy istnieje więcej niż jedna klasa o podanej nazwie
+</li></ul>
+</li></ul>
+<ul><li> <b>Wsparcie dla Ruby</b>
+<ul><li> Szablon aplikacji wykorzystujący Rails
+</li><li> Parser rozpoznaje klasy w modułach
+</li><li> Jako shell używany jest irb
+</li><li> Poprawione odnośniki TOC w dokumentacji tak aby działały prawidłowo z Rails i QtRuby
+</li><li> Użycie menu Uruchom dla startowania WEBrick.
+</li><li> Parser
+<ul><li> Rozpoznaje "self.method"
+</li><li> Nie zapętla się w pewnych przypadkach
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li> <b>Wsparcie dla PHP</b>
+<ul><li> Nowy parser PHP / uzupełnianie kodu
+</li><li> Poprawione błedy we wsparciu dla PHP, które powodowały pady programu
+</li></ul>
+</li></ul>
+<ul><li> <b>Konsola</b>
+<ul><li> Nie synchronizuje się już z katalogiem aktywnego dokumentu
+</li></ul>
+</li></ul>
+<ul><li> <b>Grep (Znajdź w plikach)</b>
+<ul><li> Zdefiniowane więcej typów plików (np. ruby) do przeszukiwania
+</li><li> wzorzec może być wyrażeniem regularnym
+</li></ul>
+</li></ul>
+<ul><li> <b>Widoki wyjścia</b>
+<ul><li> Wsparcie dla kompilatorów Intel Fortran Compiler oraz Portland Group's PGI Fortran (pgf90/pgf95)
+</li></ul>
+</li></ul>
+<ul><li> <b>Kreator aplikacji</b>
+<ul><li> Używa utf8 dla tworzonych plików - nigdy więcej problemów z kodowaniem znaków
+</li></ul>
+</li></ul>
+<ul><li> <b>Integracja z narzedziem Valgrind</b>
+<ul><li> Używa zmiennych środowiskowych ustawionych w opcjach uruchomienia
+</li></ul>
+</li></ul>
+<ul><li> <b>Różne</b>
+<ul><li> Dodany pasek zadań i pozycja w menu dla powrotu do miejsca ostatniej edycji
+</li><li> Ulepszone wsparcie dla różnych kodowań znaków
+<ul><li> Kdevelop przestrzega teraz kodowania znaków wybranego w oknie "Otwórz plik"
+</li><li> Wtyczka "Otwórz z" (OpenWith) oferuje wszystkie dostępne kodowania znaków dla opcji "Otwórz jako"
+</li><li> Kodowanie znaków dla każdego pliku jest zapisywane w sesji i zostanie użyte przy otwieraniu tego pliku podczas następnego ładowania projektu
+</li><li> Domyślne kodowanie znaków może zostac ustawione w opcjach projektu - to będzie domyślne ustawienie podczas otwierania pliku
+</li><li> Kodowanie znaków dla operacji "Otwórz plik" będzie używać domyślnych ustawień bieżącego projektu
+</li></ul>
+</li><li> Przesunięcie okna wyboru wtyczek z ustawień projektu do ustawień głowńych i oparcie go o profile
+</li><li> Użycie systemu profilów do specyfikowania domyślnego zbioru wtyczek dla nowo tworzonego lub importowanego projektu
+</li><li> Honorowanie ustawień Projektanta Interfejsów dotyczących zagnieżdżania
+</li></ul>
+</li></ul>
+
+<?php module_tail();?>

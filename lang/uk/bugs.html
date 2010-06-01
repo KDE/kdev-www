@@ -1,0 +1,40 @@
+<?php module_head("Баги &amp; Побажання"); ?>
+<p>
+Для створення звіту чи побажання, потрібно відвідати <a href="http://bugs.kde.org/wizard.cgi?package=kdevelop&amp;kbugreport=1">мастер складання звітв про помилки</a> нашої бази данних<a href="http://www.bugzilla.org">bugzilla</a>.
+Ви <b>не</b> повинні репортувати про помилки при компіляції в базу данних багів. Для помилок при компіляції використовуйте
+<a href="index.html?filename=mailinglist.html">mailing list</a>.
+</p>
+<p>
+Для повної доповіді на KDevelop's про поточні баги чи побажання
+<a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=bugs.votes,bugs.delta_ts,map_components.name,bugs.bug_id" TARGET="_top">
+запит до бази данних багів</a>. Доповідь поділисться на компоненти, отож потрібно лише перейти на <a href="http://bugs.kde.org/component-report.cgi?product=kdevelop">Report Count by Component and Severity</a>.
+</p>
+Для більш докладного перегляду багів, активуйте cookies у вашому браузері та перейдіть
+<a href="http://bugs.kde.org/colchange.cgi?short_desc_type=allwordssubstr&amp;short_desc=&amp;product=kdevelop">bugzilla column configuration page</a> and select:<br>
+<ul>
+  <li>changeddate
+  <li>severity
+  <li>priority
+  <li>reporter
+  <li>status
+  <li>component
+  <li>version
+  <li>votes
+  <li>Summary (first 60 characters)
+</ul>
+<br>
+Це все, тепер всі запити на баги будуть мати деталі потрібні для KDevelop.<br>
+Щасливого полювання на баги! :)<br>
+<br>
+<?php
+module_tail();
+$l_bom='Bug-o-meter';
+$l_ob='Відкрити<br>баги';
+$l_ow='відкрити<br>побажання';
+$l_ol7d='Відкриті у <br>остані 7 днів';
+$l_cl7d='Закриті у <br>остані 7 днів';
+$l_c='Змінити';
+$l_rbg='Resolved bugs graph';
+$l_obwg='Opened bugs and wishes graph';
+return include('dynamic/weekly-bug-summary.html');
+?>

@@ -1,0 +1,9 @@
+<?php module_head("Projekt KDevelop");?>
+
+Projekt KDevelop byl založen v roce 1998 a jeho hlavním cílem je vyvinutí snadno použitelného IDE (integrovaného vývojového prostředí)
+pro <a href="http://www.kde.org/">KDE</a>. KDevelop IDE je veřejně dostupné pod <a href="index.html?filename=license.html">GPL</a>
+a podporuje <a href="HEAD/doc/api/html/LangSupportStatus.html">mnoho programovacích jazyků</a>.<br>
+Pokud nás chcete finančně či jinak podpořit, nebo pomoci, kontaktujte nás.<br>
+<!--Please visit our <a href="index.html?filename=donate.html">page for donations, sponsoring or help offers</a>.-->
+
+<?php module_tail();?>

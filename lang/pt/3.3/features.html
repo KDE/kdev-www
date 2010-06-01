@@ -1,0 +1,31 @@
+<?php module_head("Características do KDevelop $k_series_version");?>
+
+Contém todas as
+<a href="index.html?filename=3.2/features.html"> 
+características do KDevelop 3.2.x</a> mais:<br>
+<ul>
+  <li>As novas características da secção do KDevelop no <a href="http://developer.kde.org/development-versions/kde-3.5-features.html">plano de características do KDE 3.5</a></li>
+  <li>Agora pode-se usar o CMAKE para compilar o KDevelop</li>
+  <li>Suporte da linguagem C++ melhorado:<ul>
+    <li>Suporte ao QT4, geração de código diferente para projectos Qt3.x e Qt4.x</li>
+    <li>Acrescentado novo item no diálogo de opções C++ para configurar biblioteca Qt usada. Se usar o Qt, pode configurar que versão e onde a biblioteca Qt está instalada.</li>
+  </ul></li>
+  <li>Depurador melhorado para as linguagens C, C++ e Ruby:<ul>
+    <li>Janela de 'breakpoints' do depurador mais fácil de usar</li>
+    <li>Mostra automáticamente a janela de variáveis quando a aplicação pára, e esconde-a quando a aplicação termina.</li>
+    <li>Edição de valores expressão/variável na janela variáveis.</li>
+    <li>Melhoria da vista de variáveis</li>
+  </ul></li>
+  <li>Suporte à linguagem PHP5</li>
+  <li>Novo gerenciador genérico de projectos:<ul>
+    <li>Baseado na arquitetura da plataforma KDevelop onde o gerenciamento de projectos da GUI é abstraído de um sistema concreto. Um dado sistema é manipulado usando-se plugins ("importadores de projetos, construtores e editores")</li>
+    <li>Suporte à área de trabalho disponível</li>
+    <li>Constructores de projetos: constructor do make</li>
+    <li>Importadores de projetos: automake, makefiles cliente, qmake</li>
+  </ul></li>
+  <li>Veja a
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+  página <i>change log</i></a> para maiores detalhes</li>
+</ul>
+
+<?php module_tail();?>

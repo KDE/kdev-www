@@ -1,0 +1,53 @@
+<?php module_head("Funcionalidades de KDevelop $k_series_version");?>
+
+Contiene todas las
+<a href="index.html?filename=3.1/features.html">
+funcionalidades de KDevelop 3.1.x</a> más:<br>
+<ul>
+
+<li><b>Código base rediseñado</b>
+<ul>
+<li>El código base de KDevelop ha sido rediseñado con el objetivo de mejorar la reutilización de código y documentar
+la biblioteca de clases base que compone KDevelop. Las clases base forman la nueva <em>plataforma KDevelop</em> y presenta una concisa y bien documentada API</li>
+</ul>
+</li>
+
+<li><b>Nuevas herramientas RAD (<em>R</em>apid <em>A</em>pplication <em>D</em>evelopment)</b>
+<ul>
+<li>La integración con KDevDesigner permite el diseño GUI desde dentro del propio KDevelop</li>
+<li>La integración con KDevAssistent provee un visor de documentación rico en funcionalidades desde dentro del propio KDevelop</li>
+<li>El asistente de clases C++ puede ahora ser usado para clases en el almacén permanente de clases. Esto significa, por ejemplo,
+que si la base de datos de Completado de Código para Qt está construída, entonces derivar de clases de Qt es posible en el propio asistente</li>
+</ul>
+</li>
+
+<li><b>Soporte del lenguaje Ruby muy mejorado</b>
+<ul>
+<li>Nuevo depurador de Ruby, combinado con métodos mejorados de inspección en los nexos qtruby/korundum,
+para mostrar los metadatos Qt::Objet como propiedades, mientras se depura.</li>
+<li>El navegador de clases tiene un analizador mejorado que muestra señales de Qt y DCOP y
+ranuras, métodos de acceso a atributos y variables instanciadas</li>
+<li>Nuevas plantillas de proyecto para aplicación KDE, KConfig XT, servidor DCOP y aplicaciones sólo Qt</li>
+<li>Integración completa con Qt designer/rbuic</li>
+</ul>
+</li>
+
+<li><b>Otras mejoras y arreglos de fallos</b>
+<ul>
+<li>El soporte de Control de Versiones ha sido rediseñado. La mayoría de las funcionalidades de integración que fueron
+ deshabilitadas en KDevelop 3.1 están de vuelta en 3.2, junto con un plugin de Subversion muy mejorado.</li>
+<li>Mejorado "Encontrar en archivos", el soporte de Ctags y el historial de navegación proveen una navegación de código más rápida</li>
+<li>Se incluyen más plantillas de aplicaciones</li>
+<li>Nuevas plantillas para aplicaciones y bibliotecas C/C++ basadas en Cmake</li>
+<li>Nuevas plantillas para aplicaciones KDE basadas en Scons</li>
+<li>Vea la
+<a href="index.html?filename=<?php echo $k_base_version; ?>/changes.html">
+página del registro de cambios</a> para más detalles</li>
+</ul>
+
+</li>
+
+</ul>
+
+<?php module_tail();?>
+

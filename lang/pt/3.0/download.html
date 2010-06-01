@@ -1,0 +1,35 @@
+<?php module_head("Downloads do KDevelop 3.0.x");?>
+<br>
+<h3>Binários :</h3>
+<p>
+Alguns distribuidores de sistemas Linux/UNIX doaram generosamente pacotes binários do KDevelop
+para algumas versões das suas distribuições, e noutros casos voluntários da comunidade KDE fizeram-no.
+Alguns desses pacotes binários estão disponíveis gratuitamente por FTP ou http em <i>mirrors</i> KDE.
+</p>
+<?php
+  $l_architecture = "Arquitectura";
+  $l_distribution = "Distribui&ccedil;&atilde;o";
+  $l_distribution_version = "Vers&atilde;o da distribui&ccedil;&atilde;o";
+  include("3.0/download_binaries.ihtml");
+?>
+<br>
+<br><h3>Código fonte para KDE &gt;= 3.0 :</h3>
+<?php include("3.0/download_sources.ihtml"); ?>
+<br>
+Antes de continuar verifique por favor se o seu computador tem o
+<a href="index.html?filename=3.0/requirements.html">software necessário</a> instalado.<br>
+<br>
+Descomprima o ficheiro fonte e mude para a directoria base:
+<pre>
+       $ bunzip2 kdevelop-3.0.x.tar.bz2
+       $ tar -xf kdevelop-3.0.x.tar
+       $ cd kdevelop-3.0.x
+</pre>
+<?php include_file("3.0/compiling.ihtml"); ?>
+<br>
+<?php module_tail(); ?>
+
+<?php module_head("KDevelop 3.0.x on Windows (Cygwin)");?>
+<br><b>Distribui&ccedil;&otilde;es bin&aacute;rias do KDE 3.1.4 com KDevelop 3.0.0:</b>
+<br><a href="http://kde-cygwin.sourceforge.net/kde3/installation.php">P&aacute;gina de instala&ccedil;&atilde;o do KDE em Cygwin</a>
+<?php module_tail(); ?>

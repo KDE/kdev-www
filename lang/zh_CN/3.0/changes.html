@@ -1,0 +1,255 @@
+<?php module_head("KDE_3_2_BRANCH (today)");?>
+这是<b>稳定版</b>的分支，它将成为未来的KDevelop 3.0.5版(还未发布)。<br>
+它支持<b>KDE 3.x</b>.
+<ul>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.4 (2004-06-09)");?>
+它支持<b>KDE 3.x</b>。标记于2004-05-30， 将在2004-06-09发布。
+<ul>
+  <li>改善 - 完善了新的haskel编译器，不再返回随机值。</li>
+  <li>IMPROVED - GUI translations: Hindi and Slovenian.</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=81579">81579: 当用户没有选择一个类之前"添加方法"，程序不会崩溃</a>。</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=71099">71099: 导入器可以确认除了.h后缀以外的更多的头文件</a></li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=79794">79794: application/x-designer没有相应的处理器，不会导致程序崩溃</a>.</li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.3 (2004-04-19)");?>
+It supports <b>KDE 3.x</b>. Was tagged on 2004-04-11 and released on 2004-04-19.
+<ul>
+  <li>改善 - 文档书签。</li>
+  <li>IMPROVED - GUI translations: Danish, German, British English, Spanish, Estonian, French, Hungarian, Italian, Polish, Portuguese, Brazilian Portuguese, Serbian and Swedish, Catalan, Japanese, Dutch, Russian, Tamil and Chinese Simplified.</li>
+  <li>修复    - 由于文件系统的事件导致选中项消失会使得FileTree崩溃。</li>
+  <li>修复    - 一些语言的解析器使用QRegExp取代过时的KRegExp。 <a href=""http://bugs.kde.org/show_bug.cgi?id=73754">#73754</a>, <a href="http://bugs.kde.org/show_bug.cgi?id=63973">#63973</a> </li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=74570">74570: 定制的makefiles项目不支持"GNUmakefile" 文件名</a> (不要让make程序猜。)</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=75172">75172: 没有保存现有工作就切换项目</a> (当用户取消对项目的改动，不要设置最近的项目标志)</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=75943">75943: 扫描目录时崩溃</a> (当我们没有权限读取目录时不会崩溃)</li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=77278">77278: 当路径中包含空格时，Grep组建无法搜索</a> </li>
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=78776">78776: CustomProjectPart::populateProject输出新的项目时崩溃</a> </li>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.2 (2004-03-09)");?>
+It supports <b>KDE 3.x</b>. Was tagged on 2004-02-28 and released on 2004-03-09.
+<ul>
+    <LI>改善 - KDevelop用户手册有了很大的改善。</LI>
+    <LI>改善 - C++解析器速度提高了一倍，内存利用效率更高。</LI>
+    <LI>改善 - 配置脚本现在可以禁止编译某些KDevelop组件。</LI>
+    <LI>改善 - 更快和更轻量级的配置对话框 - 重量级的页面是按需载入的。</LI>
+    <LI>改善 - FileGroups 插件在应用正则表达式的时候更加聪明 - 对于通常的组定义更快 (<a href="http://bugs.kde.org/show_bug.cgi?id=72831">#72831</a>)</LI>
+    <LI>改善 - 去除了开始时解析项目速度缓慢的性能瓶颈。 (请参考 <a href="http://bugs.kde.org/show_bug.cgi?id=73671">#73671</a>)</LI>
+    <li>修复    - Grep 插件: 当编译在进行的时候，中断搜索不会导致偶尔的崩溃。</li>
+    <li>修复    - Grep 插件: 不会再弄混有相似的文件名的文件，避免了O(n)级的查找。</li>
+    <li>修复    - Grep 插件: 不会显示无用的搜索结果 - 上次中断的查找结果会被清除。</li>
+    <LI>加入    - 加入了 "Simple Designer based KDE application" 模板。</LI>
+    <LI>修复    - 著名的"Gentoo-crash" 终于被修复了 (<a href="http://bugs.kde.org/show_bug.cgi?id=73346">#73346</a>)</LI>
+    <li>修复    - 应用程序运行中产生大量的调试输出会导致KDevelop崩溃 (<a href="http://bugs.kde.org/show_bug.cgi?id=67217">#67217</a>, <a href="http://bugs.kde.org/show_bug.cgi?id=71858">#71858</a>) </li>
+    <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73045">#73045</a> : 没有文件被载入的时候，切换停靠会导致KDevelop崩溃</li>
+    <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73672">#73672</a> : 在用KUIViewer预览表单以后，kdevelop看起来很奇怪。</li>
+    <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73716">#73716</a> : 上下文菜单中的close all在处理两个修改过的文档时候，无法对取消做出正确的相应。</li>
+    <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=74585">#74585</a> : 无法调试 Hello World C++程序。</li>
+    <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=74650">#74650</a> : 工具条的下拉列表缺少UI的效果。</li>
+    <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=74712">#74712</a> : Automake 1.8.x 没有被支持。</li>
+    <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=74955">#74955</a> : 使用Java ant的属性会导致崩溃</li>
+    <LI>修复    - 很多我们也记不起来的小事情...</LI>
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.1 (2004-02-16)");?>
+It supports <b>KDE 3.x</b>.
+<ul>
+  <li>改善 - 用户手册。
+  <li>改善 - 修正了很多拼写错误。
+  <li>改善 - 重建并更新了todo文件。
+  <li>改善 - KCModule模板来使用KDE 3.0 API和KGenericFactory。
+  <li>改善 - 更新到最新的Doxygen。
+  <li>改善 - 确保appwizard产生的源文件符合选择的文件模板。
+  <li>改善 - Clanlib文档
+  <li>改善 - 提示用户是否重新载入已经打开的项目。
+  <li>改善 - 项目模板忽略文档和其他的小修改。
+  <li>加入    - 为配置控件加入ConfigWidgetProxy类以提供按需载入的支持(减小了内存的开销).
+  <li>加入    - 在QEditor中加入SearchText 
+  <li>加入    - 文档浏览器中可以更换字体的大小。
+  <li>修复    - 使得Haskell语言支持重新可以工作
+  <li>修复    - 清除所有断点
+  <li>修复    - 当KDevelop关闭的时候，为存盘的文件有时候不提示保存。 
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=58999">Bug 58999</a> : 调试器无法开启(libtool的问题)
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=62888">Bug 62888</a> : 上下文菜单加入了后退和前进的按钮
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=69035">Bug 69035</a> : Run Options 不对(定制的makefiles)
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=70175">Bug 70175</a> : 在允许的最低的wxWindows版本上测试出错
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=70176">Bug 70176</a> : wxWindows程序模板在Unicode版本的wxWindows版本下无法正常编译
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=71003">Bug 71003</a> : 如果srcdir != builddir，无法翻译项目
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=72502">Bug 72502</a> : 通过键盘关闭多个文件导致Kdevelop崩溃。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=72523">Bug 72523</a> : Grep对话框没有输出选择的文本。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=72552">Bug 72552</a> : 没有保存的图标消失了，即使保存的操作失败。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=72582">Bug 72582</a> : 在卸载查建议后重新加载插件导致崩溃。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73025">Bug 73025</a> : 展开文本 (ctrl+J)导致kdevelop崩溃。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73039">Bug 73039</a> : cvs工具可能导致kdevelop崩溃。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73116">Bug 73116</a> : 在注释的最后输入一个句点导致kdevelop崩溃。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73467">Bug 73467</a> : 对于parts/appwizard/commonIncomplete，make clean并没有完全清除。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=73567">Bug 73567</a> : 采用 -u 取代 -u3，因为后者已经过时了。
+  <li>修复    - <a href="http://bugs.kde.org/show_bug.cgi?id=74955">Bug 74955</a> : Java ant项目时，程序崩溃。
+</ul>
+<?php module_tail();?>
+
+<?php module_head("3.0.0 (2004-02-03)");?>
+发行备选版本 1 (标志于 2004-01-19)未作任何修改，以3.0.0发布。
+<ul>
+  <li>新特性      - 应该可以在Mac OS X上编译成功。
+  <li>新特性      - 应该可以在Cygwin上编译成功。
+  <li>改善 - 溅屏。
+  <li>改善 - Doxygen支持。
+  <li>加入    - 在文档浏览器中，为SQL以外的所有支持的编程语言加入指向缺陷数据库的链接。
+  <li>加入    - 在文档浏览器中，为Gtk和wxWindows开发工具加入指向缺陷数据库的链接。
+  <li>修复    - KDE 3.0.x 重新可以编译。
+  <li>修复    - 一些GUI缺陷。
+  <li>修复    - 来自KDevelop2.x和以前版本的3个缺陷。
+  <li>修复    - 49个KDevelop3.0特有的缺陷。
+</ul>
+以下是 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-12-02&amp;chfieldto=2004-01-19&amp;order=Bug+Number&amp;cmdtype=doit">交互版</a> 的缺陷修复。<br>
+要获得更多的变动信息，请访问<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1101&amp;r2=1.1099">CVS 变动日志</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 beta 2 (2003-12-01)");?>
+<ul>
+  <li>新特性      - IDEAl停靠的KDE快捷键Ctrl+Shift+Alt+L/R/B/T和循环IDEAl-工具视图的快捷键Ctrl+Alt+CursorLeft/CursorRight。
+  <li>新特性      - 对于文件视图，版本控制工具提供不同颜色作为回馈(目前仅在vcs/cvsservice 插件上实现)。
+  <li>改善 - pascal解析器，不再仅限于pascal-78。
+  <li>改善 - 大多数object pascal/delphi扩展得到支持。
+  <li>改善 - 可以在运行期间切换所有的KDevelop UI模式。
+  <li>改善 - 停靠的状态保存在kdeveloprc的另外一个部分 (使得那些使用KMdi alpha版的用户不会陷入死循环)。
+  <li>加入    - 更加干净的kdevelop.kdevelop文件。
+  <li>修复    - 来自KDevelop2.x和以前版本的7个缺陷。
+  <li>修复    - 88个KDevelop3.0特有的缺陷。
+</ul>
+以下是 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-10-26&amp;chfieldto=2003-12-02&amp;order=Bug+Number&amp;cmdtype=doit">交互版</a> 的缺陷修复。<br>
+要获得更多的变动信息，请访问<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1099&amp;r2=1.1092">CVS 变动日志</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 beta 1 (2003-10-26)");?>
+<ul>
+  <li>新特性      - 新的cpp程序模板: kateplugin2, noatunvisual, noatunui, kbearimportfilter, kbearplugin, kfileplugin
+  <li>新特性      - 在线，每24小时自动更新的KDevelop API 文档可以通过doctreeview察看。
+  <li>改善 - 将语言相关的文档移至languages/xxx/doc目录
+  <li>改善 - 新的subversion组件来替代旧的svn
+  <li>改善 - MDI用户界面
+  <li>改善 - Ada语言支持 (移植到代码模型，并支持后台解析)。
+  <li>改善 - 重命名KDevelop可执行文件gideon到kdevelop。这使得KDevelop3覆盖KDevelop 2.x的安装。
+  <li>改善 - 根据API文档重新组织目录。
+  <li>加入    - automake管理器支持为每个目标运行不同的参数。
+  <li>修复    - 来自KDevelop2.x和以前版本的4个缺陷。
+  <li>修复    - 23个KDevelop3.0特有的缺陷。
+</ul>
+以下是 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-09-24&amp;chfieldto=2003-10-26&amp;order=Bug+Number&amp;cmdtype=doit">交互版</a> 的缺陷修复。<br>
+要获得更多的变动信息，请访问<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1092&amp;r2=1.1082">CVS 变动日志</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 7 (2003-09-24)");?>
+<ul>
+  <li>新特性      - KDevelop代码树加入mimetypes目录
+  <li>改善 - GUI可以通过配置对话框使能或取消文档目录
+  <li>改善 - UI提示,快捷键和tab顺序
+  <li>改善 - 用户手册
+  <li>改善 - API文档
+  <li>加入    - 文档浏览器的弹出菜单 
+  <li>加入    - x-fortran, x-pascal 和 chm (HTML Help) mime types
+  <li>修复    - 纠正了大量的拼写错误:)
+  <li>修复    - enable-final编译
+  <li>修复    - 来自KDevelop2.x和以前版本的4个缺陷。
+  <li>修复    - 13个KDevelop3.0特有的缺陷。
+</ul>
+以下是 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-09-11&amp;chfieldto=2003-09-24&amp;order=Bug+Number&amp;cmdtype=doit">交互版</a> 的缺陷修复。<br>
+要获得更多的变动信息，请访问<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1082&amp;r2=1.1080">CVS 变动日志</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 6 (2003-09-10)");?>
+<ul>
+  <li>新特性      - 类存储
+  <li>新特性      - Delphi编译器插件
+  <li>新特性      - 插件的版本信息防止载入不兼容的旧版本插件。
+  <li>新特性      - 当前的编程语言可以运行中切换
+  <li>新特性      - 通用项目管理器
+  <li>新特性      - 导入Kugar属性编辑库
+  <li>改善 - 可以分辨libtool警告消息
+  <li>改善 - GBA 模板
+  <li>改善 - Run选项
+  <li>改善 - Class Viewer
+  <li>改善 - 调试器
+  <li>改善 - 工具条
+  <li>改善 - C++解析器更快
+  <li>改善 - 代码补全可以处理Qt的信号(SIGNAL)和槽(SLOT)
+  <li>改善 - 用户界面(基于QextMDI的IDEAl模式)
+  <li>改善 - 用户手册
+  <li>加入    - 调试和优化所有基于模板的C和C++autoproject的配置
+  <li>加入    - 集成cervisia的cvs服务
+  <li>加入    - "Force Reedit", "Install" 和 "Install (as root user)" automake项目管理器
+  <li>加入    - 远程调试的可能性
+  <li>加入    - SQL支持class-view
+  <li>加入    - GUI为Qt和KDE库加入代码补全数据库(PCS)
+  <li>加入    - 为C++文件加入类emacs的"跳转到声明/定义"弹出菜单
+  <li>修复    - 来自KDevelop2.x和以前版本的9个缺陷。
+  <li>修复    - 81个未定或者KDevelop3.0特有的缺陷。
+</ul>
+以下是 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-07-01&amp;chfieldto=2003-09-11&amp;order=Bug+Number&amp;cmdtype=doit">交互版</a> 的缺陷修复。<br>
+要获得更多的变动信息，请访问<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1080&amp;r2=1.1054">CVS 变动日志</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 5 (2003-07-01)");?>
+<ul>
+  <li>新特性      - Pascal语言支持
+  <li>新特性      - ClearCase项目管理支持
+  <li>新特性      - SQL模块来连接和测试SQL语句
+  <li>新特性      - Ada语言支持
+  <li>改善 - 类永久化存储(现在用的是berkeley db)
+  <li>改善 - Stop中止了很多不同的组件
+  <li>改善 - 编译器偏好 - 应用于所有打开的文件
+  <li>改善 - 被调试的可执行文件的工作目录可配置
+  <li>改善 - 添加和删除autoproject的子项目
+  <li>改善 - CVS集成
+  <li>改善 - Java支持
+  <li>改善 - 基于QMake的项目管理器
+  <li>加入    - Pascal语言模板
+  <li>加入    - 假如书签的持久化
+  <li>加入    - index system to the doctreeview
+  <li>加入    - 全屏模式
+  <li>修复    - 来自KDevelop2.x和以前版本的22个缺陷。
+  <li>修复    - 86个未定或者KDevelop3.0特有的缺陷。
+</ul>
+以下是 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2003-04-18&amp;chfieldto=2003-07-02&amp;order=Bug+Number&amp;cmdtype=doit">交互版</a> 的缺陷修复。<br>
+要获得更多的变动信息，请访问<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1053&amp;r2=1.1006">CVS 变动日志</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 4 (2003-04-18)");?>
+<ul>
+  <li>新特性   - 新建文件界面
+  <li>新特性   - 多文件查找/替换Part
+  <li>新特性   - 程序模板 - kdehello, javahello, qtopia, fortran, pyqt
+  <li>新特性   - 输出视窗的信息量可配置
+  <li>新特性   - Fortran, Ruby, 和tmake项目支持 
+  <li>加入 - 新类向导添加了新的特性(包括创建成员的支持)
+  <li>加入 - 更好的文档浏览，xml支持
+  <li>加入 - 重写类解析器
+  <li>加入 - FilterParts和CppParts的DCOP 接口
+  <li>改善 - Perl项目支持
+  <li>改善 - 集成的Doxygen支持
+  <li>修复    - 来自KDevelop2.x和以前版本的51个缺陷。
+  <li>修复    - 124个未定或者KDevelop3.0特有的缺陷。
+</ul>
+以下是 <a href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2002-11-12&amp;chfieldto=2003-04-18&amp;order=Bug+Number&amp;cmdtype=doit">交互版</a> 的缺陷修复。<br>
+要获得更多的变动信息，请访问<a href="http://webcvs.kde.org/cgi-bin/cvsweb.cgi/kdevelop/ChangeLog?r1=1.1005&amp;r2=1.905">CVS 变动日志</a>.
+<?php module_tail();?>
+
+<?php module_head("3.0.0 alpha 3 (2003-01-08)");?>
+<ul>
+  <li>完全重写的基础代码，来支持插件和组件
+  <li>加入了非C++项目(Java, C等)
+  <li>新的用户界面模式 - IDEAl
+  <li>重写的，更好的Automake/Makefile.am项目支持
+  <li>qmake项目支持
+  <li>C++代码自动补全
+  <li>代码控制集成 (CVS, Perforce, Subversion)
+  <li>很多其他的改善
+</ul>
+<?php module_tail();?>

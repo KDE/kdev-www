@@ -1,0 +1,59 @@
+<ol start="4">
+<li>
+Untuk meng-kompile dan meng-install KDevelop di komputer anda, ketikkan perintah berikut ini (kami mengandaikan anda menggunakan bash shell) di base directory.
+<dl>
+<dd class="code">$ export KDEDIR=/where/your/kde3/is</dd>
+<dd class="code">$ export QTDIR=/where/your/qt3/is</dd>
+<dd class="code">$ export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH</dd>
+<dd class="code">$ export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH</dd>
+<dd class="code">$ export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH</dd>
+</dl>
+<b>Catatan:</b> Untuk alasan yang cukup mudah dilihat, anda harus meng-edit baris pertama dan kedua supaya sesuai dengan configuration anda!<br>
+Di linux distribusi yang berbasiskan RPM, anda bisa mendapatkan lokasi direktori Qt3 dan KDE3 dengan menggunakan program configurasi di linux anda. Atau bisa dengan mengetikkan "rpm -ql qt3" dan "rpm -ql kdebase3".
+</li>
+
+<br>
+<br>
+
+<li>
+Langkah berikutnya adalah configuration, untuk mencari tahu lebih lanjut tentang semua pilihan configuration yang tersedia, panggil:
+<dl>
+<dd class="code">$ ./configure --help</dd>
+</dl>
+
+Ini adalah contoh dari debug-compiled version:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Ini adalah contoh dari release-compiled version:
+<dl>
+<dd class="code">$ ./configure --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs</dd>
+</dl>
+
+Anda bisa menghindari kompilasi beberapa komponent KDevelop yang tidak anda butuhkan, sebagai contoh, saya menggunakan configure command berikut:
+<dl>
+<dd class="code">$ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+--disable-ada --disable-bash --disable-fortran --disable-haskell --disable-java --disable-pascal --disable-perl
+--disable-php --disable-python --disable-ruby --disable-sql --disable-antproject --disable-genericproject
+--disable-scriptproject --disable-trollproject --disable-clearcase --disable-perforce --disable-subversion</dd>
+</dl>
+</li>
+
+<li>
+Akhirnya, anda bisa memulai build dan meng-install KDevelop:
+<dl>
+<dd class="code">$ make</dd>
+<dd class="code">$ make install (as root, using for example the "su" command)</dd>
+</dl>
+Kalau karena alasan tertentu perintah make gagal, anda bisa memaksa untuk mengabaikan error dengan menambahkan -k option, seperti ini:
+<dl>
+<dd class="code">$ make -k</dd>
+<dd class="code">$ make -k install (as root)</dd>
+</dl>
+Tergantung dari beratnya error tersebut, anda mungkin pada akhirnya mendapatkan versi kdevelop yang bekerja atau tidak bekerja. Maka dari itu sadarilah resiko dengan melakukan "make -k install" !!!
+</li></ol>
+
+<p>Anda bisa melaporkan bugs yang anda temukan dengan <a
+href="http://bugs.kde.org/wizard.cgi">formulir pelaporan bug (bug submition form)</a>. Anda <b>tidak</b> seharusnya melaporkan error kompilasi ke bug database. Untuk melaporkan error kompilasi, gunakan 
+<a href="index.html?filename=mailinglist.html">milis</a>.</p>

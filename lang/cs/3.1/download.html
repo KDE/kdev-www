@@ -1,0 +1,46 @@
+<?php module_head("KDevelop 3.1.x download");?>
+<br>
+<h3>Binárky :</h3>
+<p>
+Někteří dodavatelé Linuxu/UNIXu nám poskytli balíčky KDevelopu pro některé verze jejich distribucí,
+v dalších případech je vytvořili dobrovolníci z OS komunity. Některé z těchto binárních balíčků
+jsou volně dostupné na http serveru KDE nebo na FTP mirrorech.
+</p>
+<?php
+  $l_architecture = "Architektura";
+  $l_distribution = "Distribuce";
+  $l_distribution_version = "Verze distribuce";
+  include("3.1/download_binaries.ihtml");
+?>
+<br>
+<br><h3>Zdrojové kódy pro KDE &gt;= 3.2 :</h3>
+<?php include("3.1/download_sources.ihtml"); ?>
+<br>
+<ol>
+<li>Než budete pokračovat, zkontrolujte si prosím, zda máte na vašem počítači nainstalován
+<a href="index.html?filename=3.1/requirements.html">požadovaný software</a>.
+</li>
+<br>
+<li>Rozbalte zdrojové kódy a přepněte se do kořenového adresáře zdrojů:
+<dl>
+<dd class="code">$ bunzip2 kdevelop-3.1.x.tar.bz2</dd>
+<dd class="code">$ tar -xf kdevelop-3.1.x.tar</dd>
+<dd class="code">$ cd kdevelop-3.1.x</dd>
+</dl>
+</li>
+</ol>
+<?php include_file("3.1/compiling.ihtml"); ?>
+<br>
+<?php
+module_tail();
+$ts1 = filemtime('3.1/download_binaries.ihtml');
+$ts2 = filemtime('3.1/download_sources.ihtml');
+if ($lang == 'en') {
+  $ts3 = filemtime('3.1/download.html');
+  $ts4 = filemtime('3.1/compiling.ihtml');
+} else {
+  $ts3 = file_exists("lang/$lang/3.1/download.html")?filemtime("lang/$lang/3.1/download.html"):filemtime('3.1/download.html');
+  $ts4 = file_exists("lang/$lang/3.1/compiling.ihtml")?filemtime("lang/$lang/3.1/compiling.ihtml"):filemtime('3.1/compiling.ihtml');    
+}
+return (max($ts1,$ts2,$ts3,$ts4));
+?>

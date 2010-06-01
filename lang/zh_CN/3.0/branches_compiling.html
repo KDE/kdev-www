@@ -1,0 +1,140 @@
+<?php include_file("$k_base_version/cvsbranches.ihtml"); // this is a trick to pass a non-existing path to the include_file() ?>
+
+<?php module_head("Instructions for a self-compiled version of KDevelop 3.0.x"); ?>
+如上所示，获取<b>KDE_3_2_BRANCH</b>的源代码。<br>
+<br>
+在继续之前请确保您的计算机已经安装了
+<a href="index.html?filename=3.0/requirements.html">必须的软件</a>。<br>
+<br>
+初始化编译系统：
+<pre>
+       $ cd kdevelop
+       $ make -f admin/Makefile.common cvs-clean
+       $ make -f Makefile.cvs
+</pre>
+<?php
+  include_file("3.0/compiling.ihtml");
+  module_tail();
+  module_head("How to keep your version up to date");
+?>
+<br>
+在您下载并成功地编译了CVS的一个分支以后，您可以更新来获得所有的补丁。
+为了避免每次更新重新设置环境变量，您可以在您的.bashrc或者.cshrc文件中
+加入下列语句。<br>
+
+如果您使用bash:<br>
+
+<pre>
+export KDEDIR=/where/your/kde3/is
+export QTDIR=/where/your/qt3/is
+export LD_LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=$QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+export PATH=$QTDIR/bin:$KDEDIR/bin:$PATH
+</pre>
+
+如果您使用tcsh:<br>
+
+<pre>
+setenv KDEDIR /where/your/kde3/is
+setenv QTDIR /where/your/qt3/is
+setenv LD_LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LD_LIBRARY_PATH
+setenv LIBRARY_PATH $QTDIR/lib:$KDEDIR/lib:$LIBRARY_PATH
+setenv PATH $QTDIR/bin:$KDEDIR/bin:$PATH
+</pre>
+
+<P>
+<b>注意：</b> 显而易见，您应该根据您的配置编辑头两行 :)<br>
+</p>
+
+<br>
+
+然后在您存放<i>从CVS获取的kdevelop源代码</i>的目录输入更新的命令：<br>
+
+<pre>
+ $ cd where_kde3src_is/kdevelop
+ $ cvs update -dP
+</pre>
+<br>
+下面的步骤要看上述命令的输出结果：<br>
+
+如果您得到的结果是这样的：<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;U /some_directory_path/Makefile.am<br>
+您应该：<br>
+
+<pre>
+ $ make -f Makefile.cvs
+</pre>
+
+然后是剩下的所有步骤。<br>
+
+<br>
+如果您得到的结果是这样的：<br>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;P /some_directory_path/Makefile.am<br>
+您应该：<br>
+
+<pre>
+ $ ./configure --enable-debug=full --prefix=$KDEDIR --with-kdelibsdoxy-dir=$KDEDIR/share/doc/HTML/en/kdelibs-apidocs
+</pre>
+然后是剩下的所有步骤。<br><br>
+
+<pre>
+  $ make
+  $ make install (as root)
+</pre>
+如果由于某种原因编译失败，您可以加入-k选项强迫它忽略这些错误。根据错误的严重程度，
+您可以得到可用或者不可用的kdevelop版本。所以您自己要承担"make
+-k install" 的风险！！！不管怎么样，这些错误经常在几个小时以后就被纠正了，所以您也许
+会在使用危险的:)make install命令之前，尝试再更新一次。<br>
+
+<pre>
+ $ make -k
+ $ make -k install (as root)
+</pre>
+
+好了！您现在有最新版本的KDevelop了，要启动它，只需要输入：<br>
+
+<pre>
+ $ kdevelop
+</pre>
+
+任何时候在<a href="index.html?filename=mailinglist.html">kdevelop-devel</a>邮件列表中
+提到的缺陷修复，您要保持更新所要做的就是重复上述步骤。 <br>
+所以我们强烈建议您加入<a href="index.html?filename=mailinglist.html">该邮件列表
+</a>。<br><br><br>
+
+您可以通过<a
+href="http://bugs.kde.org/wizard.cgi">缺陷提交表格</a>来报告缺陷。您<b>不能</b>向该缺陷数据库报告
+任何编译错误。 对于编译错误，请使用
+<a href="index.html?filename=mailinglist.html">邮件列表</a>。<br>
+<br>
+
+您可以查看<a
+href="http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;bug_status=UNCONFIRMED&amp;bug_status=NEW&amp;bug_status=ASSIGNED&amp;bug_status=REOPENED&amp;order=map_components.name,bugs.bug_id">
+缺陷数据库</a>.<br>
+
+<?php module_tail();
+module_head("How to compile on FreeBSD"); ?><br>
+
+按照通常的顺序，但请使用gmake,而不是make,在执行完
+<pre>
+       $ gmake -f Makefile.cvs
+</pre>
+后，您需要：
+<pre>
+       $ export CXXFLAGS="-L/usr/X11R6/lib -I/usr/local/include/db41 -I/usr/local/include -L/usr/local/lib -I/usr/X11R6/include"
+</pre>
+请注意，您需要安装berkeley db 4.1,如果您安装了其他版本，
+您需要调整路径。<br>
+在培植文件中，把这行"ac_cv_bdb=no" 改为 "ac_cv_bdb=yes"，否则configure无法找到db库<br>
+要看您安装了哪一个版本：
+<pre>
+       $ pkg_info | grep db41
+       db41-4.1.25_1       The Berkeley DB package, revision 4.1
+</pre>
+FreeBSD的开发者把libdb.so改名为libdbxx.so。所以在lib/catalog/Makefile.am，您需要把"-ldb"换成 "-ldb41"。<br>
+然后就是通常的步骤：
+<pre>
+       $ ./configure --prefix=/blah --enable-debug=full
+</pre>
+
+<?php module_tail(); ?>

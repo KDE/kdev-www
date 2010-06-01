@@ -1,0 +1,114 @@
+<?php module_head("KDevelop $k_series_version requirements");?>
+Voor je je gedownloade KDevelop versie begint te compileren, zorg je er best voor dat je volgende programma's geinstalleerd hebt. Denk eraan: je kan vreemde fouten krijgen als je met oudere versies werkt.
+<br>Meestal kan je zien welke versie geinstalleerd is op je pc door het programma met de "--version" optie te starten. Om te weten te komen welke versie van autoconf op je pc geinstalleerd is doe je het volgende:
+<pre>
+   autoconf --version
+</pre>
+<br>
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr align=left>
+    <th class=header align=left>Programma/Bibliotheek</th>
+    <th class=header align=left>Bron</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd>KDE &gt;= <?php echo $k_min_required_kde_version; ?></td>
+    <td class=odd><a href="http://www.kde.org/" TARGET="_top">www.kde.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Qt &gt;= 3.2.3</td>
+    <td class=even><a href="http://www.trolltech.com/products/qt/" TARGET="_top">www.trolltech.com/products/qt</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>g++ &gt;= 2.95.3 (of compatibel)</td>
+    <td class=odd><a href="http://gcc.gnu.org/" TARGET="_top">gcc.gnu.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>GNU make</td>
+    <td class=even><a href="http://www.gnu.org/software/make/" TARGET="_top">www.gnu.org/software/make</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>perl &gt;= 5.004</td>
+    <td class=odd><a href="http://www.perl.com/" TARGET="_top">www.perl.com</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>autoconf &gt;= 2.52</td>
+    <td class=even><a href="http://www.gnu.org/software/autoconf/" TARGET="_top">www.gnu.org/software/autoconf</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>automake &gt;= 1.6</td>
+    <td class=odd><a href="http://www.gnu.org/software/automake/" TARGET="_top">www.gnu.org/software/automake</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>flex &gt;= 2.5.4</td>
+    <td class=even><a href="http://www.gnu.org/software/flex/" TARGET="_top">www.gnu.org/software/flex</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>libtool &gt;= 1.4</td>
+    <td class=odd><a href="http://www.gnu.org/software/libtool/libtool.html" TARGET="_top">www.gnu.org/software/libtool/libtool.html</a></td>
+  </tr>
+</table>
+<br>
+<br>
+
+<?php module_tail();?>
+
+<?php module_head("Optional recomended software");?>
+Deze programma's zijn optioneel, het betekent dat KDevelop zal werken zonder ze. Maar het zal enkele features missen zoals het genereren van documentatie of het zoeken in verschillende bestanden. Je kan dus best je systeem nakijken voor deze programmas's
+<table align=center border=0 cellspacing=2 cellpadding=2>
+  <tr valign=top>
+    <th class=header align=left>Programma/Bibliotheek</th>
+    <th class=header align=left>Bron</th>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Qt designer<br>(subclassing wizard)</td>
+    <td class=odd><a href="http://www.trolltech.com/products/qt/designer.html" TARGET="_top">www.trolltech.com/products/qt/designer.html</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>ht://Dig &gt;= 3.1.6<br>(doorzoeken van volledige tekst in de documentatie)</td>
+    <td class=even><a href="http://www.htdig.org/" TARGET="_top">www.htdig.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Valgrind &gt;= 20030725<br>(geheugen lek checker)</td>
+    <td class=odd><a href="http://developer.kde.org/~sewardj/" TARGET="_top">developer.kde.org/~sewardj</a></td>
+    </tr>
+  <tr valign=top>
+    <td class=even>GDB &gt;= 5.0<br>(een interne debugger die goed werkt)</td>
+    <td class=even><a href="http://www.gnu.org/software/gdb/" TARGET="_top">www.gnu.org/software/gdb</a></td>
+    </tr>
+  <tr valign=top>
+    <td class=odd>Cervisia &gt;= 2.0<br>(<a href="http://www.cvshome.org/" TARGET="_top">CVS</a> integratie)</td>
+    <td class=odd><a href="http://www.kde.org/apps/cervisia/" TARGET="_top">www.kde.org/apps/cervisia/</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Perforce &gt;= 2003.1<br>(Perforce integratie)</td>
+    <td class=even><a href="http://www.perforce.com/perforce/products.html" TARGET="_top">www.perforce.com/perforce/products.html</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Clearcase &gt;= 4.0<br>(Clearcase integratie)</td>
+    <td class=odd><a href="http://www.rational.com/products/clearcase/index.jsp" TARGET="_top">www.rational.com/products/clearcase/index.jsp</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>CTags &gt;= 5.x<br>(CTags integratie)</td>
+    <td class=even><a href="http://ctags.sourceforge.net/" TARGET="_top">ctags.sourceforge.net</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>Doxygen &gt;= 1.3.4<br>(project api genereren)</td>
+    <td class=odd><a href="http://www.doxygen.org/" TARGET="_top">www.doxygen.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>dot &gt;= 1.8.7<br>(class inheritance and collaboration diagrammen)</td>
+    <td class=even><a href="http://www.graphviz.org/" TARGET="_top">www.graphviz.org</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=odd>KDESDK &gt;= 3.4<br>(<a href="http://subversion.tigris.org/" TARGET="_top">Subversion</a> integration)</td>
+    <td class=odd><a href="http://www.kde.org/download/" TARGET="_top">www.kde.org/download/</a></td>
+  </tr>
+  <tr valign=top>
+    <td class=even>Yzis &gt;= M3<br>(a powerfull text editor similar to <a href="http://www.vim.org/">Vim</a>)</td>
+    <td class=even><a href="http://www.yzis.org/" TARGET="_top">www.yzis.org/</a></td>
+  </tr>
+</table>
+
+<p>Denk eraan dat om KDevelop language support voor ada, pascal, java, etc te gebruiken. je een corresponderende compiler nodig hebt. KDevelop limiteert de compilere die je moet gebruiken niet maar biedt compiler optie dialogen aan voor sommige van hen. De voorlopig stabiele plugins zijn gcc, g++, f77, pghpf (Portland Group High Performance Fortran Compiler), pgf77 (Portland Group Fortran 77 Compiler), dcc (Borland Delphi Compiler) and fpc (Free Pascal Compiler).</p>
+
+<?php module_tail(); ?>
