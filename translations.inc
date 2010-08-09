@@ -70,13 +70,20 @@ $l_website_navigation="Website navigation";
 $l_all_versions="all&nbsp;versions";
 $l_general="General";
 $l_home="Home";
+$l_about="About"; // new
 $l_versions="Versions";
+$l_version_history="Version History"; // new
+
 $l_features="Features";
 $l_requirements="Requirements";
 $l_download="Download";
 $l_cvs_branches_compiling="SVN Branches &amp; Compiling";
 $l_changes="Changes";
-$l_bugs_wishes="Bugs &amp; wishes";
+$l_bugs_wishes="Bugs &amp; Wishes";
+$l_devel="Development Portal"; // new
+$l_sources="KDevelop Source Code"; // new
+$l_branches="Branches"; // new
+$l_compiling="How to Compile"; // new
 
 $l_documentation="Documentation";
 $l_user_manual="User Manual";
@@ -87,7 +94,8 @@ $l_faq="F.A.Q.";
 $l_technotes="TechNotes";
 $l_mediawiki="Wiki";
 
-$l_presentations_graphics="Presentations and Graphics";
+$l_presentations_graphics="Presentations and Graphics"; // deprecated
+$l_promotion="Promotion";
 $l_screenshots="Screenshots";
 $l_in_the_press="In the Press";
 $l_awards="Awards";
@@ -112,12 +120,14 @@ $l_sponsors="Sponsors";
 $l_donation="Donation";
 $l_development_tools="Dev. Tools";
 
-$l_contacts="Contacts";
-$l_on_line_chat="On-line chat";
+$l_contacts="Contacts"; // deprecated
+$l_community="Community"; // new
+$l_on_line_chat="Online Chat";
 $l_forum="Forum";
-$l_mailinglist="Mailinglist";
-$l_guestbook="Guestbook";
+$l_mailinglist="Mailing Lists";
+$l_guestbook="Guestbook"; // deprecated
 $l_credits="Credits";
+$l_contribute="How to Contribute"; // new
 
 $l_misc="Misc";
 $l_license="License";

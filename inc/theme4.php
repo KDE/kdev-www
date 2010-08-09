@@ -26,29 +26,28 @@ echo '</div>
 
 // Markup for Content Boxes (Fluid-width boxes that can have arbitrary content):
 function box_head($class) {
-    echo "<div class=\"$class\">\n";
-    echo "<div class=\"border-tl\"></div>\n";
-    echo "<div class=\"border-tr\"></div>\n";
-    echo "<d
-iv class=\"border-bl\"></div>\n";
-    echo "<div class=\"border-br\"></div>\n";
-    echo "<div class=\"border-l\"></div>\n";
-    echo "<div class=\"border-r\"></div>\n";
+    return "<div class=\"$class\">\n".
+           "<div class=\"border-tl\"></div>\n".
+           "<div class=\"border-tr\"></div>\n".
+           "<div class=\"border-bl\"></div>\n".
+           "<div class=\"border-br\"></div>\n".
+           "<div class=\"border-l\"></div>\n".
+           "<div class=\"border-r\"></div>\n";
 }
 function box_tail() {
-    echo "</div>\n";
+    return "</div>\n";
 }
 
 // Markup for Link Boxes (Fixed-width boxes that have a title and optionally a category icon):
 function linkbox_head($title, $class, $category) {
-    echo "<div class=\"$class";         // $class will be 'navbox' or 'quickbox'
+    $html = "<div class=\"$class";         // $class will be 'navbox' or 'quickbox'
     if (empty($category))
-      echo "\"><div class=\"header\">";
+      $html .= "\"><div class=\"header\">";
     else
-      echo " $category\"><div class=\"header\"><span class=\"category-icon\"/></span>";
-    echo "<h3>$title</h3></div><div class=\"content\">\n";
-    
+      $html .= " $category\"><div class=\"header\"><span class=\"category-icon\"/></span>";
+    $html .= "<h3>$title</h3></div><div class=\"content\">\n";
+    return $html;
 }
 function linkbox_tail() {
-    echo "</div><div class=\"footer\"></div></div>\n";
+    return "</div><div class=\"footer\"></div></div>\n";
 }

@@ -7,44 +7,35 @@ fwrite($ftmp,'<?php
 $f = fopen("dynamic/menu_normal_user_$lang.html","w");
 fwrite($f,"');
 $style='';//' class=versionlink';
-fwrite($ftmp, addslashes("<div class=\"navbox cat-doc\"><div class=\"header\"><span class=\"category-icon\"/></span>
-<h3>$l_documentation</h3></div><div class=\"content\"><ul>
-".create_intern_menu_item("versions.html", $l_versions, $style)."
-<li$style><a href=\"$stable_user_manual_url\">$l_user_manual</a></li>
-".create_intern_menu_item("doc/technotes/index.html", $l_technotes, $style)."
-<li$style><a href=\"mediawiki/index.php/Main_Page\">$l_mediawiki</a></li>
-</ul></div><div class=\"footer\"></div></div>
+fwrite($ftmp, addslashes(
+linkbox_head($l_documentation, "navbox", "cat-doc")."<ul>
+<li>".create_link("about.html", $l_about, $style)."</li>
+<li>".create_link("$lsv/manual.html", $l_user_manual)."</li>
+<li>".create_link("$lsv/tutorials.html", $l_tutorials)."</li>
+<li>".create_link("versions.html", $l_version_history)."</li>
+<li><a href=\"mediawiki/index.php/Main_Page\" title=\"KDevelop Wiki\">Wiki</a></li>
+</ul>".linkbox_tail()."
 
-<div class=\"navbox cat-devel\"><div class=\"header\"><span class=\"category-icon\"/></span><h3>$l_development</h3></div><div class=\"content\"><ul>
-".create_intern_menu_item("$lsv/changes.html", $l_changes, $style)."
-".create_intern_menu_item("$lsv/branches_compiling.html", $l_cvs_branches_compiling, $style)."
-".create_intern_menu_item('join-the-team.html', $l_join_us, $style)."
-".create_intern_menu_item('website_translation_status.html', $l_website_translation, $style)."
-</ul></div><div class=\"footer\"></div></div>
+".linkbox_head($l_development, "navbox", "cat-devel")."<ul>
+<li>".create_link("$lsv/devel.html", $l_devel)."</li>
+<li>$l_sources<ul>
+<li>".create_link("$lsv/branches.html", $l_branches)."</li>
+<li>".create_link("$lsv/compiling.html", $l_compiling)."</li></ul>
+</ul>".linkbox_tail()."
 
-<div class=\"navbox\"><div class=\"header\"><span class=\"category-icon\"/></span><h3>$l_links</h3></div><div class=\"content\"><ul>
-".create_intern_menu_item("users.html", $l_user_progs, $style)."
-".create_intern_menu_item("sponsors.html", $l_sponsors, $style)."
-".create_intern_menu_item("links_tools.html", $l_development_tools, $style)."
-</ul></div><div class=\"footer\"></div></div>
+".linkbox_head($l_community, "navbox", "cat-community")."<ul>
+<li<a href=\"phorum5/index.php\" title=\"KDevelop Forum\">$l_forum</a></li>
+<li>".create_link("mailinglist.html", $l_mailinglist)."</li>
+<li><a href=\"chat/\">$l_on_line_chat</a></li>
+<li>".create_link("$lsv/kdevelop.html#Bugs", $l_bugs_wishes, $style)."</li>
+<li>".create_link("contribute.html", $l_contribute)."</li>
+</ul>".linkbox_tail()."
 
-<div class=\"navbox cat-promotion\"><div class=\"header\"><span class=\"category-icon\"/></span><h3>$l_presentations_graphics</h3></div><div class=\"content\"><ul>
-".create_intern_menu_item("in_the_press.html", $l_in_the_press, $style)."
-".create_intern_menu_item("awards.html", $l_awards, $style)."
-".create_intern_menu_item("logos_banners.html", $l_logos_banners, $style)."
-".create_intern_menu_item("splashscreens.html", $l_splashscreens, $style)."
-</ul></div><div class=\"footer\"></div></div>
-
-<div class=\"navbox cat-community\"><div class=\"header\"><span class=\"category-icon\"/></span><h3>$l_contacts</h3></div><div class=\"content\"><ul>
-".create_intern_menu_item("$lsv/kdevelop.html#Bugs", $l_bugs_wishes, $style)."
-<li$style><a href=\"chat/\">$l_on_line_chat</a></li>
-<li$style><a href=\"phorum5/index.php\">$l_forum</a></li>
-".create_intern_menu_item("mailinglist.html", $l_mailinglist, $style)."
-<li$style><a href=\"phorum5/read.php?10,26111\">$l_guestbook</a></li>
-".create_intern_menu_item("$lsv/authors.html", $l_credits, $style)."
-</ul></div><div class=\"footer\"></div></div>\n"));
-//".create_intern_menu_item("bugs.html", $l_bugs_wishes, $style)."
-//".create_intern_menu_item("donate.html", $l_donation)."
+<div class=\"navbox cat-promotion\"><div class=\"header\"><span class=\"category-icon\"/></span><h3>$l_promotion</h3></div><div class=\"content\"><ul>
+<li>".create_link("logos_banners.html", $l_logos_banners, $style)."</li>
+<li>".create_link("awards.html", $l_awards, $style)."</li>
+<li>".create_link("in_the_press.html", $l_in_the_press, $style)."</li>
+</ul>".linkbox_tail()."\n"));
 fwrite($ftmp, '");
 fclose($f); ?>');
 

@@ -273,6 +273,10 @@ function create_intern_menu_link2($filename, $text, $style=' class="versionlink"
   return "<td$style><a href=\"index.html?filename=$filename\" title=\"".get_title_variable($filename)."\">$text</a></td>";
 }
 
+function create_link($filename, $text) {
+  return "<a href=\"index.html?filename=$filename\" title=\"".get_title_variable($filename)."\">$text</a>";
+}
+
 
 function get_translatorname_translatoremail($version, $lang_code) {
 
