@@ -141,16 +141,64 @@ html, body {
 #translator { text-align: center; }
 #sitestats { text-align: center; }
 
-div.border {
-    background-image: url('graphics/theme4/box_lightgreen-mh-1px.png'); background-repeat: repeat-x;
-    background-color: #e6f5c3;
+/* "Important content" boxes */
+div.importantbox {
     position: relative;
 }
-div.border div.header {
-    background-image: url('graphics/theme4/box-ti-solid-1px.png'); background-repeat: repeat-x;
+div.importantbox div.header {
+    position: relative; z-index: 2;
+    padding-left: 14px;
+    padding-right: 14px;
+    background: url('graphics/theme4/box-tili.png') left no-repeat;
+}
+div.importantbox div.border-t {
+    background: url('graphics/theme4/box-ti-1px.png') repeat-x;
     height: 14px;
 }
-div.border div.header h3,
+div.importantbox div.border-tr {
+    width: 14px; height: 14px;
+    position: absolute; right: 0; top: 0;
+    background: url('graphics/theme4/box-tiri.png') no-repeat;
+}
+div.importantbox div.main {
+    position: relative; z-index: 1;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background: url('graphics/theme4/box-li-1px.png') repeat-y;
+}
+div.importantbox div.content {
+    position: relative;
+    margin-top: -11px;
+    margin-bottom: -10px;
+    padding: 7px 7px 6px 7px;
+    background: url('graphics/theme4/box_lightgreen-mh-1px.png') repeat-x;
+    background-color: #e6f5c3;
+}
+div.importantbox div.border-r {
+    position: absolute;
+    right: 0; top:0;
+    width: 9px; height: 100%;
+    background: url('graphics/theme4/box-ri-1px.png') repeat-y;
+}
+div.importantbox div.footer {
+    position: relative; z-index: 2;
+    height: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    background: url('graphics/theme4/box-bili.png') left no-repeat;
+}
+div.importantbox div.border-b {
+    height: 14px;
+    background: url('graphics/theme4/box-bi-1px.png') bottom repeat-x;
+}
+div.importantbox div.border-br {
+    background-image: url('graphics/theme4/box-biri.png');
+    width: 14px; height: 14px; z-index: 5;
+    position: absolute; right: 0; bottom: 0;
+}
+
 div.moduleentry div.header h3 {
     padding-left: 20px;
     position: relative; top: -19px;
@@ -158,55 +206,16 @@ div.moduleentry div.header h3 {
     color: #c34609;
     font-style: normal; font-size: 14px;
 }
-div.border div.header h3 a,
 div.moduleentry div.header h3 a {
     color: #c34609;
 }
-
-div.border div.border-tl {
-    background-image: url('graphics/theme4/box_lightgreen-tl-solid.png');
-    width: 14px; height: 14px; z-index: 5;
-    position: absolute;
-}
-div.border div.border-tr {
-    background-image: url('graphics/theme4/box_lightgreen-tr-solid.png');
-    width: 14px; height: 14px; z-index: 5;
-    position: absolute; right: 0; top: 0;
-}
-div.border div.border-bl {
-    background-image: url('graphics/theme4/box_lightgreen-bili.gif');
-    width: 14px; height: 14px; z-index: 5;
-    position: absolute; left: 0; bottom: 0;
-}
-div.border div.border-br {
-    background-image: url('graphics/theme4/box_lightgreen-biri.gif');
-    width: 14px; height: 14px; z-index: 5;
-    position: absolute; right: 0; bottom: 0;
-}
-div.border div.border-l {
-    background-image: url('graphics/theme4/box-li-solid-1px.png'); background-repeat: repeat-y;
-    width: 9px; height: 100%;
-    position: absolute;
-    top: 0; z-index: 0;
-}
-div.border div.border-r {
-    background-image: url('graphics/theme4/box-ri-solid-1px.png'); background-repeat: repeat-y;
-    width: 9px; height: 100%;
-    position: absolute;
-    right: 0; z-index: 0;
-}
-div.border div.content,
 div.moduleentry div.content {
     padding: 16px; padding-top: 2px; padding-bottom: 0;
-}
-div.border div.footer {
-    height: 14px; background-position: bottom;
-    background-image: url('graphics/theme4/box-bi-solid-1px.png'); background-repeat: repeat-x;
 }
 
 
 div.what-is-kdevelop dl {
-    margin: 0;
+    margin: 0 0 -7px 0;
 }
 div.what-is-kdevelop dl dt {
     color: #60a802;
@@ -223,8 +232,16 @@ div.what-is-kdevelop dl dd li {
     background: url(graphics/theme4/bullet.png) no-repeat scroll 0 0.45em;
     padding-left: 11px; margin-right: 10px;
 }
-div.what-is-kdevelop .screenshot {
-    float: right; margin-top: -24px; margin-right: -16px;
+div.what-is-kdevelop div.border-tr {
+    width: 174px; height: 127px;
+    right: 3px; top: -7px;
+    background: url('graphics/theme4/frontpagescreenshot-solid.jpg') no-repeat;
+}
+div.what-is-kdevelop div.screenshot {
+    float: right;
+    width: 174px; height: 127px;
+    margin-top: -22px;
+    margin-right: -13px;
 }
 
 div.main-versions dl {

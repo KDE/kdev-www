@@ -5,8 +5,8 @@ global $l_def_KDevPlatform;
 global $l_versions;
 global $l_def_KDevelop4;
 global $l_def_KDevelop3;
-module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
-<img class="screenshot" src="graphics/theme4/frontpagescreenshot-solid.png" height="127" width="174" alt="" />
+echo box_head('importantbox what-is-kdevelop');?>
+<div class="screenshot"><div></div></div>
 <dl>
 <dt><b>KDevelop</b></dt><dd>
     <?php echo $l_def_KDevelop; ?>
@@ -18,11 +18,12 @@ module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
 </dd>
 <dt class="kdevplatform"><b>KDevPlatform</b></dt><dd><?php echo $l_def_KDevPlatform; ?> <a href="#">more Info...</a></dd>
 </dl>
-<?php module_tail();?>
+<?php echo box_tail();?>
 
 
 <!-- TODO: translation -->
-<?php module_head($l_versions.':', 'border main-versions');?>
+<h2><?php echo $l_versions ?>:</h2>
+<?php echo box_head('importantbox main-versions');?>
 <dl class="version3">
 <dt><b>KDevelop 3.x</b> <span class="range">(1998 - 2008)</span></dt>
 <dd>
@@ -49,4 +50,4 @@ module_head(/*$l_what_is_KDevelop*/'', 'border what-is-kdevelop');?>
 </dd>
 </dl>
 <div class="clear"></div>
-<?php module_tail();?>
+<?php echo box_tail();?>

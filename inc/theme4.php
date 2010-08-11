@@ -27,15 +27,23 @@ echo '</div>
 // Markup for Content Boxes (Fluid-width boxes that can have arbitrary content):
 function box_head($class) {
     return "<div class=\"$class\">\n".
-           "<div class=\"border-tl\"></div>\n".
-           "<div class=\"border-tr\"></div>\n".
-           "<div class=\"border-bl\"></div>\n".
-           "<div class=\"border-br\"></div>\n".
-           "<div class=\"border-l\"></div>\n".
-           "<div class=\"border-r\"></div>\n";
+             "<div class=\"header\">\n".
+               "<div class=\"border-t\"></div>\n".
+               "<div class=\"border-tl\"></div>\n".
+               "<div class=\"border-tr\"></div>\n".
+             "</div>\n".
+             "<div class=\"main\">\n".
+               "<div class=\"content\">\n";
 }
 function box_tail() {
-    return "</div>\n";
+    return     "</div>\n".
+               "<div class=\"border-r\"></div>\n".
+             "</div>\n".
+             "<div class=\"footer\">\n".
+               "<div class=\"border-b\"></div>\n".
+               "<div class=\"border-br\"></div>\n".
+             "</div>\n".
+           "</div>\n";
 }
 
 // Markup for Link Boxes (Fixed-width boxes that have a title and optionally a category icon):
