@@ -327,6 +327,19 @@ dd.code {
   }
 
 
+/* Main Column style */
+#maincontent {
+    background: url('graphics/theme4/maincol_tr.jpg') right 92px no-repeat,
+                url('graphics/theme4/maincol_br.jpg') right bottom no-repeat,
+                url('graphics/theme4/maincol_r.jpg') right center repeat-y,
+                url('graphics/theme4/maincol_tl.jpg') left 92px no-repeat,
+                url('graphics/theme4/maincol_t.png') center 92px repeat-x,
+                url('graphics/theme4/maincol_bl.jpg') left bottom no-repeat,
+                url('graphics/theme4/maincol_b.png') center bottom repeat-x,
+                url('graphics/theme4/maincol_l.jpg') left center repeat-y,
+                #F5FAE9;
+}
+
 
 div.quickbox,
 div.navbox {
