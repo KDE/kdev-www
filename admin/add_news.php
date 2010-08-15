@@ -1,5 +1,5 @@
 <?php
-$posts_in_main_page = 4;
+$posts_in_main_page = 3;
 // make news_dir world writable, 0777 and main.ihtml page to 0666
 $path_to_root='../';
 $news_dir = 'news';
@@ -11,7 +11,7 @@ include ('../../access.inc');
 // Establish a connection with the MySQL server
 $mysql_link = @mysql_connect ('localhost', $k_login, $k_password);
 
-// Exit if it canot get a connection to the MySQL database
+// Exit if it can not get a connection to the MySQL database
 if ($mysql_link == false)
   die('Could not connect to the database. Will not be able to add/edit/remove news.
 ');
@@ -241,6 +241,12 @@ if (isset($_POST['Add'])){
   // Verify if the year file is writable, this is necessary for the situation where the $year != $current_year
   if (is_writable($path_to_root."main$year.html") != true)
     die("File $path_to_root"."main$year.html does not seam to exist or is not writable.");
+
+  // add the main$year.html page to the 'pages' table if it does not exist yet
+  if (!mysql_query("INSERT IGNORE INTO `pages` (`id`, `prefix`, `filename`, `translatable`, `sitemap`, `sitemap_group`, `sitemap_parentnode`) VALUES (NULL, '../index.html?filename=', 'main$year.html', 'no', '1', 'news', '1');")){
+    echo "<p><b>Looks like I could not add the main$year.html page to the 'pages' MySQL table</p>";
+    return;
+  }
 
   // Verify if a file for this day already exists
   if (file_exists("$path_to_root$news_post_url"))

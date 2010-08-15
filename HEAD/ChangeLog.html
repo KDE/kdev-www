@@ -1,13 +1,15 @@
 <?php
 module_head('KDevelop HEAD (SVN trunk) ChangeLog <a href="HEAD/ChangeLog.rss" title="Subscribe to RSS feed" hreflang="en"><img src="graphics/rss.gif" width="16" height="16" alt="RSS feed"></a>');
 if ($lang != "en") echo "    <span lang=\"en\" dir=\"ltr\">\n";
+echo '<p><strong>Development has been moved from SVN to GIT. See http://gitorious.org/kdevelop for more info.</strong></p>';
+
 include("$k_base_version/ChangeLog.ihtml");
 
 // Add other versions here
 
 echo '<p>Visit the
 <a href="4.0/ChangeLog_3.9.81_to_3.9.93.html">
-individual SVN commit logs between KDevelop 4.0 alpha 2 and beta 7</a> for a more detailed list of changes.</p>';
+individual SVN commit logs between KDevelop 4.0 alpha 2 and 4.0.0</a> for a more detailed list of changes.</p>';
 
 echo '<p>Visit the
 <a href="4.0/ChangeLog_3.9.80_to_3.9.81.html">

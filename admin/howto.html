@@ -138,14 +138,12 @@ URL: <code>sftp://ftp.kdevelop.org/</code><br>
 URL: <code>http://www.frappr.com/?a=adminlogin&amp;gid=28593</code><br>
 
 
-<h1>Add a new year (yearly news page)</h1>
+<h1>Add a new year to the sitemap (yearly news page)</h1>
 
-<p>Whenever a new year has passed you should add a new file for the new year.</p>
+<p>Whenever a new year has passed you should add the 'yearly news page' to the sitemap.</p>
 
 <ul>
-<li>Add a <code>main2008.html</code> (example for 2008) file, for example with the command <code>touch main2008.html</code></li>
-<li>Change its permissions to be writable by the webserver <code>chmod 666 main2008.html</code></li>
-<li>Add the <code>main2008.html</code> page to the <a href="<?php echo $server_url; ?>/phpMyAdmin/sql.php?db=kdevelop_db&amp;table=pages&amp;sql_query=SELECT+%2A+FROM+%60pages%60"><strong>pages</strong> table of the <strong>kdevelop_db</strong> MySQL database</a></li>
+<li>Edit the <code>main*.html</code> entries on <a href="<?php echo $server_url; ?>/phpMyAdmin/sql.php?db=kdevelop_db&amp;table=pages&amp;sql_query=SELECT+%2A+FROM+%60pages%60"><strong>pages</strong> table of the <strong>kdevelop_db</strong> MySQL database</a> to point to the correct parent(s)</li>
 <li>update the sitemap by visiting the <a href="../bin/update_sitemap.php">GraphViz Site Map Generator page</a></li>
 </ul>
 
