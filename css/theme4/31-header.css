@@ -1,0 +1,96 @@
+/*
+  HEADER + HEADER ELEMENTS
+  
+  This file defines the visual appearance of the header bar, as well as the layout and appearance of
+  elements inside this bar.
+  
+  The size and positioning of the header bar itself within the top-level layout is defined in the
+  "Main Layout" file instead.
+  
+*/
+
+/********** Header Background *********************************************************************/
+
+#head {
+  background-image: url(../graphics/theme4/header-bg-solid-1px.png);
+  background-repeat: repeat-x;
+}
+
+#logo { position: absolute; top: 0px; left: 0px; padding: 0px; }
+
+/********** Language Selector *********************************************************************/
+
+#languageselector { position: absolute; top: 0px; right: 0px; text-align: right; padding: 5px; }
+
+/********** Search Bar ****************************************************************************/
+
+#sitesearch {
+  position: absolute; top: 77px; right: 0px; text-align: right; padding: 5px;
+  background: url('../graphics/theme4/searchbar-t-solid.png') top left no-repeat;
+  padding: 16px 0 0 0;
+  width: 242px;
+}
+
+#searchbar-content {
+  background: url('../graphics/theme4/searchbar-be-solid.png') bottom left no-repeat;
+  margin: 0 0 0 0;
+  padding: 0 9px 1px 20px;
+}
+
+#searchform {
+  position: relative;
+  top: -12px;
+  text-align: center;
+}
+
+#searchform input.button {
+}
+
+#searchform input.text {
+  width: 130px;
+  border: 1px solid black;
+}
+
+/********** Top Menu Links ************************************************************************/
+
+#menu {
+ position: absolute; top: 40px;  left: 430px;
+ font-weight:bold;
+ font-size:0.9em;
+}
+#menu ul {
+  list-style: none;
+}
+#menu ul li {
+  float: left;
+  background: url("/../graphics/theme4/topmenulink-l.gif") no-repeat left top;
+  margin: 0 0 0 3px;
+  padding: 0 0 0 6px;
+}
+#menu ul a {
+  display: block;
+  background: url("/../graphics/theme4/topmenulink-re.gif") no-repeat right top;
+  padding: 4px 8px 3px 1px;
+  color: white;
+}
+
+#menu ul a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  font-size: 12.6px;
+}
+#menu ul a:before {
+  content: url('../graphics/theme4/bullet_toplink-solid.png');
+  position: relative;
+  bottom: 0.16em;
+  padding-right: 5px;
+}
+#menu ul a:hover {
+  color: #F5CB22;
+  text-shadow: rgba(255,255,255,0.5) 0 0 6px, #51800C 0 0 1px;
+}
+#menu ul a:active {
+  color:#BEED66;
+  text-shadow: none;
+}

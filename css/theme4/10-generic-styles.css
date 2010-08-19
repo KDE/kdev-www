@@ -1,0 +1,56 @@
+/*
+  GENERIC STYLES
+  
+  This file specifies the global base styles for generic elements such as links, headings,
+  paragraphs and lists.
+  
+  Styles for specific usecases of specific elements which 'subclass' the base styles defined
+  here should go into separate files.
+  
+*/
+
+body, p, li {
+  font: 11.8px/16.2px 'DejaVu Sans',Verdana,'Lucida Grande',Geneva,sans-serif;
+  color: #111111;
+}
+body {
+  font :  normal  normal  medium  sans-serif;
+  font-size: small;
+}
+
+a {
+  text-decoration: none;
+  color: #004cc9;
+}
+a:hover {
+  color: #D88C00;
+}
+
+h1 {
+  font-size: 19px;
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 13.6px;
+  font-weight: bold;
+  color: #c34609;
+}
+
+h3 {
+  font-size: 12.2px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+p {
+  margin: 3px 7px 3.8px 6px;
+}
+
+img {
+  border: 0;
+}
+
+div.clear {
+  clear: both;
+}

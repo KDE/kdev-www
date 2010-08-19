@@ -343,3 +343,27 @@ class screenshot_thumb{
     $this->caption = $caption;
   }
 }
+
+// return the timestamp of the last file modification inside a given folder (non-recursive)
+function foldermtime($path) {
+  $mtime = 0;
+  foreach (glob($path."/*") as $file) {
+    if (filemtime($file) > $mtime)
+        $mtime = filemtime($file);
+  }
+  return $mtime;
+}
+
+// combine all files inside a given folder into a single file
+function combine_files($sourcedir, $targetfile, $compression_mode) {
+  $content = '';
+  foreach (glob($sourcedir."/*") as $file) {
+    $content .= "\n\n" . file_get_contents($file);
+  }
+  if ($compression_mode == 'minimize_css') {
+    include('css_compressor.php');
+    list($content, $stats) = compress_css($content);
+//     $debugMsg = $stats['original_size'].' &nbsp;&rarr;&nbsp; '.$stats['final_size'].' &nbsp; ( &ndash; '.$stats['reduction'].')';
+  }
+  file_put_contents($targetfile, $content);
+}

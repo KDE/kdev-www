@@ -1,4 +1,4 @@
-<?
+<?php
  
 /*
    CSS Compressor v0.9
@@ -19,32 +19,44 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
- 
+/*
+   Aug 2010: Stripped down and modified by Sam S. to allow it to be used as a library
+             which can be called from external php scripts
+*/
+
+global $cssCompressor;
+
+// Colors:
+$cssCompressor['opt_rgb2hex']                       = true; // rgb values to hex
+$cssCompressor['opt_colours2hex']                   = true; // long colour names to short hex
+$cssCompressor['opt_hex2colours']                   = true; // long hex to short colours names
+$cssCompressor['opt_short_hex']                     = true; // long hex to short hex (#ff0000 -> #f00)
+// Measurements:
+$cssCompressor['opt_remove_zeros']                  = true; // remove zero measurements
+// Rules:
+$cssCompressor['opt_combine_identical_rules']       = true; // combine identical rules
+$cssCompressor['opt_combine_identical_selectors']   = true; // combine identical selectors
+$cssCompressor['opt_combine_props_list']            = true; // combine properties
+$cssCompressor['opt_remove_overwritten_properties'] = true; // remove overwritten properties
+// Properties:
+$cssCompressor['opt_short_margins_and_paddings']    = true; // margin: 4px 5px 4px 5px --> margin: 4px 5px
+$cssCompressor['opt_text_weights_to_numbers']       = true; // font weight text to weight numbers
+
 // functions appear in the order they are first called
- 
-compress_css();
- 
-function compress_css()
+
+function compress_css($cssfile)
 {
    // make these variables available locally
    global $file_selector;
    global $file_props;
-   // first, get the css that was sent, referenced or uploaded
-   $cssfile = get_sent_css();
- 
-   // check if the user wants to see statistics
-   if ($_REQUEST['opt_output_stats'])
-   {
-       // save the size of the code
-       $start_size = strlen($cssfile);
-       // save the current time
-       $start = explode(' ', microtime());
-   }
+   global $cssCompressor;
    
-   // check if no css was found
-   if (!$cssfile)
-       // just die
-       exit ("/* You didn't upload anything or the stylesheet is empty - Ro" . "bson */");
+   // first, get the css that was sent, referenced or uploaded
+ 
+   // save the size of the code
+   $start_size = strlen($cssfile);
+   // save the current time
+   $start = explode(' ', microtime());
    
    // temporarily change semicolons in web links
    $cssfile = str_replace('://', '[!semi-colon!]//', $cssfile);
@@ -56,36 +68,36 @@ function compress_css()
    $cssfile = trim($cssfile);
    
    // turn all rgb values into hex
-   if ($_REQUEST['opt_rgb2hex'])
+   if ($cssCompressor['opt_rgb2hex'])
        rgb2hex($cssfile);
    
    // shorten colours
-   if ($_REQUEST['opt_colours2hex'])
+   if ($cssCompressor['opt_colours2hex'])
        long_colours_to_short_hex($cssfile);
-   if ($_REQUEST['opt_hex2colours'])    
+   if ($cssCompressor['opt_hex2colours'])    
        long_hex_to_short_colours($cssfile);
    
    // remove any extra measurements that aren't needed
-   if ($_REQUEST['opt_remove_zeros'])
+   if ($cssCompressor['opt_remove_zeros'])
        remove_zero_measurements($cssfile);
        
    // seperate into selectors and properties
    sort_css($cssfile);
    
    // change font weight text into numbers
-   if ($_REQUEST['opt_text_weights_to_numbers'])
+   if ($cssCompressor['opt_text_weights_to_numbers'])
        font_weight_text_to_numbers($cssfile);        
    
    // check if any selectors are used twice and combine the properties
-   if ($_REQUEST['opt_combine_identical_selectors'])
+   if ($cssCompressor['opt_combine_identical_selectors'])
        combine_identical_selectors();
    
    // remove any properties which are declared twice in one rule
-   if ($_REQUEST['opt_remove_overwritten_properties'])
+   if ($cssCompressor['opt_remove_overwritten_properties'])
        remove_overwritten_properties();
        
    // check if properties should be combined
-   if ($_REQUEST['opt_combine_props_list'])
+   if ($cssCompressor['opt_combine_props_list'])
    {
        // for each rule in the file
        for ($n = 0; $n < count($file_props); $n++)
@@ -96,13 +108,13 @@ function compress_css()
    // for each rule in the file
    for ($n = 0; $n < count($file_props); $n++)
        // run all the individual functions to reduce their size
-       array_walk($file_props[$n], 'reduce_prop');
+       array_walk($file_props[$n], 'reduce_prop', $cssCompressor);
        
    // remove all the properties that were blanked out earlier
    remove_empty_rules();
    
    // check if any rules are the same as other ones and remove the first ones
-   if ($_REQUEST['opt_combine_identical_rules'])
+   if ($cssCompressor['opt_combine_identical_rules'])
        combine_identical_rules();
    
    // one final run through to remove all unnecessary parts of the arrays
@@ -115,131 +127,26 @@ function compress_css()
  
    $output = stripslashes($output);
    
-   // check if the user wants to view stats
-   if ($_REQUEST['opt_output_stats'])
-   {
-       echo '<h1>Statistics</h1><ul>';
-       echo '<li>Original size: ' . round($start_size / 1024, 2) . ' kB (' . number_format($start_size) . ' B)</li>';
-       echo '<li>Final size: ' . round(strlen(strip_tags($output)) / 1024, 2) . ' kB (' . number_format(strlen(strip_tags($output))) . ' B)</li>';
-       echo '<li>Saved: ' . round(($start_size - strlen(strip_tags($output))) / 1024, 2) . ' kB (' . number_format(($start_size - strlen(strip_tags($output)))) . ' B)</li>';
-       echo '<li>Reduction: ' . round(100 - ((strlen(strip_tags($output)) / $start_size) * 100), 2) . '%</li>';
-       echo '</ul>';
-       
-       $finish = explode(' ', microtime());        
-       
-       // work out the differences between the times
-       $seconds = $finish[1] - $start[1];
-       $miliseconds = $finish[0] - $start[0];        
-       
-       $duration = round($seconds + $miliseconds, 5);
-       
-       echo '<ul>';
-       echo '<li>Duration: ' . $duration . ' seconds</li>' ;
-       echo '</ul>';
-       
-       echo '<ul>';
-       echo '<li>Rules: ' . count($file_selector) . '</li>';
- 
-       for ($n = 0; $n < count($file_selector); $n++)
-           $selectors += count($file_selector[$n]);
-       
-       for ($n = 0; $n < count($file_props); $n++)
-           $props += count($file_props[$n]);
- 
-       echo '<li>Selectors: ' . $selectors . '</li>';
-       echo '<li>Properties: ' . $props . '</li>';
-       
-       echo '</ul>';
-       
-       echo '<h1>CSS</h1>';
-   }
- 
-   if ($_REQUEST['upload_link'])
-   {
-       $_REQUEST['upload_style'] = NULL;
-       if (!$_POST['upload_link'])
-           $_POST = $_GET;
-       foreach ($_POST as $key => $value)
-           if ($value)
-               if (!$url)
-                   $url .= '?' . $key . '=' . $value;
-               else
-                   $url .= '&' . $key . '=' . $value;
-           echo '<ul><li><a href="http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] . $url . '">Link to this output</a>.</ul>';
-   }
+   // gather statistics
+   $stats['original_size'] = round($start_size / 1024, 2) . ' kB';
+   $stats['final_size'] = round(strlen(strip_tags($output)) / 1024, 2) . ' kB';
+   $stats['reduction'] = round(100 - ((strlen(strip_tags($output)) / $start_size) * 100), 2) . '%';
    
-   echo $output;
-}
- 
-// retrieves the css sent by the user
-// can handle uploaded stylesheets, url references and directly uploaded css
-function get_sent_css()
-{
-   // check if they uploaded a file
-   if ($_FILES['upload_file']['name'])
-       // grab the uploaded file from it's temporary position
-       // the temporary file is deleted at the end of the scripts execution
-       // this implodes all the lines of the file into one simple variable
-       return implode('', file($_FILES['upload_file']['tmp_name']));
-   // the eregi check is for security, it ensures people don't request files on the local server
-   else if($_REQUEST['upload_link'] != 'http://' && eregi('http:\/\/*', $_REQUEST['upload_link']))
-   {
-       // grab a remote file for compressing
-       // the at symbol stops php from producing errors, because i've specified one
-       $cssfile = @file($_REQUEST['upload_link']) or die("/* Error: Sorry, that URL couldn't be found. */");
-       // implode the code
-       return implode('', $cssfile);    
-   }
-   // check if they posted css
-   else if($_REQUEST['upload_style'])
-       // store the css into the css file variable
-       return $_REQUEST['upload_style'];
-   // the user wants to combine multiple uploaded files    
-   else if ($_FILES['upload_file_1']['name'])
-   {
-       // add the first file to the current css code
-       $file = implode('', file($_FILES['upload_file_1']['tmp_name']));
-       // check if they added another file
-       if ($_FILES['upload_file_2']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_2']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_3']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_3']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_4']['name'])
-           // if so, add that one to the css code string        
-           $file .= implode('', file($_FILES['upload_file_4']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_5']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_5']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_6']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_6']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_7']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_7']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_8']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_8']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_9']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_9']['tmp_name']));
-       // check if they added another file            
-       if ($_FILES['upload_file_10']['name'])
-           // if so, add that one to the css code string
-           $file .= implode('', file($_FILES['upload_file_10']['tmp_name']));
+   $finish = explode(' ', microtime());        
+   // work out the differences between the times
+   $seconds = $finish[1] - $start[1];
+   $miliseconds = $finish[0] - $start[0];        
+   $stats['duration'] = round($seconds + $miliseconds, 5);
    
-       return $file;
-   }
-   else
-       return NULL;
+   $stats['num_rules'] = count($file_selector);
+   
+   for ($n = 0; $n < count($file_selector); $n++)
+       $stats['num_selectors'] += count($file_selector[$n]);
+   
+   for ($n = 0; $n < count($file_props); $n++)
+       $stats['num_props'] += count($file_props[$n]);
+   
+   return array ($output, $stats);
 }
  
 // this removes html and css comments from the file
@@ -261,35 +168,41 @@ function rgb2hex(&$string)
    {
        // find the location of the first rgb value
        $where = strpos($string, 'rgb');
+       
        // add everything before to the new string
        $text .= substr($string, 0, $where);
+       
        // remove the before part from the original string
        $string = substr($string, $where, strlen($string));
-       // find the end of the rgb value
-       $where = strpos($string, ')');
- 
-       // get the rgb value, like 'rgb(255, 170, 0)'
-       $rgb = substr($string, 0, $where+1);
        
-       // remove spaces, like 'rgb(255,170,0)'
-       $rgb = eregi_replace(' +', '', $rgb);
-       // remove the parts that aren't values, like '255,170,0'
-       $rgb = substr($rgb, 4, -1);
-       
-       // explode the values into an array, like 255|170|0
-       $rgb = explode(',', $rgb);
- 
-       // set colour to nothing so it doesn't use the previous value
-       $colour = '';
-       // loop through each rgb value, for red, green and blue
-       for ($n = 0; $n < 3; $n++)
-           // ff or 0f - always return two characters
-           $colour .= strlen(dechex($rgb[$n])) == 1 ? '0' . dechex($rgb[$n]) : dechex($rgb[$n]) ;
- 
-       // 'ffaa00' - add the six-character hex value
-       $text .= '#' . $colour;
-       // remove the rgb property from the string
-       $string = substr($string, $where+1, strlen($string));
+       if($string[3] != 'a') // don't touch rgba values!
+       {
+           // find the end of the rgb value
+           $where = strpos($string, ')');
+     
+           // get the rgb value, like 'rgb(255, 170, 0)'
+           $rgb = substr($string, 0, $where+1);
+           
+           // remove spaces, like 'rgb(255,170,0)'
+           $rgb = eregi_replace(' +', '', $rgb);
+           // remove the parts that aren't values, like '255,170,0'
+           $rgb = substr($rgb, 4, -1);
+           
+           // explode the values into an array, like 255|170|0
+           $rgb = explode(',', $rgb);
+     
+           // set colour to nothing so it doesn't use the previous value
+           $colour = '';
+           // loop through each rgb value, for red, green and blue
+           for ($n = 0; $n < 3; $n++)
+               // ff or 0f - always return two characters
+               $colour .= strlen(dechex($rgb[$n])) == 1 ? '0' . dechex($rgb[$n]) : dechex($rgb[$n]) ;
+     
+           // 'ffaa00' - add the six-character hex value
+           $text .= '#' . $colour;
+           // remove the rgb property from the string
+           $string = substr($string, $where+1, strlen($string));
+       }
    }
    // add the remaining parts of the file back to the original string
    // return the new string with rgb values converted to hex values
@@ -546,16 +459,6 @@ function combine_props_list(&$props)
    
    // to do: this needs some checking
    combine_props($props, 'font', array('font-style', 'font-variant', 'font-weight', 'font-size', 'line-height', 'font-family'));
-   combine_props($props, 'font', array('font-style', 'font-variant', 'font-weight', 'font-size', 'font-family'));
-   combine_props($props, 'font', array('font-variant', 'font-weight', 'font-size', 'line-height', 'font-family'));
-   combine_props($props, 'font', array('font-style', 'font-weight', 'font-size', 'line-height', 'font-family'));
-   combine_props($props, 'font', array('font-style', 'font-variant', 'font-size', 'line-height', 'font-family'));
-   combine_props($props, 'font', array('font-variant', 'font-weight', 'font-size', 'font-family'));
-   combine_props($props, 'font', array('font-style', 'font-weight', 'font-size', 'font-family'));
-   combine_props($props, 'font', array('font-style', 'font-variant', 'font-size', 'font-family'));
-   combine_props($props, 'font', array('font-variant', 'font-size', 'font-family'));
-   combine_props($props, 'font', array('font-weight', 'font-size', 'font-family'));
-   combine_props($props, 'font', array('font-style', 'font-size', 'font-family'));    
 }
  
 // this code is responsible for combining properties off rules
@@ -563,8 +466,6 @@ function combine_props_list(&$props)
 // the combined variable would be 'margin' and the parts would be the properties before
 function combine_props_borders(&$props, $combined, $parts)
 {
-   print_r($props);
- 
    // split the properties and values
    for ($n = 0; $n < count($props); $n++)
    {
@@ -673,13 +574,13 @@ function combine_props(&$props, $combined, $parts)
 }
  
 // this function just calls other ones
-function reduce_prop(&$item, $key)
+function reduce_prop(&$item, $key, $cssCompressor)
 {
    // reduces six hex codes to three (#ff0000 -> #f00)
-   if ($_REQUEST['opt_short_hex'])
+   if ($cssCompressor['opt_short_hex'])
        short_hex($item);
    // removes useless values from padding and margins (margin: 4px 5px 4px 5px -> margin: 4px 5px)
-   if ($_REQUEST['opt_short_margins_and_paddings']);
+   if ($cssCompressor['opt_short_margins_and_paddings']);
        compress_padding_and_margins($item);
 }
  
@@ -828,82 +729,19 @@ function create_output()
 {
    global $file_selector;
    global $file_props;
-   
-   if ($_REQUEST['opt_output_colour'])
+   $css = '';
+   for ($a = 0; $a < count($file_selector); $a++)
    {
-       if ($_REQUEST['opt_output_compress'])
+       for ($b = 0; $b < count($file_selector[$a]); $b++)
+           $file_selector[$a][$b] = $file_selector[$a][$b];
+       for ($b = 0; $b < count($file_props[$a]); $b++)
        {
-           $css = '<span style="color:#000;font-family:monospace">';
-           for ($a = 0; $a < count($file_selector); $a++)
-           {
-               for ($b = 0; $b < count($file_selector[$a]); $b++)
-                   $file_selector[$a][$b] = '<span style="color:#685">' . $file_selector[$a][$b] . '</span>';
-               for ($b = 0; $b < count($file_props[$a]); $b++)
-               {
-                   $parts = explode(':', $file_props[$a][$b]);
-                   $file_props[$a][$b] = '<span style="color:#c86464">' . $parts[0] . '</span>:<span style="color:#369">' . $parts[1] . '</span>';        
-               }    
-               $css .= implode(',', $file_selector[$a]) . '{';
-               $css .= implode(';', $file_props[$a]) . '}';
-           }
-           $css .= '</span>';        
-       }
-       else
-       {
-           $css = '<span style="color:#000;font-family:monospace">';
-           for ($a = 0; $a < count($file_selector); $a++)
-           {
-               for ($b = 0; $b < count($file_selector[$a]); $b++)
-                   $file_selector[$a][$b] = '<span style="color:#685">' . $file_selector[$a][$b] . '</span>';
-               for ($b = 0; $b < count($file_props[$a]); $b++)
-               {
-                   $parts = explode(':', $file_props[$a][$b]);
-                   $file_props[$a][$b] = '<span style="color:#c86464"> &nbsp; &nbsp; &nbsp;' . $parts[0] . '</span>: <span style="color:#369">' . $parts[1] . '</span>';        
-               }    
-               $css .= implode(', ', $file_selector[$a]) . ' {<br>';
-               $css .= implode(';<br>', $file_props[$a]) . ';<br>}<br> <br>';
-           }
-           $css .= '</span>';
-       }
+           $parts = explode(':', $file_props[$a][$b]);
+           $file_props[$a][$b] = '' . $parts[0] . ':' . $parts[1];        
+       }    
+       $css .= implode(',', $file_selector[$a]) . '{';
+       $css .= implode(';', $file_props[$a]) . '}';
    }
-   else
-   {
-       if ($_REQUEST['opt_output_compress'])
-       {    
-           $css = '<span style="font-family:monospace">';
-           for ($a = 0; $a < count($file_selector); $a++)
-           {
-               for ($b = 0; $b < count($file_selector[$a]); $b++)
-                   $file_selector[$a][$b] = $file_selector[$a][$b];
-               for ($b = 0; $b < count($file_props[$a]); $b++)
-               {
-                   $parts = explode(':', $file_props[$a][$b]);
-                   $file_props[$a][$b] = '' . $parts[0] . ':' . $parts[1];        
-               }    
-               $css .= implode(',', $file_selector[$a]) . '{';
-               $css .= implode(';', $file_props[$a]) . '}';
-           }
-           $css .= '</span>';    
-       }
-       else
-       {
-           $css = '<span style="font-family:monospace">';
-           for ($a = 0; $a < count($file_selector); $a++)
-           {
-               for ($b = 0; $b < count($file_selector[$a]); $b++)
-                   $file_selector[$a][$b] = $file_selector[$a][$b];
-               for ($b = 0; $b < count($file_props[$a]); $b++)
-               {
-                   $parts = explode(':', $file_props[$a][$b]);
-                   $file_props[$a][$b] = ' &nbsp; &nbsp; &nbsp;' . $parts[0] . ': ' . $parts[1];        
-               }    
-               $css .= implode(', ', $file_selector[$a]) . ' {<br>';
-               $css .= implode(';<br>', $file_props[$a]) . ';<br>}<br> <br>';
-           }
-           $css .= '</span>';    
-       }
-   }
-   
    return $css;
 }    
  

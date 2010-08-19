@@ -46,8 +46,14 @@ if (file_exists("lang/$lang/translations.inc")){
   // Build the title of the page using the filename and the variables defined in the translations.inc file
   echo '  <title>KDevelop - ' . get_title_variable($filename) . "</title>\n";
 
-  // One default stylesheet and three optional ones
-  echo "  <link rel=\"stylesheet\"  media=\"screen\" type=\"text/css\" title=\"KDevelop4 green\" href=\"theme4.css\">\n";
+  // Include the CSS Stylesheet
+  $css_theme = 'theme4';
+  $css_cachedfile = 'dynamic/'.$css_theme.'.css';
+  $css_sourcefolder = 'css/'.$css_theme;
+  if (!file_exists($css_cachedfile) || (foldermtime($css_sourcefolder) > filemtime($css_cachedfile)) ){
+     combine_files($css_sourcefolder, $css_cachedfile, "minimize_css"); // if the cached combined CSS file is outdated, update it
+  }
+  echo "  <link rel=\"stylesheet\"  media=\"screen\" type=\"text/css\" title=\"KDevelop4 green\" href=\"".$css_cachedfile."\">\n";
 
   if (strpos($filename, '3.4/ChangeLog.html') !== FALSE ){
     echo '  <link rel="alternate" type="application/rss+xml" title="RSS-Feed" href="3.4/ChangeLog.rss">
