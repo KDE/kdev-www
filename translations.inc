@@ -9,6 +9,9 @@ $l_charset_encoding= 'iso-8859-1';
 // The php locale, LanguageCode_CountryCode
 $l_locale= 'en_US';
 
+// The php date format used in the strftime() function cals
+$l_dateformat= '%Y-%B-%d';
+
 $l_graphic_mode = "Graphic Mode";
 $l_text_mode = "Text Mode";
 

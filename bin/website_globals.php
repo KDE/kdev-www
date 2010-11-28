@@ -13,7 +13,7 @@ global $stable_KDE_BRANCH;
 global $stable_KDevelop_BRANCH;
 
 // START - EDIT THESE FOR MAJOR RELEASES - START
-$lsv='4.0'; // Latest Stable Version written in major version (x.x)
+$lsv='4.1'; // Latest Stable Version written in major version (x.x)
 
 // These only exist for KDevelop >= 3.0 (but are mostly used for KDevelop >= 3.2)
 $K_VERSION['3.0'] = array(
@@ -97,16 +97,30 @@ $K_VERSION['3.5'] = array(
 $K_VERSION['4.0'] = array(
      'base_version'             =>'4.0',
      'series_version'           =>'4.0.x',
-     'latest_version'           =>'4.0.0',
-     'latest_release_date'      =>'2010-05-01', // tag date
+     'latest_version'           =>'4.0.2',
+     'latest_release_date'      =>'2010-09-05', // tag date
      'kde_base_version'         =>'4.4',
      'branch'                   =>'extragear-kde4/sdk/kdevelop/4.0',
      'branch_path'              =>'branches/stable/extragear-kde4/sdk/kdevelop/4.0',
      'i18n_stats_url'           =>'stable',
-     'release_date'             => strtotime('05/01/2010'), // mm/dd/yyyy
+     'release_date'             => strtotime('09/05/2010'), // mm/dd/yyyy
      'kde_release'              => '4.4',
      'kde_release_schedule'     => 'http://www.kdevelop.org/mediawiki/index.php/KDevelop_4/4.0_Release_Schedule',
      'min_required_kde_version' =>'4.3');
+
+$K_VERSION['4.1'] = array(
+     'base_version'             =>'4.1',
+     'series_version'           =>'4.1.x',
+     'latest_version'           =>'4.1.0',
+     'latest_release_date'      =>'2010-10-25', // tag date
+     'kde_base_version'         =>'4.6',
+     'branch'                   =>'projects/extragear/kdevelop/kdevelop/repository/show?rev=4.1',
+     'branch_path'              =>'projects/extragear/kdevelop/kdevelop/repository/show?rev=4.1',
+     'i18n_stats_url'           =>'stable',
+     'release_date'             => strtotime('10/25/2010'), // mm/dd/yyyy
+     'kde_release'              => '4.6',
+     'kde_release_schedule'     => 'http://www.kdevelop.org/mediawiki/index.php/KDevelop_4/4.1_Release_Schedule',
+     'min_required_kde_version' =>'4.4');
 
 $KPLATFORM_VERSION['1.0'] = $K_VERSION['4.0'];
 $KPLATFORM_VERSION['1.0']['base_version']   = '1.0';
@@ -114,26 +128,32 @@ $KPLATFORM_VERSION['1.0']['series_version'] = '1.0.x';
 $KPLATFORM_VERSION['1.0']['latest_version'] = '1.0.0';
 $KPLATFORM_VERSION['1.0']['branch_path']    = 'branches/stable/extragear-kde4/sdk/kdevplatform/1.0';
 
+$KPLATFORM_VERSION['1.1'] = $K_VERSION['4.1'];
+$KPLATFORM_VERSION['1.1']['base_version']   = '1.1';
+$KPLATFORM_VERSION['1.1']['series_version'] = '1.1.x';
+$KPLATFORM_VERSION['1.1']['latest_version'] = '1.1.0';
+$KPLATFORM_VERSION['1.1']['branch_path']    = 'branches/stable/extragear-kde4/sdk/kdevplatform/1.0';
+
 $K_VERSION['HEA'] = array(
      'base_version'             =>'HEAD',
      'series_version'           =>'HEAD',
      'latest_version'           =>'HEAD',
      'latest_release_date'      =>'2011-01-31',  // tag date
      'kde_base_version'         =>'HEAD',
-     'branch'                   =>'trunk/extragear/sdk/',  // trunk/KDE
-     'branch_path'              =>'trunk/extragear/sdk/kdevelop',
+     'branch'                   =>'projects/extragear/kdevelop/',  // trunk/KDE
+     'branch_path'              =>'projects/extragear/kdevelop/kdevelop/',
      'i18n_stats_url'           =>'trunk',
      'release_date'             => strtotime('01/31/2011'), // mm/dd/yyyy
      'kde_release'              => '',
-     'kde_release_schedule'     => 'http://techbase.kde.org/Schedules/KDE4/4.5_Release_Schedule',
-     'min_required_kde_version' =>'4.3');
+     'kde_release_schedule'     => 'http://techbase.kde.org/Schedules/KDE4/4.6_Release_Schedule',
+     'min_required_kde_version' =>'4.6');
 
 // For the user manuals and stuff
 $stable_KDE_BRANCH = $K_VERSION[$lsv]['branch'];
 $stable_KDevelop_BRANCH = $K_VERSION[$lsv]['branch_path'];
 $stable_KDE_major_version = $K_VERSION[$lsv]['kde_base_version'];
 $stable_lxr_url = "http://lxr.kde.org/source/kdevelop/?v=$stable_KDE_major_version-branch";
-$stable_user_manual_url = "http://docs.kde.org/kde3/en/kdevelop/kdevelop/";
+$stable_user_manual_url = "http://www.kdevelop.org/mediawiki/index.php/KDevelop_4/Documentation";
 
 // END - EDIT THESE FOR MAJOR RELEASES - END
 

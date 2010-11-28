@@ -105,6 +105,7 @@ function rebuild_news_index_files($path_to_root, $news_dir, $rebuild_year){
   $news_file = "<?php\n";
   $news_year_file = "<?php
 global \$l_pt_main_year;
+global \$l_dateformat;
 \$module_title=sprintf(\$l_pt_main_year, $rebuild_year);
 module_head(\$module_title, 'moduleentry news-list');\n";
   $news_edit_file = "<table border=\"0\">\n";
@@ -123,7 +124,7 @@ module_head(\$module_title, 'moduleentry news-list');\n";
     // Only add $posts_in_main_page to the main.html file
     if ($posts < $posts_in_main_page) {
       // this is served to the user
-      $news_file .= "echo '<span class=\"date\">'.date(\"M j, Y\", $news_unix_timestamp).\"</span>\\n\";\n";
+      $news_file .= "echo '<span class=\"date\">', strftime(\$l_dateformat, $news_unix_timestamp) , \"</span>\\n\";\n";
       $news_file .= 'include_file("'.ereg_replace('\.\./', '', $row->filename)."\");\n";
       $news_file .= "echo \"\\n\";\n";
       $posts++;
@@ -132,7 +133,7 @@ module_head(\$module_title, 'moduleentry news-list');\n";
     // Only rebuild the year that got a new "news post" or that got a "news post" deleted
     if ($year == $rebuild_year) {
       // this is served to the user
-      $news_year_file .= "echo '<span class=\"date\">'.date(\"M j, Y\", $news_unix_timestamp).\"</span>\\n\";\n";
+      $news_year_file .= "echo '<span class=\"date\">', strftime(\$l_dateformat, $news_unix_timestamp) , \"</span>\\n\";\n";
       $news_year_file .= 'include_file("'.ereg_replace('\.\./', '', $row->filename)."\");\n";
       $news_year_file .= "echo \"\\n\";\n";
     }

@@ -39,10 +39,12 @@ $feed->set_feed_url(array(
 	'http://www.proli.net/category/kdevelop/',
 	'http://www.kdenews.org/rss.xml',
 	'http://www.kdedevelopers.org/',
-	'http://www.planetkde.org/rss20.xml',
 	'http://liveblue.wordpress.com/feed/',
-	'http://labs.trolltech.com/blogs/'
+	'http://labs.trolltech.com/blogs/',
+	'http://blog.ben2367.fr/category/kde/kdevelop-kde/'
 ));
+// THIS FEED IS BUGGY
+// 	'http://www.planetkde.org/rss20.xml',
 
 function shorten($string, $length)
 {
