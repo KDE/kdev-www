@@ -9,32 +9,33 @@ fwrite($f,"');
 $style='';//' class=versionlink';
 fwrite($ftmp, addslashes(
 linkbox_head($l_documentation, "navbox", "cat-doc")."<ul>
-<li>".create_link("about.html", $l_about, $style)."</li>
-<li>".create_link("$lsv/manual.html", $l_user_manual)."</li>
-<li>".create_link("$lsv/tutorials.html", $l_tutorials)."</li>
-<li>".create_link("versions.html", $l_version_history)."</li>
+<li><a href=\"mediawiki/index.php/KDevelop_4/Documentation\">$l_user_manual</a></li>
+<li>".create_link("tutorials.html", $l_tutorials, $style)."</li>
+<li>".create_link("versions.html", $l_version_history, $style)."</li>
+<li><a href=\"doc/technotes/index.html\">$l_technotes</a></li>
 <li><a href=\"mediawiki/index.php/Main_Page\" title=\"KDevelop Wiki\">Wiki</a></li>
 </ul>".linkbox_tail()."
 
 ".linkbox_head($l_development, "navbox", "cat-devel")."<ul>
-<li>".create_link("$lsv/devel.html", $l_devel)."</li>
+<li><a href=\"mediawiki/index.php/KDevelop_4\">$l_devel</a></li>
 <li>$l_sources<ul>
-<li>".create_link("$lsv/branches.html", $l_branches)."</li>
-<li>".create_link("$lsv/compiling.html", $l_compiling)."</li></ul>
+<li><a href=\"mediawiki/index.php/KDevelop_4/KDElibs_Compatibility\">$l_branches</a></li>
+<li><a href=\"mediawiki/index.php/KDevelop_4/compiling\">$l_compiling</a></li></ul>
 </ul>".linkbox_tail()."
 
 ".linkbox_head($l_community, "navbox", "cat-community")."<ul>
 <li<a href=\"phorum5/index.php\" title=\"KDevelop Forum\">$l_forum</a></li>
-<li>".create_link("mailinglist.html", $l_mailinglist)."</li>
-<li><a href=\"chat/\">$l_on_line_chat</a></li>
+<li>".create_link("mailinglist.html", $l_mailinglist, $style)."</li>
+<li><a href=\"chat/\" title=\"KDevelop IRC chat channel\">$l_on_line_chat</a></li>
 <li>".create_link("$lsv/kdevelop.html#Bugs", $l_bugs_wishes, $style)."</li>
-<li>".create_link("contribute.html", $l_contribute)."</li>
+<li>".create_link("$lsv/authors.html", $l_credits, $style)."</li>
 </ul>".linkbox_tail()."
 
-<div class=\"navbox cat-promotion\"><div class=\"header\"><span class=\"category-icon\"/></span><h3>$l_promotion</h3></div><div class=\"content\"><ul>
+".linkbox_head($l_promotion,  "navbox", "cat-promotion")."<ul>
 <li>".create_link("logos_banners.html", $l_logos_banners, $style)."</li>
 <li>".create_link("awards.html", $l_awards, $style)."</li>
 <li>".create_link("in_the_press.html", $l_in_the_press, $style)."</li>
+<li>".create_link("splashscreens.html", $l_splashscreens, $style)."</li>
 </ul>".linkbox_tail()."\n"));
 fwrite($ftmp, '");
 fclose($f); ?>');
