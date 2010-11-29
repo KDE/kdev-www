@@ -26,7 +26,7 @@ if (file_exists("lang/$lang/translations.inc")){
 }
 
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <?php
   // Declare the language of this page
   $htmllang_code = $lang;
@@ -292,7 +292,7 @@ echo "</div>";
 
     //include('inc/new_dl_per_hour.php');
 
-    //include('inc/user_progs.php');
+    include('inc/user_progs.php');
 
     //include('inc/change_log.php');
 
@@ -367,6 +367,7 @@ EXd.write("<img src=\"http://z1.extreme-dm.com",
        include($menufilename);
        require('inc/mysqlcounter.php');
       ?>
+  <div id="validator"><a href="http://validator.w3.org/check?uri=referer"><img src="graphics/valid-html401.png" alt="Valid HTML 4.01!" height="31" width="88"></a></div>
 </div>   <!-- end column 1 -->
 
 <div id="head"></div>
@@ -394,10 +395,10 @@ foreach($activelanguages as $lang_i){
 <div id="sitesearch">   <!-- begin Google based SiteSearch -->
     <div id="searchbar-content">
         <form action="http://www.google.com/search" method="get" id="searchform">
-        <input class="text" type="text" name="q" size="25" maxlength="255" value="" />
-        <input class="button" type="submit" name="btnG" value="<?php echo $l_search; ?>" />
-        <input type="hidden" name="domains" value="www.kdevelop.org" />
-        <input type="hidden" name="sitesearch" value="www.kdevelop.org" />
+        <input class="text" type="text" name="q" size="25" maxlength="255" value="">
+        <input class="button" type="submit" name="btnG" value="<?php echo $l_search; ?>">
+        <input type="hidden" name="domains" value="www.kdevelop.org" >
+        <input type="hidden" name="sitesearch" value="www.kdevelop.org" checked="checked">
         </form>
     </div>
 </div> <!-- end Google based SiteSearch  -->
@@ -405,12 +406,12 @@ foreach($activelanguages as $lang_i){
 <div id="menu">
  <ul>
 <?php
-printf('  <li%s><a href="index.html?filename=4.0/download.html" title="%s"><span>%s</span></a></li>
-', (strpos($filename,'download') !== FALSE)?' class="selected"':'', $l_download, $l_download);
-printf('  <li%s><a href="index.html?filename=4.0/screenshots.html" title="%s"><span>%s</span></a></li>
-', (strpos($filename,'screenshots') !== FALSE)?' class="selected"':'', $l_screenshots, $l_screenshots);
-printf('  <li%s><a href="index.html?filename=4.0/features.html" title="%s"><span>%s</span></a></li>
-', (strpos($filename,'features') !== FALSE)?' class="selected"':'', $l_features, $l_features);
+printf('  <li%s><a href="index.html?filename=%s/download.html" title="%s"><span>%s</span></a></li>
+', (strpos($filename,'download') !== FALSE)?' class="selected"':'', $lsv, $l_download, $l_download);
+printf('  <li%s><a href="index.html?filename=%s/screenshots.html" title="%s"><span>%s</span></a></li>
+', (strpos($filename,'screenshots') !== FALSE)?' class="selected"':'', $lsv, $l_screenshots, $l_screenshots);
+printf('  <li%s><a href="index.html?filename=%s/features.html" title="%s"><span>%s</span></a></li>
+', (strpos($filename,'features') !== FALSE)?' class="selected"':'', $lsv, $l_features, $l_features);
 ?>
  </ul>
 </div>
