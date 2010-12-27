@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KDevelop news</title>
+    <link>http://www.kdevelop.org/</link>
+    <description>KDevelop development news (Čeština)</description>
+    <language>cs</language>
+    <atom:link href="http://www.kdevelop.org/dynamic/kdevelop_news_cs.rss" rel="self" type="application/rss+xml" />
+    <copyright>1998-2008, The KDevelop team</copyright>
+    <pubDate>Mon, 11 Feb 2008 00:00:00 +0100</pubDate>
+    <lastBuildDate>Tue, 04 Mar 2008 22:43:31 +0100</lastBuildDate>
+    <category>KDevelop news</category>
+    <webMaster>webmaster@k_d_e_v_e_l_o_p.org (KDevelop webmaster)</webMaster>
+    <ttl>360</ttl>
+    <item>
+      <title>Binary snapshot of the stable KDevelop 3.5.x release series</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>Eight binary release of the stable KDevelop 3.5.x,
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=awards.html&quot;&gt;
+probably the best IDE&lt;/a&gt;
+for Linux, Unix, Solaris and MacOSX.
+It supports: Ada, Bash, C/C++, Fortran, Haskell, Java, Pascal, Perl, PHP, Python, Ruby  and SQL programming languages.&lt;br&gt;
+For a detailed list of changes see the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/ChangeLog.html&quot;&gt;
+detailed changelog&lt;/a&gt;.
+Fixes 
+&lt;a href=&quot;http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2008-01-15&amp;chfieldto=2008-02-12&amp;order=Bug+Number&amp;cmdtype=doit&quot;&gt;
+9 bugs&lt;/a&gt;
+from KDevelop 3.5.0.7 and previous versions.
+You can download it from the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;
+KDevelop 3.5.x download page&lt;/a&gt;.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2008_02_11</guid>
+      <pubDate>Mon, 11 Feb 2008 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>KDevelop hacking meeting</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>The KDevelop developers will meet in
+&lt;a href=&quot;http://dot.kde.org/1202500128/&quot;&gt;
+Munich from 12-18 April 2008&lt;/a&gt;
+for coding, tutorials and mingling.
+See the
+&lt;a href=&quot;http://www.kdevelop.org/mediawiki/index.php/KDevelop_Developer_Meeting_2008&quot;&gt;
+KDevelop Developer Meeting 2008&lt;/a&gt;
+page for more info.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2008_02_08</guid>
+      <pubDate>Fri, 08 Feb 2008 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>Website improvments</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>During the month of January the website was converted from HTML 4.01 Transitional to
+&lt;a href=&quot;http://www.w3.org/TR/html401/&quot;&gt;HTML 4.01 strict&lt;/a&gt;
+and the content got separated from the presentation which is now exclusively done in
+&lt;a href=&quot;http://www.w3.org/Style/CSS/&quot;&gt;CSS&lt;/a&gt;.
+Tables are no longer used to create the website layout; so it now renders progressively with the main content served before the navigational elements being therefore faster, this also allows people with disabilities to visit our site now.
+The new structure is more search-engine friendly, and
+&lt;a href=&quot;http://www.sitemaps.org/&quot;&gt;website maps for search engine robots&lt;/a&gt;
+are now created daily so the current 1627 unique pages of this site and the 84 unique pages of it's wiki get indexed only when they change, allowing more frequent and precise crawls, at the same time reducing wasted bandwidth (unmodified pages do not get crawled).
+The 7841 posts of the
+&lt;a href=&quot;http://www.kdevelop.org/phorum5/&quot;&gt;forum&lt;/a&gt;
+are not yet indexed by the search-engines because their information flows into the FAQ, wiki and user-manual pages, and this saves bandwidth.
+This website contains 500033 html links, all of them were checked with
+&lt;a href=&quot;http://linkchecker.sourceforge.net/&quot;&gt;linkchecker&lt;/a&gt;
+and only a few of them (&amp;lt; 100) are broken, mostly links published more that four years ago. Enjoy, Amilcar Lucas.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2008_01_29</guid>
+      <pubDate>Tue, 29 Jan 2008 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>KDevelop 3.5.0 binaries for Solaris 8 to 10, on SPARC and x86 platforms</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>You can download it from the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;
+KDevelop 3.5.x download page&lt;/a&gt;.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2008_01_18</guid>
+      <pubDate>Fri, 18 Jan 2008 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>Seventh binary snapshot of the stable KDevelop 3.5.x release series</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>For a detailed list of changes see the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/ChangeLog.html&quot;&gt;
+detailed changelog&lt;/a&gt;.
+You can download it from the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;
+KDevelop 3.5.x download page&lt;/a&gt;.
+A new GDB snapshot is also available for download, it fixes the regressions of the previous versions and adds the possibility to add breakpoints in the class constructors.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2008_01_15</guid>
+      <pubDate>Tue, 15 Jan 2008 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>Sixth binary snapshot of the stable KDevelop 3.5.x release series</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>Fixes
+&lt;a href=&quot;http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2007-10-08&amp;chfieldto=2007-12-04&amp;order=Bug+Number&amp;cmdtype=doit&quot;&gt;
+75 bugs&lt;/a&gt;
+from KDevelop 3.5.0 and previous versions.
+Again it requires GDB &amp;gt;= 6.4 but a regression was found in GDB versions 6.7.0 and 6.7.1, avoid them. It will be fixed in version 6.7.2.
+For a detailed list of changes see the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/ChangeLog.html&quot;&gt;
+detailed changelog&lt;/a&gt;.
+You can download it from the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;KDevelop 3.5.x download page&lt;/a&gt;
+courtesy of 
+&lt;a href=&quot;http://www.opensuse.org/&quot;&gt;openSUSE&lt;/a&gt; -
+&lt;a href=&quot;http://build.opensuse.org/&quot;&gt;build service&lt;/a&gt;.
+
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_12_04</guid>
+      <pubDate>Tue, 04 Dec 2007 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>Binary snapshot of the stable KDevelop 3.5.x release series</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>You can download it from the 
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;
+KDevelop 3.5.x download page&lt;/a&gt;.
+It fixes some bugs and features some
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/changes.html&quot;&gt;
+nice changes&lt;/a&gt;.
+A regression was found in
+&lt;a href=&quot;http://www.gnu.org/software/gdb/&quot;&gt;GDB&lt;/a&gt;
+please do not use GDB versions 6.7.0 and 6.7.1.
+It will be fixed in version 6.7.2.
+
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_11_27</guid>
+      <pubDate>Tue, 27 Nov 2007 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>Third binary snapshot of the stable KDevelop 3.5.x release series</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>This should fix the lag that could be experienced when typing text, specially on larger
+projects.
+Everybody who experiences short delays when typing normal code, please
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;
+download&lt;/a&gt;
+and test. It also fixes
+&lt;a href=&quot;http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2007-10-08&amp;chfieldto=2007-10-23&amp;cmdtype=doit&quot;&gt;
+9 bugs&lt;/a&gt; from KDevelop 3.5.0 and contains some other improvements.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_10_24</guid>
+      <pubDate>Wed, 24 Oct 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>KDevelop 3.5.0 official public release</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>You can download it from the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;
+KDevelop 3.5.x download page&lt;/a&gt;.
+It fixes
+&lt;a href=&quot;http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2007-05-15&amp;chfieldto=2007-10-08&amp;order=Bug+Number&amp;cmdtype=doit&quot;&gt;
+45 bugs&lt;/a&gt; and features some 
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/changes.html&quot;&gt;
+nice changes&lt;/a&gt;.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_10_16</guid>
+      <pubDate>Tue, 16 Oct 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>Second binary snapshot of the stable KDevelop 3.5.x release series</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>You can download it from the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.5/download.html&quot;&gt;KDevelop 3.5.x download page&lt;/a&gt;
+courtesy of 
+&lt;a href=&quot;http://www.opensuse.org/&quot;&gt;openSUSE&lt;/a&gt;
+&lt;a href=&quot;http://build.opensuse.org/&quot;&gt;build service&lt;/a&gt;.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_09_29</guid>
+      <pubDate>Sat, 29 Sep 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>First binary snapshot of the stable KDevelop 3.5.x release series</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>Development on the KDevelop 3.5.x (the last KDevelop based on KDE3 technologies) has started.
+Apaku, one of the lead developers has some
+&lt;a href=&quot;http://apaku.wordpress.com/2007/09/08/kdevelop3-status/&quot;&gt;
+development status information&lt;/a&gt;
+about it on his blog.
+You can download it from the
+&lt;a href=&quot;http://software.opensuse.org/download/home:/amilcarlucas/&quot;&gt;
+openSuse build farm&lt;/a&gt;.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_09_11</guid>
+      <pubDate>Tue, 11 Sep 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>Binary only snapshot release from the stable branch (bugfixes only)</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>Today we released
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/download.html&quot;&gt;
+new binaries&lt;/a&gt; built from a snapshot of the latest KDevelop version from the stable branch.
+It only contains about
+&lt;a href=&quot;http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2007-05-15&amp;chfieldto=2007-06-14&amp;order=Bug+Number&amp;cmdtype=doit&quot;&gt;
+20 bugfixes&lt;/a&gt; when compared with the KDevelop 3.4.1 version. It is therefore the most stable KDevelop version ever.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_06_14</guid>
+      <pubDate>Thu, 14 Jun 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>KDevelop Platform Libraries API Reference</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>The next generation KDevelop will be KDevelop 4.0.
+It is based on new technologies like
+&lt;a href=&quot;http://trolltech.com/products/qt/whatsnew&quot;&gt;Qt&amp;nbsp;4.3&lt;/a&gt;
+and
+&lt;a href=&quot;http://www.kde.org/announcements/announce-4.0-alpha1.php&quot;&gt;KDE&amp;nbsp;4.0&lt;/a&gt;.
+To make it easier for others to use the power of KDevelop to build their own,
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Integrated_development_environment&quot; title=&quot;Integrated Development Environment&quot;&gt;IDE-like&lt;/a&gt;,
+application we have split KDevelop into a library -
+&lt;a href=&quot;http://api.kde.org/4.x-api/kdevplatform-apidocs/&quot;&gt;
+the KDevelop platform&lt;/a&gt; - and the application itself - KDevelop.
+This way future applications like kile, quanta, etc can share the same base code with KDevelop and profit from code reuse.
+So start by reading the
+&lt;a href=&quot;http://api.kde.org/4.x-api/kdevplatform-apidocs/&quot;&gt;
+KDevelop Platform Libraries API Reference&lt;/a&gt; before coding your next application.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_06_13</guid>
+      <pubDate>Wed, 13 Jun 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>Official public release of KDevelop 3.4.1</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>This maintenance release
+&lt;a href=&quot;http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2007-01-25&amp;chfieldto=2007-05-15&amp;cmdtype=doit&quot;&gt;
+fixes many bugs&lt;/a&gt; and is
+&lt;a href=&quot;http://l10n.kde.org/stats/gui/stable/package/kdevelop/&quot;&gt;
+translated to many languages&lt;/a&gt;.
+
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_05_22</guid>
+      <pubDate>Tue, 22 May 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>Binaries of KDevelop 3.4.1 final for Debian, Fedora, Mandriva, Klik, SuSE, and (K)Ubuntu are available</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>Get them at the usual place, the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/download.html&quot;&gt;KDevelop 3.4.x download page&lt;/a&gt;,
+they contain all the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/ChangeLog.html&quot;&gt;changes&lt;/a&gt;
+up to revision 665073.
+But due to some library issues on the
+&lt;a href=&quot;http://build.opensuse.org/&quot;&gt;build servers&lt;/a&gt;
+we use, these packages have SVN support disabled.
+If you need SVN support you will need to
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/branches_compiling.html&quot;&gt;
+compile KDevelop 3.4.1 from sources&lt;/a&gt; yourself.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_05_16</guid>
+      <pubDate>Wed, 16 May 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>Binaries of KDevelop 3.4.1 preview 2 (a.k.a 3.4.0.2) for Klik, Fedora 5 and 6 available.</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>We got them available at the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/download.html&quot;&gt;KDevelop 3.4.x download page&lt;/a&gt;.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_05_03</guid>
+      <pubDate>Thu, 03 May 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>KDevelop 3.4.1 preview 2 (a.k.a. 3.4.0.2)
+binary only public release</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>A snapshot of current SVN development from yesterday is available on our
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/download.html&quot;&gt;
+KDevelop 3.4.x download page&lt;/a&gt;.
+It's a binary only release (.rpms) and it's only available for SuSE and Mandriva 2006, sorry for that. The feedback we get on this release will be used to fine tune the final KDevelop 3.4.1 release scheduled to be
+&lt;a href=&quot;http://techbase.kde.org/Schedules/KDE_3.5_Release_Schedule#KDE_3.5.7&quot;&gt;
+released with KDE 3.5.7 within two weeks&lt;/a&gt;.
+
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_04_28</guid>
+      <pubDate>Sat, 28 Apr 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>A new KDevelop-3.4.0 book.</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>There is a new book about KDevelop (only available in german language):
+&lt;i&gt;KDevelop. Einfhrung in die Entwicklungsumgebung&lt;/i&gt;
+Authors: Robert Gruber, Jonas Jacobi&lt;br&gt;
+The book can be purchased either
+&lt;a href=&quot;https://www.opensourcepress.de/index.php?26&amp;tt_products=108&quot;&gt;
+directly from the publisher&lt;/a&gt; or from a lot of book stores like e.g. www.amazon.de
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_04_03</guid>
+      <pubDate>Tue, 03 Apr 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>Source code move in SVN</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.3/kdevelop.html&quot;&gt;KDevelop 3.3.x&lt;/a&gt;
+development &lt;b&gt;stopped&lt;/b&gt; and the code got moved from
+&lt;a href=&quot;http://websvn.kde.org/branches/KDE/3.5/kdevelop/&quot;&gt;branches/KDE/3.5/kdevelop&lt;/a&gt;
+to
+&lt;a href=&quot;http://websvn.kde.org/branches/kdevelop/3.3/&quot;&gt;branches/kdevelop/3.3&lt;/a&gt;.&lt;br&gt;
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/kdevelop.html&quot;&gt;KDevelop 3.4.x&lt;/a&gt;
+development &lt;b&gt;continues&lt;/b&gt; and the code got moved from
+&lt;a href=&quot;http://websvn.kde.org/branches/kdevelop/3.4/&quot;&gt;branches/kdevelop/3.4&lt;/a&gt;
+to
+&lt;a href=&quot;http://websvn.kde.org/branches/KDE/3.5/kdevelop/&quot;&gt;branches/KDE/3.5/kdevelop&lt;/a&gt;
+and will therefore be a part of all future
+&lt;a href=&quot;http://techbase.kde.org/Schedules/KDE_3.5_Release_Schedule&quot;&gt;KDE 3.5.x releases&lt;/a&gt;
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_03_26</guid>
+      <pubDate>Mon, 26 Mar 2007 00:00:00 +0200</pubDate>
+    </item>
+    <item>
+      <title>KDevelop 4.0 development status</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>For all of those that are curious about the development of the next generation KDevelop, we have created a
+&lt;a href=&quot;http://www.kdevelop.org/mediawiki/index.php/KDevelop_4&quot;&gt;
+webpage dedicated to KDevelop 4.0 development&lt;/a&gt;. Enjoy.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_03_25</guid>
+      <pubDate>Sun, 25 Mar 2007 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>Happy birthday kdevelop.org</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>
+kdevelop.org celebrates its eighth birthday. Many thanks to all the translators and contributors.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_03_08</guid>
+      <pubDate>Thu, 08 Mar 2007 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>KDevelop 3.4.0 public release.</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>The first major release in over a year
+&lt;a href=&quot;http://bugs.kde.org/buglist.cgi?product=kdevelop&amp;resolution=FIXED&amp;resolution=WORKSFORME&amp;bugidtype=include&amp;chfield=resolution&amp;chfieldfrom=2005-10-21&amp;chfieldto=2007-01-25&amp;order=Bug+Number&amp;cmdtype=doit&quot;&gt;closes more than 500 bugs&lt;/a&gt;.
+There is an &lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/features.html&quot;&gt;impressive list of additional features&lt;/a&gt; including improved Qt 4 support, 
+new debugging abilities, more attractive default user interface layout and improvements for C++, Ruby and PHP support.
+The most important features are highlighted in the little showcase (&lt;a href=&quot;http://www.kdevelop.org/3.4/showcase.pdf&quot;&gt;PDF format&lt;/a&gt; 
+or &lt;a href=&quot;http://www.kdevelop.org/3.4/showcase.odp&quot;&gt;ODP format&lt;/a&gt;).
+Source code and packages are available for Kubuntu and openSUSE with unofficial builds for several others on the
+&lt;a href=&quot;http://www.kdevelop.org/index.html?filename=3.4/download.html&quot;&gt;download page&lt;/a&gt;.
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_01_25</guid>
+      <pubDate>Thu, 25 Jan 2007 00:00:00 +0100</pubDate>
+    </item>
+    <item>
+      <title>Year 2006 Statistics</title>
+      <link>http://www.kdevelop.org/</link>
+      <description>Year 2006 was a very productive year for the KDevelop team. We have some
+&lt;a href=&quot;http://www.kdevelop.org/mediawiki/index.php/KDevelop_3.4_Statistics&quot;&gt;
+statistics&lt;/a&gt; about it.
+And you can also see our 
+&lt;a href=&quot;http://www.kdevelop.org/mediawiki/index.php/Top_10_KDevelop_Committers&quot;&gt;
+top 10 most active code committers&lt;/a&gt;.
+
+</description>
+      <guid>http://www.kdevelop.org/index.html?filename=main.html#2007_01_03</guid>
+      <pubDate>Wed, 03 Jan 2007 00:00:00 +0100</pubDate>
+    </item>
+  </channel>
+</rss>

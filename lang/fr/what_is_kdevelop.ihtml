@@ -1,9 +1,0 @@
-<?php module_head("Le projet KDevelop");?>
-
-Le projet KDevelop a &eacute;t&eacute; mis en place en 1998 pour b&acirc;tir un environnement de d&eacute;veloppement int&eacute;gr&eacute;
-(IDE) pour <a href="http://www.kde.org/">KDE</a> facile &agrave; utiliser. Depuis, l'IDE KDevelop est disponible pour le public sous <a href="index.html?filename=license.html">la license GPL</a> 
-et supporte <a href="HEAD/doc/api/html/LangSupportStatus.html">beaucoup de langages de programmation</a>.<br>
-Veuillez nous contacter pour devenir sponsor ou nous offrir votre aide.<br>
-<!--Veuillez regarder notre  <a href="index.html?filename=donate.html">page pour des dons, devenir sponsor ou nous offrir votre aide</a>.-->
-
-<?php module_tail();?>

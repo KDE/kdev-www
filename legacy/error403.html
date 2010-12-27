@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head>
+ <meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1">
+ <meta name="robots" content="noindex,nofollow">
+ <TITLE>403 Forbidden</TITLE>
+</head><body>
+
+<h1>Forbidden</h1>
+
+<h2>You are a bad robot!</h2>
+<p> This might have been caused by different things, such as any of the following:</p>
+<ol>
+<li> You tried to brute force attack KDevelop.org by inventing non existing or invalid URLs.</li>
+<li> You did not follow the <CODE>robots.txt</CODE> rules.</li>
+<li> You did not follow the <CODE>&#060;meta name="robots" content="..."&#062;</CODE> rules.</li>
+<li> You did not identify yourself as being a robot. You impersonated Mozilla, IE or firefox although you are a robot.</li>
+</ol>
+
+<?php sleep(3); ?>
+
+<p>If you have misbehaved too many times your access to KDevelop.org will be <b>forbidden forever</b>, otherwise just for the next eight minutes. So do <b>not</b> try to access this page too many times on a row.</p> 
+
+<p>In case you are a <b>legitimate human user interested in KDevelop</b> using a <b>normal browser</b> then we apologize for
+this inconvenience, but like you, we enjoy our privacy, so we have a right to block automated e-mail harvesters, unpolite
+mirroring tools and automated guestbook posters.
+To be removed from the <em>bad robots blacklist</em> you can send an e-mail to this
+<a href="http://spamassassin.apache.org/">
+spamassassin protected</a> e-mail <em>webmaster&nbsp;&nbsp;kdevelop.org</em> with your IP address
+(<?php if (isset($HTTP_SERVER_VARS['REMOTE_ADDR'])) echo $HTTP_SERVER_VARS['REMOTE_ADDR']; ?>)
+explaining why you find KDevelop such a great tool ;) .</p>
+</body></html>

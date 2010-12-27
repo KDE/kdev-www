@@ -1,9 +1,0 @@
-<?php module_head("The KDevelop Project");?>
-
-Proyek KDevelop didirikan tahun 1998 bertujuan untuk membuat IDE (Integrated
-Development Environment) yang mudah digunakan dan mudah dimengerti untuk <a href="http://www.kde.org/">KDE</a>. Sejak saat itu, KDevelop IDE telah tersedia dalam naungan lisensi <a href="index.html?filename=license.html">GPL</a>
-dan bantuan <a href="HEAD/doc/api/html/LangSupportStatus.html">dari banyak bahasa pemrograman</a>.<br>
-Silahkan menghubungi kami jika anda ingin memberi donasi atau menawaran bantuan.<br>
-<!--Please visit our <a href="index.html?filename=donate.html">page for donations, sponsoring or help offers</a>.-->
-
-<?php module_tail();?>

@@ -1,9 +1,0 @@
-<?php module_head("Проект KDevelop");?>
-
-Работа над проектом KDevelop ведётся с 1998 года. Целью данного проекта является создание
-интегрированной среды разработки (IDE), которая обеспечивала бы лёгкую и быструю разработку
-приложений под <a href="http://www.kde.org/">KDE</a>. Интегрированная среда разработки KDevelop распространяется по лицензии <a href="index.html?filename=license.html">GPL</a> и поддерживает <a href="HEAD/doc/api/html/LangSupportStatus.html">множество языков программирования</a>.<br>
-Обращайтесь к нам, если у Вас возникли какие-либо предложения или вопросы.<br>
-<!--Please visit our <a href="index.html?filename=donate.html">page for donations, sponsoring or help offers</a>.-->
-
-<?php module_tail();?>

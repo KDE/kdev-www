@@ -1,3 +1,0 @@
-Order deny,allow
-Deny from all
-Allow from ::1 127.0.0.1 82.207.101.247 92.77.131.83

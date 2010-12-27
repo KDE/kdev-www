@@ -1,8 +1,0 @@
-<?php module_head("Проект KDevelop");?>
-
-Проект KDevelop було розпочато в 1998 році. Його метою було створення легкого в користуванні інтегрованого середовища розробника для <a href="http://www.kde.org/">KDE</a>. З того часу KDevelop доступний для публіки за ліцензією <a href="index.html?filename=license.html">GPL</a>
-та підтримує <a href="HEAD/doc/api/html/LangSupportStatus.html">багато мов програмування</a>.<br>
-Пишіть нам якщо ви бажаєте допомогти або стати спонсором.<br>
-<!--Please visit our <a href="index.html?filename=donate.html">page for donations, sponsoring or help offers</a>.-->
-
-<?php module_tail();?>

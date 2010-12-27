@@ -1,7 +1,0 @@
-<?php module_head("The KDevelop Project");?>
-
-بدأ مشروع KDevelop في عام 1998 لبناء بيئة تطوير مدمجة ( IDE ) لنظام النوافذ <a href="http://www.kde.org/">KDE</a>، ومنذ ذلك الوقت تتوفر بيئة التطوير المدمجة ( KDevelop ) للجميع تحت ترخيص <a href="index.html?filename=license.html">GPL</a>، كما تدعم هذه البيئة العديد من <a href="HEAD/doc/api/html/LangSupportStatus.html">لغات البرمجة</a>.<br>
-الرجاء الاتصال بنا لمزيد من المعلومات حول الرعاية والمساعدة في المشروع.<br>
-<!--Please visit our <a href="index.html?filename=donate.html">page for donations, sponsoring or help offers</a>.-->
-
-<?php module_tail();?>
