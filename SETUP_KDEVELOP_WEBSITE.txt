@@ -1,0 +1,7 @@
+## DB Setup
+
+create the file sites/defaul/kdev_db_setup.php with the following contents (adapt them as required):
+
+<?php
+$db_url = 'mysql://test@localhost/kdev';
+$db_prefix = 'kdev_';
