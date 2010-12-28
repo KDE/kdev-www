@@ -1,7 +1,15 @@
 ## DB Setup
 
-create the file sites/defaul/kdev_db_setup.php with the following contents (adapt them as required):
+create the file sites/default/kdev_db_setup.php with the following contents (adapt them as required):
 
+~~~~~~~~
 <?php
 $db_url = 'mysql://test@localhost/kdev';
 $db_prefix = 'kdev_';
+~~~~~~~~
+
+Get a MySQL Dump of the KDevelop website by one of the maintainers, just ask on our mailing list.
+
+## Other Setup
+
+create a folder sites/default/files/ and make it readable for your webserver
