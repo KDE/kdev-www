@@ -1,0 +1,154 @@
+/*
+  CONTENT BOXES
+  
+  This file defines the visual appearance of special content boxes such as the "What is KDevelop"
+  box on the front page
+  
+*/
+
+/********** Special Content Boxes *****************************************************************/
+
+div.importantbox {
+  position: relative;
+}
+
+div.importantbox div.header {
+  position: relative; z-index: 2;
+  padding-left: 14px;
+  padding-right: 14px;
+  background: url('../graphics/box-tili.png') left no-repeat;
+}
+
+div.importantbox div.border-t {
+  background: url('../graphics/box-ti-1px.png') repeat-x;
+  height: 14px;
+}
+
+div.importantbox div.border-tr {
+  width: 14px; height: 14px;
+  position: absolute; right: 0; top: 0;
+  background: url('../graphics/box-tiri.png') no-repeat;
+}
+
+div.importantbox div.main {
+  position: relative; z-index: 1;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: url('../graphics/box-li-1px.png') repeat-y;
+}
+
+div.importantbox div.content {
+  position: relative;
+  margin-top: -11px;
+  margin-bottom: -10px;
+  padding: 7px 7px 6px 7px;
+  background: url('../graphics/box_lightgreen-mh-1px.png') repeat-x;
+  background-color: #e6f5c3;
+}
+
+div.importantbox div.border-r {
+  position: absolute;
+  right: 0; top:0;
+  width: 9px; height: 100%;
+  background: url('../graphics/box-ri-1px.png') repeat-y;
+}
+
+div.importantbox div.footer {
+  position: relative; z-index: 2;
+  height: 14px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background: url('../graphics/box-bili.png') left no-repeat;
+}
+
+div.importantbox div.border-b {
+  height: 14px;
+  background: url('../graphics/box-bi-1px.png') bottom repeat-x;
+}
+
+div.importantbox div.border-br {
+  background-image: url('../graphics/box-biri.png');
+  width: 14px; height: 14px; z-index: 5;
+  position: absolute; right: 0; bottom: 0;
+}
+
+/********** Contents of "What is KDevelop" Box (front page) ***************************************/
+
+div.what-is-kdevelop dl {
+  margin: 0 0 -7px 0;
+}
+
+div.what-is-kdevelop dl dt {
+  color: #60a802;
+  font-size: 20px;
+  margin: 0; padding: 0;
+}
+
+div.what-is-kdevelop dt.kdevplatform {
+  font-size: 16px;
+}
+
+div.what-is-kdevelop dl dd { margin-bottom: 11px; margin-left: 22px; margin-top: 4px; }
+div.what-is-kdevelop dl dd ul { margin: 0; padding: 0; padding-left: 15px; padding-top: 4px; }
+div.what-is-kdevelop dl dd li {
+  display: inline;
+  background: url('../graphics/bullet.png') no-repeat scroll 0 0.45em;
+  padding-left: 11px; margin-right: 10px;
+}
+
+div.what-is-kdevelop div.border-tr {
+  width: 174px; height: 127px;
+  right: 3px; top: -7px;
+  background: url('../graphics/frontpagescreenshot-solid.jpg') no-repeat;
+}
+
+div.what-is-kdevelop div.screenshot {
+  float: right;
+  width: 174px; height: 127px;
+  margin-top: -22px;
+  margin-right: -13px;
+}
+
+/********** Contents of "KDevelop 3.x vs KDevelop 4.x" Box (front page) ***************************/
+
+div.main-versions dl {
+  margin: 10px 0;
+  text-align: left;
+  width: 49%; float: left;
+}
+
+div.main-versions dd {
+ margin: 0;
+}
+
+div.main-versions dd ul  {
+  margin: 0; padding-left: 25px;
+}
+
+div.main-versions dt {
+  font-size: 14px;
+}
+
+div.main-versions dt span.range {
+  font-size: 10px;
+  font-style: italic;
+  color: #71ac12;
+}
+
+/********** ModuleEntry Stuff  ********************************************************************/
+
+div.moduleentry div.header h3 {
+    padding-left: 20px;
+    position: relative; top: -19px;
+    margin-top: 27px; margin-left: -13px;
+    color: #c34609;
+    font-style: normal; font-size: 14px;
+}
+div.moduleentry div.header h3 a {
+    color: #c34609;
+}
+div.moduleentry div.content {
+    padding: 16px; padding-top: 2px; padding-bottom: 0;
+}

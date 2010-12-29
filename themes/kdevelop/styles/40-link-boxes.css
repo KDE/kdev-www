@@ -1,0 +1,237 @@
+/*
+  LINK BOXES
+  
+  This file defines the visual appearance of the link boxes which are used for the main navigation
+  menu links (left column) and the quick access links (right column).
+  
+*/
+
+/********** Link Boxes (Navigation Menu Boxes + Quick Access Boxes) *******************************/
+
+div.navbox,
+div.quickbox {
+  text-align: left;
+  background: url('../graphics/navbox-liri-1px.gif') repeat-y;
+  width: 204px;  /* width of navigation-menu boxes */
+  margin: 0 0 2.6px 7px;
+}
+div.quickbox {
+  margin-left: 0px;  margin-bottom: 7px;
+  width: 233px; /* width of quick-access boxes */
+  background-image: url('../graphics/quickbox-liri-1px.gif');
+}
+
+div.navbox div.header,
+div.quickbox  div.header {
+  position: relative;
+  background: url('../graphics/navbox-t-solid.png') top no-repeat;
+  padding: 14px 0 0 0;
+}
+div.quickbox div.header {
+  background-image: url('../graphics/quickbox-t-solid.png');
+}
+
+div.navbox div.header h3,
+div.quickbox  div.header h3 {
+  background: #79be16;
+  padding: 2.5px 11px 5.5px 25px;
+  margin: 0 9px 0 9px;
+  font-family: 'Linux Biolinum','Optima','Palatino',sans-serif;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 1.5px 1.4px 1px #698C25;
+  text-align: right;
+  font-size: 14px;
+  font-size-adjust: 0.51;
+  font-style: normal;
+  line-height: 100%;
+}
+div.quickbox  div.header h3 {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 25px;
+}
+
+div.quickbox  div.content,
+div.navbox div.content {
+  background: #daf3af url('../graphics/box_green-mh-1px.png') top repeat-x;
+  padding: 7.4px 9px 4px 11px;
+  margin: 0 9px -6px 9px;
+}
+
+div.quickbox  div.footer,
+div.navbox div.footer {
+  background: url('../graphics/navbox-bi.gif') repeat-y;
+  height: 14px;
+}
+div.quickbox  div.footer {
+  background-image: url('../graphics/quickbox-bi.gif');
+}
+
+/********** Link Box Contents *********************************************************************/
+
+div.quickbox  div.content li,
+div.navbox div.content li {
+    background:transparent url('../graphics/bullet.png') no-repeat scroll 0 0.45em;
+    margin-left:0px;
+    padding: 1px 0 1px 10px;
+    line-height: 14.2px;
+}
+
+div.navbox div.content li {
+  font-style: italic;        /* style of non-clickable list items in left menu */
+  color: #5D9306;
+}
+
+div.navbox div.content li a {
+  font-style: normal;        /* overrule italics style of parent li */
+}
+
+div.quickbox .category-icon,
+div.navbox .category-icon {
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+div.navbox div.content ul,
+div.quickbox div.content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0px 0 2px 2px;
+}
+
+div.quickbox div.content ul {
+    margin-left: 15px;
+    margin-bottom: 3px;
+}
+
+div.navbox div.content ul ul,
+div.quickbox div.content ul ul {
+    margin-left: 7px;
+    margin-bottom: -1px;
+}
+
+div.quickbox div.content p {
+    padding: 0;
+    margin: 0;
+     margin-bottom: 1px; 
+}
+
+/********** "Download" Quick Access Box (front page)  ['inherits' .quickbox] **********************/
+
+div.cat-download div.header {
+  background-image: url('../graphics/quickbox_blue-t-solid.png');
+}
+
+div.cat-download div.header h3 {
+  background-color:#1568af;
+  text-shadow: 1.5px 1.4px 1px #215278;
+}
+
+div.cat-download div.content {
+  background-image: url('../graphics/box_blue-mh-1px.png');
+  background-color: #b9dbf7;
+}
+
+div.cat-download div.content a.download {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #063660;
+    font-weight: bold; font-size: 16px;
+    margin-bottom: 4px; margin-left: -11px; margin-right: -9px;
+    padding: 5px; padding-bottom: 6px; padding-left: 43px; padding-top: 11px;
+    line-height: 10px;
+    background-image: url('../graphics/kdevelop_icon_27.png'); background-repeat: no-repeat;
+    background-position: 10px 3px;
+}
+
+div.cat-download div.content a.download:hover {
+  color:#D88C00;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+
+div.cat-download div.content a.download-legacy {
+    background-image: url('../graphics/kdevelop30_icon.png');
+    background-position: 19px 3px;
+    color: #487ba5;
+    font-size: 13px;
+    padding-top: 6px; padding-bottom: 7px;
+}
+
+div.cat-download div.content a.download span.date {
+    font-style: italic;
+    color: black;
+    font-size: 10px; font-weight: normal; position: relative; top: 4px;
+}
+
+div.cat-download div.footer {
+  background-image: url('../graphics/quickbox_blue-bi.gif');
+}
+
+/********** "Support" Quick Access Box (front page)  ['inherits' .quickbox] ***********************/
+
+div.cat-support div.header {
+  background-image: url('../graphics/quickbox_red-t-solid.png');
+}
+
+div.cat-support div.header h3 {
+  background-color:#c24610;
+  text-shadow: 1.5px 1.4px 1px #8D4021;
+}
+
+div.cat-support div.content {
+  background-image: url('../graphics/box_red-mh-1px.png');
+  background-color: #f6cca6;
+}
+
+div.cat-support div.footer {
+  background-image: url('../graphics/quickbox_red-bi.gif');
+}
+
+/********** Link Boxes Category Icons *************************************************************/
+
+.cat-doc .category-icon {
+  background: url('../graphics/cat-doc.png') no-repeat;
+  left: 6px; top: -3px;
+  width: 35px; height: 38px;
+}
+
+.cat-devel .category-icon {
+  background: url('../graphics/cat-devel.png') no-repeat;
+  left: 6px; top: -2px;
+  width: 42px; height: 44px;
+}
+
+.cat-community .category-icon {
+  background: url('../graphics/cat-community.png') no-repeat;
+  left: 1px; top: -1px;
+  width: 52px; height: 38px;
+}
+
+.cat-promotion .category-icon {
+  background: url('../graphics/cat-promotion.png') no-repeat;
+  left: 5px; top: 1px;
+  width: 38px; height: 36px;
+}
+
+.cat-download .category-icon {
+  background: url('../graphics/cat-download.png') no-repeat;
+  right: 3px; top: -3px;
+  width: 59px; height: 69px;
+}
+
+.cat-support .category-icon {
+  background: url('../graphics/cat-support.png') no-repeat;
+  right: 4px; top: 0px;
+  width: 44px; height: 44px;
+}
+
+/*
+TODO IE6 overrides
+.cat-doc .cat-icon  { background-image: url('../graphics/cat-doc.gif') }
+.cat-devel .cat-icon  { background-image: url('../graphics/cat-devel.gif') }
+.cat-community .cat-icon  { background-image: url('../graphics/cat-community.gif') }
+.cat-promotion .cat-icon  { background-image: url('../graphics/cat-promotion.gif') }
+.cat-download .cat-icon  { background-image: url('../graphics/cat-download.gif') }
+.cat-support .cat-icon  { background-image: url('../graphics/cat-support.gif') }
+*/

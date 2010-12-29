@@ -1,0 +1,75 @@
+/*
+  FOOTER + FOOTER ELEMENTS
+  
+  This file defines the visual appearance of the footer bar, as well as the layout and appearance of
+  the elements it contains.
+  
+  The size and positioning of the footer bar itself within the top-level layout is defined in the
+  "Main Layout" file instead.
+  
+*/
+
+/********** Footer Background *********************************************************************/
+
+#footer {
+  background-image: url('../graphics/footer-bg-solid-1px.png');
+  background-repeat: repeat-x;
+}
+
+/********** Sitemap Link **************************************************************************/
+
+#footer .sitemap {
+  margin: 0;
+  background-image: url('../graphics/footerleft-l-solid.png');
+  background-repeat: no-repeat;
+  float: left;
+  margin-top: -10px;
+}
+#footer .sitemap a {
+  display: block;
+  margin-left: 16px;
+  padding-right: 24px;
+  background-image: url('../graphics/footerleft-r-solid.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  font-weight: bold;
+  color: white;
+}
+#footer .sitemap a span {
+  display: block;
+  padding-top: 20px;
+  background-image: url('../graphics/footerleft-m-solid-1px.png');
+  background-repeat: repeat-x;
+}
+#footer .sitemap a span:before {
+  content: url('../graphics/bullet_bottomlink.gif');
+  position: relative;
+  bottom: 0.16em;
+  padding-right: 5px;
+}
+#footer .sitemap a:hover {
+  color:#F5CB22;
+  text-shadow: #51800C 0 0 1px;
+}
+#footer .sitemap a:active {
+  color:#CCF873;
+  text-shadow: none;
+}
+
+/********** Footer Text ***************************************************************************/
+
+#footer #pagemodtime {
+  padding-top: 17px;
+  text-align: center;
+}
+#footer #webmaster {
+  margin-top: -17px;
+  text-align: right;
+  font-size: 0.8em;
+  font-style: normal;
+}
+#footer #webmaster a {
+  margin-left:0px;
+  padding-left:10px;
+  background:transparent url('../graphics/bullet.png') no-repeat scroll 0 0.45em;
+}

@@ -43,6 +43,20 @@ function phptemplate_breadcrumb($breadcrumb) {
 function phptemplate_preprocess_page(&$vars) {
   $vars['tabs2'] = menu_secondary_local_tasks();
 
+  $dir = new DirectoryIterator(dirname(__FILE__) . '/styles/');
+
+  $styles = array();
+  foreach ($dir as $fileinfo) {
+      if ($fileinfo->isFile()) {
+          $styles[] = $fileinfo->getFilename();
+      }
+  }
+  sort($styles);
+  foreach($styles as $f) {
+    drupal_add_css(path_to_theme() . '/styles/' . $f, 'theme', 'all', true);
+  }
+  $vars['styles'] = drupal_get_css();
+
   // Hook into color.module
   if (module_exists('color')) {
     _color_page_alter($vars);

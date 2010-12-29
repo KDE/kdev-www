@@ -1,0 +1,18 @@
+/*
+  LINKS
+  
+  This file defines special link styles.
+  
+  Note that the "Generic Styles" file already contains base styles for the elements used in
+  contructing links (a, p, div, ...). Specific styles defined here complement or supersede
+  these base styles.
+  
+*/
+
+/********** "more..." Links ***********************************************************************/
+
+p.more a {
+  background:transparent url('../graphics/bullet.png') no-repeat scroll 0 0.45em;
+  margin-left:0px;
+  padding-left:10px;
+}

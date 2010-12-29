@@ -1,0 +1,42 @@
+/*
+  PAGE + STANDARD PAGE ELEMENTS
+  
+  This file defines the visual appearance of the outer document area and main content area, as well
+  as standard page elements such as the breadcrumb bar.
+  
+  The size and positioning of the main page area inside the top-level layout is defined in the
+  "Main Layout" file instead.
+  
+  Styles for specific elements inside the content area of specific pages (e.g. tables, lists, boxes,
+  images) should go into separate files.
+  
+*/
+
+/********** Outer Document Background *************************************************************/
+
+body {
+  background: white;
+  background-image: url('../graphics/page-l-solid.png');
+  background-repeat: repeat-y;
+}
+
+/********** Main Content Background ***************************************************************/
+
+#maincontent {
+  background: url(.'./graphics/maincol_tr.jpg') right 92px no-repeat,
+              url('../graphics/maincol_br.jpg') right bottom no-repeat,
+              url('../graphics/maincol_r.jpg') right center repeat-y,
+              url('../graphics/maincol_tl.jpg') left 92px no-repeat,
+              url('../graphics/maincol_t.png') center 92px repeat-x,
+              url('../graphics/maincol_bl.jpg') left bottom no-repeat,
+              url('../graphics/maincol_b.png') center bottom repeat-x,
+              url('../graphics/maincol_l.jpg') left center repeat-y,
+              #F5FAE9;
+  /* NOTE: only CSS 3 - capable browsers will display this multi-background */
+}
+
+/********** Standard Top-Of-Page Messages *********************************************************/
+
+p.outdatedtranslation {
+  text-align: center;
+}

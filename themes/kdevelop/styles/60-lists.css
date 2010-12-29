@@ -1,0 +1,59 @@
+/*
+  LISTS
+  
+  This file defines special list styles.
+  
+  Note that the "Generic Styles" file already contains base styles for the elements used in
+  contructing lists (ul, li, div, ...). Specific styles defined here complement or supersede these
+  base styles.
+  
+*/
+
+/********** Lists of News Items or Blog Posts *****************************************************/
+
+div.listmodule .header { height: 10px; }
+div.listmodule  span.date {
+  float: left; margin: 0px;
+  color: #73ad1f; font-size: 11px;
+  display: block; min-width: 7em; padding-right: 7px;
+  font-style: normal; font-weight: normal;
+}
+
+div.listmodule  h2 {
+  margin: 0; margin-bottom: 5px;
+  border-bottom: 1px solid #73952f;
+  font-style: italic;
+  position: relative;
+  padding-right: 50px;
+  color: black;
+}
+
+div.listmodule  p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+div.listmodule a.fullpost {
+  background:transparent url('../graphics/bullet.png') no-repeat scroll 0 0.45em;
+  padding-left:10px;
+}
+
+div.dev-blog-posts h2 {
+  font-size: 13px;
+  padding-right: 60px;
+}
+
+div.dev-blog-posts .source {
+  margin-top: 2px;
+  color: black; font-size: 11px;
+  font-style: normal; font-weight: normal;
+  position: absolute; right: 0;
+}
+
+
+/********** Code Listings *************************************************************************/
+
+dd.code {
+  font-family: courier, monospace;
+  text-align: left;
+}

@@ -1,0 +1,108 @@
+/*
+  MAIN LAYOUT
+  
+  This file specifies the sizes and positioning of the top-level page layout areas:
+    - header
+    - left column
+    - middle column
+    - right column (optional)
+    - footer
+  No visual styles such as colors, background images, text sizes, etc. should be defined here.
+  
+  --------------------------------------------------------------------------------------------------
+  
+  A fluid column layout based on the "Holy Grail of Layouts"
+  (http://www.alistapart.com/articles/holygrail) is used.
+  
+  The calculated values in the CSS below depend on the following logical values:
+  
+  header:        H height =  114 px,  H spacing  =  7 px
+  left column:   LC width =  211 px,  LC padding = 10 px
+  center column: CC width = <fluid>,  CC padding = 26 px
+  right column:  RC width =  234 px,  RC padding = 10 px
+  footer:        F height =   45 px
+  
+*/
+
+html, body {
+  padding: 0;
+  margin: 0;
+  min-width: 900px;       /* at least [2 x (LC width + LC padding + CC padding) + RC width
+                             + RC padding] needed, otherwise layout messed up on small viewports */
+  height: 100%;           /* force layout to stretch to viewport height */
+  min-width: 100%;        /* force layout to stretch to viewport width */
+  float: left;            /* force layout width to properly expand in case of overflowing elements*/
+}
+
+#layoutcontainer {
+  padding-left: 221px;    /* LC width + LC padding */
+  position: relative;     /* set as reference for absolute positioning of header and footer */
+  min-height: 100%;       /* needed to make footer stick to bottom of viewport */
+  padding-right: 55px;    /* right margin for two-column case */
+  overflow: hidden;       /* force container to stretch to height of highest column */
+}
+
+#layoutcontainer.threecols {
+  padding-right: 270px;   /* RC width + RC padding + CC padding */
+}
+
+/********** Top Section (header) ******************************************************************/
+
+#head {
+  width: 100%;
+  height: 92px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/********** Middle Section (two or three columns) *************************************************/
+
+#sidebar-left, #maincontent, #sidebar-right {
+  position: relative;
+  float: left;
+  padding-top: 121px;     /* H height + H spacing */
+  padding-bottom: 45px;   /* F height */
+}
+
+/* Left Column */
+
+#sidebar-left {
+  width: 211px;           /* LC width */
+  padding-left: 5px;      /* LC padding / 2 */
+  padding-right: 5px;     /* LC padding / 2 */
+  right: 247px;           /* LC width + LC padding + CC padding */
+  margin-left: -100%;
+  overflow: hidden;
+}
+* html #sidebar-left { /* IE6 hack */
+  left: 234px;            /* RC width */
+}
+
+/* Middle Column */
+
+#maincontent {
+  padding-left: 13px;     /* CC padding / 2 */
+  padding-right: 13px;    /* CC padding / 2 */
+  width: 100%;
+}
+
+/* Right Column */
+
+#sidebar-right {
+  width: 234px;           /* RC width */
+  padding-left: 5px;      /* RC padding / 2 */
+  padding-right: 5px;     /* RC padding / 2 */
+  margin-right: -100%;
+  overflow: hidden;
+}
+
+/********** Bottom Section (footer) ***************************************************************/
+
+#footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: 120px;
+}
