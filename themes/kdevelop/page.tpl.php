@@ -28,7 +28,16 @@
         </div>
         <?php print $feed_icons ?>
     </div><!-- /#maincontent -->
-    <div id="footer"><?php print $footer_message . $footer ?></div>
+
+    <div id="footer">
+      <p class="sitemap">
+        <a title="Site map" href="<?php url('sitemap'); ?>"><span>Sitemap</span></a>
+      </p>
+      <p id="pagemodtime" class="footnote"><?php print $footer_message . $footer ?>&nbsp;</p>
+      <address id="webmaster">
+        <a href="mailto:webmaster@kdevelop.org?subject=KDevelop+website">If there are any problems with the website, please contact the  webmaster</a>.
+      </address>
+    </div><!-- /#footer -->
 
     <?php if ($right): ?>
       <div id="sidebar-right" class="sidebar">
