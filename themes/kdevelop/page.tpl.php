@@ -31,7 +31,7 @@
 
     <div id="footer">
       <p class="sitemap">
-        <a title="Site map" href="<?php url('sitemap'); ?>"><span>Sitemap</span></a>
+        <a title="Site map" href="<?php echo url('sitemap'); ?>"><span>Sitemap</span></a>
       </p>
       <p id="pagemodtime" class="footnote"><?php print $footer_message . $footer ?>&nbsp;</p>
       <address id="webmaster">
