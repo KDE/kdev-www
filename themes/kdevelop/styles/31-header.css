@@ -22,12 +22,14 @@
   float:left;
 }
 #logo span {
-  padding:30px 0 0 120px;
-  font-weight: bold;
+  padding:35px 0 0 120px;
   color: #0E4505;
   font-size: 16px;
+  line-height:16px;
 }
-
+#logo strong {
+  font-size:28px;
+}
 /********** Language Selector *********************************************************************/
 
 #languageselector { position: absolute; top: 0px; right: 0px; text-align: right; padding: 5px; }

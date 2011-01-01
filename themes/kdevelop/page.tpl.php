@@ -57,7 +57,7 @@
       <?php
           print '<a href="'. check_url($front_page) .'" title="'. $site_title .'">';
           print '<img src="'. check_url($logo) .'" alt="'. $site_title .'" id="logo" />';
-          print '<span>KDevelop<br /><small>KDE Development Environment</small></span>';
+          print '<span><strong>KDevelop</strong><br /><small>KDE Development Environment</small></span>';
           print '</a>';
       ?>
     </div> <!-- /header -->
