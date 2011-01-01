@@ -8,31 +8,32 @@
 
 /********** Link Boxes (Navigation Menu Boxes + Quick Access Boxes) *******************************/
 
+
 div.navbox,
-div.quickbox {
+div.block {
   text-align: left;
   background: url('../graphics/navbox-liri-1px.gif') repeat-y;
   width: 204px;  /* width of navigation-menu boxes */
   margin: 0 0 2.6px 7px;
 }
-div.quickbox {
+div.block {
   margin-left: 0px;  margin-bottom: 7px;
   width: 233px; /* width of quick-access boxes */
   background-image: url('../graphics/quickbox-liri-1px.gif');
 }
 
 div.navbox div.header,
-div.quickbox  div.header {
+div.block  div.header {
   position: relative;
   background: url('../graphics/navbox-t-solid.png') top no-repeat;
   padding: 14px 0 0 0;
 }
-div.quickbox div.header {
+div.block div.header {
   background-image: url('../graphics/quickbox-t-solid.png');
 }
 
 div.navbox div.header h3,
-div.quickbox  div.header h3 {
+div.block  div.header h3 {
   background: #79be16;
   padding: 2.5px 11px 5.5px 25px;
   margin: 0 9px 0 9px;
@@ -46,31 +47,31 @@ div.quickbox  div.header h3 {
   font-style: normal;
   line-height: 100%;
 }
-div.quickbox  div.header h3 {
+div.block  div.header h3 {
   text-align: left;
   padding-left: 10px;
   padding-right: 25px;
 }
 
-div.quickbox  div.content,
+div.block  div.content,
 div.navbox div.content {
   background: #daf3af url('../graphics/box_green-mh-1px.png') top repeat-x;
   padding: 7.4px 9px 4px 11px;
   margin: 0 9px -6px 9px;
 }
 
-div.quickbox  div.footer,
+div.block  div.footer,
 div.navbox div.footer {
   background: url('../graphics/navbox-bi.gif') repeat-y;
   height: 14px;
 }
-div.quickbox  div.footer {
+div.block  div.footer {
   background-image: url('../graphics/quickbox-bi.gif');
 }
 
 /********** Link Box Contents *********************************************************************/
 
-div.quickbox  div.content li,
+div.block  div.content li,
 div.navbox div.content li {
     background:transparent url('../graphics/bullet.png') no-repeat scroll 0 0.45em;
     margin-left:0px;
@@ -87,37 +88,40 @@ div.navbox div.content li a {
   font-style: normal;        /* overrule italics style of parent li */
 }
 
-div.quickbox .category-icon,
+div.block .category-icon,
 div.navbox .category-icon {
     position: absolute;
     background-repeat: no-repeat;
 }
 
 div.navbox div.content ul,
-div.quickbox div.content ul {
+div.block div.content ul {
     list-style-type: none;
     padding: 0;
     margin: 0px 0 2px 2px;
 }
 
-div.quickbox div.content ul {
-    margin-left: 15px;
+div.block div.content li {
+  list-style:none;
+}
+
+div.block div.content ul {
     margin-bottom: 3px;
 }
 
 div.navbox div.content ul ul,
-div.quickbox div.content ul ul {
+div.block div.content ul ul {
     margin-left: 7px;
     margin-bottom: -1px;
 }
 
-div.quickbox div.content p {
+div.block div.content p {
     padding: 0;
     margin: 0;
      margin-bottom: 1px; 
 }
 
-/********** "Download" Quick Access Box (front page)  ['inherits' .quickbox] **********************/
+/********** "Download" Quick Access Box (front page)  ['inherits' .block] **********************/
 
 div.cat-download div.header {
   background-image: url('../graphics/quickbox_blue-t-solid.png');
@@ -168,7 +172,7 @@ div.cat-download div.footer {
   background-image: url('../graphics/quickbox_blue-bi.gif');
 }
 
-/********** "Support" Quick Access Box (front page)  ['inherits' .quickbox] ***********************/
+/********** "Support" Quick Access Box (front page)  ['inherits' .block] ***********************/
 
 div.cat-support div.header {
   background-image: url('../graphics/quickbox_red-t-solid.png');

@@ -1,0 +1,1 @@
+<?php require ('../inc/spam_trap_page.php') ?>

@@ -69,10 +69,11 @@ html, body {
 
 #sidebar-left {
   width: 211px;           /* LC width */
-  padding-left: 5px;      /* LC padding / 2 */
-  padding-right: 5px;     /* LC padding / 2 */
+  padding-left: 12px;      /* LC padding / 2 */
+  padding-right: 20px;     /* LC padding / 2 */
   right: 247px;           /* LC width + LC padding + CC padding */
   margin-left: -100%;
+  margin-right: 10px;
   overflow: hidden;
 }
 * html #sidebar-left { /* IE6 hack */
@@ -82,6 +83,7 @@ html, body {
 /* Middle Column */
 
 #maincontent {
+  left:20px;
   padding-left: 13px;     /* CC padding / 2 */
   padding-right: 13px;    /* CC padding / 2 */
   width: 100%;
