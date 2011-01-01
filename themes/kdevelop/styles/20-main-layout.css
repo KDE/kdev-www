@@ -62,7 +62,7 @@ html, body {
   position: relative;
   float: left;
   padding-top: 121px;     /* H height + H spacing */
-  padding-bottom: 45px;   /* F height */
+  padding-bottom: 65px;   /* F height */
 }
 
 /* Left Column */
