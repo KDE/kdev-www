@@ -48,9 +48,9 @@ div.block  div.header h3 {
   line-height: 100%;
 }
 div.block  div.header h3 {
-  text-align: left;
+  text-align: center;
   padding-left: 10px;
-  padding-right: 25px;
+  padding-right: 10px;
 }
 
 div.block  div.content,

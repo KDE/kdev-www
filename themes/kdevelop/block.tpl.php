@@ -3,6 +3,10 @@
 
 $custom_block_classes = array(
   'block-1' => 'cat-download',
+  'menu-menu-documentation' => 'cat-doc',
+  'menu-menu-development' => 'cat-devel',
+  'menu-menu-community' => 'cat-community',
+  'menu-menu-promotion' => 'cat-promotion',
 );
 
 $id = $block->module .'-'.$block->delta;
