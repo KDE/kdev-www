@@ -40,3 +40,9 @@ body {
 p.outdatedtranslation {
   text-align: center;
 }
+
+.breadcrumb {
+  float:right;
+  margin-top:15px;
+  padding-right:10px;
+}
