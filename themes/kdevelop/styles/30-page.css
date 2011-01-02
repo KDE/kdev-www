@@ -64,3 +64,6 @@ p.outdatedtranslation {
   font-size:1em;
   font-weight:normal;
 }
+.content .views-view-grid {
+  margin:0 auto;
+}
