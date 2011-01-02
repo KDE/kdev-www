@@ -107,4 +107,5 @@ html, body {
   bottom: 0;
   left: 0;
   margin-top: 120px;
+  z-index:100;
 }
