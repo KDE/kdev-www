@@ -46,3 +46,17 @@ p.outdatedtranslation {
   margin-top:15px;
   padding-right:10px;
 }
+
+.view-id-gallery td {
+  text-align:center;
+}
+
+.content .field-field-gallery-image {
+  float:right;
+  margin-left:10px;
+}
+.content .field-field-gallery {
+  float:right;
+  clear:right;
+  margin-left:10px;
+}
