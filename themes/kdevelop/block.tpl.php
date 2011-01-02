@@ -10,6 +10,12 @@ $custom_block_classes = array(
 );
 
 $id = $block->module .'-'.$block->delta;
+
+if ($id == 'views-devel_blogs-block_1' ) {
+  require 'devel_blogs-block.tpl.php';
+  return;
+}
+
 $custom_class = '';
 if (isset($custom_block_classes[$id])) {
   $custom_class = $custom_block_classes[$id];
@@ -20,7 +26,7 @@ if (isset($custom_block_classes[$id])) {
   <div class="header">
   <?php if (!empty($block->subject)): ?>
     <span class="category-icon"></span>
-    <h3><?php print $block->subject ?></h2>
+    <h3><?php print $block->subject ?></h3>
   <?php endif;?>
   </div>
 
