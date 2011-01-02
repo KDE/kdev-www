@@ -60,3 +60,7 @@ p.outdatedtranslation {
   clear:right;
   margin-left:10px;
 }
+.content .view-gallery .views-field-title {
+  font-size:1em;
+  font-weight:normal;
+}
