@@ -8,7 +8,4 @@ Icon=kdevelop
 DocPath=kdevelop2/index.html
 Terminal=0
 Name=KDevelop
-Name[de]=KDevelop2
-Name[fr]=KDevelop2 
 Comment=Integrated Development Environment for C/C++
-Comment[de]=Integrierte Entwicklungsumgebung für C/C++
