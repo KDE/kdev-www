@@ -14,7 +14,7 @@
   </head>
   <body<?php print phptemplate_body_class($left, $right); ?>>
   <div id="layoutcontainer" class="threecols">
-    <div id="maincontent">
+    <div id="maincontent"><div id="maincontent-sub">
         <?php print $breadcrumb; ?>
         <?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
         <?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block">'; endif; ?>
@@ -27,7 +27,7 @@
           <?php print $content ?>
         </div>
         <?php print $feed_icons ?>
-    </div><!-- /#maincontent -->
+    </div></div><!-- /#maincontent -->
 
     <div id="footer">
       <p class="sitemap">

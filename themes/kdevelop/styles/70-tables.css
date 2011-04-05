@@ -11,3 +11,33 @@
 
 /* TODO */
 /* ss */
+.node table {
+  margin:0 auto;
+}
+
+.node td, .node th {
+  padding:1px 2px;
+}
+
+.node th, .node table {
+  border:none;
+  border-bottom:1px solid #79be16;
+  border-collapse:collapse;
+}
+
+.node td {
+  border-left:1px solid #79be16;
+  border-right:1px solid #79be16;
+}
+
+tbody {
+  border:none;
+}
+
+.view-gallery td, .view-gallery table {
+  border:none;
+}
+
+.view-content .views-field-field-gallery-image-fid .field-content img {
+  border:none;
+}

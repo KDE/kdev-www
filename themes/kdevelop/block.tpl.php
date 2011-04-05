@@ -3,6 +3,7 @@
 
 $custom_block_classes = array(
   'block-1' => 'cat-download',
+  'block-3' => 'cat-support',
   'menu-menu-documentation' => 'cat-doc',
   'menu-menu-development' => 'cat-devel',
   'menu-menu-community' => 'cat-community',
@@ -11,7 +12,7 @@ $custom_block_classes = array(
 
 $id = $block->module .'-'.$block->delta;
 
-if ($id == 'views-devel_blogs-block_1' ) {
+if ($id == 'views-devel_blogs-block_1' || $id == 'views-news-block_1') {
   require 'devel_blogs-block.tpl.php';
   return;
 }
