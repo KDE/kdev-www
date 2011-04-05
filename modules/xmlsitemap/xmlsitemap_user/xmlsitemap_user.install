@@ -1,5 +1,5 @@
 <?php
-// $Id: xmlsitemap_user.install,v 1.6.2.15.2.10 2010/04/30 03:31:22 davereid Exp $
+// $Id: xmlsitemap_user.install,v 1.6.2.15.2.11 2010/12/30 15:56:27 davereid Exp $
 
 /**
  * @file
@@ -33,7 +33,6 @@ function xmlsitemap_user_requirements($phase) {
 function xmlsitemap_user_uninstall() {
   drupal_load('module', 'user');
   drupal_load('module', 'xmlsitemap');
-  db_query("DELETE FROM {variable} WHERE name LIKE 'xmlsitemap_settings_user_%%");
   xmlsitemap_link_bundle_delete('user', 'user');
 }
 

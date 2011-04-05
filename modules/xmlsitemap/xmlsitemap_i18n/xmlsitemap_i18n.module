@@ -1,5 +1,5 @@
 <?php
-// $Id: xmlsitemap_i18n.module,v 1.1.2.15 2010/04/29 16:22:15 davereid Exp $
+// $Id: xmlsitemap_i18n.module,v 1.1.2.18 2010/08/30 17:32:00 davereid Exp $
 
 /**
  * Implements hook_xmlsitemap_context_info().
@@ -8,7 +8,6 @@ function xmlsitemap_i18n_xmlsitemap_context_info() {
   $context['language'] = array(
     'label' => t('Language'),
     'summary callback' => 'locale_language_name',
-    'settings callback' => 'xmlsitemap_i18n_xmlsitemap_language_context_settings',
     'default' => language_default('language'),
   );
   return $context;
@@ -41,7 +40,7 @@ function xmlsitemap_i18n_form_xmlsitemap_sitemap_edit_form_alter(&$form, $form_s
     '#type' => 'select',
     '#title' => t('Language'),
     '#options' => locale_language_list(),
-    '#default_value' => isset($form['#sitemap']['context']['language']) ? $form['#sitemap']['context']['language'] : '',
+    '#default_value' => isset($form['#sitemap']->context['language']) ? $form['#sitemap']->context['language'] : '',
   );
 }
 
@@ -68,15 +67,15 @@ function xmlsitemap_i18n_form_i18n_admin_settings_alter(&$form, $form_state) {
  *
  * @see i18n_db_rewrite_where()
  */
-function xmlsitemap_i18n_query_xmlsitemap_generate_alter(array &$query, array &$args, array $sitemap) {
+function xmlsitemap_i18n_query_xmlsitemap_generate_alter(array &$query, array &$args, stdClass $sitemap) {
   $mode = variable_get('i18n_selection_mode', 'simple');
 
-  if (!isset($sitemap['context']['language']) || $mode == 'off') {
+  if (!isset($sitemap->context['language']) || $mode == 'off') {
     return;
   }
 
   // Get languages to simplify query building.
-  $current = $sitemap['context']['language'];
+  $current = $sitemap->context['language'];
   $default = i18n_default_language();
 
   if ($mode == 'mixed' && $current == $default) {

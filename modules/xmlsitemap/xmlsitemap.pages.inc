@@ -1,5 +1,5 @@
 <?php
-// $Id: xmlsitemap.pages.inc,v 1.1.2.44 2010/04/29 16:22:09 davereid Exp $
+// $Id: xmlsitemap.pages.inc,v 1.1.2.45 2010/08/30 05:31:36 davereid Exp $
 
 /**
  * @file
@@ -11,10 +11,10 @@
 /**
  * Get the sitemap chunk/page of the current request.
  */
-function xmlsitemap_get_current_chunk(array $sitemap) {
+function xmlsitemap_get_current_chunk(stdClass $sitemap) {
   // Check if we should be displaing the index.
   if (!isset($_GET['page']) || !is_numeric($_GET['page'])) {
-    if ($sitemap['chunks'] > 1) {
+    if ($sitemap->chunks > 1) {
       return 'index';
     }
     else {

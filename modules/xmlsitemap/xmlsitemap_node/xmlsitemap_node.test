@@ -1,5 +1,5 @@
 <?php
-// $Id: xmlsitemap_node.test,v 1.1.2.24 2010/04/29 16:22:05 davereid Exp $
+// $Id: xmlsitemap_node.test,v 1.1.2.25 2010/11/13 04:37:23 davereid Exp $
 
 /**
  * @file
@@ -18,8 +18,10 @@ class XMLSitemapNodeFunctionalTest extends XMLSitemapTestHelper {
     );
   }
 
-  function setUp() {
-    parent::setUp('xmlsitemap_node', 'comment');
+  function setUp($modules = array()) {
+    $modules[] = 'xmlsitemap_node';
+    $modules[] = 'comment';
+    parent::setUp($modules);
 
     $this->admin_user = $this->drupalCreateUser(array('administer nodes', 'administer content types', 'administer xmlsitemap'));
     $this->normal_user = $this->drupalCreateUser(array('create page content', 'edit any page content', 'access content'));

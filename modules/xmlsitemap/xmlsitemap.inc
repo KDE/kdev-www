@@ -1,5 +1,5 @@
 <?php
-// $Id: xmlsitemap.inc,v 1.1.2.55 2010/04/29 16:22:09 davereid Exp $
+// $Id: xmlsitemap.inc,v 1.1.2.57 2010/08/28 21:29:50 davereid Exp $
 
 /**
  * @file
@@ -11,7 +11,13 @@
 /**
  * Condition builder for queries.
  */
-function _xmlsitemap_build_conditions(array &$conditions = array(), array &$args = array(), $operator = '=', $update = FALSE) {
+function _xmlsitemap_build_conditions(array &$conditions, array $args = array(), array $options = array()) {
+  $options += array(
+    'table' => 'xmlsitemap',
+    'operator' => '=',
+    'update' => FALSE,
+  );
+
   $operators = array(
     'null' => array('=' => 'IS', '<>' => 'IS NOT'),
     'in' => array('=' => 'IN', '<>' => 'NOT IN'),
@@ -22,26 +28,29 @@ function _xmlsitemap_build_conditions(array &$conditions = array(), array &$args
       continue;
     }
     elseif ($value === NULL) {
-      if ($update) {
+      if ($options['update']) {
         $conditions[$field] = "$field = NULL";
       }
       else {
-        $conditions[$field] = "$field {$operators['null'][$operator]} NULL";
+        $operator = $operators['null'][$options['operator']];
+        $conditions[$field] = "$field $operator NULL";
       }
     }
     elseif (is_array($value)) {
-      if ($update) {
+      if ($options['update']) {
         trigger_error(strtr('Update not supported for field %field in @function.', array('%field' => theme('placeholder', $field), '@function' => __FUNCTION__)));
         unset($conditions[$field]);
       }
       else {
-        $type = _xmlsitemap_get_field_type('xmlsitemap', $field);
-        $conditions[$field] = "$field {$operators['in'][$operator]} (" . db_placeholders($value, $type) . ")";
+        $operator = $operators['in'][$options['operator']];
+        $type = _xmlsitemap_get_field_type($options['table'], $field);
+        $conditions[$field] = "$field $operator (" . db_placeholders($value, $type) . ")";
         $args = array_merge($args, $value);
       }
     }
     else {
-      $placeholder = db_type_placeholder(_xmlsitemap_get_field_type('xmlsitemap', $field));
+      $operator = $options['operator'];
+      $placeholder = db_type_placeholder(_xmlsitemap_get_field_type($options['table'], $field));
       $conditions[$field] = "$field $operator $placeholder";
       $args[] = $value;
     }
@@ -173,7 +182,7 @@ function _xmlsitemap_get_blurb($check_version = TRUE) {
         l('Coupons Dealuxe', 'http://couponsdealuxe.com/'),
       );
       // Don't extract the following string for translation.
-      $blurb = '<div class="description"><p>Thank you for helping test the XML sitemap module rewrite. Please consider helping offset developer free time by <a href="http://davereid.chipin.com/">donating</a> or if your company is interested in sponsoring the rewrite or a specific feature, please <a href="http://davereid.net/contact">contact the developer</a>. Thank you to the following current sponsors: ' . implode(', ', $sponsors) . ', and all the indivduals that have donated. This message will not be seen in the stable versions.</p></div>';
+      $blurb = '<div class="description"><p>Thank you for helping test the XML sitemap module rewrite. Please consider helping offset developer free time by <a href="http://davereid.chipin.com/">donating</a> or if your company is interested in sponsoring the rewrite or a specific feature, please <a href="http://davereid.net/contact">contact the developer</a>. Thank you to the following current sponsors: ' . implode(', ', $sponsors) . ', and all the individuals that have donated. This message will not be seen in the stable versions.</p></div>';
       //http://drupalmodules.com/module/xml-sitemap
     }
   }

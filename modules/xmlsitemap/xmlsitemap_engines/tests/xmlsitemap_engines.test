@@ -1,5 +1,5 @@
 <?php
-// $Id: xmlsitemap_engines.test,v 1.1.2.9 2010/04/19 05:35:38 davereid Exp $
+// $Id: xmlsitemap_engines.test,v 1.1.2.13 2010/11/13 04:37:34 davereid Exp $
 
 /**
  * @file
@@ -17,8 +17,11 @@ class XMLSitemapEnginesFunctionalTest extends XMLSitemapTestHelper {
     );
   }
 
-  function setUp() {
-    parent::setUp('xmlsitemap_engines', 'xmlsitemap_engines_test');
+  function setUp($modules = array()) {
+    $modules[] = 'xmlsitemap_engines';
+    $modules[] = 'xmlsitemap_engines_test';
+    parent::setUp($modules);
+
     $this->admin_user = $this->drupalCreateUser(array('access content', 'administer xmlsitemap'));
     $this->drupalLogin($this->admin_user);
     $this->submit_url = url('ping', array('absolute' => TRUE, 'query' => array('sitemap' => ''))) . '[sitemap]';
@@ -40,20 +43,19 @@ class XMLSitemapEnginesFunctionalTest extends XMLSitemapTestHelper {
   }
 
   function testSubmitSitemaps() {
-    $sitemaps = array(
-      array(
-        'uri' => array(
-          'path' => 'http://example.com/sitemap.xml',
-          'options' => array(),
-        ),
-      ),
-      array(
-        'uri' => array(
-          'path' => 'http://example.com/sitemap-2.xml',
-          'options' => array(),
-        ),
-      ),
+    $sitemaps = array();
+    $sitemap = new stdClass();
+    $sitemap->uri = array(
+      'path' => 'http://example.com/sitemap.xml',
+      'options' => array(),
     );
+    $sitemaps[] = $sitemap;
+    $sitemap = new stdClass();
+    $sitemap->uri = array(
+      'path' => 'http://example.com/sitemap-2.xml',
+      'options' => array(),
+    );
+    $sitemaps[] = $sitemap;
     xmlsitemap_engines_submit_sitemaps($this->submit_url, $sitemaps);
 
     $this->assertWatchdogMessage(array('type' => 'xmlsitemap', 'message' => 'Recieved ping for @sitemap.', 'variables' => array('@sitemap' => 'http://example.com/sitemap.xml')));
