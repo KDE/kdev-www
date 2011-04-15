@@ -1,0 +1,1335 @@
+#!/usr/bin/perl
+
+#     inkslice - A tool for slicing SVG images
+#     
+#     Requirements: Perl v5.10 or later
+#                   Inkscape v0.47 or later
+#                   ImageMagick v6.3.4 or later
+#     
+#     Homepage:     http://inkslice.sf.net
+#     
+#     Copyright:    2011  Samuel Scharrer <smls75@gmail.com>  
+# 
+#     This program is free software; you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation; either version 2 of the License, or
+#     (at your option) any later version.
+# 
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+# 
+#     You should have received a copy of the GNU General Public License along
+#     with this program; if not, write to the Free Software Foundation, Inc.,
+#     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+
+####################################################################################################
+#                                          1 Main Code                                             #
+####################################################################################################
+
+# This section contains the script's main code.
+# 
+# It is composed of the following sub-sections:
+#  - 1.1 Initialization
+#  - 1.2 Definitions for Source File Parsing
+#  - 1.3 Source File Parsing
+#  - 1.4 Inkscape Exporting
+#  - 1.5 ImageMagick Postprocessing
+#  - 1.6 Wrap-Up
+
+#===========[ 1.1 Initialization ]==================================================================
+
+use strict;
+use warnings;
+use feature "state";
+use Getopt::Long;      # used for reading command-line arguments
+use Pod::Usage;        # used for printing usage and help messages
+use HTML::Entities (); # used for decoding XML entities in the SVG input
+use File::Temp;        # used for assigning safe filenames to temporary files
+
+# disable output buffering:
+select STDERR; $| = 1;
+select STDOUT; $| = 1;
+
+# set up a warning handler:
+$SIG{'__WARN__'} = sub {
+  if (caller(0) eq "Getopt::Long") { ERROR($_[0], die=>0); pod2usage('-verbose'=>0, '-msg'=>" "); }
+  else { warn $_[0]; }
+};
+
+# read commandline arguments:
+my %cmdargs;
+Getopt::Long::Configure("no_auto_abbrev");
+GetOptions(\%cmdargs, 'help|?', ,'man', 'output-dir|o=s', 'childprocess');
+my @svgfiles = @ARGV;
+
+# print help messages if requested:
+if ($cmdargs{'help'}) { pod2usage('-exitstatus'=>1, '-msg'=>" "); }
+if ($cmdargs{'man'}) { pod2usage('-exitstatus'=>0, '-verbose'=>2, '-msg'=>" "); }
+
+# if more than one input file was specified, re-call this script seperately for each:
+if (scalar @svgfiles > 1) {
+  my ($nslices, $nexports, $nconverts);
+  foreach my $svgfile (@svgfiles) {
+    my $cmd = "$0 --childprocess ".join(' ', map{"--$_=".$cmdargs{$_}} keys %cmdargs)." $svgfile";
+    my $return = execute($cmd, interactive=>1);
+    my %stats = map { my @val = split(/\s/, $_, 2); $val[0] => $val[1]; } split(/\n/, $return);
+    $nslices += $stats{'slices'}; $nexports += $stats{'exports'}; $nconverts += $stats{'converts'};
+  }
+  show_statistics($nslices, $nexports, $nconverts);
+  exit;
+}
+
+my $outputpath = (exists $cmdargs{'output-dir'} ? $cmdargs{'output-dir'} : ".");
+if (!scalar @svgfiles) { ERROR("No SVG file specified", die=>0); pod2usage('-verbose'=>0, '-msg'=>" "); }
+my $svgfile = $svgfiles[0];
+
+#===========[ 1.2 Definitions for Source File Parsing ]=============================================
+
+# ___Introduction to the parsing code:___
+# 
+# Each context (i.e. everything between two matching curly brackets) of each slice is parsed using
+# the recursive 'parse_context' function in section [1.3]. The rules encountered in each context are
+# validated and parsed according to the information defined by the %keywords, %mandatory_keywords,
+# %compound_keywords and %types hashes in section [1.2].
+# 
+# For each context, certain entries are added to the global @exports and @converts arrays (using the
+# 'pixmap' function), depending on what kind of rules were encountered within the context:
+#
+#  - if a 'primitive' rule with EXPORT affinity was encountered, an @exports entry containing...
+#      - the 'primitive' rule
+#      - all 'argument' rules in the same context with PRIMITIVE or EXPORT affinity
+#
+#  - if a 'primitive' rule with CONVERT affinity was encountered, a @converts entry containing...
+#      - the 'primitive' rule
+#      - all 'argument' rules in the same context with PRIMITIVE or CONVERT affinity
+#
+#  - for every 'simple operation' rule that was encountered, a @converts entry containing...
+#      - TODO (not yet properly implemented, since currently not used)
+#
+#  - for every 'layer operation' rule that was encountered, a @converts entry containing...
+#      - the 'layer operation' rule
+#      - all 'argument' rules in the operation's subcontext with LAYER affinity
+# 
+# The 'pixmap' function also makes sure that @exports and @converts entries remain unique (i.e. that
+# the same export or convert action won't be taken twice), and that operation pixmaps are properly
+# linked to their SOURCE/DEST pixmaps.
+# 
+# For every top-level (i.e. 'SLICE') context, an entry in the @outputs array is also created,
+# containing every 'argument' rule with OUTPUT affinity.
+# 
+# Bevore actually being processed in section [1.4] and [1.5], the @exports and @converts arrays are
+# further modified at the end of section [1.3] according to the specified pixmaps collapse rules
+# (see @collapse_pixmaps), and according to the collected @outputs entries.
+
+our @exports = ();
+our @converts = ();
+our @outputs = ();
+
+use constant ONCE => 0; use constant MULT => 1;
+use constant TRUE => 1; use constant FALSE => 0;
+use constant EXPORT => 'EXPORT';
+
+# definition of supported keywords:
+#
+#  [keyword]                  [data type]    [allowed in context]           [affinity]    [global]
+my %key_primitives = ( # primitive keywords
+# ---------------------      ------------   -----------------------------   -----------    -----
+  'document'            => [  undef       , {'SLICE'=>ONCE,'LAYER'=>ONCE} , 'EXPORT'     , FALSE ],
+  'element'             => [ 'ID'         , {'SLICE'=>ONCE,'LAYER'=>ONCE} , 'EXPORT'     , FALSE ],
+  'color'               => [ 'COLOR'      , {'SLICE'=>ONCE,'LAYER'=>ONCE} , 'CONVERT'    , FALSE ]
+# ---------------------      ------------   -----------------------------   -----------    -----
+);
+my %key_slice_args = ( # slice argument keywords
+# ---------------------      ------------   -----------------------------   -----------    -----
+  'area'                => [ 'AREA'       , {'SLICE'=>ONCE              } , 'PRIMITIVE'  , TRUE  ],
+  'output'              => [ 'STRING'     , {'SLICE'=>ONCE              } , 'OUTPUT'     , FALSE ]
+# ---------------------      ------------   -----------------------------   -----------    -----
+);
+my %key_simple_ops = ( # simple operation keywords
+# ---------------------      ------------   -----------------------------   -----------    -----
+# ---------------------      ------------   -----------------------------   -----------    -----
+);
+my %key_op_args = ( # operation argument keywords
+# ---------------------      ------------   -----------------------------   -----------    -----
+# ---------------------      ------------   -----------------------------   -----------    -----
+);
+my %key_layer_ops = ( # layer operation keywords
+# ---------------------      ------------   -----------------------------   -----------    -----
+  'compose-against'     => [ 'SUBCONTEXT' , {'SLICE'=>MULT,'LAYER'=>MULT} , ''           , FALSE ],
+  'background'          => [ 'SUBCONTEXT' , {'SLICE'=>MULT,'LAYER'=>MULT} , ''           , FALSE ],
+  'substract'           => [ 'SUBCONTEXT' , {'SLICE'=>MULT,'LAYER'=>MULT} , ''           , FALSE ],
+  'semiflatten-against' => [ 'SUBCONTEXT' , {'SLICE'=>MULT,'LAYER'=>MULT} , ''           , FALSE ]
+# ---------------------      ------------   -----------------------------   -----------    -----
+);
+my %key_layer_args = ( # layer argument keywords
+# ---------------------      ------------   -----------------------------   -----------    -----
+  'compose-type'        => [ 'STRING'     , {'compose-against'=>ONCE    } , 'LAYER'      , FALSE ],
+  'threshold'           => [ 'PERCENTAGE' , {'semiflatten-against'=>ONCE} , 'LAYER'      , FALSE ]
+# ---------------------      ------------   -----------------------------   -----------    -----
+);
+my %key_output_args = ( # output argument keywords
+# ---------------------      ------------   -----------------------------   -----------    -----
+  'output-quality'      => [ 'INTEGER'    , {'SLICE'=>ONCE              } , 'OUTPUT'     , FALSE ],
+  'output-format'       => [ 'STRING'     , {                           } , undef        , FALSE ]
+# ---------------------      ------------   -----------------------------   -----------    -----
+);
+my %key_operations = (%key_simple_ops, %key_layer_ops);
+my %key_arguments = (%key_slice_args, %key_op_args, %key_layer_args, %key_output_args);
+my %keywords = (%key_primitives, %key_operations, %key_arguments);
+
+# definition of mandatory keywords for each context (nested arrays denote "OR" relation):
+my %mandatory_keywords = (
+#  [context]              [keywords]
+# -----------------      ----------------------
+  'SLICE'           => [ 'output', 'area'       ],
+  'LAYER'           => [ [keys %key_primitives] ],  # "require at least one primitive"
+  'compose-against' => [ 'compose-type'         ],
+# -----------------      ----------------------
+);
+
+# definition of additional keywords that are shortcuts for a nested sequence of existing keywords:
+my %compound_keywords = ( map{my $x = $_; map((
+#  [keyword]       [keyword sequence]
+# -------------    ------------------
+  $x . "-" . $_ => [ $x, $_ ]          # 'background-color' => ['background', 'color'], etc.
+# -------------    ------------------
+  ), keys %key_primitives)} keys %key_layer_ops
+);
+
+# definition of pixmap operation sequences to be collapsed:
+# 
+# Each sequence entry represents a pixmap spawned by some slice context. It can be either a
+# primitive keyword or a layer operation keyword (to match pixmaps of that type). In addition,
+# the leftmost entry in each sequence may also be 'EXPORT' (to match any export pixmap), or
+# 'CONVERT' (to match any convert pixmap).
+# The sequence must comply with one of the following two patterns:
+#   I:operation -- I:primitive                 (where I is a context that spawnes these two pixmaps)
+#   I:either -- II:operation -- II:primitive   (where I is a context, and II a subcontext of I)
+# If and only if a sequences is matched completely and the non-leftmost pixmaps in the sequence
+# don't contain any additional arguments, the sequence will be collapsed, meaning that the non-
+# leftmost pixmaps of the sequence will be replaced by a simple argument rule in the leftmost pixmap
+# (with a hyphen-seperated concatenation of the non-leftmost sequence entries as keyword, and the
+# 'VALUE' argument of the rightmost pixmap as value).
+my @collapse_pixmaps = (
+  ['EXPORT', 'background', 'color'],  # Inkscape can do --export-background, no need to invoke IM
+  ['CONVERT', 'color']  # let IM commands create solid color pixmaps on the fly when needed,
+                        # rather than creating an intermediate solid color image
+);
+
+# definition of supported value types:
+my %types = (
+#  [type]            ["validate+parse" rule]                         ["build" rule]
+# ------------      -------------------------                       ------------------
+  'STRING'     => [ qr/^"((?:[^\\"]|\\.)*)"$/                     , sub{'"'.$_[0].'"'}       ],
+  'INTEGER'    => [ qr/^(\d{1,3})$/                               , sub{$_[0]}               ],
+  'PERCENTAGE' => [ qr/^(\d{1,2}) ?%$/                            , sub{$_[0].'%'}           ],
+  'ID'         => [ qr/^'([A-Za-z0-9_-]*)'$/                      , sub{'\''.$_[0].'\''}       ],
+  'COLOR'      => [ qr/^(#[a-fA-F\d]{6})$/                        , sub{$_[0]}               ],
+  'AREA'       => [ qr/^(?|\(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)\s*-\s*
+                    \(\s*(-?\d+)\s*,\s*(-?\d+)\s*\)
+                    |(-?\d+)\s*,(-?\d+)\s*,(-?\d+)\s*,(-?\d+))$/x , sub{join(',',@{$_[0]})} ],
+  'SUBCONTEXT' => [ qr/^{(.*)}$/                                  , undef                    ]
+);
+
+#===========[ 1.3 Source File Parsing ]=============================================================
+
+INFO(title0=>"Slicing File", msg=>c($svgfile,'file'));
+INFO(level=>+1);
+
+# get the plain-text content of the SVG file:
+my $svgtext = read_file($svgfile);
+strip_xml(\$svgtext);
+
+# parse each SLICE section in the file:
+my @sections = match_bracketed($svgtext, 'SLICE');
+if (!scalar @sections) { INFO(title3=>"No slices defined"); show_statistics(0,0,0); exit 0; }
+INFO(title3=>(scalar @sections == 1 ? "1 slice" : scalar @sections." slices")." defined");
+
+foreach my $section (@sections) {
+  INFO(level=>+1,ntitle2=>"Slice",context=>$section,hidden=>1);
+  
+  # recursively parse each context in the SLICE section:
+  parse_context($section);
+  sub parse_context {
+    my ($snippet, %args) = @_;
+    my @context_ids = (exists $args{'parent'} ? ($args{'parent'}, 'LAYER'): 'SLICE');
+    
+    # parse all rules in the current context:
+    my @ruletexts = split_balanced(';', $snippet);
+    my @rules;
+    foreach my $ruletext (@ruletexts) {
+      trim(\$ruletext);
+      if (!defined($ruletext) || $ruletext eq "") { push @rules, [undef]; }
+      else { push @rules, [ map {trim(\$_)} split(':', $ruletext, 2) ]; }
+    }
+    
+    # set up hashes for collecting different kinds of rules within this context:
+    my %global_args = map {  # hack to make all global args known before entering subcontexts
+      ($_->[0] => defined $_->[1] ? [ $_->[1] =~ m/$types{$keywords{$_->[0]}[0]}[0]/ ] : "")
+    } (grep { exists $_->[1] && exists $keywords{$_->[0]} && $keywords{$_->[0]}->[3] } @rules);
+    if (exists $args{'global_args'}) { %global_args = (%global_args, %{$args{'global_args'}}) }
+    my $context_primitive;
+    my %context_args_convert_prim;
+    my %context_args_layer;
+    my %context_args_prim = map {$_ => $args{'global_args'}{$_}}
+                                     (grep {$keywords{$_}->[2] eq 'PRIMITIVE'}
+                                           (keys %{$args{'global_args'}}));
+    my %context_args_export = map {$_ => $args{'global_args'}{$_}}
+                                  (grep {$keywords{$_}->[2] eq 'EXPORT'}
+                                        (keys %{$args{'global_args'}}));
+    my %context_args_op;
+    my %context_args_output;
+    my @context_ops;
+    my @found_keywords;
+    
+    foreach my $rule (@rules) {
+      my ($keyword, $value) = @$rule;
+      
+      INFO(level=>+1,title3=>"Rule ",inline=>1,hidden=>1);
+      
+      #validate rule:
+      if (!defined $keyword) {
+        ERROR("Failed to parse next rule");
+      }
+      
+      # expand compound keyword (if applicable):
+      my $is_compound;
+      if (exists $compound_keywords{$keyword}) {
+        for (my $i=@{$compound_keywords{$keyword}}-1; $i>0; --$i) {
+          $value = '{ '.$compound_keywords{$keyword}[$i].': '.$value.' }';
+        }
+        $keyword = $compound_keywords{$keyword}[0];
+        $is_compound = 1;
+      }
+
+      # validate keyword:
+      if (!exists $keywords{$keyword}) {
+        ERROR("Unknown keyword '".c($keyword,'key')."'");
+      }
+      my $context = ( grep{my $x=$_; grep(($x eq $_), keys %{$keywords{$keyword}->[1]})}
+                          @context_ids )[0];
+      if (!defined $context) {
+        ERROR("Keyword '".c($keyword,'key')."' not allowed in this context");
+      }
+      if(!$keywords{$keyword}->[1]{$context} && grep {$_ eq $keyword} @found_keywords) {
+        ERROR("Keyword '".c($keyword,'key')."' allowed only once in this context");
+      }
+      INFO(msg=>c($keyword,'key'),hidden=>1);
+      
+      # validate and parse the value part of the rule:
+      my $datatype = $keywords{$keyword}[0];
+      my $parsed_value;
+      if (defined $datatype) { # only for rules that take a value
+        INFO(msg=>": ",hidden=>1);
+        my @matches = $value =~ m/$types{$datatype}[0]/;
+        if (!@matches) { ERROR("Failed to parse value: '".c(condense($value),'key')."'"); }
+        if ($#matches) { $parsed_value = \@matches } else { $parsed_value = $matches[0] }
+        
+        my $serialized_value = serialize_value($parsed_value, type=>$datatype);
+        if (defined $serialized_value) { INFO(msg=>$serialized_value,hidden=>1); }
+      }
+      INFO(inline=>0,hidden=>1);
+      
+      # collect "primitive" rules:
+      if (exists $key_primitives{$keyword}) {
+        $context_primitive = [$keyword, $parsed_value];
+      }
+      
+      # collect "argument" rules:
+      if (exists $key_arguments{$keyword}) {
+        if ($keywords{$keyword}->[2] eq 'LAYER') { $context_args_layer{$keyword} = $parsed_value; }
+        elsif ($keywords{$keyword}->[2] eq 'CONVERT') { $context_args_convert_prim{$keyword} = $value; }
+        elsif ($keywords{$keyword}->[2] eq 'EXPORT') { $context_args_export{$keyword} = $parsed_value; }
+        elsif ($keywords{$keyword}->[2] eq 'PRIMITIVE') { $context_args_prim{$keyword} = $parsed_value; }
+        elsif ($keywords{$keyword}->[2] eq 'OUTPUT') { $context_args_output{$keyword} = $parsed_value; }
+      }
+      
+      # collect "operation" rules:
+      if (exists $key_operations{$keyword}) {
+        
+        # handle "simple operation" rules (which take an atomic value)
+        if (exists $key_simple_ops{$keyword}) {
+          my %op = ( 'OPERATION' => $keyword );
+          if (defined $value) { $op{'VALUE'} = $parsed_value; }
+          if (%context_args_op) { %op = (%op, %context_args_op) }
+          push @context_ops, \%op;
+        }
+        
+        # handle "layer operation" rules (which take a sub-context as their value)
+        if (exists $key_layer_ops{$keyword}) {
+          INFO(level=>+1,title2=>"Nested Context",hidden=>1);
+          INFO(context=>$parsed_value) unless $is_compound;
+          
+          push @context_ops, parse_context($parsed_value, parent=>$keyword, global_args=>\%global_args);
+          
+          INFO(level=>-1);
+        }
+      }
+      INFO(context=>''); INFO(level=>-1);
+      
+      push @found_keywords, $keyword;
+    }
+    
+    # check if all keywords required in this context were found:
+    foreach my $context_id (grep {exists $mandatory_keywords{$_}} @context_ids) {
+      foreach my $key (@{$mandatory_keywords{$context_id}}) {
+        if (ref($key) eq 'ARRAY') { if (!grep{my $x=$_;grep(($x eq $_),@$key)} @found_keywords) {
+          ERROR("One of the following keywords must be specified in this context: "
+                .join(', ',map{"'".c($_,'key')."'"}@$key));
+        }}
+        elsif (!grep{$_ eq $key} @found_keywords ) {
+          ERROR("The following keyword must be specified in this context: '".c($key,'key')."'");
+        }
+      }
+    }
+    
+    my $pixmap_ref;
+    
+    # add an @exports or @converts entry for the context's pixmap primitive:
+    if (!exists $args{'parent'} && !defined $context_primitive) { $context_primitive=['document']; }
+    my %prim = ( 'PRIMITIVE' => $context_primitive->[0] );
+    if (defined $context_primitive->[1]) { $prim{'VALUE'} = $context_primitive->[1]; }
+    %prim = (%prim, %context_args_prim);
+    
+    if ($keywords{$context_primitive->[0]}->[2] eq 'EXPORT') {
+      if(%context_args_export) { %prim = (%prim, %context_args_export) }
+      $pixmap_ref = pixmap(\%prim, op=>'add', type=>'EXPORT');
+    }
+    elsif ($keywords{$context_primitive->[0]}->[2] eq 'CONVERT') {
+      if (%context_args_convert_prim) { %prim = (%prim, %context_args_convert_prim) }
+      $pixmap_ref = pixmap(\%prim, op=>'add', type=>'CONVERT');
+    }
+    
+    # add one @converts entry for every operation rule encountered in this context:
+    foreach my $r_op (@context_ops) {
+      $r_op->{'SOURCE'} = $pixmap_ref;
+      $pixmap_ref = pixmap($r_op, op=>'add', type=>'CONVERT');
+    }
+    
+    # add an @output entry with a reference to the final pixmap:
+    if (!exists $args{'parent'}) {
+      push @outputs, {'SOURCE'=>$pixmap_ref, %context_args_output};
+      pixmap($pixmap_ref, op=>'link');
+    }
+    
+    # for contexts spawned by a layer-operation, return a hash that takes the form of a @converts
+    # entry, except that no 'SOURCE' reference is being added yet:
+    if (exists $args{'parent'}) {
+      my %op = ( 'OPERATION' => $args{'parent'}, 'DEST' => $pixmap_ref );
+      if (%context_args_layer) { %op = (%op, %context_args_layer) }
+      return \%op;
+    }
+  } # end of 'parse_context' function
+  INFO(context=>''); INFO(level=>-1);
+}
+INFO(context=>'');
+
+## @fn $ pixmap(\%pixmap, %args)
+# Provides functionality for adding, modifying and querying @exports and @converts entries.
+# Handles all modifications to the @exports and @converts arrays, and provides some convenience
+# lookups of data from these arrays.
+# _Usage:_
+# Add a pixmap:       $pixmap_ref = pixmap(\%new_pixmap, op=>'add', type=>'EXPORT');  ..or..
+#                     $pixmap_ref = pixmap(\%new_pixmap, op=>'add', type=>'CONVERT');
+# Protect a pixmap:   pixmap($pixmap_ref, op=>'link');
+# Discard a pixmap:   pixmap($pixmap_ref, op=>'unlink');
+# Replace pixmap:     pixmap($pixmap, op=>'replace', with=>$other_pixmap)
+# Add rule to pixmap: pixmap($pixmap_ref, addrules=>{$keyword => $value});
+# Query metadata:     $ret = pixmap($pixmap_ref, get=>...);
+sub pixmap{
+  my ($pixmap, %args) = @_;
+  state %pixmap_index;
+  state %pixmap_metadata;
+  
+  # A) pixmap(..., op=>'add'):
+  if (exists $args{op} && $args{op} eq 'add' && exists $args{type}) {
+    my $id = serialize_pixmap($pixmap);
+    if (exists $pixmap_index{$id}) { # an identical pixmap already exists!
+      $pixmap = $pixmap_index{$id};
+#       $pixmap_metadata{$pixmap}{usecount}++; #USECOUNT
+    }
+    else {                           # no identical pixmap exists yet!
+      # add it to the @exports or @converts array:
+      my $array; if ($args{type} eq 'EXPORT') { $array = \@exports; } else { $array = \@converts; }
+      if (exists $args{'offset'}) {
+        splice @$array, $args{'offset'}+1, 0, $pixmap;
+      }
+      else { push @$array, $pixmap; }
+      # add it to the internal index:
+      $pixmap_index{$id} = $pixmap;
+      # add it to the internal metadata index:
+      my $argcount = 0;
+      foreach my $k (keys %$pixmap) {
+        if((scalar grep {$_ eq $k} keys %key_arguments) && !$keywords{$k}[3]) { $argcount++; }
+      }
+      $pixmap_metadata{$pixmap} = {type=>$args{type}, argcount=>$argcount, usecount=>0};
+      # register links
+      foreach('SOURCE', 'DEST') { if (exists $pixmap->{$_}) {$pixmap_metadata{$pixmap->{$_}}{usecount}++;} }
+    }
+    return $pixmap;
+  }
+  
+  # B) pixmap(..., op=>'link'):
+  elsif (exists $args{op} && $args{op} eq 'link') {
+    $pixmap_metadata{$pixmap}{usecount}++;
+  }
+  
+  # C) pixmap(..., op=>'unlink'):
+  elsif (exists $args{op} && $args{op} eq 'unlink') {
+    if(--$pixmap_metadata{$pixmap}{usecount} == 0) {
+      foreach('SOURCE', 'DEST') { if (exists $pixmap->{$_}){ pixmap($pixmap->{$_}, op=>'unlink'); }}
+      my $array = pixmap($pixmap, get=>'array');
+      my $pos = pixmap($pixmap, get=>'pos');
+      splice @$array, $pos, 1;  # delete pixmap from array
+    };
+    if (exists $args{from}) {
+      if ($args{from}{'DEST'} eq $pixmap) { delete $args{from}{'DEST'} }
+    }
+  }
+  
+  # D) pixmap(..., op=>'replace'):
+  elsif (exists $args{op} && $args{op} eq 'replace') {
+    foreach my $from (@converts) {
+      if (exists $from->{'OPERATION'}) {
+        foreach('SOURCE', 'DEST') {
+          if (exists $from->{$_} && $from->{$_} eq $pixmap) {
+            $from->{$_} = $args{with}; $pixmap_metadata{$args{with}}{usecount}++;
+          }
+        }
+      }
+    }
+    foreach my $out (@outputs) {
+      if($out->{'SOURCE'} eq $pixmap) {
+        $out->{'SOURCE'} = $args{with};
+        $pixmap_metadata{$args{with}}{usecount}++;
+      }
+    }    
+    my $array = pixmap($pixmap, get=>'array');
+    my $pos = pixmap($pixmap, get=>'pos');
+    splice @$array, $pos, 1;  # delete pixmap from array
+  }
+  
+  # E) pixmap(..., addrules=>{...}):
+  elsif (exists $args{addrules}) {
+    if (exists $args{clone} && $args{clone} eq 'yes') {
+      my %newpix = %$pixmap;
+      @newpix{keys %{$args{addrules}}} = values %{$args{addrules}};
+      foreach('SOURCE', 'DEST') { if (exists $pixmap->{$_}){ $pixmap_metadata{$pixmap->{$_}}{usecount}++; }}
+      return pixmap(\%newpix, op=>'add', type=>$pixmap_metadata{$pixmap}{'type'}, offset=>pixmap($pixmap, get=>'pos'));
+    }
+    else {
+      @{$pixmap}{keys %{$args{addrules}}} = values %{$args{addrules}};
+    }
+  }
+  
+  # F) pixmap(..., get=>'...'):
+  elsif (exists $args{get}) {
+    if ($args{get} eq 'type') { return $pixmap_metadata{$pixmap}{'type'}; }
+    if ($args{get} eq 'keyword') { return exists $pixmap->{'PRIMITIVE'} ? $pixmap->{'PRIMITIVE'} :
+                                                                          $pixmap->{'OPERATION'}; }
+    if ($args{get} eq 'argcount') { return $pixmap_metadata{$pixmap}{'argcount'}; }
+    if ($args{get} eq 'array') {
+      return ($pixmap_metadata{$pixmap}{'type'} eq 'EXPORT' ? \@exports : \@converts);
+    }
+    if ($args{get} eq 'pos') {
+      my $arr = pixmap($pixmap, get=>'array');
+      my ($pos) = grep { $arr->[$_] eq $pixmap } 0..$#$arr;
+      return $pos;
+    }
+    if ($args{get} eq 'usecount') { return $pixmap_metadata{$pixmap}{usecount} }
+    if ($args{get} eq 'prettyid') {
+      return ($pixmap_metadata{$pixmap}{'type'} eq 'CONVERT' ? scalar @exports : 0 )
+             + pixmap($pixmap, get=>'pos') + 1;
+    } 
+    if ($args{get} eq 'prettytitle') {
+      my $keyword = pixmap($pixmap, get=>'keyword');
+      my $text = "[";
+      if (exists $pixmap->{'SOURCE'}) { $text .= c("(".pixmap($pixmap->{'SOURCE'}, get=>'prettyid').")",'pixmap')."->" }
+      $text .= c($keyword, 'key');
+      if (exists $pixmap->{'VALUE'}) { $text .= ": ".serialize_value($pixmap->{'VALUE'}, key=>$keyword) }
+      if (exists $pixmap->{'DEST'}) { $text .= ": ".c("(".pixmap($pixmap->{'DEST'}, get=>'prettyid').")",'pixmap') }
+      return $text."]";
+    }
+    if ($args{get} eq 'prettyargslist') {
+      my @args = map {c($_,'key').": ".serialize_value($pixmap->{$_}, key=>$_)}
+                      grep {exists $keywords{$_}} sort keys %$pixmap;
+      return (scalar @args ? "(".join('; ', @args).")" : "");
+    }
+  }
+} # end of 'pixmap' function
+
+# collapse pixmap sequences as defined by the @collapse_pixmaps array:
+foreach my $seq (@collapse_pixmaps) {
+  my $i;
+  if (scalar @$seq eq 2) { $i = 0; } # sequence of type [I:operation -- I:primitive]
+  else { $i = 1; } # sequences of type [I:either -- II:operation -- II:primitive]
+  for (my $j=0; $j<scalar @converts; $j++) {
+  my $pixmap = $converts[$j];
+    if (exists $pixmap->{'OPERATION'}) {
+      my $src_keyword = pixmap($pixmap->{'SOURCE'}, get=>'keyword');
+      my $src_type = pixmap($pixmap->{'SOURCE'}, get=>'type');
+      if (($seq->[$i] eq 'CONVERT' || $seq->[$i] eq $pixmap->{'OPERATION'}) &&
+          exists $pixmap->{'DEST'}{'PRIMITIVE'} && $seq->[$i+1] eq $pixmap->{'DEST'}{'PRIMITIVE'} &&
+          pixmap($pixmap->{'DEST'}, get=>'argcount') == 0 &&
+          ($i==0 || (pixmap($pixmap, get=>'argcount') == 0 &&
+                     ($seq->[0] eq $src_keyword || $seq->[0] eq $src_type)))) {
+        my $num_j = scalar @converts;
+        my $keyword = join('-',@$seq[1..(scalar @$seq-1)]);
+        $keywords{$keyword} = $keywords{$seq->[scalar @$seq-1]};
+        my $rule = { $keyword => $pixmap->{'DEST'}{'VALUE'} };
+        pixmap($pixmap->{'DEST'}, op=>'unlink', from=>$pixmap);
+        if ($i==0) { pixmap($pixmap, addrules=>$rule); }
+        else {
+          my $newsource = pixmap($pixmap->{'SOURCE'}, addrules=>$rule, clone=>'yes');
+          pixmap($pixmap->{'SOURCE'}, op=>'unlink');
+          pixmap($pixmap, op=>'replace', with=>$newsource);
+        }
+        $j -= $num_j - scalar @converts;  # correct loop counter for array entries that we deleted
+      }
+    }
+  }
+}
+
+# add output information according to the @outputs array to the @exports and @converts arrays:
+my %output_id_index = ();
+my %output_pix_index = ();
+map { $output_pix_index{$_->{'SOURCE'}}++; } @outputs;
+foreach my $out (@outputs) {
+  my $pixmap = $out->{'SOURCE'};
+  my $format = uc(($out->{'output'} =~ m/\.([^.]+)$/)[0]); if ($format eq 'JPG') { $format = 'JPEG'; }
+  my %outargs = %$out; delete $outargs{'SOURCE'}; delete $outargs{'output'};
+  my $id = join(';', map { $_ eq 'output' ? $format : "$_:".$out->{$_}} sort keys %$out);
+  if (!exists $output_id_index{$id}) {
+    # if the output image is non-PNG, or output arguments (see %key_output_args) were specified,
+    # then either add this information to this pixmap, or create an additional conversion pixmap:
+    if ($format ne 'PNG' || scalar keys %outargs) {
+      if ($format ne 'PNG') { $outargs{'output-format'} = $format; }
+      my $pixtype = pixmap($pixmap, get=>'type');
+      # A) the pixmap has other outputs in addition to this one, is used as a source for further
+      # pixmap operations, or is an EXPORT pixmap  ==> add a conversion pixmap:
+      if ($output_pix_index{$out->{'SOURCE'}} > 1 || pixmap($pixmap, get=>'usecount') > 1
+          || $pixtype eq 'EXPORT') {
+        my %op = ('OPERATION'=>'convert', 'SOURCE'=>$pixmap, %outargs);
+        my %addargs; if ($pixtype eq 'CONVERT') { $addargs{offset} = pixmap($pixmap, get=>'pos'); }
+        $pixmap = pixmap(\%op, op=>'add', type=>'CONVERT', %addargs);
+      }
+      # B) otherwise  ==> add output information directly to this pixmap:
+      else { pixmap($pixmap, addrules=>\%outargs) }
+    }
+    $output_id_index{$id} = $pixmap;
+  }
+  else {
+    $pixmap = $output_id_index{$id};
+  }
+  push @{$pixmap->{'OUTPUTS'}}, $out->{'output'};
+}
+
+#===========[ 1.4 Inkscape Exporting ]==============================================================
+
+# At this point, we can easily process the EXPORT pixmaps defined in the @exports array. Each entry
+# in this array looks something like this:
+# 
+# { PRIMITIVE        => "element",            <---- keyword and value of the primitive rule that
+#   VALUE            => "path4698",           <-'   spawned this pixmap
+#   
+#   area             => [68, 32, 242, 359],   <---- any additional arguments with EXPORT or
+#   background-color => "ffffff",             <-'   PRIMITIVE affinity encountered in the same
+#   ...                                       <-'   context, plus arguments "collapsed" into this
+#   ...                                       <-'   pixmap (see @collapse_pixmaps)
+#   
+#   OUTPUTS          => ["img1.png", ...] }   <---- output filenames associated with this pixmap
+
+if (@exports) {
+  INFO(title1=>"Exporting Images");
+  INFO(level=>+1);
+  foreach my $export (@exports) {
+    INFO(pixmap_title3=>$export);
+    INFO(level=>+1);
+    my $out = get_output_filename($export);
+    
+    # handle "document" and "element" primitives (for now, these are the only ones):
+    my %export_opts;
+    if ($export->{PRIMITIVE} eq 'element') { $export_opts{'only_element'} = $export->{VALUE}; }
+    $export_opts{'region'} = $export->{'area'};
+    $export_opts{'bg_color'} = $export->{'background-color'} if exists $export->{'background-color'};
+    
+    inkscape_export($svgfile, $out, %export_opts);
+    
+    output_images($export);
+    INFO(level=>-1);
+  }
+  INFO(level=>-1);
+}
+
+#===========[ 1.5 ImageMagick Postprocessing ]======================================================
+
+# At this point, we can easily process the CONVERT pixmaps defined in the @converts array. It can
+# contain entries for primitive pixmaps as well as entries for operation pixmaps.
+# 
+# A) Each 'primitive' entry looks something like this:
+# 
+# { PRIMITIVE => "color",              <---- keyword and value of the primitive rule that
+#   VALUE     => "#ffffff",            <-'   spawned this pixmap
+#   
+#   area      => [68, 232, 242, 359],  <---- any arguments with CONVERT or PRIMITIVE affinity
+#   ...                                <-'   encountered in the same context
+#   
+#   output-quality => 70               <---- any output arguments (see %key_output_args) associated
+#   ...                                <-'   with this pixmap
+#   OUTPUTS   => ["img1.png", ...] }   <---- output filenames associated with this pixmap
+# 
+# B) Each 'layer operation' entry looks something like this:
+# 
+# { OPERATION      => "compose-aganist",    <---- keyword of the op. rule that spawned this pixmap
+#   
+#   compose-type   => "Dst_In",             <---- any arguments with LAYER affinity encountered in
+#   color          => "ffffff",             <-'   in the operation's subcontext, plus "collapsed"
+#   ...                                     <-'   arguments (see @collapse_pixmaps)
+#   
+#   output-quality => 70                    <---- any output arguments (see %key_output_args)
+#   ...                                     <-'   associated with this pixmap
+#   OUTPUTS        => ["img1.png", ...] }   <---- output filenames associated with this pixmap
+
+if (@converts) {
+  INFO(title1=>"Post-Processing Images");
+
+  INFO(level=>+1);
+  foreach my $convert (@converts) {
+    INFO(pixmap_title3=>$convert);
+    INFO(level=>+1);
+    
+    my $src;
+    my %imopts;
+    
+    # prepare output filename and options:
+    my $out = get_output_filename($convert);
+    my %outopts;
+    if (exists $convert->{'output-quality'}) { $outopts{'quality'} = $convert->{'output-quality'}; }
+    if (%outopts) { $imopts{'outargs'} = im_snippet_outputargs(%outopts); }
+    
+    # A) handle primitives:
+    if (exists $convert->{PRIMITIVE}) {
+      
+      # handle "color" primitives:
+      if ($convert->{PRIMITIVE} eq 'color') {
+        my ($x1, $y1, $x2, $y2) = @{$convert->{'area'}};
+        $src = im_snippet_prim_color($convert->{VALUE}, size=>[$x2-$x1, $y2-$y1]);
+      }
+    }
+    
+    # B) handle operations:
+    elsif (exists $convert->{OPERATION}) {
+      $src = get_output_filename($convert->{SOURCE});
+      
+      if (exists $convert->{DEST}) { $imopts{dest} = get_output_filename($convert->{DEST}); }
+      elsif (exists $convert->{'color'}) {
+        $imopts{dest} = im_snippet_prim_color($convert->{'color'}, template=>$src);
+      }
+      
+      # handle "convert" operations:
+      if ($convert->{OPERATION} eq 'convert') {}
+      
+      # handle "compose-against" operations:
+      if ($convert->{OPERATION} eq 'compose-against') {
+        $imopts{op} = 'compose';
+        $imopts{compose_method} = $convert->{'compose-type'};
+      }
+      
+      # handle "background" operations:
+      if ($convert->{OPERATION} eq 'background') {
+        $imopts{op} = 'compose';
+        $imopts{compose_method} = 'Over';
+      }
+      
+      # handle "substract" operations:
+      if ($convert->{OPERATION} eq 'substract') {
+        $imopts{op} = 'compose';
+        $imopts{compose_method} = 'Out';
+      }
+      
+      # handle "semiflatten-against" operations:
+      if ($convert->{OPERATION} eq 'semiflatten-against') {
+        $imopts{op} = 'semiflatten';
+        $imopts{threshold} = $convert->{'threshold'};
+      }
+    }
+    
+    im_convert($src, $out, %imopts);
+    
+    output_images($convert);
+    INFO(level=>-1);
+  }
+  INFO(level=>-1);
+}
+
+#===========[ 1.6 Wrap-Up ]=========================================================================
+
+show_statistics(scalar @sections, scalar @exports, scalar @converts);
+exit 0;
+
+sub show_statistics{
+  my ($nslices, $nexports, $nconverts) = @_;
+  if ($cmdargs{'childprocess'}) {
+    print STDOUT "slices\t$nslices\n";
+    print STDOUT "exports\t$nexports\n";
+    print STDOUT "converts\t$nconverts\n";
+  }
+  else {
+  INFO(title0=>"Finished!");
+  INFO(title3=>sprintf("%d slice%s processed", $nslices, $nslices == 1 ? "" : "s"),
+       msg=>sprintf("(using %s Inkscape export%s and %s ImageMagick convert%s)\n",
+                    c($nexports,'pixmap'), $nexports == 1 ? "" : "s",
+                    c($nconverts,'pixmap'), $nconverts == 1 ? "" : "s"));
+
+  }
+}
+
+
+####################################################################################################
+#                                       2 Helper Functions                                         #
+####################################################################################################
+
+# This section defines various (to some extend potentially reusable) helper functions used by the
+# main code above.
+# 
+# It is composed of the following sub-sections:
+#  - 2.1 Misc. Helper Functions
+#  - 2.2 IO Functions
+#  - 2.3 String Parsing Functions
+#  - 2.4 Inkscape Functions
+#  - 2.5 ImageMagick Functions
+
+
+#===========[ 2.1 Misc. Helper Functions ]==========================================================
+
+## @fn $ serialize_pixmap(\%pixmap)
+# Returns a string representation of a pixmap hash (i.e. a @exports/@converts entry), which can be
+# used for comparing such entries.
+sub serialize_pixmap {
+  my ($pixmap) = @_;
+  my @id;
+  foreach my $key (sort keys %$pixmap) {
+    my $valuestring = $pixmap->{$key};
+    my $keyword = $key;
+    if ($key eq 'VALUE') { $keyword = (exists $pixmap->{'PRIMITIVE'} ?
+                                        $pixmap->{'PRIMITIVE'} : $pixmap->{'OPERATION'}); }
+    if (exists $keywords{$keyword}) {
+      my $value = $pixmap->{$key};
+      $valuestring = serialize_value($value, key=>$keyword);
+    }
+    push @id, $key.':'.$valuestring;
+  }
+  return join(";\0",@id);
+}
+
+## @fn $ serialize_value($value, type=>$datatype)
+## @fn $ serialize_value($value, key=>$keyword)
+# Takes the parsed internal representation of a rule value and returns a human-readable string
+# representation, according to the "build" rule in the %types array.
+sub serialize_value {
+  my ($value, %args) = @_;
+  if(exists $args{'key'}) { $args{'type'} = $keywords{$args{'key'}}[0]; }
+  my $fn_serialize = $types{$args{'type'}}[1];
+  return (defined $fn_serialize ? $fn_serialize->($value) : undef);
+}
+
+## @fn $ get_output_filename(\%pixmap)
+# Returns the path to the output image file associated with the pixmap. If applicable, this is the
+# file specified by the "output" option in the slice definition; otherwise (i.e. for intermediate
+# pixmaps), a temporary file is assigned.
+sub get_output_filename {
+  my ($pixmap) = @_;
+  state %outputfiles;
+  if (exists $outputfiles{$pixmap}) { return $outputfiles{$pixmap}; }
+  else {
+    my $file;
+    if (exists $pixmap->{'OUTPUTS'}) {
+      $file = File::Spec->catfile(($outputpath), $pixmap->{'OUTPUTS'}[0]);
+    }
+    else { $file = new_temp_file('png'); }
+    $outputfiles{$pixmap} = $file;
+    return $file;
+  }
+}
+
+## @fn $ output_images(\%pixmap)
+# Make sure all required copies of the output image associated with a pixmap are created
+sub output_images {
+  my ($pixmap) = @_;
+  if (exists $pixmap->{'OUTPUTS'}) {
+    INFO(title4=>"Output: ".join(", ", map {c($_, 'file')} @{$pixmap->{'OUTPUTS'}}));
+    # Note: the first output file already exists, since it was returned by get_output_filename()...
+    # making copies if necessary:
+    foreach my $output (@{$pixmap->{'OUTPUTS'}}[1..scalar @{$pixmap->{'OUTPUTS'}}-1]) {
+      my $cmd = "cp ".File::Spec->catfile(($outputpath), $pixmap->{'OUTPUTS'}[0])." "
+                .File::Spec->catfile(($outputpath), $output);
+      `$cmd`;
+    }
+  }
+}
+
+## @fn execute($command, %args)
+# Runs an external shell command. If the command fails to run, or returns an error, or fails to
+# produce a specified output file, an appropriate error message is printed and the script
+# terminated.
+sub execute {
+  my ($cmd, %args) = @_;
+  if (defined $args{'outfile'} && -e $args{'outfile'}) { `rm $args{'outfile'}` }
+  $cmd .= " 2>&1" unless $args{'interactive'};
+  
+  my $result = `$cmd`;
+  if (!defined($result) || $? & 127 || $? >> 8) {
+    exit -1 if $args{'interactive'};
+    my ($name) = split(/ /, $cmd); (undef, undef, $name) = File::Spec->splitpath($name);
+    INFO(context=>"$result");
+    ERROR("Could not execute shell command ($!)\n")           if !defined($result);
+    ERROR("Program \"$name\" not found\n")                    if ($? >> 8) == 127;
+    ERROR("\"$name\" died from signal ".($? & 127)."\n")      if $? & 127;
+    ERROR("\"$name\" exited with error code ".($? >> 8)."\n") if $? >> 8;
+  }
+  if (defined $args{'outfile'} && !-e $args{'outfile'}) {
+    my ($name) = split(/ /, $cmd); (undef, undef, $name) = File::Spec->splitpath($name);
+    INFO(context=>"$result");
+    ERROR("\"$name\" failed to create file ".c($args{'outfile'},'file'));
+  }
+  return $result;
+}
+
+#===========[ 2.2 IO Functions ]====================================================================
+
+## @fn INFO(%args)
+# Prints messages to STDERR.
+sub INFO {
+  my (%args) = @_;
+  my $ind = 3;  # number of spaces to use for indentation
+  state $lvl;    $lvl = 0 unless defined $lvl;
+  state @data;   $data[$lvl] = {} unless defined $data[$lvl];;
+  state $inline; $inline = 0 unless defined $inline;
+  state $hidden_output; $hidden_output = '' unless defined $hidden_output;
+  my $col = 0;
+  my $output;
+  if (exists $args{'level'}) { $lvl += $args{'level'}; }
+  foreach my $key (keys %args) {
+    if ($key =~ m/^n?title\d$/) {
+      my ($n, $order) = $key =~ m/^?(n)?title(\d)?$/;
+      $order = 4 if !defined $order;
+      
+      my $color = 'subtitle';
+      if ($order<=2 ) { $color = 'title' } elsif ($order>=4 ) { $color = '' }
+      
+      my $title = ($order<=1 ? "\n" : '').($order eq 0 ? "" : ($order<4 ? " * " : "   "))
+                  .c($args{$key}.($n ? " ".++$data[$lvl]{'titlenum'} : ''), $color);
+      $col = length(c_strip($title)) + ($lvl-(!!$lvl))*$ind;
+      $output = ($args{'newline'} ? "\n" : '').indent($title, ($lvl-1)*$ind);
+    }
+    if ($key =~ m/^n?pixmap_title\d?$/) {
+      my ($n, $order) = $key =~ m/^?(n)?pixmap_title(\d)?$/;
+      $n = "" if !defined $n; $order = "" if !defined $order;
+      my $origin;
+      if (exists $args{$key}->{'PRIMITIVE'}) { $origin = "Primitive"; }
+      else { $origin = "Operation"; }
+      INFO($n.'title'.$order=>c(pixmap($args{$key},get=>'prettyid').")",'pixmap')." $origin "
+                      .pixmap($args{$key},get=>'prettytitle')." ",
+                      msg=>pixmap($args{$key},get=>'prettyargslist'),newline=>1);
+    }
+  }
+  if (exists $args{'msg'}) {
+    my $txt=$args{'msg'};
+    $output .= ($col ? " ".indent($txt, $col+1, skipfirst=>1, prefix=>$args{'sep'})
+                     : ($inline ? indent($txt, $lvl*$ind, skipfirst=>1) : indent($txt, ($lvl+0)*$ind))) }
+  elsif (exists $args{'output'}) {
+    if ($args{'output'} eq 'context') {
+      my $clvl;
+      for ($clvl=$lvl; $clvl>=0; --$clvl) {
+        if(exists($data[$clvl]{'context'}) && $data[$clvl]{'context'} ne ''){
+          my $caption = indent("Context: ", ($lvl+0)*$ind);
+          $output = $caption.indent($data[$clvl]{'context'}, length($caption), skipfirst=>1, prefix=>"|")."\n";
+          last;
+        }
+      }
+    }
+    elsif ($args{'output'} eq 'hidden') {
+      if (defined $hidden_output && $hidden_output ne '') {
+        $output = "$hidden_output".($hidden_output !~ m/\n$/ ? "\n" : '');
+      }
+    }
+  }
+  if (exists $args{'context'}) { $data[$lvl]{'context'} = condense(trim(\$args{'context'})); }
+  if (exists $args{'inline'}) { if ($args{'inline'}){$inline = 1;}
+                                else{ if($inline) {$output = ""}; $inline = 0; } }
+  if (defined $output) {
+    $output .= (($inline || $args{'nobreak'}) ? '' : "\n");
+    if ($args{'hidden'}) { $hidden_output .= $output; }
+    else { print STDERR $output; $hidden_output = undef; }
+  }
+}
+
+## @fn ERROR($msg)
+# Prints an error message and terminates the script.
+sub ERROR {
+  my ($msg, %args) = @_;
+  chomp $msg;
+  print STDERR "\n";
+  INFO(output=>'hidden');
+  INFO(inline => 0);
+  INFO(msg=>c("ERROR: ", 'error_label').c("$msg", 'error'));
+  INFO(output=>'context');
+  exit 2 unless (exists $args{'die'} && !$args{'die'});
+}
+
+## @fn $ indent($text, $columns, %args)
+# Left-indents a string of text for output on the terminal.
+# @param  text    the text to indent
+# @param  columns the number of columns by which the text should be indented
+sub indent {
+  my ($text, $cols, %args) = @_;
+  if (!defined $text) { return "" };
+  chomp(my (undef, $width) = split(/ /,`/bin/stty size`)); # TODO: use Term::ReadKey::GetTerminalSize();
+  $args{'prefix'} = "" if !defined $args{'prefix'};
+  my $max = $width - $cols - length($args{'prefix'});
+  my $colorcode = qr/(?:\e\[\d+(?:;\d+)*m)/x;
+  my $ret = "";
+  my @lines = split("\n", $text, -1);
+  for (my $i=0; $i<@lines; ++$i) {
+    my $paragraph = "";
+    my @matches = c_split($lines[$i] =~ m/((?:$colorcode?[^\e]$colorcode?){1,$max}+)/xg);
+    for (my $j=0; $j<@matches; ++$j) {
+      $paragraph .= ($i==0 && $j==0 && $args{'skipfirst'} ? '' : (' 'x$cols)) .
+                    (exists $args{'prefix'} ? $args{'prefix'} : '') . $matches[$j] . "\n";
+    }
+    if (!length($paragraph)) { $paragraph .= "\n"; }
+    $ret .= $paragraph;
+  }
+  chop($ret);  # remove the last "\n" added by the for loop
+  return $ret;
+}
+
+## @fn @ c($string, $role)
+# Colorizes a string with the color associated with the given role. Correctly handles strings which
+# already contain color codes.
+sub c {
+  my ($string, $role) = @_;
+  my %colorcodes = ('title'=>"32;1", 'subtitle'=>"32", 'file'=>"36", 'key'=>"33", 'cmd'=>"34",
+                    'pixmap'=>"35", 'error'=>"31", 'error_label'=>"31;1");
+  if (defined $string && exists $colorcodes{$role}) {
+#     my $newline = (chomp($string) ? "\n" : "");
+    my $startmarker = "\033[".$colorcodes{$role}."m";
+    my $endmarker = "\033[0m";
+    my $regex = qr/\e\[\d+(?:;\d+)*m/;
+    my $endregex = qr/\e\[0m/;
+    $string =~ s/($endregex)/\e\[ENDm/g; # ugly hack, I know
+    $string =~ s/($regex)/$endmarker$1/g;
+    $string =~ s/(\e\[ENDm)/$endmarker$startmarker/g;
+    $string = $startmarker.$string.$endmarker;
+    $string =~ s/($regex$endregex)//g;
+  }
+  return $string;
+}
+
+## @fn $ c_strip ($string)
+# Strips color codes from a string.
+sub c_strip {
+  my ($str) = @_;
+  $str =~ s/\e\[\d+(?:;\d+)*m//g;
+  $str =~ s/\e\[0m//g;
+  return $str;
+}
+
+## @fn @ c_split(@lines)
+# Takes a list of strings which, when concatenated, form a string with valid color code markup - 
+# and returns the list with each line modified in such a way that it also forms a string with valid
+# color code markup on its own, with the same appearance as in the original concatenated string (by
+# adding approriate color begin/end codes to the beginning and end of each string in the list).
+sub c_split {
+  my (@lines) = @_;
+  my $colorcode = '';
+  for (my $i=0; $i<@lines; ++$i) {
+    if ($colorcode ne '') {
+      $lines[$i] = $colorcode.$lines[$i];  # add previously found color-begin code to start of line
+    }
+    # search for an unclosed color-begin code (if more than one exist, match the last one):
+    if ($lines[$i] =~ m/(\e\[[1-9]\d*(?:;[1-9]\d*)*m)(?:.(?!\e\[\d+(?:;[1-9]\d+)*m))*$/) {
+      $colorcode = $1;          # store the color-begin code found by the regex
+      $lines[$i] .= "\033[0m";  # add color-end code to end of line
+    }
+    else { $colorcode = ''; }
+  }
+  return (@lines);
+}
+
+## @fn $ read_file($path)
+# Read the whole content of a file into a string in one go.
+# @param  path the path of the file to be read
+# @return  a string containing the file's content
+sub read_file {
+  my ($path) = @_;
+  open( my $fh, $path ) or ERROR("Failed to open file ".c($path,'file'));
+  my $text = do { local( $/ ) ; <$fh> } ;
+  close($fh);
+  return $text;
+}
+
+## @fn $ new_temp_file($suffix)
+# Returns a unique filename which may be used for creating a temporary file. Also makes sure that
+# all files which got their filename in this way are deleted when the script terminates.
+sub new_temp_file {
+  my ($suffix) = @_;
+  state @tempfiles;
+  my (undef, $filename) = File::Temp->tempfile('inksliceXXXXX', SUFFIX => ".$suffix", OPEN => 0);
+  push @tempfiles, $filename;
+  return $filename;
+  END { foreach my $file (@tempfiles) { unlink $file if -e $file; } } #delete temp files on script exit
+}
+
+#===========[ 2.3 String Parsing Functions ]========================================================
+
+## @fn strip_xml(\$string)
+# Convert XML to plain text by removing all XML tags from the string and decoding XML entities.
+sub strip_xml {
+  my ($stringref) = @_;
+  $$stringref =~ s/<(?:[^>'"]*|(['"]).*?\1)*>//gs;
+  $$stringref = HTML::Entities::decode($$stringref);
+}
+
+## @fn @ match_bracketed($text, $prefix)
+# Extracts, from a given string $text, substrings which are enclosed by properly matching round
+# brackets and optionally prefixed by $prefix.
+# In case of nested brackets, only the outer ("first-level") matches are returned. In order to get
+# the second-level matches, simply call this function again on each returned first-level match, etc.
+# Note: Inside the bracketed substrings, it is safe for proper double- or single-quotes to contain
+# bracket characters without affecting this function's bracket matching.
+# @param  text   the input string
+# @param  prefix an optional string which, if given, restricts matches to ones whose enclosing
+#                opening bracket is prefixed by this string, e.g. "...PREFIX(matched string)..."
+# @return  a list holding the matched substrings (WITHOUT the enclosing brackets & prefix)
+sub match_bracketed {
+  my ($text, $prefix) = @_;
+  my $quote = qr/
+       '(?:[^\\']|\\.)*'   # match a single-quoted string
+         |
+       "(?:[^\\"]|\\.)*"   # match a double-quoted string
+       /x;
+  $prefix = '' if !defined $prefix;
+  my @matches = $text =~ m/
+       $prefix(                     # match the prefix and start capture buffer 1
+         \(                         # match an opening bracket
+           (?:                      
+             (?:$quote|[^\(\)])*+   # match a string of quoted substrings and non-bracket characters                  
+               |                    # or
+             (?1)                   # recurse to capture buffer 1
+           )*                       
+         \)                         # match a closing bracket
+       )                            # end capture buffer 1
+       /xg;
+  map(s/^\(//, @matches); # remove opening bracket
+  map(s/\)$//, @matches); # remove closing bracket
+  return @matches;
+}
+
+## @fn @ split_balanced($seperator, $text)
+# Splits $text at every occurence of $seperator - except for occurences which are inside bracketed
+# or quoted substring.
+# Brackets are matched correctly, even in the case of nested brackets. Brackets and backslash-
+# escaped quotation marks inside properly quoted substrings are ignored.
+# @param  seperator a single character to be used as split seperator
+# @param  text      the string to be split
+# @return  a list of strings
+sub split_balanced {
+  my ($sep, $text) = @_;
+  my $quote = qr/
+       '(?:[^\\']|\\.)*'   # match a single-quoted string
+         |
+       "(?:[^\\"]|\\.)*"   # match a double-quoted string
+       /x;
+  my @matches = $text =~ m/
+       (?!\z)                                    # make sure we're not at the end of the string
+       (                                         # start capture buffer
+         (?:                                     
+           $quote                                # match a quoted string
+             |                                   # or
+           \{(?:(?:$quote|[^{}])*+|(?-1))*\}     # match a substring enclosed in balanced {} brackets
+             |                                   # or
+           \((?:(?:$quote|[^\(\)])*+|(?-1))*\)   # match a substring enclosed in balanced () brackets
+             |                                   # or
+           \[(?:(?:$quote|[^\[\]])*+|(?-1))*\]   # match a substring enclosed in balanced [] brackets
+             |                                   # or
+           [^{}()[\]<>"'$sep]*+                  # match any bracket-less, seperator-less substring
+         )*+                                     
+       )                                         # end capture buffer
+       (?:[$sep]|\z)                             # match separator or end of string
+       /xg;
+  return @matches;
+}
+
+## @fn $condense ($string)
+# Condenses a string by squashing substrings consisting of multiple whitespaces or newlines.
+sub condense {
+  my ($string) = @_;
+  $string =~ s/\s{2,}/  /g;
+  $string =~ s/[\n\s]{2,}/\n/g;
+  return $string;
+}
+
+## @fn $ trim($$string)
+# Removes whitespaces and newlines from both ends of a string
+sub trim {
+  my ($ref) = @_;
+  $$ref =~ s/^[\s\n]+//;
+  $$ref =~ s/[\s\n]+$//;
+  return $$ref;
+}
+
+#===========[ 2.4 Inkscape Functions ]==============================================================
+
+## @fn inkscape_export($input_file, $output_file, %args)
+# Render (part of) an SVG image into a PNG file, using Inkscape.
+# @param  input_file  filename of the SVG input file
+# @param  output_file filename of the to-be-created PNG output file
+# @param  args  additional arguments (all optional):
+#                   region        an x1,y1,x2,y2-array defining a page region which the export
+#                                 should be restricted to (e.g. region=>[10,5,140,20])
+#                   only_element  a string containing the id of an SVG element which the export
+#                                 should be restricted to (e.g. only_element=>"path4659")
+#                   bg_color      a string defining the background color of the exported PNG (e.g.
+#                                 bg_color=>"#ffffff")
+sub inkscape_export {
+  my ($svgfile, $outfile, %args) = @_;
+  
+  my $cmd = qq("$svgfile" --export-png="$outfile");
+  if ($args{'only_element'}) {
+    $cmd .= qq( --export-id="$args{only_element}" --export-id-only);
+  }
+  if ($args{'region'}) {
+    $cmd .= qq( --export-area=").join(':', @{$args{'region'}}).qq(");
+  }
+  if ($args{'bg_color'}) {
+    $cmd .= qq( --export-background="$args{bg_color}");
+  }
+  
+  INFO(title4=>"   ", msg=>c("inkscape $cmd", 'cmd'), sep=>"|");
+  
+  execute("inkscape $cmd", outfile=>$outfile);
+}
+
+#===========[ 2.5 ImageMagick Functions ]===========================================================
+
+## @fn $ im_snippet_prim_color($color, size=>[$width, $height])
+## @fn $ im_snippet_prim_color($color, template=>$filename)
+# Returns a string that will cause a solid-color canvas to be created when used in place of an input
+# filename inside an ImageMagick commandline script.
+sub im_snippet_prim_color {
+  my ($color, %args) = @_;
+  # A) Direcly create canvas of specified size
+  if (exists $args{size}) {
+    return qq(-size "$args{size}[0]x$args{size}[1]" canvas:"$color");
+  }
+  # B) Create canvas of same size as an existing image
+  elsif (exists $args{template}) {
+    return qq("$args{template}" +matte -fill "$color" -colorize 100% -matte);
+  }
+}
+
+## @fn $ im_snippet_outputargs(%output_options)
+# Returns a string that holds the "output options" part (just before the output filename) of an
+# ImageMagick commandline script.
+# @param  output_options  output options to be included in the snippet (any number of them may be
+#                         specified):
+#                             quality  the output quality of JPEG or PNG images (integer between 1
+#                                      and 100) (e.g. quality=>80)
+sub im_snippet_outputargs {
+  my (%args) = @_;
+  my $options = "";
+  if (exists $args{quality}) { $options .= "-quality \"".$args{quality}."\" "; }
+  return "$options";
+}
+
+## @fn im_convert($src_snippet, $out_file)
+## @fn im_convert($src_snippet, $out_file, op=>$simple_op_name)
+## @fn im_convert($src_snippet, $out_file, op=>$layer_op_name, dest=>$dest, %args)
+# Executes an ImageMagick convert command.
+# @param  src_snippet  a string that holds an input filename, or an appropriate substitute
+# @param  out_snippet  a string that holds an output filename (plus any output options)
+sub im_convert {
+  my ($src, $outfile, %args) = @_;
+  my $cmd;
+  my $out = (exists $args{outargs} ? $args{outargs}." " : '').qq("$outfile");
+  
+  # A) no operation
+  if (!exists $args{op}) { $cmd = qq("$src" $out); }
+  else{
+    my $dest = $args{dest} if exists $args{dest};
+    $dest = qq("$dest") unless $dest =~ m/^"/ ; # FIXME
+    
+    # B) compose
+    # Overlays the source image ($src) over a specified background ($dest) using the desired
+    # composition method.
+    if ($args{op} eq 'compose') {
+      my $compose_method = $args{compose_method};
+      $cmd = qq($dest "$src" -compose "$compose_method" -composite $out);
+    }
+    
+    # C) semi-flatten
+    # Flattens the semi-transparent pixels of the source image ($src) against a specified background
+    # ($dest), without changing pixels which are either fully opaque of fully transparent.
+    if ($args{op} eq 'semiflatten') {
+      my $threshold = (defined $args{threshold} ? $args{threshold} : "3");
+      $cmd = qq($dest "$src" \\( -clone 1 -alpha extract -threshold \"$threshold%\" -alpha copy \\) \\( -clone 0 -clone 2 -compose Dst_In -composite \\) -delete 0,2 +swap -compose Over -composite $out);
+    }
+  }
+  
+  $cmd = "convert $cmd";
+  INFO(title4=>"   ", msg=>c("$cmd", 'cmd'), sep=>"|");
+  
+  execute($cmd, outfile=>$outfile);
+}
+
+
+####################################################################################################
+#                                    3 Embedded Documentation                                      #
+####################################################################################################
+__END__
+
+=head1 NAME
+
+inkslice - A tool for slicing SVG images
+
+=head1 SYNOPSIS
+
+inkslice [OPTIONS] FILES
+
+ Options:
+   -o, --output-dir       
+   
+ Help options:
+   -?, --help
+       --man
+
+=head1 DESCRIPTION
+
+B<inkslice> reads plain-text slice definitions embedded in SVG documents (for example within text elements) and then generates raster images from the SVG documents according to those definitions.
+
+Inkscape is used for exporting of images, and ImageMagick for any post-processing and converting to non-PNG image formats.
+
+=head1 OPTIONS
+
+=over 8
+
+=item B<--output-dir>=PATH
+
+Evaluate output image paths relative to the specified directory.
+
+=item B<--help>
+
+Print a brief help message and exit.
+
+=item B<--man>
+
+Print the manual page and exit.
+
+=back
+
+=cut

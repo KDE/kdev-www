@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   width="260"
+   height="370"
+   id="svg2851"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="quickbox_green.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="963"
+     inkscape:window-height="791"
+     id="namedview456"
+     showgrid="false"
+     inkscape:zoom="1"
+     inkscape:cx="196.76472"
+     inkscape:cy="161.57823"
+     inkscape:window-x="206"
+     inkscape:window-y="56"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2851"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata458">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2855">
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3630-0-6">
+      <feGaussianBlur
+         stdDeviation="4.5254587"
+         id="feGaussianBlur3632-48-1" />
+    </filter>
+    <linearGradient
+       id="linearGradient3606-2-9-5-2-5">
+      <stop
+         id="stop3608-5-8-5-6-1"
+         style="stop-color:#e2f3bf;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop13577-4-4-2-9-4"
+         style="stop-color:#bdde84;stop-opacity:1"
+         offset="0.63330096" />
+      <stop
+         id="stop3610-7-8-9-0-6"
+         style="stop-color:#a2cf58;stop-opacity:1;"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       y2="538.64978"
+       x2="371.6131"
+       y1="307.70233"
+       x1="371.6131"
+       gradientTransform="matrix(-0.3423308,0,0,-0.3423308,239.95723,239.02678)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient9624"
+       xlink:href="#linearGradient3606-2-9-5-2-5"
+       inkscape:collect="always" />
+  </defs>
+  <path
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccccc"
+     style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3630-0-6);enable-background:accumulate"
+     id="path4657"
+     d="m 105.45826,277.82044 610.48892,0 c 12.66286,0 22.85714,10.19428 22.85714,22.85714 l 0,919.28272 c 0,12.6629 -10.19428,22.858 -22.85714,22.858 l -610.48892,0 c -12.662865,0 -22.857152,-10.1951 -22.857152,-22.858 l 0,-919.28272 c 0,-12.66286 10.194287,-22.85714 22.857152,-22.85714 l 0,0 z"
+     transform="matrix(-0.3423308,0,0,0.3423308,269.10295,-73.534998)" />
+  <path
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccccccccc"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="path4659"
+     d="m 231.8869,22.784767 -206.761749,0 c -4.279977,0 -7.725588,3.418276 -7.725588,7.66429 l 0,312.593943 c 0,4.246 3.445611,7.664 7.725588,7.664 l 206.761749,0 c 4.27997,0 7.72558,-3.418 7.72558,-7.664 l 0,-312.593943 c 0,-4.246014 -3.44561,-7.66429 -7.72558,-7.66429 l 0,0 z" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text3332"
+     y="86.249184"
+     x="279.1228"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+     xml:space="preserve"><tspan
+       id="tspan3334"
+       y="86.249184"
+       x="279.1228"
+       sodipodi:role="line">SLICE(</tspan><tspan
+       id="tspan3338"
+       y="98.749184"
+       x="279.1228"
+       sodipodi:role="line">  area: (81,237)-(82,316);</tspan><tspan
+       id="tspan3340"
+       y="111.24918"
+       x="279.1228"
+       sodipodi:role="line">  output: &quot;box_green-mh-1px.png&quot;;</tspan><tspan
+       id="tspan3356"
+       y="123.74918"
+       x="279.1228"
+       sodipodi:role="line">)</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text4383"
+     y="-69.750816"
+     x="41.122803"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+     xml:space="preserve"><tspan
+       id="tspan4385"
+       y="-69.750816"
+       x="41.122803"
+       sodipodi:role="line">SLICE(</tspan><tspan
+       id="tspan4391"
+       y="-57.250816"
+       x="41.122803"
+       sodipodi:role="line">  area: (12,316)-(245,353);</tspan><tspan
+       y="-44.750816"
+       x="41.122803"
+       sodipodi:role="line"
+       id="tspan3538">  background-color: #ffffff;</tspan><tspan
+       id="tspan4393"
+       y="-32.250816"
+       x="41.122803"
+       sodipodi:role="line">  output: &quot;quickbox-t-solid.png&quot;;</tspan><tspan
+       id="tspan4395"
+       y="-19.750816"
+       x="41.122803"
+       sodipodi:role="line">)</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+     x="41.122803"
+     y="398.24915"
+     id="text4952"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="398.24915"
+       id="tspan4954">SLICE(</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="410.74915"
+       id="tspan4956">  area: (12,14)-(245,28);</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="423.24915"
+       id="tspan4962">  background-color: #ffffff;</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="435.74915"
+       id="tspan4973">  substract-element: 'path_inner';</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="448.24915"
+       id="tspan4975">  semiflatten-against-element: 'path_inner';</tspan><tspan
+       id="tspan4964"
+       sodipodi:role="line"
+       x="41.122803"
+       y="460.74915">  output: &quot;quickbox-bi.gif&quot;;</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="473.24915"
+       id="tspan4966">)</tspan></text>
+  <path
+     style="color:#000000;fill:url(#linearGradient9624);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     d="m 21.03125,53.5625 0,289 c 0,2.49145 2.00856,4.5 4.5,4.5 l 205.9375,0 c 2.49145,0 4.5,-2.00855 4.5,-4.5 l 0,-289 z"
+     id="path_inner"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="csssscc" />
+  <path
+     inkscape:connector-curvature="0"
+     style="color:#000000;fill:#7db329;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34233081;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     id="cat_download_titlebar"
+     d="m 231.43738,26.423716 -205.776766,0 c -2.491463,0 -4.497242,1.876973 -4.497228,4.208454 l 0,23.938796 214.771234,0 0,-23.938796 c 0,-2.331481 -2.00577,-4.208454 -4.49724,-4.208454 z"
+     sodipodi:nodetypes="cssccsc" />
+</svg>

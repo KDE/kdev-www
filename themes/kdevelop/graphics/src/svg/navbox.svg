@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.2"
+   width="230"
+   height="370"
+   id="svg2851"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="navbox.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="973"
+     id="namedview456"
+     showgrid="false"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="154.99485"
+     inkscape:cy="157.74247"
+     inkscape:window-x="-2"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2851"
+     showguides="true"
+     inkscape:guide-bbox="true" />
+  <metadata
+     id="metadata458">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2855">
+    <filter
+       x="-1.074845"
+       y="-0.013793898"
+       width="3.1496902"
+       height="1.0275878"
+       color-interpolation-filters="sRGB"
+       id="filter4785">
+      <feGaussianBlur
+         id="feGaussianBlur4787"
+         stdDeviation="4.5428244" />
+    </filter>
+    <clipPath
+       id="clipPath4425">
+      <path
+         d="m 45.610705,-4.5487327 0,-790.4058973 615.177555,0 0,790.4058973 -615.177555,0 z"
+         id="path4427"
+         style="color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34233078;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" />
+    </clipPath>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter3630-7-1-2-0">
+      <feGaussianBlur
+         stdDeviation="4.5254587"
+         id="feGaussianBlur3632-4-1-2-0" />
+    </filter>
+    <linearGradient
+       id="linearGradient3606-2-9-5-2">
+      <stop
+         id="stop3608-5-8-5-6"
+         style="stop-color:#e2f3bf;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop13577-4-4-2-9"
+         style="stop-color:#bdde84;stop-opacity:1"
+         offset="0.63330096" />
+      <stop
+         id="stop3610-7-8-9-0"
+         style="stop-color:#a2cf58;stop-opacity:1;"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3606-2-9-5-2"
+       id="linearGradient3311"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.3423308,0,0,-0.3423308,239.95723,239.02678)"
+       x1="371.6131"
+       y1="307.70233"
+       x2="371.6131"
+       y2="538.64978" />
+  </defs>
+  <path
+     d="m 107.7272,289.5054 525.34775,0 c 12.66286,0 22.85714,10.19428 22.85714,22.85714 l 0,919.28406 c 0,12.6629 -10.19428,22.8572 -22.85714,22.8572 l -525.34775,0 c -12.662861,0 -22.857148,-10.1943 -22.857148,-22.8572 l 0,-919.28406 c 0,-12.66286 10.194287,-22.85714 22.857148,-22.85714 l 0,0 z"
+     id="path4118-3"
+     style="fill:#c1c1c1;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter3630-7-1-2-0);enable-background:accumulate"
+     sodipodi:nodetypes="cccccccccc"
+     inkscape:connector-curvature="0"
+     transform="matrix(-0.3423308,0,0,0.3423308,240.73323,-77.53512)" />
+  <path
+     d="m 202.74118,22.784644 -177.615296,0 c -4.279977,0 -7.725588,3.418275 -7.725588,7.66429 l 0,312.593806 c 0,4.246 3.445611,7.66428 7.725588,7.66428 l 177.615296,0 c 4.27998,0 7.72559,-3.41828 7.72559,-7.66428 l 0,-312.593806 c 0,-4.246015 -3.44561,-7.66429 -7.72559,-7.66429 l 0,0 z"
+     id="path4120-0"
+     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:nodetypes="cccccccccc"
+     inkscape:connector-curvature="0" />
+  <path
+     style="fill:url(#linearGradient3311);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     d="m 21.03125,54.074143 0,288.488357 c 0,2.49145 2.008537,4.5 4.5,4.5 l 176.8125,0 c 2.49147,0 4.46875,-2.00855 4.46875,-4.5 l -5e-4,-288.488357 z"
+     id="path_inner"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="csssscc" />
+  <path
+     d="m 48.362202,-5.4148102 605.292868,0 0,7.8296356 -605.292868,0 0,-7.8296356 z"
+     transform="matrix(0,1.2419182,-1.2955369,0,-5.893051,-350.64476)"
+     clip-path="url(#clipPath4425)"
+     id="rect3853-3"
+     style="color:#000000;fill:#97db12;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.34233078;marker:none;visibility:visible;display:inline;overflow:visible;filter:url(#filter4785);enable-background:accumulate" />
+  <text
+     sodipodi:linespacing="125%"
+     id="text4383"
+     y="-69.750816"
+     x="41.122803"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+     xml:space="preserve"><tspan
+       id="tspan4385"
+       y="-69.750816"
+       x="41.122803"
+       sodipodi:role="line">SLICE(</tspan><tspan
+       id="tspan4391"
+       y="-57.250816"
+       x="41.122803"
+       sodipodi:role="line">  area: (12,316)-(216,353);</tspan><tspan
+       y="-44.750816"
+       x="41.122803"
+       sodipodi:role="line"
+       id="tspan3538">  background-color: #ffffff;</tspan><tspan
+       id="tspan4393"
+       y="-32.250816"
+       x="41.122803"
+       sodipodi:role="line">  output: &quot;navbox-t-solid.png&quot;;</tspan><tspan
+       id="tspan4395"
+       y="-19.750816"
+       x="41.122803"
+       sodipodi:role="line">)</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+     x="41.122803"
+     y="398.24915"
+     id="text4952"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="398.24915"
+       id="tspan4954">SLICE(</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="410.74915"
+       id="tspan4956">  area: (12,14)-(216,28);</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="423.24915"
+       id="tspan4962">  background-color: #ffffff;</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="435.74915"
+       id="tspan4973">  substract-element: 'path_inner';</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="448.24915"
+       id="tspan4975">  semiflatten-against-element: 'path_inner';</tspan><tspan
+       id="tspan4964"
+       sodipodi:role="line"
+       x="41.122803"
+       y="460.74915">  output: &quot;navbox-bi.gif&quot;;</tspan><tspan
+       sodipodi:role="line"
+       x="41.122803"
+       y="473.24915"
+       id="tspan4966">)</tspan></text>
+  <text
+     sodipodi:linespacing="125%"
+     id="text4928"
+     y="166.24918"
+     x="259.1228"
+     style="font-size:10px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Sans;-inkscape-font-specification:Sans"
+     xml:space="preserve"><tspan
+       id="tspan4930"
+       y="166.24918"
+       x="259.1228"
+       sodipodi:role="line">SLICE(</tspan><tspan
+       id="tspan4934"
+       y="178.74918"
+       x="259.1228"
+       sodipodi:role="line">  area: (12,250)-(216,270);</tspan><tspan
+       y="191.24918"
+       x="259.1228"
+       sodipodi:role="line"
+       id="tspan4944">  background-color: #ffffff;</tspan><tspan
+       y="203.74918"
+       x="259.1228"
+       sodipodi:role="line"
+       id="tspan4950">  substract-element: 'path_inner';</tspan><tspan
+       id="tspan4940"
+       y="216.24918"
+       x="259.1228"
+       sodipodi:role="line">  output: &quot;navbox-liri-1px.gif&quot;;</tspan><tspan
+       id="tspan4942"
+       y="228.74918"
+       x="259.1228"
+       sodipodi:role="line">)</tspan></text>
+  <path
+     d="m 202.24914,26.423593 -176.574435,0 c -2.491463,0 -4.497227,1.876972 -4.497227,4.208454 l 0,24.138953 185.568892,0 0,-24.138953 c 0,-2.331482 -2.00577,-4.208454 -4.49723,-4.208454 z"
+     id="cat_documentation_titlebar-8"
+     style="fill:#7db329;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     sodipodi:nodetypes="cccccccc"
+     inkscape:connector-curvature="0" />
+</svg>

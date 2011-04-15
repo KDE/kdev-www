@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+
+# USAGE: Simply call this script from anywhere without arguments to re-generate the theme graphics
+# 
+# REQUIREMENTS: - Perl        5.10+
+#               - Inkscape    0.47+
+#               - ImageMagick 6.3.4+ (warning: 6.6.9-1 has a bug that causes some of the gif images
+#                                     to be rendered incorrectly - 6.6.9-4 is fine again)
+#               - a writable /tmp folder
+
+use strict;
+use warnings;
+use FindBin;
+
+# Change to the directory containing this script, so we can locate our files relative to it:
+chdir($FindBin::Bin);
+
+# Slice the SVG source images according to slice definitions embedded in the SVG files themselves,
+# and place the generated PNG/GIF/JPG images in the theme's graphics directory (overwriting existing
+# files with the same names):
+`bin/inkslice --output-dir=.. svg/*.svg`;
