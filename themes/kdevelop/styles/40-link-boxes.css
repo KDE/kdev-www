@@ -34,7 +34,7 @@ div.block div.header {
 
 div.navbox div.header h3,
 div.block  div.header h3 {
-  background: #79be16;
+  background: #7db329;
   padding: 2.5px 11px 5.5px 25px;
   margin: 0 9px 0 9px;
   font-family: 'Linux Biolinum','Optima','Palatino',sans-serif;
@@ -55,7 +55,7 @@ div.block  div.header h3 {
 
 div.block  div.content,
 div.navbox div.content {
-  background: #daf3af url('../graphics/box_green-mh-1px.png') top repeat-x;
+  background: #e2f3bf url('../graphics/box_green-mh-1px.png') top repeat-x;
   padding: 7.4px 9px 4px 11px;
   margin: 0 9px -6px 9px;
 }
@@ -128,13 +128,13 @@ div.cat-download div.header {
 }
 
 div.cat-download div.header h3 {
-  background-color:#1568af;
+  background-color:#1e6db0;
   text-shadow: 1.5px 1.4px 1px #215278;
 }
 
 div.cat-download div.content {
   background-image: url('../graphics/box_blue-mh-1px.png');
-  background-color: #b9dbf7;
+  background-color: #bdddf7;
 }
 
 div.cat-download div.content a.download {
@@ -179,13 +179,13 @@ div.cat-support div.header {
 }
 
 div.cat-support div.header h3 {
-  background-color:#c24610;
+  background-color:#c05119;
   text-shadow: 1.5px 1.4px 1px #8D4021;
 }
 
 div.cat-support div.content {
   background-image: url('../graphics/box_red-mh-1px.png');
-  background-color: #f6cca6;
+  background-color: #f7cfab;
 }
 
 div.cat-support div.footer {

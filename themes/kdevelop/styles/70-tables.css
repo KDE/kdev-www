@@ -21,13 +21,13 @@
 
 .node th, .node table {
   border:none;
-  border-bottom:1px solid #79be16;
+  border-bottom:1px solid #7db329;
   border-collapse:collapse;
 }
 
 .node td {
-  border-left:1px solid #79be16;
-  border-right:1px solid #79be16;
+  border-left:1px solid #7db329;
+  border-right:1px solid #7db329;
 }
 
 tbody {
