@@ -66,18 +66,27 @@ function nodereference_url_link($type, $object, $teaser = FALSE) {
 function nodereference_url_build_all_links($node, $teaser) {
   $links = array();
   $fields = content_fields();
+  $instances = array();
   foreach ($fields as $field_name => $field) {
     foreach (_nodereference_url_field_instances($field_name) as $target_type => $instance) {
       if ($instance['widget']['type'] == 'nodereference_url') {
-        $link_settings = $instance['widget']['node_link'];
-        if (($link_settings['teaser'] && $teaser == TRUE) || ($link_settings['full'] && $teaser == FALSE)) {
-          if ($link = nodereference_url_build_link($node, $instance, $teaser)) {
-            $links[$target_type .'_'. $field_name] = $link;
-          }
+        $instances[$target_type][$field_name] = $instance;
+      }
+    }
+  }
+
+  foreach ($instances as $target_type => $instances_group) {
+    $alt_format = count($instances_group) > 1;
+    foreach ($instances_group as $field_name => $instance) {
+      $link_settings = $instance['widget']['node_link'];
+      if (($link_settings['teaser'] && $teaser == TRUE) || ($link_settings['full'] && $teaser == FALSE)) {
+        if ($link = nodereference_url_build_link($node, $instance, $teaser, $alt_format)) {
+          $links[$target_type .'_'. $field_name] = $link;
         }
       }
     }
   }
+
   return $links;
 }
 
@@ -94,11 +103,14 @@ function nodereference_url_build_all_links($node, $teaser) {
  *   A CCK field instance.
  * @param $teaser
  *   Optional. The current display mode of the node. Defaults to FALSE.
+ * @param $alt_format
+ *   Optional. Use the alternative (safer but more verbose) format for
+ *   generating the link. Defaults to FALSE.
  *
  * @return
  *   An array containing properties to build a single link.
  */
-function nodereference_url_build_link($node, $field, $teaser = FALSE) {
+function nodereference_url_build_link($node, $field, $teaser = FALSE, $alt_format = FALSE) {
   $view_mode = $teaser ? 'teaser' : 'full';
   $link = array();
 
@@ -114,27 +126,36 @@ function nodereference_url_build_link($node, $field, $teaser = FALSE) {
   if ($referenceable && node_access('create', $field['type_name'])) {
     $link_settings = $field['widget']['node_link'];
     if (!empty($link_settings[$view_mode])) {
+      $link['title'] = t($link_settings['title']);
+      $link['query'] = array();
+
       // Get the first "preferred" path for creating Node Reference links.
       $link_urls = variable_get('nodereference_url_paths', array('node/add/%type/%nid'));
 
       // Basic wildcard replacement: %type and %nid.
       $link_url = $link_urls[0];
       $link_url = str_replace('%type', str_replace('_', '-', $field['type_name']), $link_url);
-      $link_url = str_replace('%nid', $node->nid, $link_url);
+      if ($alt_format) {
+        // The alternative format is used when there are multiple fields on the
+        // node edit form, so we can't just add an parameter at the end for NID.
+        $link_url = preg_replace('!/%nid$!', '', $link_url);
+        $field_name = str_replace('field_', '', $field['field_name']);
+        $link['query'][$field_name] = $node->nid;
+      }
+      else {
+        $link_url = str_replace('%nid', $node->nid, $link_url);
+      }
+      $link['href'] = $link_url;
 
-      $link = array(
-        'title' => t($link_settings['title']),
-        'href' => $link_url,
-      );
       if (!empty($link_settings['hover_title'])) {
         $link['attributes']['title'] = t($link_settings['hover_title']);
       }
       if (!empty($link_settings['destination'])) {
         if ($link_settings['destination'] == 'source') {
-          $link['query'] = drupal_get_destination();
+          $link['query']['destination'] = isset($_REQUEST['destination']) ? $_REQUEST['destination'] : $_GET['q'];
         }
         elseif ($link_settings['destination'] == 'node') {
-          $link['query'] = 'destination='. urlencode(drupal_get_path_alias('node/'. $node->nid));
+          $link['query']['destination'] = drupal_get_path_alias('node/'. $node->nid);
         }
       }
       if (module_exists('og')) {
@@ -147,8 +168,7 @@ function nodereference_url_build_link($node, $field, $teaser = FALSE) {
         }
 
         if ($group_node) {
-          $link['query'] = isset($link['query']) ? $link['query'] . '&' : '';
-          $link['query'] .= 'gids[]=' . $group_node->nid;
+          $link['query']['gids'] = array($group_node->nid);
         }
       }
     }
@@ -180,7 +200,7 @@ function nodereference_url_create_link($node, $field_name, $type_name, $attribut
   $field['widget']['node_link']['full'] = TRUE;
   if ($link = nodereference_url_build_link($node, $field)) {
     $options = array();
-    $link_attributes = is_set($link['attributes']) ? (array) $link['attributes'] : array();
+    $link_attributes = isset($link['attributes']) ? (array) $link['attributes'] : array();
     $options['attributes'] = $attributes + $link_attributes;
     if ($link['query']) {
       $options['query'] = $link['query'];
@@ -425,7 +445,7 @@ function nodereference_url_widget(&$form, &$form_state, $field, $items, $delta =
  */
 function _nodereference_url_process($element, $edit, $form_state, $form) {
   if (isset($element['#value']) && is_numeric($element['#value']) && ($node = node_load($element['#value']))) {
-    $element['#display_title'] = $node->title;
+    $element['#display_title'] = check_plain($node->title);
   }
   else {
     $element['#display_title'] = t('Referenced content not found.');
