@@ -64,12 +64,14 @@
   text-align: center;
 }
 
-#search-theme-form input.button {
+#search-theme-form input.form-submit {
+  font-size:10px;
 }
 
-#search-theme-form input.text {
+#search-theme-form input.form-text {
   width: 130px;
   border: 1px solid black;
+  font-size:10px;
 }
 
 /********** Top Menu Links ************************************************************************/

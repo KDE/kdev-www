@@ -67,3 +67,33 @@ p.outdatedtranslation {
 .content .views-view-grid {
   margin:0 auto;
 }
+
+.node .meta {
+  padding:5px;
+  text-align:right;
+  float:right;
+}
+
+.node .links {
+ padding:5px;  
+}
+
+.node .content {
+  border-bottom:1px dotted #ccc;
+}
+
+#comments .comment {
+  border-top:1px dotted #ccc;
+}
+
+#comments .comment .submitted, #comments .comment .new {
+  float:right;
+  font-size:11px;
+  font-style:italic;
+}
+
+#comments .comment .new {
+  font-weight:bold;
+  font-style:normal;
+}
+

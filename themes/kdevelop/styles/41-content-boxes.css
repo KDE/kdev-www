@@ -104,11 +104,11 @@ div.what-is-kdevelop div.border-tr {
   background: url('../graphics/frontpagescreenshot-solid.jpg') no-repeat;
 }
 
-div.what-is-kdevelop div.screenshot {
-  float: right;
-  width: 174px; height: 127px;
-  margin-top: -22px;
-  margin-right: -13px;
+div.what-is-kdevelop div.border-tr a {
+  display:block;
+  width: 174px;
+  height: 127px;
+  text-decoration:none;
 }
 
 /********** Contents of "KDevelop 3.x vs KDevelop 4.x" Box (front page) ***************************/
