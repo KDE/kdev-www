@@ -1,5 +1,4 @@
 <?php
-// $Id: emaillog.install,v 1.1.2.2 2009/07/23 16:14:32 davereid Exp $
 
 /**
  * @file
@@ -8,10 +7,9 @@
 
 /**
  * Implementation of hook_uninstall().
+ * Deletes all emaillog variables and clears variable cache.
  */
 function emaillog_uninstall() {
-  $severities = array_keys(watchdog_severity_levels());
-  foreach ($severities as $severity) {
-    variable_del('emaillog_' . $severity);
-  }
+  db_query("DELETE FROM {variable} WHERE name LIKE 'emaillog_%'");
+  cache_clear_all('variables', 'cache');
 }

@@ -1,5 +1,4 @@
 <?php
-// $Id: errorlog.module,v 1.1.2.5 2009/07/23 16:29:00 davereid Exp $
 
 // Copyright 2007 Khalid Baheyeldin http://2bits.com
 
@@ -39,9 +38,17 @@ function errorlog_menu() {
  */
 function errorlog_watchdog($log) {
   global $user;
-  $language = user_preferred_language($user);
-  $message = theme('errorlog_format', $log);
   if (variable_get('errorlog_' . $log['severity'], FALSE)) {
+    $language = user_preferred_language($user);
+
+    // Make sure that $log['variables'] is always an array to avoid
+    // errors like in issue http://drupal.org/node/1325938
+    if (!is_array($log['variables'])) {
+      $log['variables'] = array();
+    }
+
+    // Send themed alert to the web server's log.
+    $message = theme('errorlog_format', $log);
     error_log($message);
   }
 }
@@ -71,4 +78,3 @@ function theme_errorlog_format($log_msg = array()) {
 
   return $message;
 }
-

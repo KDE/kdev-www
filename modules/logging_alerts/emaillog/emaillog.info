@@ -3,9 +3,9 @@ description = Sends logs and alerts to email addresses, with different severity 
 package = Logging and alerts
 core = 6.x
 
-; Information added by drupal.org packaging script on 2010-11-09
-version = "6.x-1.5"
+; Information added by drupal.org packaging script on 2012-02-01
+version = "6.x-2.1"
 core = "6.x"
 project = "logging_alerts"
-datestamp = "1289331942"
+datestamp = "1328058350"
 
