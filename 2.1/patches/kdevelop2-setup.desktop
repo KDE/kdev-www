@@ -8,6 +8,7 @@ Icon=configure
 DocPath=kdevelop2/index.html
 Terminal=0
 Name=KDevelop2 - Setup
+Name[bs]=KDevelop2 - Postavka
 Name[cs]=KDevelop2 - Nastavení
 Name[da]=KDevelop2 - Opsætning
 Name[de]=KDevelop2 - Einstellungen
