@@ -8,6 +8,7 @@ Icon=kdevelop
 DocPath=kdevelop2/index.html
 Terminal=0
 Name=KDevelop
+Name[ast]=KDevelop
 Name[bg]=KDevelop
 Name[bs]=KDevelop
 Name[ca]=KDevelop
